@@ -566,86 +566,58 @@
       {
         "number": 4,
         "unit": "osp-official-frontier-v1-04.service",
+        "service_active": true,
         "shape": "zigzag",
+        "profile": "official_nominal",
+        "gates": {
+          "runtime_configuration_gate": true,
+          "velocity_profile_gate": true,
+          "scan_adapter_gate": true,
+          "floor_sensor_gate": true,
+          "drive_path_gate": true,
+          "official_description_gate": true,
+          "slam_transport_gate": true,
+          "navigation_grid_gate": true
+        },
         "live": {
           "state": "running",
-          "approached_ids": [],
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 54.2,
-          "active_action": "spin",
-          "readiness_reason": "",
-          "sensor_interruptions": 0,
-          "nav2_lifecycle": {
-            "controller_server": 3,
-            "planner_server": 3,
-            "behavior_server": 3,
-            "bt_navigator": 3
-          },
-          "drive_controllers": {
-            "diffdrive_controller": "active",
-            "joint_state_broadcaster": "active"
-          },
-          "confirmed_surface_cells": 30,
-          "confirmed_face_anchors": 0,
-          "reassociated_face_records": 0,
-          "camera_diagnostics": {
-            "received": 1677,
-            "late": 2,
-            "invalid_calibration": 0,
-            "duplicate": 0,
-            "accepted": 1675,
-            "coverage_updates": 1140,
-            "tf_waits": 562
-          }
+          "elapsed_seconds": 166.2,
+          "readiness_reason": ""
         }
       },
       {
         "number": 5,
         "unit": "osp-official-frontier-v1-05.service",
+        "service_active": true,
         "shape": "zigzag",
+        "profile": "official_nominal",
+        "gates": {
+          "runtime_configuration_gate": true,
+          "velocity_profile_gate": true,
+          "scan_adapter_gate": true,
+          "floor_sensor_gate": true,
+          "drive_path_gate": true,
+          "official_description_gate": true,
+          "slam_transport_gate": true,
+          "navigation_grid_gate": true
+        },
         "live": {
           "state": "running",
-          "approached_ids": [],
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 55.715999999999994,
-          "active_action": "nav",
-          "readiness_reason": "",
-          "sensor_interruptions": 0,
-          "nav2_lifecycle": {
-            "controller_server": 3,
-            "planner_server": 3,
-            "behavior_server": 3,
-            "bt_navigator": 3
-          },
-          "drive_controllers": {
-            "diffdrive_controller": "active",
-            "joint_state_broadcaster": "active"
-          },
-          "confirmed_surface_cells": 0,
-          "confirmed_face_anchors": 0,
-          "reassociated_face_records": 0,
-          "camera_diagnostics": {
-            "received": 1726,
-            "late": 0,
-            "invalid_calibration": 0,
-            "duplicate": 0,
-            "accepted": 1726,
-            "coverage_updates": 1137,
-            "tf_waits": 615
-          }
+          "elapsed_seconds": 174.215,
+          "readiness_reason": ""
         }
       }
     ],
     "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
     "production_promoted": false,
     "hardware_validated": false,
-    "captured_utc": "2026-11-14T20:48:33.001451+00:00",
+    "captured_utc": "2026-11-14T21:01:07.867028+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
-    "automation_scope": "local systemd timer: summary and finished-video publication only",
-    "original_dispatcher_held_by": "osp-official-frontier-evidence-screen-v1.service",
-    "held_reason": "Preserve current zigzag pair, then run two v16 regressions before resuming the saved queue"
+    "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
   "github_progress_automation": {
     "timer_unit": "osp-training-progress.timer",

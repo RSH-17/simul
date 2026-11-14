@@ -30,11 +30,60 @@
       "contacts": 0
     }
   },
-  "active": [],
+  "active": [
+    {
+      "number": 4,
+      "unit": "osp-official-frontier-v1-04.service",
+      "service_active": true,
+      "shape": "zigzag",
+      "profile": "official_nominal",
+      "gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true
+      },
+      "live": {
+        "state": "running",
+        "targets": 0,
+        "collisions": 0,
+        "elapsed_seconds": 166.2,
+        "readiness_reason": ""
+      }
+    },
+    {
+      "number": 5,
+      "unit": "osp-official-frontier-v1-05.service",
+      "service_active": true,
+      "shape": "zigzag",
+      "profile": "official_nominal",
+      "gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true
+      },
+      "live": {
+        "state": "running",
+        "targets": 0,
+        "collisions": 0,
+        "elapsed_seconds": 174.215,
+        "readiness_reason": ""
+      }
+    }
+  ],
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
-  "captured_utc": "2026-11-14T20:31:14.053168+00:00",
+  "captured_utc": "2026-11-14T21:01:07.867028+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
