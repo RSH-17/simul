@@ -16,10 +16,34 @@ START='<!-- ROBOT_TRANSFER_PROGRESS:START -->'
 END='<!-- ROBOT_TRANSFER_PROGRESS:END -->'
 FILES=['README.md','repository_snapshot/status.json','repository_snapshot/robot_transfer_progress.json',
        'repository_snapshot/videos.json','repository_snapshot/videos.html']
+COMMIT_MESSAGE='Update native robot-transfer progress and finalized video index'
 
 
 def run(args, cwd=None, timeout=120):
     return subprocess.run(args,cwd=cwd,text=True,capture_output=True,check=True,timeout=timeout).stdout
+
+
+def sync_generated_checkout(checkout):
+    """Recover our rejected generated commits after a concurrent main push.
+
+    This operates only on the isolated publication checkout. Preserve a local
+    recovery ref before regenerating; never discard unrelated commits or force
+    push. A failed push must not permanently strand the recurring publisher.
+    """
+    run(['git','fetch','origin','main'],checkout)
+    outgoing=run(['git','rev-list','origin/main..HEAD'],checkout).splitlines()
+    for commit in outgoing:
+        subject=run(['git','show','-s','--format=%s',commit],checkout).strip()
+        parents=run(['git','show','-s','--format=%P',commit],checkout).split()
+        changed=run(['git','diff-tree','--no-commit-id','--name-only','-r',commit],checkout).splitlines()
+        if subject!=COMMIT_MESSAGE or len(parents)!=1 or not changed or set(changed)-set(FILES):
+            raise RuntimeError('Unpublished non-generated commit in publication checkout; preserved')
+    if outgoing:
+        head=run(['git','rev-parse','HEAD'],checkout).strip()
+        run(['git','update-ref','refs/osp-progress/rejected/'+head,head],checkout)
+        run(['git','reset','--hard','origin/main'],checkout)
+    else:
+        run(['git','merge','--ff-only','origin/main'],checkout)
 
 
 def summarize(campaign):
@@ -86,8 +110,7 @@ def publish(source, checkout, campaign, videos):
     changed=run(['git','diff','--name-only','HEAD'],checkout).splitlines()
     if set(changed)-set(FILES):raise RuntimeError('Unexpected edits in publication checkout')
     if changed:run(['git','restore','--source=HEAD','--staged','--worktree','--',*changed],checkout)
-    run(['git','fetch','origin','main'],checkout)
-    run(['git','merge','--ff-only','origin/main'],checkout)
+    sync_generated_checkout(checkout)
     if videos:
         run([sys.executable,str(checkout/'scripts/publish_simulation_videos.py'),
              '--data-root',str(source),'--upload'],cwd=checkout,timeout=1800)
@@ -96,7 +119,7 @@ def publish(source, checkout, campaign, videos):
     if not run(['git','diff','--cached','--name-only'],checkout).strip():return
     for field in ('user.name','user.email'):
         run(['git','config',field,run(['git','config',field],source).strip()],checkout)
-    run(['git','commit','-m','Update native robot-transfer progress and finalized video index'],checkout)
+    run(['git','commit','-m',COMMIT_MESSAGE],checkout)
     # Normal push rejects concurrent main changes. Reconcile on the next tick;
     # never force-push or alter the user's working checkout.
     run(['git','push','origin','HEAD:main'],checkout,timeout=180)
