@@ -1,0 +1,113 @@
+{
+  "captured_utc": "2026-11-14T16:44:07.759540+00:00",
+  "campaign": "official_tb4_cem_v1",
+  "job": 1,
+  "seed": 1200100101,
+  "evidence_type": "Finalized native full-task run, followed by approximate offline camera geometry",
+  "result": {
+    "reason": "timeout",
+    "success": false,
+    "targets": 2,
+    "elapsed_seconds": 600.497,
+    "collisions": 0,
+    "ground_truth_audit": {
+      "available": true,
+      "correct_ids": false,
+      "correct_positions": false,
+      "position_tolerance_m": 0.5,
+      "position_errors_m": {
+        "570": 0.02282823171891853,
+        "348": 0.08628862298381268
+      },
+      "expected_ids": [
+        348,
+        570,
+        881
+      ],
+      "found_ids": [
+        348,
+        570
+      ],
+      "closest_approach_m": {
+        "570": 0.6341168563644469,
+        "348": 0.5721996836376322,
+        "881": 1.4124050276419546
+      },
+      "approached_within_1_5m": 3,
+      "approach_radius_m": 1.5,
+      "all_approached": true,
+      "approached_within_2m": 3,
+      "world_to_map": [
+        -13.470760805550253,
+        1.0856127379676574,
+        -1.5125585594296704
+      ],
+      "trajectory_samples": 2949
+    },
+    "files": {
+      "map.pgm": true,
+      "map.yaml": true,
+      "map.posegraph": true,
+      "map.data": true,
+      "markers.csv": true
+    }
+  },
+  "coarse_view_audit": {
+    "evidence_type": "Approximate offline 2D geometry at recorded camera sample stamps, coarse independent truth",
+    "rows": [
+      {
+        "id": 570,
+        "decoded_frames": 163,
+        "sampled_readable_front_fov_before_occlusion": 21,
+        "closest_camera_distance_m": 0.6346135623448614,
+        "bearing_at_closest_degrees": -88.10690183146907,
+        "pixels_at_closest": 38.41487816058161,
+        "maximum_modeled_pixels_in_front_fov": 31.868357534944483,
+        "best_stamp_s": 51.348,
+        "near_body_lt_1_5m_samples": 273
+      },
+      {
+        "id": 348,
+        "decoded_frames": 105,
+        "sampled_readable_front_fov_before_occlusion": 41,
+        "closest_camera_distance_m": 0.5678396513994427,
+        "bearing_at_closest_degrees": -129.96942712616848,
+        "pixels_at_closest": 50.01226490683423,
+        "maximum_modeled_pixels_in_front_fov": 43.24491832172273,
+        "best_stamp_s": 422.4,
+        "near_body_lt_1_5m_samples": 277
+      },
+      {
+        "id": 881,
+        "decoded_frames": 0,
+        "sampled_readable_front_fov_before_occlusion": 0,
+        "closest_camera_distance_m": 1.4114797825250425,
+        "bearing_at_closest_degrees": -91.1630473902,
+        "pixels_at_closest": 0.0,
+        "maximum_modeled_pixels_in_front_fov": null,
+        "best_stamp_s": null,
+        "near_body_lt_1_5m_samples": 52
+      }
+    ],
+    "retained_camera_samples": 4553,
+    "truth_interpolation_limit_s": 0.35,
+    "inferred_camera_xy": [
+      -0.05960000000000037,
+      -4.926614671774132e-16
+    ],
+    "inferred_camera_yaw": 0.0,
+    "actual_focal_px": 221.76500407999384,
+    "source_scene": "/home/peter/simul/training_robust/native90/official_tb4_cem_v1/scenarios/1200100101.yaml",
+    "ground_truth_supplied_to_policy": false,
+    "limitations": [
+      "Interpolated coarse truth, no extrapolation; not exact image corner projection",
+      "Occlusion and vertical field of view not modeled",
+      "Counts are recorded samples, not all camera frames",
+      "No counterfactual motion or task-success claim"
+    ],
+    "source_audit_script_sha256": "1686112a889562e755b998f9c23faf454fc3bc3a002610dd7bbbdf4ef5d09e33"
+  },
+  "interpretation": "Missed ID881 was physically passed within 1.5m, but no sampled front-facing camera view was modeled. More proximity alone does not establish a useful marker view.",
+  "full_task_qualified": false,
+  "hardware_validated": false
+}

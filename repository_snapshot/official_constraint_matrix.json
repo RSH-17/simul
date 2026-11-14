@@ -1,0 +1,352 @@
+{
+  "captured_utc": "2026-11-14T16:44:07.759540+00:00",
+  "evidence_type": "36 offline geometry-checked worlds; first native departure screen running",
+  "scene_generator": "training_robust/official_constraint_scenarios.py",
+  "driver": "training_robust/run_official_constraint_screen.py",
+  "campaign": "official_constraint_screen_v1",
+  "coordinator": "osp-official-constraint-screen-v1.service",
+  "runtime": "training_robust/native90/official_tb4_v8/runtime",
+  "train_scenes": 18,
+  "reserved_holdout_scenes": 18,
+  "reserved_holdout_used": false,
+  "profiles": {
+    "narrow": {
+      "name": "narrow",
+      "corridor_width_m": 0.5,
+      "exit_length_m": 2.6,
+      "dock_yaw_offset_degrees": 0.0,
+      "requested_obstacles": 9,
+      "marker_size_range_m": [
+        0.12,
+        0.24
+      ],
+      "marker_occlusion": "obstacle back faces hidden from start",
+      "sensor_faults_injected": false,
+      "official_robot_files_modified": false,
+      "geometry_verified": true,
+      "native_validated": false,
+      "hardware_validated": false,
+      "policy_receives_truth": false
+    },
+    "angled_start": {
+      "name": "angled_start",
+      "corridor_width_m": 0.65,
+      "exit_length_m": 2.6,
+      "dock_yaw_offset_degrees": -12.000000000000002,
+      "requested_obstacles": 12,
+      "marker_size_range_m": [
+        0.1,
+        0.22
+      ],
+      "marker_occlusion": "obstacle back faces hidden from start",
+      "sensor_faults_injected": false,
+      "official_robot_files_modified": false,
+      "geometry_verified": true,
+      "native_validated": false,
+      "hardware_validated": false,
+      "policy_receives_truth": false
+    },
+    "long_pocket": {
+      "name": "long_pocket",
+      "corridor_width_m": 0.55,
+      "exit_length_m": 4.2,
+      "dock_yaw_offset_degrees": -3.0000000000000004,
+      "requested_obstacles": 16,
+      "marker_size_range_m": [
+        0.1,
+        0.2
+      ],
+      "marker_occlusion": "obstacle back faces hidden from start",
+      "sensor_faults_injected": false,
+      "official_robot_files_modified": false,
+      "geometry_verified": true,
+      "native_validated": false,
+      "hardware_validated": false,
+      "policy_receives_truth": false
+    },
+    "dense": {
+      "name": "dense",
+      "corridor_width_m": 0.8,
+      "exit_length_m": 2.6,
+      "dock_yaw_offset_degrees": -20.0,
+      "requested_obstacles": 24,
+      "marker_size_range_m": [
+        0.1,
+        0.18
+      ],
+      "marker_occlusion": "obstacle back faces hidden from start",
+      "sensor_faults_injected": false,
+      "official_robot_files_modified": false,
+      "geometry_verified": true,
+      "native_validated": false,
+      "hardware_validated": false,
+      "policy_receives_truth": false
+    },
+    "sideways_small": {
+      "name": "sideways_small",
+      "corridor_width_m": 1.6,
+      "exit_length_m": 2.4,
+      "dock_yaw_offset_degrees": 75.0,
+      "requested_obstacles": 12,
+      "marker_size_range_m": [
+        0.08,
+        0.12
+      ],
+      "marker_occlusion": "obstacle back faces hidden from start",
+      "sensor_faults_injected": false,
+      "official_robot_files_modified": false,
+      "geometry_verified": true,
+      "native_validated": false,
+      "hardware_validated": false,
+      "policy_receives_truth": false
+    },
+    "combined": {
+      "name": "combined",
+      "corridor_width_m": 0.55,
+      "exit_length_m": 3.2,
+      "dock_yaw_offset_degrees": -6.000000000000001,
+      "requested_obstacles": 20,
+      "marker_size_range_m": [
+        0.08,
+        0.12
+      ],
+      "marker_occlusion": "obstacle back faces hidden from start",
+      "sensor_faults_injected": false,
+      "official_robot_files_modified": false,
+      "geometry_verified": true,
+      "native_validated": false,
+      "hardware_validated": false,
+      "policy_receives_truth": false
+    }
+  },
+  "shapes": [
+    "c_shape",
+    "u_shape",
+    "zigzag"
+  ],
+  "native_screen_duration_seconds": 90,
+  "full_task_rubric": {
+    "correct_ids": 3,
+    "approach_radius_m": 1.5,
+    "maximum_marker_error_m": 0.5,
+    "maximum_contacts": 0,
+    "deadline_sim_seconds": 600.0
+  },
+  "geometry_resolutions_m": [
+    0.025,
+    0.02
+  ],
+  "independent_test_resolution_m": 0.015,
+  "scene_tests_passed": 7,
+  "coordinator_tests_passed": 2,
+  "policy_receives_truth": false,
+  "official_robot_files_modified": false,
+  "pending_conditions": [
+    "timestamp-preserving sensor delay/dropout",
+    "wheel slip and odometry bias",
+    "dynamic obstacles",
+    "lighting and partial marker occlusion"
+  ],
+  "limits": "Static flat indoor worlds; sensor faults are not covered by these prepared scenes",
+  "source_hashes": {
+    "training_robust/official_constraint_scenarios.py": "c917384cad118df7ee7d62e9136ae0caeb263751ad32abf09ba86f6c032a3448",
+    "training_robust/run_official_constraint_screen.py": "bdafa3b9e2ce05781dbb57bd28fa12088636ce05873b3b972493e023bd38f41e"
+  },
+  "native_limit": 2,
+  "full_task_qualified": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "weight_training_coordinator": "held; nine unstarted prepared jobs plus original running U preserved; resume only after all 18 start screens pass",
+  "current_jobs": [
+    {
+      "number": 0,
+      "scenario": {
+        "file": "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml",
+        "seed": 1205000000,
+        "sha256": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446",
+        "physical_sha256": "b378d239e2fc7b624d83bdda97db1b55c4efd43096b2d67cc41a60fa974ca2ec",
+        "requested_obstacles": 9,
+        "actual_obstacles": 9,
+        "mount_profile": "hidden_obstacles",
+        "arena": {
+          "schema_version": 1,
+          "shape": "c_shape",
+          "width_m": 20.31303285287894,
+          "height_m": 14.576131553185771,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              20.31303285287894,
+              0
+            ],
+            [
+              20.31303285287894,
+              3.758275364567379
+            ],
+            [
+              3.758275364567379,
+              3.758275364567379
+            ],
+            [
+              3.758275364567379,
+              10.817856188618393
+            ],
+            [
+              20.31303285287894,
+              10.817856188618393
+            ],
+            [
+              20.31303285287894,
+              14.576131553185771
+            ],
+            [
+              0,
+              14.576131553185771
+            ]
+          ],
+          "walls": [
+            {
+              "type": "box",
+              "x": 10.15651642643947,
+              "y": 0.0,
+              "sx": 20.35303285287894,
+              "sy": 0.14,
+              "yaw": 0.0,
+              "height": 1.4,
+              "length": 20.31303285287894,
+              "inward": [
+                0.0,
+                1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 20.31303285287894,
+              "y": 1.8791376822836896,
+              "sx": 3.7982753645673792,
+              "sy": 0.14,
+              "yaw": 1.5707963267948966,
+              "height": 1.4,
+              "length": 3.758275364567379,
+              "inward": [
+                -1.0,
+                0.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 12.03565410872316,
+              "y": 3.758275364567379,
+              "sx": 16.59475748831156,
+              "sy": 0.14,
+              "yaw": 3.141592653589793,
+              "height": 1.4,
+              "length": 16.554757488311562,
+              "inward": [
+                -0.0,
+                -1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 3.758275364567379,
+              "y": 7.288065776592886,
+              "sx": 7.099580824051014,
+              "sy": 0.14,
+              "yaw": 1.5707963267948966,
+              "height": 1.4,
+              "length": 7.059580824051014,
+              "inward": [
+                -1.0,
+                0.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 12.03565410872316,
+              "y": 10.817856188618393,
+              "sx": 16.59475748831156,
+              "sy": 0.14,
+              "yaw": 0.0,
+              "height": 1.4,
+              "length": 16.554757488311562,
+              "inward": [
+                -0.0,
+                1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 20.31303285287894,
+              "y": 12.696993870902082,
+              "sx": 3.7982753645673784,
+              "sy": 0.14,
+              "yaw": 1.5707963267948966,
+              "height": 1.4,
+              "length": 3.7582753645673783,
+              "inward": [
+                -1.0,
+                0.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 10.15651642643947,
+              "y": 14.576131553185771,
+              "sx": 20.35303285287894,
+              "sy": 0.14,
+              "yaw": 3.141592653589793,
+              "height": 1.4,
+              "length": 20.31303285287894,
+              "inward": [
+                -0.0,
+                -1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 0.0,
+              "y": 7.288065776592886,
+              "sx": 14.61613155318577,
+              "sy": 0.14,
+              "yaw": -1.5707963267948966,
+              "height": 1.4,
+              "length": 14.576131553185771,
+              "inward": [
+                1.0,
+                0.0
+              ],
+              "boundary": true
+            }
+          ],
+          "doorways": [],
+          "area_m2": 179.2157905964487,
+          "pdf_fixtures": false,
+          "nominal_corridor_width_m": 3.758275364567379,
+          "challenge_version": 1
+        },
+        "constraint_profile": "narrow"
+      },
+      "status": "running",
+      "unit": "osp-official-constraint-v1-00.service",
+      "domain": 228,
+      "runtime_configuration_gate": true,
+      "velocity_profile_gate": true,
+      "scan_adapter_gate": true,
+      "floor_sensor_gate": true,
+      "drive_path_gate": true,
+      "official_description_gate": true,
+      "slam_transport_gate": true
+    }
+  ]
+}

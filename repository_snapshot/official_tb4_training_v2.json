@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:30:28.525797+00:00",
+  "captured_utc": "2026-11-14T16:44:07.759540+00:00",
   "evidence_type": "Native Gazebo coefficient development; not hardware/generalization qualification",
   "campaign": "official_tb4_cem_v2",
   "coordinator_unit": "osp-official-tb4-cem-v2.service",
@@ -120,12 +120,14 @@
       }
     }
   ],
-  "old_coordinator": "held; previous U run and ten prepared jobs preserved",
+  "old_coordinator": "held; previous U finalized with 2/3 IDs and no contacts; ten original prepared jobs preserved",
   "native_limit": 2,
   "full_rubric": "3 accurate IDs, actual <=1.5m approach each, marker map error <=0.5m, zero contacts, <=600 simulation seconds",
   "localization_limit": "Short qualifying start screen had maximum 0.686 m map position error",
   "synthetic_sensor_stress_injected": false,
   "production_promoted": false,
   "hardware_validated": false,
-  "policy_receives_truth": false
+  "policy_receives_truth": false,
+  "dispatch_status": "held_for_18_condition_start_screen",
+  "screen": "repository_snapshot/official_constraint_matrix.json"
 }

@@ -1,11 +1,11 @@
 {
-  "captured_utc": "2026-11-14T16:09:54.877416+00:00",
+  "captured_utc": "2026-11-14T16:44:07.759540+00:00",
   "evidence_type": "New native Gazebo coefficient training; no completed full-task result yet",
   "campaign": "training_robust/native90/official_tb4_cem_v1",
   "coordinator": "osp-official-tb4-cem-v1.service",
   "runtime": "/home/peter/simul/training_robust/native90/official_tb4_v4/runtime",
   "map_resolution_m": 0.05,
-  "status": "held_after_reproduced_crowded_start_failure",
+  "status": "held_all_started_jobs_finalized",
   "generation": 0,
   "phase": "train",
   "planned_training_jobs": 12,
@@ -41,31 +41,7 @@
     "contacts": 0,
     "duration_sim_s": 600
   },
-  "active": [
-    {
-      "number": 1,
-      "role": "0",
-      "output": "/home/peter/simul/training_robust/native90/official_tb4_cem_v1/jobs/00001_train_g0_0",
-      "status": "running",
-      "unit": "osp-spatial-nov15-official1-00001.service",
-      "domain": 231,
-      "floor_sensor_gate": true,
-      "runtime_configuration_gate": true,
-      "slam_transport_gate": true,
-      "velocity_profile_gate": true,
-      "drive_path_gate": true,
-      "official_description_gate": true,
-      "live": {
-        "state": "running",
-        "elapsed_seconds": 343.997,
-        "targets": 1,
-        "collisions": 0,
-        "active_action": "nav",
-        "readiness_reason": ""
-      },
-      "shape": "u_shape"
-    }
-  ],
+  "active": [],
   "coordinator_active": false,
   "dispatch_held_reason": {
     "utc": "2026-11-14T15:39:51.081377+00:00",
@@ -76,5 +52,55 @@
     0
   ],
   "untouched_prepared_jobs": 10,
-  "full_task_results_completed": 0
+  "full_task_results_completed": [
+    {
+      "reason": "timeout",
+      "success": false,
+      "targets": 2,
+      "elapsed_seconds": 600.497,
+      "collisions": 0,
+      "ground_truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "570": 0.02282823171891853,
+          "348": 0.08628862298381268
+        },
+        "expected_ids": [
+          348,
+          570,
+          881
+        ],
+        "found_ids": [
+          348,
+          570
+        ],
+        "closest_approach_m": {
+          "570": 0.6341168563644469,
+          "348": 0.5721996836376322,
+          "881": 1.4124050276419546
+        },
+        "approached_within_1_5m": 3,
+        "approach_radius_m": 1.5,
+        "all_approached": true,
+        "approached_within_2m": 3,
+        "world_to_map": [
+          -13.470760805550253,
+          1.0856127379676574,
+          -1.5125585594296704
+        ],
+        "trajectory_samples": 2949
+      },
+      "files": {
+        "map.pgm": true,
+        "map.yaml": true,
+        "map.posegraph": true,
+        "map.data": true,
+        "markers.csv": true
+      }
+    }
+  ],
+  "latest_failure": "repository_snapshot/official_u_full_task_failure.json"
 }
