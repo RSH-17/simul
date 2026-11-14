@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T14:30:57.862963+00:00",
+  "updated_utc": "2026-11-14T14:55:54.474172+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 290,
+  "uploaded_verified": 296,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -1601,6 +1601,102 @@
       "actual_approach_1_5m": false,
       "recording_frames": 603,
       "recording_seconds": 120.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v2__01_baseline__1196000000.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v2/01_baseline/episodes/1196000000/video/mission.mp4",
+      "bytes": 313272,
+      "sha256": "c6f80b958b19b763452b3c2b11dd67333e8f08f4706c441baa61f8399531029d",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v2__01_baseline__1196000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.115,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v2__02_candidate__1196000001.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v2/02_candidate/episodes/1196000001/video/mission.mp4",
+      "bytes": 231030,
+      "sha256": "61d4bbb66ad53d9e39240246ad430e8565700e05d16f6dadbd5d967bf1de1c14",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v2__02_candidate__1196000001.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.403,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v3__00_candidate__1196000000.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v3/00_candidate/episodes/1196000000/video/mission.mp4",
+      "bytes": 380693,
+      "sha256": "f48c1448cabda57cf1013fabd5960a0d8f9f1f82fb12ede20e09bb4c5f94962a",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v3__00_candidate__1196000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.303,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v3__01_baseline__1196000000.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v3/01_baseline/episodes/1196000000/video/mission.mp4",
+      "bytes": 323008,
+      "sha256": "0604ba914201ed84ba4c5579d62a6ef5ec9851150d821a3729813a2cf0a787a6",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v3__01_baseline__1196000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.246,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v3__02_candidate__1196000001.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v3/02_candidate/episodes/1196000001/video/mission.mp4",
+      "bytes": 2035404,
+      "sha256": "d0eb843085826e4a5dbd6aa064d8e728ad67b62645347232047f6b7e6bfe50eb",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v3__02_candidate__1196000001.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.246,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v3__03_baseline__1196000001.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v3/03_baseline/episodes/1196000001/video/mission.mp4",
+      "bytes": 239825,
+      "sha256": "bc1a5fed2b031152454f7ff7f2c87e6a71bdb13f610abfcf5abc587d7b674a60",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v3__03_baseline__1196000001.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.31,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
       "uploaded_verified": true
     },
     {
@@ -4651,6 +4747,14 @@
   "skipped": [
     {
       "path": "training_robust/native90/approach_v8_screen3/episodes/8600133/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/crowded_start_regression_v4/00_candidate/episodes/1196000000/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/crowded_start_regression_v4/01_baseline/episodes/1196000000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
