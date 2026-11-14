@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:59:46.924070+00:00",
+  "captured_utc": "2026-11-14T17:10:57.450496+00:00",
   "evidence_type": "Completed baseline native failure, offline installed C++ costmap comparison, ongoing same-scene native candidate",
   "baseline": "training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow",
   "baseline_result": {
@@ -20,7 +20,7 @@
   "candidate": "policy_candidates/2026-11-15_official_tb4_v7",
   "candidate_runtime": "training_robust/native90/official_tb4_v9/runtime",
   "native_comparison": "training_robust/native90/official_local_grid_screen_v1",
-  "candidate_status": "running",
+  "candidate_status": "completed",
   "candidate_input_gates": {
     "runtime_configuration_gate": true,
     "velocity_profile_gate": true,
@@ -125,5 +125,182 @@
   "full_task_qualified": false,
   "hardware_validated": false,
   "production_promoted": false,
-  "policy_receives_truth": false
+  "policy_receives_truth": false,
+  "candidate_final_escape": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 1,
+    "full_task_success": false,
+    "observed_exit_seconds": 23.46,
+    "actual_path_m": 12.904601651057103,
+    "maximum_exit_axis_progress_m": 10.323325643685584,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "candidate_final_result": {
+    "reason": "timeout",
+    "elapsed_seconds": 90.248,
+    "targets": 1,
+    "collisions": 0,
+    "ground_truth_audit": {
+      "available": true,
+      "correct_ids": false,
+      "correct_positions": false,
+      "position_tolerance_m": 0.5,
+      "position_errors_m": {
+        "903": 0.5561724954337718
+      },
+      "expected_ids": [
+        319,
+        795,
+        903
+      ],
+      "found_ids": [
+        903
+      ],
+      "closest_approach_m": {
+        "903": 0.5140756955965595,
+        "319": 11.14153714448575,
+        "795": 10.33658144920598
+      },
+      "approached_within_1_5m": 1,
+      "approach_radius_m": 1.5,
+      "all_approached": false,
+      "approached_within_2m": 1,
+      "world_to_map": [
+        -18.435144187818437,
+        -1.8787751529824028,
+        -1.95591998470128e-05
+      ],
+      "trajectory_samples": 448
+    },
+    "files": {
+      "map.pgm": true,
+      "map.yaml": true,
+      "map.posegraph": true,
+      "map.data": true,
+      "markers.csv": true
+    }
+  },
+  "candidate_pose_audit": {
+    "evidence_type": "Finalized native evaluator audit; not policy input or a replayed success",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000",
+    "world_to_map": [
+      -18.435144187818437,
+      -1.8787751529824028,
+      -1.95591998470128e-05
+    ],
+    "fixed_initial_odom_to_map": [
+      3.1780285909655866e-19,
+      -2.886241981406118e-31,
+      -4.407686685111841e-19
+    ],
+    "pose_errors": {
+      "map": {
+        "position_error_m": {
+          "samples": 447,
+          "median": 0.16182314118464536,
+          "p95": 0.599119339971719,
+          "maximum": 0.6306218242771465
+        },
+        "heading_error_deg": {
+          "samples": 447,
+          "median": 0.30033315664435395,
+          "p95": 1.6521696197169307,
+          "maximum": 2.584452214492677
+        }
+      },
+      "odom": {
+        "position_error_m": {
+          "samples": 447,
+          "median": 0.7603319085663448,
+          "p95": 4.97067352175069,
+          "maximum": 5.847211068474575
+        },
+        "heading_error_deg": {
+          "samples": 447,
+          "median": 31.322788614543843,
+          "p95": 51.93320800415557,
+          "maximum": 52.37339652263093
+        }
+      }
+    },
+    "full_task_success": false,
+    "truth_max_sample_gap_s": 0.20400000000000773,
+    "interpolation_limit_s": 0.35,
+    "ground_truth_supplied_to_policy": false,
+    "limitations": [
+      "Coarse independent truth is interpolated within 0.35 seconds; no high-rate motion precision claim.",
+      "One short run does not qualify long-run localization or physical hardware."
+    ],
+    "source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000/evaluation.json": "1c114807eb917873e298d6c179e4e9ea616418fc5891caca66b7424468cbc8ff",
+      "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000/pose_trace.csv": "798484ec24ba8391042930d4f02eeefb9994f4865a44e1ed2eb9bf4bb3373958",
+      "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000/ground_truth_trajectory.csv": "734d741c54ee9058cee70cc1fb0f92d8f7b3918774a1604fd59877d9dd6c02dc"
+    }
+  },
+  "baseline_pose_audit": {
+    "evidence_type": "Finalized native evaluator audit; not policy input or a replayed success",
+    "episode": "/home/peter/simul/training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/episodes/1205000000",
+    "world_to_map": [
+      -18.435144063176352,
+      -1.878775290362886,
+      -1.955213500733527e-05
+    ],
+    "fixed_initial_odom_to_map": [
+      2.4775537810139082e-20,
+      -3.233763516671704e-32,
+      -4.7377307145349914e-20
+    ],
+    "pose_errors": {
+      "map": {
+        "position_error_m": {
+          "samples": 447,
+          "median": 0.045624144796799077,
+          "p95": 0.055512282288177624,
+          "maximum": 0.05559360957341902
+        },
+        "heading_error_deg": {
+          "samples": 447,
+          "median": 0.15452842354689145,
+          "p95": 0.4823459410150966,
+          "maximum": 1.8186357439235326
+        }
+      },
+      "odom": {
+        "position_error_m": {
+          "samples": 447,
+          "median": 0.16301978312184767,
+          "p95": 0.1633206176826964,
+          "maximum": 0.16349853593224214
+        },
+        "heading_error_deg": {
+          "samples": 447,
+          "median": 11.5538157463861,
+          "p95": 12.542426730233482,
+          "maximum": 12.6462530331515
+        }
+      }
+    },
+    "full_task_success": false,
+    "truth_max_sample_gap_s": 0.20400000000000773,
+    "interpolation_limit_s": 0.35,
+    "ground_truth_supplied_to_policy": false,
+    "limitations": [
+      "Coarse independent truth is interpolated within 0.35 seconds; no high-rate motion precision claim.",
+      "One short run does not qualify long-run localization or physical hardware."
+    ],
+    "source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/episodes/1205000000/evaluation.json": "b40b8b12ef4749b41d6f4ed87018d56c5ee0267be7f9183ee782b7b846a78dc1",
+      "/home/peter/simul/training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/episodes/1205000000/pose_trace.csv": "2efd5661d50d298a08500bf190f08068babff7ab78c2dceb31bc6e719b81aaca",
+      "/home/peter/simul/training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/episodes/1205000000/ground_truth_trajectory.csv": "e3284e2c698d1d2bc9894d9b3922d1504a907020e48d28a921c9a25b1efe5423"
+    }
+  },
+  "start_screen_passed": true,
+  "interpretation": "Single-scene native departure improvement verified; marker coordinate error 0.556m fails 0.5m threshold. Maximum map pose error 0.631m and raw odom pose error 5.847m require further localization work.",
+  "successor_campaign": "official_local_grid_matrix_v1"
 }

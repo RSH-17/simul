@@ -6,6 +6,6 @@ This candidate changes only `local_costmap.local_costmap.ros__parameters.resolut
 
 Build: `python3 policy_candidates/2026-11-15_official_tb4_v7/build.py --workspace /absolute/new/workspace --test`.
 
-All 401 runtime tests passed, plus four read-only input, preparation and installed C++ component checks. The same-scene native comparison is running with all eight input gates verified, including actual 120×120 local costmap publication at 2.5 cm. The full body footprint and collision settings remain enabled. Not production- or hardware-qualified.
+All 401 runtime tests passed, plus four input, preparation and installed C++ component checks. The same-scene native screen completed at 90.248 s with all eight input gates verified. The body exited at 23.46 s, traveled 12.905 m and recorded zero contacts. It found one marker, whose independent closest approach was 0.514 m. Map PGM/YAML and pose graph/data were saved.
 
-Interim native observation: the body crossed the corridor exit at 23.46 simulation seconds from the first independent truth sample, including undock. No contacts were observed at the snapshot. The 90-second screen is still running; this is not a finalized full-task, generalization or hardware result.
+The marker coordinate error was 0.556 m, above the 0.5 m rubric limit; maximum map pose error was 0.631 m and maximum raw-odom position error was 5.847 m. This is a single-scene start improvement, not full-task or hardware qualification. A separate frozen campaign repeats all 18 training constraint cells and records localization errors after each completed run. Reserved holdout scenes remain unused. The original 17 queued baseline screens are preserved.

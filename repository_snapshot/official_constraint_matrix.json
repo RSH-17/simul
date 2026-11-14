@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:59:46.924070+00:00",
+  "captured_utc": "2026-11-14T17:11:43.258268+00:00",
   "evidence_type": "36 geometry-checked worlds; first native 50cm start screen failed; successor comparison running",
   "scene_generator": "training_robust/official_constraint_scenarios.py",
   "driver": "training_robust/run_official_constraint_screen.py",
@@ -177,5 +177,7 @@
     "timing_origin": "first independent ground-truth sample, including undock",
     "criterion": "body plus 1 cm fully beyond corridor rail end"
   },
-  "successor": "repository_snapshot/official_local_grid_diagnosis.json"
+  "successor": "repository_snapshot/official_local_grid_diagnosis.json",
+  "successor_native_campaign": "repository_snapshot/official_local_grid_matrix.json",
+  "old_queued_screens_preserved": 17
 }

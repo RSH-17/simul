@@ -1,0 +1,55 @@
+{
+  "captured_utc": "2026-11-14T17:11:43.258268+00:00",
+  "campaign": "official_local_grid_matrix_v1",
+  "evidence_type": "New native departure matrix; fixed weights, not coefficient training or full-task qualification",
+  "coordinator": "osp-official-local-grid-matrix-v1.service",
+  "runtime": "training_robust/native90/official_tb4_v9/runtime",
+  "conditions": 18,
+  "shapes": [
+    "c_shape",
+    "u_shape",
+    "zigzag"
+  ],
+  "profiles": [
+    "narrow",
+    "angled_start",
+    "long_pocket",
+    "dense",
+    "sideways_small",
+    "combined"
+  ],
+  "source_scenes": "official_constraints_v1/train",
+  "reserved_holdout_scenes": 18,
+  "reserved_holdout_used": false,
+  "first_scene_repeats_qualified_single_screen": true,
+  "qualification": {
+    "screen": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1",
+    "result": {
+      "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+      "episode": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000",
+      "completed": true,
+      "reason": "timeout",
+      "contacts": 0,
+      "targets": 1,
+      "full_task_success": false,
+      "observed_exit_seconds": 23.46,
+      "actual_path_m": 12.904601651057103,
+      "maximum_exit_axis_progress_m": 10.323325643685584,
+      "required_progress_m": 2.799,
+      "timing_origin": "first independent ground-truth sample, including undock",
+      "criterion": "body plus 1 cm fully beyond corridor rail end"
+    },
+    "hardware_validated": false,
+    "scope": "Single-world start qualification only; subsequent full-task training remains experimental"
+  },
+  "finished_comparison": "repository_snapshot/official_local_grid_diagnosis.json",
+  "localization_audited_after_each_complete_run": true,
+  "old_queued_screens_preserved": 17,
+  "coordinator_qualification_tests_passed": 1,
+  "native_limit": 2,
+  "full_task_qualified": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "policy_receives_truth": false,
+  "status": "running"
+}

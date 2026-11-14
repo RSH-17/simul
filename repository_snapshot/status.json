@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:59:46.924070+00:00",
+  "captured_utc": "2026-11-14T17:11:43.258268+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -137,8 +137,8 @@
   "previous_regressions_complete": true,
   "latest_change": {
     "date": "2026-11-15",
-    "name": "Local navigation grid discrepancy reproduced; same-scene finer-grid successor running",
-    "status": "native_comparison_in_progress",
+    "name": "50cm departure fixed in finalized native comparison; 18-condition successor running",
+    "status": "single_start_fix_verified_localization_unresolved",
     "generalization_verified": false
   },
   "latest_recording": {
@@ -159,12 +159,12 @@
     "hardware_validated": false
   },
   "active_supervision": {
-    "captured_utc": "2026-11-14T16:59:46.924070+00:00",
-    "current_campaign": "official_local_grid_screen_v1",
-    "unit": "osp-official-local-grid-screen-v1.service",
-    "coordinator": "osp-official-local-grid-screen-v1.service",
+    "captured_utc": "2026-11-14T17:11:43.258268+00:00",
+    "current_campaign": "official_local_grid_matrix_v1",
+    "unit": "osp-official-local-grid-matrix-v1.service",
+    "coordinator": "osp-official-local-grid-matrix-v1.service",
     "CEM_dispatch": "held; existing full-task U continues",
-    "constraint_dispatch": "held; 17 original screens preserved",
+    "constraint_dispatch": "new 18-condition local-grid matrix; original 17 screens preserved",
     "full_task_job_preserved": "osp-spatial-nov15-official2-00001.service",
     "dashboard": "osp-robot-dashboard.service",
     "automatic_code_review": false
@@ -401,18 +401,18 @@
       "campaign": "official_tb4_cem_v2",
       "live": {
         "state": "running",
-        "elapsed_seconds": 320.766,
-        "targets": 0,
+        "elapsed_seconds": 435.766,
+        "targets": 1,
         "collisions": 0,
         "active_action": "nav"
       }
     },
     {
       "number": 0,
-      "output": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1",
+      "output": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/00_c_shape_narrow",
       "status": "running",
-      "unit": "osp-official-local-grid-v1.service",
-      "domain": 229,
+      "unit": "osp-official-local-matrix-v1-00.service",
+      "domain": 228,
       "runtime_configuration_gate": true,
       "velocity_profile_gate": true,
       "scan_adapter_gate": true,
@@ -421,13 +421,13 @@
       "official_description_gate": true,
       "slam_transport_gate": true,
       "navigation_grid_gate": true,
-      "campaign": "official_local_grid_screen_v1",
+      "campaign": "official_local_grid_matrix_v1",
       "live": {
         "state": "running",
-        "elapsed_seconds": 33.748999999999995,
+        "elapsed_seconds": 18.103,
         "targets": 0,
         "collisions": 0,
-        "active_action": "spin"
+        "active_action": "nav"
       }
     }
   ],
@@ -583,7 +583,7 @@
     "scope": "Generated experiment summaries and completed videos only",
     "automatic_code_review": false,
     "host_user_services_required": true,
-    "campaign": "official_local_grid_screen_v1"
+    "campaign": "official_local_grid_matrix_v1"
   },
   "user_robot_profile": {
     "user_confirmed_model_family": "TurtleBot4",
@@ -597,13 +597,13 @@
   "tb4_platform_hardware_validated": false,
   "tb4_platform_native_screen_passed": true,
   "tb4_platform_full_task_validated": false,
-  "active_tb4_campaign": "official_local_grid_screen_v1",
+  "active_tb4_campaign": "official_local_grid_matrix_v1",
   "tb4_early_odometry_audit": "repository_snapshot/tb4_early_odometry_audit.json",
   "tb4_long_run_localization_reliable": false,
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
   "crowded_start_native_validated": false,
   "crowded_start_runtime_tests_passed": 390,
-  "active_priority_regression": "official_local_grid_screen_v1",
+  "active_priority_regression": "official_local_grid_matrix_v1",
   "crowded_scene_geometry": "repository_snapshot/crowded_scene_geometry.json",
   "crowded_supervisor_and_geometry_tests_passed": 12,
   "crowded_start_v2_candidate": "repository_snapshot/crowded_start_v2_candidate.json",
@@ -625,7 +625,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T16:59:46.924070+00:00",
+  "latest_status_check_utc": "2026-11-14T17:11:43.258268+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -705,7 +705,7 @@
     "hardware_validated": false,
     "native_training_started": true,
     "official_robot_files_modified": false,
-    "status": "local_grid_comparison_and_preserved_full_task_U_running",
+    "status": "finalized_50cm_start_improvement_multicondition_followup_running",
     "input_configuration_and_floor_gates_passed": true,
     "initial_undock_actual_path_m": 0.3533574240864025,
     "task_screen_scope": "60-second integration only; 2.749m actual path, zero contacts, map and pose graph saved",
@@ -725,5 +725,6 @@
   "official_tb4_training_v2": "repository_snapshot/official_tb4_training_v2.json",
   "official_constraint_matrix": "repository_snapshot/official_constraint_matrix.json",
   "official_u_full_task_failure": "repository_snapshot/official_u_full_task_failure.json",
-  "official_local_grid_diagnosis": "repository_snapshot/official_local_grid_diagnosis.json"
+  "official_local_grid_diagnosis": "repository_snapshot/official_local_grid_diagnosis.json",
+  "official_local_grid_matrix": "repository_snapshot/official_local_grid_matrix.json"
 }
