@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T19:31:06.936440+00:00",
+  "updated_utc": "2026-11-14T20:31:13.948271+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 321,
+  "uploaded_verified": 323,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3428,6 +3428,38 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_frontier_comparison_v1__02_u_shape_baseline__1205010303.mp4",
+      "local_path": "training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/video/mission.mp4",
+      "bytes": 12259553,
+      "sha256": "8b607a46ea185ca61fffce0b08b497b8139bf32030aab4a7cc33e6b3bc2218df",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__02_u_shape_baseline__1205010303.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.239,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_frontier_comparison_v1__03_u_shape_candidate__1205010303.mp4",
+      "local_path": "training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/video/mission.mp4",
+      "bytes": 12584933,
+      "sha256": "9b04283285b18be01517b036bc6ff8601e6119e1f1b922383f270b5d62e303ac",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__03_u_shape_candidate__1205010303.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.451,
+      "targets": 1,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_local_grid_matrix_v1__00_c_shape_narrow__1205000000.mp4",
       "local_path": "training_robust/native90/official_local_grid_matrix_v1/jobs/00_c_shape_narrow/episodes/1205000000/video/mission.mp4",
       "bytes": 1672141,
@@ -5156,11 +5188,7 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/video/mission.mp4",
+      "path": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
