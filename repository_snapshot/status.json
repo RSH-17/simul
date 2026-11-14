@@ -191,7 +191,7 @@
   "bounded_gain_candidate": "bounded_gain_candidate.json",
   "current_champion_runtime": "/home/peter/simul/training_robust/native90/live_costmap_v1/runtime",
   "physical_credit_verification": "physical_credit_verification.json",
-  "latest_observability_change": "Read-only depth patch quality capture matches nearest recorded depth within0.15sim s; detector range provenance remains unknown; no GT subscription or robot commands",
+  "latest_observability_change": "Readiness-gated passive capture, 10 watcher checks passed; benchmark processes preserved",
   "landmark_seed_diagnosis": "landmark_seed_diagnosis.json",
   "latest_built_recovery_candidate": "/home/peter/simul/training_robust/native90/encoder_delta_v3/runtime",
   "recovery_candidate_tests_passed": 275,
@@ -673,7 +673,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T18:14:27.418112+00:00",
+  "latest_status_check_utc": "2026-11-14T19:21:07.330137+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -813,10 +813,56 @@
     "all_input_gates_passed": true
   },
   "official_c_shape_pair_result": "repository_snapshot/official_c_shape_pair_result.json",
-  "official_exposure_shadow_status": "completed; one small decoding in each branch, no accepted marker samples",
+  "official_exposure_shadow_status": "paired shadow complete; U baseline observer active; U candidate observer reattached after successful native sensor startup",
   "next_passive_marker_captures": [
-    2,
-    3
+    {
+      "job": 2,
+      "unit": "osp-marker-input-job-02.service",
+      "status": "observing",
+      "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_02",
+      "observed_native_pid": 2512583,
+      "domain": 230,
+      "seen_frames": 1298,
+      "saved_frames": 0,
+      "platform_contract_samples": 49,
+      "platform_contract_all_passed": true,
+      "stop_reason": null,
+      "benchmark_control": false,
+      "maximum_frames": 200,
+      "capture_bound_wall_s": 7200
+    },
+    {
+      "job": 3,
+      "unit": "osp-marker-input-job-03.service",
+      "status": "completed",
+      "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_03",
+      "observed_native_pid": 2512593,
+      "domain": 231,
+      "seen_frames": 0,
+      "saved_frames": 0,
+      "platform_contract_samples": 1,
+      "platform_contract_all_passed": false,
+      "stop_reason": "platform_guard_failure",
+      "benchmark_control": false,
+      "maximum_frames": 200,
+      "capture_bound_wall_s": 7200
+    },
+    {
+      "job": 3,
+      "unit": "osp-marker-input-job-03-ready.service",
+      "status": "observing",
+      "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_03_ready",
+      "observed_native_pid": 2512593,
+      "domain": 231,
+      "seen_frames": 727,
+      "saved_frames": 0,
+      "platform_contract_samples": 27,
+      "platform_contract_all_passed": true,
+      "stop_reason": null,
+      "benchmark_control": false,
+      "maximum_frames": 200,
+      "capture_bound_wall_s": 7200
+    }
   ],
   "active_priority_regression_status": "completed: 1/2 departure screens passed; not qualified",
   "latest_dock_native_result": {

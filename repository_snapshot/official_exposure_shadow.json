@@ -83,7 +83,7 @@
     "Original method runs first and can delay the queued callback by its inherited timeout",
     "More observations do not prove correct IDs, coordinates or improved closed-loop success"
   ],
-  "captured_utc": "2026-11-14T19:11:05.448174+00:00",
+  "captured_utc": "2026-11-14T19:21:07.330137+00:00",
   "status": "completed",
   "integration_tests_passed": 1,
   "observer_script_sha256": "ebdcff7f0a089f3254eebc8fca02e3c830ebb3d3f5c339f4eb39f8924b22f39a",
@@ -129,21 +129,64 @@
     {
       "job": 2,
       "unit": "osp-marker-input-job-02.service",
-      "status": "waiting_for_actual_native_process",
-      "wait_bound_wall_s": 1800,
-      "capture_bound_wall_s": 7200,
+      "status": "observing",
+      "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_02",
+      "observed_native_pid": 2512583,
+      "domain": 230,
+      "seen_frames": 1298,
+      "saved_frames": 0,
+      "platform_contract_samples": 49,
+      "platform_contract_all_passed": true,
+      "stop_reason": null,
+      "benchmark_control": false,
       "maximum_frames": 200,
-      "benchmark_control": false
+      "capture_bound_wall_s": 7200
     },
     {
       "job": 3,
       "unit": "osp-marker-input-job-03.service",
-      "status": "waiting_for_actual_native_process",
-      "wait_bound_wall_s": 1800,
-      "capture_bound_wall_s": 7200,
+      "status": "completed",
+      "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_03",
+      "observed_native_pid": 2512593,
+      "domain": 231,
+      "seen_frames": 0,
+      "saved_frames": 0,
+      "platform_contract_samples": 1,
+      "platform_contract_all_passed": false,
+      "stop_reason": "platform_guard_failure",
+      "benchmark_control": false,
       "maximum_frames": 200,
-      "benchmark_control": false
+      "capture_bound_wall_s": 7200
+    },
+    {
+      "job": 3,
+      "unit": "osp-marker-input-job-03-ready.service",
+      "status": "observing",
+      "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_03_ready",
+      "observed_native_pid": 2512593,
+      "domain": 231,
+      "seen_frames": 727,
+      "saved_frames": 0,
+      "platform_contract_samples": 27,
+      "platform_contract_all_passed": true,
+      "stop_reason": null,
+      "benchmark_control": false,
+      "maximum_frames": 200,
+      "capture_bound_wall_s": 7200
     }
   ],
-  "capture_watcher_tests_passed": 6
+  "capture_watcher_tests_passed": 10,
+  "capture_readiness_repair": {
+    "script": "training_robust/capture_marker_range_for_job_v2.py",
+    "source_sha256": "e9e44e87f03b4cd47048120ff9640d36fda5dddbf5028bf1ee5f33c6657cc7ed",
+    "requires": [
+      "actual native PID",
+      "live mission running",
+      "native platform passed",
+      "startup guard success"
+    ],
+    "original_aborted_capture_preserved": true,
+    "native_job_stopped_or_restarted": false,
+    "reason": "First job-03 observer attached during sensor startup and stopped itself; new observer waits for readiness in a separate output directory."
+  }
 }
