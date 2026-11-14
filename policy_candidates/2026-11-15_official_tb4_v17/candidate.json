@@ -1,0 +1,35 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v17",
+  "parent_candidate": "2026-11-15_official_tb4_v16",
+  "additional_candidates": [
+    "2026-11-15_official_tb4_v8",
+    "2026-11-15_official_tb4_v11",
+    "2026-11-15_official_tb4_v12",
+    "2026-11-15_official_tb4_v14",
+    "2026-11-15_official_tb4_v15"
+  ],
+  "status": "built_not_queued",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "native_queued": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "ground_truth_inputs": false,
+  "clearance_margins_changed": false,
+  "slam_loop_settings_changed": false,
+  "source_branch_reason": "Combine departure and dock repair with camera-calibrated inspection, exposure buffering, range fallback, map-frame look and opt-in deadline handling.",
+  "mission_merge_inputs": {
+    "training_robust/native90/official_tb4_v14/runtime/src/osp_mission/osp_mission/mission.py": "159e7521511f3cfdd2ea8789fd0fb879abfac3dbaa39a71109d25f2529c0970a",
+    "training_robust/native90/official_tb4_v10/runtime/src/osp_mission/osp_mission/mission.py": "e9cd5ca81aea6128f4e950476cc40d17460cbcd0086ca8d0c72235417ab8cef5",
+    "training_robust/native90/official_tb4_v12/runtime/src/osp_mission/osp_mission/mission.py": "d2fc3732c697b68d3c3e9d3a80f92b73129cb62053a87409edb0992f59325ff1"
+  },
+  "mission_conflict_resolution": "Keep both planning_settings and dock_anchor status fields",
+  "overlay_files": {
+    "osp_mission/mission.py": "b9715ad75d37ba3ef5a63c3dd6dc4aa55d110d033fa204e160c66ed1dd078ca1"
+  },
+  "build_script_sha256": "2e6d95c889d96a4b79f4e3ec4a846cd86dd783abb8421cb04ee5c2f9425ca57c",
+  "runtime_tests_passed": 478,
+  "recorded_initial_transit_checks": 13
+}

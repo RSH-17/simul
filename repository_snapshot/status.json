@@ -669,7 +669,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T20:48:33.001451+00:00",
+  "latest_status_check_utc": "2026-11-14T21:05:25.339646+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -749,12 +749,12 @@
     "hardware_validated": false,
     "native_training_started": true,
     "official_robot_files_modified": false,
-    "status": "U pair failed; v13 escaped both departures but sideways oscillated; v16 replay fix queued while preserved zigzag pair runs",
+    "status": "Zigzag pair running, v16 departure regression queued; v17 integration passed 478 tests but is unqueued; bad loop closure isolated in offline U replay",
     "input_configuration_and_floor_gates_passed": true,
     "initial_undock_actual_path_m": 0.3533574240864025,
     "task_screen_scope": "60-second integration only; 2.749m actual path, zero contacts, map and pose graph saved",
     "full_task_success": false,
-    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v16"
+    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v17"
   },
   "current_diagnostic_runtimes": [
     "training_robust/native90/official_tb4_v10/runtime",
@@ -782,14 +782,14 @@
   "official_sensor_ranking_audit": "repository_snapshot/official_sensor_ranking_audit.json",
   "official_exposure_time_candidate": "repository_snapshot/official_exposure_time_candidate.json",
   "latest_candidate_validation": {
-    "candidate": "policy_candidates/2026-11-15_official_tb4_v16",
-    "runtime_tests_passed": 435,
-    "auxiliary_tests_passed": 7,
-    "native_queued": true,
+    "candidate": "policy_candidates/2026-11-15_official_tb4_v17",
+    "runtime_tests_passed": 478,
+    "recorded_initial_transit_checks": 13,
+    "native_queued": false,
     "native_validated": false,
     "production_promoted": false,
     "native_validation_complete": false,
-    "native_validation_status": "waiting_for_two_existing_native_slots"
+    "native_validation_status": "built_not_queued; isolated v16 departure screen already queued"
   },
   "official_deadline_candidate": "repository_snapshot/official_deadline_candidate.json",
   "official_exposure_shadow": "repository_snapshot/official_exposure_shadow.json",
@@ -891,5 +891,42 @@
       "maximum_frames": 200,
       "capture_bound_wall_s": 7200
     }
-  ]
+  ],
+  "official_slam_loop_diagnosis": "repository_snapshot/official_slam_loop_diagnosis.json",
+  "official_slam_component_study": {
+    "path": "training_robust/native90/official_slam_gate_study_v1",
+    "unit": "osp-official-slam-gate-study-v1.service",
+    "verified_main_pid": 2588713,
+    "status": "running",
+    "case_count": 4,
+    "shapes": [
+      "c_shape",
+      "u_shape"
+    ],
+    "variants": [
+      "baseline",
+      "strict_loop"
+    ],
+    "baseline_u_reused": true,
+    "strict_loop_parameters": {
+      "loop_match_minimum_response_coarse": 0.55,
+      "loop_match_minimum_response_fine": 0.65,
+      "loop_match_maximum_variance_coarse": 1.0
+    },
+    "native_runtime_changed": false,
+    "first_completed_pair": {
+      "case": 0,
+      "shape": "c_shape",
+      "maximum_position_error_m": {
+        "baseline": 0.6065584962505368,
+        "strict_loop": 0.6065584962505368
+      },
+      "accepted_loops": {
+        "baseline": 1,
+        "strict_loop": 1
+      },
+      "conclusion": "This component case is unchanged, not improved"
+    }
+  },
+  "official_integrated_candidate": "repository_snapshot/official_integrated_candidate.json"
 }

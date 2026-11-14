@@ -1,0 +1,730 @@
+{
+  "captured_utc": "2026-11-14T21:03:09.133343+00:00",
+  "evidence_type": "Completed recorded-scan ablation and native evaluator audits; not a new mission",
+  "native_u_baseline": {
+    "native_online": {
+      "path": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/pose_trace.csv",
+      "sha256": "c415f4a3821ab44b29ca2e1c09f9bbda036309dcd558f8ba758d84dda073c5d6",
+      "accounting": {
+        "finite_unique_poses": 2948,
+        "evaluated": 2947,
+        "excluded": 1,
+        "maximum_truth_interpolation_gap_s": 0.35
+      },
+      "position_error_m": {
+        "samples": 2947,
+        "median": 0.1287636066970017,
+        "p95": 1.55816056231269,
+        "maximum": 1.5919868721547368
+      },
+      "first_over_half_m": {
+        "stamp_sim_s": 318.081,
+        "error_m": 1.5911638320358783
+      },
+      "windows": [
+        {
+          "start_sim_s": 0,
+          "position_error_m": {
+            "samples": 226,
+            "median": 0.02156595086058817,
+            "p95": 0.05966865135920196,
+            "maximum": 0.06089036064544051
+          }
+        },
+        {
+          "start_sim_s": 50,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.04079802606058434,
+            "p95": 0.050609543526287104,
+            "maximum": 0.0574972587524987
+          }
+        },
+        {
+          "start_sim_s": 100,
+          "position_error_m": {
+            "samples": 246,
+            "median": 0.06241490948287669,
+            "p95": 0.07134293037068964,
+            "maximum": 0.07235168298490514
+          }
+        },
+        {
+          "start_sim_s": 150,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.06843573830576913,
+            "p95": 0.08155227712358888,
+            "maximum": 0.08550822075536905
+          }
+        },
+        {
+          "start_sim_s": 200,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.09709724705037465,
+            "p95": 0.12506080651622486,
+            "maximum": 0.12875797654186613
+          }
+        },
+        {
+          "start_sim_s": 250,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.13964793207366785,
+            "p95": 0.14698648217486526,
+            "maximum": 0.1474510675994451
+          }
+        },
+        {
+          "start_sim_s": 300,
+          "position_error_m": {
+            "samples": 245,
+            "median": 1.5509126646467457,
+            "p95": 1.5672768298952102,
+            "maximum": 1.5919868721547368
+          }
+        },
+        {
+          "start_sim_s": 350,
+          "position_error_m": {
+            "samples": 245,
+            "median": 1.5555647587352976,
+            "p95": 1.5696709239212203,
+            "maximum": 1.576626781945055
+          }
+        },
+        {
+          "start_sim_s": 400,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.2435081618770299,
+            "p95": 0.3136285844391508,
+            "maximum": 0.5690796920838501
+          }
+        },
+        {
+          "start_sim_s": 450,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.08018477596174452,
+            "p95": 0.15665806165762075,
+            "maximum": 0.18010194701841237
+          }
+        },
+        {
+          "start_sim_s": 500,
+          "position_error_m": {
+            "samples": 245,
+            "median": 1.0425346733854453,
+            "p95": 1.1302052284296509,
+            "maximum": 1.1481074696629547
+          }
+        },
+        {
+          "start_sim_s": 550,
+          "position_error_m": {
+            "samples": 245,
+            "median": 0.689128070258469,
+            "p95": 0.957185431951937,
+            "maximum": 0.9754809200174588
+          }
+        },
+        {
+          "start_sim_s": 600,
+          "position_error_m": {
+            "samples": 25,
+            "median": 0.55084369572907,
+            "p95": 0.5746165668205611,
+            "maximum": 0.576696843276407
+          }
+        }
+      ]
+    },
+    "finalized_graph": {
+      "path": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/20261115_053027/graph_scan_poses.csv",
+      "sha256": "522342d484d3756bd34a1617c107e97757ffa89092f551af72c6668aa0021210",
+      "accounting": {
+        "finite_unique_poses": 1011,
+        "evaluated": 1010,
+        "excluded": 1,
+        "maximum_truth_interpolation_gap_s": 0.35
+      },
+      "position_error_m": {
+        "samples": 1010,
+        "median": 0.8274950844662565,
+        "p95": 1.3956878991395711,
+        "maximum": 1.4466408601227776
+      },
+      "first_over_half_m": {
+        "stamp_sim_s": 45.52,
+        "error_m": 0.5192043754987359
+      },
+      "windows": [
+        {
+          "start_sim_s": 0,
+          "position_error_m": {
+            "samples": 70,
+            "median": 0.04618276242460295,
+            "p95": 0.6117106847853373,
+            "maximum": 0.6273584060148001
+          }
+        },
+        {
+          "start_sim_s": 50,
+          "position_error_m": {
+            "samples": 78,
+            "median": 1.092127433481196,
+            "p95": 1.1047490877499868,
+            "maximum": 1.1054729560150036
+          }
+        },
+        {
+          "start_sim_s": 100,
+          "position_error_m": {
+            "samples": 85,
+            "median": 1.0439021406881495,
+            "p95": 1.0922799355585768,
+            "maximum": 1.0963226395206447
+          }
+        },
+        {
+          "start_sim_s": 150,
+          "position_error_m": {
+            "samples": 76,
+            "median": 0.7158255682825387,
+            "p95": 0.8694051556676299,
+            "maximum": 0.8728090138329276
+          }
+        },
+        {
+          "start_sim_s": 200,
+          "position_error_m": {
+            "samples": 60,
+            "median": 0.5487112831059116,
+            "p95": 0.6019858863734666,
+            "maximum": 0.6040429543183421
+          }
+        },
+        {
+          "start_sim_s": 250,
+          "position_error_m": {
+            "samples": 83,
+            "median": 0.4064536017593656,
+            "p95": 0.4997872424640288,
+            "maximum": 0.5133065665114442
+          }
+        },
+        {
+          "start_sim_s": 300,
+          "position_error_m": {
+            "samples": 89,
+            "median": 1.3308136618701145,
+            "p95": 1.4383214667232926,
+            "maximum": 1.4421636197383783
+          }
+        },
+        {
+          "start_sim_s": 350,
+          "position_error_m": {
+            "samples": 91,
+            "median": 1.3822866266056129,
+            "p95": 1.4454952622321926,
+            "maximum": 1.4466408601227776
+          }
+        },
+        {
+          "start_sim_s": 400,
+          "position_error_m": {
+            "samples": 89,
+            "median": 0.4726158857342701,
+            "p95": 0.6082717221878654,
+            "maximum": 0.633877320969855
+          }
+        },
+        {
+          "start_sim_s": 450,
+          "position_error_m": {
+            "samples": 97,
+            "median": 0.9363360089128807,
+            "p95": 1.1137420196337644,
+            "maximum": 1.1267544283535451
+          }
+        },
+        {
+          "start_sim_s": 500,
+          "position_error_m": {
+            "samples": 94,
+            "median": 1.1250137070266006,
+            "p95": 1.1385642920196,
+            "maximum": 1.1497772341076509
+          }
+        },
+        {
+          "start_sim_s": 550,
+          "position_error_m": {
+            "samples": 90,
+            "median": 0.7190035275928215,
+            "p95": 0.9588547823265917,
+            "maximum": 0.9757340186159135
+          }
+        },
+        {
+          "start_sim_s": 600,
+          "position_error_m": {
+            "samples": 8,
+            "median": 0.5542920499621051,
+            "p95": 0.5719404556129384,
+            "maximum": 0.5737863871035396
+          }
+        }
+      ]
+    }
+  },
+  "marker_coordinate_changes": [
+    {
+      "id": 204,
+      "original_error_m": 0.13196983664522952,
+      "finalized_error_m": 0.4684819161258158,
+      "shift_m": 0.33880793145708143,
+      "error_change_m": 0.33651207948058626
+    },
+    {
+      "id": 81,
+      "original_error_m": 0.16426645889529906,
+      "finalized_error_m": 0.62715455402249,
+      "shift_m": 0.5482566864215284,
+      "error_change_m": 0.4628880951271909
+    }
+  ],
+  "component_replays": {
+    "baseline": {
+      "path": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/u_baseline_slam_component_v1/baseline.online.csv",
+      "sha256": "8404531a2a53b43cd81fbbfbe23e885ba2be28598e4ceffabd85bf4e107466b8",
+      "accounting": {
+        "finite_unique_poses": 1011,
+        "evaluated": 1010,
+        "excluded": 1,
+        "maximum_truth_interpolation_gap_s": 0.35
+      },
+      "position_error_m": {
+        "samples": 1010,
+        "median": 0.13090058323971523,
+        "p95": 1.5585443351547934,
+        "maximum": 1.5918253522100547
+      },
+      "first_over_half_m": {
+        "stamp_sim_s": 317.632,
+        "error_m": 1.5918253522100547
+      },
+      "windows": [
+        {
+          "start_sim_s": 0,
+          "position_error_m": {
+            "samples": 70,
+            "median": 0.027510300483124722,
+            "p95": 0.0557243935479678,
+            "maximum": 0.06118749285074038
+          }
+        },
+        {
+          "start_sim_s": 50,
+          "position_error_m": {
+            "samples": 78,
+            "median": 0.04096386982476988,
+            "p95": 0.05098504263019941,
+            "maximum": 0.057145159793446934
+          }
+        },
+        {
+          "start_sim_s": 100,
+          "position_error_m": {
+            "samples": 85,
+            "median": 0.0620614952109428,
+            "p95": 0.07130524629035181,
+            "maximum": 0.07202076463120681
+          }
+        },
+        {
+          "start_sim_s": 150,
+          "position_error_m": {
+            "samples": 76,
+            "median": 0.06836672204089173,
+            "p95": 0.08190957653176352,
+            "maximum": 0.08520213014796502
+          }
+        },
+        {
+          "start_sim_s": 200,
+          "position_error_m": {
+            "samples": 60,
+            "median": 0.09914147861462025,
+            "p95": 0.12427666478958416,
+            "maximum": 0.12769517088803023
+          }
+        },
+        {
+          "start_sim_s": 250,
+          "position_error_m": {
+            "samples": 83,
+            "median": 0.137882307303091,
+            "p95": 0.14612513879536515,
+            "maximum": 0.14836692449438843
+          }
+        },
+        {
+          "start_sim_s": 300,
+          "position_error_m": {
+            "samples": 89,
+            "median": 1.551597403645542,
+            "p95": 1.570180475288722,
+            "maximum": 1.5918253522100547
+          }
+        },
+        {
+          "start_sim_s": 350,
+          "position_error_m": {
+            "samples": 91,
+            "median": 1.5554631516717161,
+            "p95": 1.5699656208297,
+            "maximum": 1.576521128065479
+          }
+        },
+        {
+          "start_sim_s": 400,
+          "position_error_m": {
+            "samples": 89,
+            "median": 0.25367085783694826,
+            "p95": 0.3051972642244327,
+            "maximum": 0.4993601061217798
+          }
+        },
+        {
+          "start_sim_s": 450,
+          "position_error_m": {
+            "samples": 97,
+            "median": 0.07981020727680364,
+            "p95": 0.15566026171411138,
+            "maximum": 0.17368330364148515
+          }
+        },
+        {
+          "start_sim_s": 500,
+          "position_error_m": {
+            "samples": 94,
+            "median": 1.04654077082361,
+            "p95": 1.1315236399226896,
+            "maximum": 1.1479179744726145
+          }
+        },
+        {
+          "start_sim_s": 550,
+          "position_error_m": {
+            "samples": 90,
+            "median": 0.7190035275928215,
+            "p95": 0.9588547823265917,
+            "maximum": 0.9757340186159135
+          }
+        },
+        {
+          "start_sim_s": 600,
+          "position_error_m": {
+            "samples": 8,
+            "median": 0.5542920499621051,
+            "p95": 0.5719404556129384,
+            "maximum": 0.5737863871035396
+          }
+        }
+      ],
+      "accepted_loop_events": [
+        "317.632 BEGIN Closing loop...",
+        "514.529 BEGIN Closing loop..."
+      ],
+      "events_sha256": "88df86ec3ac9e877f9bf6d2c97392c4c4edb12729f4d3722048f97b0398ae407",
+      "parameters_sha256": "b8edeb8a98ac38411ed31ee35a5af99c3c399be61bc658b6a57bd84876c0aa72"
+    },
+    "no_loop": {
+      "path": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/u_baseline_slam_component_v1/no_loop.online.csv",
+      "sha256": "f51106d4dc32af4e5d4ddebcea6fa6b7448c40b3d0d1dc35642e63b5a026dfd1",
+      "accounting": {
+        "finite_unique_poses": 1011,
+        "evaluated": 1010,
+        "excluded": 1,
+        "maximum_truth_interpolation_gap_s": 0.35
+      },
+      "position_error_m": {
+        "samples": 1010,
+        "median": 0.07971041763186307,
+        "p95": 0.14160874503834053,
+        "maximum": 0.14836692449438843
+      },
+      "first_over_half_m": null,
+      "windows": [
+        {
+          "start_sim_s": 0,
+          "position_error_m": {
+            "samples": 70,
+            "median": 0.027510300483124722,
+            "p95": 0.0557243935479678,
+            "maximum": 0.06118749285074038
+          }
+        },
+        {
+          "start_sim_s": 50,
+          "position_error_m": {
+            "samples": 78,
+            "median": 0.04096386982476988,
+            "p95": 0.05098504263019941,
+            "maximum": 0.057145159793446934
+          }
+        },
+        {
+          "start_sim_s": 100,
+          "position_error_m": {
+            "samples": 85,
+            "median": 0.0620614952109428,
+            "p95": 0.07130524629035181,
+            "maximum": 0.07202076463120681
+          }
+        },
+        {
+          "start_sim_s": 150,
+          "position_error_m": {
+            "samples": 76,
+            "median": 0.06836672204089173,
+            "p95": 0.08190957653176352,
+            "maximum": 0.08520213014796502
+          }
+        },
+        {
+          "start_sim_s": 200,
+          "position_error_m": {
+            "samples": 60,
+            "median": 0.09914147861462025,
+            "p95": 0.12427666478958416,
+            "maximum": 0.12769517088803023
+          }
+        },
+        {
+          "start_sim_s": 250,
+          "position_error_m": {
+            "samples": 83,
+            "median": 0.137882307303091,
+            "p95": 0.14612513879536515,
+            "maximum": 0.14836692449438843
+          }
+        },
+        {
+          "start_sim_s": 300,
+          "position_error_m": {
+            "samples": 89,
+            "median": 0.12905109399189157,
+            "p95": 0.1344613247890451,
+            "maximum": 0.13593266984658411
+          }
+        },
+        {
+          "start_sim_s": 350,
+          "position_error_m": {
+            "samples": 91,
+            "median": 0.1295998426867197,
+            "p95": 0.13179642716369785,
+            "maximum": 0.13270111953402242
+          }
+        },
+        {
+          "start_sim_s": 400,
+          "position_error_m": {
+            "samples": 89,
+            "median": 0.13557142488246998,
+            "p95": 0.1467688159267808,
+            "maximum": 0.14722287604476272
+          }
+        },
+        {
+          "start_sim_s": 450,
+          "position_error_m": {
+            "samples": 97,
+            "median": 0.060306816796292406,
+            "p95": 0.08708551275918369,
+            "maximum": 0.0995779377137863
+          }
+        },
+        {
+          "start_sim_s": 500,
+          "position_error_m": {
+            "samples": 94,
+            "median": 0.06148164122826125,
+            "p95": 0.07042037453110532,
+            "maximum": 0.07310259347296795
+          }
+        },
+        {
+          "start_sim_s": 550,
+          "position_error_m": {
+            "samples": 90,
+            "median": 0.08107744565379826,
+            "p95": 0.12309698851451406,
+            "maximum": 0.1249203160012021
+          }
+        },
+        {
+          "start_sim_s": 600,
+          "position_error_m": {
+            "samples": 8,
+            "median": 0.12189095084290377,
+            "p95": 0.12553637808063564,
+            "maximum": 0.12598991503461227
+          }
+        }
+      ],
+      "accepted_loop_events": [],
+      "events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "parameters_sha256": "dfa99752f9e873b42022c5305018699b453fa59dbdceb20de460fc45f2a42065"
+    }
+  },
+  "controlled_inputs": {
+    "recorded_inputs_equal": true,
+    "recorded_scans": 1011,
+    "compared_columns": [
+      "original_node_id",
+      "stamp_sim_s",
+      "odom_x",
+      "odom_y",
+      "odom_yaw"
+    ],
+    "parameter_delta": {
+      "DoLoopClosing": [
+        "true",
+        "false"
+      ]
+    },
+    "accepted": {
+      "baseline": 1011,
+      "no_loop": 1011
+    }
+  },
+  "other_original_runs": [
+    {
+      "job": 0,
+      "markers": [
+        {
+          "id": 795,
+          "original_error_m": 0.4122422327444854,
+          "finalized_error_m": 0.3132066531868941,
+          "shift_m": 0.10067074306866741,
+          "error_change_m": -0.09903557955759129
+        }
+      ],
+      "pose_error_m": {
+        "native_online": {
+          "samples": 2948,
+          "median": 0.42778826804362263,
+          "p95": 0.5914078174288828,
+          "maximum": 0.6058575752070019
+        },
+        "finalized_graph": {
+          "samples": 922,
+          "median": 0.4000045990960356,
+          "p95": 0.5311526702391601,
+          "maximum": 0.5408117909222143
+        }
+      },
+      "audit": "training_robust/native90/official_frontier_comparison_v1/job_00_native_coordinate_audit.json",
+      "sha256": "eaf7f29611e4d9487f6ee6d14d00361e1b49e61861e3225a7025df45f2a08cb8"
+    },
+    {
+      "job": 1,
+      "markers": [
+        {
+          "id": 795,
+          "original_error_m": 0.2550279266937652,
+          "finalized_error_m": 0.3354014516212566,
+          "shift_m": 0.15586154164686866,
+          "error_change_m": 0.08037352492749145
+        }
+      ],
+      "pose_error_m": {
+        "native_online": {
+          "samples": 2947,
+          "median": 0.5921466565558184,
+          "p95": 0.7906465614413126,
+          "maximum": 0.8219006009263858
+        },
+        "finalized_graph": {
+          "samples": 1038,
+          "median": 0.6290391862808731,
+          "p95": 0.8013405713246116,
+          "maximum": 0.8265596184644717
+        }
+      },
+      "audit": "training_robust/native90/official_frontier_comparison_v1/job_01_native_coordinate_audit.json",
+      "sha256": "9806423a5ce4da203b9d021bea1c520765d08cf2390e428cea4123d68ee1c31f"
+    },
+    {
+      "job": 3,
+      "markers": [
+        {
+          "id": 81,
+          "original_error_m": 0.09439149024116876,
+          "finalized_error_m": 0.09577674809550359,
+          "shift_m": 0.00166553115238732,
+          "error_change_m": 0.001385257854334826
+        }
+      ],
+      "pose_error_m": {
+        "native_online": {
+          "samples": 2948,
+          "median": 0.12214970902067658,
+          "p95": 0.17298041362660965,
+          "maximum": 0.1882703451144533
+        },
+        "finalized_graph": {
+          "samples": 1033,
+          "median": 0.12020659351613244,
+          "p95": 0.1725748019779083,
+          "maximum": 0.18799409657642435
+        }
+      },
+      "audit": "training_robust/native90/official_frontier_comparison_v1/job_03_native_coordinate_audit.json",
+      "sha256": "852bae5329b0dc975790ecadfaf3a2787c0097196abb9c6546fc73003ff647b3"
+    }
+  ],
+  "audit": "training_robust/native90/official_frontier_comparison_v1/u_baseline_component_coordinate_audit.json",
+  "audit_sha256": "668a264d21f4754af17865ce228580bf2439fcab67c9d65fca9aaa58de6143fd",
+  "diagnosis": "In this retained-scan recording, large position errors follow accepted loop closures; disabling only DoLoopClosing reduces maximum error from 1.591825m to 0.148367m.",
+  "next_study": {
+    "path": "training_robust/native90/official_slam_gate_study_v1",
+    "unit": "osp-official-slam-gate-study-v1.service",
+    "verified_main_pid": 2588713,
+    "status": "running",
+    "case_count": 4,
+    "shapes": [
+      "c_shape",
+      "u_shape"
+    ],
+    "variants": [
+      "baseline",
+      "strict_loop"
+    ],
+    "baseline_u_reused": true,
+    "strict_loop_parameters": {
+      "loop_match_minimum_response_coarse": 0.55,
+      "loop_match_minimum_response_fine": 0.65,
+      "loop_match_maximum_variance_coarse": 1.0
+    },
+    "native_runtime_changed": false
+  },
+  "validation_tests_passed": 6,
+  "ground_truth_supplied_to_mapper": false,
+  "weights_retrained": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "limits": [
+    "Retained scans omit the original ROS transport, discarded scans and mapper scheduling.",
+    "Component output is not a new navigation, recognition or completion result.",
+    "Loop event timing plus a controlled no-loop comparison is evidence about this recording only.",
+    "No-loop is a diagnostic ablation; lifelong SLAM and beneficial loop closure remain requirements.",
+    "Four original 600-second development runs are studied; no holdout has been consumed."
+  ]
+}

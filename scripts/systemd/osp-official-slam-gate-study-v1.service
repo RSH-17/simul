@@ -1,0 +1,15 @@
+[Unit]
+Description=Read-only sequential official TurtleBot4 SLAM loop-gate component study
+
+[Service]
+Type=simple
+WorkingDirectory=%h/simul
+ExecStart=/bin/bash -c 'source /opt/ros/jazzy/setup.bash; exec /usr/bin/python3 -u %h/simul/training_robust/run_official_slam_gate_study.py --output %h/simul/training_robust/native90/official_slam_gate_study_v1 --run-prepared'
+CPUQuota=25%
+MemoryHigh=1536M
+MemoryMax=2G
+MemorySwapMax=256M
+KillMode=control-group
+Restart=no
+StandardOutput=append:%h/simul/training_robust/native90/official_slam_gate_study_v1/service.log
+StandardError=append:%h/simul/training_robust/native90/official_slam_gate_study_v1/service.log

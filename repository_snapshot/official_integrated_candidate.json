@@ -1,0 +1,60 @@
+{
+  "captured_utc": "2026-11-14T21:05:25.339646+00:00",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v17",
+  "runtime": "training_robust/native90/official_tb4_v19/runtime",
+  "parent_candidate": "2026-11-15_official_tb4_v16",
+  "status": "built_not_queued",
+  "evidence_type": "Integrated source build, runtime tests and initial observed-map replay; not a native result",
+  "runtime_tests_passed": 478,
+  "installed_mission_policy_load_verified": true,
+  "deadline_aware": true,
+  "recorded_initial_transit_checks": 13,
+  "initial_transit_candidates_unchanged": true,
+  "changed_production_files": [
+    "osp_mission/detector.py",
+    "osp_mission/edge_policy.py",
+    "osp_mission/exposure_queue.py",
+    "osp_mission/face_directed_look.py",
+    "osp_mission/mission.py",
+    "osp_mission/time_budget.py"
+  ],
+  "build_log_sha256": "3209f4eb78a31dea229411f4bc71e0395134a009294e42a04726767dba6b26a7",
+  "integration_replay": "training_robust/native90/official_tb4_v19/runtime/integration_replay/comparison.json",
+  "integration_replay_sha256": "86c757d2bf7fd4b4a533bcc94dddef02bb944a4ef44cd753fed48b677ab754fd",
+  "source_sha256": {
+    "osp_mission/detector.py": "bc2808571aded359f1b7f8f18d9d0034fa03b4d12cd92bd01f14c7b30344ed8c",
+    "osp_mission/edge_policy.py": "bf40e2aa8a4049db6b89f2a199878fa0474584603861369642b84d6e6b59d0e9",
+    "osp_mission/exposure_queue.py": "aa146afabf284a926c2cfaf2650745fba6d14829430de91790b22840f91a9891",
+    "osp_mission/face_directed_look.py": "d333355783a2eb67e94170b6833264a6879c12d805ac1612cf1dcd2e54c3d066",
+    "osp_mission/mission.py": "b9715ad75d37ba3ef5a63c3dd6dc4aa55d110d033fa204e160c66ed1dd078ca1",
+    "osp_mission/time_budget.py": "6e58bb888ac33656b93bd1a9c0db00c90b8ebc9c3cdb01024adf619dd71f4cc3"
+  },
+  "candidate_layers": [
+    "2026-11-15_official_tb4_v8",
+    "2026-11-15_official_tb4_v11",
+    "2026-11-15_official_tb4_v12",
+    "2026-11-15_official_tb4_v14",
+    "2026-11-15_official_tb4_v15"
+  ],
+  "mission_merge_inputs": {
+    "training_robust/native90/official_tb4_v14/runtime/src/osp_mission/osp_mission/mission.py": "159e7521511f3cfdd2ea8789fd0fb879abfac3dbaa39a71109d25f2529c0970a",
+    "training_robust/native90/official_tb4_v10/runtime/src/osp_mission/osp_mission/mission.py": "e9cd5ca81aea6128f4e950476cc40d17460cbcd0086ca8d0c72235417ab8cef5",
+    "training_robust/native90/official_tb4_v12/runtime/src/osp_mission/osp_mission/mission.py": "d2fc3732c697b68d3c3e9d3a80f92b73129cb62053a87409edb0992f59325ff1"
+  },
+  "native_queued": false,
+  "native_validated": false,
+  "weights_retrained": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "clearance_margins_changed": false,
+  "slam_loop_settings_changed": false,
+  "ground_truth_used": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "limits": [
+    "Individual fixes have different evidence scopes; passing integration tests is not successful combined motion.",
+    "The isolated v16 departure screen remains queued after the preserved zigzag native pair.",
+    "Loop-gate component comparisons are separate; no stricter SLAM setting is included yet.",
+    "Deadline awareness requires the accompanying policy settings; bare legacy policies retain their original default."
+  ]
+}
