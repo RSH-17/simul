@@ -397,7 +397,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 325개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 327개
 
 아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
 
@@ -621,6 +621,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [official_frontier_comparison_v1__01_c_shape_candidate__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__01_c_shape_candidate__1205000000.mp4) | 실패 | 확인 | 600.134 |
 | [official_frontier_comparison_v1__02_u_shape_baseline__1205010303.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__02_u_shape_baseline__1205010303.mp4) | 실패 | 미달 | 600.239 |
 | [official_frontier_comparison_v1__03_u_shape_candidate__1205010303.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__03_u_shape_candidate__1205010303.mp4) | 실패 | 확인 | 600.451 |
+| [official_frontier_comparison_v1__04_zigzag_baseline__1205020505.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__04_zigzag_baseline__1205020505.mp4) | 실패 | 확인 | 600.2 |
+| [official_frontier_comparison_v1__05_zigzag_candidate__1205020505.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_comparison_v1__05_zigzag_candidate__1205020505.mp4) | 실패 | 확인 | 600.215 |
 | [official_local_grid_matrix_v1__00_c_shape_narrow__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_matrix_v1__00_c_shape_narrow__1205000000.mp4) | 실패 | 미달 | 90.103 |
 | [official_local_grid_matrix_v1__01_c_shape_angled_start__1205000101.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_matrix_v1__01_c_shape_angled_start__1205000101.mp4) | 실패 | 미달 | 90.447 |
 | [official_local_grid_matrix_v1__02_c_shape_long_pocket__1205000202.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_matrix_v1__02_c_shape_long_pocket__1205000202.mp4) | 실패 | 미달 | 90.299 |
@@ -1123,6 +1125,6 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 실물 대응 후보 `official_frontier_evidence_screen_v1`: 상태 `running`, 세대 0, 단계 `diagnostic`.
 독립 입력 검사를 통과한 native 개발 회차 0개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
 형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 출발 진단·전체 과제·계수 학습은 각각의 scope/phase를 확인해야 하며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-14T21:53:55.852586+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+관측 UTC: 2026-11-14T21:55:29.826753+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->
