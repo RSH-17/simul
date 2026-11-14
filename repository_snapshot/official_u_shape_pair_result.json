@@ -1,0 +1,481 @@
+{
+  "captured_utc": "2026-11-14T20:48:33.001451+00:00",
+  "evidence_type": "Two completed official Gazebo runs; same U-shape development scene, 24 obstacles, fixed weights",
+  "rows": [
+    {
+      "number": 2,
+      "role": "baseline",
+      "outcome": {
+        "success": false,
+        "targets": 2,
+        "approached": 2,
+        "contacts": 0,
+        "seconds": 600.239,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "81": 0.6271545540224899,
+          "204": 0.4684819161258134
+        },
+        "expected_ids": [
+          76,
+          81,
+          204
+        ],
+        "found_ids": [
+          81,
+          204
+        ],
+        "closest_approach_m": {
+          "76": 2.2480398416201903,
+          "81": 0.6114914825643433,
+          "204": 0.9311812670014105
+        },
+        "approached_within_1_5m": 2,
+        "approach_radius_m": 1.5,
+        "all_approached": false,
+        "approached_within_2m": 2,
+        "world_to_map": [
+          -11.2288205636569,
+          5.928288336775389,
+          -1.9219013316604465
+        ],
+        "trajectory_samples": 2948
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.1287636066970017,
+            "p95": 1.55816056231269,
+            "maximum": 1.5919868721547368
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 0.689566942819785,
+            "p95": 3.1167429413717413,
+            "maximum": 5.618105332097509
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 3.1193242449347034,
+            "p95": 5.4560455938541415,
+            "maximum": 5.71286096440516
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 14.10582154808288,
+            "p95": 26.297952861260924,
+            "maximum": 32.36469499301834
+          }
+        }
+      },
+      "graph_landmark_update": {
+        "method": "confirmed_odom_landmarks_reprojected_by_final_SLAM_scan_poses",
+        "ground_truth_inputs": false,
+        "required_readable_frames": 3,
+        "required_distinct_scan_nodes": 3,
+        "maximum_scan_time_gap_sim_s": 0.35,
+        "maximum_inlier_deviation_m": 0.25,
+        "corrected_ids": [
+          204,
+          81
+        ],
+        "rows": [
+          {
+            "id": 204,
+            "original_point": [
+              -10.633088184640496,
+              -14.437471451413833
+            ],
+            "eligible_observations": 10,
+            "applied": true,
+            "inlier_observations": 10,
+            "distinct_scan_nodes": 4,
+            "point": [
+              -10.324985538009855,
+              -14.57840964197062
+            ],
+            "shift_m": 0.33880793145708143,
+            "observations": [
+              {
+                "stamp": 293.568,
+                "node_id": 444,
+                "scan_stamp": 293.793,
+                "point": [
+                  -10.316472578853853,
+                  -14.585757943815457
+                ]
+              },
+              {
+                "stamp": 293.733,
+                "node_id": 444,
+                "scan_stamp": 293.793,
+                "point": [
+                  -10.330605613922692,
+                  -14.576742595634538
+                ]
+              },
+              {
+                "stamp": 293.898,
+                "node_id": 444,
+                "scan_stamp": 293.793,
+                "point": [
+                  -10.33063647266456,
+                  -14.566976458229995
+                ]
+              },
+              {
+                "stamp": 294.063,
+                "node_id": 445,
+                "scan_stamp": 294.304,
+                "point": [
+                  -10.321225801588927,
+                  -14.580393079481846
+                ]
+              },
+              {
+                "stamp": 294.624,
+                "node_id": 445,
+                "scan_stamp": 294.304,
+                "point": [
+                  -10.342758007261205,
+                  -14.577283035270135
+                ]
+              },
+              {
+                "stamp": 296.274,
+                "node_id": 446,
+                "scan_stamp": 296.529,
+                "point": [
+                  -10.335077160631563,
+                  -14.581229513563265
+                ]
+              },
+              {
+                "stamp": 296.505,
+                "node_id": 446,
+                "scan_stamp": 296.529,
+                "point": [
+                  -10.326850911056967,
+                  -14.575475026038443
+                ]
+              },
+              {
+                "stamp": 296.736,
+                "node_id": 446,
+                "scan_stamp": 296.529,
+                "point": [
+                  -10.320419211547911,
+                  -14.566044046455948
+                ]
+              },
+              {
+                "stamp": 296.901,
+                "node_id": 447,
+                "scan_stamp": 297.04,
+                "point": [
+                  -10.323120164962743,
+                  -14.590309084788531
+                ]
+              },
+              {
+                "stamp": 297.066,
+                "node_id": 447,
+                "scan_stamp": 297.04,
+                "point": [
+                  -10.31082240587264,
+                  -14.579536248671104
+                ]
+              }
+            ]
+          },
+          {
+            "id": 81,
+            "original_point": [
+              -13.809741654695022,
+              -7.708309300116186
+            ],
+            "eligible_observations": 5,
+            "applied": true,
+            "inlier_observations": 5,
+            "distinct_scan_nodes": 4,
+            "point": [
+              -13.276072708041387,
+              -7.582679488433159
+            ],
+            "shift_m": 0.5482566864215284,
+            "observations": [
+              {
+                "stamp": 443.652,
+                "node_id": 712,
+                "scan_stamp": 443.553,
+                "point": [
+                  -13.27630801102903,
+                  -7.577078126675548
+                ]
+              },
+              {
+                "stamp": 444.18,
+                "node_id": 713,
+                "scan_stamp": 444.192,
+                "point": [
+                  -13.276245245469068,
+                  -7.581407265372884
+                ]
+              },
+              {
+                "stamp": 446.16,
+                "node_id": 714,
+                "scan_stamp": 446.385,
+                "point": [
+                  -13.274807266459954,
+                  -7.5848975705279615
+                ]
+              },
+              {
+                "stamp": 446.688,
+                "node_id": 715,
+                "scan_stamp": 446.896,
+                "point": [
+                  -13.268378738949957,
+                  -7.583818034181258
+                ]
+              },
+              {
+                "stamp": 446.853,
+                "node_id": 715,
+                "scan_stamp": 446.896,
+                "point": [
+                  -13.276072708041387,
+                  -7.582679488433159
+                ]
+              }
+            ]
+          }
+        ],
+        "rejected": {
+          "scan_time_gap": 7
+        },
+        "applied": true,
+        "input_sha256": {
+          "map.data": "512e4d0f67387d2080a31e0452a0d34b490aa7e9a10cc1038e1b0c0366f81c7e",
+          "graph_scan_poses.csv": "522342d484d3756bd34a1617c107e97757ffa89092f551af72c6668aa0021210",
+          "graph_marker_observations.json": "dec0d21830c490b0ecc905068a26f24e0737a125ae7a6e39ae7effe8602dbbe9"
+        },
+        "finalization_wall_seconds": 0.14812470087781549,
+        "driving_time_and_approach_credits_modified": false
+      },
+      "evaluation": "training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/evaluation.json",
+      "evaluation_sha256": "dab1b2853d20815f69137aa98b98fec56faa33246329cc9227acaa815a7aca70"
+    },
+    {
+      "number": 3,
+      "role": "candidate",
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.451,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "81": 0.09577674809550282
+        },
+        "expected_ids": [
+          76,
+          81,
+          204
+        ],
+        "found_ids": [
+          81
+        ],
+        "closest_approach_m": {
+          "76": 1.1625444990236535,
+          "81": 0.6527485677393273,
+          "204": 0.8467321230309546
+        },
+        "approached_within_1_5m": 3,
+        "approach_radius_m": 1.5,
+        "all_approached": true,
+        "approached_within_2m": 3,
+        "world_to_map": [
+          -11.228821100064959,
+          5.928287422312375,
+          -1.9219012569454101
+        ],
+        "trajectory_samples": 2949
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2948,
+            "median": 0.12214970902067658,
+            "p95": 0.17298041362660965,
+            "maximum": 0.1882703451144533
+          },
+          "heading_error_deg": {
+            "samples": 2948,
+            "median": 0.7963387234440311,
+            "p95": 2.0918765440032705,
+            "maximum": 3.4722759713816287
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2948,
+            "median": 3.48485888020549,
+            "p95": 5.930323527467362,
+            "maximum": 6.300741311897367
+          },
+          "heading_error_deg": {
+            "samples": 2948,
+            "median": 16.859049652975052,
+            "p95": 27.953233485139073,
+            "maximum": 33.15425240219421
+          }
+        }
+      },
+      "graph_landmark_update": {
+        "method": "confirmed_odom_landmarks_reprojected_by_final_SLAM_scan_poses",
+        "ground_truth_inputs": false,
+        "required_readable_frames": 3,
+        "required_distinct_scan_nodes": 3,
+        "maximum_scan_time_gap_sim_s": 0.35,
+        "maximum_inlier_deviation_m": 0.25,
+        "corrected_ids": [
+          81
+        ],
+        "rows": [
+          {
+            "id": 81,
+            "original_point": [
+              -13.855506317461273,
+              -7.654672978437449
+            ],
+            "eligible_observations": 6,
+            "applied": true,
+            "inlier_observations": 6,
+            "distinct_scan_nodes": 4,
+            "point": [
+              -13.855613382713663,
+              -7.656335064792397
+            ],
+            "shift_m": 0.00166553115238732,
+            "observations": [
+              {
+                "stamp": 565.62,
+                "node_id": 964,
+                "scan_stamp": 565.856,
+                "point": [
+                  -13.855720447966053,
+                  -7.654103729770748
+                ]
+              },
+              {
+                "stamp": 565.884,
+                "node_id": 964,
+                "scan_stamp": 565.856,
+                "point": [
+                  -13.85397829922595,
+                  -7.655116567563347
+                ]
+              },
+              {
+                "stamp": 566.082,
+                "node_id": 964,
+                "scan_stamp": 565.856,
+                "point": [
+                  -13.855506317461273,
+                  -7.654673023410115
+                ]
+              },
+              {
+                "stamp": 567.633,
+                "node_id": 965,
+                "scan_stamp": 567.712,
+                "point": [
+                  -13.878837722258783,
+                  -7.662134090275074
+                ]
+              },
+              {
+                "stamp": 570.801,
+                "node_id": 968,
+                "scan_stamp": 571.008,
+                "point": [
+                  -13.85730024423131,
+                  -7.6587262528360425
+                ]
+              },
+              {
+                "stamp": 571.296,
+                "node_id": 969,
+                "scan_stamp": 571.521,
+                "point": [
+                  -13.854861159817894,
+                  -7.657553562021446
+                ]
+              }
+            ]
+          }
+        ],
+        "rejected": {
+          "scan_time_gap": 5
+        },
+        "applied": true,
+        "input_sha256": {
+          "map.data": "03eaff53e61fdeb4d8c6df701e7f6f1b83a4770ee17f7a8231b809951f22ab1e",
+          "graph_scan_poses.csv": "0b9ce73badc84f5e2b1ba9246f2a16591c0a0b44be996eeeccfc34959a6594d9",
+          "graph_marker_observations.json": "86e3d3159a6ca5b094c595041074a951a862fca361165e6e718d260691e83046"
+        },
+        "finalization_wall_seconds": 0.15578944236040115,
+        "driving_time_and_approach_credits_modified": false
+      },
+      "evaluation": "training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/evaluation.json",
+      "evaluation_sha256": "1886cf6ad0a366b63ea31471c0b92b904e0ffc3eedd29f98ffbfcd4195f03202"
+    }
+  ],
+  "conclusion": "Both timeout; baseline 2 IDs/2 actual approaches and one inaccurate final marker; frontier candidate 1 ID/3 actual approaches. No full-task or success-rate improvement established.",
+  "weights_retrained": false,
+  "holdout_used": false,
+  "hardware_validated": false,
+  "production_promoted": false
+}

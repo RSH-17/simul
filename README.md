@@ -1,5 +1,9 @@
 # OSP Final Project — ROS 2 Jazzy
 
+**2026-11-15 출발 통과 후 왕복 원인 수정·v16 재검증 대기:** 공식 TurtleBot4의 90초 두 장면은 **옆 방향 29.172초·50cm 통로 23.868초 탈출, 모두 접촉 0회**였습니다. 그러나 옆 방향은 탈출 후 왕복했고 둘 다 ID 0개여서 전체 과제에는 실패했습니다. 현재 방의 탐색 점수가 뒤쪽 통로로 퍼지는 원인을 찾아 별도 v16에서 점수의 근거가 되는 미관측 경계부터 제한했습니다. **435개 런타임·7개 감독기 검사 통과**. 기록된 34개 결정을 재현해 초기 진행 후보 13개는 유지하고, 잘못 돌아가던 7개 시점은 일반 탐색으로 전환했습니다. 이는 오프라인 결과이며 실제 왕복 감소는 아직 미검증입니다. 진행 중인 지그재그 600초 두 회차를 보존하고 종료 후 같은 출발 장면 두 개를 자동 실행하도록 예약했습니다. [새 native 출발 결과·재생·대기 상태](repository_snapshot/official_pocket_frontier_evidence.json). 계수 학습·실물 배포는 보류 중입니다.
+
+**2026-11-15 U형 전체 과제 비교 완료:** 기존판은 **ID 2개·실제 1.5m 접근 2개**, 탐색 후보는 **ID 1개·접근 3개**로 둘 다 600초 시간 초과·접촉 0회였습니다. 기존판의 최종 마커 한 개는 지도 오차 **0.627m**로 기준을 넘었고, 주행 중 지도 위치 오차 최대 **1.592m**가 관측됐습니다. 인식·SLAM 좌표 문제를 별도로 조사하며 성공률 개선으로 보고하지 않습니다. [최종 평가](repository_snapshot/official_u_shape_pair_result.json). 읽기 전용 시간 지연 비교는 TF 오류 40/31→0/0, 관측 수 5/12→8/16이었으나 새 주행 결과가 아닙니다. [센서 비교](repository_snapshot/official_exposure_u_shadow.json). 거리 후보의 다른 U 경로 36프레임에서는 35개 거리 시도 중 9→35개가 반환됐지만, 복구한 26개 중 하나는 10px의 오인 ID80이므로 올바른 인식으로 세지 않습니다. [정체성 재생과 한계](repository_snapshot/official_central_range_candidate.json). 완료 영상은 **325개 원격 해시 검증**을 마쳤습니다.
+
 **2026-11-15 원본 센서에서 거리 실패 재현·v15 후보:** 같은 U형 주행의 겹치지 않는 원본 구간 64프레임에서 거리 함수 65건을 비교했습니다. 크기 기준에 맞는 54개 거리 계산 중 기존 31개→후보 54개가 값을 반환했고, 원래 성공한 값은 유지했습니다. 새로 복구한 23개의 독립 센서 기하 오차는 최대 **1.46cm**였으며 그중 9개만 ID 판독 크기인 18px 이상입니다. 이는 **지도 좌표 정확도·ID 확정·주행 성공률이 아닙니다**. 기존 평면 계산이 실패할 때만 중앙의 연속된 양쪽 빔을 재검사하며, 429개 런타임·11개 평가/재생 검사를 통과했습니다. 시간 지연 대응 v11에서 분기한 별도 후보이고 아직 native 실행을 예약하지 않았습니다. 기존 U형 두 회차와 v13 출발 검증을 유지합니다. [실제 입력·후보·검증 범위](repository_snapshot/official_central_range_candidate.json).
 
 **2026-11-15 거리 계산·지도 변환 지연 분리:** U형 주행의 원본 RGB·CameraInfo·LiDAR 16개(ID204, 20.2–29.2px)를 보존해 기존 거리 함수를 정확히 재현했습니다. 16개 모두 거리를 반환했지만 7개는 촬영 시각의 지도 TF가 없었습니다. 별도 수집기는 필수 센서 간 TF를 유지하면서 누락된 지도 좌표를 만들지 않고 원본을 남깁니다. 완료된 C형 영상·저장 SLAM 스캔의 **근사 분석**에서는 가까운 장애물과 배경 빔의 혼합으로 평면 추정이 거부되는 사례를 찾았습니다. 각도 범위를 좁힌 결과만으로 좌표 정확도나 인식 개선을 확정할 수 없어 정책에는 적용하지 않았습니다. **관련 검사 12개·실제 센서 입력의 거리 함수 비교 16개 통과**. 두 U형 전체 과제와 이후 출발 회귀 두 개를 유지하며, 계수 학습은 보류 중입니다. [원본 재생·근사 분석·한계](repository_snapshot/official_marker_range_diagnosis.json). 같은 U형 센서 입력에 기존/지연 대응 처리를 병행하는 읽기 전용 비교 두 개를 시작했습니다. 발행 토픽과 플랫폼 검사를 확인했고, 인식 개선 결과는 아직 없습니다. [진행 상태·비교 한계](repository_snapshot/official_exposure_u_shadow.json).
@@ -381,7 +385,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 323개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 325개
 
 아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
 
@@ -612,6 +616,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [official_local_grid_matrix_v1__04_c_shape_sideways_small__1205000404.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_matrix_v1__04_c_shape_sideways_small__1205000404.mp4) | 실패 | 미달 | 90.47699999999999 |
 | [official_local_grid_screen_v1__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_screen_v1__1205000000.mp4) | 실패 | 미달 | 90.248 |
 | [official_no_return_screen_v1__1200100000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_no_return_screen_v1__1200100000.mp4) | 실패 | 미달 | 90.167 |
+| [official_pocket_screen_v1__00_sideways_small__1205000404.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_pocket_screen_v1__00_sideways_small__1205000404.mp4) | 실패 | 미달 | 90.407 |
+| [official_pocket_screen_v1__01_narrow__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_pocket_screen_v1__01_narrow__1205000000.mp4) | 실패 | 미달 | 90.499 |
 | [official_rotation_scan_screen_v1__1200100000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_rotation_scan_screen_v1__1200100000.mp4) | 실패 | 미달 | 90.092 |
 | [official_tb4_cem_v1__00000_train_g0_0__1200100000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_tb4_cem_v1__00000_train_g0_0__1200100000.mp4) | 실패 | 미달 | 76.29599999999999 |
 | [official_tb4_cem_v1__00001_train_g0_0__1200100101.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_tb4_cem_v1__00001_train_g0_0__1200100101.mp4) | 실패 | 확인 | 600.497 |

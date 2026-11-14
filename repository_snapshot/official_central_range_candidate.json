@@ -155,5 +155,172 @@
     "Only 9 recovered frames reach the 18px size threshold; no confirmation or physical-approach credit is inferred",
     "Actual mixed/occluded surface accuracy beyond these examples is unverified",
     "Parent includes exposure buffering and camera-distance candidate, but not dock-map, pocket continuation, frontier-area, deadline, or map-frame face-sweep candidates"
+  ],
+  "followup_captured_utc": "2026-11-14T20:48:33.001451+00:00",
+  "separate_development_trajectory": {
+    "snapshot": "training_robust/native90/official_frontier_comparison_v1/u_candidate_raw_range_replay_v1",
+    "snapshot_sha256": "55c03c13198767d2ad9b61cf2a7cbff9d34cd7a32ac51b68de58b2aeedd49350",
+    "frames": 36,
+    "function_checks": 36,
+    "range_attempts": 35,
+    "original_returned": 9,
+    "candidate_returned": 35,
+    "recovered": 26,
+    "recovered_correct_id81": 25,
+    "recovered_false_id80": 1,
+    "recovered_id81_at_least_18px": 3,
+    "correct_id_recovered_sensor_xy_max_m": 0.021612442735833275,
+    "false_id_limit": "One 10px false ID80 also returned a distance; a distance is not valid identity evidence. Original size/consensus gates unchanged.",
+    "originally_returned_ranges_preserved": true,
+    "evaluator_truth_used_only_after_predictions": true,
+    "holdout": false
+  },
+  "cold_state_replays": [
+    {
+      "path": "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v3/detector_state_comparison.json",
+      "sha256": "12975c61274cd8b67eec5ec8f9620e65e82f7641ede445221f76e0dab36da5d3",
+      "frames": 64,
+      "frames_missing_map_transform": 22,
+      "branches": {
+        "original": {
+          "diagnostics": {
+            "frames": 64,
+            "decoded": {
+              "204": 16,
+              "65": 1,
+              "81": 46,
+              "1023": 1,
+              "80": 1
+            },
+            "small": 33,
+            "border": 0,
+            "no_range": 23,
+            "horizontal": 0,
+            "inconsistent": 0,
+            "accepted": 13,
+            "errors": 14,
+            "last_error": "Transform absent from raw snapshot: map"
+          },
+          "resolved_ids": [
+            81,
+            204
+          ],
+          "conflicts": [],
+          "observation_history": {
+            "204": 9,
+            "81": 4
+          },
+          "emitted_cues": {
+            "81": 1
+          }
+        },
+        "candidate": {
+          "diagnostics": {
+            "frames": 64,
+            "decoded": {
+              "204": 16,
+              "65": 1,
+              "81": 46,
+              "1023": 1,
+              "80": 1
+            },
+            "small": 33,
+            "border": 0,
+            "no_range": 0,
+            "horizontal": 0,
+            "inconsistent": 0,
+            "accepted": 20,
+            "errors": 20,
+            "last_error": "Transform absent from raw snapshot: map",
+            "lidar_center_fallback_calls": 23
+          },
+          "resolved_ids": [
+            81,
+            204
+          ],
+          "conflicts": [],
+          "observation_history": {
+            "204": 9,
+            "81": 11
+          },
+          "emitted_cues": {
+            "81": 3
+          }
+        }
+      },
+      "limits": [
+        "Cold-start state and decimated inputs differ from either native detector",
+        "Direct RGB function replay isolates range/identity processing; it does not exercise the exposure queue",
+        "Missing map/odom TF is reported rather than synthesized; later transform delivery is unrecorded",
+        "Resolved IDs are processing outputs, not evaluator-qualified accuracy or approach success"
+      ]
+    },
+    {
+      "path": "training_robust/native90/official_frontier_comparison_v1/u_candidate_raw_range_replay_v1/detector_state_comparison.json",
+      "sha256": "89f2128725258342bb552d24d392f9733e4cf41216161e0cbc4f0c28345c6640",
+      "frames": 36,
+      "frames_missing_map_transform": 17,
+      "branches": {
+        "original": {
+          "diagnostics": {
+            "frames": 36,
+            "decoded": {
+              "80": 2,
+              "81": 34
+            },
+            "small": 25,
+            "border": 0,
+            "no_range": 26,
+            "horizontal": 0,
+            "inconsistent": 0,
+            "accepted": 3,
+            "errors": 6,
+            "last_error": "Transform absent from raw snapshot: map"
+          },
+          "resolved_ids": [
+            81
+          ],
+          "conflicts": [],
+          "observation_history": {
+            "81": 3
+          },
+          "emitted_cues": {}
+        },
+        "candidate": {
+          "diagnostics": {
+            "frames": 36,
+            "decoded": {
+              "80": 2,
+              "81": 34
+            },
+            "small": 25,
+            "border": 0,
+            "no_range": 0,
+            "horizontal": 0,
+            "inconsistent": 0,
+            "accepted": 4,
+            "errors": 17,
+            "last_error": "Transform absent from raw snapshot: map",
+            "lidar_center_fallback_calls": 26
+          },
+          "resolved_ids": [
+            81
+          ],
+          "conflicts": [],
+          "observation_history": {
+            "81": 4
+          },
+          "emitted_cues": {
+            "81": 2
+          }
+        }
+      },
+      "limits": [
+        "Cold-start state and decimated inputs differ from either native detector",
+        "Direct RGB function replay isolates range/identity processing; it does not exercise the exposure queue",
+        "Missing map/odom TF is reported rather than synthesized; later transform delivery is unrecorded",
+        "Resolved IDs are processing outputs, not evaluator-qualified accuracy or approach success"
+      ]
+    }
   ]
 }

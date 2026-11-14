@@ -1,0 +1,785 @@
+{
+  "captured_utc": "2026-11-14T20:48:33.001451+00:00",
+  "evidence_type": "Completed native departure trials plus observed-map replay of a new isolated candidate",
+  "completed_parent": "2026-11-15_official_tb4_v13",
+  "native_rows": [
+    {
+      "number": 0,
+      "profile": "sideways_small",
+      "outcome": {
+        "success": false,
+        "targets": 0,
+        "approached": 0,
+        "contacts": 0,
+        "seconds": 90.407,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      },
+      "departure": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": 29.172,
+        "actual_path_m": 10.575528201277592,
+        "maximum_exit_axis_progress_m": 2.911414060336739,
+        "required_progress_m": 2.5989999999999998,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "dock_map_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 448,
+            "median": 0.011817997323121474,
+            "p95": 0.04103746671835206,
+            "maximum": 0.04881709727047574
+          },
+          "heading_error_deg": {
+            "samples": 448,
+            "median": 0.6892164888130492,
+            "p95": 2.0901405558875714,
+            "maximum": 2.7565054558908644
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 448,
+            "median": 0.12033772981714796,
+            "p95": 0.34036876182419223,
+            "maximum": 0.5413903883304017
+          },
+          "heading_error_deg": {
+            "samples": 448,
+            "median": 25.554575423072254,
+            "p95": 110.59091619871525,
+            "maximum": 116.23505867610537
+          }
+        }
+      },
+      "original_outcome": {
+        "success": false,
+        "targets": 0,
+        "approached": 0,
+        "contacts": 0,
+        "seconds": 90.21,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": false
+      }
+    },
+    {
+      "number": 1,
+      "profile": "narrow",
+      "outcome": {
+        "success": false,
+        "targets": 0,
+        "approached": 0,
+        "contacts": 0,
+        "seconds": 90.499,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      },
+      "departure": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": 23.868000000000002,
+        "actual_path_m": 12.406136285367067,
+        "maximum_exit_axis_progress_m": 3.699466884401053,
+        "required_progress_m": 2.799,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "dock_map_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 451,
+            "median": 0.12026912424332611,
+            "p95": 0.3587647771574983,
+            "maximum": 0.36163227749640925
+          },
+          "heading_error_deg": {
+            "samples": 451,
+            "median": 0.2789583919526637,
+            "p95": 1.5666649434768338,
+            "maximum": 2.4973199992459647
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 451,
+            "median": 0.6622059947379535,
+            "p95": 1.7758010697785787,
+            "maximum": 1.8111016672583238
+          },
+          "heading_error_deg": {
+            "samples": 451,
+            "median": 23.25680888776902,
+            "p95": 40.86583646968256,
+            "maximum": 43.24380017973749
+          }
+        }
+      },
+      "original_outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 1,
+        "contacts": 0,
+        "seconds": 90.011,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      }
+    }
+  ],
+  "diagnosis": "A 3m frontier gain filter leaked current-room information into a narrow entry; parent forced transit back even when normal component grew from 1.38 to 19.04 square metres.",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v16",
+  "runtime": "training_robust/native90/official_tb4_v18/runtime",
+  "change": "Restrict frontier evidence outside the current normal component before computing its spatial gain; retain full observed body-safe connectivity and existing margins.",
+  "runtime_tests_passed": 435,
+  "supervisor_tests_passed": 7,
+  "build_log_sha256": "e0f1f1535f41c46c0827e99d75bc233d46cea25a9ecacc396dc220b7421cb1dd",
+  "replays": [
+    {
+      "profile": "sideways",
+      "path": "training_robust/native90/official_pocket_screen_v1/sideways_frontier_evidence_replay.json",
+      "sha256": "6d362c0882363325abf501c963af8cf0ce4fbd07260c01c1af9779fe2a8ba205",
+      "checked_decisions": 19,
+      "rows": [
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0000.npz",
+          "sha256": "8d8236aad24aa6d0bba72a81e3d4bc85043866f17a677e78d4cdd23c200ec41c",
+          "elapsed_seconds": 12.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 1.3818750411830845,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.22240885076128425,
+            -0.6278581795055551
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0001.npz",
+          "sha256": "e41c71d8de9bd81716fbb7c88262cede12acb2d7b72aacb63008dd80c4aed762",
+          "elapsed_seconds": 17.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 1.3868750413320963,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.23564276726903888,
+            -1.1528581873286647
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0002.npz",
+          "sha256": "975ca17901d8a9185db5b4d9d1380667b3c285d09ddcfd45309539f6059baec2",
+          "elapsed_seconds": 19.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 1.3912500414624813,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.18564276652398082,
+            -1.6385506116997117
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0003.npz",
+          "sha256": "e6c0ec111e04b98fc969886ceff603f7e1f3aba66176184fd546fcc51c99c8d9",
+          "elapsed_seconds": 22.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 1.3862500413134697,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.1606427661514518,
+            -2.1247275814249225
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0004.npz",
+          "sha256": "e9eab736846f6609790ed6bbd0b476b940bb1bd4a7eb65603fa2460507fd2748",
+          "elapsed_seconds": 24.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 5,
+          "candidate_count": 5,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.14597173647460604,
+            -2.5775297200377807
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0005.npz",
+          "sha256": "7437d2d7a42c9e4867a88fd1f6c9d562c94868d942dc118c470c17890b0981b6",
+          "elapsed_seconds": 27.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 7,
+          "candidate_count": 7,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.1234490752820605,
+            -3.0525297271158323
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0006.npz",
+          "sha256": "e29637787bd4e4991cece2f3555e3f14e6ac4cae97802450fdd250db5db55947",
+          "elapsed_seconds": 30.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 19.039375567417597,
+          "original_count": 1,
+          "candidate_count": 54,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.15461513996934872,
+            -2.2768290443572052
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0007.npz",
+          "sha256": "2be092f3e7a7356d957e6a070fdc585eae61416fe660bb332a105b845e52d2f7",
+          "elapsed_seconds": 35.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 21.98500065520406,
+          "original_count": 1,
+          "candidate_count": 48,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.15461513996934872,
+            -1.7518290365340956
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0008.npz",
+          "sha256": "e53cc83e5251b32fbedaba7f36b11c72fa8a35684ef0423568cd3df4e64a4b22",
+          "elapsed_seconds": 37.908,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 8,
+          "candidate_count": 8,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.10461513922429067,
+            -2.6518290499451407
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0009.npz",
+          "sha256": "34d2c48124af7e391c07b75577b05967b9ed1aceb8e44b18e9b54bafd297043d",
+          "elapsed_seconds": 42.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 22.83312568048016,
+          "original_count": 2,
+          "candidate_count": 43,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.1296151395968197,
+            -1.8268290376516827
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0010.npz",
+          "sha256": "2fe66f771a9182380535bc44369c70ab9de96c3e232e7daa27295e4f0e378171",
+          "elapsed_seconds": 47.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 8,
+          "candidate_count": 8,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.054615138479232606,
+            -2.7018290506901987
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0011.npz",
+          "sha256": "6c3c4430b47b137382ba746e14e93606d9965731da6593c6ecd61e8b8a044b3f",
+          "elapsed_seconds": 53.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 23.203125691507015,
+          "original_count": 1,
+          "candidate_count": 31,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.1296151395968197,
+            -1.8518290380242117
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0012.npz",
+          "sha256": "55bad1d655f0fb3292a3f162658ed882fce5bf7a39312f68711db6400ff9df77",
+          "elapsed_seconds": 58.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 9,
+          "candidate_count": 9,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.054615138479232606,
+            -2.751829051435257
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0013.npz",
+          "sha256": "f09ba540832dbcc214ab660d28216b99794bc2e5822b6250792593e265f9b0ba",
+          "elapsed_seconds": 63.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 23.328750695250932,
+          "original_count": 1,
+          "candidate_count": 30,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.1296151395968197,
+            -1.9268290391417988
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0014.npz",
+          "sha256": "73112df53d34af6df3aa285596287d6de0d78de7ece5de2e13b4aee9f54718df",
+          "elapsed_seconds": 68.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 9,
+          "candidate_count": 9,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.054615138479232606,
+            -2.801829052180315
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0015.npz",
+          "sha256": "89762797a92df01a2a80e1101fcd13b0cc81b17833c659a6a0aafd12d4fec020",
+          "elapsed_seconds": 73.907,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 23.426875698175287,
+          "original_count": 1,
+          "candidate_count": 30,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.1296151395968197,
+            -2.001829040259386
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0016.npz",
+          "sha256": "59a6220e9ba43fa1523c5208b63df3716e63d52f1baf07dd24c5be4f99a62367",
+          "elapsed_seconds": 78.407,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 10,
+          "candidate_count": 10,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.07961513885176164,
+            -2.876829053297902
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0017.npz",
+          "sha256": "4c839bc2a77aa3b31c586b7175facaf377ed3e021a155dad7cb6a6f5272b1b75",
+          "elapsed_seconds": 83.90899999999999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 23.46812569940463,
+          "original_count": 1,
+          "candidate_count": 31,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -0.15461513996934872,
+            -2.026829040631915
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0018.npz",
+          "sha256": "71def2f59cbc07b8eb0237500185b650de2cc8c0febce3ba762cd1b2be39b9ac",
+          "elapsed_seconds": 88.90899999999999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 10,
+          "candidate_count": 10,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.07212058837800495,
+            -2.901829053670431
+          ],
+          "failed_viewpoints": 0
+        }
+      ]
+    },
+    {
+      "profile": "narrow",
+      "path": "training_robust/native90/official_pocket_screen_v1/narrow_frontier_evidence_replay.json",
+      "sha256": "953b7e2f1b02078ac060abdbdfbb2b0acd35e398e29467fd9b200ca003bb2ecc",
+      "checked_decisions": 15,
+      "rows": [
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0000.npz",
+          "sha256": "a153c3251124df86bdecacf26afe55f4b5d5915f92fc0c025bd67cfe4cc104df",
+          "elapsed_seconds": 10.998999999999999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -1.0199264787540319,
+            0.011763142498182777
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0001.npz",
+          "sha256": "23fd57559be97865db448cebfda7ea9b6e89e4308acfd5f2a7a2ef57b67adb5e",
+          "elapsed_seconds": 13.501999999999999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -1.4949264858320834,
+            0.001549052135376261
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0002.npz",
+          "sha256": "00308db34114ce5f8595c9b7c69f22d003edfc64766dd099eef82b7405c36d74",
+          "elapsed_seconds": 15.998999999999999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -1.9683477045571696,
+            0.003481661942705161
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0003.npz",
+          "sha256": "070becfab882063b166dfeaef7c9b5b4acc681b7fb728992cebff910726b4d72",
+          "elapsed_seconds": 18.499,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 3,
+          "candidate_count": 3,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -2.418347711262692,
+            0.01734796121065263
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0004.npz",
+          "sha256": "611334b0525f0ca6b777aa124639d1876283ffa4861a367672a88f8fcd282e93",
+          "elapsed_seconds": 20.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 3,
+          "candidate_count": 3,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -2.8683477179682146,
+            -0.06074082131058889
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0005.npz",
+          "sha256": "40461d2063970f94bdd7fc3e0eae734c46d38905acc4f30412f3c8c4ee5c0873",
+          "elapsed_seconds": 23.499,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 6,
+          "candidate_count": 6,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -3.342261386095725,
+            -0.1132028965370715
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0006.npz",
+          "sha256": "48bcae4adcc9e484b2af5e360e223db504487d36732a47bf4d822d6a6d0123a2",
+          "elapsed_seconds": 25.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 11,
+          "candidate_count": 11,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -3.7716550146436685,
+            -0.30096088070968574
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0007.npz",
+          "sha256": "1b8dc2472b11d0c74d08374b4e7b03df52f792fa9233024eb4710ddaf8b79f65",
+          "elapsed_seconds": 30.499,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 22.35187566613779,
+          "original_count": 2,
+          "candidate_count": 2,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -2.987717958127355,
+            -0.19475808109652348
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0008.npz",
+          "sha256": "1f971880a70194e4cfed979f4907bcbc771e1efb804d1daad5dc2d4456d52d56",
+          "elapsed_seconds": 34.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 25.014375745486472,
+          "original_count": 1,
+          "candidate_count": 1,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            -2.762717954774594,
+            0.22150727444295626
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0009.npz",
+          "sha256": "38c8005484109a2ab307656eda3ded29dec31b850a847fe5ce132385a1f5a77e",
+          "elapsed_seconds": 37.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 8,
+          "candidate_count": 8,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -2.712717954029536,
+            0.6715072811484788
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0010.npz",
+          "sha256": "919c7b2003bce6210502fe06cb88b97d18c93117b6d6619c7d79e4c2a337eab3",
+          "elapsed_seconds": 40.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 0.0,
+          "original_count": 8,
+          "candidate_count": 8,
+          "original_all_transit": true,
+          "candidate_all_transit": true,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -2.712717954029536,
+            1.1465072882265304
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0011.npz",
+          "sha256": "ff095ece8c81d44d9c288e08230c1083069e09fa0b485fe268bf02316e38e320",
+          "elapsed_seconds": 43.499,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 29.037500865384942,
+          "original_count": 76,
+          "candidate_count": 76,
+          "original_all_transit": false,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            -0.16271791603157482,
+            1.0715072871089433
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0012.npz",
+          "sha256": "746098720b8e3df1aa725b0039496b9d8c54f27e4b0d7b21bb679c46d8229310",
+          "elapsed_seconds": 61.502,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 33.07062598558144,
+          "original_count": 75,
+          "candidate_count": 75,
+          "original_all_transit": false,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            1.0872821025948767,
+            0.12150727295284014
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0013.npz",
+          "sha256": "846a0646151da7e73b4ef479a214c8be29cb93b877d1edcaa393d35aceda0e84",
+          "elapsed_seconds": 72.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 33.063750985376544,
+          "original_count": 74,
+          "candidate_count": 74,
+          "original_all_transit": false,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": true,
+          "recorded_selected_xy": [
+            0.6872820966344122,
+            -0.6784927389680888
+          ],
+          "failed_viewpoints": 0
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0014.npz",
+          "sha256": "04911fdaefbff2affeba3a73fcec0e69a3a407ac4ec973449b4c7ddaba371554",
+          "elapsed_seconds": 80.999,
+          "original_generation_and_selection_reproduced": true,
+          "normal_component_area_m2": 33.30187599247322,
+          "original_count": 1,
+          "candidate_count": 73,
+          "original_all_transit": true,
+          "candidate_all_transit": false,
+          "raw_candidates_identical": false,
+          "recorded_selected_xy": [
+            0.21228208955636063,
+            -0.6534927385955598
+          ],
+          "failed_viewpoints": 0
+        }
+      ]
+    }
+  ],
+  "native_queue": "training_robust/native90/official_frontier_evidence_screen_v1",
+  "queue_status": "waiting_for_native_slots",
+  "native_candidate_validated": false,
+  "weights_retrained": false,
+  "holdout_used": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "limits": [
+    "Both parent departure screens passed with zero contacts, but both 90-second full tasks failed with zero IDs.",
+    "The sideways parent still oscillated after exit; new candidate has only replay evidence so far.",
+    "13 initial narrow/departure candidate sets reproduced unchanged across the two trajectories.",
+    "Counterfactual later normal candidates still need live memory filtering and Nav2 execution."
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "captured_utc": "2026-11-14T20:01:04.815070+00:00",
-  "evidence_type": "Live sensor-only paired detector observations; ongoing; no policy trajectory comparison",
+  "captured_utc": "2026-11-14T20:48:33.001451+00:00",
+  "evidence_type": "Completed read-only paired detector shadows on two U trajectories; no new policy trajectory",
   "rows": [
     {
       "number": 2,
@@ -8,7 +8,7 @@
       "domain": 230,
       "output": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2",
       "native_pid": 2512583,
-      "status": "observing",
+      "status": "completed",
       "observed_publishers": [
         "/parameter_events"
       ],
@@ -27,7 +27,94 @@
       "initial_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2/initial_audit.json",
       "initial_evidence_sha256": "22132616eec6f525fb36f2d55de8bef97a460e0d03aa7247dfaccc0cdaafaf35",
       "launch_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2.launch.json",
-      "launch_evidence_sha256": "910eb1b77c2bafe2343c9f844af36ba3bad7032d706dc5647a494df0b4bf5132"
+      "launch_evidence_sha256": "910eb1b77c2bafe2343c9f844af36ba3bad7032d706dc5647a494df0b4bf5132",
+      "final_report": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2/report.json",
+      "final_report_sha256": "e5468f17f84dbf5dcb5b899265d98b63e1203812d6d8827a72be7b6fbcb8011b",
+      "final": {
+        "received_frames": 6306,
+        "platform_samples": 236,
+        "platform_all_passed": true,
+        "no_policy_outputs": true,
+        "observed_publishers": [
+          "/parameter_events"
+        ],
+        "finished": true,
+        "stop_reason": "episode_completed",
+        "detectors": {
+          "original": {
+            "diagnostics": {
+              "frames": 6306,
+              "decoded": {
+                "1023": 3,
+                "65": 4,
+                "321": 2,
+                "81": 439,
+                "80": 11,
+                "341": 1
+              },
+              "small": 365,
+              "border": 0,
+              "no_range": 270,
+              "horizontal": 0,
+              "inconsistent": 0,
+              "accepted": 5,
+              "errors": 40,
+              "last_error": "Lookup would require extrapolation into the future.  Requested time 599.775000 but the latest data is at time 599.774000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]"
+            },
+            "local_outputs": {
+              "processed_camera": 6306,
+              "cue": 4,
+              "observation": 5
+            },
+            "confirmation_samples": {
+              "81": 5
+            }
+          },
+          "buffered": {
+            "diagnostics": {
+              "frames": 6303,
+              "decoded": {
+                "1023": 3,
+                "65": 4,
+                "321": 2,
+                "81": 439,
+                "80": 11,
+                "341": 1
+              },
+              "small": 365,
+              "border": 0,
+              "no_range": 270,
+              "horizontal": 0,
+              "inconsistent": 0,
+              "accepted": 8,
+              "errors": 0,
+              "last_error": "",
+              "exposure_queue": {
+                "received": 6306,
+                "processed": 6303,
+                "expired": 3,
+                "overflow": 0,
+                "duplicate_or_out_of_order": 0,
+                "future": 0,
+                "invalid_timestamp": 0,
+                "clock_resets": 0,
+                "tf_wait_attempts": 3122,
+                "pending": 0,
+                "capacity": 8,
+                "maximum_age_ns": 250000000
+              }
+            },
+            "local_outputs": {
+              "processed_camera": 6303,
+              "cue": 4,
+              "observation": 8
+            },
+            "confirmation_samples": {
+              "81": 8
+            }
+          }
+        }
+      }
     },
     {
       "number": 3,
@@ -35,7 +122,7 @@
       "domain": 231,
       "output": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2",
       "native_pid": 2512593,
-      "status": "observing",
+      "status": "completed",
       "observed_publishers": [
         "/parameter_events"
       ],
@@ -54,7 +141,88 @@
       "initial_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2/initial_audit.json",
       "initial_evidence_sha256": "dfdb39c085556680d4b2dda02bfc60fe00759965cd81bbeb085833a818b40c9e",
       "launch_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2.launch.json",
-      "launch_evidence_sha256": "7e051cc722c47bf6611040b55c1ba2f2035d64616ce7404812e26072415dc8d2"
+      "launch_evidence_sha256": "7e051cc722c47bf6611040b55c1ba2f2035d64616ce7404812e26072415dc8d2",
+      "final_report": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2/report.json",
+      "final_report_sha256": "48227ef72cb5d262167c1269482857e9ebb062a3adc1943f3143748f48f6d4f2",
+      "final": {
+        "received_frames": 6267,
+        "platform_samples": 234,
+        "platform_all_passed": true,
+        "no_policy_outputs": true,
+        "observed_publishers": [
+          "/parameter_events"
+        ],
+        "finished": true,
+        "stop_reason": "episode_completed",
+        "detectors": {
+          "original": {
+            "diagnostics": {
+              "frames": 6267,
+              "decoded": {
+                "81": 251,
+                "80": 8,
+                "341": 1
+              },
+              "small": 182,
+              "border": 0,
+              "no_range": 171,
+              "horizontal": 0,
+              "inconsistent": 0,
+              "accepted": 12,
+              "errors": 31,
+              "last_error": "Lookup would require extrapolation into the future.  Requested time 571.263000 but the latest data is at time 571.256000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]"
+            },
+            "local_outputs": {
+              "processed_camera": 6266,
+              "cue": 0,
+              "observation": 12
+            },
+            "confirmation_samples": {
+              "81": 12
+            }
+          },
+          "buffered": {
+            "diagnostics": {
+              "frames": 6259,
+              "decoded": {
+                "81": 251,
+                "80": 8,
+                "341": 1
+              },
+              "small": 182,
+              "border": 0,
+              "no_range": 171,
+              "horizontal": 0,
+              "inconsistent": 0,
+              "accepted": 16,
+              "errors": 0,
+              "last_error": "",
+              "exposure_queue": {
+                "received": 6267,
+                "processed": 6259,
+                "expired": 7,
+                "overflow": 0,
+                "duplicate_or_out_of_order": 0,
+                "future": 1,
+                "invalid_timestamp": 0,
+                "clock_resets": 0,
+                "tf_wait_attempts": 3151,
+                "pending": 0,
+                "capacity": 8,
+                "maximum_age_ns": 250000000
+              }
+            },
+            "local_outputs": {
+              "processed_camera": 6259,
+              "cue": 2,
+              "observation": 16
+            },
+            "confirmation_samples": {
+              "81": 16
+            }
+          }
+        }
+      }
     }
   ],
   "observer": "training_robust/observe_exposure_pair.py",
@@ -78,5 +246,6 @@
     "Different receiver timing from the mission; no exact production error-count comparison",
     "Original method runs first and can delay the queued callback by its inherited timeout",
     "More observations do not prove correct IDs, coordinates or improved closed-loop success"
-  ]
+  ],
+  "initial_capture_utc": "2026-11-14T20:01:04.815070+00:00"
 }

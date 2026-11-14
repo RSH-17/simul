@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T20:31:13.948271+00:00",
+  "updated_utc": "2026-11-14T20:45:41.273000+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 323,
+  "uploaded_verified": 325,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3572,6 +3572,38 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_pocket_screen_v1__00_sideways_small__1205000404.mp4",
+      "local_path": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/video/mission.mp4",
+      "bytes": 2441526,
+      "sha256": "5042e1cd876cb12d3ef22840a96cc3c799c0d0e73bd77e04fdd14f22a118bc11",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_pocket_screen_v1__00_sideways_small__1205000404.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.407,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_pocket_screen_v1__01_narrow__1205000000.mp4",
+      "local_path": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/video/mission.mp4",
+      "bytes": 1426883,
+      "sha256": "151d86e7f745d0a01c0a8bdc3af12985d5b5240ea6300c12c28e4e16915bd7f5",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_pocket_screen_v1__01_narrow__1205000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.499,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_rotation_scan_screen_v1__1200100000.mp4",
       "local_path": "training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000/video/mission.mp4",
       "bytes": 321841,
@@ -5188,7 +5220,11 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/video/mission.mp4",
+      "path": "training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline/episodes/1205020505/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate/episodes/1205020505/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {

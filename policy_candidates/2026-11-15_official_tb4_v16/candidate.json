@@ -1,0 +1,19 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v16",
+  "parent_candidate": "2026-11-15_official_tb4_v13",
+  "status": "frontier_evidence_before_spatial_gain_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "clearance_margins_changed": false,
+  "ground_truth_inputs": false,
+  "source_branch_reason": "Isolate frontier-source ownership after two completed pocket-continuation departure tests; prevent current-room gain leaking into its entry corridor.",
+  "overlay_files": {
+    "osp_mission/start_waypoints.py": "c744f5fffb3ac9c40ade4f9559f5def1adf52824385575bafd0233264a51be92",
+    "test/test_pocket_frontier_evidence.py": "bb0020b28d150bb683fcb972b5eae7726ed5ed7761bb36aa5f28f5a49f846c9c"
+  },
+  "build_script_sha256": "1d599740165ede9448fae6a3dc1ea3d8a74da4c93f660c0c516927ee8c737a63"
+}
