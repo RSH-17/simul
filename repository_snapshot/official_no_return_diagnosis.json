@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:14:22.409379+00:00",
+  "captured_utc": "2026-11-14T16:30:28.525797+00:00",
   "evidence_type": "Completed native rotation-only stall; offline no-return replay; successor native running",
   "candidate": "policy_candidates/2026-11-15_official_tb4_v5",
   "runtime": "training_robust/native90/official_tb4_v7/runtime",
@@ -181,7 +181,7 @@
   },
   "fine_resolution_candidate": "policy_candidates/2026-11-15_official_tb4_v6",
   "fine_resolution_candidate_tests_passed": 400,
-  "fine_resolution_native_status": "running",
+  "fine_resolution_native_status": "completed",
   "installed_karto_no_false_endpoint_integration_tests_passed": 1,
   "native_successor_result": {
     "evidence_type": "Independent native trajectory audit; no data supplied to policy",
@@ -323,5 +323,94 @@
     "live_contacts": 0,
     "live_targets": 0,
     "qualification": "Escape observed in an ongoing native trial; final 90-second result and full-task success are not established"
-  }
+  },
+  "fine_resolution_native_result": {
+    "elapsed_seconds": 90.392,
+    "targets": 0,
+    "collisions": 0,
+    "reason": "timeout",
+    "files": {
+      "map.pgm": true,
+      "map.yaml": true,
+      "map.posegraph": true,
+      "map.data": true,
+      "markers.csv": true
+    },
+    "map_saver_exit": 0,
+    "serialize_result": 0
+  },
+  "fine_resolution_native_escape": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": 20.400000000000002,
+    "actual_path_m": 13.291051262488187,
+    "maximum_exit_axis_progress_m": 3.399763501499299,
+    "required_progress_m": 2.331028897445001,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "fine_resolution_native_pose_audit": {
+    "evidence_type": "Finalized native evaluator audit; not policy input or a replayed success",
+    "episode": "/home/peter/simul/training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000",
+    "world_to_map": [
+      -16.91278753660129,
+      -0.38786887569020245,
+      -0.07609255999570376
+    ],
+    "fixed_initial_odom_to_map": [
+      -1.4945942584327966e-20,
+      -7.533752937147137e-33,
+      -3.6730711954553543e-20
+    ],
+    "pose_errors": {
+      "map": {
+        "position_error_m": {
+          "samples": 448,
+          "median": 0.41819937327709644,
+          "p95": 0.676643243113253,
+          "maximum": 0.685990266438497
+        },
+        "heading_error_deg": {
+          "samples": 448,
+          "median": 0.2643732909675215,
+          "p95": 1.681566765209117,
+          "maximum": 2.72092581529199
+        }
+      },
+      "odom": {
+        "position_error_m": {
+          "samples": 448,
+          "median": 0.5340447244370499,
+          "p95": 1.0194583551050074,
+          "maximum": 1.063732175354652
+        },
+        "heading_error_deg": {
+          "samples": 448,
+          "median": 24.984462152861003,
+          "p95": 41.89475770242443,
+          "maximum": 44.835303544491865
+        }
+      }
+    },
+    "full_task_success": false,
+    "truth_max_sample_gap_s": 0.20400000000000773,
+    "interpolation_limit_s": 0.35,
+    "ground_truth_supplied_to_policy": false,
+    "limitations": [
+      "Coarse independent truth is interpolated within 0.35 seconds; no high-rate motion precision claim.",
+      "One short run does not qualify long-run localization or physical hardware."
+    ],
+    "source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000/evaluation.json": "1d2d29589b03ad8fa34612bd2c1f601f3a1b3ef7dc06e190989ff9798236d79a",
+      "/home/peter/simul/training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000/pose_trace.csv": "131929414a3113e4a22c917433b8fbfa85f9b26afbd263ad4ffe4e4b51248b2a",
+      "/home/peter/simul/training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000/ground_truth_trajectory.csv": "a1527727fc7d3897670df11091394fd44af17cf6c905cdcb3588a1c4ae20de9d"
+    }
+  },
+  "fine_resolution_qualification": "Single finalized crowded-start escape; zero IDs, not full-task or hardware qualification",
+  "localization_limit": "Maximum map position error 0.685990 m in this short run; remains an unresolved bottleneck"
 }
