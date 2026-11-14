@@ -1,0 +1,170 @@
+{
+  "evidence_type": "Live paired shadow observations; not a new policy trajectory or accuracy result",
+  "domain": 231,
+  "wall_seconds": 594.2741702399217,
+  "received_frames": 2088,
+  "last_receipt_sim_s": 516.219,
+  "finished": false,
+  "stop_reason": null,
+  "source_hashes": {
+    "original": "0d1eec165e5c5af134493d167648271a59a78f3b610157f12cfb6679798df37e",
+    "buffered": "afe067fe8e55b9426a13499bc4127926f6df246f62741bf616e93cf1a9e296a3"
+  },
+  "observed_publishers": [
+    "/parameter_events"
+  ],
+  "no_policy_outputs": true,
+  "platform_samples": 80,
+  "platform_all_passed": true,
+  "ground_truth_used": false,
+  "production_promoted": false,
+  "detectors": {
+    "original": {
+      "diagnostics": {
+        "frames": 2088,
+        "decoded": {
+          "319": 1
+        },
+        "small": 1,
+        "border": 0,
+        "no_range": 0,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 0,
+        "errors": 0,
+        "last_error": ""
+      },
+      "local_outputs": {
+        "processed_camera": 2088,
+        "cue": 0,
+        "observation": 0
+      },
+      "confirmation_samples": {}
+    },
+    "buffered": {
+      "diagnostics": {
+        "frames": 2082,
+        "decoded": {
+          "319": 1
+        },
+        "small": 1,
+        "border": 0,
+        "no_range": 0,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 0,
+        "errors": 0,
+        "last_error": "",
+        "exposure_queue": {
+          "received": 2088,
+          "processed": 2082,
+          "expired": 5,
+          "overflow": 0,
+          "duplicate_or_out_of_order": 0,
+          "future": 1,
+          "invalid_timestamp": 0,
+          "clock_resets": 0,
+          "tf_wait_attempts": 1044,
+          "pending": 0,
+          "capacity": 8,
+          "maximum_age_ns": 250000000
+        }
+      },
+      "local_outputs": {
+        "processed_camera": 2082,
+        "cue": 0,
+        "observation": 0
+      },
+      "confirmation_samples": {}
+    }
+  },
+  "limits": [
+    "Different receiver timing from the mission; no exact production error-count comparison",
+    "Original method runs first and can delay the queued callback by its inherited timeout",
+    "More observations do not prove correct IDs, coordinates or improved closed-loop success"
+  ],
+  "captured_utc": "2026-11-14T18:54:10.126944+00:00",
+  "status": "running",
+  "integration_tests_passed": 1,
+  "observer_script_sha256": "ebdcff7f0a089f3254eebc8fca02e3c830ebb3d3f5c339f4eb39f8924b22f39a",
+  "interim_evidence_sha256": "986c6dda3ffe0b23a4e418c001e1a76bbe55483816aa8b4d9dc54f4cda4ad50d",
+  "no_marker_comparison_yet": false,
+  "detector_node_constructed": false,
+  "production_commands_or_tf_published": false,
+  "second_passive_range_window": {
+    "domain": 231,
+    "wall_seconds": 600.0120700523257,
+    "seen_frames": 2179,
+    "saved_frames": 0,
+    "provisional_cues": 0,
+    "errors": [],
+    "read_only": true,
+    "commands_published": false,
+    "tf_published": false,
+    "ground_truth_used": false,
+    "latest_detector": {
+      "frames": 14468,
+      "decoded": {
+        "931": 1,
+        "903": 188,
+        "647": 1,
+        "775": 1,
+        "899": 1,
+        "795": 174
+      },
+      "small": 192,
+      "border": 0,
+      "no_range": 147,
+      "horizontal": 0,
+      "inconsistent": 0,
+      "accepted": 27,
+      "errors": 65,
+      "last_error": "Lookup would require extrapolation into the future.  Requested time 384.384000 but the latest data is at time 384.383000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+      "identity_conflicts": [],
+      "resolved_ids": [
+        795
+      ],
+      "by_id": {
+        "931": {
+          "last_min_edge_pixels": 7.0,
+          "last_stamp": 94.182,
+          "small": 1
+        },
+        "903": {
+          "last_min_edge_pixels": 17.0,
+          "last_stamp": 119.691,
+          "small": 188,
+          "no_range": 146
+        },
+        "647": {
+          "last_min_edge_pixels": 9.0,
+          "last_stamp": 111.012,
+          "small": 1
+        },
+        "775": {
+          "last_min_edge_pixels": 9.0,
+          "last_stamp": 111.903,
+          "small": 1
+        },
+        "899": {
+          "last_min_edge_pixels": 15.0,
+          "last_stamp": 118.239,
+          "small": 1,
+          "no_range": 1
+        },
+        "795": {
+          "last_min_edge_pixels": 46.0,
+          "last_stamp": 384.615,
+          "accepted": 27
+        }
+      },
+      "confirmations": {
+        "795": 27
+      }
+    },
+    "platform_contract_samples": 83,
+    "platform_contract_all_passed": true,
+    "finished": true,
+    "stop_reason": "bounded_wall_window"
+  }
+}

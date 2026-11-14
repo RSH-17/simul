@@ -1,0 +1,108 @@
+{
+  "captured_utc": "2026-11-14T18:54:10.126944+00:00",
+  "evidence_type": "Candidate tests and offline observed-input ranking; no new native trajectory",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v12",
+  "parent_candidate": "2026-11-15_official_tb4_v11",
+  "full_comparison_ancestor": "2026-11-15_official_tb4_v8",
+  "runtime": "training_robust/native90/official_tb4_v14/runtime",
+  "status": "built_not_queued",
+  "runtime_tests_passed": 425,
+  "validation_log_sha256": "b178d0ab7406f00f1e8e15b91e2319664f42afaafd2bc5b9ff0ad288f054844f",
+  "policy": "policy_candidates/2026-11-15_official_tb4_v12/policy.json",
+  "settings": {
+    "deadline_aware": true
+  },
+  "weights_retrained": false,
+  "normal_exploration_deadline_filter": true,
+  "marker_overrides_changed": false,
+  "nominal_rates": {
+    "translation_m_s": 0.2,
+    "turn_rad_s": 0.45,
+    "fixed_allowance_s": 3.5
+  },
+  "replays": [
+    {
+      "name": "deadline_baseline_replay",
+      "report": "training_robust/native90/official_tb4_v14/deadline_baseline_replay.json",
+      "sha256": "162fe7d8daa1885b0f128ba59dac3b699eda4bf0151c4e2b330463a545a96c5f",
+      "decisions": 24,
+      "recorded_selections_reproduced": 23,
+      "changed_normal_decisions": [
+        {
+          "input_file": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0022.npz",
+          "input_sha256": "f365556010e582b8bec791e62e2865d678382f6c5f56e4651c1a36e869448e8c",
+          "elapsed_s": 434.479,
+          "original": {
+            "index": 25,
+            "xy": [
+              1.2208453167225883,
+              1.0340429295151141
+            ],
+            "features": [
+              0.9000000134110451,
+              1.208333351338903,
+              36.269417922872314,
+              1.6786432409812644,
+              6.699899314634078e-26
+            ],
+            "planned_path_m": 36.269417922872314,
+            "surface_score": 0.011868554346567561,
+            "frontier_score": 0.03839500825161375,
+            "revisit_penalty": 4.337357138829847e-27,
+            "score": 0.050263562598181315
+          },
+          "deadline": {
+            "remaining_s": 165.52100000000002,
+            "original_nominal_required_s": 193.2316192663048,
+            "original_exceeds_nominal_budget": true,
+            "alternative": {
+              "index": 126,
+              "xy": [
+                -7.8791548188779785,
+                9.584043056920041
+              ],
+              "features": [
+                0.800000011920929,
+                0.0,
+                4.6991378728874444,
+                2.771946351604276,
+                0.0339028528610918
+              ],
+              "planned_path_m": 4.6991378728874444,
+              "surface_score": 0.04403217345064893,
+              "frontier_score": 0.0,
+              "revisit_penalty": 0.002194790906224023,
+              "score": 0.04183738254442491
+            },
+            "original_candidate_identity_preserved": true,
+            "interpretable_as_normal_selection": true,
+            "score_note": "Alternative score shown at original weights, before any deadline discount"
+          }
+        }
+      ],
+      "original_identity_preserved": true,
+      "unmatched_choices_excluded": true
+    },
+    {
+      "name": "deadline_frontier_replay",
+      "report": "training_robust/native90/official_tb4_v14/deadline_frontier_replay.json",
+      "sha256": "65ea045f2ae84542e5ba2a754682b331304f6df81542b1755575de03a43d041c",
+      "decisions": 25,
+      "recorded_selections_reproduced": 24,
+      "changed_normal_decisions": [],
+      "original_identity_preserved": true,
+      "unmatched_choices_excluded": true
+    }
+  ],
+  "native_validation_complete": false,
+  "native_queued": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "ground_truth_used": false,
+  "limits": [
+    "Nominal estimate does not guarantee actual arrival time",
+    "One recorded selection change is not a better trajectory or success",
+    "Exposure buffering is inherited; combined effect requires native validation",
+    "Dock and supported-frontier candidate changes are not included"
+  ]
+}

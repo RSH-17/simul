@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T18:37:47.202991+00:00",
+  "captured_utc": "2026-11-14T18:54:10.126944+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -777,10 +777,12 @@
   "official_sensor_ranking_audit": "repository_snapshot/official_sensor_ranking_audit.json",
   "official_exposure_time_candidate": "repository_snapshot/official_exposure_time_candidate.json",
   "latest_candidate_validation": {
-    "candidate": "policy_candidates/2026-11-15_official_tb4_v11",
-    "runtime_tests_passed": 418,
+    "candidate": "policy_candidates/2026-11-15_official_tb4_v12",
+    "runtime_tests_passed": 425,
     "native_queued": false,
     "native_validation_complete": false,
     "production_promoted": false
-  }
+  },
+  "official_deadline_candidate": "repository_snapshot/official_deadline_candidate.json",
+  "official_exposure_shadow": "repository_snapshot/official_exposure_shadow.json"
 }

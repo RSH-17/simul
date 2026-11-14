@@ -1,0 +1,20 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v12",
+  "parent_candidate": "2026-11-15_official_tb4_v11",
+  "status": "opt_in_edge_deadline_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "deadline_required_in_policy_settings": true,
+  "overlay_files": {
+    "osp_mission/edge_policy.py": "bf40e2aa8a4049db6b89f2a199878fa0474584603861369642b84d6e6b59d0e9",
+    "osp_mission/mission.py": "159e7521511f3cfdd2ea8789fd0fb879abfac3dbaa39a71109d25f2529c0970a",
+    "osp_mission/time_budget.py": "6e58bb888ac33656b93bd1a9c0db00c90b8ebc9c3cdb01024adf619dd71f4cc3",
+    "test/test_edge_deadline.py": "712ad5ac74c15ec49f4a846b7ce6ffd8f00c3ee60df518cf992daf35e2720a8b"
+  },
+  "build_script_sha256": "1a69c34e43231ae02099eecdca7d2c423fcffaa5a20d537bc78b16b38898c6fd",
+  "policy_sha256": "0aed0c6348928e05e6e72f4750cfbaa23581444b6ae5ee927bcfb84f9df2114c"
+}
