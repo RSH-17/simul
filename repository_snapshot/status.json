@@ -563,7 +563,7 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 42.748,
+          "elapsed_seconds": 51.248,
           "readiness_reason": ""
         }
       }
@@ -571,7 +571,7 @@
     "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
     "production_promoted": false,
     "hardware_validated": false,
-    "captured_utc": "2026-11-14T17:01:04.532431+00:00",
+    "captured_utc": "2026-11-14T17:02:24.784400+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
