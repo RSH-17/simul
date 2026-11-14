@@ -1,0 +1,562 @@
+{
+  "captured_utc": "2026-11-14T22:31:32.956395+00:00",
+  "evidence_type": "Two partial offline sensor replays from one ongoing U-shape paired native experiment",
+  "candidate": "Unchanged pose_increment_gyro sensor-only integrator",
+  "original_short_diagnosis": "repository_snapshot/official_pose_gyro_diagnosis.json",
+  "interpretation": "The prior 17.6-second improvement recurs in two longer independent recordings of the same U-shaped scenario; not two different scenarios or completed native runs",
+  "results": [
+    {
+      "common_start_s": 7.421,
+      "common_end_s": 145.508,
+      "duration_s": 138.08700000000002,
+      "actual_path_m": 5.761409272571924,
+      "actual_absolute_turn_rad": 21.983946430967336,
+      "estimators": {
+        "wheel": {
+          "position_error_m": {
+            "samples": 8561,
+            "median": 0.860739391172377,
+            "p95": 0.8645128128318033,
+            "maximum": 0.8648056656161749
+          },
+          "heading_error_deg": {
+            "samples": 8561,
+            "median": 8.259677436426315,
+            "p95": 12.68194928543394,
+            "maximum": 16.395697965595694
+          },
+          "initial_alignment": [
+            1.7045680764054458,
+            12.582908902580318,
+            1.921901431261107
+          ],
+          "final_position_error_m": 0.8365370524220663,
+          "final_heading_error_deg": 12.601713209621058
+        },
+        "pose_increment_gyro": {
+          "position_error_m": {
+            "samples": 8561,
+            "median": 0.0033874326880911185,
+            "p95": 0.0037576771183484106,
+            "maximum": 0.007765582896587178
+          },
+          "heading_error_deg": {
+            "samples": 8561,
+            "median": 0.14719686820181016,
+            "p95": 0.5504024054180822,
+            "maximum": 2.15720769292108
+          },
+          "initial_alignment": [
+            1.7045680764054458,
+            12.582908902580318,
+            1.921901431261107
+          ],
+          "final_position_error_m": 0.0035270465167244274,
+          "final_heading_error_deg": 0.4599542054541566
+        }
+      },
+      "snapshot": {
+        "schema_version": 1,
+        "captured_utc": "2026-11-14T22:28:15.080860+00:00",
+        "evidence_type": "Frozen partial recording from an ongoing native episode",
+        "recording": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_00",
+        "episode": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303",
+        "native_pid": 2642378,
+        "native_process_start": "356439862",
+        "domain": 230,
+        "recorder_process_start": "356444611",
+        "progress_before": {
+          "status": "recording",
+          "recorder_pid": 2645648,
+          "native_pid": 2642378,
+          "platform_checks": 503,
+          "wall_seconds": 1004.4305363399908
+        },
+        "progress_after": {
+          "status": "recording",
+          "recorder_pid": 2645648,
+          "native_pid": 2642378,
+          "platform_checks": 503,
+          "wall_seconds": 1004.4305363399908
+        },
+        "original_process_verified_before_and_after": true,
+        "recording_complete": false,
+        "sensor_prefix": {
+          "observed_size_bytes": 2644502,
+          "omitted_incomplete_bytes": 0
+        },
+        "truth_prefix": {
+          "observed_size_bytes": 44399,
+          "omitted_incomplete_bytes": 0
+        },
+        "file_sha256": {
+          "launch.json": "0e31e8fd31d0a54695669c3a9f34dbea999b02a3f54787d5a053457f08df5fda",
+          "source_sha256.json": "f028233cdfd72a6ed524b58dfd2a6731999f01a20bce731ef781464a233acd38",
+          "passivity_check.json": "80dbc15f3ff3e1d0ee51a812f41344ff7eeb5306e51b13c059504de6e06dbd66",
+          "platform_before.json": "be681aa155bbb58c91477f6580d1e3c8c3cd7b67fdd1eed9dba3e098629637db",
+          "inputs.csv": "2c5842dca599d4ce7adb1674afdca6de92685cc13a7bcf68bf76cd7773c49dcc",
+          "truth.csv": "9291b6b8869f65073b2dcf1265be4a1e08a6f787e88ab8c5f53c17fc332d3e68",
+          "create3.urdf.xacro": "43cdd0505eabab9f269d91f4aafa962a14597ba968a97b8acc225d94be7441f4",
+          "imu.urdf.xacro": "5edac69eb17d68d3e8077b573337ad8a115b88a045904d7c9fc630c957d33e67",
+          "platform_after.json": "be681aa155bbb58c91477f6580d1e3c8c3cd7b67fdd1eed9dba3e098629637db"
+        }
+      },
+      "snapshot_manifest_sha256": "3b5daa7d2ea22a1343810fef61b0947b3bc559cd84864ab4337cda38799331ad",
+      "inputs": {
+        "raw_counts": {
+          "odom": 8694,
+          "imu": 8768
+        },
+        "identical_duplicates_removed": {
+          "odom": 1,
+          "imu": 0
+        },
+        "unique_counts": {
+          "odom": 8693,
+          "imu": 8768
+        },
+        "frames": {
+          "odom": [
+            "odom",
+            "base_link"
+          ],
+          "imu": [
+            "turtlebot4/imu_link/imu",
+            ""
+          ]
+        },
+        "maximum_gap_s": {
+          "odom": 0.05600000000000094,
+          "imu": 0.016000000000019554
+        },
+        "ordering": "Original per-stream order; no sorting, conflicting deduplication or reset repair"
+      },
+      "sensor_estimate_sha256": "1f630e6c54ff61770fee4b68b02653bd95af2ff3e9dd171b6d62766b274126e0",
+      "truth_sampling": {
+        "samples": 689,
+        "maximum_gap_s": 0.20400000000000773,
+        "interpolation_limit_s": 0.35,
+        "candidate_estimates_in_common_interval": 8561,
+        "matched_estimates": 8561
+      },
+      "source_sha256": {
+        "/home/peter/simul/training_robust/audit_official_odometry_inputs.py": "4505070f322b901b41947d6fa9104b74d41106642187a65e8bfa09a3534fb203",
+        "/home/peter/simul/training_robust/pose_increment_gyro.py": "c264f4512ab4df29f3aabb7e88a4ff0a62328c64b57a9c3e1389dedd75ea721d",
+        "/home/peter/simul/training_robust/audit_imu_shadow.py": "3e28a0c32defec79efcafbe6d052e1e24452c323822a26b83656de7deea5e5dd",
+        "/home/peter/simul/training_robust/audit_pose_trace.py": "586ff563216cedb65b03e0935d182ebdb8d99840a23e24829bc0df13206ffb49"
+      },
+      "evidence_type": "Offline sensor-only replay of partial ongoing native recording",
+      "estimator_parameters": {
+        "max_wheel_gap_s": 0.1,
+        "max_gyro_gap_s": 0.05
+      },
+      "ground_truth_supplied_to_estimator": false,
+      "absolute_imu_orientation_used": false,
+      "reported_wheel_twist_used": false,
+      "scale_fitted": false,
+      "configuration_deployed": false,
+      "native_navigation_validated": false,
+      "hardware_validated": false,
+      "production_promoted": false,
+      "limitations": [
+        "Partial development recording; not a completed episode or unseen-scenario qualification.",
+        "Each estimate has only one initial alignment; drift before the common start is excluded.",
+        "Independent truth is interpolated only across gaps of at most 0.35 seconds.",
+        "Installed simulation IMU axes checked; hardware extrinsics, noise and gyro bias are uncalibrated.",
+        "Planar integration has no validated online TF, covariance or dropout recovery adapter."
+      ],
+      "job": 0,
+      "local_evaluation": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_snapshot_job_00_v1/evaluation_v2.json",
+      "evaluation_sha256": "254dd82654eb636afa4e2602f18e398f1e42fe7e678a26451734657b22c4722b"
+    },
+    {
+      "common_start_s": 5.009,
+      "common_end_s": 146.573,
+      "duration_s": 141.56400000000002,
+      "actual_path_m": 6.145037498841422,
+      "actual_absolute_turn_rad": 25.5599915574135,
+      "estimators": {
+        "wheel": {
+          "position_error_m": {
+            "samples": 8777,
+            "median": 0.8454861770645633,
+            "p95": 0.84989280946631,
+            "maximum": 0.8585319012200819
+          },
+          "heading_error_deg": {
+            "samples": 8777,
+            "median": 7.739586983773978,
+            "p95": 12.133898963028477,
+            "maximum": 16.830110224503343
+          },
+          "initial_alignment": [
+            1.704631403506863,
+            12.582736041804832,
+            1.9219013773252327
+          ],
+          "final_position_error_m": 0.8585319012200819,
+          "final_heading_error_deg": 6.874132527458133
+        },
+        "pose_increment_gyro": {
+          "position_error_m": {
+            "samples": 8777,
+            "median": 0.01151275587195688,
+            "p95": 0.01197040947472076,
+            "maximum": 0.014007214103901688
+          },
+          "heading_error_deg": {
+            "samples": 8777,
+            "median": 0.03648319210362926,
+            "p95": 0.4784248233830422,
+            "maximum": 1.989862346638113
+          },
+          "initial_alignment": [
+            1.704631403506863,
+            12.582736041804832,
+            1.9219013773252327
+          ],
+          "final_position_error_m": 0.010354004815804523,
+          "final_heading_error_deg": 0.46630819539559887
+        }
+      },
+      "snapshot": {
+        "schema_version": 1,
+        "captured_utc": "2026-11-14T22:28:15.058227+00:00",
+        "evidence_type": "Frozen partial recording from an ongoing native episode",
+        "recording": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_01",
+        "episode": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303",
+        "native_pid": 2642388,
+        "native_process_start": "356439869",
+        "domain": 231,
+        "recorder_process_start": "356442994",
+        "progress_before": {
+          "status": "recording",
+          "recorder_pid": 2645484,
+          "native_pid": 2642388,
+          "platform_checks": 511,
+          "wall_seconds": 1020.4077192200348
+        },
+        "progress_after": {
+          "status": "recording",
+          "recorder_pid": 2645484,
+          "native_pid": 2642388,
+          "platform_checks": 511,
+          "wall_seconds": 1020.4077192200348
+        },
+        "original_process_verified_before_and_after": true,
+        "recording_complete": false,
+        "sensor_prefix": {
+          "observed_size_bytes": 2702517,
+          "omitted_incomplete_bytes": 0
+        },
+        "truth_prefix": {
+          "observed_size_bytes": 45337,
+          "omitted_incomplete_bytes": 0
+        },
+        "file_sha256": {
+          "launch.json": "1f13245a784a1dff767c053b8140cba157e5cba47dad373d257fa9bc3017e721",
+          "source_sha256.json": "f028233cdfd72a6ed524b58dfd2a6731999f01a20bce731ef781464a233acd38",
+          "passivity_check.json": "bfb416e6db55e56c8acbcdff33c2434b09ff0c89f47854e6612cec741063b0fa",
+          "platform_before.json": "e5abeee178a36dc5c6f91058d91cc9a9610b047e20e7b8aedf88f0f79f219f3d",
+          "inputs.csv": "e9663a949263b6b75d63cc5845f0700d9b66fb0eef38f40c6eb4c8a4e723d897",
+          "truth.csv": "414960a8b6ab3a8b7af3d207f4ca00a068dc9cd2832c1de2b62bf4eee61aeb37",
+          "create3.urdf.xacro": "43cdd0505eabab9f269d91f4aafa962a14597ba968a97b8acc225d94be7441f4",
+          "imu.urdf.xacro": "5edac69eb17d68d3e8077b573337ad8a115b88a045904d7c9fc630c957d33e67",
+          "platform_after.json": "e5abeee178a36dc5c6f91058d91cc9a9610b047e20e7b8aedf88f0f79f219f3d"
+        }
+      },
+      "snapshot_manifest_sha256": "4e9e3aa59507af5b1408f974a69ad29cc21fbc46685ef1056d949116f47b7c41",
+      "inputs": {
+        "raw_counts": {
+          "odom": 8900,
+          "imu": 8973
+        },
+        "identical_duplicates_removed": {
+          "odom": 0,
+          "imu": 0
+        },
+        "unique_counts": {
+          "odom": 8900,
+          "imu": 8973
+        },
+        "frames": {
+          "odom": [
+            "odom",
+            "base_link"
+          ],
+          "imu": [
+            "turtlebot4/imu_link/imu",
+            ""
+          ]
+        },
+        "maximum_gap_s": {
+          "odom": 0.05299999999999905,
+          "imu": 0.016000000000019554
+        },
+        "ordering": "Original per-stream order; no sorting, conflicting deduplication or reset repair"
+      },
+      "sensor_estimate_sha256": "3c99e5b633bedc7c79292c65f011c57fee60fb5f5f632d448aa3c9db42688d11",
+      "truth_sampling": {
+        "samples": 700,
+        "maximum_gap_s": 0.20400000000000773,
+        "interpolation_limit_s": 0.35,
+        "candidate_estimates_in_common_interval": 8777,
+        "matched_estimates": 8777
+      },
+      "source_sha256": {
+        "/home/peter/simul/training_robust/audit_official_odometry_inputs.py": "4505070f322b901b41947d6fa9104b74d41106642187a65e8bfa09a3534fb203",
+        "/home/peter/simul/training_robust/pose_increment_gyro.py": "c264f4512ab4df29f3aabb7e88a4ff0a62328c64b57a9c3e1389dedd75ea721d",
+        "/home/peter/simul/training_robust/audit_imu_shadow.py": "3e28a0c32defec79efcafbe6d052e1e24452c323822a26b83656de7deea5e5dd",
+        "/home/peter/simul/training_robust/audit_pose_trace.py": "586ff563216cedb65b03e0935d182ebdb8d99840a23e24829bc0df13206ffb49"
+      },
+      "evidence_type": "Offline sensor-only replay of partial ongoing native recording",
+      "estimator_parameters": {
+        "max_wheel_gap_s": 0.1,
+        "max_gyro_gap_s": 0.05
+      },
+      "ground_truth_supplied_to_estimator": false,
+      "absolute_imu_orientation_used": false,
+      "reported_wheel_twist_used": false,
+      "scale_fitted": false,
+      "configuration_deployed": false,
+      "native_navigation_validated": false,
+      "hardware_validated": false,
+      "production_promoted": false,
+      "limitations": [
+        "Partial development recording; not a completed episode or unseen-scenario qualification.",
+        "Each estimate has only one initial alignment; drift before the common start is excluded.",
+        "Independent truth is interpolated only across gaps of at most 0.35 seconds.",
+        "Installed simulation IMU axes checked; hardware extrinsics, noise and gyro bias are uncalibrated.",
+        "Planar integration has no validated online TF, covariance or dropout recovery adapter."
+      ],
+      "job": 1,
+      "local_evaluation": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_snapshot_job_01_v1/evaluation_v2.json",
+      "evaluation_sha256": "1173c88219a220dc31362cfb25fc4dad0298601e456a9c99032d0ac99c8c10b7"
+    }
+  ],
+  "tests": {
+    "passed": 35,
+    "new_snapshot_reader_tests": 16,
+    "existing_estimator_and_audit_tests": 15,
+    "existing_capture_lifetime_tests": 4,
+    "command": "OPENBLAS_NUM_THREADS=1 /usr/bin/python3 -m pytest -q training_robust/test_official_odometry_inputs.py training_robust/test_pose_increment_gyro.py training_robust/test_imu_shadow.py training_robust/test_official_odometry_capture.py"
+  },
+  "recorders": [
+    {
+      "job": 0,
+      "unit": "osp-official-odom-input-00.service",
+      "properties": [
+        "MainPID=2641610",
+        "CPUQuotaPerSecUSec=150ms",
+        "MemoryMax=536870912",
+        "ActiveState=active"
+      ],
+      "progress": {
+        "status": "recording",
+        "recorder_pid": 2645648,
+        "native_pid": 2642378,
+        "platform_checks": 602,
+        "wall_seconds": 1202.509448079858
+      },
+      "output": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_00",
+      "starts_native_benchmark": false
+    },
+    {
+      "job": 1,
+      "unit": "osp-official-odom-input-01.service",
+      "properties": [
+        "MainPID=2641618",
+        "CPUQuotaPerSecUSec=150ms",
+        "MemoryMax=536870912",
+        "ActiveState=active"
+      ],
+      "progress": {
+        "status": "recording",
+        "recorder_pid": 2645484,
+        "native_pid": 2642388,
+        "platform_checks": 610,
+        "wall_seconds": 1218.4928956376389
+      },
+      "output": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_01",
+      "starts_native_benchmark": false
+    },
+    {
+      "job": 2,
+      "unit": "osp-official-odom-input-02.service",
+      "properties": [
+        "MainPID=2658455",
+        "CPUQuotaPerSecUSec=150ms",
+        "MemoryMax=536870912",
+        "ActiveState=active"
+      ],
+      "progress": {
+        "status": "waiting_for_verified_native_process",
+        "job": 2
+      },
+      "output": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_02",
+      "starts_native_benchmark": false
+    },
+    {
+      "job": 3,
+      "unit": "osp-official-odom-input-03.service",
+      "properties": [
+        "MainPID=2658464",
+        "CPUQuotaPerSecUSec=150ms",
+        "MemoryMax=536870912",
+        "ActiveState=active"
+      ],
+      "progress": {
+        "status": "waiting_for_verified_native_process",
+        "job": 3
+      },
+      "output": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_03",
+      "starts_native_benchmark": false
+    },
+    {
+      "job": 4,
+      "unit": "osp-official-odom-input-04.service",
+      "properties": [
+        "MainPID=2658472",
+        "CPUQuotaPerSecUSec=150ms",
+        "MemoryMax=536870912",
+        "ActiveState=active"
+      ],
+      "progress": {
+        "status": "waiting_for_verified_native_process",
+        "job": 4
+      },
+      "output": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_04",
+      "starts_native_benchmark": false
+    },
+    {
+      "job": 5,
+      "unit": "osp-official-odom-input-05.service",
+      "properties": [
+        "MainPID=2658492",
+        "CPUQuotaPerSecUSec=150ms",
+        "MemoryMax=536870912",
+        "ActiveState=active"
+      ],
+      "progress": {
+        "status": "waiting_for_verified_native_process",
+        "job": 5
+      },
+      "output": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_05",
+      "starts_native_benchmark": false
+    }
+  ],
+  "native_at_report": [
+    {
+      "job": 0,
+      "role": "baseline",
+      "domain": 230,
+      "status": {
+        "state": "running",
+        "approached_ids": [],
+        "targets": 0,
+        "collisions": 0,
+        "elapsed_seconds": 168.3,
+        "active_action": "nav",
+        "readiness_reason": "",
+        "sensor_interruptions": 0,
+        "planning_settings": {
+          "deadline_aware": true
+        },
+        "dock_anchor": {
+          "status": "captured_before_undock",
+          "frame": "map",
+          "pose": [
+            0.157,
+            0.0,
+            3.141592
+          ],
+          "captured_seconds": 5.2,
+          "source": "observed map<-std_dock_link TF"
+        },
+        "nav2_lifecycle": {
+          "controller_server": 3,
+          "planner_server": 3,
+          "behavior_server": 3,
+          "bt_navigator": 3
+        },
+        "drive_controllers": {
+          "diffdrive_controller": "active",
+          "joint_state_broadcaster": "active"
+        },
+        "confirmed_surface_cells": 7,
+        "confirmed_face_anchors": 0,
+        "reassociated_face_records": 0,
+        "camera_diagnostics": {
+          "received": 5121,
+          "late": 0,
+          "invalid_calibration": 0,
+          "duplicate": 0,
+          "accepted": 5121,
+          "coverage_updates": 5099,
+          "tf_waits": 23
+        }
+      }
+    },
+    {
+      "job": 1,
+      "role": "candidate",
+      "domain": 231,
+      "status": {
+        "state": "running",
+        "approached_ids": [],
+        "targets": 0,
+        "collisions": 0,
+        "elapsed_seconds": 170.483,
+        "active_action": "spin",
+        "readiness_reason": "",
+        "sensor_interruptions": 0,
+        "planning_settings": {
+          "deadline_aware": true
+        },
+        "dock_anchor": {
+          "status": "captured_before_undock",
+          "frame": "map",
+          "pose": [
+            0.157,
+            0.0,
+            3.141592
+          ],
+          "captured_seconds": 4.017,
+          "source": "observed map<-std_dock_link TF"
+        },
+        "nav2_lifecycle": {
+          "controller_server": 3,
+          "planner_server": 3,
+          "behavior_server": 3,
+          "bt_navigator": 3
+        },
+        "drive_controllers": {
+          "diffdrive_controller": "active",
+          "joint_state_broadcaster": "active"
+        },
+        "confirmed_surface_cells": 0,
+        "confirmed_face_anchors": 0,
+        "reassociated_face_records": 0,
+        "camera_diagnostics": {
+          "received": 5190,
+          "late": 0,
+          "invalid_calibration": 0,
+          "duplicate": 0,
+          "accepted": 5190,
+          "coverage_updates": 5167,
+          "tf_waits": 23
+        }
+      }
+    }
+  ],
+  "configuration_deployed": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "next_validation": [
+    "Complete both U-shape native trials and collect longer full-rate inputs.",
+    "Capture already prepared C-shape and zigzag native trials with four bounded passive watchers.",
+    "Evaluate fixed sensor-only estimator without fitted scales, per-scenario tuning or evaluator data as input.",
+    "Investigate repeated controller progress failures; no causal claim from odometry replay alone.",
+    "Validate online covariance, frame ownership, sensor gaps and physical IMU calibration before real-robot use."
+  ]
+}

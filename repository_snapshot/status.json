@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Built isolated central LiDAR fallback after raw mixed-surface failures; preserves successful ranges; 23 additional recorded ranges independently checked, native validation pending",
+  "latest_change": "Verified unchanged wheel-pose/gyro estimator on two 138/142-second U-shape partial sensor recordings; 35 tests passed, C/zigzag passive captures queued; not deployed",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -842,7 +842,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T21:28:20.562371+00:00",
+  "latest_status_check_utc": "2026-11-14T22:31:32.956395+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -1106,11 +1106,20 @@
   "official_integrated_comparison": "repository_snapshot/official_integrated_comparison.json",
   "next_full_native_campaign": {
     "campaign": "training_robust/native90/official_integrated_comparison_v1",
-    "status": "waiting_for_verified_departure",
-    "handoff_unit": "osp-official-integrated-handoff-v1.service",
-    "verified_handoff_main_pid": 2603742,
-    "actual_native_started": false,
-    "phase": "fixed_weight_development_not_coefficient_training"
+    "status": "running_first_U_pair",
+    "coordinator_unit": "osp-official-integrated-comparison-v1.service",
+    "actual_native_started": true,
+    "phase": "fixed_weight_development_not_coefficient_training",
+    "active_jobs": [
+      0,
+      1
+    ],
+    "prepared_jobs": [
+      2,
+      3,
+      4,
+      5
+    ]
   },
   "passive_zigzag_capture": {
     "unit": "osp-marker-input-zigzag-05.service",
@@ -1140,5 +1149,15 @@
   "official_zigzag_loop_gate_result": "repository_snapshot/official_zigzag_loop_gate_result.json",
   "official_pose_gyro_diagnosis": "repository_snapshot/official_pose_gyro_diagnosis.json",
   "official_strict_loop_universal_improvement_established": false,
-  "official_integrated_native_status": "running_first_U_pair; check live gates and independent outcomes"
+  "official_integrated_native_status": "running_first_U_pair; no completed integrated trials yet",
+  "official_pose_gyro_u_partial_result": "repository_snapshot/official_pose_gyro_u_partial_result.json",
+  "official_odometry_input_validation": {
+    "tests_passed": 35,
+    "recording_count": 2,
+    "distinct_new_scenarios": 1,
+    "partial_recordings": true,
+    "native_navigation_validated": false,
+    "hardware_validated": false,
+    "configuration_deployed": false
+  }
 }
