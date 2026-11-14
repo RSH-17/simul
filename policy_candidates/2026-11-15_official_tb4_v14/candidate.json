@@ -1,0 +1,17 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v14",
+  "parent_candidate": "2026-11-15_official_tb4_v8",
+  "status": "map_frame_face_sweep_candidate",
+  "production_promoted": false,
+  "native_validated": false,
+  "hardware_validated": false,
+  "weights_retrained": false,
+  "odometry_changed": false,
+  "official_robot_files_modified": false,
+  "ground_truth_inputs": false,
+  "overlay_files": {
+    "osp_mission/face_directed_look.py": "d333355783a2eb67e94170b6833264a6879c12d805ac1612cf1dcd2e54c3d066",
+    "test/test_face_directed_runtime.py": "55ee9365f0acaebea9bfdd3fe2200631406c0c7420e36beb8c6db23c2e5a7bd0"
+  },
+  "build_script_sha256": "488dce28f3703e097c8e866aae64826539cc10b72d9eea453e11180269820509"
+}

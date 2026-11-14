@@ -1,0 +1,109 @@
+{
+  "evidence_type": "Offline replay of original face-sweep events; no new native trajectory",
+  "rows": [
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000",
+      "selected_sim_s": 34.5,
+      "consumed_sim_s": 94.5,
+      "navigation_wait_s": 60.0,
+      "map_from_odom_yaw_change_deg": -22.736379886017353,
+      "original_turn_deg": 50.18668030883805,
+      "candidate_turn_deg": 72.92306019485542,
+      "candidate_current_map_camera_lookup": true
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000",
+      "selected_sim_s": 387.0,
+      "consumed_sim_s": 404.0,
+      "navigation_wait_s": 17.0,
+      "map_from_odom_yaw_change_deg": 5.1603551022080545,
+      "original_turn_deg": 77.54414096798699,
+      "candidate_turn_deg": 72.3837858657789,
+      "candidate_current_map_camera_lookup": true
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000",
+      "selected_sim_s": 407.5,
+      "consumed_sim_s": 421.0,
+      "navigation_wait_s": 13.5,
+      "map_from_odom_yaw_change_deg": -8.448405928652967,
+      "original_turn_deg": 39.00860677168867,
+      "candidate_turn_deg": 47.45701270034164,
+      "candidate_current_map_camera_lookup": true
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000",
+      "selected_sim_s": 504.0,
+      "consumed_sim_s": 508.0,
+      "navigation_wait_s": 4.0,
+      "map_from_odom_yaw_change_deg": -2.1995849755072006,
+      "original_turn_deg": 69.8831554707719,
+      "candidate_turn_deg": 72.0827404462791,
+      "candidate_current_map_camera_lookup": true
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000",
+      "selected_sim_s": 89.5,
+      "consumed_sim_s": 160.0,
+      "navigation_wait_s": 70.5,
+      "map_from_odom_yaw_change_deg": 6.546841644756747,
+      "original_turn_deg": 79.23034009249321,
+      "candidate_turn_deg": 72.68349844773645,
+      "candidate_current_map_camera_lookup": true
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000",
+      "selected_sim_s": 423.0,
+      "consumed_sim_s": 430.0,
+      "navigation_wait_s": 7.0,
+      "map_from_odom_yaw_change_deg": 2.9417526333269763,
+      "original_turn_deg": 75.47450556265038,
+      "candidate_turn_deg": 72.5327529293234,
+      "candidate_current_map_camera_lookup": true
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000",
+      "selected_sim_s": 445.5,
+      "consumed_sim_s": 472.5,
+      "navigation_wait_s": 27.0,
+      "map_from_odom_yaw_change_deg": 9.448543539749581,
+      "original_turn_deg": 57.410982180545226,
+      "candidate_turn_deg": 47.96243864079563,
+      "candidate_current_map_camera_lookup": true
+    }
+  ],
+  "excluded": [],
+  "map_odom_maximum_timestamp_skew_s": 0.04,
+  "maximum_interpolation_gap_s": 0.35,
+  "source_sha256": {
+    "/home/peter/simul/training_robust/native90/official_tb4_v16/runtime/src/osp_mission/osp_mission/face_directed_look.py": "d333355783a2eb67e94170b6833264a6879c12d805ac1612cf1dcd2e54c3d066",
+    "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/pose_trace.csv": "dd5def950d03b454a4a8e3942d57fee38cc789b4a9e95dff90240abb906982cb",
+    "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/face_directed_looks.jsonl": "90134eeebcc1d699b0233a9a9a7871cda4fa7df2c8625887b1583b0965530faf",
+    "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/pose_trace.csv": "89aef070a32873098c932ecaebdf52951070deafd04093a759920e510a698b76",
+    "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/face_directed_looks.jsonl": "6bc572a63c7afaec9b11c7153caea812debf2697c27a1524e6b1c221894c5a7a"
+  },
+  "ground_truth_used": false,
+  "ros_nodes_created": false,
+  "recognition_improvement_established": false,
+  "production_promoted": false,
+  "limits": [
+    "Map/odom transforms are reconstructed from sparse time-matched pose traces",
+    "Current camera orientation is inferred from an unclamped logged original command",
+    "Map-frame goal orientation matches Nav2 intent; physical face association after loop closure is unverified",
+    "No alternate future camera frames, marker detections or completion outcome are predicted"
+  ],
+  "captured_utc": "2026-11-14T19:34:54.357215+00:00",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v14",
+  "runtime": "training_robust/native90/official_tb4_v16/runtime",
+  "parent_candidate": "policy_candidates/2026-11-15_official_tb4_v8",
+  "runtime_tests_passed": 417,
+  "replay_and_real_tf2_tests_passed": 8,
+  "native_validation_status": "not_scheduled",
+  "hardware_validated": false,
+  "weights_retrained": false,
+  "odometry_changed": false,
+  "source_scope": "Only face-directed sweep frame changes, on the camera-scaled v8 parent; marker looks, visit memory, exposure buffering, deadline and pocket candidates are unchanged or not merged.",
+  "diagnosis": "Storing the observation endpoint in odom at selection adds map/odom rotation accumulated during navigation. The navigation goal itself remains in map.",
+  "maximum_observed_frame_change_deg": 22.736379886017353,
+  "validation_log_sha256": "80338b58f9bc230955d721baf425b9e3ae245718389cd474c834098d4494cfd5"
+}
