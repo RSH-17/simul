@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T18:54:10.126944+00:00",
+  "captured_utc": "2026-11-14T19:06:08.916098+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -766,5 +766,21 @@
     "production_promoted": false
   },
   "official_deadline_candidate": "repository_snapshot/official_deadline_candidate.json",
-  "official_exposure_shadow": "repository_snapshot/official_exposure_shadow.json"
+  "official_exposure_shadow": "repository_snapshot/official_exposure_shadow.json",
+  "official_c_shape_baseline_result": "repository_snapshot/official_c_shape_baseline_result.json",
+  "latest_full_native_result": {
+    "campaign": "official_frontier_comparison_v1",
+    "job": 0,
+    "candidate": "2026-11-15_official_tb4_v8",
+    "outcome": {
+      "success": false,
+      "targets": 1,
+      "approached": 3,
+      "contacts": 0,
+      "seconds": 600.479,
+      "infrastructure_failure": false,
+      "reason": "timeout"
+    },
+    "all_input_gates_passed": true
+  }
 }

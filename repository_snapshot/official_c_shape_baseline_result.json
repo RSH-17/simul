@@ -1,0 +1,290 @@
+{
+  "captured_utc": "2026-11-14T19:06:08.916098+00:00",
+  "evidence_type": "Finalized new official Gazebo baseline, plus separate offline memory bookkeeping replay",
+  "campaign": "official_frontier_comparison_v1",
+  "job": 0,
+  "role": "baseline",
+  "candidate": "2026-11-15_official_tb4_v8",
+  "seed": 1205000000,
+  "shape": "c_shape",
+  "profile": "narrow",
+  "obstacles": 9,
+  "duration_s": 600.479,
+  "outcome": {
+    "success": false,
+    "targets": 1,
+    "approached": 3,
+    "contacts": 0,
+    "seconds": 600.479,
+    "infrastructure_failure": false,
+    "reason": "timeout"
+  },
+  "all_input_gates_passed": true,
+  "input_gates": {
+    "runtime_configuration_gate": true,
+    "velocity_profile_gate": true,
+    "scan_adapter_gate": true,
+    "floor_sensor_gate": true,
+    "drive_path_gate": true,
+    "official_description_gate": true,
+    "slam_transport_gate": true,
+    "navigation_grid_gate": true,
+    "candidate_output_profiles_gate": true
+  },
+  "ground_truth_audit": {
+    "available": true,
+    "correct_ids": false,
+    "correct_positions": false,
+    "position_tolerance_m": 0.5,
+    "position_errors_m": {
+      "795": 0.3132066531868939
+    },
+    "expected_ids": [
+      319,
+      795,
+      903
+    ],
+    "found_ids": [
+      795
+    ],
+    "closest_approach_m": {
+      "903": 0.5676628774756414,
+      "319": 0.8637083760943562,
+      "795": 0.8366756479675724
+    },
+    "approached_within_1_5m": 3,
+    "approach_radius_m": 1.5,
+    "all_approached": true,
+    "approached_within_2m": 3,
+    "world_to_map": [
+      -18.43514405305211,
+      -1.8787753015175612,
+      -1.9551561398326667e-05
+    ],
+    "trajectory_samples": 2949
+  },
+  "pose_errors": {
+    "map": {
+      "position_error_m": {
+        "samples": 2948,
+        "median": 0.42778826804362263,
+        "p95": 0.5914078174288828,
+        "maximum": 0.6058575752070019
+      },
+      "heading_error_deg": {
+        "samples": 2948,
+        "median": 0.19399461422577347,
+        "p95": 1.3209200312787335,
+        "maximum": 2.8486655872653155
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 2948,
+        "median": 8.150561938739935,
+        "p95": 13.750150423265564,
+        "maximum": 15.380402745023092
+      },
+      "heading_error_deg": {
+        "samples": 2948,
+        "median": 47.47719943141369,
+        "p95": 88.5026304078948,
+        "maximum": 89.90815186623867
+      }
+    }
+  },
+  "mission_memory_report": {
+    "version": 2,
+    "visited_cells": 172,
+    "completed_viewpoints": 8,
+    "failed_viewpoints": 2,
+    "retry_after": 749.937,
+    "suppressed_redundant_viewpoints": 2,
+    "path_distance_m": 99.39897928294506,
+    "revisited_distance_m": 3.067293376737172,
+    "source": "odom + observed SLAM/TF only; revisits include necessary transit"
+  },
+  "offline_memory_replay": {
+    "evidence_type": "Same observe() bookkeeping on paired recorded poses; no policy re-run",
+    "paired_samples": 983,
+    "minimum_sampling_period_s": 0.5,
+    "maximum_pose_stamp_difference_s": 0.04,
+    "pose_frames": {
+      "map": {
+        "visited_cells": 152,
+        "path_distance_m": 97.02092429023114,
+        "revisited_distance_m": 6.565639194832592
+      },
+      "odom": {
+        "visited_cells": 170,
+        "path_distance_m": 99.59401549022269,
+        "revisited_distance_m": 3.6609609348259684
+      },
+      "evaluator_truth": {
+        "visited_cells": 155,
+        "path_distance_m": 99.46504753910231,
+        "revisited_distance_m": 5.930079088550247
+      }
+    },
+    "ground_truth_is_evaluator_only": true,
+    "limits": [
+      "This checks visit-cell bookkeeping only; no completed-view suppression or future goal replay",
+      "Revisited distance is the existing coarse-cell entry metric, not all physical retraced path",
+      "Map observations retain localization error; no map-memory fix validated yet"
+    ]
+  },
+  "detector": {
+    "frames": 18272,
+    "decoded": {
+      "63": 13,
+      "319": 337,
+      "795": 129,
+      "775": 20,
+      "519": 8,
+      "903": 253,
+      "647": 1,
+      "899": 1
+    },
+    "small": 661,
+    "border": 6,
+    "no_range": 284,
+    "horizontal": 0,
+    "inconsistent": 0,
+    "accepted": 16,
+    "errors": 57,
+    "last_error": "Lookup would require extrapolation into the future.  Requested time 340.593000 but the latest data is at time 340.580000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+    "identity_conflicts": [],
+    "resolved_ids": [
+      795
+    ],
+    "by_id": {
+      "63": {
+        "last_min_edge_pixels": 5.0,
+        "last_stamp": 475.992,
+        "small": 13
+      },
+      "319": {
+        "last_min_edge_pixels": 6.0,
+        "last_stamp": 472.824,
+        "small": 337,
+        "no_range": 124,
+        "border": 1
+      },
+      "795": {
+        "last_min_edge_pixels": 21.3775577545166,
+        "last_stamp": 340.659,
+        "border": 3,
+        "accepted": 16,
+        "small": 35
+      },
+      "775": {
+        "last_min_edge_pixels": 5.0,
+        "last_stamp": 541.695,
+        "small": 20
+      },
+      "519": {
+        "last_min_edge_pixels": 5.0,
+        "last_stamp": 541.827,
+        "small": 8
+      },
+      "903": {
+        "last_min_edge_pixels": 18.0,
+        "last_stamp": 561.396,
+        "small": 246,
+        "no_range": 159,
+        "border": 2
+      },
+      "647": {
+        "last_min_edge_pixels": 9.0,
+        "last_stamp": 552.189,
+        "small": 1
+      },
+      "899": {
+        "last_min_edge_pixels": 14.0,
+        "last_stamp": 559.152,
+        "small": 1,
+        "no_range": 1
+      }
+    },
+    "confirmations": {
+      "795": 16
+    }
+  },
+  "recording": {
+    "video": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/video/mission.mp4",
+    "frames": 3003,
+    "fps": 5.0,
+    "duration_seconds": 600.6,
+    "composite_samples": 3003,
+    "held_frames": 0,
+    "start_sim_seconds": 4.2,
+    "last_sim_seconds": 604.503,
+    "playback": "1x simulation time; stale inputs/held frames are not interpolated",
+    "sources": [
+      "Gazebo observer camera",
+      "robot RGB camera",
+      "ROS /map",
+      "ROS /scan",
+      "ROS TF",
+      "ROS /targets"
+    ],
+    "last_mission_status": {
+      "state": "saving",
+      "approached_ids": [
+        795
+      ],
+      "targets": 1,
+      "collisions": 0,
+      "elapsed_seconds": 600.979,
+      "active_action": "",
+      "readiness_reason": "",
+      "sensor_interruptions": 0,
+      "nav2_lifecycle": {
+        "controller_server": 3,
+        "planner_server": 3,
+        "behavior_server": 3,
+        "bt_navigator": 3
+      },
+      "drive_controllers": {
+        "diffdrive_controller": "active",
+        "joint_state_broadcaster": "active"
+      },
+      "confirmed_surface_cells": 143,
+      "confirmed_face_anchors": 0,
+      "reassociated_face_records": 0,
+      "camera_diagnostics": {
+        "received": 18257,
+        "late": 1,
+        "invalid_calibration": 0,
+        "duplicate": 0,
+        "accepted": 18256,
+        "coverage_updates": 12287,
+        "tf_waits": 6391
+      }
+    },
+    "received_messages": {
+      "overview": 3013,
+      "robot_rgb": 18253,
+      "map": 4132,
+      "scan": 37647
+    },
+    "messages_before_first_frame": {
+      "overview": 11,
+      "robot_rgb": 62,
+      "map": 14,
+      "scan": 128
+    },
+    "error": null,
+    "complete_visual_sources": true
+  },
+  "production_promoted": false,
+  "hardware_validated": false,
+  "policy_ground_truth_input": false,
+  "remaining_failure": "All three markers physically approached, but only ID 795 was confirmed; recognition/viewpoint selection remains unresolved",
+  "source_sha256": {
+    "training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/evaluation.json": "455cad8b225a317b927fdae80d19413ca5d2f51148ab66580b161df73122196c",
+    "training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/pose_trace.csv": "dd5def950d03b454a4a8e3942d57fee38cc789b4a9e95dff90240abb906982cb",
+    "training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/pose_audit.json": "aa99b38dd18acb5ccaa14ba62483a0c5473b84eba978c0443e9f8011ffe5626f",
+    "training_robust/native90/official_tb4_v10/runtime/src/osp_mission/osp_mission/exploration_memory.py": "d8f6a180b8f0047d84ae5aeeceb82f3448d1ff57ba6d7dc838f4a2c6a4477687"
+  }
+}
