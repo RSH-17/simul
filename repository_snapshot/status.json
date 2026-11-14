@@ -560,7 +560,7 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 60.979,
+          "elapsed_seconds": 72.979,
           "readiness_reason": ""
         }
       },
@@ -584,7 +584,7 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 30.634,
+          "elapsed_seconds": 43.634,
           "readiness_reason": ""
         }
       }
@@ -592,7 +592,7 @@
     "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
     "production_promoted": false,
     "hardware_validated": false,
-    "captured_utc": "2026-11-14T17:59:21.208457+00:00",
+    "captured_utc": "2026-11-14T18:01:03.531485+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
