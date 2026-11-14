@@ -550,8 +550,8 @@
     "coordinator_active": false,
     "generation": 0,
     "phase": "development",
-    "recorded_completed": 1,
-    "valid_completed": 1,
+    "recorded_completed": 2,
+    "valid_completed": 2,
     "successes": 0,
     "infrastructure_failures": 0,
     "by_phase_role_profile_shape": {
@@ -559,38 +559,18 @@
         "completed": 1,
         "successes": 0,
         "contacts": 0
+      },
+      "development/candidate/official_nominal/c_shape": {
+        "completed": 1,
+        "successes": 0,
+        "contacts": 0
       }
     },
-    "active": [
-      {
-        "number": 1,
-        "unit": "osp-official-frontier-v1-01.service",
-        "service_active": true,
-        "shape": "c_shape",
-        "profile": "official_nominal",
-        "gates": {
-          "runtime_configuration_gate": true,
-          "velocity_profile_gate": true,
-          "scan_adapter_gate": true,
-          "floor_sensor_gate": true,
-          "drive_path_gate": true,
-          "official_description_gate": true,
-          "slam_transport_gate": true,
-          "navigation_grid_gate": true
-        },
-        "live": {
-          "state": "running",
-          "targets": 1,
-          "collisions": 0,
-          "elapsed_seconds": 569.634,
-          "readiness_reason": ""
-        }
-      }
-    ],
+    "active": [],
     "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
     "production_promoted": false,
     "hardware_validated": false,
-    "captured_utc": "2026-11-14T19:01:04.444632+00:00",
+    "captured_utc": "2026-11-14T19:08:01.853508+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
