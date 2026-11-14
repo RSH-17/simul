@@ -329,7 +329,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 298개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 301개
 
 아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
 
@@ -445,6 +445,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [crowded_start_regression_v3__03_baseline__1196000001.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v3__03_baseline__1196000001.mp4) | 실패 | 미달 | 60.31 |
 | [crowded_start_regression_v4__00_candidate__1196000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v4__00_candidate__1196000000.mp4) | 실패 | 미달 | 60.291 |
 | [crowded_start_regression_v4__01_baseline__1196000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v4__01_baseline__1196000000.mp4) | 실패 | 미달 | 60.036 |
+| [crowded_start_regression_v4__02_candidate__1196000001.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v4__02_candidate__1196000001.mp4) | 실패 | 미달 | 60.168 |
+| [crowded_start_regression_v4__03_baseline__1196000001.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v4__03_baseline__1196000001.mp4) | 실패 | 미달 | 60.296 |
 | [development_frontier_v1__runtime_probes__20261104T225516_124417Z.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/development_frontier_v1__runtime_probes__20261104T225516_124417Z.mp4) | 실패 | 미달 | 136.514 |
 | [development_imu_screen4__8600007.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/development_imu_screen4__8600007.mp4) | 실패 | 미달 | 600.049 |
 | [development_imu_screen4__8600040.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/development_imu_screen4__8600040.mp4) | 성공 | 미달 | 117.2 |
@@ -540,6 +542,7 @@ python3 scripts/publish_simulation_videos.py --upload
 | [native_search_v1__059_validation_mppi_frontier_9802019__9802019.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/native_search_v1__059_validation_mppi_frontier_9802019__9802019.mp4) | 성공 | 확인 | 522.737 |
 | [navigation_regression_v1__case_0__1159000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/navigation_regression_v1__case_0__1159000000.mp4) | 성공 | 확인 | 270.5 |
 | [navigation_regression_v1__case_1__1159000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/navigation_regression_v1__case_1__1159000000.mp4) | 성공 | 확인 | 504.60200000000003 |
+| [official_tb4_screen_v2__1195000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_tb4_screen_v2__1195000000.mp4) | 실패 | 미달 | 60.201 |
 | [panorama_v5_screen2__8600007.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/panorama_v5_screen2__8600007.mp4) | 실패 | 미달 | 600.0 |
 | [panorama_v5_screen2__8600139.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/panorama_v5_screen2__8600139.mp4) | 성공 | 미달 | 293.6 |
 | [persistent_edge_v3_mixed16__8600007.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/persistent_edge_v3_mixed16__8600007.mp4) | 실패 | 미달 | 358.113 |
@@ -1028,6 +1031,6 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 실물 대응 후보 `tb4_platform_cem_v1`: 상태 `preserved_after_crowded_start_handoff`, 세대 0, 단계 `train`.
 독립 입력 검사를 통과한 native 개발 회차 2개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
 형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 학습 중 관측이며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-14T15:01:01.823242+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+관측 UTC: 2026-11-14T15:26:07.910386+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->

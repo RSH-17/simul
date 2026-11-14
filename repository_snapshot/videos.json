@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T15:01:01.747342+00:00",
+  "updated_utc": "2026-11-14T15:26:07.834177+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 298,
+  "uploaded_verified": 301,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -1732,6 +1732,38 @@
       "uploaded_verified": true
     },
     {
+      "asset": "crowded_start_regression_v4__02_candidate__1196000001.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v4/02_candidate/episodes/1196000001/video/mission.mp4",
+      "bytes": 2057198,
+      "sha256": "c0c26590a35b9a7a9b2a60f53db6f8fe4d3466d51435cf15ac49c3d553248d4c",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v4__02_candidate__1196000001.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.168,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v4__03_baseline__1196000001.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v4/03_baseline/episodes/1196000001/video/mission.mp4",
+      "bytes": 286003,
+      "sha256": "574cba944b73fb3b7e3bd3eabcd6c9853fdb67486782a3eb4e711fc9d2528559",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v4__03_baseline__1196000001.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.296,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "development_frontier_v1__runtime_probes__20261104T225516_124417Z.mp4",
       "local_path": "training_robust/native90/development_frontier_v1/runtime_probes/20261104T225516_124417Z/video/mission.mp4",
       "bytes": 4904344,
@@ -3249,6 +3281,22 @@
       "actual_approach_1_5m": true,
       "recording_frames": 2525,
       "recording_seconds": 505.0,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_tb4_screen_v2__1195000000.mp4",
+      "local_path": "training_robust/native90/official_tb4_screen_v2/episodes/1195000000/video/mission.mp4",
+      "bytes": 1112252,
+      "sha256": "6f10ba46019b5eff38081e8ae7793233bea3510161019f82eda9710adf6dd87c",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_tb4_screen_v2__1195000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 60.201,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 303,
+      "recording_seconds": 60.6,
       "uploaded_verified": true
     },
     {
@@ -4782,15 +4830,15 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/crowded_start_regression_v4/02_candidate/episodes/1196000001/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/crowded_start_regression_v4/03_baseline/episodes/1196000001/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
       "path": "training_robust/native90/marker_focus_v6_service_screen3/episodes/8600133/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/official_crowded_comparison_v1/00_candidate/episodes/1196100000/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/official_crowded_comparison_v1/01_baseline/episodes/1196100000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
