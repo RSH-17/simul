@@ -1,0 +1,80 @@
+{
+  "captured_utc": "2026-11-14T16:00:21.051428+00:00",
+  "evidence_type": "New native Gazebo coefficient training; no completed full-task result yet",
+  "campaign": "training_robust/native90/official_tb4_cem_v1",
+  "coordinator": "osp-official-tb4-cem-v1.service",
+  "runtime": "/home/peter/simul/training_robust/native90/official_tb4_v4/runtime",
+  "map_resolution_m": 0.05,
+  "status": "held_after_reproduced_crowded_start_failure",
+  "generation": 0,
+  "phase": "train",
+  "planned_training_jobs": 12,
+  "reserved_holdout_worlds": 40,
+  "reserved_holdout_used": false,
+  "shapes": [
+    "c_shape",
+    "u_shape",
+    "zigzag"
+  ],
+  "training_obstacle_counts": [
+    9,
+    12,
+    16
+  ],
+  "holdout_obstacle_counts": [
+    9,
+    12,
+    16,
+    20
+  ],
+  "new_generator_and_driver_tests_passed": 6,
+  "pose_audit_tests_passed": 1,
+  "official_core_unmodified": true,
+  "policy_receives_truth": false,
+  "full_task_qualified": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "completion_rubric": {
+    "correct_ids": 3,
+    "actual_approach_max_m": 1.5,
+    "map_position_error_max_m": 0.5,
+    "contacts": 0,
+    "duration_sim_s": 600
+  },
+  "active": [
+    {
+      "number": 1,
+      "role": "0",
+      "output": "/home/peter/simul/training_robust/native90/official_tb4_cem_v1/jobs/00001_train_g0_0",
+      "status": "running",
+      "unit": "osp-spatial-nov15-official1-00001.service",
+      "domain": 231,
+      "floor_sensor_gate": true,
+      "runtime_configuration_gate": true,
+      "slam_transport_gate": true,
+      "velocity_profile_gate": true,
+      "drive_path_gate": true,
+      "official_description_gate": true,
+      "live": {
+        "state": "running",
+        "targets": 1,
+        "collisions": 0,
+        "elapsed_seconds": 259.498,
+        "active_action": "nav",
+        "readiness_reason": ""
+      },
+      "shape": "u_shape"
+    }
+  ],
+  "coordinator_active": false,
+  "dispatch_held_reason": {
+    "utc": "2026-11-14T15:39:51.081377+00:00",
+    "reason": "C-shape native start clearance 0.2236m below 0.2344m body-grid threshold after undock; preserve 2 active and 10 queued while validating finer grid",
+    "native_jobs_preserved": true
+  },
+  "interrupted_diagnostic_jobs": [
+    0
+  ],
+  "untouched_prepared_jobs": 10,
+  "full_task_results_completed": 0
+}

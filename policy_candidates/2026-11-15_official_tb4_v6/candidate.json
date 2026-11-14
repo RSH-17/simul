@@ -1,0 +1,13 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v6",
+  "parent_candidate": "2026-11-15_official_tb4_v5",
+  "status": "fine_grid_simulator_no_return_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "config/tb4_slam.yaml": "f1db5363ac4794d9850f9cc372a1838ed0f03c08e1b78fe05e95d33b2fae4b3f",
+    "launch/robot.launch.py": "f007acffa18d0b81ad226e72919e2f1be6c2ae4362a782f73f3ee31bda8a31e4"
+  },
+  "build_script_sha256": "62620b725c03f8e678566b71c045d062558b143a9451ede4b76e42b245ee8ca6"
+}

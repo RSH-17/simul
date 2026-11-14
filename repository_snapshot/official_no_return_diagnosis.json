@@ -1,0 +1,186 @@
+{
+  "captured_utc": "2026-11-14T16:00:21.051428+00:00",
+  "evidence_type": "Completed native rotation-only stall; offline no-return replay; successor native running",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v5",
+  "runtime": "training_robust/native90/official_tb4_v7/runtime",
+  "runtime_tests_passed": 400,
+  "probe_tests_passed": 4,
+  "raw_scan": {
+    "path": "training_robust/native90/official_rotation_live_audit_v1/raw_scan.json",
+    "sha256": "e2f2ba6f11d825527d37e84b61c8d6bcf24b413203fd9ca425c084c676ffae13",
+    "positive_infinite_beams": 28,
+    "total_beams": 640
+  },
+  "baseline_native": {
+    "status": "complete",
+    "reason": "timeout",
+    "elapsed_seconds": 90.092,
+    "actual_path_m": 0.3535907919799326,
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "goals_issued": 0,
+    "retained_scans_in_live_export": 17,
+    "all_six_configuration_gates_passed": true,
+    "scope": "Rotation updated the map, but the robot still did not leave the undock position"
+  },
+  "offline_replay": {
+    "evidence_type": "Offline positive-infinity normalization at fixed recorded SLAM poses; not native motion",
+    "scans": 17,
+    "source": "training_robust/native90/official_rotation_live_audit_v1/map.data",
+    "recorded_policy_input": "training_robust/native90/official_rotation_live_audit_v1/input_episode/policy_decisions/0008.npz",
+    "known_dock_overlay_preserved": true,
+    "baseline_candidates": 0,
+    "normalized_candidates": 1,
+    "goals": [
+      {
+        "x": -0.9562347291012188,
+        "y": 0.060833241728755594,
+        "distance": 0.65
+      }
+    ],
+    "policy_receives_truth": false,
+    "production_promoted": false
+  },
+  "offline_converted_returns": 455,
+  "unknown_wedge_maximum_path_bottleneck_m": 0.15,
+  "required_body_clearance_m": 0.23435533905932737,
+  "interpretation": "Karto skips positive-infinite ranges. The no-return wedge leaves no body-clear forward path, while the known dock keepout correctly blocks rear goals.",
+  "upstream_sources": [
+    "https://github.com/ros-infrastructure/rep/blob/master/rep-0117.rst",
+    "https://github.com/SteveMacenski/slam_toolbox/blob/jazzy/lib/karto_sdk/include/karto_sdk/Karto.h"
+  ],
+  "native_successor": "official_no_return_screen_v1",
+  "native_successor_status": "running",
+  "official_robot_files_modified": false,
+  "raw_scan_unmodified": true,
+  "detector_and_collision_scan_unmodified": true,
+  "only_slam_scan_normalized": true,
+  "positive_infinity_replacement_m": 11.95,
+  "karto_mapping_threshold_m": 11.9,
+  "hardware_adapter_enabled": false,
+  "hardware_validated": false,
+  "policy_receives_truth": false,
+  "full_task_qualified": false,
+  "production_promoted": false,
+  "native_successor_gates": {
+    "runtime_configuration_gate": true,
+    "velocity_profile_gate": true,
+    "scan_adapter_gate": true,
+    "floor_sensor_gate": true,
+    "drive_path_gate": true,
+    "official_description_gate": true,
+    "slam_transport_gate": true
+  },
+  "scan_adapter_live": {
+    "passed": true,
+    "pairs": [
+      {
+        "passed": true,
+        "original_positive_infinite": 26,
+        "other_readings_unchanged": true,
+        "clearing_only_substitution": true
+      },
+      {
+        "passed": true,
+        "original_positive_infinite": 26,
+        "other_readings_unchanged": true,
+        "clearing_only_substitution": true
+      },
+      {
+        "passed": true,
+        "original_positive_infinite": 27,
+        "other_readings_unchanged": true,
+        "clearing_only_substitution": true
+      },
+      {
+        "passed": true,
+        "original_positive_infinite": 26,
+        "other_readings_unchanged": true,
+        "clearing_only_substitution": true
+      },
+      {
+        "passed": true,
+        "original_positive_infinite": 27,
+        "other_readings_unchanged": true,
+        "clearing_only_substitution": true
+      }
+    ],
+    "positive_infinite_observed": true,
+    "raw_topic": "scan",
+    "slam_topic": "scan_mapping",
+    "hardware_qualified": false
+  },
+  "native_successor_partial": {
+    "state": "running",
+    "approached_ids": [],
+    "targets": 0,
+    "collisions": 0,
+    "elapsed_seconds": 46.667,
+    "active_action": "",
+    "readiness_reason": "",
+    "sensor_interruptions": 0,
+    "nav2_lifecycle": {
+      "controller_server": 3,
+      "planner_server": 3,
+      "behavior_server": 3,
+      "bt_navigator": 3
+    },
+    "drive_controllers": {
+      "diffdrive_controller": "active",
+      "joint_state_broadcaster": "active"
+    },
+    "confirmed_surface_cells": 10,
+    "confirmed_face_anchors": 0,
+    "reassociated_face_records": 0,
+    "camera_diagnostics": {
+      "received": 1454,
+      "late": 1,
+      "invalid_calibration": 0,
+      "duplicate": 0,
+      "accepted": 1453,
+      "coverage_updates": 995,
+      "tf_waits": 471
+    }
+  },
+  "fine_resolution_replay": {
+    "evidence_type": "Offline resolution ablation of live sensor graph, conservatively preserving original dock cells",
+    "live_export": true,
+    "ground_truth_used": false,
+    "robot": [
+      -0.34749249557152645,
+      0.0009632704875290055
+    ],
+    "resolutions": [
+      {
+        "resolution": 0.05,
+        "goals": []
+      },
+      {
+        "resolution": 0.025,
+        "goals": [
+          {
+            "x": -1.0022853854009774,
+            "y": 0.10889257650288642,
+            "distance": 0.6914213562373096
+          }
+        ]
+      },
+      {
+        "resolution": 0.02,
+        "goals": [
+          {
+            "x": -1.0147853854009785,
+            "y": 0.05139257650288631,
+            "distance": 0.6848528137423859
+          }
+        ]
+      }
+    ],
+    "full_task_success": false
+  },
+  "fine_resolution_candidate": "policy_candidates/2026-11-15_official_tb4_v6",
+  "fine_resolution_candidate_tests_passed": 400,
+  "fine_resolution_native_status": "not_started",
+  "installed_karto_no_false_endpoint_integration_tests_passed": 1
+}

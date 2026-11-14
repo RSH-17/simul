@@ -1,0 +1,164 @@
+{
+  "captured_utc": "2026-11-14T16:00:21.051428+00:00",
+  "evidence_type": "Censored native deadlock, live graph export, offline rasterization and completed 90-second rotation-only diagnostic",
+  "episode": "/home/peter/simul/training_robust/native90/official_tb4_cem_v1/jobs/00000_train_g0_0/episodes/1200100000",
+  "native_reason": "operator_stop",
+  "native_seconds": 76.29599999999999,
+  "operator_interrupted": true,
+  "full_600_second_trial": false,
+  "contacts": 0,
+  "retained_slam_scans": 2,
+  "actual_heading_change_rad": -2.9563558283476654,
+  "observed_parameters": {
+    "check_min_dist_and_heading_precisely": false,
+    "minimum_travel_distance": 0.1,
+    "minimum_travel_heading": 0.1
+  },
+  "installed_slam_toolbox": "2.8.5-1noble.20260905.070219",
+  "baseline_outcome": {
+    "success": false,
+    "targets": 0,
+    "approached": 0,
+    "contacts": 0,
+    "seconds": 76.29599999999999,
+    "infrastructure_failure": true,
+    "reason": "diagnostic_interruption_after_reproduced_start_deadlock",
+    "full_600_second_trial": false,
+    "training_sample_valid": false
+  },
+  "offline_rasterization": {
+    "evidence_type": "Offline rasterization of a live exported retained graph; not finalized episode or new native motion",
+    "episode": "/home/peter/simul/training_robust/native90/official_crowded_live_audit_v1/input_episode",
+    "snapshot": "/home/peter/simul/training_robust/native90/official_crowded_live_audit_v1/input_episode/policy_decisions/0017.npz",
+    "snapshot_sha256": "d9fef0bfc5afce161f393fd536271c368064edb1e4a8f42fcc332ff86d9c97fb",
+    "dataset_sha256": "cb1c92012884b8c59690e1ba3f14d6a145a953785b19f476f9a1392b75984d94",
+    "exporter_sha256": "b237d121118cc75c2d35bc3e04f78cc49803f3683dcbe3a77731bc890039854d",
+    "policy_receives_truth": false,
+    "production_promoted": false,
+    "resolutions": [
+      {
+        "resolution_m": 0.05,
+        "scans": 2,
+        "start_clearance_m": 0.20615528128088303,
+        "required_body_clearance_m": 0.23435533905932737,
+        "candidates": 0,
+        "transit_candidates": 0,
+        "same_dimensions_and_origin_as_recorded": true,
+        "cells_different_from_recorded": 15,
+        "goal_distances_m": []
+      },
+      {
+        "resolution_m": 0.025,
+        "scans": 2,
+        "start_clearance_m": 0.025,
+        "required_body_clearance_m": 0.2166776695296637,
+        "candidates": 0,
+        "transit_candidates": 0,
+        "same_dimensions_and_origin_as_recorded": false,
+        "cells_different_from_recorded": null,
+        "goal_distances_m": []
+      },
+      {
+        "resolution_m": 0.02,
+        "scans": 2,
+        "start_clearance_m": 0.02,
+        "required_body_clearance_m": 0.21314213562373097,
+        "candidates": 0,
+        "transit_candidates": 0,
+        "same_dimensions_and_origin_as_recorded": false,
+        "cells_different_from_recorded": null,
+        "goal_distances_m": []
+      }
+    ],
+    "limitations": [
+      "Uses a live exported retained scan subset and corrected graph poses, not all original sensor frames.",
+      "No counterfactual movement, new camera detections, or completion credit is inferred."
+    ]
+  },
+  "graph_capture_is_live_snapshot_not_finalized_episode": true,
+  "original_5cm_reconstruction_different_cells": 15,
+  "different_cells_explanation": "Policy map also contains the known dock keepout; reconstruction omits that overlay. No exact original-map reproduction is claimed.",
+  "inference": "Translation-only scan admission left too few retained scans after the initial rotation; resolution alone did not generate a safe goal. New native trial required to establish repair.",
+  "upstream_sources": [
+    "https://github.com/SteveMacenski/slam_toolbox/blob/jazzy/src/slam_toolbox_common.cpp",
+    "https://github.com/SteveMacenski/slam_toolbox/pull/808"
+  ],
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v4",
+  "candidate_runtime": "training_robust/native90/official_tb4_v6/runtime",
+  "candidate_runtime_tests_passed": 394,
+  "effective_flag_probe_tests_passed": 3,
+  "successor_native": "official_rotation_scan_screen_v1",
+  "full_task_qualified": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "successor_native_result": {
+    "status": "complete",
+    "reason": "timeout",
+    "elapsed_seconds": 90.092,
+    "actual_path_m": 0.3535907919799326,
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "goals_issued": 0,
+    "retained_scans_in_live_export": 17,
+    "all_six_configuration_gates_passed": true,
+    "scope": "Rotation updated the map, but the robot still did not leave the undock position"
+  },
+  "successor_pose_audit": {
+    "evidence_type": "Finalized native evaluator audit; not policy input or a replayed success",
+    "episode": "/home/peter/simul/training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000",
+    "world_to_map": [
+      -16.91278753660129,
+      -0.3878688756901998,
+      -0.07609255999570391
+    ],
+    "fixed_initial_odom_to_map": [
+      9.798586353182552e-21,
+      -2.0292381781655312e-31,
+      -2.7574658155257176e-19
+    ],
+    "pose_errors": {
+      "map": {
+        "position_error_m": {
+          "samples": 446,
+          "median": 0.005819759698728589,
+          "p95": 0.005819759698728589,
+          "maximum": 0.005822969639582083
+        },
+        "heading_error_deg": {
+          "samples": 446,
+          "median": 0.0757173984959004,
+          "p95": 0.47564193949723965,
+          "maximum": 1.7333305190553092
+        }
+      },
+      "odom": {
+        "position_error_m": {
+          "samples": 446,
+          "median": 0.0005567652400764571,
+          "p95": 0.0005567652400764571,
+          "maximum": 0.0005567652400764571
+        },
+        "heading_error_deg": {
+          "samples": 446,
+          "median": 12.07345362853562,
+          "p95": 12.07345362853562,
+          "maximum": 12.310545334142246
+        }
+      }
+    },
+    "full_task_success": false,
+    "truth_max_sample_gap_s": 0.20400000000000773,
+    "interpolation_limit_s": 0.35,
+    "ground_truth_supplied_to_policy": false,
+    "limitations": [
+      "Coarse independent truth is interpolated within 0.35 seconds; no high-rate motion precision claim.",
+      "One short run does not qualify long-run localization or physical hardware."
+    ],
+    "source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000/evaluation.json": "756fdbf390748c80d1632a799c008b12477b5193ed6ff84a9e745a673183be51",
+      "/home/peter/simul/training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000/pose_trace.csv": "17d67726052f14666716ef0aa47c9226bc9d1af759d7f9337c958d6784d7e71e",
+      "/home/peter/simul/training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000/ground_truth_trajectory.csv": "fdf44d2c7d2d3064c57ce549a60089755617b6d2b047b5a005d3ed997399d536"
+    }
+  }
+}

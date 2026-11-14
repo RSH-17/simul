@@ -1,0 +1,12 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v4",
+  "parent_candidate": "2026-11-15_official_tb4_v2",
+  "status": "rotation_scan_admission_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "config/tb4_slam.yaml": "a717489229d9c24215502ad20bbf168398b312056948e52e264657c1044f4fcd"
+  },
+  "build_script_sha256": "e635d2527445393ad40c16546311cf9219faeca31de057160cf6220a275edd58"
+}

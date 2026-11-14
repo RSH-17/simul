@@ -8,4 +8,4 @@ The new paired native diagnostic uses a 55 cm corridor with the official dock or
 
 No full-task, hardware or production qualification is claimed. Build into a new workspace with `python3 policy_candidates/2026-11-15_official_tb4_v3/build.py --workspace /absolute/new/workspace --test`.
 
-Validation: 394 runtime tests and 15 supervisor/resolution tests passed. Both native comparison services started; results are pending.
+Validation: 394 runtime tests and 15 supervisor/resolution tests passed. Both 90-second native trials finished with zero contacts: 2.5 cm escaped in 28.152 s (12.862 m, one ID), 5 cm in 27.948 s (7.172 m, zero IDs). One paired start result does not establish full-task superiority.

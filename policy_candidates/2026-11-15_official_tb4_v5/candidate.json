@@ -1,0 +1,16 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v5",
+  "parent_candidate": "2026-11-15_official_tb4_v4",
+  "status": "simulator_no_return_mapping_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "launch/robot.launch.py": "a2461bc11e1b69531f142a1e6182bcb003d88ceb5da9d5ca37d11970ec14969f",
+    "launch/simulation.launch.py": "2dab5fb1f1d4d33fb4503b6da90b9914c98258490a9182e44a5e66b7c459f527",
+    "osp_mission/sim_mapping_scan.py": "e29916f9df91dd85b7b68d70c5accfbfddbe14964199b2627539473e1228ddcb",
+    "setup.py": "7d56e4ff481012806e5733381021820559bd6b32dda9937cf8ded0faea81b85a",
+    "test/test_sim_mapping_scan.py": "d82571cb79d0df58f87d36065dc52dabd4d38bb7cf369f00507f29cf8700f4db"
+  },
+  "build_script_sha256": "99d368205738f58a77671098522be98315ef51b54015437aa871205be11f0732"
+}
