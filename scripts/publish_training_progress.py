@@ -46,6 +46,20 @@ def sync_generated_checkout(checkout):
         run(['git','merge','--ff-only','origin/main'],checkout)
 
 
+def service_status(unit):
+    """Observe a live systemd process; a stale campaign state is insufficient."""
+    try:
+        result=subprocess.run(['systemctl','--user','show',unit,
+            '--property=ActiveState','--property=MainPID'],capture_output=True,text=True,timeout=5)
+        fields=dict(line.split('=',1) for line in result.stdout.splitlines() if '=' in line)
+        pid=int(fields.get('MainPID','0'))
+        active=result.returncode==0 and fields.get('ActiveState')=='active' and pid>0
+        active=active and Path('/proc',str(pid)).exists()
+        return dict(service_active=bool(active),main_pid=pid if active else 0)
+    except (OSError,ValueError,subprocess.TimeoutExpired):
+        return dict(service_active=False,main_pid=0,observation_failed=True)
+
+
 def summarize(campaign):
     state=json.loads((campaign/'state.json').read_text())
     done=[j for j in state['jobs'] if j['status']=='done']
@@ -58,8 +72,8 @@ def summarize(campaign):
     active=[]
     for j in state['jobs']:
         if j['status']!='running':continue
-        result=subprocess.run(['systemctl','--user','is-active',j['unit']],capture_output=True,text=True,timeout=5)
-        row=dict(number=j['number'],unit=j['unit'],service_active=result.returncode==0,
+        observed=service_status(j['unit'])
+        row=dict(number=j['number'],unit=j['unit'],**observed,
                  shape=j['scenario']['arena']['shape'],profile=j.get('stress_profile'),
                  gates={k:v for k,v in j.items() if k.endswith('_gate')})
         p=Path(j['output'])/'episodes'/str(j['scenario']['seed'])/'live_status.json'
@@ -67,8 +81,9 @@ def summarize(campaign):
             live=json.loads(p.read_text()).get('status',{})
             row['live']={k:live.get(k) for k in ('state','targets','collisions','elapsed_seconds','readiness_reason')}
         active.append(row)
-    coordinator=subprocess.run(['systemctl','--user','is-active',state['coordinator_unit']],capture_output=True,text=True,timeout=5)
-    return dict(campaign=campaign.name,status=state['status'],coordinator_active=coordinator.returncode==0,
+    coordinator=service_status(state['coordinator_unit'])
+    return dict(campaign=campaign.name,status=state['status'],coordinator_active=coordinator['service_active'],
+        scope=state.get('scope'),
         generation=state['generation'],phase=state['phase'],recorded_completed=len(done),
         valid_completed=len(valid),successes=sum(j['outcome']['success'] for j in valid),
         infrastructure_failures=len(done)-len(valid),by_phase_role_profile_shape=by_group,active=active,
@@ -76,8 +91,36 @@ def summarize(campaign):
         production_promoted=False,hardware_validated=False)
 
 
-def snapshot(source, checkout, campaign):
-    summary=summarize(campaign)
+def followed_summary(campaign, follow_campaigns=()):
+    """Keep separate results for explicitly allowed campaigns, prioritizing live jobs.
+
+    Never scan arbitrary directories or infer success from an active coordinator.
+    Prepared trials and short departure screens do not become full-task passes.
+    """
+    paths=list(dict.fromkeys([*(Path(p).resolve() for p in follow_campaigns),campaign.resolve()]))
+    summaries=[];unavailable=[]
+    for path in paths:
+        try:
+            summaries.append(summarize(path))
+        except (OSError,ValueError,KeyError,TypeError) as error:
+            unavailable.append(dict(campaign=path.name,error=type(error).__name__))
+    if not summaries:raise RuntimeError('No readable campaign states; preserving published report')
+    live=[s for s in summaries if any(j['service_active'] for j in s['active'])]
+    coordinators=[s for s in summaries if s['coordinator_active']]
+    fallback=next((s for s in summaries if s['campaign']==campaign.name),summaries[0])
+    selected=(live or coordinators or [fallback])[0]
+    result=dict(selected)
+    if follow_campaigns:
+        result['campaign_selection']=dict(
+            reason='live_native_process' if live else 'live_coordinator' if coordinators else 'fallback',
+            live_native_campaigns=[s['campaign'] for s in live],unavailable=unavailable,
+            policy='Explicit allowlist; live native MainPID first; keep campaign results separate')
+        result['followed_campaigns']=summaries
+    return result
+
+
+def snapshot(source, checkout, campaign, follow_campaigns=()):
+    summary=followed_summary(campaign,follow_campaigns)
     summary['captured_utc']=datetime.datetime.now(datetime.timezone.utc).isoformat()
     summary['synthetic_stress_is_real_robot_calibration']=False
     summary['automation_scope']='local systemd timer: summary and finished-video publication only'
@@ -92,7 +135,7 @@ def snapshot(source, checkout, campaign):
     block='\n'.join([START,'',
         f"실물 대응 후보 `{summary['campaign']}`: 상태 `{summary['status']}`, 세대 {summary['generation']}, 단계 `{summary['phase']}`.",
         f"독립 입력 검사를 통과한 native 개발 회차 {summary['valid_completed']}개 중 엄격한 완주 {summary['successes']}개; 인프라 실패 {summary['infrastructure_failures']}개 별도.",
-        '형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 학습 중 관측이며 실물 검증·production 승격 결과가 아닙니다.',
+        '형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 출발 진단·전체 과제·계수 학습은 각각의 scope/phase를 확인해야 하며 실물 검증·production 승격 결과가 아닙니다.',
         f"관측 UTC: {summary['captured_utc']}. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.",'',END])
     if START in text and END in text:
         a=text.index(START);b=text.index(END,a)+len(END);text=text[:a]+block+text[b:]
@@ -101,7 +144,7 @@ def snapshot(source, checkout, campaign):
     return summary
 
 
-def publish(source, checkout, campaign, videos):
+def publish(source, checkout, campaign, videos, follow_campaigns=()):
     checkout.parent.mkdir(parents=True,exist_ok=True)
     if not (checkout/'.git').exists():
         remote=run(['git','remote','get-url','origin'],source).strip()
@@ -114,7 +157,7 @@ def publish(source, checkout, campaign, videos):
     if videos:
         run([sys.executable,str(checkout/'scripts/publish_simulation_videos.py'),
              '--data-root',str(source),'--upload'],cwd=checkout,timeout=1800)
-    snapshot(source,checkout,campaign)
+    snapshot(source,checkout,campaign,follow_campaigns)
     run(['git','add','--',*FILES],checkout)
     if not run(['git','diff','--cached','--name-only'],checkout).strip():return
     for field in ('user.name','user.email'):
@@ -129,6 +172,8 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source',type=Path,default=Path(__file__).resolve().parents[1])
     p.add_argument('--campaign',type=Path,required=True)
+    p.add_argument('--follow-campaign',type=Path,action='append',default=[],
+        help='Allowed successor campaign, repeatable; live native processes take priority')
     p.add_argument('--checkout',type=Path)
     p.add_argument('--publish',action='store_true');p.add_argument('--videos',action='store_true')
     a=p.parse_args();source=a.source.resolve();campaign=a.campaign.resolve()
@@ -138,5 +183,5 @@ if __name__=='__main__':
         if a.publish:
             if a.checkout is None:p.error('--publish requires an isolated --checkout')
             if a.checkout.resolve()==source:p.error('Publication checkout must be isolated')
-            publish(source,a.checkout.resolve(),campaign,a.videos)
-        else:print(json.dumps(snapshot(source,source,campaign)))
+            publish(source,a.checkout.resolve(),campaign,a.videos,a.follow_campaign)
+        else:print(json.dumps(snapshot(source,source,campaign,a.follow_campaign)))

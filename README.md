@@ -88,7 +88,7 @@
 
 **이전 2026-11-14 실물 대응 후보:** 열린 길 오판·동일 경로 반복에 대응하는 [새 후보와 재현 방법](policy_candidates/2026-11-14_robot_transfer_v1)을 별도 준비했습니다. 시작점 연결·방문/실패 기억·실물 실행 기본값을 수정하고, ㄷ/U/zigzag에서 합성 LiDAR 잡음·지연·누락과 encoder 오차를 넣어 native 학습을 진행했습니다. 새 플랫폼으로 전환하며 원래 실험을 보존합니다. 새 후보357개, 동일 입력의 비교 기준348개 테스트를 통과했습니다. 사용자 실물은 **TurtleBot4**로 확인됐습니다. 시뮬레이션은 원래 과제의 Standard 모델을 유지하며, 실제 센서 설정·로그는 아직 확인하지 못했습니다. 실제 로봇 성공 여부와 개선 폭은 아직 검증하지 않았습니다. [변경·이전 학습 분석](repository_snapshot/robot_transfer_candidate.json).
 
-GitHub 진행 기록·완성 영상 게시용 로컬 `osp-training-progress.timer`를 **30분 간격**으로 활성화했고, 첫 자동 커밋·푸시까지 확인했습니다. 별도 checkout에서 요약 파일만 반영하며 호스트의 사용자 서비스가 실행되는 동안 동작합니다. 자동 코드 수정·무인 코드 리뷰나 실제 로봇 원격 조작은 구성하지 않았습니다. [게시 서비스 설정](scripts/systemd/osp-training-progress.service) · [타이머](scripts/systemd/osp-training-progress.timer).
+GitHub 진행 기록·완성 영상 게시용 로컬 `osp-training-progress.timer`를 **30분 간격**으로 활성화했고, 첫 자동 커밋·푸시까지 확인했습니다. 별도 checkout에서 요약 파일만 반영하며 호스트의 사용자 서비스가 실행되는 동안 동작합니다. **2026-11-15 게시 대상 수정:** 기존 비교·v16 출발·통합 비교·기존 조건 행렬 중 실제 native 서비스 PID가 살아 있는 시험을 우선 표시합니다. 둘 이상 실행되면 기록을 함께 남기고, 출발 통과와 전체 과제 성공은 합산하지 않습니다. 오래된 상태 파일·전환 대기·병행 실행·게시 충돌 복구 등 **9개 검사 통과**. 자동 코드 수정·무인 코드 리뷰나 실제 로봇 원격 조작은 구성하지 않았습니다. [게시 서비스 설정](scripts/systemd/osp-training-progress.service) · [타이머](scripts/systemd/osp-training-progress.timer).
 
 최신 실제 검증 정책: [정책 계수](policy_releases/2026-11-13_face_intent_v2/policy.json) · [고정 실행 소스·빌드 방법·검증 결과](policy_releases/2026-11-13_face_intent_v2) · [최신 묶음 정보](policy_releases/latest.json). 별도 작업 공간의 재빌드와348개 테스트를 확인했습니다. 직사각형388.627초 완주 후보이며, 여러 공간의 독립 검증과 실제 로봇 검증은 아직 완료하지 않았습니다.
 
@@ -1118,7 +1118,7 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 
 실물 대응 후보 `official_frontier_comparison_v1`: 상태 `held_for_pocket_screen`, 세대 0, 단계 `development`.
 독립 입력 검사를 통과한 native 개발 회차 4개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
-형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 학습 중 관측이며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-14T21:01:07.867028+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 출발 진단·전체 과제·계수 학습은 각각의 scope/phase를 확인해야 하며 실물 검증·production 승격 결과가 아닙니다.
+관측 UTC: 2026-11-14T21:38:14.449228+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->
