@@ -1,0 +1,338 @@
+{
+  "captured_utc": "2026-11-14T19:11:05.448174+00:00",
+  "evidence_type": "Two completed official Gazebo runs; same C-shape training scene and fixed weights",
+  "rows": [
+    {
+      "number": 0,
+      "role": "baseline",
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.479,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "actual_path_m": 101.33079783417062,
+      "start_exit_s": 23.052,
+      "truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "795": 0.3132066531868939
+        },
+        "expected_ids": [
+          319,
+          795,
+          903
+        ],
+        "found_ids": [
+          795
+        ],
+        "closest_approach_m": {
+          "903": 0.5676628774756414,
+          "319": 0.8637083760943562,
+          "795": 0.8366756479675724
+        },
+        "approached_within_1_5m": 3,
+        "approach_radius_m": 1.5,
+        "all_approached": true,
+        "approached_within_2m": 3,
+        "world_to_map": [
+          -18.43514405305211,
+          -1.8787753015175612,
+          -1.9551561398326667e-05
+        ],
+        "trajectory_samples": 2949
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2948,
+            "median": 0.42778826804362263,
+            "p95": 0.5914078174288828,
+            "maximum": 0.6058575752070019
+          },
+          "heading_error_deg": {
+            "samples": 2948,
+            "median": 0.19399461422577347,
+            "p95": 1.3209200312787335,
+            "maximum": 2.8486655872653155
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2948,
+            "median": 8.150561938739935,
+            "p95": 13.750150423265564,
+            "maximum": 15.380402745023092
+          },
+          "heading_error_deg": {
+            "samples": 2948,
+            "median": 47.47719943141369,
+            "p95": 88.5026304078948,
+            "maximum": 89.90815186623867
+          }
+        }
+      },
+      "detector": {
+        "frames": 18272,
+        "decoded": {
+          "63": 13,
+          "319": 337,
+          "795": 129,
+          "775": 20,
+          "519": 8,
+          "903": 253,
+          "647": 1,
+          "899": 1
+        },
+        "small": 661,
+        "border": 6,
+        "no_range": 284,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 16,
+        "errors": 57,
+        "last_error": "Lookup would require extrapolation into the future.  Requested time 340.593000 but the latest data is at time 340.580000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          795
+        ],
+        "by_id": {
+          "63": {
+            "last_min_edge_pixels": 5.0,
+            "last_stamp": 475.992,
+            "small": 13
+          },
+          "319": {
+            "last_min_edge_pixels": 6.0,
+            "last_stamp": 472.824,
+            "small": 337,
+            "no_range": 124,
+            "border": 1
+          },
+          "795": {
+            "last_min_edge_pixels": 21.3775577545166,
+            "last_stamp": 340.659,
+            "border": 3,
+            "accepted": 16,
+            "small": 35
+          },
+          "775": {
+            "last_min_edge_pixels": 5.0,
+            "last_stamp": 541.695,
+            "small": 20
+          },
+          "519": {
+            "last_min_edge_pixels": 5.0,
+            "last_stamp": 541.827,
+            "small": 8
+          },
+          "903": {
+            "last_min_edge_pixels": 18.0,
+            "last_stamp": 561.396,
+            "small": 246,
+            "no_range": 159,
+            "border": 2
+          },
+          "647": {
+            "last_min_edge_pixels": 9.0,
+            "last_stamp": 552.189,
+            "small": 1
+          },
+          "899": {
+            "last_min_edge_pixels": 14.0,
+            "last_stamp": 559.152,
+            "small": 1,
+            "no_range": 1
+          }
+        },
+        "confirmations": {
+          "795": 16
+        }
+      },
+      "evaluation_sha256": "455cad8b225a317b927fdae80d19413ca5d2f51148ab66580b161df73122196c"
+    },
+    {
+      "number": 1,
+      "role": "candidate",
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.134,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "actual_path_m": 105.44939763319468,
+      "start_exit_s": 23.256,
+      "truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "795": 0.3354014516212583
+        },
+        "expected_ids": [
+          319,
+          795,
+          903
+        ],
+        "found_ids": [
+          795
+        ],
+        "closest_approach_m": {
+          "903": 0.6503583516467665,
+          "319": 0.5771116151256709,
+          "795": 0.6240982754989522
+        },
+        "approached_within_1_5m": 3,
+        "approach_radius_m": 1.5,
+        "all_approached": true,
+        "approached_within_2m": 3,
+        "world_to_map": [
+          -18.43514403300933,
+          -1.878775323598405,
+          -1.9550425941490145e-05
+        ],
+        "trajectory_samples": 2948
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.5921466565558184,
+            "p95": 0.7906465614413126,
+            "maximum": 0.8219006009263858
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 0.4493743498587153,
+            "p95": 2.02064524789123,
+            "maximum": 3.9598428560297734
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 2.6778553853644667,
+            "p95": 5.449585220447683,
+            "maximum": 5.499413746041984
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 7.353987569887274,
+            "p95": 12.554234523859622,
+            "maximum": 16.48541004583608
+          }
+        }
+      },
+      "detector": {
+        "frames": 18272,
+        "decoded": {
+          "931": 1,
+          "903": 188,
+          "647": 1,
+          "775": 1,
+          "899": 1,
+          "795": 174,
+          "319": 1
+        },
+        "small": 193,
+        "border": 0,
+        "no_range": 147,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 27,
+        "errors": 65,
+        "last_error": "Lookup would require extrapolation into the future.  Requested time 384.384000 but the latest data is at time 384.383000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          795
+        ],
+        "by_id": {
+          "931": {
+            "last_min_edge_pixels": 7.0,
+            "last_stamp": 94.182,
+            "small": 1
+          },
+          "903": {
+            "last_min_edge_pixels": 17.0,
+            "last_stamp": 119.691,
+            "small": 188,
+            "no_range": 146
+          },
+          "647": {
+            "last_min_edge_pixels": 9.0,
+            "last_stamp": 111.012,
+            "small": 1
+          },
+          "775": {
+            "last_min_edge_pixels": 9.0,
+            "last_stamp": 111.903,
+            "small": 1
+          },
+          "899": {
+            "last_min_edge_pixels": 15.0,
+            "last_stamp": 118.239,
+            "small": 1,
+            "no_range": 1
+          },
+          "795": {
+            "last_min_edge_pixels": 46.0,
+            "last_stamp": 384.615,
+            "accepted": 27
+          },
+          "319": {
+            "last_min_edge_pixels": 6.0,
+            "last_stamp": 504.339,
+            "small": 1
+          }
+        },
+        "confirmations": {
+          "795": 27
+        }
+      },
+      "evaluation_sha256": "02713e3984cd097d2ffd92bdfdb950fe29a8fe5b3d0767902b3c70e38e156504"
+    }
+  ],
+  "conclusion": "Neither completed the three-marker task; no success-rate improvement on this scene",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "holdout_used": false,
+  "remaining_full_comparisons": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "priority_dock_trials": "Both running with actual known-dock map gates passed; completion pending"
+}
