@@ -1,0 +1,191 @@
+{
+  "captured_utc": "2026-11-14T15:24:04.768207+00:00",
+  "evidence_type": "New official launch runtime inventory and fixed-action smoke; not full task validation",
+  "command": "ros2 launch turtlebot4_gz_bringup turtlebot4_gz.launch.py world:=maze model:=standard rviz:=false",
+  "packages_verified_unmodified_by_dpkg": true,
+  "host_environment": {
+    "LIBGL_ALWAYS_SOFTWARE": "1",
+    "ROS_DOMAIN_ID": 224
+  },
+  "input_inventory": {
+    "domain": 224,
+    "commands_published": false,
+    "streams": {
+      "odom": {
+        "samples": 83,
+        "acquisition_rate_hz": 66.66666666666414,
+        "receipt_age_wall_s": 0.04223765293136239,
+        "frame": "odom",
+        "child": "base_link",
+        "position": [
+          -2.2909202134491266e-12,
+          2.5745770199593456e-25
+        ]
+      },
+      "scan": {
+        "samples": 83,
+        "acquisition_rate_hz": 66.66666666666414,
+        "receipt_age_wall_s": 0.05591190280392766,
+        "beams": 640,
+        "angle_min": -3.1415927410125732,
+        "angle_max": 3.1415927410125732,
+        "range_min": 0.164000004529953,
+        "range_max": 12.0,
+        "finite_sector_fractions": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9875,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "rgb": {
+        "samples": 35,
+        "acquisition_rate_hz": 30.30303030302997,
+        "receipt_age_wall_s": 0.16689942870289087,
+        "width": 320,
+        "height": 240,
+        "frame": "oakd_rgb_camera_optical_frame"
+      },
+      "info": {
+        "samples": 33,
+        "acquisition_rate_hz": 30.30303030302997,
+        "receipt_age_wall_s": 0.20093289390206337,
+        "width": 320,
+        "height": 240,
+        "frame": "oakd_rgb_camera_optical_frame",
+        "K": [
+          221.76500407999384,
+          0.0,
+          160.0,
+          0.0,
+          221.76500407999382,
+          120.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "depth": {
+        "samples": 32,
+        "acquisition_rate_hz": 30.30303030302997,
+        "receipt_age_wall_s": 0.1698812018148601,
+        "width": 320,
+        "height": 240,
+        "frame": "oakd_rgb_camera_optical_frame"
+      },
+      "imu": {
+        "samples": 0,
+        "acquisition_rate_hz": null,
+        "receipt_age_wall_s": null
+      },
+      "hazards": {
+        "samples": 88,
+        "acquisition_rate_hz": 66.66666666666414,
+        "receipt_age_wall_s": 0.04709925316274166
+      }
+    },
+    "official_description_exact_match": true,
+    "actual_description_sha256": "8edf77c8f5b57e22c6526ac3ccf1fec12c5f49b23d19f9f2e367530d254afa0b",
+    "expected_description_sha256": "8edf77c8f5b57e22c6526ac3ccf1fec12c5f49b23d19f9f2e367530d254afa0b",
+    "velocity_types": [
+      "geometry_msgs/msg/TwistStamped"
+    ],
+    "velocity_consumers": [
+      "motion_control"
+    ],
+    "actuator_publishers": [
+      "motion_control"
+    ],
+    "scope": "Official simulator input inventory only; no task success or hardware equivalence claim"
+  },
+  "actions": [
+    {
+      "name": "undock",
+      "result": "REJECTED",
+      "reported_reason": "Robot already undocked"
+    },
+    {
+      "name": "drive_distance",
+      "distance_m": -0.3,
+      "max_translation_speed": 0.1,
+      "result": "ABORTED",
+      "reported_reason": "encountered cliff"
+    }
+  ],
+  "after_drive_observation": {
+    "dock": {
+      "is_docked": false,
+      "visible": true
+    },
+    "hazards": [],
+    "actual": {
+      "stamp": 54.774,
+      "x": -0.5418351817382059,
+      "y": -0.7038475260397437
+    }
+  },
+  "limitations": [
+    "Action abort is not successful controlled movement; later reflex motion is not credited.",
+    "Cause of the stock maze cliff detection not established.",
+    "No IMU ROS messages in stock launch; task world adds standard Gazebo IMU system and a bridge, retaining original sensor.",
+    "No hardware validation, full-task success, or production promotion."
+  ],
+  "stock_smoke_stopped_after_observation": true,
+  "official_task_candidate": "policy_candidates/2026-11-15_official_tb4_v2",
+  "first_task_screen": {
+    "path": "/home/peter/simul/training_robust/native90/official_tb4_screen_v1",
+    "description_exact_match": true,
+    "observed_start_blockers": [
+      "dock_state_publisher not in interface allowlist",
+      "missing IMU sensor-frame identity transform"
+    ],
+    "final_reason": "startup_failure"
+  },
+  "successor": "official_tb4_screen_v2",
+  "successor_integration_gates": {
+    "captured_utc": "2026-11-14T15:14:22.826743+00:00",
+    "runtime_configuration": {
+      "passed": true,
+      "missing": [],
+      "mismatches": []
+    },
+    "platform_passed": true,
+    "floor_sensor_passed": true,
+    "official_robot_description_exact_match": true,
+    "full_task_qualified": false,
+    "hardware_validated": false
+  },
+  "successor_runtime_tests_passed": 394,
+  "successor_native_early_actual_path_m": 0.3533574240864025,
+  "successor_native_early_elapsed_sim_seconds": 9.701,
+  "successor_native_early_contacts": 0,
+  "successor_final": {
+    "evidence_type": "New native Gazebo, official robot integration screen",
+    "reason": "timeout",
+    "elapsed_sim_seconds": 60.201,
+    "actual_path_m": 2.749075976283877,
+    "contacts": 0,
+    "targets": 0,
+    "files": {
+      "map.pgm": true,
+      "map.yaml": true,
+      "map.posegraph": true,
+      "map.data": true,
+      "markers.csv": true
+    },
+    "undock": {
+      "status": 4,
+      "is_docked": false,
+      "cancel_reason": "",
+      "elapsed_seconds": 9.351
+    },
+    "sensor_interruptions": 0,
+    "integration_checks_passed": true,
+    "full_task_success": false,
+    "hardware_validated": false
+  }
+}

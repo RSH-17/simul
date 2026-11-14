@@ -1,0 +1,14 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v2",
+  "parent_candidate": "2026-11-15_official_tb4_v1",
+  "status": "official_sensor_frame_integration_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "launch/simulation.launch.py": "ed07bc157bb54f1c137f556f12cbbf3acddff44ee7854c88df62a066f004fd30",
+    "config/official_tb4_simulator.json": "c2d4495d163e63ee5d0ae5014a0d5b3e8fc380b6d6b524b1e2ae78a78f53efe3",
+    "osp_mission/tb4_contract.py": "5a4cec79b37375b26ce6f6d7d18c4d3739b07531a25e9a230acf168ccd236292"
+  },
+  "build_script_sha256": "288adc1a0b960d077cac1603a446e479b46cce129961f9292e1b2779ea17cc5a"
+}

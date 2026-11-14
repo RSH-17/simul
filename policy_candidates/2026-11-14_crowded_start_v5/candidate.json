@@ -1,0 +1,12 @@
+{
+  "candidate_id": "2026-11-14_crowded_start_v5",
+  "parent_candidate": "2026-11-14_crowded_start_v4",
+  "status": "offline_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "overlay_files": {
+    "launch/robot.launch.py": "e25facc38636a959d9dea500d4217e60dffeaacf7e5d74ca96975c2f2de985f2",
+    "config/tb4_slam.yaml": "945bee9c79f0e744990012187f77bfba1ba70f94036945139e99da44cd3f97c7"
+  },
+  "build_script_sha256": "71c83f96a5b6d2d2e1b42be25cce4d007204e3dd69c102a4424b5135d3e801eb"
+}

@@ -1,0 +1,17 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v1",
+  "parent_candidate": "2026-11-14_crowded_start_v4",
+  "status": "official_bringup_integration_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "launch/simulation.launch.py": "e1612d79406ba31ab8aea736977633eaccaea707b6ace9f740fd4cb792ca1f01",
+    "launch/robot.launch.py": "fc9ba033ba07db128e79744ae6b79eccd059d8956272fc698047c042455f3d65",
+    "config/official_tb4_simulator.json": "b04303eb2719deb1ee00ed59e3e709041284bbc2f9301c1571cd27e10b27b749",
+    "test/test_start_dock_status.py": "96a5aaff90e3c24cc37dbd04e85a62ffb4c863c85f5000cf31a5b8de09f411d1",
+    "osp_mission/mission.py": "e9cd5ca81aea6128f4e950476cc40d17460cbcd0086ca8d0c72235417ab8cef5",
+    "osp_mission/tb4_contract.py": "cc12e23807e77428588ccf702f5930c427679748a2b68cf6fb413c1ee2af4917"
+  },
+  "build_script_sha256": "71c83f96a5b6d2d2e1b42be25cce4d007204e3dd69c102a4424b5135d3e801eb"
+}

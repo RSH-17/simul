@@ -1,0 +1,126 @@
+{
+  "captured_utc": "2026-11-14T15:11:43.477762+00:00",
+  "evidence_type": "New native Gazebo; pre-official-bringup development regression",
+  "status": "completed",
+  "scope": "crowded-start only; 60 sim seconds per run",
+  "candidate_escaped": 1,
+  "candidate_cases": 2,
+  "baseline_escaped": 0,
+  "baseline_cases": 2,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "jobs": [
+    {
+      "number": 0,
+      "case": 0,
+      "role": "candidate",
+      "status": "done",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v4/00_candidate",
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.5612350039463849,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "simulation_drive_contract_gate": true,
+        "drive_path_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    },
+    {
+      "number": 1,
+      "case": 0,
+      "role": "baseline",
+      "status": "done",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v4/01_baseline",
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0010267690039999515,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "simulation_drive_contract_gate": true,
+        "drive_path_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    },
+    {
+      "number": 2,
+      "case": 1,
+      "role": "candidate",
+      "status": "done",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v4/02_candidate",
+      "outcome": {
+        "escaped": true,
+        "exit_seconds": 24.072000000000003,
+        "actual_path_m": 8.435944167205339,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "simulation_drive_contract_gate": true,
+        "drive_path_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    },
+    {
+      "number": 3,
+      "case": 1,
+      "role": "baseline",
+      "status": "done",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v4/03_baseline",
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0008845434319253712,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "simulation_drive_contract_gate": true,
+        "drive_path_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    }
+  ]
+}

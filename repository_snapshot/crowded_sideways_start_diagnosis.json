@@ -1,0 +1,53 @@
+{
+  "case": "crowded_start_regression_v4/03_baseline / 1196000001",
+  "evidence_type": "Recorded sensor input replay plus previously completed paired native trials",
+  "input_sha256": "73475594ac161699e003a9f098ff57bb7fdccb9e50ae410ef4bff53aad9bfd7b",
+  "offline_same_input": {
+    "03_baseline": {
+      "candidates": 0,
+      "transit_candidates": 0,
+      "goal_distances_m": []
+    },
+    "02_candidate": {
+      "candidates": 1,
+      "transit_candidates": 1,
+      "goal_distances_m": [
+        0.6500000096857548
+      ]
+    }
+  },
+  "diagnostic_reason": "start_clearance_disconnected",
+  "consecutive_baseline_zero_goal_records": 31,
+  "observed_start_clearance_m": 0.25,
+  "normal_destination_clearance_m": 0.32,
+  "old_connector_limit_m": 0.8,
+  "body_radius_m": 0.189,
+  "physical_margin_m": 0.01,
+  "policy_uses_truth": false,
+  "full_task_qualified": false,
+  "hardware_validated": false,
+  "03_baseline": {
+    "escaped": false,
+    "exit_seconds": null,
+    "actual_path_m": 0.0008845434319253712,
+    "contacts": 0,
+    "reason": "timeout",
+    "valid_input": true,
+    "completed_normally": true,
+    "full_task_success": false,
+    "qualification_scope": "crowded-start only",
+    "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+  },
+  "02_candidate": {
+    "escaped": true,
+    "exit_seconds": 24.072000000000003,
+    "actual_path_m": 8.435944167205339,
+    "contacts": 0,
+    "reason": "timeout",
+    "valid_input": true,
+    "completed_normally": true,
+    "full_task_success": false,
+    "qualification_scope": "crowded-start only",
+    "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "captured_utc": "2026-11-14T15:24:04.768207+00:00",
+  "evidence_type": "New native Gazebo diagnostic, not weight training or full task",
+  "status": "running",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v3",
+  "baseline": "policy_candidates/2026-11-15_official_tb4_v2",
+  "runtime_tests_passed": 394,
+  "supervisor_and_resolution_tests_passed": 15,
+  "original_case": "1196000001 preserved, not rerun with a dock",
+  "scene_seed": 1196100000,
+  "scene_note": "55cm corridor, start yaw pi, dock behind robot and reverse undock toward exit; new case",
+  "jobs": [
+    {
+      "number": 0,
+      "role": "candidate",
+      "output": "/home/peter/simul/training_robust/native90/official_crowded_comparison_v1/00_candidate",
+      "status": "running",
+      "unit": "osp-official-crowded-v1-00.service",
+      "domain": 228
+    },
+    {
+      "number": 1,
+      "role": "baseline",
+      "output": "/home/peter/simul/training_robust/native90/official_crowded_comparison_v1/01_baseline",
+      "status": "running",
+      "unit": "osp-official-crowded-v1-01.service",
+      "domain": 229
+    }
+  ],
+  "policy_weights_equal": true,
+  "robot_description_required_exact_official": true,
+  "policy_receives_truth": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "full_task_qualified": false
+}

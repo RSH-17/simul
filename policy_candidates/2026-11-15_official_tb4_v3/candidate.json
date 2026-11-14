@@ -1,0 +1,13 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v3",
+  "parent_candidate": "2026-11-15_official_tb4_v2",
+  "status": "native_comparison_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "launch/robot.launch.py": "953bdec5dafeffc7984b1405de3c9c023804580b5a095f59be275fe377c05172",
+    "config/tb4_slam.yaml": "79a032ab7f61e5ac098ff8c6ed397214a15053ca6372badf1a41fe492559f612"
+  },
+  "build_script_sha256": "e635d2527445393ad40c16546311cf9219faeca31de057160cf6220a275edd58"
+}

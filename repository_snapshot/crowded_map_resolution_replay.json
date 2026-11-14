@@ -1,0 +1,117 @@
+{
+  "captured_utc": "2026-11-14T15:11:43.477762+00:00",
+  "evidence_type": "Offline rasterization of retained finalized SLAM sensor datasets; not new Gazebo",
+  "runs": [
+    {
+      "evidence_type": "Offline occupancy reconstruction from finalized sensor graph; not a new native run",
+      "episode": "/home/peter/simul/training_robust/native90/crowded_start_regression_v3/00_candidate/episodes/1196000000",
+      "snapshot": "/home/peter/simul/training_robust/native90/crowded_start_regression_v3/00_candidate/episodes/1196000000/policy_decisions/0018.npz",
+      "snapshot_sha256": "6234c198d469a66588a9ff6f56b81513872f5f1aee5608710c80679d4b8bd617",
+      "dataset_sha256": "30f31d11566bca59646617cd15060fd011e335187ed62aeb20ec1ed6b8728d32",
+      "exporter_sha256": "b237d121118cc75c2d35bc3e04f78cc49803f3683dcbe3a77731bc890039854d",
+      "policy_receives_truth": false,
+      "production_promoted": false,
+      "resolutions": [
+        {
+          "resolution_m": 0.05,
+          "scans": 9,
+          "start_clearance_m": 0.2,
+          "required_body_clearance_m": 0.23435533905932737,
+          "candidates": 0,
+          "transit_candidates": 0,
+          "same_dimensions_and_origin_as_recorded": true,
+          "cells_different_from_recorded": 0,
+          "goal_distances_m": []
+        },
+        {
+          "resolution_m": 0.025,
+          "scans": 9,
+          "start_clearance_m": 0.25,
+          "required_body_clearance_m": 0.2166776695296637,
+          "candidates": 1,
+          "transit_candidates": 1,
+          "same_dimensions_and_origin_as_recorded": false,
+          "cells_different_from_recorded": null,
+          "goal_distances_m": [
+            0.6750000000000003
+          ]
+        },
+        {
+          "resolution_m": 0.02,
+          "scans": 9,
+          "start_clearance_m": 0.24,
+          "required_body_clearance_m": 0.21314213562373097,
+          "candidates": 1,
+          "transit_candidates": 1,
+          "same_dimensions_and_origin_as_recorded": false,
+          "cells_different_from_recorded": null,
+          "goal_distances_m": [
+            0.6800000000000003
+          ]
+        }
+      ],
+      "limitations": [
+        "Uses finalized retained scans and corrected graph poses, not every original scan.",
+        "No counterfactual movement, new camera detections, or completion credit is inferred."
+      ]
+    },
+    {
+      "evidence_type": "Offline occupancy reconstruction from finalized sensor graph; not a new native run",
+      "episode": "/home/peter/simul/training_robust/native90/crowded_start_regression_v4/00_candidate/episodes/1196000000",
+      "snapshot": "/home/peter/simul/training_robust/native90/crowded_start_regression_v4/00_candidate/episodes/1196000000/policy_decisions/0032.npz",
+      "snapshot_sha256": "fe8d9327aaa480d0703dc027118935fe31b9b31819d9b16c54b5726248e8f9f4",
+      "dataset_sha256": "fd9441d9c6ad23d3b57a5dc776c74200b215d9360633b5e896bb18ca76642a4d",
+      "exporter_sha256": "b237d121118cc75c2d35bc3e04f78cc49803f3683dcbe3a77731bc890039854d",
+      "policy_receives_truth": false,
+      "production_promoted": false,
+      "resolutions": [
+        {
+          "resolution_m": 0.05,
+          "scans": 4,
+          "start_clearance_m": 0.2,
+          "required_body_clearance_m": 0.23435533905932737,
+          "candidates": 0,
+          "transit_candidates": 0,
+          "same_dimensions_and_origin_as_recorded": true,
+          "cells_different_from_recorded": 0,
+          "goal_distances_m": []
+        },
+        {
+          "resolution_m": 0.025,
+          "scans": 4,
+          "start_clearance_m": 0.25,
+          "required_body_clearance_m": 0.2166776695296637,
+          "candidates": 1,
+          "transit_candidates": 1,
+          "same_dimensions_and_origin_as_recorded": false,
+          "cells_different_from_recorded": null,
+          "goal_distances_m": [
+            0.6750000000000003
+          ]
+        },
+        {
+          "resolution_m": 0.02,
+          "scans": 4,
+          "start_clearance_m": 0.26,
+          "required_body_clearance_m": 0.21314213562373097,
+          "candidates": 1,
+          "transit_candidates": 1,
+          "same_dimensions_and_origin_as_recorded": false,
+          "cells_different_from_recorded": null,
+          "goal_distances_m": [
+            0.6800000000000003
+          ]
+        }
+      ],
+      "limitations": [
+        "Uses finalized retained scans and corrected graph poses, not every original scan.",
+        "No counterfactual movement, new camera detections, or completion credit is inferred."
+      ]
+    }
+  ],
+  "native_candidate": "policy_candidates/2026-11-14_crowded_start_v5",
+  "candidate_runtime_tests_passed": 390,
+  "candidate_native_started": false,
+  "held_reason": "User prioritizes official TurtleBot4 bringup baseline; preserve resolution candidate without promoting it",
+  "hardware_validated": false
+}
