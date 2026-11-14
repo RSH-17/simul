@@ -1,0 +1,25 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v20",
+  "parent_candidate": "2026-11-15_official_tb4_v17",
+  "status": "built_queued_after_original_campaign",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "native_queued": true,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "ground_truth_inputs": false,
+  "clearance_margins_changed": false,
+  "loop_parameters_changed": false,
+  "source_branch_reason": "Preserve the existing 65-second navigation allowance across same-target inspection and sensor-recovery resumes; charge active navigation only.",
+  "overlay_files": {
+    "osp_mission/mission.py": "4711b3f8085f32505f1c96e153343b0dbd9e48196545592632011f0a8c6be90c",
+    "osp_mission/navigation_budget.py": "6f0cfa878777d29bd81597e7cdf1b9dc5de76465ab5106eb38225ccbcc64d8a6",
+    "test/test_navigation_budget.py": "9cd5a2863c9aaa492e547f5466a59cffb21c4ae753f8aa93d8143adc3e510ff9"
+  },
+  "build_script_sha256": "b64570c1b46b7ee606151a518d21e3fa566e29750b600ab42bb7f82a848b9c57",
+  "runtime_tests_passed": 490,
+  "validated_workspace": "training_robust/native90/official_tb4_v23/runtime",
+  "comparison_campaign": "training_robust/native90/official_navigation_budget_comparison_v1"
+}

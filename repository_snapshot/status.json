@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Verified unchanged wheel-pose/gyro estimator on two 138/142-second U-shape partial sensor recordings; 35 tests passed, C/zigzag passive captures queued; not deployed",
+  "latest_change": "Fixed navigation allowance reset across inspection/sensor resumes in isolated v20; 490 runtime checks, 22 supervisor/audit checks; six full native comparisons queued after frozen original campaign",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -842,7 +842,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T22:31:32.956395+00:00",
+  "latest_status_check_utc": "2026-11-14T22:44:25.916903+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -1159,5 +1159,19 @@
     "native_navigation_validated": false,
     "hardware_validated": false,
     "configuration_deployed": false
+  },
+  "official_navigation_budget_candidate": "repository_snapshot/official_navigation_budget_candidate.json",
+  "official_navigation_budget_comparison": {
+    "campaign": "training_robust/native90/official_navigation_budget_comparison_v1",
+    "status": "queued_after_original_campaign",
+    "verified_main_pid": 2668519,
+    "actual_new_native_started": false,
+    "native_jobs_prepared": 6
+  },
+  "official_navigation_budget_validation": {
+    "runtime_tests_passed": 490,
+    "supervisor_and_audit_tests_passed": 22,
+    "native_performance_validated": false,
+    "hardware_validated": false
   }
 }
