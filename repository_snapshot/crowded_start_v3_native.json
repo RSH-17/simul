@@ -1,0 +1,139 @@
+{
+  "captured_utc": "2026-11-14T14:53:27.573252+00:00",
+  "evidence_type": "NEW native Gazebo paired development regression, not offline replay or hardware",
+  "campaign": "crowded_start_regression_v3",
+  "status": "completed",
+  "scope": "Two 60-second crowded-start cases only; not full marker task qualification",
+  "duration_sim_s": 60,
+  "candidate_successful_escapes": 1,
+  "candidate_cases": 2,
+  "baseline_successful_escapes": 0,
+  "baseline_cases": 2,
+  "ground_truth_given_to_policy": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "jobs": [
+    {
+      "number": 0,
+      "case": 0,
+      "role": "candidate",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v3/00_candidate",
+      "status": "done",
+      "domain": 191,
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 1.1345171778113197,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "corridor_width_m": 0.55,
+      "initial_heading_rad": 0.0,
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    },
+    {
+      "number": 1,
+      "case": 0,
+      "role": "baseline",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v3/01_baseline",
+      "status": "done",
+      "domain": 192,
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.001039155530096886,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "corridor_width_m": 0.55,
+      "initial_heading_rad": 0.0,
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    },
+    {
+      "number": 2,
+      "case": 1,
+      "role": "candidate",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v3/02_candidate",
+      "status": "done",
+      "domain": 191,
+      "outcome": {
+        "escaped": true,
+        "exit_seconds": 26.724,
+        "actual_path_m": 9.982767671834134,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "corridor_width_m": 0.6,
+      "initial_heading_rad": 1.5707963267948966,
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    },
+    {
+      "number": 3,
+      "case": 1,
+      "role": "baseline",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v3/03_baseline",
+      "status": "done",
+      "domain": 192,
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0008678948075768386,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "corridor_width_m": 0.6,
+      "initial_heading_rad": 1.5707963267948966,
+      "gates": {
+        "configuration_gate": true,
+        "platform_gate": true,
+        "transfer_gate": true,
+        "navigation_transport_gate": true,
+        "floor_sensor_gate": true
+      }
+    }
+  ],
+  "limitations": [
+    "Only one native run per source per scene; asynchronous simulation paths may differ.",
+    "v3 did not independently gate the actuator path. A read-only probe during the final baseline verified its chain; v4 requires this for every run.",
+    "55 cm candidate stopped after ~1.13 m; observed map start clearance fell to 0.20 m. Cause of map discrepancy not established.",
+    "All runs timed out at 60 seconds; successful corridor escape is not full QR task success."
+  ]
+}

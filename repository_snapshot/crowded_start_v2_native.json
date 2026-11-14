@@ -1,0 +1,419 @@
+{
+  "evidence_type": "native Gazebo, incomplete comparison; infrastructure failures separate",
+  "jobs": [
+    {
+      "number": 0,
+      "case": 0,
+      "phase": "regression",
+      "generation": 0,
+      "role": "candidate",
+      "workspace": "/home/peter/simul/training_robust/native90/crowded_start_v2/runtime",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v2/00_candidate",
+      "scenario": {
+        "file": "/home/peter/simul/training_robust/native90/crowded_start_regression_v2/scene_0.yaml",
+        "seed": 1196000000,
+        "sha256": "f6d798bc4cf25c8263171b6847cf732d6b6cdcaf2e0a78eeac78bda6b7d85195",
+        "arena": {
+          "schema_version": 1,
+          "shape": "rectangle",
+          "width_m": 14.0,
+          "height_m": 10.0,
+          "polygon": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              14.0,
+              0.0
+            ],
+            [
+              14.0,
+              10.0
+            ],
+            [
+              0.0,
+              10.0
+            ]
+          ],
+          "walls": [
+            {
+              "type": "box",
+              "x": 7.0,
+              "y": 0.0,
+              "sx": 14.04,
+              "sy": 0.14,
+              "yaw": 0.0,
+              "height": 1.4,
+              "length": 14.0,
+              "inward": [
+                -0.0,
+                1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 14.0,
+              "y": 5.0,
+              "sx": 10.04,
+              "sy": 0.14,
+              "yaw": 1.5707963267948966,
+              "height": 1.4,
+              "length": 10.0,
+              "inward": [
+                -1.0,
+                0.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 7.0,
+              "y": 10.0,
+              "sx": 14.04,
+              "sy": 0.14,
+              "yaw": 3.141592653589793,
+              "height": 1.4,
+              "length": 14.0,
+              "inward": [
+                -0.0,
+                -1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 0.0,
+              "y": 5.0,
+              "sx": 10.04,
+              "sy": 0.14,
+              "yaw": -1.5707963267948966,
+              "height": 1.4,
+              "length": 10.0,
+              "inward": [
+                1.0,
+                0.0
+              ],
+              "boundary": true
+            }
+          ],
+          "doorways": [],
+          "area_m2": 140.0,
+          "pdf_fixtures": false
+        },
+        "mount_profile": "hidden_obstacles",
+        "actual_obstacles": 12,
+        "requested_obstacles": 12
+      },
+      "status": "done",
+      "unit": "osp-crowded-start-v2-00.service",
+      "geometry": {
+        "start_clearance_m": 0.275,
+        "body_clearance_required_m": 0.2166776695296637,
+        "exit_reachable": true,
+        "marker_approaches_reachable": true,
+        "evidence": "offline geometry, not native success"
+      },
+      "stress_profile": "none",
+      "domain": 181,
+      "configuration_gate": false,
+      "platform_gate": false,
+      "transfer_gate": false,
+      "floor_sensor_gate": true,
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0,
+        "contacts": null,
+        "reason": "startup_failure",
+        "valid_input": false,
+        "completed_normally": false,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      }
+    },
+    {
+      "number": 1,
+      "case": 0,
+      "phase": "regression",
+      "generation": 0,
+      "role": "baseline",
+      "workspace": "/home/peter/simul/training_robust/native90/tb4_platform_v5/runtime",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v2/01_baseline",
+      "scenario": {
+        "file": "/home/peter/simul/training_robust/native90/crowded_start_regression_v2/scene_0.yaml",
+        "seed": 1196000000,
+        "sha256": "f6d798bc4cf25c8263171b6847cf732d6b6cdcaf2e0a78eeac78bda6b7d85195",
+        "arena": {
+          "schema_version": 1,
+          "shape": "rectangle",
+          "width_m": 14.0,
+          "height_m": 10.0,
+          "polygon": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              14.0,
+              0.0
+            ],
+            [
+              14.0,
+              10.0
+            ],
+            [
+              0.0,
+              10.0
+            ]
+          ],
+          "walls": [
+            {
+              "type": "box",
+              "x": 7.0,
+              "y": 0.0,
+              "sx": 14.04,
+              "sy": 0.14,
+              "yaw": 0.0,
+              "height": 1.4,
+              "length": 14.0,
+              "inward": [
+                -0.0,
+                1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 14.0,
+              "y": 5.0,
+              "sx": 10.04,
+              "sy": 0.14,
+              "yaw": 1.5707963267948966,
+              "height": 1.4,
+              "length": 10.0,
+              "inward": [
+                -1.0,
+                0.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 7.0,
+              "y": 10.0,
+              "sx": 14.04,
+              "sy": 0.14,
+              "yaw": 3.141592653589793,
+              "height": 1.4,
+              "length": 14.0,
+              "inward": [
+                -0.0,
+                -1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 0.0,
+              "y": 5.0,
+              "sx": 10.04,
+              "sy": 0.14,
+              "yaw": -1.5707963267948966,
+              "height": 1.4,
+              "length": 10.0,
+              "inward": [
+                1.0,
+                0.0
+              ],
+              "boundary": true
+            }
+          ],
+          "doorways": [],
+          "area_m2": 140.0,
+          "pdf_fixtures": false
+        },
+        "mount_profile": "hidden_obstacles",
+        "actual_obstacles": 12,
+        "requested_obstacles": 12
+      },
+      "status": "done",
+      "unit": "osp-crowded-start-v2-01.service",
+      "geometry": {
+        "start_clearance_m": 0.275,
+        "body_clearance_required_m": 0.2166776695296637,
+        "exit_reachable": true,
+        "marker_approaches_reachable": true,
+        "evidence": "offline geometry, not native success"
+      },
+      "stress_profile": "none",
+      "domain": 182,
+      "configuration_gate": true,
+      "platform_gate": true,
+      "transfer_gate": true,
+      "floor_sensor_gate": true,
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0010535634983518125,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      }
+    },
+    {
+      "number": 2,
+      "case": 1,
+      "phase": "regression",
+      "generation": 0,
+      "role": "candidate",
+      "workspace": "/home/peter/simul/training_robust/native90/crowded_start_v2/runtime",
+      "output": "/home/peter/simul/training_robust/native90/crowded_start_regression_v2/02_candidate",
+      "scenario": {
+        "file": "/home/peter/simul/training_robust/native90/crowded_start_regression_v2/scene_1.yaml",
+        "seed": 1196000001,
+        "sha256": "c8e18d6207bcb43e872e8a9b011f2fce7f994f5fe370ed37557f5d2491956ed0",
+        "arena": {
+          "schema_version": 1,
+          "shape": "rectangle",
+          "width_m": 14.0,
+          "height_m": 10.0,
+          "polygon": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              14.0,
+              0.0
+            ],
+            [
+              14.0,
+              10.0
+            ],
+            [
+              0.0,
+              10.0
+            ]
+          ],
+          "walls": [
+            {
+              "type": "box",
+              "x": 7.0,
+              "y": 0.0,
+              "sx": 14.04,
+              "sy": 0.14,
+              "yaw": 0.0,
+              "height": 1.4,
+              "length": 14.0,
+              "inward": [
+                -0.0,
+                1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 14.0,
+              "y": 5.0,
+              "sx": 10.04,
+              "sy": 0.14,
+              "yaw": 1.5707963267948966,
+              "height": 1.4,
+              "length": 10.0,
+              "inward": [
+                -1.0,
+                0.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 7.0,
+              "y": 10.0,
+              "sx": 14.04,
+              "sy": 0.14,
+              "yaw": 3.141592653589793,
+              "height": 1.4,
+              "length": 14.0,
+              "inward": [
+                -0.0,
+                -1.0
+              ],
+              "boundary": true
+            },
+            {
+              "type": "box",
+              "x": 0.0,
+              "y": 5.0,
+              "sx": 10.04,
+              "sy": 0.14,
+              "yaw": -1.5707963267948966,
+              "height": 1.4,
+              "length": 10.0,
+              "inward": [
+                1.0,
+                0.0
+              ],
+              "boundary": true
+            }
+          ],
+          "doorways": [],
+          "area_m2": 140.0,
+          "pdf_fixtures": false
+        },
+        "mount_profile": "hidden_obstacles",
+        "actual_obstacles": 12,
+        "requested_obstacles": 12
+      },
+      "status": "done",
+      "unit": "osp-crowded-start-v2-02.service",
+      "geometry": {
+        "start_clearance_m": 0.30000000000000004,
+        "body_clearance_required_m": 0.2166776695296637,
+        "exit_reachable": true,
+        "marker_approaches_reachable": true,
+        "evidence": "offline geometry, not native success"
+      },
+      "stress_profile": "none",
+      "domain": 181,
+      "configuration_gate": true,
+      "platform_gate": true,
+      "transfer_gate": true,
+      "floor_sensor_gate": true,
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0,
+        "contacts": 0,
+        "reason": "motion_control_endpoints_missing",
+        "valid_input": false,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      },
+      "raw_outcome_before_drive_path_audit": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      }
+    }
+  ],
+  "queued_preserved": 1,
+  "production_promoted": false,
+  "hardware_validated": false
+}

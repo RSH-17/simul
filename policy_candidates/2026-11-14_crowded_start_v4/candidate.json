@@ -1,0 +1,18 @@
+{
+  "candidate_id": "2026-11-14_crowded_start_v4",
+  "parent_candidate": "2026-11-14_crowded_start_v3",
+  "status": "offline_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "overlay_files": {
+    "launch/create3_nodes.launch.py": "b98ea98e892b11326b157adbaed27d90bd3af2dfba60e2ca0b4a80b37d87c5eb",
+    "test/test_sim_drive_contract.py": "597aa96dab2076990e92d37ed000b32df15a61495293f17dd268761168ecaa46",
+    "test/test_start_transit_continuation.py": "33c246be5695560065b86de597bbcaebefcbf0a6caaad5358e4787285a57f3f6",
+    "osp_mission/mission.py": "412f9596c75f2f24e8716bc234dbfb63dd90e815346ee00e7d9dbf0eea600d3b",
+    "osp_mission/edge_policy.py": "24d1b246372fcf561e4c0cae1fe6a097d5dcb4ebbbe740792428f2ba67808630",
+    "osp_mission/sim_drive_contract.py": "56fda8dd6d99f0ca097621568e058cd1669cf50cf15c4964b1804edc43b5aa27",
+    "osp_mission/start_waypoints.py": "86e1a4ca40418e6666cc327334e733b89aa25239486c1dd76b2ab070695fb157",
+    "osp_mission/tb4_contract.py": "ad7e14810db67acb368acede3de0c4bf37cf0e889cdf9ece4e4348692e5397e9"
+  },
+  "build_script_sha256": "96ae9e7d84c5476c6d4265ad6f1a2299eec69bd5d5346e03ac085c93d35cf973"
+}
