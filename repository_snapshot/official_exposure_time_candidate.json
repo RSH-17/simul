@@ -1,0 +1,48 @@
+{
+  "captured_utc": "2026-11-14T18:37:47.202991+00:00",
+  "evidence_type": "Candidate synthetic-input tests; no native qualification",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v11",
+  "parent_candidate": "2026-11-15_official_tb4_v8",
+  "runtime": "training_robust/native90/official_tb4_v13/runtime",
+  "status": "built_not_queued",
+  "runtime_tests_passed": 418,
+  "build_log_sha256": "6521f286579e6eab344333985ed1c4ac5e67a2f8cad7210b1136f221614ae0a8",
+  "native_evidence": {
+    "job": "00_c_shape_baseline",
+    "elapsed_s": 390.979,
+    "mission_reported_targets": 1,
+    "mission_reported_contacts": 0,
+    "detector_errors": 57,
+    "last_detector_error": "Lookup would require extrapolation into the future.  Requested time 340.593000 but the latest data is at time 340.580000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+    "detector_small": 190,
+    "detector_no_range": 52,
+    "confirmed_ids": [
+      795
+    ],
+    "evidence": "training_robust/native90/official_tb4_v13/00_c_shape_baseline_live_evidence.json",
+    "sha256": "b4cfd961b53f2fab2e24ade26c403b8d552f3da44292e07c96bca1363c07cf43",
+    "final_evaluator_pending": true
+  },
+  "maximum_tf_wait_sim_s": 0.25,
+  "maximum_queued_frames": 8,
+  "original_sensor_messages_preserved": true,
+  "original_exposure_time_preserved": true,
+  "latest_pose_fallback": false,
+  "synthetic_checks": [
+    "0, 13, 50, 200 ms delays accepted at original exposure; 300 ms expires",
+    "Real tf2 Buffer interpolation and detector: original LiDAR and registered-depth paths",
+    "Queue overflow, stale head, duplicate/out-of-order/zero/future timestamps, clock reset"
+  ],
+  "native_validation_complete": false,
+  "native_queued": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "weights_retrained": false,
+  "official_robot_files_modified": false,
+  "policy_ground_truth_input": false,
+  "known_limits": [
+    "Existing map and sensor-frame transforms still required",
+    "Does not resolve low-pixel identity, mixed-surface range failure, or exploration weighting",
+    "Not yet combined with the separately queued dock candidate"
+  ]
+}

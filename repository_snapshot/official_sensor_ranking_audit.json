@@ -1,0 +1,734 @@
+{
+  "captured_utc": "2026-11-14T18:37:47.202991+00:00",
+  "evidence_type": "Interim native diagnostics and offline score replay; no new success",
+  "native_live": [
+    {
+      "job": "00_c_shape_baseline",
+      "elapsed_s": 390.979,
+      "mission_reported_targets": 1,
+      "mission_reported_contacts": 0,
+      "detector_errors": 57,
+      "last_detector_error": "Lookup would require extrapolation into the future.  Requested time 340.593000 but the latest data is at time 340.580000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+      "detector_small": 190,
+      "detector_no_range": 52,
+      "confirmed_ids": [
+        795
+      ],
+      "evidence": "training_robust/native90/official_tb4_v13/00_c_shape_baseline_live_evidence.json",
+      "sha256": "b4cfd961b53f2fab2e24ade26c403b8d552f3da44292e07c96bca1363c07cf43",
+      "final_evaluator_pending": true
+    },
+    {
+      "job": "01_c_shape_candidate",
+      "elapsed_s": 366.636,
+      "mission_reported_targets": 0,
+      "mission_reported_contacts": 0,
+      "detector_errors": 0,
+      "last_detector_error": "",
+      "detector_small": 192,
+      "detector_no_range": 147,
+      "confirmed_ids": [],
+      "evidence": "training_robust/native90/official_tb4_v13/01_c_shape_candidate_live_evidence.json",
+      "sha256": "80260bf5b767e676d51acbd9d74d76b9d69c6ad0c064721e21d2177aa1d62483",
+      "final_evaluator_pending": true
+    }
+  ],
+  "ranking": [
+    {
+      "role": "baseline",
+      "decisions": 19,
+      "recorded_selections_reproduced": 18,
+      "source_chooser_sha256": "c38800382f467fcac9634c8603d69d34477dcb04d06456d65f621f34b015679b",
+      "sample_decisions": [
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0009.npz",
+          "sha256": "fe0b5e5f0607c508b98a35e3fb38770c8c72677dc44f098853045bc2569285bd",
+          "elapsed_s": 128.979,
+          "candidate_count": 76,
+          "recorded_selected_index": 8,
+          "weights": [
+            1.0,
+            2.409531985394154,
+            0.4889512207810997,
+            0.7812959734881743,
+            0.6473764656964455
+          ],
+          "robot": [
+            -2.4770343563028225,
+            1.0811802914601465
+          ],
+          "score_selected_index": 8,
+          "recorded_selection_reproduced": true,
+          "baseline": {
+            "index": 8,
+            "xy": [
+              -15.280938779984186,
+              0.05555347811662781
+            ],
+            "features": [
+              0.0,
+              5.0,
+              13.224569098493847,
+              1.9179923486485748,
+              9.074368013686412e-67
+            ],
+            "planned_path_m": 13.224569098493847,
+            "surface_score": 0.0,
+            "frontier_score": 0.3665588249980054,
+            "revisit_penalty": 5.874532293129184e-68,
+            "score": 0.3665588249980054
+          },
+          "best_nearby_surface_candidate": {
+            "index": 37,
+            "xy": [
+              -1.3559385724855169,
+              1.130553494135376
+            ],
+            "features": [
+              0.800000011920929,
+              2.4341784737917072e-15,
+              1.1457106951910743,
+              1.9689600496902688,
+              0.21339819485229478
+            ],
+            "planned_path_m": 1.1457106951910743,
+            "surface_score": 0.07819155874341804,
+            "frontier_score": 5.732644236308143e-16,
+            "revisit_penalty": 0.013814896916948,
+            "score": 0.06437666182647062
+          },
+          "sensitivity": [
+            {
+              "frontier_weight_factor": 0.125,
+              "index": 44,
+              "xy": [
+                -0.055938553114007306,
+                1.2555534959980212
+              ],
+              "features": [
+                0.800000011920929,
+                0.5416666747381302,
+                2.497487410630752,
+                0.30281287795350353,
+                1.9296793705946944e-05
+              ],
+              "planned_path_m": 2.497487410630752,
+              "surface_score": 0.07866349363763742,
+              "frontier_score": 0.016041983411690008,
+              "revisit_penalty": 1.2492290108629348e-06,
+              "score": 0.09470422782031657
+            },
+            {
+              "frontier_weight_factor": 0.25,
+              "index": 39,
+              "xy": [
+                1.119061464394857,
+                1.080553493390318
+              ],
+              "features": [
+                0.825000012293458,
+                1.3333333532015532,
+                3.6000000536441803,
+                1.5653316855982478,
+                2.696661750654922e-10
+              ],
+              "planned_path_m": 3.6000000536441803,
+              "surface_score": 0.058032922795477934,
+              "frontier_score": 0.05649785199257136,
+              "revisit_penalty": 1.745755353317773e-11,
+              "score": 0.11453077477059175
+            },
+            {
+              "frontier_weight_factor": 0.5,
+              "index": 8,
+              "xy": [
+                -15.280938779984186,
+                0.05555347811662781
+              ],
+              "features": [
+                0.0,
+                5.0,
+                13.224569098493847,
+                1.9179923486485748,
+                9.074368013686412e-67
+              ],
+              "planned_path_m": 13.224569098493847,
+              "surface_score": 0.0,
+              "frontier_score": 0.1832794124990027,
+              "revisit_penalty": 5.874532293129184e-68,
+              "score": 0.1832794124990027
+            },
+            {
+              "frontier_weight_factor": 1.0,
+              "index": 8,
+              "xy": [
+                -15.280938779984186,
+                0.05555347811662781
+              ],
+              "features": [
+                0.0,
+                5.0,
+                13.224569098493847,
+                1.9179923486485748,
+                9.074368013686412e-67
+              ],
+              "planned_path_m": 13.224569098493847,
+              "surface_score": 0.0,
+              "frontier_score": 0.3665588249980054,
+              "revisit_penalty": 5.874532293129184e-68,
+              "score": 0.3665588249980054
+            },
+            {
+              "frontier_weight_factor": 2.0,
+              "index": 8,
+              "xy": [
+                -15.280938779984186,
+                0.05555347811662781
+              ],
+              "features": [
+                0.0,
+                5.0,
+                13.224569098493847,
+                1.9179923486485748,
+                9.074368013686412e-67
+              ],
+              "planned_path_m": 13.224569098493847,
+              "surface_score": 0.0,
+              "frontier_score": 0.7331176499960108,
+              "revisit_penalty": 5.874532293129184e-68,
+              "score": 0.7331176499960108
+            }
+          ]
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0010.npz",
+          "sha256": "3aba82d5cb3e20bf77c365977f75c3a6dbc424f5f0f3e63addd49eac17f2bf25",
+          "elapsed_s": 186.979,
+          "candidate_count": 108,
+          "recorded_selected_index": 44,
+          "weights": [
+            1.0,
+            2.409531985394154,
+            0.4889512207810997,
+            0.7812959734881743,
+            0.6473764656964455
+          ],
+          "robot": [
+            -15.108380432427241,
+            0.16337308427289576
+          ],
+          "score_selected_index": 44,
+          "recorded_selection_reproduced": true,
+          "baseline": {
+            "index": 44,
+            "xy": [
+              -15.97730676705585,
+              4.0305535373487436
+            ],
+            "features": [
+              0.0,
+              5.0,
+              4.2374369302191806,
+              1.5370359381118135,
+              3.061155960546447e-12
+            ],
+            "planned_path_m": 4.2374369302191806,
+            "surface_score": 0.0,
+            "frontier_score": 0.7838116430351664,
+            "revisit_penalty": 1.9817203266841665e-13,
+            "score": 0.7838116430349682
+          },
+          "best_nearby_surface_candidate": {
+            "index": 96,
+            "xy": [
+              -15.72730676333056,
+              -1.2194465408823527
+            ],
+            "features": [
+              0.825000012293458,
+              0.0,
+              1.6338835008299455,
+              0.9064143579879484,
+              0.003210153171742096
+            ],
+            "planned_path_m": 1.6338835008299455,
+            "surface_score": 0.08694271250307932,
+            "frontier_score": 0.0,
+            "revisit_penalty": 0.00020781776146666328,
+            "score": 0.08673489474161265
+          },
+          "sensitivity": [
+            {
+              "frontier_weight_factor": 0.125,
+              "index": 44,
+              "xy": [
+                -15.97730676705585,
+                4.0305535373487436
+              ],
+              "features": [
+                0.0,
+                5.0,
+                4.2374369302191806,
+                1.5370359381118135,
+                3.061155960546447e-12
+              ],
+              "planned_path_m": 4.2374369302191806,
+              "surface_score": 0.0,
+              "frontier_score": 0.0979764553793958,
+              "revisit_penalty": 1.9817203266841665e-13,
+              "score": 0.09797645537919762
+            },
+            {
+              "frontier_weight_factor": 0.25,
+              "index": 44,
+              "xy": [
+                -15.97730676705585,
+                4.0305535373487436
+              ],
+              "features": [
+                0.0,
+                5.0,
+                4.2374369302191806,
+                1.5370359381118135,
+                3.061155960546447e-12
+              ],
+              "planned_path_m": 4.2374369302191806,
+              "surface_score": 0.0,
+              "frontier_score": 0.1959529107587916,
+              "revisit_penalty": 1.9817203266841665e-13,
+              "score": 0.19595291075859342
+            },
+            {
+              "frontier_weight_factor": 0.5,
+              "index": 44,
+              "xy": [
+                -15.97730676705585,
+                4.0305535373487436
+              ],
+              "features": [
+                0.0,
+                5.0,
+                4.2374369302191806,
+                1.5370359381118135,
+                3.061155960546447e-12
+              ],
+              "planned_path_m": 4.2374369302191806,
+              "surface_score": 0.0,
+              "frontier_score": 0.3919058215175832,
+              "revisit_penalty": 1.9817203266841665e-13,
+              "score": 0.391905821517385
+            },
+            {
+              "frontier_weight_factor": 1.0,
+              "index": 44,
+              "xy": [
+                -15.97730676705585,
+                4.0305535373487436
+              ],
+              "features": [
+                0.0,
+                5.0,
+                4.2374369302191806,
+                1.5370359381118135,
+                3.061155960546447e-12
+              ],
+              "planned_path_m": 4.2374369302191806,
+              "surface_score": 0.0,
+              "frontier_score": 0.7838116430351664,
+              "revisit_penalty": 1.9817203266841665e-13,
+              "score": 0.7838116430349682
+            },
+            {
+              "frontier_weight_factor": 2.0,
+              "index": 44,
+              "xy": [
+                -15.97730676705585,
+                4.0305535373487436
+              ],
+              "features": [
+                0.0,
+                5.0,
+                4.2374369302191806,
+                1.5370359381118135,
+                3.061155960546447e-12
+              ],
+              "planned_path_m": 4.2374369302191806,
+              "surface_score": 0.0,
+              "frontier_score": 1.5676232860703327,
+              "revisit_penalty": 1.9817203266841665e-13,
+              "score": 1.5676232860701347
+            }
+          ]
+        }
+      ],
+      "unmatched_decisions": [
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0017.npz",
+          "elapsed_s": 331.979,
+          "recorded_selected_index": 140,
+          "score_selected_index": 73
+        }
+      ],
+      "limitations": [
+        "Long goals or revisits can be necessary; distance alone is not failure",
+        "Sensitivity preserves the recorded candidate list, map and memory",
+        "No prediction of future success, safety, duration or traveled path",
+        "Low frontier weight can waste time inspecting ordinary walls"
+      ]
+    },
+    {
+      "role": "candidate",
+      "decisions": 13,
+      "recorded_selections_reproduced": 13,
+      "source_chooser_sha256": "c38800382f467fcac9634c8603d69d34477dcb04d06456d65f621f34b015679b",
+      "sample_decisions": [
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/policy_decisions/0009.npz",
+          "sha256": "1319d9f72ff6c593c77a7644512a5a80deb39935758db2e53ab9d2292a85733a",
+          "elapsed_s": 86.134,
+          "candidate_count": 94,
+          "recorded_selected_index": 62,
+          "weights": [
+            1.0,
+            2.409531985394154,
+            0.4889512207810997,
+            0.7812959734881743,
+            0.6473764656964455
+          ],
+          "robot": [
+            -13.663623831640253,
+            -0.005291188127753033
+          ],
+          "score_selected_index": 62,
+          "recorded_selection_reproduced": true,
+          "baseline": {
+            "index": 62,
+            "xy": [
+              -0.9406667809583631,
+              1.2666246172770053
+            ],
+            "features": [
+              0.7000000104308128,
+              5.0,
+              13.253122489512597,
+              1.9398038507334823,
+              0.029378730547333254
+            ],
+            "planned_path_m": 13.253122489512597,
+            "surface_score": 0.02124127974451292,
+            "frontier_score": 0.3655824442317459,
+            "revisit_penalty": 0.00190190987483808,
+            "score": 0.38492181410142073
+          },
+          "best_nearby_surface_candidate": {
+            "index": 72,
+            "xy": [
+              -13.715666971320697,
+              -1.2833754207209558
+            ],
+            "features": [
+              0.7250000108033419,
+              0.0,
+              1.2957106974262484,
+              1.1553106715053083,
+              0.10643760714940262
+            ],
+            "planned_path_m": 1.2957106974262484,
+            "surface_score": 0.07844648914684041,
+            "frontier_score": 0.0,
+            "revisit_penalty": 0.006890520193356699,
+            "score": 0.0715559689534837
+          },
+          "sensitivity": [
+            {
+              "frontier_weight_factor": 0.125,
+              "index": 66,
+              "xy": [
+                -17.140667022357174,
+                -1.3583754218385429
+              ],
+              "features": [
+                1.1250000167638063,
+                0.0,
+                4.034188369317757,
+                0.3225293925875832,
+                1.6063132051974302e-10
+              ],
+              "planned_path_m": 4.034188369317757,
+              "surface_score": 0.08593951515150569,
+              "frontier_score": 0.0,
+              "revisit_penalty": 1.0398893655822417e-11,
+              "score": 0.0859395151411068
+            },
+            {
+              "frontier_weight_factor": 0.25,
+              "index": 62,
+              "xy": [
+                -0.9406667809583631,
+                1.2666246172770053
+              ],
+              "features": [
+                0.7000000104308128,
+                5.0,
+                13.253122489512597,
+                1.9398038507334823,
+                0.029378730547333254
+              ],
+              "planned_path_m": 13.253122489512597,
+              "surface_score": 0.02124127974451292,
+              "frontier_score": 0.09139561105793648,
+              "revisit_penalty": 0.00190190987483808,
+              "score": 0.11073498092761132
+            },
+            {
+              "frontier_weight_factor": 0.5,
+              "index": 62,
+              "xy": [
+                -0.9406667809583631,
+                1.2666246172770053
+              ],
+              "features": [
+                0.7000000104308128,
+                5.0,
+                13.253122489512597,
+                1.9398038507334823,
+                0.029378730547333254
+              ],
+              "planned_path_m": 13.253122489512597,
+              "surface_score": 0.02124127974451292,
+              "frontier_score": 0.18279122211587295,
+              "revisit_penalty": 0.00190190987483808,
+              "score": 0.2021305919855478
+            },
+            {
+              "frontier_weight_factor": 1.0,
+              "index": 62,
+              "xy": [
+                -0.9406667809583631,
+                1.2666246172770053
+              ],
+              "features": [
+                0.7000000104308128,
+                5.0,
+                13.253122489512597,
+                1.9398038507334823,
+                0.029378730547333254
+              ],
+              "planned_path_m": 13.253122489512597,
+              "surface_score": 0.02124127974451292,
+              "frontier_score": 0.3655824442317459,
+              "revisit_penalty": 0.00190190987483808,
+              "score": 0.38492181410142073
+            },
+            {
+              "frontier_weight_factor": 2.0,
+              "index": 62,
+              "xy": [
+                -0.9406667809583631,
+                1.2666246172770053
+              ],
+              "features": [
+                0.7000000104308128,
+                5.0,
+                13.253122489512597,
+                1.9398038507334823,
+                0.029378730547333254
+              ],
+              "planned_path_m": 13.253122489512597,
+              "surface_score": 0.02124127974451292,
+              "frontier_score": 0.7311648884634918,
+              "revisit_penalty": 0.00190190987483808,
+              "score": 0.7505042583331667
+            }
+          ]
+        },
+        {
+          "file": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/policy_decisions/0010.npz",
+          "sha256": "8303d39283872cd6a0e28fa4e2c1ddda66bb4acd82f268c88bc8cff8582e090a",
+          "elapsed_s": 160.135,
+          "candidate_count": 94,
+          "recorded_selected_index": 41,
+          "weights": [
+            1.0,
+            2.409531985394154,
+            0.4889512207810997,
+            0.7812959734881743,
+            0.6473764656964455
+          ],
+          "robot": [
+            -1.1440026998544002,
+            1.4191600880149648
+          ],
+          "score_selected_index": 41,
+          "recorded_selection_reproduced": true,
+          "baseline": {
+            "index": 41,
+            "xy": [
+              -14.72763448409517,
+              3.765383177725502
+            ],
+            "features": [
+              0.0,
+              5.0,
+              15.632107014123086,
+              0.8303733992786575,
+              0.006907606145802702
+            ],
+            "planned_path_m": 15.632107014123086,
+            "surface_score": 0.0,
+            "frontier_score": 0.3375168514610273,
+            "revisit_penalty": 0.0004471821653092799,
+            "score": 0.337069669295718
+          },
+          "best_nearby_surface_candidate": {
+            "index": 68,
+            "xy": [
+              0.24736573904971948,
+              1.3153831412176569
+            ],
+            "features": [
+              1.0250000152736902,
+              2.5804012089664743e-17,
+              1.4414213777161615,
+              1.0929849786704433,
+              0.07300903296201432
+            ],
+            "planned_path_m": 1.4414213777161615,
+            "surface_score": 0.10882721501242172,
+            "frontier_score": 6.6013624104259574e-18,
+            "revisit_penalty": 0.004726432972286412,
+            "score": 0.10410078204013531
+          },
+          "sensitivity": [
+            {
+              "frontier_weight_factor": 0.125,
+              "index": 68,
+              "xy": [
+                0.24736573904971948,
+                1.3153831412176569
+              ],
+              "features": [
+                1.0250000152736902,
+                2.5804012089664743e-17,
+                1.4414213777161615,
+                1.0929849786704433,
+                0.07300903296201432
+              ],
+              "planned_path_m": 1.4414213777161615,
+              "surface_score": 0.10882721501242172,
+              "frontier_score": 8.251703013032447e-19,
+              "revisit_penalty": 0.004726432972286412,
+              "score": 0.10410078204013531
+            },
+            {
+              "frontier_weight_factor": 0.25,
+              "index": 68,
+              "xy": [
+                0.24736573904971948,
+                1.3153831412176569
+              ],
+              "features": [
+                1.0250000152736902,
+                2.5804012089664743e-17,
+                1.4414213777161615,
+                1.0929849786704433,
+                0.07300903296201432
+              ],
+              "planned_path_m": 1.4414213777161615,
+              "surface_score": 0.10882721501242172,
+              "frontier_score": 1.6503406026064893e-18,
+              "revisit_penalty": 0.004726432972286412,
+              "score": 0.10410078204013531
+            },
+            {
+              "frontier_weight_factor": 0.5,
+              "index": 41,
+              "xy": [
+                -14.72763448409517,
+                3.765383177725502
+              ],
+              "features": [
+                0.0,
+                5.0,
+                15.632107014123086,
+                0.8303733992786575,
+                0.006907606145802702
+              ],
+              "planned_path_m": 15.632107014123086,
+              "surface_score": 0.0,
+              "frontier_score": 0.16875842573051364,
+              "revisit_penalty": 0.0004471821653092799,
+              "score": 0.16831124356520435
+            },
+            {
+              "frontier_weight_factor": 1.0,
+              "index": 41,
+              "xy": [
+                -14.72763448409517,
+                3.765383177725502
+              ],
+              "features": [
+                0.0,
+                5.0,
+                15.632107014123086,
+                0.8303733992786575,
+                0.006907606145802702
+              ],
+              "planned_path_m": 15.632107014123086,
+              "surface_score": 0.0,
+              "frontier_score": 0.3375168514610273,
+              "revisit_penalty": 0.0004471821653092799,
+              "score": 0.337069669295718
+            },
+            {
+              "frontier_weight_factor": 2.0,
+              "index": 41,
+              "xy": [
+                -14.72763448409517,
+                3.765383177725502
+              ],
+              "features": [
+                0.0,
+                5.0,
+                15.632107014123086,
+                0.8303733992786575,
+                0.006907606145802702
+              ],
+              "planned_path_m": 15.632107014123086,
+              "surface_score": 0.0,
+              "frontier_score": 0.6750337029220546,
+              "revisit_penalty": 0.0004471821653092799,
+              "score": 0.6745865207567453
+            }
+          ]
+        }
+      ],
+      "unmatched_decisions": [],
+      "limitations": [
+        "Long goals or revisits can be necessary; distance alone is not failure",
+        "Sensitivity preserves the recorded candidate list, map and memory",
+        "No prediction of future success, safety, duration or traveled path",
+        "Low frontier weight can waste time inspecting ordinary walls"
+      ]
+    }
+  ],
+  "passive_range_capture": {
+    "wall_seconds": 900.0045858272351,
+    "seen_frames": 3537,
+    "saved_frames": 0,
+    "provisional_cues": 0,
+    "errors": [],
+    "platform_contract_samples": 136,
+    "platform_contract_all_passed": true,
+    "commands_published": false,
+    "tf_published": false,
+    "ground_truth_used": false,
+    "stop_reason": "bounded_wall_window"
+  },
+  "range_replay_native_snapshots": 0,
+  "range_replay_tests_passed": 3,
+  "range_failure_cause": "Unresolved: the bounded passive window captured no decoded marker frames",
+  "weights_retrained": false,
+  "production_promoted": false,
+  "ground_truth_used": false
+}

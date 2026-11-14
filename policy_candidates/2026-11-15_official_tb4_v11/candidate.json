@@ -1,0 +1,20 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v11",
+  "parent_candidate": "2026-11-15_official_tb4_v8",
+  "status": "exposure_time_buffer_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "native_validated": false,
+  "maximum_tf_wait_sim_s": 0.25,
+  "maximum_queued_frames": 8,
+  "exposure_timestamp_preserved": true,
+  "overlay_files": {
+    "osp_mission/detector.py": "afe067fe8e55b9426a13499bc4127926f6df246f62741bf616e93cf1a9e296a3",
+    "osp_mission/exposure_queue.py": "aa146afabf284a926c2cfaf2650745fba6d14829430de91790b22840f91a9891",
+    "test/test_exposure_queue.py": "81637008e523aef9f2a596fa43088878074825c1e4a25d97b0323d70368b20e9"
+  },
+  "build_script_sha256": "488dce28f3703e097c8e866aae64826539cc10b72d9eea453e11180269820509"
+}

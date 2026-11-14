@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T18:14:27.418112+00:00",
+  "captured_utc": "2026-11-14T18:37:47.202991+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -773,5 +773,14 @@
   "official_full_task_comparison": "repository_snapshot/official_full_task_comparison.json",
   "current_coefficient_training_status": "held; fixed-weight algorithm comparison; no new trained champion",
   "official_dock_anchor_failure": "repository_snapshot/official_dock_anchor_failure.json",
-  "official_dock_map_candidate": "repository_snapshot/official_dock_map_candidate.json"
+  "official_dock_map_candidate": "repository_snapshot/official_dock_map_candidate.json",
+  "official_sensor_ranking_audit": "repository_snapshot/official_sensor_ranking_audit.json",
+  "official_exposure_time_candidate": "repository_snapshot/official_exposure_time_candidate.json",
+  "latest_candidate_validation": {
+    "candidate": "policy_candidates/2026-11-15_official_tb4_v11",
+    "runtime_tests_passed": 418,
+    "native_queued": false,
+    "native_validation_complete": false,
+    "production_promoted": false
+  }
 }
