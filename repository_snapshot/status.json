@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T19:15:41.038935+00:00",
+  "captured_utc": "2026-11-14T19:56:11.301666+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Known dock anchored before undock and forwarded to both Nav2 maps; two native regressions queued after existing paired runs",
+  "latest_change": "Preserve raw sensor inputs without delayed global TF; distinguish exact range-function replay from approximate archival diagnosis; no policy change",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -154,12 +154,12 @@
     "hardware_validated": false
   },
   "active_supervision": {
-    "captured_utc": "2026-11-14T18:14:27.418112+00:00",
-    "current_campaign": "official_dock_screen_v1",
-    "unit": "osp-official-dock-screen-v1.service",
-    "coordinator": "osp-official-dock-screen-v1.service",
+    "captured_utc": "2026-11-14T19:56:11.301666+00:00",
+    "current_campaign": "official_frontier_comparison_v1",
+    "unit": "osp-official-pocket-screen-v1.service",
+    "coordinator": "osp-official-pocket-screen-v1.service",
     "CEM_dispatch": "held; fixed-weight diagnostic and algorithm comparison",
-    "constraint_dispatch": "two dock repairs waiting for slots; 13 original matrix and four full-task queued jobs preserved",
+    "constraint_dispatch": "Current U pair preserved; then two pocket continuation start regressions, then remaining frontier jobs",
     "dashboard": "osp-robot-dashboard.service",
     "automatic_code_review": false
   },
@@ -234,16 +234,9 @@
     "hardware_validated": false
   },
   "latest_auxiliary_validation": {
-    "tests_passed": 23,
-    "scope": [
-      "new CEM slot accounting/source selection and physical scoring",
-      "depth patch units/stride/endianness/invalid data",
-      "independent approach audit",
-      "localization replay",
-      "single-owner handoff"
-    ],
-    "runtime_source_tests_passed": 259,
-    "actual_native_velocity_profile_verified": true
+    "unit_tests_passed": 12,
+    "actual_raw_range_function_comparisons_passed": 16,
+    "new_completed_native_trials": 0
   },
   "current_training_runtime": "/home/peter/simul/training_robust/native90/official_tb4_v8/runtime",
   "actual_native_process_count": 2,
@@ -380,68 +373,60 @@
   "second_L_localization_failure": "repository_snapshot/second_L_localization_failure.json",
   "current_jobs": [
     {
-      "campaign": "official_frontier_comparison_v1",
-      "number": 0,
-      "role": "baseline",
-      "unit": "osp-official-frontier-v1-00.service",
-      "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline",
-      "status": "running"
-    },
-    {
-      "campaign": "official_frontier_comparison_v1",
-      "number": 1,
-      "role": "candidate",
-      "unit": "osp-official-frontier-v1-01.service",
-      "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate",
-      "status": "running"
-    },
-    {
-      "campaign": "official_frontier_comparison_v1",
       "number": 2,
       "role": "baseline",
       "unit": "osp-official-frontier-v1-02.service",
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline",
-      "status": "prepared"
+      "status": "running",
+      "campaign": "official_frontier_comparison_v1",
+      "elapsed_sim_seconds": 347.239,
+      "targets": 1,
+      "contacts": 0,
+      "not_final_evaluation": true
     },
     {
-      "campaign": "official_frontier_comparison_v1",
       "number": 3,
       "role": "candidate",
       "unit": "osp-official-frontier-v1-03.service",
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate",
-      "status": "prepared"
+      "status": "running",
+      "campaign": "official_frontier_comparison_v1",
+      "elapsed_sim_seconds": 349.951,
+      "targets": 0,
+      "contacts": 0,
+      "not_final_evaluation": true
     },
     {
-      "campaign": "official_frontier_comparison_v1",
       "number": 4,
       "role": "baseline",
       "unit": "osp-official-frontier-v1-04.service",
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline",
-      "status": "prepared"
+      "status": "prepared",
+      "campaign": "official_frontier_comparison_v1"
     },
     {
-      "campaign": "official_frontier_comparison_v1",
       "number": 5,
       "role": "candidate",
       "unit": "osp-official-frontier-v1-05.service",
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate",
-      "status": "prepared"
+      "status": "prepared",
+      "campaign": "official_frontier_comparison_v1"
     },
     {
-      "campaign": "official_dock_screen_v1",
       "number": 0,
       "role": "candidate",
-      "unit": "osp-official-dock-v1-00.service",
-      "output": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small",
-      "status": "prepared"
+      "unit": "osp-official-pocket-v1-00.service",
+      "output": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small",
+      "status": "prepared",
+      "campaign": "official_pocket_screen_v1"
     },
     {
-      "campaign": "official_dock_screen_v1",
       "number": 1,
       "role": "candidate",
-      "unit": "osp-official-dock-v1-01.service",
-      "output": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/01_narrow",
-      "status": "prepared"
+      "unit": "osp-official-pocket-v1-01.service",
+      "output": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow",
+      "status": "prepared",
+      "campaign": "official_pocket_screen_v1"
     }
   ],
   "environment_verified_training_rate": {
@@ -673,7 +658,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T19:34:54.357215+00:00",
+  "latest_status_check_utc": "2026-11-14T19:56:11.301666+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -753,12 +738,12 @@
     "hardware_validated": false,
     "native_training_started": true,
     "official_robot_files_modified": false,
-    "status": "dock repair built and queued; full-task frontier native pair continues",
+    "status": "U full-task pair running; v13 pocket continuation queued; sensor range and TF diagnosis recorded",
     "input_configuration_and_floor_gates_passed": true,
     "initial_undock_actual_path_m": 0.3533574240864025,
     "task_screen_scope": "60-second integration only; 2.749m actual path, zero contacts, map and pose graph saved",
     "full_task_success": false,
-    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v10"
+    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v14"
   },
   "current_diagnostic_runtimes": [
     "training_robust/native90/official_tb4_v9/runtime",
@@ -782,7 +767,7 @@
   "official_camera_view_candidate": "repository_snapshot/official_camera_view_candidate.json",
   "official_supported_frontier": "repository_snapshot/official_supported_frontier.json",
   "official_full_task_comparison": "repository_snapshot/official_full_task_comparison.json",
-  "current_coefficient_training_status": "held; fixed-weight algorithm comparison; no new trained champion",
+  "current_coefficient_training_status": "held; fixed-weight official simulator comparisons and sensor failure diagnosis",
   "official_dock_anchor_failure": "repository_snapshot/official_dock_anchor_failure.json",
   "official_dock_map_candidate": "repository_snapshot/official_dock_map_candidate.json",
   "official_sensor_ranking_audit": "repository_snapshot/official_sensor_ranking_audit.json",
@@ -877,5 +862,18 @@
     "production_promoted": false
   },
   "official_pocket_continuation": "repository_snapshot/official_pocket_continuation.json",
-  "official_face_frame_candidate": "repository_snapshot/official_face_frame_candidate.json"
+  "official_face_frame_candidate": "repository_snapshot/official_face_frame_candidate.json",
+  "official_marker_range_diagnosis": "repository_snapshot/official_marker_range_diagnosis.json",
+  "historical_auxiliary_validation_before_marker_range_diagnosis": {
+    "tests_passed": 23,
+    "scope": [
+      "new CEM slot accounting/source selection and physical scoring",
+      "depth patch units/stride/endianness/invalid data",
+      "independent approach audit",
+      "localization replay",
+      "single-owner handoff"
+    ],
+    "runtime_source_tests_passed": 259,
+    "actual_native_velocity_profile_verified": true
+  }
 }

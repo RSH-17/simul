@@ -1,0 +1,465 @@
+{
+  "captured_utc": "2026-11-14T19:56:11.301666+00:00",
+  "evidence_type": "Completed C-shape approximate archive diagnosis and live U-shape raw sensor-function replay; no new completed native trial",
+  "archive": [
+    {
+      "role": "baseline",
+      "report": "training_robust/native90/official_frontier_comparison_v1/archived_baseline_ranges_v1/report.json",
+      "report_sha256": "bc68f4199cb3906d280e8f476ba35f9bbc7ed9c95b0cbb5e09960ff0abdc87d4",
+      "stored_scans": 923,
+      "video_frames": 3003,
+      "range_pairs": 34,
+      "groups": [
+        {
+          "id": 319,
+          "estimated_at_least_10px_pairs": 11,
+          "original": {
+            "plane_residual": 10,
+            "returned_range": 1
+          },
+          "narrow_025": {
+            "returned_range": 11
+          }
+        },
+        {
+          "id": 795,
+          "estimated_at_least_10px_pairs": 4,
+          "original": {
+            "returned_range": 4
+          },
+          "narrow_025": {
+            "returned_range": 4
+          }
+        },
+        {
+          "id": 903,
+          "estimated_at_least_10px_pairs": 7,
+          "original": {
+            "plane_residual": 7
+          },
+          "narrow_025": {
+            "returned_range": 7
+          }
+        }
+      ],
+      "independent_approximate_evaluation": "training_robust/native90/official_frontier_comparison_v1/archived_baseline_ranges_v1/independent_evaluation.json",
+      "evaluation_sha256": "f9bd4a32ebd24a6846da1ef18e94c6e4e9b144c6c078a3feaf035701f0c2e9a4",
+      "approximate_spatial_groups": [
+        {
+          "id": 319,
+          "method": "0.025",
+          "error_m": {
+            "samples": 15,
+            "median": 0.06653526632689008,
+            "p95": 0.4764961025035644,
+            "maximum": 0.9394933583831391
+          }
+        },
+        {
+          "id": 319,
+          "method": "0.03",
+          "error_m": {
+            "samples": 15,
+            "median": 0.08216727188652605,
+            "p95": 0.4446716039407894,
+            "maximum": 0.8709840794102266
+          }
+        },
+        {
+          "id": 319,
+          "method": "0.04",
+          "error_m": {
+            "samples": 11,
+            "median": 0.10386616871031736,
+            "p95": 0.5530357150808888,
+            "maximum": 0.8782303450872905
+          }
+        },
+        {
+          "id": 319,
+          "method": "0.05",
+          "error_m": {
+            "samples": 6,
+            "median": 0.10852492453389728,
+            "p95": 0.7128070805293988,
+            "maximum": 0.8820442780917775
+          }
+        },
+        {
+          "id": 319,
+          "method": "camera_origin_cone",
+          "error_m": {
+            "samples": 1,
+            "median": 0.8818301802039059,
+            "p95": 0.8818301802039059,
+            "maximum": 0.8818301802039059
+          }
+        },
+        {
+          "id": 319,
+          "method": "original",
+          "error_m": {
+            "samples": 1,
+            "median": 0.8818301802039059,
+            "p95": 0.8818301802039059,
+            "maximum": 0.8818301802039059
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.025",
+          "error_m": {
+            "samples": 4,
+            "median": 0.028452248513192165,
+            "p95": 0.11418345121572633,
+            "maximum": 0.12886866573734398
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.03",
+          "error_m": {
+            "samples": 4,
+            "median": 0.03420437658493396,
+            "p95": 0.11464235886519976,
+            "maximum": 0.12839312410587034
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.04",
+          "error_m": {
+            "samples": 4,
+            "median": 0.03389455598033819,
+            "p95": 0.11466659418909902,
+            "maximum": 0.12855958322395447
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.05",
+          "error_m": {
+            "samples": 4,
+            "median": 0.034774829984029504,
+            "p95": 0.11476683831599561,
+            "maximum": 0.1287741970624221
+          }
+        },
+        {
+          "id": 795,
+          "method": "camera_origin_cone",
+          "error_m": {
+            "samples": 4,
+            "median": 0.03355357537381724,
+            "p95": 0.1127234527624795,
+            "maximum": 0.1265732596004403
+          }
+        },
+        {
+          "id": 795,
+          "method": "original",
+          "error_m": {
+            "samples": 4,
+            "median": 0.034241432970216,
+            "p95": 0.11455944782581348,
+            "maximum": 0.12873317651394586
+          }
+        },
+        {
+          "id": 903,
+          "method": "0.025",
+          "error_m": {
+            "samples": 10,
+            "median": 0.0440827944911867,
+            "p95": 0.07681396477326832,
+            "maximum": 0.07995335562365351
+          }
+        },
+        {
+          "id": 903,
+          "method": "0.03",
+          "error_m": {
+            "samples": 9,
+            "median": 0.05353360190901349,
+            "p95": 0.0776653066649736,
+            "maximum": 0.08072481324870291
+          }
+        },
+        {
+          "id": 903,
+          "method": "0.04",
+          "error_m": {
+            "samples": 2,
+            "median": 0.023579776934579293,
+            "p95": 0.02495833651697676,
+            "maximum": 0.025111509803909814
+          }
+        }
+      ]
+    },
+    {
+      "role": "candidate",
+      "report": "training_robust/native90/official_frontier_comparison_v1/archived_candidate_ranges_v1/report.json",
+      "report_sha256": "13d93c84404b40d2e1b966f2f26d944fb07dde030eb63938693f53a5d50e1090",
+      "stored_scans": 1039,
+      "video_frames": 3003,
+      "range_pairs": 21,
+      "groups": [
+        {
+          "id": 319,
+          "estimated_at_least_10px_pairs": 0,
+          "original": {},
+          "narrow_025": {}
+        },
+        {
+          "id": 795,
+          "estimated_at_least_10px_pairs": 12,
+          "original": {
+            "returned_range": 12
+          },
+          "narrow_025": {
+            "returned_range": 12
+          }
+        },
+        {
+          "id": 903,
+          "estimated_at_least_10px_pairs": 4,
+          "original": {
+            "plane_residual": 4
+          },
+          "narrow_025": {
+            "returned_range": 4
+          }
+        }
+      ],
+      "independent_approximate_evaluation": "training_robust/native90/official_frontier_comparison_v1/archived_candidate_ranges_v1/independent_evaluation.json",
+      "evaluation_sha256": "fc27b26d3c2382d432700f2c9df327c3f6cd1982a8649730a7f4967069aa6bba",
+      "approximate_spatial_groups": [
+        {
+          "id": 319,
+          "method": "0.025",
+          "error_m": {
+            "samples": 1,
+            "median": 0.1222659693554637,
+            "p95": 0.1222659693554637,
+            "maximum": 0.1222659693554637
+          }
+        },
+        {
+          "id": 319,
+          "method": "0.03",
+          "error_m": {
+            "samples": 1,
+            "median": 0.12284164988269429,
+            "p95": 0.12284164988269429,
+            "maximum": 0.12284164988269429
+          }
+        },
+        {
+          "id": 319,
+          "method": "0.04",
+          "error_m": {
+            "samples": 1,
+            "median": 0.12542414722549797,
+            "p95": 0.12542414722549797,
+            "maximum": 0.12542414722549797
+          }
+        },
+        {
+          "id": 319,
+          "method": "0.05",
+          "error_m": {
+            "samples": 1,
+            "median": 0.12662883342533143,
+            "p95": 0.12662883342533143,
+            "maximum": 0.12662883342533143
+          }
+        },
+        {
+          "id": 319,
+          "method": "camera_origin_cone",
+          "error_m": {
+            "samples": 1,
+            "median": 0.1255070914244487,
+            "p95": 0.1255070914244487,
+            "maximum": 0.1255070914244487
+          }
+        },
+        {
+          "id": 319,
+          "method": "original",
+          "error_m": {
+            "samples": 1,
+            "median": 0.12771015370650074,
+            "p95": 0.12771015370650074,
+            "maximum": 0.12771015370650074
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.025",
+          "error_m": {
+            "samples": 12,
+            "median": 0.017817634197811086,
+            "p95": 0.07361766538084127,
+            "maximum": 0.07393865926983728
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.03",
+          "error_m": {
+            "samples": 12,
+            "median": 0.01781337932311189,
+            "p95": 0.07399566629300616,
+            "maximum": 0.07450858775828048
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.04",
+          "error_m": {
+            "samples": 12,
+            "median": 0.018390227141091918,
+            "p95": 0.0739979431681656,
+            "maximum": 0.07442977691618664
+          }
+        },
+        {
+          "id": 795,
+          "method": "0.05",
+          "error_m": {
+            "samples": 12,
+            "median": 0.018396505729758213,
+            "p95": 0.07397416288647052,
+            "maximum": 0.07443884129765585
+          }
+        },
+        {
+          "id": 795,
+          "method": "camera_origin_cone",
+          "error_m": {
+            "samples": 12,
+            "median": 0.01844587242595303,
+            "p95": 0.07323304222096143,
+            "maximum": 0.07391354813646335
+          }
+        },
+        {
+          "id": 795,
+          "method": "original",
+          "error_m": {
+            "samples": 12,
+            "median": 0.01873977992903708,
+            "p95": 0.07267577987873362,
+            "maximum": 0.07368852844543128
+          }
+        },
+        {
+          "id": 903,
+          "method": "0.025",
+          "error_m": {
+            "samples": 6,
+            "median": 0.050509783954311875,
+            "p95": 0.07316381008102488,
+            "maximum": 0.0765908000818158
+          }
+        },
+        {
+          "id": 903,
+          "method": "0.03",
+          "error_m": {
+            "samples": 5,
+            "median": 0.04781623094906325,
+            "p95": 0.0736754612046767,
+            "maximum": 0.07643808468834751
+          }
+        },
+        {
+          "id": 903,
+          "method": "0.04",
+          "error_m": {
+            "samples": 3,
+            "median": 0.04518332929995407,
+            "p95": 0.05652945938672751,
+            "maximum": 0.05779014050748012
+          }
+        }
+      ]
+    }
+  ],
+  "illustrative_archived_failure": {
+    "role": "candidate",
+    "id": 903,
+    "video_sim_s": 115.0,
+    "scan_sim_s": 115.104,
+    "estimated_original_edge_pixels": 11.6129,
+    "old_selected_points": 14,
+    "old_max_plane_residual_m": 0.2547218,
+    "old_residual_limit_m": 0.06,
+    "cause_supported": "Near obstacle and background beams mixed; curved foreground also affects one-plane fitting",
+    "narrow_025_camera_z_m": 4.029,
+    "qualification": false
+  },
+  "archive_limits": [
+    "Resized compressed RGB; video recorder time is not exact camera exposure time",
+    "Saved SLAM scans are sparse and preprocessed; all ambiguous 11.95m endpoints discarded",
+    "Official recorded robot description hash verified; zero camera distortion assumed",
+    "All scan/video pairs within 250ms retained; corner decoding and acceptance may differ from native",
+    "Baseline ID319 has an approximate 0.94m discrepancy; its image/scan skew is 248ms and cause is not isolated",
+    "Independent truth used only after fitting; no native coordinate or recognition improvement is established"
+  ],
+  "raw_sensor_replay": {
+    "report": "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v1/replay.json",
+    "sha256": "695bb9ff933c6678d3b5902104b990ed34c10ab4a55d758de922bee56626b3b9",
+    "manifest": "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v1/snapshot.json",
+    "manifest_sha256": "d24376bf65eb9d1051ec88fbfe453b084b543a96bd39d5d3d265771be989c365",
+    "snapshots": 16,
+    "ids": [
+      204
+    ],
+    "range_function_checks": 16,
+    "range_function_checks_passed": true,
+    "original_results": {
+      "returned_range": 16
+    },
+    "min_edge_pixels": [
+      20.2237491607666,
+      29.154760360717773
+    ],
+    "scan_age_seconds": [
+      0.0009999999999763531,
+      0.016000000000019554
+    ],
+    "map_transform_missing": 7,
+    "narrow_025_results": {
+      "returned_range": 16
+    },
+    "production_detector_sha256": "0d1eec165e5c5af134493d167648271a59a78f3b610157f12cfb6679798df37e",
+    "limits": [
+      "Capture is decimated; it is not every production frame",
+      "Passive capture pairs the latest received scan; the detector callback may have received another scan",
+      "No full detector or mission replay; returned range does not prove a correct marker ID or map position",
+      "Camera-origin and narrow cones are diagnostic alternatives only, with the same point/residual/range gates"
+    ]
+  },
+  "capture_change": "Optional global map transform; required exposure-time scan<-camera transform retained. Missing map coordinates are not fabricated.",
+  "diagnosis": "U raw ID204 ranges succeed in all 16 function checks; 7 frames lack exposure-time map TF. C archival mixed-surface failures support further raw-input diagnosis but do not qualify a narrowed-cone candidate.",
+  "policy_modified": false,
+  "ground_truth_supplied_to_policy": false,
+  "native_recognition_improvement_established": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "checks": {
+    "unit_tests_passed": 12,
+    "raw_production_function_comparisons_passed": 16,
+    "archived_export_node_timestamps_match_original_graph": true
+  },
+  "source_sha256": {
+    "training_robust/audit_archived_marker_ranges.py": "653616f99dafbbdae9a873b70f896edf6431faf7479fb1b821623eadc6206dc8",
+    "training_robust/evaluate_archived_marker_ranges.py": "b9c63f2e1e49bd15e67f0aeb44f74ed9c97e4eb9ce4ee3b22e3dc8a94f261a90",
+    "training_robust/export_slam_scan_readings.cpp": "ca8158aaaedd4dbc8c6ff8bc41e7ec97ab90fdafc87368e969d072b4ce0b75f2",
+    "training_robust/capture_marker_range_inputs_v2.py": "263a292615e98f53b5db374dc1b1f56b8117d253fc737db0ef1719f8a9192349",
+    "training_robust/replay_marker_range_inputs.py": "518a1ff4cabc1c9bf30d7ea41ba42bc5726ab791310bb4e94b6977385ef3de5c"
+  }
+}

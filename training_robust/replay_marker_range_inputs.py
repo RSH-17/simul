@@ -39,11 +39,23 @@ def fit_range(ray,origin,rotation,ranges,angle_min,angle_increment,range_min,ran
     return dict(report,reason='returned_range',camera_point=(ray*distance).tolist())
 
 
+def narrow_cone_ranges(ray, rotation, ranges, angle_min, angle_increment, half_angle):
+    """Diagnostic mask only; keep the original fit's point/residual/range gates."""
+    direction = (rotation @ ray)[:2]
+    bearing = math.atan2(direction[1], direction[0])
+    angles = angle_min + np.arange(len(ranges)) * angle_increment
+    delta = np.arctan2(np.sin(angles-bearing), np.cos(angles-bearing))
+    restricted = np.asarray(ranges, dtype=float).copy()
+    restricted[np.abs(delta) >= half_angle] = np.inf
+    return restricted
+
+
 def replay(inputs,workspace):
     sys.path.insert(0,str(workspace/'src/osp_mission'))
     import cv2
     from geometry_msgs.msg import TransformStamped
     from sensor_msgs.msg import LaserScan
+    from rclpy.clock import ClockType
     from rclpy.time import Time
     from scipy.spatial.transform import Rotation
     from osp_mission.detector import Detector
@@ -67,14 +79,24 @@ def replay(inputs,workspace):
                     float(d['scan_angle_increment']),float(d['scan_range_min']),float(d['scan_range_max']),
                     float(d['image_stamp']),float(d['scan_stamp']))
                 old=fit_range(*args);alternate=fit_range(*args,camera_origin_cone=True)
-                actual=Detector.lidar_point(owner,ray,str(d['camera_frame']),Time(seconds=float(d['image_stamp'])))
+                # Time.from_msg(scan.header.stamp) uses ROS_TIME, whereas the
+                # Time constructor defaults to SYSTEM_TIME. Match the actual
+                # detector's image-header clock even in this offline replay.
+                actual=Detector.lidar_point(owner,ray,str(d['camera_frame']),
+                    Time(seconds=float(d['image_stamp']),clock_type=ClockType.ROS_TIME))
                 expected=old.get('camera_point')
                 matched=(actual is None and expected is None) or (actual is not None and expected is not None and np.allclose(actual,expected,atol=1e-5))
                 if not matched:raise AssertionError('Diagnostic diverged from production: '+str(file))
+                variations=[]
+                for width in (.025,.03,.04,.05):
+                    restricted=narrow_cone_ranges(ray,rotation,args[3],args[4],args[5],width)
+                    variations.append(dict(half_angle_rad=width,result=fit_range(*args[:3],restricted,*args[4:])))
                 rows.append(dict(file=str(file),sha256=hashlib.sha256(file.read_bytes()).hexdigest(),
                     stamp=float(d['image_stamp']),id=int(ident),min_edge_pixels=pixels,
+                    scan_stamp=float(d['scan_stamp']),scan_age_s=float(d['image_stamp']-d['scan_stamp']),
+                    map_transform_available=bool(d.get('map_transform_available','map_from_camera_translation' in d)),
                     production_would_attempt_range=pixels>=10,original=old,camera_origin_cone=alternate,
-                    production_range_reproduced=True))
+                    narrow_cones=variations,production_range_reproduced=True))
     attempted=[r for r in rows if r['production_would_attempt_range']]
     return dict(evidence_type='Recorded sensor replay; not new Gazebo or confirmed target accuracy',
         snapshots=len(list(inputs.glob('*.npz'))),rows=rows,
@@ -83,12 +105,15 @@ def replay(inputs,workspace):
         alternate_attempt_reasons=dict(Counter(r['camera_origin_cone']['reason'] for r in attempted)),
         production_function_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
         ground_truth_used=False,limits=['Capture is decimated; it is not every production frame',
+            'Passive capture pairs the latest received scan; the detector callback may have received another scan',
             'No full detector or mission replay; returned range does not prove a correct marker ID or map position',
-            'Camera-origin cone is a diagnostic alternative only, with the same point/residual/range gates'])
+            'Camera-origin and narrow cones are diagnostic alternatives only, with the same point/residual/range gates'])
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ['inputs','workspace','output']:p.add_argument('--'+key,type=Path,required=True)
-    a=p.parse_args();result=replay(a.inputs.resolve(),a.workspace.resolve())
+    a=p.parse_args()
+    if a.output.exists():raise FileExistsError('Preserve previous sensor replay')
+    result=replay(a.inputs.resolve(),a.workspace.resolve())
     a.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='rows'}))
