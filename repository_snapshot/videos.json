@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T16:38:00.591243+00:00",
+  "updated_utc": "2026-11-14T16:46:03.957237+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 307,
+  "uploaded_verified": 308,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3380,6 +3380,22 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_tb4_cem_v1__00001_train_g0_0__1200100101.mp4",
+      "local_path": "training_robust/native90/official_tb4_cem_v1/jobs/00001_train_g0_0/episodes/1200100101/video/mission.mp4",
+      "bytes": 14508351,
+      "sha256": "fa9e5d80a4b7c2e40304e6e9a2daf1780b37cdd24eac07668829d9eed02c6544",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_tb4_cem_v1__00001_train_g0_0__1200100101.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.497,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_tb4_screen_v2__1195000000.mp4",
       "local_path": "training_robust/native90/official_tb4_screen_v2/episodes/1195000000/video/mission.mp4",
       "bytes": 1112252,
@@ -4930,7 +4946,7 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_tb4_cem_v1/jobs/00001_train_g0_0/episodes/1200100101/video/mission.mp4",
+      "path": "training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/episodes/1205000000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {

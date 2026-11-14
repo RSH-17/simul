@@ -535,37 +535,37 @@
   "latest_observed_repository_visibility": "PUBLIC",
   "robot_transfer_progress": "repository_snapshot/robot_transfer_progress.json",
   "robot_transfer_training_observation": {
-    "campaign": "official_tb4_cem_v2",
+    "campaign": "official_constraint_screen_v1",
     "status": "running",
     "coordinator_active": true,
     "generation": 0,
-    "phase": "train",
-    "recorded_completed": 1,
+    "phase": "diagnostic",
+    "recorded_completed": 0,
     "valid_completed": 0,
     "successes": 0,
-    "infrastructure_failures": 1,
+    "infrastructure_failures": 0,
     "by_phase_role_profile_shape": {},
     "active": [
       {
-        "number": 1,
-        "unit": "osp-spatial-nov15-official2-00001.service",
+        "number": 0,
+        "unit": "osp-official-constraint-v1-00.service",
         "service_active": true,
-        "shape": "u_shape",
+        "shape": "c_shape",
         "profile": "official_nominal",
         "gates": {
-          "floor_sensor_gate": true,
           "runtime_configuration_gate": true,
-          "scan_adapter_gate": true,
-          "slam_transport_gate": true,
           "velocity_profile_gate": true,
+          "scan_adapter_gate": true,
+          "floor_sensor_gate": true,
           "drive_path_gate": true,
-          "official_description_gate": true
+          "official_description_gate": true,
+          "slam_transport_gate": true
         },
         "live": {
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 95.766,
+          "elapsed_seconds": 48.784,
           "readiness_reason": ""
         }
       }
@@ -573,7 +573,7 @@
     "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
     "production_promoted": false,
     "hardware_validated": false,
-    "captured_utc": "2026-11-14T16:38:00.679194+00:00",
+    "captured_utc": "2026-11-14T16:46:04.040547+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
