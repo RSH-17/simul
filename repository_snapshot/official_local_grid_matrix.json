@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T17:11:43.258268+00:00",
+  "captured_utc": "2026-11-14T17:30:42.680049+00:00",
   "campaign": "official_local_grid_matrix_v1",
   "evidence_type": "New native departure matrix; fixed weights, not coefficient training or full-task qualification",
   "coordinator": "osp-official-local-grid-matrix-v1.service",
@@ -51,5 +51,53 @@
   "hardware_validated": false,
   "production_promoted": false,
   "policy_receives_truth": false,
-  "status": "running"
+  "status": "held_for_camera_view_comparison",
+  "completed": 1,
+  "start_screens_passed": 1,
+  "first_repeat_result": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/00_c_shape_narrow/episodes/1205000000",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": 24.072,
+    "actual_path_m": 15.135214572353032,
+    "maximum_exit_axis_progress_m": 14.377373132715572,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "first_repeat_localization": {
+    "map": {
+      "position_error_m": {
+        "samples": 446,
+        "median": 0.15842243820626728,
+        "p95": 0.7277964064572748,
+        "maximum": 0.741908101920499
+      },
+      "heading_error_deg": {
+        "samples": 446,
+        "median": 0.3776353900696268,
+        "p95": 1.4758216637735555,
+        "maximum": 2.546384101402237
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 446,
+        "median": 0.8369010792416994,
+        "p95": 2.622345511248551,
+        "maximum": 2.7410437751387864
+      },
+      "heading_error_deg": {
+        "samples": 446,
+        "median": 11.408717223993762,
+        "p95": 14.450445557163585,
+        "maximum": 17.432770348865727
+      }
+    }
+  },
+  "dispatch_note": "Current angled-start native job continues; 16 queued scenes preserved. Camera-view comparison resumes this coordinator after completion."
 }

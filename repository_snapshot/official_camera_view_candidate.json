@@ -1,0 +1,270 @@
+{
+  "captured_utc": "2026-11-14T17:30:42.680049+00:00",
+  "evidence_type": "Paired offline candidate generation; native follow-up running",
+  "candidate": "2026-11-15_official_tb4_v8",
+  "baseline": {
+    "evidence_type": "Offline candidate generation from recorded map/pose/coverage; not navigation success",
+    "workspace": "/home/peter/simul/training_robust/native90/official_tb4_v9/runtime",
+    "baseline": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1",
+    "focal_px": 221.76500407999384,
+    "readable_distance_m": 0.8377789043021989,
+    "rows": [
+      {
+        "snapshot": "0000.npz",
+        "elapsed": 11.248000000000001,
+        "candidates": 1,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "c319f0be0f3573cd324e5f0d9f76e94ab496c69f683b8c88383f48a2824fb712"
+      },
+      {
+        "snapshot": "0001.npz",
+        "elapsed": 13.748000000000001,
+        "candidates": 1,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "c897024514a096aabe40a955951a68e550dbab158435aae74e4b7a60d6f9df09"
+      },
+      {
+        "snapshot": "0002.npz",
+        "elapsed": 16.248,
+        "candidates": 1,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "03c98497b3243e9292e92d7170783759949362386ecc3a9a62209ccd8d04e419"
+      },
+      {
+        "snapshot": "0003.npz",
+        "elapsed": 18.749000000000002,
+        "candidates": 3,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "c9e04ff2b4d164c8abd4ea995797d45bb5470b7f3142c08232360ff2858b4401"
+      },
+      {
+        "snapshot": "0004.npz",
+        "elapsed": 21.248,
+        "candidates": 3,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "ab9e0c79e2f6fe4e555998f0cc5b34d83770e74d34af82981d25323661560f38"
+      },
+      {
+        "snapshot": "0005.npz",
+        "elapsed": 23.748,
+        "candidates": 6,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "b5c4482d9848bbebcd1bbac33c67a7965796ee7e67fb53a458a7e5e8613a8ff9"
+      },
+      {
+        "snapshot": "0006.npz",
+        "elapsed": 26.248,
+        "candidates": 11,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "84787de66d0eb784014955f3fd5362dd88bfc3a767089e1acd166ced6c4c6acf"
+      },
+      {
+        "snapshot": "0007.npz",
+        "elapsed": 28.748,
+        "candidates": 52,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 7,
+        "directed_face_length_m": 0.0,
+        "sha256": "4d997fb51e5d603735fcc976a0b732570492d67ebaad03433420b4d19e6f886f"
+      },
+      {
+        "snapshot": "0008.npz",
+        "elapsed": 42.248,
+        "candidates": 72,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 22,
+        "directed_face_length_m": 0.0,
+        "sha256": "599d6a636b863cae232dc62162a6b208e16a68c8689d6149cb876e99bb590bb6"
+      },
+      {
+        "snapshot": "0009.npz",
+        "elapsed": 52.248,
+        "candidates": 76,
+        "directed_readable_candidates": 1,
+        "readable_candidates": 31,
+        "directed_face_length_m": 0.15000000223517418,
+        "sha256": "4b8cb239c3ea50f07b119b2e2610266fe20f877c7be4a0d8d045d9f9aac2a5ce"
+      },
+      {
+        "snapshot": "0010.npz",
+        "elapsed": 67.75,
+        "candidates": 70,
+        "directed_readable_candidates": 2,
+        "readable_candidates": 31,
+        "directed_face_length_m": 0.2500000037252903,
+        "sha256": "64bd2051f160715e9ca989ab480ad6d6bf8e8f9d56a13be312b2f1817bf6fe9a"
+      },
+      {
+        "snapshot": "0011.npz",
+        "elapsed": 71.748,
+        "candidates": 62,
+        "directed_readable_candidates": 3,
+        "readable_candidates": 32,
+        "directed_face_length_m": 0.2500000037252903,
+        "sha256": "3f9b2c0684442dc620bb3e7179f27f10b063e8d6dc324c8cdc8a724a3dfaafc7"
+      }
+    ],
+    "source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/input_inventory.json": "dd2512b5ba45455127c34b7a0e13b3a9631ab779ae033c5e2c4633890057eb80",
+      "/home/peter/simul/training_robust/native90/official_tb4_v9/runtime/src/osp_mission/osp_mission/edge_policy.py": "24d1b246372fcf561e4c0cae1fe6a097d5dcb4ebbbe740792428f2ba67808630"
+    },
+    "ground_truth_input": false,
+    "limitations": [
+      "Exploration-memory filtering and future sensor feedback are not replayed.",
+      "More proposed views do not establish QR detection, safe arrival or full-task success."
+    ]
+  },
+  "candidate_replay": {
+    "evidence_type": "Offline candidate generation from recorded map/pose/coverage; not navigation success",
+    "workspace": "/home/peter/simul/training_robust/native90/official_tb4_v10/runtime",
+    "baseline": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1",
+    "focal_px": 221.76500407999384,
+    "readable_distance_m": 0.8377789043021989,
+    "rows": [
+      {
+        "snapshot": "0000.npz",
+        "elapsed": 11.248000000000001,
+        "candidates": 1,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "c319f0be0f3573cd324e5f0d9f76e94ab496c69f683b8c88383f48a2824fb712"
+      },
+      {
+        "snapshot": "0001.npz",
+        "elapsed": 13.748000000000001,
+        "candidates": 1,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "c897024514a096aabe40a955951a68e550dbab158435aae74e4b7a60d6f9df09"
+      },
+      {
+        "snapshot": "0002.npz",
+        "elapsed": 16.248,
+        "candidates": 1,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "03c98497b3243e9292e92d7170783759949362386ecc3a9a62209ccd8d04e419"
+      },
+      {
+        "snapshot": "0003.npz",
+        "elapsed": 18.749000000000002,
+        "candidates": 3,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "c9e04ff2b4d164c8abd4ea995797d45bb5470b7f3142c08232360ff2858b4401"
+      },
+      {
+        "snapshot": "0004.npz",
+        "elapsed": 21.248,
+        "candidates": 3,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "ab9e0c79e2f6fe4e555998f0cc5b34d83770e74d34af82981d25323661560f38"
+      },
+      {
+        "snapshot": "0005.npz",
+        "elapsed": 23.748,
+        "candidates": 6,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "b5c4482d9848bbebcd1bbac33c67a7965796ee7e67fb53a458a7e5e8613a8ff9"
+      },
+      {
+        "snapshot": "0006.npz",
+        "elapsed": 26.248,
+        "candidates": 11,
+        "directed_readable_candidates": 0,
+        "readable_candidates": 0,
+        "directed_face_length_m": 0.0,
+        "sha256": "84787de66d0eb784014955f3fd5362dd88bfc3a767089e1acd166ced6c4c6acf"
+      },
+      {
+        "snapshot": "0007.npz",
+        "elapsed": 28.748,
+        "candidates": 67,
+        "directed_readable_candidates": 19,
+        "readable_candidates": 26,
+        "directed_face_length_m": 0.875000013038516,
+        "sha256": "4d997fb51e5d603735fcc976a0b732570492d67ebaad03433420b4d19e6f886f"
+      },
+      {
+        "snapshot": "0008.npz",
+        "elapsed": 42.248,
+        "candidates": 88,
+        "directed_readable_candidates": 36,
+        "readable_candidates": 58,
+        "directed_face_length_m": 1.0500000156462193,
+        "sha256": "599d6a636b863cae232dc62162a6b208e16a68c8689d6149cb876e99bb590bb6"
+      },
+      {
+        "snapshot": "0009.npz",
+        "elapsed": 52.248,
+        "candidates": 96,
+        "directed_readable_candidates": 40,
+        "readable_candidates": 70,
+        "directed_face_length_m": 0.9250000137835741,
+        "sha256": "4b8cb239c3ea50f07b119b2e2610266fe20f877c7be4a0d8d045d9f9aac2a5ce"
+      },
+      {
+        "snapshot": "0010.npz",
+        "elapsed": 67.75,
+        "candidates": 93,
+        "directed_readable_candidates": 37,
+        "readable_candidates": 66,
+        "directed_face_length_m": 1.0500000156462193,
+        "sha256": "64bd2051f160715e9ca989ab480ad6d6bf8e8f9d56a13be312b2f1817bf6fe9a"
+      },
+      {
+        "snapshot": "0011.npz",
+        "elapsed": 71.748,
+        "candidates": 95,
+        "directed_readable_candidates": 42,
+        "readable_candidates": 71,
+        "directed_face_length_m": 1.1000000163912773,
+        "sha256": "3f9b2c0684442dc620bb3e7179f27f10b063e8d6dc324c8cdc8a724a3dfaafc7"
+      }
+    ],
+    "source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/input_inventory.json": "dd2512b5ba45455127c34b7a0e13b3a9631ab779ae033c5e2c4633890057eb80",
+      "/home/peter/simul/training_robust/native90/official_tb4_v10/runtime/src/osp_mission/osp_mission/edge_policy.py": "0fd6aeb773f569dd51c55586f45f948c9dd2abe6d06bc44d222bc0492c990504"
+    },
+    "ground_truth_input": false,
+    "limitations": [
+      "Exploration-memory filtering and future sensor feedback are not replayed.",
+      "More proposed views do not establish QR detection, safe arrival or full-task success."
+    ]
+  },
+  "runtime_tests_passed": 409,
+  "helper_tests_passed": 6,
+  "body_clearance_m": 0.32,
+  "new_standoffs_m": [
+    0.5445562877964293,
+    0.712112068656869
+  ],
+  "odometry_changed": false,
+  "native_campaign": "official_camera_view_screen_v1",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "full_task_verified": false,
+  "native_status": "running"
+}

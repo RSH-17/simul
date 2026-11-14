@@ -1,0 +1,473 @@
+{
+  "common_start_s": 528.748,
+  "common_end_s": 546.361,
+  "duration_s": 17.612999999999943,
+  "actual_path_m": 2.7952898116163807,
+  "actual_absolute_turn_rad": 7.395473282167854,
+  "estimators": {
+    "wheel": {
+      "position_error_m": {
+        "samples": 1092,
+        "median": 0.045489983008809354,
+        "p95": 0.05625076470717625,
+        "maximum": 0.062017510731479264
+      },
+      "heading_error_deg": {
+        "samples": 1092,
+        "median": 2.548088841049103,
+        "p95": 8.219257064039015,
+        "maximum": 10.076181796251786
+      },
+      "initial_alignment": [
+        3.988202640391509,
+        9.09868615808259,
+        7.36046241125919
+      ],
+      "final_position_error_m": 0.061985197224693776,
+      "final_heading_error_deg": 7.535950956801792
+    },
+    "ekf": {
+      "position_error_m": {
+        "samples": 1092,
+        "median": 0.1012885691337623,
+        "p95": 0.2853468762131432,
+        "maximum": 0.2906559225396459
+      },
+      "heading_error_deg": {
+        "samples": 1092,
+        "median": 0.14306512237932079,
+        "p95": 0.47044834008592556,
+        "maximum": 1.947112980432556
+      },
+      "initial_alignment": [
+        11.232208896478244,
+        2.570368712825797,
+        9.405407656301158
+      ],
+      "final_position_error_m": 0.28856528452576685,
+      "final_heading_error_deg": 0.2523118095791904
+    }
+  },
+  "evidence_type": "Offline evaluation of live shadow estimator; not a new navigation success",
+  "recording": "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2",
+  "truth_file": "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/ground_truth_snapshot.csv",
+  "ground_truth_supplied_to_estimator": false,
+  "limitations": [
+    "Initial fixed alignment removes error accumulated before recording.",
+    "Short live interval does not qualify localization, marker accuracy or hardware.",
+    "Truth is interpolated only over gaps up to 0.35 seconds."
+  ],
+  "source_sha256": {
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/recording.json": "c2896ae41b585fa0f33ad3461a0220d3f0996ce2ee3eae87c9faf87ab2aa761a",
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/inputs.csv": "47813a61630d6e2e5e6b7972e05d5b5f774f739c60ecbf99cff6897c7916b7e6",
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/ekf.yaml": "65730187c2ec19967accc13ef45cd61da0ea6876ccebe876cb88de6a239c1267",
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/ground_truth_snapshot.csv": "8fffdd83417535e4f1f7cf83281f012718381b1e74354bc804d3d1bae5421a03"
+  },
+  "captured_utc": "2026-11-14T17:30:42.680049+00:00",
+  "configuration_deployed": false,
+  "decision": "Do not apply this EKF configuration: heading improved but position drift worsened in the observed interval",
+  "recording_metadata": {
+    "domain": 230,
+    "wall_seconds": 120.40008789720014,
+    "counts": {
+      "imu": 1112,
+      "wheel": 1102,
+      "ekf": 1093
+    },
+    "metadata": {
+      "imu": {
+        "frame": "turtlebot4/imu_link/imu",
+        "angular_velocity_covariance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "orientation_covariance": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "wheel": {
+        "frame": "odom",
+        "child_frame": "base_link",
+        "twist_covariance": [
+          0.001,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.001,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.001,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.001,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.001,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.01
+        ]
+      },
+      "ekf": {
+        "frame": "odom",
+        "child_frame": "base_link",
+        "twist_covariance": [
+          0.0006557661240973972,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0006557661240973972,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          9.964538665761013e-07,
+          8.54978494285504e-28,
+          1.2858183890847522e-25,
+          0.0,
+          0.0,
+          0.0,
+          8.54978494285504e-28,
+          9.861090137202297e-07,
+          -7.605204098950805e-35,
+          0.0,
+          0.0,
+          0.0,
+          1.2858183890847538e-25,
+          -7.611304303218222e-35,
+          9.861090137202297e-07,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          9.999968750195313e-10
+        ]
+      }
+    },
+    "parameters": {
+      "use_sim_time": true,
+      "frequency": 62.0,
+      "sensor_timeout": 0.2,
+      "two_d_mode": true,
+      "publish_tf": false,
+      "publish_acceleration": false,
+      "print_diagnostics": true,
+      "map_frame": "map",
+      "odom_frame": "odom",
+      "base_link_frame": "base_link",
+      "world_frame": "odom",
+      "odom0": "odom",
+      "odom0_config": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "odom0_queue_size": 50,
+      "odom0_differential": false,
+      "odom0_relative": false,
+      "imu0": "imu",
+      "imu0_config": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "imu0_queue_size": 50,
+      "imu0_differential": false,
+      "imu0_relative": false,
+      "use_control": false
+    },
+    "ground_truth_input": false,
+    "absolute_imu_orientation_fused": false,
+    "tf_published": false,
+    "commands_published": false,
+    "policy_consumes_output": false,
+    "tf_endpoints_isolated": true,
+    "platform_checks": 18,
+    "platform_checks_passed": true,
+    "error": null,
+    "complete": true,
+    "evidence_type": "Live shadow estimator only; does not change navigation or qualify task success"
+  },
+  "earlier_observer_interference": {
+    "evidence_type": "Observer-induced infrastructure interference; not a policy failure",
+    "recorded_utc": "2026-11-14T17:21:03.141937+00:00",
+    "probe": "imu_shadow_v1",
+    "reason": "observer_tf_endpoint_interference",
+    "live_status_at_detection": {
+      "status": {
+        "state": "running",
+        "approached_ids": [
+          331,
+          995
+        ],
+        "targets": 2,
+        "collisions": 0,
+        "elapsed_seconds": 516.766,
+        "active_action": "",
+        "readiness_reason": "platform_contract_unverified",
+        "sensor_interruptions": 0,
+        "nav2_lifecycle": {
+          "controller_server": 3,
+          "planner_server": 3,
+          "behavior_server": 3,
+          "bt_navigator": 3
+        },
+        "drive_controllers": {
+          "diffdrive_controller": "active",
+          "joint_state_broadcaster": "active"
+        },
+        "confirmed_surface_cells": 56,
+        "confirmed_face_anchors": 0,
+        "reassociated_face_records": 0,
+        "camera_diagnostics": {
+          "received": 15701,
+          "late": 0,
+          "invalid_calibration": 0,
+          "duplicate": 0,
+          "accepted": 15701,
+          "coverage_updates": 10641,
+          "tf_waits": 5411
+        }
+      },
+      "detector": {
+        "frames": 15702,
+        "decoded": {
+          "6": 114,
+          "331": 449,
+          "267": 2,
+          "995": 61
+        },
+        "small": 339,
+        "border": 2,
+        "no_range": 1,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 45,
+        "errors": 232,
+        "last_error": "Lookup would require extrapolation into the future.  Requested time 470.184000 but the latest data is at time 470.183000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          331,
+          995
+        ],
+        "by_id": {
+          "6": {
+            "last_min_edge_pixels": 20.880613327026367,
+            "last_stamp": 163.614,
+            "small": 111
+          },
+          "331": {
+            "last_min_edge_pixels": 47.0,
+            "last_stamp": 331.947,
+            "small": 226,
+            "no_range": 1,
+            "accepted": 35,
+            "border": 1
+          },
+          "267": {
+            "last_min_edge_pixels": 7.0,
+            "last_stamp": 278.091,
+            "small": 2
+          },
+          "995": {
+            "last_min_edge_pixels": 55.009090423583984,
+            "last_stamp": 470.217,
+            "accepted": 10,
+            "border": 1
+          }
+        },
+        "confirmations": {
+          "331": 30,
+          "995": 10
+        }
+      },
+      "controller_parameters": {
+        "wheel_separation": 0.233,
+        "wheel_radius": 0.03575,
+        "wheel_separation_multiplier": 1.0,
+        "left_wheel_radius_multiplier": 1.0,
+        "right_wheel_radius_multiplier": 1.0
+      },
+      "imu_received": true,
+      "wall_seconds": 3372.569976068102,
+      "runtime_metrics": {
+        "measured": true,
+        "complete_sensor_coverage": true,
+        "complete_sensor_coverage_note": "Required streams observed; stream presence does not prove sensor correctness",
+        "streams": {
+          "camera": {
+            "samples": 15669,
+            "sim_hz": 30.301096355088315,
+            "wall_hz": 4.678235951376354,
+            "gap_sim_p95": 0.03300000000001546,
+            "gap_sim_max": 0.06600000000000072,
+            "duplicate_stamps": 0,
+            "clock_resets": 0
+          },
+          "scan": {
+            "samples": 32321,
+            "sim_hz": 62.5,
+            "wall_hz": 9.6497870788734,
+            "gap_sim_p95": 0.017000000000003013,
+            "gap_sim_max": 0.01700000000005275,
+            "duplicate_stamps": 0,
+            "clock_resets": 0
+          },
+          "odom": {
+            "samples": 32062,
+            "sim_hz": 61.999868500949496,
+            "wall_hz": 9.572448200626821,
+            "gap_sim_p95": 0.018000000000000682,
+            "gap_sim_max": 0.031999999999996476,
+            "duplicate_stamps": 0,
+            "clock_resets": 0
+          },
+          "command": {
+            "samples": 32935,
+            "sim_hz": null,
+            "wall_hz": 10.04606194275287,
+            "gap_sim_p95": 0.03100000000000591,
+            "gap_sim_max": 1.5930000000000177,
+            "duplicate_stamps": 5051,
+            "clock_resets": 74
+          },
+          "clock": {
+            "samples": 507269,
+            "sim_hz": 981.0109323962893,
+            "wall_hz": 151.45439407978733,
+            "gap_sim_p95": 0.0010000000000331966,
+            "gap_sim_max": 0.05099999999998772,
+            "duplicate_stamps": 0,
+            "clock_resets": 0
+          }
+        },
+        "real_time_factor": 0.1543860410503619,
+        "stationary_turn_rad_s": {
+          "samples": 3917,
+          "median": 0.9983179090072385,
+          "p95": 1.1999999997763349
+        },
+        "moving_speed_m_s": {
+          "samples": 20064,
+          "median": 0.2729999999965738,
+          "p95": 0.32499999999445184
+        },
+        "processed_camera_lag_sim_s": {
+          "samples": 15669,
+          "median": 0.010999999999967258,
+          "p95": 0.016999999999995907
+        },
+        "lidar_valid_beam_fraction": {
+          "samples": 32321,
+          "median": 1.0,
+          "p95": 1.0
+        },
+        "lidar_sector_valid_fractions": [
+          0.9969462578509345,
+          0.9914111568330166,
+          0.9893107422418751,
+          0.9929125027072225,
+          0.9890469818384238,
+          0.9892163763497505,
+          0.9888122273444677,
+          0.9966248723739966
+        ],
+        "lidar_sector_frame": "Eight equal angular sectors in LaserScan sensor frame",
+        "note": "Observed after mission start; camera lag uses the most recently received clock, not a synchronized latency measurement"
+      }
+    },
+    "original_results_preserved": true,
+    "valid_for_clean_policy_comparison": false,
+    "response": "Stopped shadow EKF; require isolated TF topic remappings for any future observer",
+    "policy_training_sample_valid": false,
+    "guard_failed_wall_utc_epoch": 1794676765.286469,
+    "guard_recovered_wall_utc_epoch": 1794676864.217203,
+    "raw_evaluator_preserved": true
+  },
+  "affected_full_task_final": {
+    "raw_outcome": {
+      "success": false,
+      "targets": 2,
+      "approached": 3,
+      "contacts": 0,
+      "seconds": 600.266,
+      "infrastructure_failure": false,
+      "reason": "timeout"
+    },
+    "qualified_outcome": {
+      "success": false,
+      "targets": 2,
+      "approached": 3,
+      "contacts": 0,
+      "seconds": 600.266,
+      "infrastructure_failure": true,
+      "reason": "observer_tf_endpoint_interference"
+    },
+    "policy_training_sample_valid": false
+  }
+}

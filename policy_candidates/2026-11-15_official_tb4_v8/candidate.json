@@ -1,0 +1,14 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v8",
+  "parent_candidate": "2026-11-15_official_tb4_v7",
+  "status": "camera_scaled_face_view_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "overlay_files": {
+    "osp_mission/edge_policy.py": "0fd6aeb773f569dd51c55586f45f948c9dd2abe6d06bc44d222bc0492c990504",
+    "test/test_camera_scaled_face_views.py": "a449cf70ed6fc89bb3464b8960697103017447fcc3727e70bd6256996a776a34"
+  },
+  "build_script_sha256": "c1d5f565ba1cdad729385cc9857f4261e7ce649073e308eb8e8a7e2a1e790d83"
+}

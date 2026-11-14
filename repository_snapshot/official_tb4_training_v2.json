@@ -129,5 +129,26 @@
   "hardware_validated": false,
   "policy_receives_truth": false,
   "dispatch_status": "held_for_18_condition_start_screen",
-  "screen": "repository_snapshot/official_constraint_matrix.json"
+  "screen": "repository_snapshot/official_constraint_matrix.json",
+  "latest_observed_utc": "2026-11-14T17:31:26.325276+00:00",
+  "status": "held_after_observer_affected_run",
+  "observer_affected_u_final": {
+    "success": false,
+    "targets": 2,
+    "approached": 3,
+    "contacts": 0,
+    "seconds": 600.266,
+    "infrastructure_failure": true,
+    "reason": "observer_tf_endpoint_interference"
+  },
+  "raw_u_final": {
+    "success": false,
+    "targets": 2,
+    "approached": 3,
+    "contacts": 0,
+    "seconds": 600.266,
+    "infrastructure_failure": false,
+    "reason": "timeout"
+  },
+  "observer_invalidation": "repository_snapshot/official_imu_shadow.json"
 }
