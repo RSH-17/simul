@@ -1,0 +1,40 @@
+{
+  "evidence_type": "native Gazebo 120s crowded-start regression",
+  "results": [
+    {
+      "number": 0,
+      "role": "baseline",
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.001146415011034577,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      }
+    },
+    {
+      "number": 1,
+      "role": "candidate",
+      "outcome": {
+        "escaped": false,
+        "exit_seconds": null,
+        "actual_path_m": 0.0010278627625053497,
+        "contacts": 0,
+        "reason": "timeout",
+        "valid_input": true,
+        "completed_normally": true,
+        "full_task_success": false,
+        "qualification_scope": "crowded-start only",
+        "exit_timing_origin": "first independent ground-truth sample; includes pre-mission startup"
+      }
+    }
+  ],
+  "queued_preserved": 2,
+  "production_promoted": false,
+  "hardware_validated": false
+}

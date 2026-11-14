@@ -1,0 +1,11 @@
+{
+  "candidate_id": "2026-11-14_crowded_start_v3",
+  "parent_candidate": "2026-11-14_crowded_start_v2",
+  "status": "simulation_control_transport_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "overlay_files": {
+    "launch/robot.launch.py": "154affa7271b7dd34f116f2032e33bda1b7bd7e96a75203d6ced175ff45c4635"
+  },
+  "build_script_sha256": "30c0a1bb4f187fc0f37bf61c94c81e0d521217b8bae24e0015b190e6f7a83a70"
+}

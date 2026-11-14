@@ -645,9 +645,22 @@
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
   "crowded_start_native_validated": false,
   "crowded_start_runtime_tests_passed": 382,
-  "active_priority_regression": "crowded_start_regression_v2",
+  "active_priority_regression": "crowded_start_regression_v3",
   "crowded_scene_geometry": "repository_snapshot/crowded_scene_geometry.json",
   "crowded_supervisor_and_geometry_tests_passed": 12,
   "crowded_start_v2_candidate": "repository_snapshot/crowded_start_v2_candidate.json",
-  "tb4_platform_first_pair": "repository_snapshot/tb4_platform_first_pair.json"
+  "tb4_platform_first_pair": "repository_snapshot/tb4_platform_first_pair.json",
+  "crowded_start_v1_native": "repository_snapshot/crowded_start_v1_native.json",
+  "crowded_start_v3": {
+    "candidate": "policy_candidates/2026-11-14_crowded_start_v3",
+    "runtime_tests_passed": 382,
+    "native_escape_verified": false,
+    "hardware_validated": false,
+    "early_result": "55cm corridor: actual departure ~1.1m, then map start clearance 0.20m; incomplete escape",
+    "next_repairs": [
+      "skip unnecessary initial turn at body-clear narrow start",
+      "continue short transit until normal clearance",
+      "verify actual actuator command consumer and output"
+    ]
+  }
 }
