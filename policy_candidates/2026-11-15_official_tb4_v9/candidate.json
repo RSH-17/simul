@@ -1,0 +1,17 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v9",
+  "parent_candidate": "2026-11-15_official_tb4_v8",
+  "status": "supported_frontier_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "collision_map_changed": false,
+  "crowded_start_waypoints_changed": false,
+  "overlay_files": {
+    "osp_mission/edge_policy.py": "a4ef5c462b78436ab4375fbf804679afa604d5bc4c09f3f86f765346d0014707",
+    "osp_mission/frontier_support.py": "20e0849121371c51046a4c6091d8a3170ec281914f4ba35678394271a355e8da",
+    "test/test_frontier_support.py": "7741c5eb118d984614f7f7f61dc017f2482dc99362618b93488c8b4f58c7777a"
+  },
+  "build_script_sha256": "488dce28f3703e097c8e866aae64826539cc10b72d9eea453e11180269820509"
+}

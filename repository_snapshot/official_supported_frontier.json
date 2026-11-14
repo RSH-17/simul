@@ -1,0 +1,218 @@
+{
+  "captured_utc": "2026-11-14T17:48:34.819847+00:00",
+  "candidate": "2026-11-15_official_tb4_v9",
+  "runtime": "training_robust/native90/official_tb4_v11/runtime",
+  "runtime_tests_passed": 416,
+  "coordinator_tests_passed": 5,
+  "raw_map_changed": false,
+  "collision_checks_changed": false,
+  "crowded_start_waypoints_changed": false,
+  "weights_retrained": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "first_native_trial_pending": true,
+  "unknown_region_thresholds": {
+    "minimum_area_m2": 0.12566370614359174,
+    "minimum_core_radius_m": 0.1,
+    "scope": "Information gain only; not proof of traversability"
+  },
+  "offline_replay": {
+    "evidence_type": "Offline re-ranking of saved eligible candidates; not native success",
+    "rows": [
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0000.npz",
+        "sha256": "5bce0905c07a0ce6bfa081516e4cb0f338e8233e3d5794f7dd59dd9c3513756e",
+        "elapsed": 11.11,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0001.npz",
+        "sha256": "4c1fd2b35e706d6aac7e4e8417e5319ba47d2734b162e068832caccdd0a9b714",
+        "elapsed": 13.607,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0002.npz",
+        "sha256": "7078d6c44349cdcaacf70d5a446c00ee22d6875e302b0d8d57881ef24ad47a47",
+        "elapsed": 16.107,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0003.npz",
+        "sha256": "f30a1be745046beb9a620f12a0a8365b8ccea48e9c09ab1a153845febf9f94e9",
+        "elapsed": 18.607,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0004.npz",
+        "sha256": "1beddac4e9c35116034a2758b9d5088beb453c821e7b572df25551409d601c88",
+        "elapsed": 21.108,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0005.npz",
+        "sha256": "5f0ee9a6160952ead4b01d16ed261a4d12f81cf3acd5d71312eaf4d244f816cf",
+        "elapsed": 23.607,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0006.npz",
+        "sha256": "430ef7338d046d0f34c1a11df4e21fb8a38e63d92183b88c26d7a1c409971a60",
+        "elapsed": 26.107,
+        "skipped": "crowded-start or no selected ordinary goal"
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0007.npz",
+        "sha256": "3bc9442143d45cb1e26a78767610c326a62a0f929f822c2b414e573bf31d3dd6",
+        "elapsed": 30.607,
+        "original_choice_reproduced": true,
+        "old": {
+          "index": 7,
+          "pose": [
+            -1.839105329796359,
+            -1.0124658840258232,
+            -3.0106929596902186
+          ],
+          "features": [
+            0.47500000707805157,
+            5.0,
+            1.913172826873026,
+            0.07556164354765116,
+            0.06311064538428107
+          ],
+          "goal_projection_along_current_heading_m": -1.533021611079882
+        },
+        "new": {
+          "index": 3,
+          "pose": [
+            -5.739105387910888,
+            -1.1374658858884683,
+            -2.617993877991494
+          ],
+          "features": [
+            0.6500000096857548,
+            5.0,
+            2.5149495311368337,
+            0.3171374381510734,
+            2.040293632019756e-06
+          ],
+          "goal_projection_along_current_heading_m": 2.3097767460188274
+        },
+        "old_goal_new_frontier_feature": 1.5000000223517338,
+        "original_candidates": 71,
+        "retained_candidates": 70,
+        "supported_unknown_cells": 39057,
+        "raw_unknown_cells": 44116
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0008.npz",
+        "sha256": "c7e348f03ad140f702f4116c56d585cda6e79039fe19da2b553e78e89d60bf1a",
+        "elapsed": 50.607,
+        "original_choice_reproduced": true,
+        "old": {
+          "index": 8,
+          "pose": [
+            -6.232674956502297,
+            -0.9369461282895775,
+            3.1270403017074297
+          ],
+          "features": [
+            0.0,
+            5.0,
+            4.40177676088822,
+            1.4207357001974295,
+            2.546459552551336e-07
+          ],
+          "goal_projection_along_current_heading_m": 0.6486955179216269
+        },
+        "new": {
+          "index": 8,
+          "pose": [
+            -6.232674956502297,
+            -0.9369461282895775,
+            3.1270403017074297
+          ],
+          "features": [
+            0.0,
+            5.0,
+            4.40177676088822,
+            1.4207357001974295,
+            2.546459552551336e-07
+          ],
+          "goal_projection_along_current_heading_m": 0.6486955179216269
+        },
+        "old_goal_new_frontier_feature": 5.0,
+        "original_candidates": 93,
+        "retained_candidates": 93,
+        "supported_unknown_cells": 23735,
+        "raw_unknown_cells": 25500
+      },
+      {
+        "snapshot": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000/policy_decisions/0009.npz",
+        "sha256": "e30d8ac23388b99f2fc770b6cedf2a2c0b03541f050cea64601630ded0d36f0e",
+        "elapsed": 72.607,
+        "original_choice_reproduced": true,
+        "old": {
+          "index": 72,
+          "pose": [
+            -13.976736851942714,
+            -1.3017511589573536,
+            -2.0479169710421923
+          ],
+          "features": [
+            0.4000000059604645,
+            5.0,
+            8.11390885055926,
+            0.09988262320706376,
+            1.0756818198222175e-45
+          ],
+          "goal_projection_along_current_heading_m": 3.205236513383609
+        },
+        "new": {
+          "index": 1,
+          "pose": [
+            -14.926736866098818,
+            -0.9517511537419472,
+            3.133381694974955
+          ],
+          "features": [
+            0.0,
+            5.0,
+            8.981066151006294,
+            1.2017692643695028,
+            4.4827041986484283e-57
+          ],
+          "goal_projection_along_current_heading_m": 3.2297829658438078
+        },
+        "old_goal_new_frontier_feature": 0.0,
+        "original_candidates": 92,
+        "retained_candidates": 87,
+        "supported_unknown_cells": 19802,
+        "raw_unknown_cells": 21648
+      }
+    ],
+    "ground_truth_input": false,
+    "weights_retrained": false,
+    "unchanged": [
+      "map",
+      "candidate positions",
+      "path distance",
+      "turn feature",
+      "revisit penalty",
+      "weights"
+    ],
+    "limitations": [
+      "Actual new candidate generation may also change sampling; this isolates the reward.",
+      "Projection behind current heading is not by itself evidence of a repeated physical path."
+    ],
+    "runtime_source_sha256": {
+      "/home/peter/simul/training_robust/native90/official_tb4_v11/runtime/src/osp_mission/osp_mission/frontier_support.py": "20e0849121371c51046a4c6091d8a3170ec281914f4ba35678394271a355e8da",
+      "/home/peter/simul/training_robust/native90/official_tb4_v11/runtime/src/osp_mission/osp_mission/frontier.py": "96aa411d7a2b6d7a98c71173426c8a68eb65b50ab53c9a0176f3c06385dd97e8",
+      "/home/peter/simul/training_robust/native90/official_tb4_v11/runtime/src/osp_mission/osp_mission/surface_endpoint_policy.py": "c38800382f467fcac9634c8603d69d34477dcb04d06456d65f621f34b015679b",
+      "/home/peter/simul/training_robust/native90/official_tb4_v11/runtime/src/osp_mission/osp_mission/escape_connectivity.py": "aaf483f7788e4e2581bb57d9b87a61095527382b7d181ac369b741ee182cbd64"
+    }
+  },
+  "reproduced_selections": 3,
+  "changed_selections": 2,
+  "interpretation": "Small unknown scan gaps inflated frontier reward and changed recorded choices. Native full-task benefit is unverified."
+}

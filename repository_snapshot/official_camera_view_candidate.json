@@ -1,6 +1,6 @@
 {
-  "captured_utc": "2026-11-14T17:30:42.680049+00:00",
-  "evidence_type": "Paired offline candidate generation; native follow-up running",
+  "captured_utc": "2026-11-14T17:48:34.819847+00:00",
+  "evidence_type": "Offline candidate generation plus finalized single native 90-second screen",
   "candidate": "2026-11-15_official_tb4_v8",
   "baseline": {
     "evidence_type": "Offline candidate generation from recorded map/pose/coverage; not navigation success",
@@ -266,7 +266,7 @@
   "production_promoted": false,
   "hardware_validated": false,
   "full_task_verified": false,
-  "native_status": "running",
+  "native_status": "completed",
   "actual_input_gates": {
     "runtime_configuration_gate": true,
     "velocity_profile_gate": true,
@@ -277,5 +277,60 @@
     "slam_transport_gate": true,
     "navigation_grid_gate": true
   },
-  "parallel_matrix_status": "resumed; native concurrency remains at most two"
+  "parallel_matrix_status": "Departure tests continue independently; next full-task frontier comparison owns dispatch",
+  "native_outcome": {
+    "success": false,
+    "targets": 0,
+    "approached": 1,
+    "contacts": 0,
+    "seconds": 90.108,
+    "infrastructure_failure": false,
+    "reason": "timeout",
+    "start_screen_passed": true
+  },
+  "escape_audit": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_camera_view_screen_v1/episodes/1205000000",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": 23.052,
+    "actual_path_m": 14.664548778816249,
+    "maximum_exit_axis_progress_m": 10.835617813917953,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "localization_audit": {
+    "map": {
+      "position_error_m": {
+        "samples": 446,
+        "median": 0.1358617299870383,
+        "p95": 0.547225698126226,
+        "maximum": 0.5576509420206881
+      },
+      "heading_error_deg": {
+        "samples": 446,
+        "median": 0.24996573878231892,
+        "p95": 1.7564288338051472,
+        "maximum": 2.7529292379220656
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 446,
+        "median": 0.5715954006940491,
+        "p95": 1.6967352700063019,
+        "maximum": 1.9019838943130425
+      },
+      "heading_error_deg": {
+        "samples": 446,
+        "median": 11.737451696485248,
+        "p95": 22.189217207177748,
+        "maximum": 25.945562079406667
+      }
+    }
+  }
 }

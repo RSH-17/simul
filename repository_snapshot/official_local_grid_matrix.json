@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T17:34:08.008598+00:00",
+  "captured_utc": "2026-11-14T17:57:11.208031+00:00",
   "campaign": "official_local_grid_matrix_v1",
   "evidence_type": "New native departure matrix; fixed weights, not coefficient training or full-task qualification",
   "coordinator": "osp-official-local-grid-matrix-v1.service",
@@ -51,9 +51,9 @@
   "hardware_validated": false,
   "production_promoted": false,
   "policy_receives_truth": false,
-  "status": "running",
-  "completed": 2,
-  "start_screens_passed": 2,
+  "status": "held_for_full_task_comparison",
+  "completed": 5,
+  "start_screens_passed": 4,
   "first_repeat_result": {
     "evidence_type": "Independent native trajectory audit; no data supplied to policy",
     "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/00_c_shape_narrow/episodes/1205000000",
@@ -99,7 +99,7 @@
       }
     }
   },
-  "dispatch_note": "Resumed after the single camera candidate was confirmed running with no pending jobs in its dispatcher; matrix fills the remaining native slot only. 15 unstarted conditions preserved.",
+  "dispatch_note": "Five native departure cases finished; sideways start failed with four contacts. Thirteen original queued cases remain preserved while six full-task comparisons own dispatch.",
   "second_case_result": {
     "evidence_type": "Independent native trajectory audit; no data supplied to policy",
     "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/01_c_shape_angled_start/episodes/1205000101",
@@ -145,5 +145,141 @@
       }
     }
   },
-  "coordinator_unit_definition": "scripts/systemd/osp-official-local-grid-matrix-v1.service"
+  "coordinator_unit_definition": "scripts/systemd/osp-official-local-grid-matrix-v1.service",
+  "third_case_result": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/02_c_shape_long_pocket/episodes/1205000202",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": 31.007999999999996,
+    "actual_path_m": 15.223466740075198,
+    "maximum_exit_axis_progress_m": 13.799029324140893,
+    "required_progress_m": 4.399,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "third_case_localization": {
+    "map": {
+      "position_error_m": {
+        "samples": 447,
+        "median": 0.6397211722055487,
+        "p95": 0.8326213689918556,
+        "maximum": 0.8626437039835364
+      },
+      "heading_error_deg": {
+        "samples": 447,
+        "median": 0.28063922939904873,
+        "p95": 1.6132955410867302,
+        "maximum": 2.5285709124787368
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 447,
+        "median": 0.9649760299398009,
+        "p95": 2.5311717253292385,
+        "maximum": 2.7265091082437865
+      },
+      "heading_error_deg": {
+        "samples": 447,
+        "median": 11.545519151073153,
+        "p95": 12.135703838365686,
+        "maximum": 12.508327943849205
+      }
+    }
+  },
+  "fourth_case_result": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/03_c_shape_dense/episodes/1205000303",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": 23.868,
+    "actual_path_m": 11.498645975861638,
+    "maximum_exit_axis_progress_m": 9.505430946263175,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "fourth_case_localization": {
+    "map": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.013754871329548522,
+        "p95": 0.045155376067363466,
+        "maximum": 0.04674693140730559
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 0.47392963938480615,
+        "p95": 1.7330725552040436,
+        "maximum": 2.7267987331651233
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.8362926920293229,
+        "p95": 1.0885010809959128,
+        "maximum": 1.0892250388964917
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 11.330422514984877,
+        "p95": 16.30281763541432,
+        "maximum": 19.934461949551434
+      }
+    }
+  },
+  "fifth_case_result": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/04_c_shape_sideways_small/episodes/1205000404",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 4,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": null,
+    "actual_path_m": 11.296864011069593,
+    "maximum_exit_axis_progress_m": 1.3458227523379023,
+    "required_progress_m": 2.5989999999999998,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "fifth_case_localization": {
+    "map": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.007500543494376867,
+        "p95": 0.02099312723560604,
+        "maximum": 0.050755636521671234
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 0.3928942306066583,
+        "p95": 2.233154609217102,
+        "maximum": 5.4949065746263095
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.11030416379629254,
+        "p95": 0.30398642587238667,
+        "maximum": 0.3465685338340622
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 16.5782999816004,
+        "p95": 30.497615529216336,
+        "maximum": 34.47277995061392
+      }
+    }
+  },
+  "failure_diagnosis": "repository_snapshot/official_dock_anchor_failure.json"
 }

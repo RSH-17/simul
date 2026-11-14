@@ -1,0 +1,330 @@
+{
+  "captured_utc": "2026-11-14T17:56:42.290225+00:00",
+  "evidence_type": "Completed native failure plus independent offline fixture-frame audit; not a repaired native result",
+  "campaign": "official_local_grid_matrix_v1",
+  "seed": 1205000404,
+  "profile": "sideways_small",
+  "result": {
+    "success": false,
+    "targets": 0,
+    "approached": 0,
+    "contacts": 4,
+    "seconds": 90.47699999999999,
+    "infrastructure_failure": false,
+    "reason": "timeout",
+    "start_screen_passed": false
+  },
+  "escape_audit": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/04_c_shape_sideways_small/episodes/1205000404",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 4,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": null,
+    "actual_path_m": 11.296864011069593,
+    "maximum_exit_axis_progress_m": 1.3458227523379023,
+    "required_progress_m": 2.5989999999999998,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "localization": {
+    "map": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.007500543494376867,
+        "p95": 0.02099312723560604,
+        "maximum": 0.050755636521671234
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 0.3928942306066583,
+        "p95": 2.233154609217102,
+        "maximum": 5.4949065746263095
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.11030416379629254,
+        "p95": 0.30398642587238667,
+        "maximum": 0.3465685338340622
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 16.5782999816004,
+        "p95": 30.497615529216336,
+        "maximum": 34.47277995061392
+      }
+    }
+  },
+  "all_eight_input_gates_passed": true,
+  "diagnosis": "The static odom dock anchor is transformed by the evolving map-to-odom correction, displacing the known fixture in the otherwise accurately localized map. Repeated goals can approach the physical dock while avoiding its displaced representation.",
+  "contact_object_confirmation": "Four separate dock-proximity windows match the total contact count; no recorded contact-object event exists, so dock contact attribution remains inferred.",
+  "dock_proximity_windows": [
+    {
+      "first_sim_s": 37.871,
+      "last_sim_s": 43.583,
+      "min_center_to_dock_surface_m": 0.1776429235337461
+    },
+    {
+      "first_sim_s": 46.031,
+      "last_sim_s": 47.459,
+      "min_center_to_dock_surface_m": 0.17701293864182527
+    },
+    {
+      "first_sim_s": 77.447,
+      "last_sim_s": 78.671,
+      "min_center_to_dock_surface_m": 0.17469815926766796
+    },
+    {
+      "first_sim_s": 82.955,
+      "last_sim_s": 83.975,
+      "min_center_to_dock_surface_m": 0.17716423149403057
+    },
+    {
+      "first_sim_s": 92.339,
+      "last_sim_s": 94.379,
+      "min_center_to_dock_surface_m": 0.1773359627872348
+    }
+  ],
+  "minimum_center_to_other_obstacle_surface_after_12s_m": 0.3500181805227808,
+  "decision_anchor_audit": [
+    {
+      "elapsed_s": 12.975,
+      "nearest_pose_time_mismatch_s": 0.08099999999999952,
+      "known_dock_collision_center_map": [
+        0.20142010569718674,
+        -0.053078139712904565
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.05293330651187082,
+      "goal": [
+        -0.06592135208125338,
+        -1.4006030345247087
+      ],
+      "goal_to_known_dock_center_m": 1.3737884834226357,
+      "goal_to_actual_dock_center_m": 1.4256852826583002,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.008048576085268582
+    },
+    {
+      "elapsed_s": 27.475,
+      "nearest_pose_time_mismatch_s": 0.06499999999999773,
+      "known_dock_collision_center_map": [
+        0.36717022455161263,
+        -0.19978933971672933
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.2596887790319825,
+      "goal": [
+        -0.06592135208125338,
+        0.10796610979861221
+      ],
+      "goal_to_known_dock_center_m": 0.5313019202456656,
+      "goal_to_actual_dock_center_m": 0.2880734729419615,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.011208052362640357
+    },
+    {
+      "elapsed_s": 42.475,
+      "nearest_pose_time_mismatch_s": 0.043000000000006366,
+      "known_dock_collision_center_map": [
+        0.4524571183263508,
+        -0.28380157478734747
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.37900279517650515,
+      "goal": [
+        0.18407865164403692,
+        0.15796611054367027
+      ],
+      "goal_to_known_dock_center_m": 0.5169000765926379,
+      "goal_to_actual_dock_center_m": 0.15902505007517703,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.010564841359815433
+    },
+    {
+      "elapsed_s": 43.975,
+      "nearest_pose_time_mismatch_s": 0.08899999999999864,
+      "known_dock_collision_center_map": [
+        0.4551367166526515,
+        -0.277264633478096
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.37594101084006215,
+      "goal": [
+        0.03407864940886274,
+        -1.5420339147883038
+      ],
+      "goal_to_known_dock_center_m": 1.3330158404674022,
+      "goal_to_actual_dock_center_m": 1.5509073436675327,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.01096388970390872
+    },
+    {
+      "elapsed_s": 52.975,
+      "nearest_pose_time_mismatch_s": 0.06499999999999773,
+      "known_dock_collision_center_map": [
+        0.30832261500370806,
+        -0.1260613839191858
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.16538538993870988,
+      "goal": [
+        -0.06592135208125338,
+        0.1829661109161993
+      ],
+      "goal_to_known_dock_center_m": 0.48534167291066577,
+      "goal_to_actual_dock_center_m": 0.32377170465415844,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.009059093580972134
+    },
+    {
+      "elapsed_s": 58.975,
+      "nearest_pose_time_mismatch_s": 0.019000000000005457,
+      "known_dock_collision_center_map": [
+        0.2311552937623252,
+        -0.09915637690590584
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.10347301547950524,
+      "goal": [
+        -0.11383901438607591,
+        -0.6920339021223167
+      ],
+      "goal_to_known_dock_center_m": 0.6859481267279107,
+      "goal_to_actual_dock_center_m": 0.7601927498389465,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.008705560150233984
+    },
+    {
+      "elapsed_s": 63.975,
+      "nearest_pose_time_mismatch_s": 0.08100000000000307,
+      "known_dock_collision_center_map": [
+        0.18646079142550592,
+        -0.0260469313063378
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.02974977876597353,
+      "goal": [
+        -0.6138390218366565,
+        -1.2170339099454264
+      ],
+      "goal_to_known_dock_center_m": 1.4348971302484776,
+      "goal_to_actual_dock_center_m": 1.4645597616401655,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.009018024020123963
+    },
+    {
+      "elapsed_s": 69.475,
+      "nearest_pose_time_mismatch_s": 0.08900000000001285,
+      "known_dock_collision_center_map": [
+        0.02583136148040721,
+        0.05910942813398466
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.185010249834358,
+      "goal": [
+        0.4611609941820918,
+        0.05796610905355415
+      ],
+      "goal_to_known_dock_center_m": 0.4353311340654413,
+      "goal_to_actual_dock_center_m": 0.26647875384804365,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.010392707031203856
+    },
+    {
+      "elapsed_s": 78.975,
+      "nearest_pose_time_mismatch_s": 0.026999999999986812,
+      "known_dock_collision_center_map": [
+        -0.08768468781526034,
+        0.05204788251109724
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.2934592422941439,
+      "goal": [
+        0.4111609934370337,
+        0.03296610868102512
+      ],
+      "goal_to_known_dock_center_m": 0.4992105044934125,
+      "goal_to_actual_dock_center_m": 0.21265889376458366,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.006029749114174829
+    },
+    {
+      "elapsed_s": 80.975,
+      "nearest_pose_time_mismatch_s": 0.01300000000000523,
+      "known_dock_collision_center_map": [
+        -0.10204084831472734,
+        0.031262933119528796
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.30475942951408364,
+      "goal": [
+        0.01116098747656924,
+        -0.86703390473002
+      ],
+      "goal_to_known_dock_center_m": 0.9054014935469337,
+      "goal_to_actual_dock_center_m": 0.8874514944109494,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.011920466838190471
+    },
+    {
+      "elapsed_s": 84.975,
+      "nearest_pose_time_mismatch_s": 0.09300000000001774,
+      "known_dock_collision_center_map": [
+        -0.1739410361044055,
+        -0.01034490917161171
+      ],
+      "initially_aligned_actual_dock_center_map": [
+        0.2010957540092826,
+        -0.00014582695158438241
+      ],
+      "dock_center_error_m": 0.37517544591418744,
+      "goal": [
+        0.3861609930645047,
+        0.03296610868102512
+      ],
+      "goal_to_known_dock_center_m": 0.5617740892445664,
+      "goal_to_actual_dock_center_m": 0.18800410364644857,
+      "nearest_recorded_occupied_cell_to_known_dock_m": 0.012115829310431947
+    }
+  ],
+  "method": [
+    "Initial ground-truth body pose aligned to initial map pose only; no trajectory fit",
+    "Upstream dock link is odom (0.157,0,pi), collision center (-0.045,0) in dock link: center odom (0.202,0)",
+    "Reconstruct map<-odom from nearest recorded body map and odom poses; scenario start used only to evaluate physical fixed dock",
+    "2D point-to-box/cylinder surface distance on independent actual trajectory; center distance is not full robot collision geometry"
+  ],
+  "source_hashes": {
+    "training_robust/native90/official_constraints_v1/train/1205000404.yaml": "55123d211e9bb2140c1f6d0c572846acc3ed995b93f7953e77d5a7fad5e0e731",
+    "training_robust/native90/official_local_grid_matrix_v1/jobs/04_c_shape_sideways_small/episodes/1205000404/pose_trace.csv": "fa42d2b8eb86a38951c793872f8420bbe12275eeca2e527d1511dcf7d5433fa5",
+    "training_robust/native90/official_local_grid_matrix_v1/jobs/04_c_shape_sideways_small/episodes/1205000404/ground_truth_trajectory.csv": "14d8b15d23a5dcf0e44d5b0057ee82af8cb8a5f6b937359a7d7771db15f86bd5"
+  },
+  "policy_received_ground_truth": false,
+  "repair_native_validated": false,
+  "production_promoted": false,
+  "next_candidate": "Anchor known dock geometry from the observed dock/map relationship rather than continuously trusting a drifting odom fixture; recheck SLAM correction and real-robot dock availability before deployment"
+}
