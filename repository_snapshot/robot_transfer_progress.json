@@ -19,7 +19,7 @@
     {
       "number": 1,
       "unit": "osp-official-local-matrix-v1-01.service",
-      "service_active": true,
+      "service_active": false,
       "shape": "c_shape",
       "profile": "official_nominal",
       "gates": {
@@ -33,10 +33,10 @@
         "navigation_grid_gate": true
       },
       "live": {
-        "state": "running",
+        "state": "saving",
         "targets": 0,
         "collisions": 0,
-        "elapsed_seconds": 89.447,
+        "elapsed_seconds": 90.947,
         "readiness_reason": ""
       }
     }
@@ -44,7 +44,7 @@
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
-  "captured_utc": "2026-11-14T17:31:07.454504+00:00",
+  "captured_utc": "2026-11-14T17:32:59.444530+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
