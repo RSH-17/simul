@@ -1,0 +1,208 @@
+{
+  "captured_utc": "2026-11-14T18:14:27.418112+00:00",
+  "evidence_type": "Candidate unit/integration checks and offline map overlay; native repair pending",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v10",
+  "parent_candidate": "2026-11-15_official_tb4_v7",
+  "runtime": "training_robust/native90/official_tb4_v12/runtime",
+  "campaign": "official_dock_screen_v1",
+  "coordinator": "osp-official-dock-screen-v1.service",
+  "status": "waiting_for_native_slots",
+  "runtime_tests_passed": 412,
+  "observer_supervisor_tests_passed": 11,
+  "ros_integration": {
+    "evidence_type": "ROS-only synthetic map/TF integration through installed Nav2; not Gazebo",
+    "domain": 225,
+    "namespace": "/dock_test_tb4",
+    "free_before": {
+      "local_costmap": 0,
+      "global_costmap": 0
+    },
+    "lethal_after": {
+      "local_costmap": 254,
+      "global_costmap": 254
+    },
+    "after_map_odom_translation_m": 0.35,
+    "local_corrected_dock_cost": 254,
+    "local_old_dock_cell_cost": 159,
+    "global_fixed_dock_cost": 254,
+    "source_map_unchanged": true,
+    "robot_commands_published": false,
+    "passed": true
+  },
+  "offline_replay": {
+    "evidence_type": "Offline known-fixture overlay on recorded raw SLAM map; no new trajectory",
+    "anchor_source": "first recorded map and odom body poses plus known upstream odom dock TF; no ground truth",
+    "anchor": [
+      0.157,
+      5.713443874746925e-19,
+      3.141592653589793
+    ],
+    "changed_cells": 40,
+    "only_added_occupied": true,
+    "original_map_unchanged": true,
+    "original_saved_nav2_dock_cost": 0,
+    "goal_clearance_comparison": [
+      {
+        "elapsed_s": 12.975,
+        "goal": [
+          -0.06592135208125338,
+          -1.4006030345247087
+        ],
+        "clearance_with_original_observed_map_m": 0.4981214785518702,
+        "clearance_with_known_map_dock_m": 0.4981214785518702
+      },
+      {
+        "elapsed_s": 27.475,
+        "goal": [
+          -0.06592135208125338,
+          0.10796610979861221
+        ],
+        "clearance_with_original_observed_map_m": 0.48088460870752253,
+        "clearance_with_known_map_dock_m": 0.22638463182682927
+      },
+      {
+        "elapsed_s": 42.475,
+        "goal": [
+          0.18407865164403692,
+          0.15796611054367027
+        ],
+        "clearance_with_original_observed_map_m": 0.36400549988813047,
+        "clearance_with_known_map_dock_m": 0.07500000111758709
+      },
+      {
+        "elapsed_s": 43.975,
+        "goal": [
+          0.03407864940886274,
+          -1.5420339147883038
+        ],
+        "clearance_with_original_observed_map_m": 0.3579455319157128,
+        "clearance_with_known_map_dock_m": 0.3579455319157128
+      },
+      {
+        "elapsed_s": 52.975,
+        "goal": [
+          -0.06592135208125338,
+          0.1829661109161993
+        ],
+        "clearance_with_original_observed_map_m": 0.4069705209668259,
+        "clearance_with_known_map_dock_m": 0.24622144871388804
+      },
+      {
+        "elapsed_s": 58.975,
+        "goal": [
+          -0.11383901438607591,
+          -0.6920339021223167
+        ],
+        "clearance_with_original_observed_map_m": 0.7280109997762609,
+        "clearance_with_known_map_dock_m": 0.6600189489572529
+      },
+      {
+        "elapsed_s": 63.975,
+        "goal": [
+          -0.6138390218366565,
+          -1.2170339099454264
+        ],
+        "clearance_with_original_observed_map_m": 0.4279310755922621,
+        "clearance_with_known_map_dock_m": 0.4279310755922621
+      },
+      {
+        "elapsed_s": 69.475,
+        "goal": [
+          0.4611609941820918,
+          0.05796610905355415
+        ],
+        "clearance_with_original_observed_map_m": 0.37165172422100484,
+        "clearance_with_known_map_dock_m": 0.20000000298023224
+      },
+      {
+        "elapsed_s": 78.975,
+        "goal": [
+          0.4111609934370337,
+          0.03296610868102512
+        ],
+        "clearance_with_original_observed_map_m": 0.41231056870567223,
+        "clearance_with_known_map_dock_m": 0.15000000223517418
+      },
+      {
+        "elapsed_s": 80.975,
+        "goal": [
+          0.01116098747656924,
+          -0.86703390473002
+        ],
+        "clearance_with_original_observed_map_m": 0.5618051347276545,
+        "clearance_with_known_map_dock_m": 0.5618051347276545
+      },
+      {
+        "elapsed_s": 84.975,
+        "goal": [
+          0.3861609930645047,
+          0.03296610868102512
+        ],
+        "clearance_with_original_observed_map_m": 0.43156691897164984,
+        "clearance_with_known_map_dock_m": 0.12500000186264515
+      }
+    ],
+    "limitation": "Goal clearances use one saved map across all goal timestamps; this diagnoses fixture exclusion, not closed-loop replay",
+    "production_promoted": false
+  },
+  "native_jobs": [
+    {
+      "number": 0,
+      "seed": 1205000404,
+      "profile": "sideways_small",
+      "status": "prepared",
+      "baseline": {
+        "success": false,
+        "targets": 0,
+        "approached": 0,
+        "contacts": 4,
+        "seconds": 90.47699999999999,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": false
+      }
+    },
+    {
+      "number": 1,
+      "seed": 1205000000,
+      "profile": "narrow",
+      "status": "prepared",
+      "baseline": {
+        "success": false,
+        "targets": 0,
+        "approached": 1,
+        "contacts": 0,
+        "seconds": 90.103,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      }
+    }
+  ],
+  "native_limit": 2,
+  "full_task_comparison_retained": {
+    "status": "held_for_dock_screen",
+    "active_native_jobs": [
+      0,
+      1
+    ],
+    "queued_jobs": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "resume_after": "both dock departure comparisons finish"
+  },
+  "official_robot_files_modified": false,
+  "weights_retrained": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "ground_truth_policy_input": false,
+  "known_limitations": [
+    "Stationary known dock; valid map-to-dock TF required before undock",
+    "External map reset/relocalization during a mission unvalidated",
+    "90-second departure qualification is not the full three-marker task"
+  ],
+  "primary_jazzy_source": "https://api.nav2.org/nav2-jazzy/html/static__layer_8cpp_source.html"
+}

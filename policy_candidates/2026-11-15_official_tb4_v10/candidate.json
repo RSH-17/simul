@@ -1,0 +1,21 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v10",
+  "parent_candidate": "2026-11-15_official_tb4_v7",
+  "status": "known_dock_map_anchor_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_changed": false,
+  "frontier_reward_changed": false,
+  "source_branch_reason": "Isolate dock repair from the pending camera/frontier candidates; exact parent of the failed sideways case",
+  "overlay_files": {
+    "config/tb4_nav2.yaml": "3fe72f3ebd81bcfa9759d0590da3266a612fd48e88c14f46c4e8be25301c5f7b",
+    "launch/robot.launch.py": "93d329c3b19a26db25c241c307402ad6b1205ba27b7ec47d19eb7213c4d7a74b",
+    "osp_mission/dock_geometry.py": "fde9425134425166575da03f66f28601ee06be18788869c3c74f122cb5e3d647",
+    "osp_mission/mission.py": "d2fc3732c697b68d3c3e9d3a80f92b73129cb62053a87409edb0992f59325ff1",
+    "test/test_dock_anchor.py": "d3af5e6d3c11cfdd023ef37bd56bb0a16726f5f92f38aac629a61afa52913ecc",
+    "test/test_start_dock_status.py": "086ca01fe2c46ee94d8429d427dc38972154f26ca74cd3942546f58f477dd792"
+  },
+  "build_script_sha256": "c1d5f565ba1cdad729385cc9857f4261e7ce649073e308eb8e8a7e2a1e790d83"
+}

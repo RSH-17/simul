@@ -1,7 +1,7 @@
 {
-  "captured_utc": "2026-11-14T17:57:11.208031+00:00",
+  "captured_utc": "2026-11-14T18:14:27.418112+00:00",
   "campaign": "official_frontier_comparison_v1",
-  "status": "running",
+  "status": "held_for_dock_screen",
   "coordinator": "osp-official-frontier-comparison-v1.service",
   "duration_per_run_s": 600,
   "native_limit": 2,
@@ -127,5 +127,6 @@
   "production_promoted": false,
   "hardware_validated": false,
   "ground_truth_policy_input": false,
-  "original_matrix_resume": "After six trials complete; existing native runs finish unchanged"
+  "original_matrix_resume": "After six trials complete; existing native runs finish unchanged",
+  "dispatch_note": "Two active native runs continue unchanged; four queued runs resume after the two dock repair regressions"
 }
