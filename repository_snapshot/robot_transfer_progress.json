@@ -1,30 +1,42 @@
 {
-  "campaign": "tb4_platform_cem_v1",
-  "status": "preserved_after_crowded_start_handoff",
+  "campaign": "official_tb4_cem_v1",
+  "status": "held_after_reproduced_crowded_start_failure",
   "coordinator_active": false,
   "generation": 0,
   "phase": "train",
-  "recorded_completed": 2,
-  "valid_completed": 2,
+  "recorded_completed": 1,
+  "valid_completed": 0,
   "successes": 0,
-  "infrastructure_failures": 0,
-  "by_phase_role_profile_shape": {
-    "train/0/none/c_shape": {
-      "completed": 1,
-      "successes": 0,
-      "contacts": 0
-    },
-    "train/0/mild/u_shape": {
-      "completed": 1,
-      "successes": 0,
-      "contacts": 0
+  "infrastructure_failures": 1,
+  "by_phase_role_profile_shape": {},
+  "active": [
+    {
+      "number": 1,
+      "unit": "osp-spatial-nov15-official1-00001.service",
+      "service_active": true,
+      "shape": "u_shape",
+      "profile": "official_nominal",
+      "gates": {
+        "floor_sensor_gate": true,
+        "runtime_configuration_gate": true,
+        "slam_transport_gate": true,
+        "velocity_profile_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true
+      },
+      "live": {
+        "state": "running",
+        "targets": 1,
+        "collisions": 0,
+        "elapsed_seconds": 265.0,
+        "readiness_reason": ""
+      }
     }
-  },
-  "active": [],
+  ],
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
-  "captured_utc": "2026-11-14T15:30:58.759784+00:00",
+  "captured_utc": "2026-11-14T16:01:07.801739+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }

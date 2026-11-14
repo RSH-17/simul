@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T15:30:58.687879+00:00",
+  "updated_utc": "2026-11-14T16:01:07.722961+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 301,
+  "uploaded_verified": 305,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3284,6 +3284,70 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_crowded_comparison_v1__00_candidate__1196100000.mp4",
+      "local_path": "training_robust/native90/official_crowded_comparison_v1/00_candidate/episodes/1196100000/video/mission.mp4",
+      "bytes": 3070554,
+      "sha256": "045588b141c8ca460a995a7401c0e5748b20d2edec7ef533226e55bdd84d799f",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_crowded_comparison_v1__00_candidate__1196100000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.50099999999999,
+      "targets": 1,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_crowded_comparison_v1__01_baseline__1196100000.mp4",
+      "local_path": "training_robust/native90/official_crowded_comparison_v1/01_baseline/episodes/1196100000/video/mission.mp4",
+      "bytes": 1918294,
+      "sha256": "fa70492aaabb75548c618b5d97b253259a57f67042ae390f3b9b530f6ca93af9",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_crowded_comparison_v1__01_baseline__1196100000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.439,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_rotation_scan_screen_v1__1200100000.mp4",
+      "local_path": "training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000/video/mission.mp4",
+      "bytes": 321841,
+      "sha256": "9ea96593850fac5e1d076961c0ff1084678875bcf3fa064f8eab62c10a9d7ba4",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_rotation_scan_screen_v1__1200100000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.092,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_tb4_cem_v1__00000_train_g0_0__1200100000.mp4",
+      "local_path": "training_robust/native90/official_tb4_cem_v1/jobs/00000_train_g0_0/episodes/1200100000/video/mission.mp4",
+      "bytes": 287298,
+      "sha256": "4785786591ab90238c2165413a4891dfab227db8888ed9f720ae5f07a05cf949",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_tb4_cem_v1__00000_train_g0_0__1200100000.mp4",
+      "original_evaluator_success": false,
+      "reason": "operator_stop",
+      "elapsed_sim_seconds": 76.29599999999999,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 383,
+      "recording_seconds": 76.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_tb4_screen_v2__1195000000.mp4",
       "local_path": "training_robust/native90/official_tb4_screen_v2/episodes/1195000000/video/mission.mp4",
       "bytes": 1112252,
@@ -4834,11 +4898,11 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_crowded_comparison_v1/00_candidate/episodes/1196100000/video/mission.mp4",
+      "path": "training_robust/native90/official_no_return_screen_v1/episodes/1200100000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_crowded_comparison_v1/01_baseline/episodes/1196100000/video/mission.mp4",
+      "path": "training_robust/native90/official_tb4_cem_v1/jobs/00001_train_g0_0/episodes/1200100101/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
