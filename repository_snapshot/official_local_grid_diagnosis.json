@@ -1,0 +1,129 @@
+{
+  "captured_utc": "2026-11-14T16:59:46.924070+00:00",
+  "evidence_type": "Completed baseline native failure, offline installed C++ costmap comparison, ongoing same-scene native candidate",
+  "baseline": "training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow",
+  "baseline_result": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/episodes/1205000000",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": null,
+    "actual_path_m": 1.2722187324989582,
+    "maximum_exit_axis_progress_m": 1.1619428022957194,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v7",
+  "candidate_runtime": "training_robust/native90/official_tb4_v9/runtime",
+  "native_comparison": "training_robust/native90/official_local_grid_screen_v1",
+  "candidate_status": "running",
+  "candidate_input_gates": {
+    "runtime_configuration_gate": true,
+    "velocity_profile_gate": true,
+    "scan_adapter_gate": true,
+    "floor_sensor_gate": true,
+    "drive_path_gate": true,
+    "official_description_gate": true,
+    "slam_transport_gate": true,
+    "navigation_grid_gate": true
+  },
+  "candidate_live": {
+    "state": "running",
+    "elapsed_seconds": 33.748999999999995,
+    "targets": 0,
+    "collisions": 0,
+    "active_action": "spin"
+  },
+  "candidate_live_escape": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_screen_v1/episodes/1205000000",
+    "completed": false,
+    "reason": null,
+    "contacts": null,
+    "targets": null,
+    "full_task_success": false,
+    "observed_exit_seconds": 23.46,
+    "actual_path_m": 4.011121190661803,
+    "maximum_exit_axis_progress_m": 3.671133504281473,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "runtime_tests_passed": 401,
+  "probe_and_component_and_preparation_tests_passed": 4,
+  "only_configuration_change": "local_costmap resolution 0.06 -> 0.025 m",
+  "footprint_and_collision_settings_unchanged": true,
+  "component_comparison": {
+    "local_costmap": {
+      "resolution_m": 0.05999999865889549,
+      "rotation": {
+        "samples": 361,
+        "lethal_or_unknown": 100,
+        "maximum": 254.0,
+        "initial": 253.0
+      },
+      "forward": {
+        "samples": 61,
+        "lethal_or_unknown": 37,
+        "maximum": 254.0,
+        "initial": 253.0
+      }
+    },
+    "global_costmap": {
+      "resolution_m": 0.02500000037252903,
+      "rotation": {
+        "samples": 361,
+        "lethal_or_unknown": 0,
+        "maximum": 253.0,
+        "initial": 253.0
+      },
+      "forward": {
+        "samples": 61,
+        "lethal_or_unknown": 0,
+        "maximum": 253.0,
+        "initial": 253.0
+      }
+    }
+  },
+  "component_limitations": [
+    "Map snapshots are asynchronous; not a synchronized sensor replay",
+    "This does not rerun MPPI, costmap updates or model dynamics",
+    "Differences may reflect grid resolution and/or layer contents; new native comparison is required"
+  ],
+  "actual_baseline_grid_metadata": {
+    "map": {
+      "file": "map.npz",
+      "resolution": 0.02500000037252903,
+      "frame": "map",
+      "stamp": 85.393
+    },
+    "local_costmap/costmap_raw": {
+      "file": "local_costmap_costmap_raw.npz",
+      "resolution": 0.05999999865889549,
+      "frame": "odom",
+      "stamp": 85.074
+    },
+    "global_costmap/costmap_raw": {
+      "file": "global_costmap_costmap_raw.npz",
+      "resolution": 0.02500000037252903,
+      "frame": "map",
+      "stamp": 84.975
+    }
+  },
+  "source_sha256": {
+    "training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/navigation_chain/report.json": "c093d1524cdac95af289c9f9075e057aeae0d2d9245429b96fd4c3c772503e8a",
+    "training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/navigation_chain/local_costmap_costmap_raw.npz": "c6aa0dd97a3fd0f02efe30599f9a7b6610a68a002443a5e7c26580e51c650fdf",
+    "training_robust/native90/official_constraint_screen_v1/jobs/00_c_shape_narrow/navigation_chain/global_costmap_costmap_raw.npz": "a1d2aa9c13503fc836aa82919c91715cd4d09f7482500e3ce1264069713d14df",
+    "training_robust/footprint_cost_component.cpp": "0cd35e5cf471842ce4ed006928462d7ba409dbd7f7cf7fa5eeeed93c2b097545",
+    "training_robust/audit_navigation_costs.py": "5e3791aaee2e9c10e3577b71e607a78cc038b03ab3aa8c30d79439b34d064adf"
+  },
+  "remaining_matrix_jobs_preserved": 17,
+  "full_task_qualified": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "policy_receives_truth": false
+}

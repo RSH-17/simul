@@ -1,0 +1,13 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v7",
+  "parent_candidate": "2026-11-15_official_tb4_v6",
+  "status": "local_grid_resolution_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "official_robot_files_modified": false,
+  "overlay_files": {
+    "config/tb4_nav2.yaml": "2b031309d228dade0825f4d66f5d69280d665062f20142e3f60c83137ffddd45",
+    "test/test_narrow_local_grid.py": "c242ae4a61ec6330294a2fcf5596ff09f4701720540f58e7d0ea9ba788f71408"
+  },
+  "build_script_sha256": "63259771b3ec0cb0e6da409e645adc411b7e712dbde6f3600ca605303ce6b0f9"
+}
