@@ -198,8 +198,8 @@
   "reacquisition_startup_failure": "reacquisition_startup_failure.json",
   "startup_guard_candidate": "startup_guard_candidate.json",
   "runtime_failure_diagnosis": "runtime_failure_diagnosis.json",
-  "latest_built_startup_candidate": "/home/peter/simul/training_robust/native90/reacquisition_startup_v2/runtime",
-  "startup_candidate_runtime_tests_passed": 231,
+  "latest_built_startup_candidate": "training_robust/native90/official_tb4_v15/runtime",
+  "startup_candidate_runtime_tests_passed": 425,
   "localization_drift_diagnosis": "localization_drift_diagnosis.json",
   "heading_prior_candidate": "heading_prior_candidate.json",
   "calibrated_gain_candidate": "calibrated_gain_candidate.json",
@@ -283,7 +283,7 @@
   "coordinator_slot_reservation": false,
   "near_pass_inspection_candidate": "near_pass_inspection_candidate.json",
   "fresh_space_missed_views": "fresh_space_missed_views.json",
-  "next_priority_diagnostic": "Three failed-world diagnostic replays followed by seven distinct fresh physical training worlds;no holdout or promotion",
+  "next_priority_diagnostic": "Native departure validation of observed corridor continuation after the normal-clearance pocket",
   "encoder_delta_native_early": "encoder_delta_native_early.json",
   "bottleneck_audit": "bottleneck_audit.json",
   "integrated_candidate": "integrated_candidate.json",
@@ -651,7 +651,7 @@
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
   "crowded_start_native_validated": false,
   "crowded_start_runtime_tests_passed": 390,
-  "active_priority_regression": "official_dock_screen_v1",
+  "active_priority_regression": "training_robust/native90/official_pocket_screen_v1",
   "crowded_scene_geometry": "repository_snapshot/crowded_scene_geometry.json",
   "crowded_supervisor_and_geometry_tests_passed": 12,
   "crowded_start_v2_candidate": "repository_snapshot/crowded_start_v2_candidate.json",
@@ -673,7 +673,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T19:21:07.330137+00:00",
+  "latest_status_check_utc": "2026-11-14T19:27:10.816949+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -864,7 +864,7 @@
       "capture_bound_wall_s": 7200
     }
   ],
-  "active_priority_regression_status": "completed: 1/2 departure screens passed; not qualified",
+  "active_priority_regression_status": "waiting for existing U pair to finish; 2 frozen 90-second pocket-continuation comparisons",
   "latest_dock_native_result": {
     "departure_screens_passed": 1,
     "total": 2,
@@ -873,5 +873,6 @@
     "sideways_escape_passed": false,
     "narrow_exit_s": 23.052,
     "production_promoted": false
-  }
+  },
+  "official_pocket_continuation": "repository_snapshot/official_pocket_continuation.json"
 }

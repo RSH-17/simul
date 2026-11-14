@@ -1,0 +1,309 @@
+{
+  "evidence_type": "Offline observed-map geometry replay, not a new trajectory",
+  "baseline": "/home/peter/simul/training_robust/native90/official_tb4_v12/runtime",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v13",
+  "rows": [
+    {
+      "file": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0000.npz",
+      "sha256": "597bf23c6f6167576c7291694fa09a4da9df9e405f0919de3f642d4259cb8faf",
+      "elapsed_seconds": 13.21,
+      "robot": [
+        -0.3510098044916117,
+        -0.0008788276063931774
+      ],
+      "normal_component_m2": 1.380000041127205,
+      "original_transit_count": 0,
+      "candidate_transit_count": 1,
+      "recorded_selected_xy": [
+        -0.8234651927600782,
+        -1.3270722391749281
+      ],
+      "proposals": [
+        {
+          "xy": [
+            -0.22346518381938152,
+            -0.6270722287441153
+          ],
+          "distance_m": 0.6767767053813954,
+          "pocket_continuation": true,
+          "endpoint_xy": [
+            -0.24846518419191055,
+            -5.377072299524631
+          ],
+          "full_path_minimum_clearance_m": 0.22360680108197992,
+          "required_clearance_m": 0.2166776697930815
+        }
+      ]
+    },
+    {
+      "file": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0001.npz",
+      "sha256": "03e70c4e67cc5cfbb7c180b0dfe2ea86ae48bff47ab4895ce7397278e5c8e391",
+      "elapsed_seconds": 29.71,
+      "robot": [
+        -0.8490678781444264,
+        -1.243700345463161
+      ],
+      "normal_component_m2": 0.0,
+      "original_transit_count": 6,
+      "candidate_transit_count": 6,
+      "recorded_selected_xy": [
+        -0.3734651860545557,
+        -1.6770722443903345
+      ],
+      "proposals": [
+        {
+          "xy": [
+            -0.3734651860545557,
+            -1.6770722443903345
+          ],
+          "distance_m": 0.694974757186514,
+          "pocket_continuation": false,
+          "endpoint_xy": [
+            -0.24846518419191055,
+            -5.377072299524631
+          ],
+          "full_path_minimum_clearance_m": 0.22360680108197992,
+          "required_clearance_m": 0.2166776697930815
+        },
+        {
+          "xy": [
+            -0.24846518419191055,
+            -1.4770722414101023
+          ],
+          "distance_m": 0.6931980618634023,
+          "pocket_continuation": false,
+          "endpoint_xy": [
+            -0.22346518381938152,
+            -1.5020722417826313
+          ],
+          "full_path_minimum_clearance_m": 0.28504386052226893,
+          "required_clearance_m": 0.2166776697930815
+        },
+        {
+          "xy": [
+            -0.34846518568202667,
+            -1.227072237684812
+          ],
+          "distance_m": 0.5103553466642146,
+          "pocket_continuation": false,
+          "endpoint_xy": [
+            -0.34846518568202667,
+            -1.227072237684812
+          ],
+          "full_path_minimum_clearance_m": 0.28504386052226893,
+          "required_clearance_m": 0.2166776697930815
+        },
+        {
+          "xy": [
+            -0.4484651871721428,
+            -1.0770722354496378
+          ],
+          "distance_m": 0.47248738045590216,
+          "pocket_continuation": false,
+          "endpoint_xy": [
+            -0.4484651871721428,
+            -1.0770722354496378
+          ],
+          "full_path_minimum_clearance_m": 0.28504386052226893,
+          "required_clearance_m": 0.2166776697930815
+        },
+        {
+          "xy": [
+            -0.5234651882897299,
+            -0.9020722328419346
+          ],
+          "distance_m": 0.4846194149926479,
+          "pocket_continuation": false,
+          "endpoint_xy": [
+            -0.5234651882897299,
+            -0.9020722328419346
+          ],
+          "full_path_minimum_clearance_m": 0.2795085013524749,
+          "required_clearance_m": 0.2166776697930815
+        },
+        {
+          "xy": [
+            -0.6984651908974331,
+            -0.8520722320968765
+          ],
+          "distance_m": 0.4621320412422682,
+          "pocket_continuation": false,
+          "endpoint_xy": [
+            -0.6984651908974331,
+            -0.8520722320968765
+          ],
+          "full_path_minimum_clearance_m": 0.2795085013524749,
+          "required_clearance_m": 0.2166776697930815
+        }
+      ]
+    },
+    {
+      "file": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0002.npz",
+      "sha256": "486eb51e537585a76020784e937fe9e6adc63b57f6b253b0cc2710e077fd3e33",
+      "elapsed_seconds": 38.21,
+      "robot": [
+        -0.38992550682787785,
+        -1.454944031798483
+      ],
+      "normal_component_m2": 1.3837500412389638,
+      "original_transit_count": 0,
+      "candidate_transit_count": 1,
+      "recorded_selected_xy": [
+        0.012546739124513095,
+        -1.3270722391749281
+      ],
+      "proposals": [
+        {
+          "xy": [
+            -0.1624532634831901,
+            -2.027072249605741
+          ],
+          "distance_m": 0.6681980614908732,
+          "pocket_continuation": true,
+          "endpoint_xy": [
+            -0.2374532646007772,
+            -5.352072299152102
+          ],
+          "full_path_minimum_clearance_m": 0.22360680108197992,
+          "required_clearance_m": 0.2166776697930815
+        }
+      ]
+    },
+    {
+      "file": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0003.npz",
+      "sha256": "5b6f87aff378dee9758a54fb0ff8a951452cec296a3b9417789d04324cbf0922",
+      "elapsed_seconds": 50.71,
+      "robot": [
+        -0.23449400771787146,
+        -1.3763962585696556
+      ],
+      "normal_component_m2": 1.3900000414252285,
+      "original_transit_count": 0,
+      "candidate_transit_count": 1,
+      "recorded_selected_xy": [
+        -0.3124532657183643,
+        0.11379908687697338
+      ],
+      "proposals": [
+        {
+          "xy": [
+            -0.13745326311066108,
+            -2.036200945160523
+          ],
+          "distance_m": 0.6914213665402906,
+          "pocket_continuation": true,
+          "endpoint_xy": [
+            -0.4124532672084804,
+            -5.936201003275052
+          ],
+          "full_path_minimum_clearance_m": 0.22360680108197992,
+          "required_clearance_m": 0.2166776697930815
+        }
+      ]
+    },
+    {
+      "file": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0004.npz",
+      "sha256": "5f804ff59cf56e48d0e5dcc82db7a31440a5212a95486d8e6e74980ca8846b5d",
+      "elapsed_seconds": 64.71,
+      "robot": [
+        -0.23114261925561552,
+        0.0006599494849011678
+      ],
+      "normal_component_m2": 1.3925000414997342,
+      "original_transit_count": 0,
+      "candidate_transit_count": 1,
+      "recorded_selected_xy": [
+        -0.037453261620544964,
+        -1.5362009377099426
+      ],
+      "proposals": [
+        {
+          "xy": [
+            -0.2374532646007772,
+            -0.6862009250439556
+          ],
+          "distance_m": 0.6750000100582838,
+          "pocket_continuation": true,
+          "endpoint_xy": [
+            -0.4124532672084804,
+            -5.936201003275052
+          ],
+          "full_path_minimum_clearance_m": 0.22360680108197992,
+          "required_clearance_m": 0.2166776697930815
+        }
+      ]
+    },
+    {
+      "file": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0005.npz",
+      "sha256": "b84fb7252e514d5b4393e6db9f33df598e83409a29a67561786d5505b25b4fb6",
+      "elapsed_seconds": 76.71,
+      "robot": [
+        -0.13398296826841016,
+        -1.4152681958374866
+      ],
+      "normal_component_m2": 1.3937500415369872,
+      "original_transit_count": 0,
+      "candidate_transit_count": 1,
+      "recorded_selected_xy": [
+        -0.08745326236560302,
+        -1.86120094255282
+      ],
+      "proposals": [
+        {
+          "xy": [
+            -0.13745326311066108,
+            -2.0862009459055812
+          ],
+          "distance_m": 0.6750000100582838,
+          "pocket_continuation": true,
+          "endpoint_xy": [
+            -0.8124532731689449,
+            -7.436201025626794
+          ],
+          "full_path_minimum_clearance_m": 0.22360680108197992,
+          "required_clearance_m": 0.2166776697930815
+        }
+      ]
+    }
+  ],
+  "changed_source_sha256": {
+    "original": "86e1a4ca40418e6666cc327334e733b89aa25239486c1dd76b2ab070695fb157",
+    "candidate": "05524da7db236f1cc0a00be3d72777a8ae1c73f2ef823ccfd3010d9d99f2872d"
+  },
+  "ground_truth_used": false,
+  "weights_retrained": false,
+  "native_success_established": false,
+  "limits": [
+    "No future maps or navigation outcomes predicted",
+    "Candidate proposals before mission memory filtering and marker/approach overrides",
+    "Safety here means recorded map body clearance; native contact testing remains required"
+  ],
+  "captured_utc": "2026-11-14T19:27:10.816949+00:00",
+  "runtime": "training_robust/native90/official_tb4_v15/runtime",
+  "parent_candidate": "policy_candidates/2026-11-15_official_tb4_v10",
+  "runtime_tests_passed": 425,
+  "supervisor_tests_passed": 6,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "diagnosis": "Normal-clearance start component >=0.5 m2 returned no transit even when a body-clear narrow corridor reached beyond that component.",
+  "change": "Retain original full-body clearance and 0.45\u20130.70 m waypoints; permit transit toward frontier evidence at least 0.70 m beyond the current normal-clearance component.",
+  "native_regression": {
+    "campaign": "training_robust/native90/official_pocket_screen_v1",
+    "unit": "osp-official-pocket-screen-v1.service",
+    "status": "waiting_for_native_slots",
+    "cases": [
+      "sideways_small",
+      "narrow"
+    ],
+    "duration_s": 90,
+    "existing_native_pids_preserved": [
+      2512583,
+      2512593
+    ],
+    "resume_coordinator": "osp-official-frontier-comparison-v1.service",
+    "maximum_native_processes": 2,
+    "full_task_success_claimed": false
+  },
+  "validation_log_sha256": "f9246a0e3d7db6715f1de251d634a4fbcafce42a5b6a7aec39f60c5239fb62d9",
+  "source_scope": "Dock repair parent only; exposure-buffer, camera-distance, frontier-area and deadline candidates are not merged."
+}

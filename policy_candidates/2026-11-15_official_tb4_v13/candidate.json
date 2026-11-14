@@ -1,0 +1,19 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v13",
+  "parent_candidate": "2026-11-15_official_tb4_v10",
+  "status": "observed_pocket_corridor_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "clearance_margins_changed": false,
+  "ground_truth_inputs": false,
+  "source_branch_reason": "Isolate continuation across a body-clear corridor from the completed dock screen; camera/frontier/deadline candidates are not merged.",
+  "overlay_files": {
+    "osp_mission/start_waypoints.py": "05524da7db236f1cc0a00be3d72777a8ae1c73f2ef823ccfd3010d9d99f2872d",
+    "test/test_pocket_continuation.py": "58b606a63780b740f6f6a9dcbe82c01553634dd068bbdb02282ac4534e08a17a"
+  },
+  "build_script_sha256": "54e0c3a6a8ac054cde7189c79369dcfa8739ada6bb0cf1036e47194f5ea3a810"
+}
