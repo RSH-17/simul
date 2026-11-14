@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T14:22:09.968378+00:00",
+  "updated_utc": "2026-11-14T14:30:57.862963+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 288,
+  "uploaded_verified": 290,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -1569,6 +1569,38 @@
       "actual_approach_1_5m": true,
       "recording_frames": 2742,
       "recording_seconds": 548.4,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v1__00_baseline__1196000000.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v1/00_baseline/episodes/1196000000/video/mission.mp4",
+      "bytes": 419233,
+      "sha256": "ca14e7e3836c1e78b5a590ffe2cd29a9de58d52a044a6c648a4a641ed77e0b59",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v1__00_baseline__1196000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 120.47,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 603,
+      "recording_seconds": 120.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "crowded_start_regression_v1__01_candidate__1196000000.mp4",
+      "local_path": "training_robust/native90/crowded_start_regression_v1/01_candidate/episodes/1196000000/video/mission.mp4",
+      "bytes": 496266,
+      "sha256": "642f7f497b39073e220211dc9bc424401215484f24cfe465671a50c80365b38e",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/crowded_start_regression_v1__01_candidate__1196000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 120.048,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 603,
+      "recording_seconds": 120.6,
       "uploaded_verified": true
     },
     {
@@ -4619,14 +4651,6 @@
   "skipped": [
     {
       "path": "training_robust/native90/approach_v8_screen3/episodes/8600133/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/crowded_start_regression_v1/00_baseline/episodes/1196000000/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/crowded_start_regression_v1/01_candidate/episodes/1196000000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
