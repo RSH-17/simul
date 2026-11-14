@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:09:19.302725+00:00",
+  "captured_utc": "2026-11-14T16:14:22.409379+00:00",
   "evidence_type": "Completed native rotation-only stall; offline no-return replay; successor native running",
   "candidate": "policy_candidates/2026-11-15_official_tb4_v5",
   "runtime": "training_robust/native90/official_tb4_v7/runtime",
@@ -303,5 +303,25 @@
     "passed": true,
     "missing": [],
     "mismatches": []
+  },
+  "fine_resolution_live_escape": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000",
+    "completed": false,
+    "reason": null,
+    "contacts": null,
+    "targets": null,
+    "full_task_success": false,
+    "observed_exit_seconds": 20.400000000000002,
+    "actual_path_m": 3.8865419130587515,
+    "maximum_exit_axis_progress_m": 3.208969964003156,
+    "required_progress_m": 2.331028897445001,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end",
+    "observed_at_utc": "2026-11-14T16:14:22.409379+00:00",
+    "live_elapsed_seconds": 41.392,
+    "live_contacts": 0,
+    "live_targets": 0,
+    "qualification": "Escape observed in an ongoing native trial; final 90-second result and full-task success are not established"
   }
 }

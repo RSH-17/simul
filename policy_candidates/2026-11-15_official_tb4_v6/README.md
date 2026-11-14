@@ -7,3 +7,5 @@ This inherits official v5's simulation-only no-return adapter and v4's rotationa
 Build: `python3 policy_candidates/2026-11-15_official_tb4_v6/build.py --workspace /absolute/new/workspace --test`.
 
 All 400 runtime tests passed. The same-scene 90-second native verification has started; results are pending. Three effective-resolution checks and one rotated-corridor evaluator test also passed. This candidate is not production- or hardware-qualified. See [the recorded diagnostic sequence](../../repository_snapshot/official_no_return_diagnosis.json).
+
+Interim native observation: the body fully crossed the corridor exit at 20.4 s (timed from the first independent ground-truth sample including undock). Zero contacts were recorded at the snapshot. The 90-second trial is still running; this is not finalized escape qualification, full-task success or hardware evidence.

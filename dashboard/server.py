@@ -192,6 +192,7 @@ class Observatory:
                        'runtime_configuration_gate': job.get('runtime_configuration_gate'),
                        'arena': scenario.get('arena', {'shape':'pdf_original','width_m':20.15,'height_m':11.35}),
                        'unit': job.get('unit'), 'service': service.get('ActiveState', 'unknown'),
+                       'duration_limit': read_json(output / 'manifest.json').get('duration', 600),
                        'state': status, 'elapsed': result.get('elapsed_seconds', live.get('status', {}).get('elapsed_seconds', 0)),
                        'targets': result.get('targets', live.get('status', {}).get('targets', 0)),
                        'contacts': result.get('collisions', live.get('status', {}).get('collisions', 0)),

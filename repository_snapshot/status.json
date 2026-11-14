@@ -137,8 +137,8 @@
   "previous_regressions_complete": true,
   "latest_change": {
     "date": "2026-11-15",
-    "name": "5cm no-return candidate failed to escape; 2.5cm successor under native validation",
-    "status": "fine_no_return_native_diagnostic_running",
+    "name": "Official fine-grid candidate escaped crowded start in 20.4s; native diagnostic still running",
+    "status": "escape_observed_native_trial_in_progress",
     "generalization_verified": false
   },
   "latest_recording": {
@@ -418,7 +418,14 @@
       "floor_sensor_gate": true,
       "drive_path_gate": true,
       "official_description_gate": true,
-      "slam_transport_gate": true
+      "slam_transport_gate": true,
+      "live": {
+        "elapsed_seconds": 41.392,
+        "targets": 0,
+        "collisions": 0,
+        "active_action": "nav"
+      },
+      "observed_exit_seconds": 20.400000000000002
     }
   ],
   "environment_verified_training_rate": {
@@ -613,7 +620,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T16:11:19.727718+00:00",
+  "latest_status_check_utc": "2026-11-14T16:14:22.409379+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -706,5 +713,7 @@
   "crowded_sideways_start_diagnosis": "repository_snapshot/crowded_sideways_start_diagnosis.json",
   "official_tb4_training": "repository_snapshot/official_tb4_training.json",
   "official_rotation_start_diagnosis": "repository_snapshot/official_rotation_start_diagnosis.json",
-  "official_no_return_diagnosis": "repository_snapshot/official_no_return_diagnosis.json"
+  "official_no_return_diagnosis": "repository_snapshot/official_no_return_diagnosis.json",
+  "dashboard_duration_matches_manifest": true,
+  "dashboard_tests_passed": 17
 }

@@ -68,7 +68,7 @@ function renderDetail(d) {
   $('stat-approached').textContent=d.audit?.actual_approached ?? d.approached_ids.length;
   $('approach-note').textContent=d.audit ? '종료 후 실제 주행 거리 독립 검증' : '주행 중 위치 추정 기준 · 최종 검증 전';
   $('stat-time').textContent=format(d.elapsed);
-  $('time-note').textContent=`제한 600초 · RTF ${format(d.metrics.real_time_factor,2)}×`;
+  $('time-note').textContent=`실행 제한 ${format(d.duration_limit ?? 600,0)}초 · RTF ${format(d.metrics.real_time_factor,2)}×`;
   $('stat-contacts').textContent=d.contacts ?? '—';
   $('contact-stat').classList.toggle('contact-warning', d.contacts>0);
   $('contact-note').textContent=d.contacts>0 ? '접촉 기록 확인 필요' : '기록된 접촉 0회';
