@@ -1,25 +1,19 @@
 {
-  "campaign": "official_local_grid_matrix_v1",
-  "status": "held_for_camera_view_comparison",
-  "coordinator_active": false,
+  "campaign": "official_frontier_comparison_v1",
+  "status": "running",
+  "coordinator_active": true,
   "generation": 0,
-  "phase": "diagnostic",
-  "recorded_completed": 1,
-  "valid_completed": 1,
+  "phase": "development",
+  "recorded_completed": 0,
+  "valid_completed": 0,
   "successes": 0,
   "infrastructure_failures": 0,
-  "by_phase_role_profile_shape": {
-    "diagnostic/fixed/official_nominal/c_shape": {
-      "completed": 1,
-      "successes": 0,
-      "contacts": 0
-    }
-  },
+  "by_phase_role_profile_shape": {},
   "active": [
     {
-      "number": 1,
-      "unit": "osp-official-local-matrix-v1-01.service",
-      "service_active": false,
+      "number": 0,
+      "unit": "osp-official-frontier-v1-00.service",
+      "service_active": true,
       "shape": "c_shape",
       "profile": "official_nominal",
       "gates": {
@@ -33,10 +27,34 @@
         "navigation_grid_gate": true
       },
       "live": {
-        "state": "saving",
+        "state": "running",
         "targets": 0,
         "collisions": 0,
-        "elapsed_seconds": 90.947,
+        "elapsed_seconds": 60.979,
+        "readiness_reason": ""
+      }
+    },
+    {
+      "number": 1,
+      "unit": "osp-official-frontier-v1-01.service",
+      "service_active": true,
+      "shape": "c_shape",
+      "profile": "official_nominal",
+      "gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true
+      },
+      "live": {
+        "state": "running",
+        "targets": 0,
+        "collisions": 0,
+        "elapsed_seconds": 30.634,
         "readiness_reason": ""
       }
     }
@@ -44,7 +62,7 @@
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
-  "captured_utc": "2026-11-14T17:32:59.444530+00:00",
+  "captured_utc": "2026-11-14T17:59:21.208457+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
