@@ -669,7 +669,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T21:05:25.339646+00:00",
+  "latest_status_check_utc": "2026-11-14T21:28:20.562371+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -749,12 +749,12 @@
     "hardware_validated": false,
     "native_training_started": true,
     "official_robot_files_modified": false,
-    "status": "Zigzag pair running, v16 departure regression queued; v17 integration passed 478 tests but is unqueued; bad loop closure isolated in offline U replay",
+    "status": "Zigzag pair live; v16 departure tests queued; gated v17/v18 full comparison staged with active handoff; four SLAM component pairs completed",
     "input_configuration_and_floor_gates_passed": true,
     "initial_undock_actual_path_m": 0.3533574240864025,
     "task_screen_scope": "60-second integration only; 2.749m actual path, zero contacts, map and pose graph saved",
     "full_task_success": false,
-    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v17"
+    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v18"
   },
   "current_diagnostic_runtimes": [
     "training_robust/native90/official_tb4_v10/runtime",
@@ -782,14 +782,14 @@
   "official_sensor_ranking_audit": "repository_snapshot/official_sensor_ranking_audit.json",
   "official_exposure_time_candidate": "repository_snapshot/official_exposure_time_candidate.json",
   "latest_candidate_validation": {
-    "candidate": "policy_candidates/2026-11-15_official_tb4_v17",
+    "candidate": "policy_candidates/2026-11-15_official_tb4_v18",
     "runtime_tests_passed": 478,
-    "recorded_initial_transit_checks": 13,
-    "native_queued": false,
+    "supervisor_tests_passed": 8,
+    "native_queued": true,
     "native_validated": false,
     "production_promoted": false,
     "native_validation_complete": false,
-    "native_validation_status": "built_not_queued; isolated v16 departure screen already queued"
+    "native_validation_status": "conditional queue; awaiting completed verified v16 departure pair"
   },
   "official_deadline_candidate": "repository_snapshot/official_deadline_candidate.json",
   "official_exposure_shadow": "repository_snapshot/official_exposure_shadow.json",
@@ -897,7 +897,7 @@
     "path": "training_robust/native90/official_slam_gate_study_v1",
     "unit": "osp-official-slam-gate-study-v1.service",
     "verified_main_pid": 2588713,
-    "status": "running",
+    "status": "completed",
     "case_count": 4,
     "shapes": [
       "c_shape",
@@ -926,7 +926,29 @@
         "strict_loop": 1
       },
       "conclusion": "This component case is unchanged, not improved"
-    }
+    },
+    "final_verified_main_pid": 0
   },
-  "official_integrated_candidate": "repository_snapshot/official_integrated_candidate.json"
+  "official_integrated_candidate": "repository_snapshot/official_integrated_candidate.json",
+  "official_integrated_comparison": "repository_snapshot/official_integrated_comparison.json",
+  "next_full_native_campaign": {
+    "campaign": "training_robust/native90/official_integrated_comparison_v1",
+    "status": "waiting_for_verified_departure",
+    "handoff_unit": "osp-official-integrated-handoff-v1.service",
+    "verified_handoff_main_pid": 2603742,
+    "actual_native_started": false,
+    "phase": "fixed_weight_development_not_coefficient_training"
+  },
+  "passive_zigzag_capture": {
+    "unit": "osp-marker-input-zigzag-05.service",
+    "native_pid": 2574284,
+    "domain": 231,
+    "output": "training_robust/native90/official_frontier_comparison_v1/marker_range_job_05_local_v2",
+    "observed_publishers": [
+      "/parameter_events",
+      "/rosout"
+    ],
+    "policy_outputs": false,
+    "hardware_validated": false
+  }
 }

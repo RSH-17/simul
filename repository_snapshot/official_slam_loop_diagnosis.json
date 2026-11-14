@@ -697,7 +697,7 @@
     "path": "training_robust/native90/official_slam_gate_study_v1",
     "unit": "osp-official-slam-gate-study-v1.service",
     "verified_main_pid": 2588713,
-    "status": "running",
+    "status": "completed",
     "case_count": 4,
     "shapes": [
       "c_shape",
@@ -713,7 +713,8 @@
       "loop_match_minimum_response_fine": 0.65,
       "loop_match_maximum_variance_coarse": 1.0
     },
-    "native_runtime_changed": false
+    "native_runtime_changed": false,
+    "final_verified_main_pid": 0
   },
   "validation_tests_passed": 6,
   "ground_truth_supplied_to_mapper": false,
@@ -726,5 +727,176 @@
     "Loop event timing plus a controlled no-loop comparison is evidence about this recording only.",
     "No-loop is a diagnostic ablation; lifelong SLAM and beneficial loop closure remain requirements.",
     "Four original 600-second development runs are studied; no holdout has been consumed."
-  ]
+  ],
+  "followup_captured_utc": "2026-11-14T21:28:20.562371+00:00",
+  "strict_loop_completed_comparison": {
+    "evidence_type": "Completed retained-scan component study, not native trial",
+    "rows": [
+      {
+        "case": 0,
+        "shape": "c_shape",
+        "scans": 923,
+        "identical_recorded_ids_timestamps_odometry": true,
+        "parameter_delta": {
+          "LoopMatchMinimumResponseCoarse": [
+            "0.35",
+            "0.55"
+          ],
+          "LoopMatchMinimumResponseFine": [
+            "0.45",
+            "0.65"
+          ],
+          "LoopMatchMaximumVarianceCoarse": [
+            "9",
+            "1"
+          ]
+        },
+        "metrics": {
+          "baseline": {
+            "samples": 922,
+            "median": 0.4420159546251867,
+            "p95": 0.5926687319837662,
+            "maximum": 0.6065584962505368
+          },
+          "strict_loop": {
+            "samples": 922,
+            "median": 0.4420159546251867,
+            "p95": 0.5926687319837662,
+            "maximum": 0.6065584962505368
+          }
+        },
+        "accepted_loops": {
+          "baseline": 1,
+          "strict_loop": 1
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/official_slam_gate_study_v1/case_00/evaluation.json",
+        "sha256": "e2ad20b4e0a87288d3ecb6b403573bbab0fc88d77057d5d3b0320c7ea44158a8"
+      },
+      {
+        "case": 1,
+        "shape": "c_shape",
+        "scans": 1039,
+        "identical_recorded_ids_timestamps_odometry": true,
+        "parameter_delta": {
+          "LoopMatchMinimumResponseCoarse": [
+            "0.35",
+            "0.55"
+          ],
+          "LoopMatchMinimumResponseFine": [
+            "0.45",
+            "0.65"
+          ],
+          "LoopMatchMaximumVarianceCoarse": [
+            "9",
+            "1"
+          ]
+        },
+        "metrics": {
+          "baseline": {
+            "samples": 1038,
+            "median": 0.5932919114969453,
+            "p95": 0.7912742132845959,
+            "maximum": 0.8230895545150083
+          },
+          "strict_loop": {
+            "samples": 1038,
+            "median": 0.5932919114969453,
+            "p95": 0.7912742132845959,
+            "maximum": 0.8230895545150083
+          }
+        },
+        "accepted_loops": {
+          "baseline": 2,
+          "strict_loop": 2
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/official_slam_gate_study_v1/case_01/evaluation.json",
+        "sha256": "2698b21462a0884fdc74d2f8d3a25583fabf49aca696df37a33f7ba495ff0eee"
+      },
+      {
+        "case": 2,
+        "shape": "u_shape",
+        "scans": 1011,
+        "identical_recorded_ids_timestamps_odometry": true,
+        "parameter_delta": {
+          "LoopMatchMinimumResponseCoarse": [
+            "0.35",
+            "0.55"
+          ],
+          "LoopMatchMinimumResponseFine": [
+            "0.45",
+            "0.65"
+          ],
+          "LoopMatchMaximumVarianceCoarse": [
+            "9",
+            "1"
+          ]
+        },
+        "metrics": {
+          "baseline": {
+            "samples": 1010,
+            "median": 0.13090058323971523,
+            "p95": 1.5585443351547934,
+            "maximum": 1.5918253522100547
+          },
+          "strict_loop": {
+            "samples": 1010,
+            "median": 0.07971041763186307,
+            "p95": 0.14160874503834053,
+            "maximum": 0.14836692449438843
+          }
+        },
+        "accepted_loops": {
+          "baseline": 2,
+          "strict_loop": 0
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/official_slam_gate_study_v1/case_02/evaluation.json",
+        "sha256": "68c5b829c03148f4e428070caed1569eeb167da4d92678aa5fd37f561c70d667"
+      },
+      {
+        "case": 3,
+        "shape": "u_shape",
+        "scans": 1034,
+        "identical_recorded_ids_timestamps_odometry": true,
+        "parameter_delta": {
+          "LoopMatchMinimumResponseCoarse": [
+            "0.35",
+            "0.55"
+          ],
+          "LoopMatchMinimumResponseFine": [
+            "0.45",
+            "0.65"
+          ],
+          "LoopMatchMaximumVarianceCoarse": [
+            "9",
+            "1"
+          ]
+        },
+        "metrics": {
+          "baseline": {
+            "samples": 1033,
+            "median": 0.12648862038676767,
+            "p95": 0.17275586439292295,
+            "maximum": 0.18803443756758192
+          },
+          "strict_loop": {
+            "samples": 1033,
+            "median": 0.12648862038676767,
+            "p95": 0.17275586439292295,
+            "maximum": 0.18803443756758192
+          }
+        },
+        "accepted_loops": {
+          "baseline": 1,
+          "strict_loop": 1
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/official_slam_gate_study_v1/case_03/evaluation.json",
+        "sha256": "b8eb0e78cd7e3f09e3d53217923f65ef457fe4247134d5b72e996522208c268e"
+      }
+    ],
+    "ground_truth_supplied_to_mapper": false,
+    "production_promoted": false,
+    "path": "training_robust/native90/official_slam_gate_study_v1/controlled_comparison.json",
+    "sha256": "4d24ff93fdb12c117ba36e31f3dd3bb935e569e5b98250c27e7122496945a1aa"
+  },
+  "conclusion": "One of four official recorded trajectories improves; three are unchanged, including four retained loop closures. C-shape maximum errors remain 0.607m/0.823m. No new native mission or hardware success."
 }

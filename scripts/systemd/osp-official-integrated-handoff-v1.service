@@ -1,0 +1,11 @@
+[Unit]
+Description=Gate integrated TurtleBot4 trials on completed departure verification
+
+[Service]
+Type=simple
+WorkingDirectory=%h/simul
+ExecStart=/usr/bin/python3 -u %h/simul/training_robust/handoff_official_integrated.py --output %h/simul/training_robust/native90/official_integrated_comparison_v1
+MemoryMax=768M
+Restart=no
+StandardOutput=append:%h/simul/training_robust/native90/official_integrated_comparison_v1/handoff.log
+StandardError=append:%h/simul/training_robust/native90/official_integrated_comparison_v1/handoff.log

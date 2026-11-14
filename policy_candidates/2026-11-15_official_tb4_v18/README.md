@@ -1,0 +1,9 @@
+# Integrated TurtleBot4 candidate v18: stricter loop acceptance
+
+Parent: v17. Only three parameters in `config/tb4_slam.yaml` change: coarse response 0.35→0.55, fine response 0.45→0.65, and coarse maximum variance 3.0→1.0. Loop closure stays enabled. The five policy weights, deadline setting, official robot, odometry, collision margins, camera and detector are identical to v17.
+
+The pre-existing `strict_loop` setting was compared on four completed official C/U trajectories using identical retained scan IDs, timestamps and odometry (4,007 scans). The failing U recording's maximum evaluator position error falls from 1.591825m to 0.148367m. Other maxima remain 0.606558m, 0.823090m and 0.188034m. Two loop closures are rejected in the failing U record; the other four loop closures are retained. These are retained-scan component results, not new motion, task success or hardware validation.
+
+A fresh runtime build passed **478 tests**. The staged six-trial comparison uses v17/v18 on the same U, C and zigzag development scenes, 600 simulation seconds each. The installed handoff service waits for the existing v16 supervisor to finish and requires both native departure screens to pass before starting the pair. It stops only older dispatchers and lets any already launched native jobs finish unchanged. At most two native benchmarks run; existing memory limits and the original independent task rubric remain in force. Eight supervisor/gate checks passed, and the actual prepared campaign refused dispatch while the prerequisite remained incomplete.
+
+Runtime: `training_robust/native90/official_tb4_v20/runtime`. Campaign: `official_integrated_comparison_v1`. This candidate is conditionally queued and **not native-qualified, not production, not hardware-validated**. No holdout scenes were consumed.

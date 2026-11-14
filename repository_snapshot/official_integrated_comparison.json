@@ -1,0 +1,146 @@
+{
+  "captured_utc": "2026-11-14T21:28:20.562371+00:00",
+  "evidence_type": "Frozen six native trials prepared; conditional handoff active; no new native result",
+  "campaign": "training_robust/native90/official_integrated_comparison_v1",
+  "baseline_candidate": "2026-11-15_official_tb4_v17",
+  "candidate": "2026-11-15_official_tb4_v18",
+  "baseline_runtime": "training_robust/native90/official_tb4_v19/runtime",
+  "candidate_runtime": "training_robust/native90/official_tb4_v20/runtime",
+  "only_pair_source_delta": "config/tb4_slam.yaml; three loop acceptance parameters",
+  "parameter_changes": {
+    "loop_match_maximum_variance_coarse": {
+      "before": 3.0,
+      "after": 1.0
+    },
+    "loop_match_minimum_response_coarse": {
+      "before": 0.35,
+      "after": 0.55
+    },
+    "loop_match_minimum_response_fine": {
+      "before": 0.45,
+      "after": 0.65
+    }
+  },
+  "runtime_tests_passed": 478,
+  "supervisor_tests_passed": 8,
+  "actual_prepared_dispatch_refused_before_prerequisite": true,
+  "prerequisite": "training_robust/native90/official_frontier_evidence_screen_v1",
+  "status": "waiting_for_verified_departure",
+  "handoff_unit": "osp-official-integrated-handoff-v1.service",
+  "verified_handoff_main_pid": 2603742,
+  "handoff_state": {
+    "status": "waiting_for_departure_service_completion"
+  },
+  "native_started": false,
+  "native_limit": 2,
+  "native_memory_high_bytes": 5368709120,
+  "native_memory_max_bytes": 6442450944,
+  "native_swap_max_bytes": 536870912,
+  "original_native_jobs_preserved": true,
+  "old_queued_jobs_preserved": true,
+  "jobs": [
+    {
+      "number": 0,
+      "role": "baseline",
+      "shape": "u_shape",
+      "seed": 1205010303,
+      "obstacles": 24,
+      "expected_loop": {
+        "do_loop_closing": true,
+        "loop_match_minimum_response_coarse": 0.35,
+        "loop_match_minimum_response_fine": 0.45,
+        "loop_match_maximum_variance_coarse": 3.0
+      }
+    },
+    {
+      "number": 1,
+      "role": "candidate",
+      "shape": "u_shape",
+      "seed": 1205010303,
+      "obstacles": 24,
+      "expected_loop": {
+        "do_loop_closing": true,
+        "loop_match_minimum_response_coarse": 0.55,
+        "loop_match_minimum_response_fine": 0.65,
+        "loop_match_maximum_variance_coarse": 1.0
+      }
+    },
+    {
+      "number": 2,
+      "role": "baseline",
+      "shape": "c_shape",
+      "seed": 1205000000,
+      "obstacles": 9,
+      "expected_loop": {
+        "do_loop_closing": true,
+        "loop_match_minimum_response_coarse": 0.35,
+        "loop_match_minimum_response_fine": 0.45,
+        "loop_match_maximum_variance_coarse": 3.0
+      }
+    },
+    {
+      "number": 3,
+      "role": "candidate",
+      "shape": "c_shape",
+      "seed": 1205000000,
+      "obstacles": 9,
+      "expected_loop": {
+        "do_loop_closing": true,
+        "loop_match_minimum_response_coarse": 0.55,
+        "loop_match_minimum_response_fine": 0.65,
+        "loop_match_maximum_variance_coarse": 1.0
+      }
+    },
+    {
+      "number": 4,
+      "role": "baseline",
+      "shape": "zigzag",
+      "seed": 1205020505,
+      "obstacles": 20,
+      "expected_loop": {
+        "do_loop_closing": true,
+        "loop_match_minimum_response_coarse": 0.35,
+        "loop_match_minimum_response_fine": 0.45,
+        "loop_match_maximum_variance_coarse": 3.0
+      }
+    },
+    {
+      "number": 5,
+      "role": "candidate",
+      "shape": "zigzag",
+      "seed": 1205020505,
+      "obstacles": 20,
+      "expected_loop": {
+        "do_loop_closing": true,
+        "loop_match_minimum_response_coarse": 0.55,
+        "loop_match_minimum_response_fine": 0.65,
+        "loop_match_maximum_variance_coarse": 1.0
+      }
+    }
+  ],
+  "duration_sim_s": 600.0,
+  "policy_weights_retrained": false,
+  "holdout_consumed": false,
+  "ground_truth_supplied_to_policy": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "configuration_sha256": "787a6e0a940b387d4a1cfbb7abcf361fdd85982c1c25a5be1eada4d0fcebefc4",
+  "handoff_configuration_sha256": "f291e9d61bf20641640f6402e41f4f933dde54e22cea8f2eeb6d6640945d2d64",
+  "build_log_sha256": "9c8070bfe9c07c43ed1c8296bfee6f4f108f2b4758bca93997fb448693e92e3d",
+  "live_probe_on_original_run": {
+    "path": "training_robust/native90/official_frontier_comparison_v1/job_04_loop_settings_probe.json",
+    "sha256": "d81c3c6d9a230610f3ddd35fbed34df84590cf367e44a117527ad628de07abb4",
+    "values": {
+      "do_loop_closing": true,
+      "loop_match_minimum_response_coarse": 0.35,
+      "loop_match_minimum_response_fine": 0.45,
+      "loop_match_maximum_variance_coarse": 3.0
+    },
+    "scope": "Read-only proof of querying existing default settings; stricter candidate values are not running yet"
+  },
+  "limits": [
+    "The prerequisite qualifies initial escape and zero contacts, not full mission success.",
+    "Every new run must verify actual loop settings, deadline status, dock costmaps and the existing official sensor/drive/input gates.",
+    "The handoff advances prepared experiments only; it does not review code or promote a policy."
+  ]
+}
