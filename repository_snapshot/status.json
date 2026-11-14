@@ -585,7 +585,7 @@
           "state": "running",
           "targets": 1,
           "collisions": 0,
-          "elapsed_seconds": 483.2,
+          "elapsed_seconds": 493.714,
           "readiness_reason": ""
         }
       },
@@ -610,7 +610,7 @@
           "state": "running",
           "targets": 1,
           "collisions": 0,
-          "elapsed_seconds": 492.215,
+          "elapsed_seconds": 503.215,
           "readiness_reason": ""
         }
       }
@@ -739,7 +739,7 @@
               "state": "running",
               "targets": 1,
               "collisions": 0,
-              "elapsed_seconds": 483.2,
+              "elapsed_seconds": 493.714,
               "readiness_reason": ""
             }
           },
@@ -764,7 +764,7 @@
               "state": "running",
               "targets": 1,
               "collisions": 0,
-              "elapsed_seconds": 492.215,
+              "elapsed_seconds": 503.215,
               "readiness_reason": ""
             }
           }
@@ -774,7 +774,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-14T21:38:14.449228+00:00",
+    "captured_utc": "2026-11-14T21:39:37.775114+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
