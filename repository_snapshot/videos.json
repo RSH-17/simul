@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T22:01:05.153803+00:00",
+  "updated_utc": "2026-11-14T22:19:16.994177+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 327,
+  "uploaded_verified": 330,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3492,6 +3492,38 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_frontier_evidence_screen_v1__00_sideways_small__1205000404.mp4",
+      "local_path": "training_robust/native90/official_frontier_evidence_screen_v1/jobs/00_sideways_small/episodes/1205000404/video/mission.mp4",
+      "bytes": 2360064,
+      "sha256": "bd07e903ce73461b0c2a31bbbd34a6067e7c15ec8c01dc42b0c7c44cc57a3a25",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_evidence_screen_v1__00_sideways_small__1205000404.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.133,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_frontier_evidence_screen_v1__01_narrow__1205000000.mp4",
+      "local_path": "training_robust/native90/official_frontier_evidence_screen_v1/jobs/01_narrow/episodes/1205000000/video/mission.mp4",
+      "bytes": 1492728,
+      "sha256": "76fc5af806bd450d47a58709d7cc7dc25da9398c73edc02f5ee819fbafe32bbb",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_frontier_evidence_screen_v1__01_narrow__1205000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.1,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_local_grid_matrix_v1__00_c_shape_narrow__1205000000.mp4",
       "local_path": "training_robust/native90/official_local_grid_matrix_v1/jobs/00_c_shape_narrow/episodes/1205000000/video/mission.mp4",
       "bytes": 1672141,
@@ -3566,6 +3598,22 @@
       "elapsed_sim_seconds": 90.47699999999999,
       "targets": 0,
       "collisions": 4,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_local_grid_matrix_v1__05_c_shape_combined__1205000505.mp4",
+      "local_path": "training_robust/native90/official_local_grid_matrix_v1/jobs/05_c_shape_combined/episodes/1205000505/video/mission.mp4",
+      "bytes": 1861095,
+      "sha256": "01d30b7c5a34e167b584f15551015b9fa2ec65e9465835c682e3cb6945844365",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_matrix_v1__05_c_shape_combined__1205000505.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.319,
+      "targets": 0,
+      "collisions": 0,
       "actual_approach_1_5m": false,
       "recording_frames": 453,
       "recording_seconds": 90.6,
@@ -5252,11 +5300,11 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_frontier_evidence_screen_v1/jobs/00_sideways_small/episodes/1205000404/video/mission.mp4",
+      "path": "training_robust/native90/official_integrated_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_frontier_evidence_screen_v1/jobs/01_narrow/episodes/1205000000/video/mission.mp4",
+      "path": "training_robust/native90/official_integrated_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
