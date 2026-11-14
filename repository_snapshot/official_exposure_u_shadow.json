@@ -1,0 +1,82 @@
+{
+  "captured_utc": "2026-11-14T20:01:04.815070+00:00",
+  "evidence_type": "Live sensor-only paired detector observations; ongoing; no policy trajectory comparison",
+  "rows": [
+    {
+      "number": 2,
+      "unit": "osp-exposure-u-baseline-v2.service",
+      "domain": 230,
+      "output": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2",
+      "native_pid": 2512583,
+      "status": "observing",
+      "observed_publishers": [
+        "/parameter_events"
+      ],
+      "platform_samples": 13,
+      "platform_all_passed": true,
+      "received_frames": 335,
+      "last_receipt_sim_s": 382.734,
+      "observed_decoded": {
+        "original": {},
+        "buffered": {}
+      },
+      "observed_accepted": {
+        "original": 0,
+        "buffered": 0
+      },
+      "initial_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2/initial_audit.json",
+      "initial_evidence_sha256": "22132616eec6f525fb36f2d55de8bef97a460e0d03aa7247dfaccc0cdaafaf35",
+      "launch_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_02_v2.launch.json",
+      "launch_evidence_sha256": "910eb1b77c2bafe2343c9f844af36ba3bad7032d706dc5647a494df0b4bf5132"
+    },
+    {
+      "number": 3,
+      "unit": "osp-exposure-u-candidate-v2.service",
+      "domain": 231,
+      "output": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2",
+      "native_pid": 2512593,
+      "status": "observing",
+      "observed_publishers": [
+        "/parameter_events"
+      ],
+      "platform_samples": 13,
+      "platform_all_passed": true,
+      "received_frames": 323,
+      "last_receipt_sim_s": 384.615,
+      "observed_decoded": {
+        "original": {},
+        "buffered": {}
+      },
+      "observed_accepted": {
+        "original": 0,
+        "buffered": 0
+      },
+      "initial_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2/initial_audit.json",
+      "initial_evidence_sha256": "dfdb39c085556680d4b2dda02bfc60fe00759965cd81bbeb085833a818b40c9e",
+      "launch_evidence": "training_robust/native90/official_frontier_comparison_v1/exposure_pair_job_03_v2.launch.json",
+      "launch_evidence_sha256": "7e051cc722c47bf6611040b55c1ba2f2035d64616ce7404812e26072415dc8d2"
+    }
+  ],
+  "observer": "training_robust/observe_exposure_pair.py",
+  "observer_sha256": "ebdcff7f0a089f3254eebc8fca02e3c830ebb3d3f5c339f4eb39f8924b22f39a",
+  "comparison_source_hashes": {
+    "original": "0d1eec165e5c5af134493d167648271a59a78f3b610157f12cfb6679798df37e",
+    "buffered": "afe067fe8e55b9426a13499bc4127926f6df246f62741bf616e93cf1a9e296a3"
+  },
+  "integration_checks_passed": 1,
+  "depth_topic_verified_live_baseline": "unused_depth",
+  "original_and_candidate_shared_consensus_source_hashes_equal": true,
+  "maximum_wall_window_s": 2400,
+  "stop_on_episode_completion": true,
+  "benchmark_restarted": false,
+  "native_policy_changed": false,
+  "ground_truth_supplied_to_policy": false,
+  "native_recognition_improvement_established": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "limits": [
+    "Different receiver timing from the mission; no exact production error-count comparison",
+    "Original method runs first and can delay the queued callback by its inherited timeout",
+    "More observations do not prove correct IDs, coordinates or improved closed-loop success"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T19:56:11.301666+00:00",
+  "captured_utc": "2026-11-14T20:01:04.815070+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -658,7 +658,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T19:56:11.301666+00:00",
+  "latest_status_check_utc": "2026-11-14T20:01:04.815070+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -800,7 +800,7 @@
     "all_input_gates_passed": true
   },
   "official_c_shape_pair_result": "repository_snapshot/official_c_shape_pair_result.json",
-  "official_exposure_shadow_status": "paired shadow complete; U baseline observer active; U candidate observer reattached after successful native sensor startup",
+  "official_exposure_shadow_status": "Two read-only paired observers attached to the live U runs after startup/platform checks; no new recognition improvement established",
   "next_passive_marker_captures": [
     {
       "job": 2,
@@ -875,5 +875,6 @@
     ],
     "runtime_source_tests_passed": 259,
     "actual_native_velocity_profile_verified": true
-  }
+  },
+  "official_exposure_u_shadow": "repository_snapshot/official_exposure_u_shadow.json"
 }
