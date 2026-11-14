@@ -25,9 +25,10 @@ The new runtime passed 409 tests. Recorded policy observations replayed with
 the original CameraInfo produced 19–42 directed readable candidates in five
 post-departure snapshots, versus 0–3 previously. The seven early departure
 snapshots were unchanged. This is candidate-generation evidence, not native
-motion or detection success. A paired 90-second native screen is queued by
-`run_official_camera_view_screen.py`; it resumes the preserved 18-condition
-matrix afterward. No production or hardware qualification is claimed.
+motion or detection success. A paired 90-second native screen is running with all eight input gates passed, using
+`run_official_camera_view_screen.py`; the preserved 18-condition matrix also resumes once this single candidate
+is running and cannot dispatch another job. A persistent user service makes
+subsequent resumption possible after the transient registration is removed. No production or hardware qualification is claimed.
 
 The separate IMU shadow experiment was not applied: short-interval heading
 improved but translation error increased. See the repository snapshots for

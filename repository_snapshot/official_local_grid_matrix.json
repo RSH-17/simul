@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T17:30:42.680049+00:00",
+  "captured_utc": "2026-11-14T17:34:08.008598+00:00",
   "campaign": "official_local_grid_matrix_v1",
   "evidence_type": "New native departure matrix; fixed weights, not coefficient training or full-task qualification",
   "coordinator": "osp-official-local-grid-matrix-v1.service",
@@ -51,9 +51,9 @@
   "hardware_validated": false,
   "production_promoted": false,
   "policy_receives_truth": false,
-  "status": "held_for_camera_view_comparison",
-  "completed": 1,
-  "start_screens_passed": 1,
+  "status": "running",
+  "completed": 2,
+  "start_screens_passed": 2,
   "first_repeat_result": {
     "evidence_type": "Independent native trajectory audit; no data supplied to policy",
     "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/00_c_shape_narrow/episodes/1205000000",
@@ -99,5 +99,51 @@
       }
     }
   },
-  "dispatch_note": "Current angled-start native job continues; 16 queued scenes preserved. Camera-view comparison resumes this coordinator after completion."
+  "dispatch_note": "Resumed after the single camera candidate was confirmed running with no pending jobs in its dispatcher; matrix fills the remaining native slot only. 15 unstarted conditions preserved.",
+  "second_case_result": {
+    "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+    "episode": "/home/peter/simul/training_robust/native90/official_local_grid_matrix_v1/jobs/01_c_shape_angled_start/episodes/1205000101",
+    "completed": true,
+    "reason": "timeout",
+    "contacts": 0,
+    "targets": 0,
+    "full_task_success": false,
+    "observed_exit_seconds": 23.46,
+    "actual_path_m": 13.009422821910182,
+    "maximum_exit_axis_progress_m": 9.870221634340067,
+    "required_progress_m": 2.799,
+    "timing_origin": "first independent ground-truth sample, including undock",
+    "criterion": "body plus 1 cm fully beyond corridor rail end"
+  },
+  "second_case_localization": {
+    "map": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.1852029879358329,
+        "p95": 0.2841329939318536,
+        "maximum": 0.2856314454996921
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 0.5076242212324888,
+        "p95": 2.0121728343729313,
+        "maximum": 2.8962552354510676
+      }
+    },
+    "odom": {
+      "position_error_m": {
+        "samples": 448,
+        "median": 0.7364321874863133,
+        "p95": 1.776218661175501,
+        "maximum": 1.852111117050588
+      },
+      "heading_error_deg": {
+        "samples": 448,
+        "median": 9.51854445584857,
+        "p95": 12.335091579993136,
+        "maximum": 13.935290148377915
+      }
+    }
+  },
+  "coordinator_unit_definition": "scripts/systemd/osp-official-local-grid-matrix-v1.service"
 }

@@ -266,5 +266,16 @@
   "production_promoted": false,
   "hardware_validated": false,
   "full_task_verified": false,
-  "native_status": "running"
+  "native_status": "running",
+  "actual_input_gates": {
+    "runtime_configuration_gate": true,
+    "velocity_profile_gate": true,
+    "scan_adapter_gate": true,
+    "floor_sensor_gate": true,
+    "drive_path_gate": true,
+    "official_description_gate": true,
+    "slam_transport_gate": true,
+    "navigation_grid_gate": true
+  },
+  "parallel_matrix_status": "resumed; native concurrency remains at most two"
 }

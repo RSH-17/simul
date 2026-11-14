@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T17:30:42.680049+00:00",
+  "captured_utc": "2026-11-14T17:34:08.008598+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -382,18 +382,13 @@
   "current_jobs": [
     {
       "campaign": "official_local_grid_matrix_v1",
-      "job": 1,
-      "status": "native job continues; coordinator held for paired camera-view screen"
-    },
-    {
-      "campaign": "official_tb4_cem_v2",
-      "job": 1,
-      "status": "done at 600.266s, 2 IDs, zero contacts; observer-affected infrastructure failure"
+      "job": 2,
+      "status": "native running: long_pocket, domain 228"
     },
     {
       "campaign": "official_camera_view_screen_v1",
       "job": 0,
-      "status": "native running on ROS domain 229"
+      "status": "native running: camera-scaled viewpoints, domain 229; all eight input gates passed"
     }
   ],
   "environment_verified_training_rate": {
@@ -596,7 +591,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T17:30:42.680049+00:00",
+  "latest_status_check_utc": "2026-11-14T17:34:08.008598+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
