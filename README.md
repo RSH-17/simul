@@ -1031,6 +1031,6 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 실물 대응 후보 `tb4_platform_cem_v1`: 상태 `preserved_after_crowded_start_handoff`, 세대 0, 단계 `train`.
 독립 입력 검사를 통과한 native 개발 회차 2개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
 형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 학습 중 관측이며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-14T15:26:07.910386+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+관측 UTC: 2026-11-14T15:30:58.759784+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->
