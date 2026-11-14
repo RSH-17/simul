@@ -1,5 +1,5 @@
 {
-  "campaign": "official_constraint_screen_v1",
+  "campaign": "official_local_grid_screen_v1",
   "status": "running",
   "coordinator_active": true,
   "generation": 0,
@@ -12,7 +12,7 @@
   "active": [
     {
       "number": 0,
-      "unit": "osp-official-constraint-v1-00.service",
+      "unit": "osp-official-local-grid-v1.service",
       "service_active": true,
       "shape": "c_shape",
       "profile": "official_nominal",
@@ -23,13 +23,14 @@
         "floor_sensor_gate": true,
         "drive_path_gate": true,
         "official_description_gate": true,
-        "slam_transport_gate": true
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true
       },
       "live": {
         "state": "running",
         "targets": 0,
         "collisions": 0,
-        "elapsed_seconds": 48.784,
+        "elapsed_seconds": 42.748,
         "readiness_reason": ""
       }
     }
@@ -37,7 +38,7 @@
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
-  "captured_utc": "2026-11-14T16:46:04.040547+00:00",
+  "captured_utc": "2026-11-14T17:01:04.532431+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
