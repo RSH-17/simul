@@ -137,8 +137,8 @@
   "previous_regressions_complete": true,
   "latest_change": {
     "date": "2026-11-15",
-    "name": "Official crowded-start no-return wedge reproduced; SLAM-only simulator adapter under native validation",
-    "status": "no_return_native_diagnostic_running",
+    "name": "5cm no-return candidate failed to escape; 2.5cm successor under native validation",
+    "status": "fine_no_return_native_diagnostic_running",
     "generalization_verified": false
   },
   "latest_recording": {
@@ -159,9 +159,9 @@
     "hardware_validated": false
   },
   "active_supervision": {
-    "captured_utc": "2026-11-14T16:00:50.819529+00:00",
-    "current_campaign": "official_no_return_screen_v1",
-    "unit": "osp-official-no-return-v1.service",
+    "captured_utc": "2026-11-14T16:09:19.302725+00:00",
+    "current_campaign": "official_fine_no_return_screen_v1",
+    "unit": "osp-official-fine-no-return-v1.service",
     "coordinator": null,
     "CEM_dispatch": "inactive; 10 prepared jobs preserved after reproduced C-shape deadlock",
     "full_task_job_preserved": "osp-spatial-nov15-official1-00001.service",
@@ -189,7 +189,7 @@
   "revisit_analysis": "revisit_analysis.json",
   "latest_candidate_tests_passed": 400,
   "latest_candidate_tests_skipped": 0,
-  "latest_candidate_runtime": "/home/peter/simul/training_robust/native90/official_tb4_v7/runtime",
+  "latest_candidate_runtime": "/home/peter/simul/training_robust/native90/official_tb4_v8/runtime",
   "production_promoted": false,
   "floor_diagnosis": "floor_pose_diagnosis.json",
   "local_navigation_diagnosis": "local_navigation_diagnosis.json",
@@ -399,19 +399,26 @@
       "official_description_gate": true,
       "live": {
         "state": "running",
+        "elapsed_seconds": 343.997,
         "targets": 1,
         "collisions": 0,
-        "elapsed_seconds": 259.498,
         "active_action": "nav",
         "readiness_reason": ""
       },
       "shape": "u_shape"
     },
     {
-      "campaign": "official_no_return_screen_v1",
-      "unit": "osp-official-no-return-v1.service",
+      "campaign": "official_fine_no_return_screen_v1",
+      "unit": "osp-official-fine-no-return-v1.service",
       "domain": 228,
-      "status": "running"
+      "status": "running",
+      "runtime_configuration_gate": true,
+      "velocity_profile_gate": true,
+      "scan_adapter_gate": true,
+      "floor_sensor_gate": true,
+      "drive_path_gate": true,
+      "official_description_gate": true,
+      "slam_transport_gate": true
     }
   ],
   "environment_verified_training_rate": {
@@ -584,7 +591,7 @@
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
   "crowded_start_native_validated": false,
   "crowded_start_runtime_tests_passed": 390,
-  "active_priority_regression": "official_no_return_screen_v1",
+  "active_priority_regression": "official_fine_no_return_screen_v1",
   "crowded_scene_geometry": "repository_snapshot/crowded_scene_geometry.json",
   "crowded_supervisor_and_geometry_tests_passed": 12,
   "crowded_start_v2_candidate": "repository_snapshot/crowded_start_v2_candidate.json",
@@ -606,7 +613,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T16:00:50.819529+00:00",
+  "latest_status_check_utc": "2026-11-14T16:11:19.727718+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -693,7 +700,7 @@
     "full_task_success": false
   },
   "current_diagnostic_runtimes": [
-    "/home/peter/simul/training_robust/native90/official_tb4_v7/runtime"
+    "/home/peter/simul/training_robust/native90/official_tb4_v8/runtime"
   ],
   "official_crowded_comparison": "repository_snapshot/official_crowded_comparison.json",
   "crowded_sideways_start_diagnosis": "repository_snapshot/crowded_sideways_start_diagnosis.json",

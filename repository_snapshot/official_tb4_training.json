@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T16:00:21.051428+00:00",
+  "captured_utc": "2026-11-14T16:09:54.877416+00:00",
   "evidence_type": "New native Gazebo coefficient training; no completed full-task result yet",
   "campaign": "training_robust/native90/official_tb4_cem_v1",
   "coordinator": "osp-official-tb4-cem-v1.service",
@@ -57,9 +57,9 @@
       "official_description_gate": true,
       "live": {
         "state": "running",
+        "elapsed_seconds": 343.997,
         "targets": 1,
         "collisions": 0,
-        "elapsed_seconds": 259.498,
         "active_action": "nav",
         "readiness_reason": ""
       },

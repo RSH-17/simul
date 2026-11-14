@@ -6,4 +6,4 @@ This inherits official v5's simulation-only no-return adapter and v4's rotationa
 
 Build: `python3 policy_candidates/2026-11-15_official_tb4_v6/build.py --workspace /absolute/new/workspace --test`.
 
-All 400 runtime tests passed. Native verification has not started. This candidate is not production- or hardware-qualified. See [the recorded diagnostic sequence](../../repository_snapshot/official_no_return_diagnosis.json).
+All 400 runtime tests passed. The same-scene 90-second native verification has started; results are pending. Three effective-resolution checks and one rotated-corridor evaluator test also passed. This candidate is not production- or hardware-qualified. See [the recorded diagnostic sequence](../../repository_snapshot/official_no_return_diagnosis.json).

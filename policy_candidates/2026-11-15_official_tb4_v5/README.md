@@ -10,4 +10,4 @@ References: [REP-117 distance semantics](https://github.com/ros-infrastructure/r
 
 Build: `python3 policy_candidates/2026-11-15_official_tb4_v5/build.py --workspace /absolute/new/workspace --test`.
 
-Validation: 400 runtime tests and 4 effective-input probe tests passed. A new 90-second native diagnostic on the same physical C-shape is running. No production, full-task or hardware qualification is claimed. Original running and queued source stages are preserved.
+Validation: 400 runtime tests and 4 effective-input probe tests passed. The 90-second native diagnostic on the same physical C-shape completed with 0.353 m of undocking movement, zero contacts and zero IDs; it did not escape. Its live scan adapter and all six input gates passed. A separate 2.5 cm successor is being tested; this 5 cm stage is preserved. No production, full-task or hardware qualification is claimed. Original running and queued source stages are preserved.
