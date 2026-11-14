@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-14T16:07:17.187052+00:00",
+  "updated_utc": "2026-11-14T16:10:55.161097+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 305,
+  "uploaded_verified": 306,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3316,6 +3316,22 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_no_return_screen_v1__1200100000.mp4",
+      "local_path": "training_robust/native90/official_no_return_screen_v1/episodes/1200100000/video/mission.mp4",
+      "bytes": 352418,
+      "sha256": "de95fe7967b465c217e301fe5f8afb95aed0cacf18507bd259360f89809fd275",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_no_return_screen_v1__1200100000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 90.167,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 453,
+      "recording_seconds": 90.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_rotation_scan_screen_v1__1200100000.mp4",
       "local_path": "training_robust/native90/official_rotation_scan_screen_v1/episodes/1200100000/video/mission.mp4",
       "bytes": 321841,
@@ -4898,7 +4914,7 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_no_return_screen_v1/episodes/1200100000/video/mission.mp4",
+      "path": "training_robust/native90/official_fine_no_return_screen_v1/episodes/1200100000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
