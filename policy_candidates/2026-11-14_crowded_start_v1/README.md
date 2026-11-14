@@ -27,3 +27,11 @@ python3 training_robust/run_crowded_start_regression.py --output /absolute/new/r
 ```
 
 The separate encoder drift and C-shape SLAM correction jump are unresolved by this change. See `repository_snapshot/tb4_early_odometry_audit.json`. A full 600-second three-marker evaluation remains required after startup validation.
+
+## Additional evaluator checks
+
+Twelve supervisor/geometry tests passed. `training_robust/crowded_challenge_scenarios.py` generated twelve distinct C/U/zigzag maps with 9/12/16/20 obstacles and randomized starting headings. Two raster resolutions independently check body connectivity and line-of-sight approach access to all hidden marker faces. These are offline geometry results, not native success.
+
+```bash
+python3 training_robust/crowded_challenge_scenarios.py --output /absolute/new/scenes
+```

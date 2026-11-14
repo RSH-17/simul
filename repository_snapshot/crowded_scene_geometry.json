@@ -1,0 +1,366 @@
+{
+  "captured_utc": "2026-11-14T14:18:29.612947+00:00",
+  "source": "training_robust/crowded_challenge_scenarios.py",
+  "evidence_type": "offline geometry only",
+  "native_validated": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "total_scenes": 12,
+  "actual_obstacle_counts": [
+    9,
+    12,
+    16,
+    20
+  ],
+  "regression_and_generator_tests_passed": 12,
+  "scenes": [
+    {
+      "shape": "c_shape",
+      "seed": 1197100000,
+      "scenario_sha256": "951f6d0f45f9bd206416ccbe289ae392a70fe64db9e9617c0d1f763e2aa2118b",
+      "physical_sha256": "3b1e10d001980f404b3fdc5bb9d10a7d5e47cb674c836237d2c8100c66fb3e4a",
+      "version": 1,
+      "requested_obstacles": 9,
+      "actual_obstacles": 9,
+      "corridor_width_m": 0.5390438717344305,
+      "exit_length_m": 2.465946529383795,
+      "generator_seed": 1197100000,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.25,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "c_shape",
+      "seed": 1197100101,
+      "scenario_sha256": "aae3206174f4937783d5674a66aee966d04dad8b29dcf8dcdb0ecad08b94792a",
+      "physical_sha256": "74cc9de7cd651dbc32028321bd7f18721e50b22975045bc8be33746ea60b3118",
+      "version": 1,
+      "requested_obstacles": 12,
+      "actual_obstacles": 12,
+      "corridor_width_m": 0.5550541556269337,
+      "exit_length_m": 2.3801238510173084,
+      "generator_seed": 1197100101,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.25,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "c_shape",
+      "seed": 1197100202,
+      "scenario_sha256": "3702fa530f254d46f2ada5318c840c4b5427e769e8f6cec377408aeab5a6a5da",
+      "physical_sha256": "8742305758f99f2c899a59f69bb83a392e445b630898893ca58ea73a6d8359d8",
+      "version": 1,
+      "requested_obstacles": 16,
+      "actual_obstacles": 16,
+      "corridor_width_m": 0.5550815499114261,
+      "exit_length_m": 2.3434787455495796,
+      "generator_seed": 1197100202,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.25,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "c_shape",
+      "seed": 1197100303,
+      "scenario_sha256": "b63afd3125c02b81065ee3549d348b7d937cd5c0c7b17498e1a6370d53d10aad",
+      "physical_sha256": "b59ddbf85088d802617048af90e06c0291fb60991ee7a3eabda39f379a741ed5",
+      "version": 1,
+      "requested_obstacles": 20,
+      "actual_obstacles": 20,
+      "corridor_width_m": 0.5905676422403865,
+      "exit_length_m": 3.167070008534891,
+      "generator_seed": 1197600318,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "u_shape",
+      "seed": 1197110000,
+      "scenario_sha256": "d7fda9664095090a75856fe63209a9aa8bb85f0adb5f2a3e7ba69f48203538f5",
+      "physical_sha256": "be061565af705c1c12887cbb3718e29adf3edd8f165e9588e0b359722dead4c0",
+      "version": 1,
+      "requested_obstacles": 9,
+      "actual_obstacles": 9,
+      "corridor_width_m": 0.5994144882768639,
+      "exit_length_m": 2.3184198932941427,
+      "generator_seed": 1197210003,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "u_shape",
+      "seed": 1197110101,
+      "scenario_sha256": "d32cc69c6437e0aba4173297a95cbb5d600f88093e94fabf76f25aedc08c47a4",
+      "physical_sha256": "d23b8d6b2b8a14f6e4f60785231877497425ee4363433c6ca346c5b7d3d60bc7",
+      "version": 1,
+      "requested_obstacles": 12,
+      "actual_obstacles": 12,
+      "corridor_width_m": 0.5949242569298234,
+      "exit_length_m": 2.0435433802460397,
+      "generator_seed": 1197110101,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "u_shape",
+      "seed": 1197110202,
+      "scenario_sha256": "9c0e1795e94956a0ad639b41848ed0ded047efc5c57f4f8a7ad466cb59e4c950",
+      "physical_sha256": "271bbf1d7504713f1da497f5bd9cae17e3f7fdc5365d28e97c39ff45f5d1870e",
+      "version": 1,
+      "requested_obstacles": 16,
+      "actual_obstacles": 16,
+      "corridor_width_m": 0.5517420141834116,
+      "exit_length_m": 2.669092265188807,
+      "generator_seed": 1197510214,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "u_shape",
+      "seed": 1197110303,
+      "scenario_sha256": "4a213f3bd3e5ca7a4a7c2528d321346e70eadd9cce88e840eb9483d04d361419",
+      "physical_sha256": "d9f923996d8ec59d92e81c5ecf544fefe40b7153157cc8927fb85297ffb8e010",
+      "version": 1,
+      "requested_obstacles": 20,
+      "actual_obstacles": 20,
+      "corridor_width_m": 0.5646467194461174,
+      "exit_length_m": 2.1031883272177394,
+      "generator_seed": 1197210306,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.25,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "zigzag",
+      "seed": 1197120000,
+      "scenario_sha256": "4c881a624f6cdd21fd6d0b8b4f977c0b3c631039253b86b8d8655aea29eec842",
+      "physical_sha256": "03a28a5f653b0885e13352c3811cbb608acf4e3879e6d55b7142ae1db9975c30",
+      "version": 1,
+      "requested_obstacles": 9,
+      "actual_obstacles": 9,
+      "corridor_width_m": 0.583088497427173,
+      "exit_length_m": 2.220453347265967,
+      "generator_seed": 1197220003,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "zigzag",
+      "seed": 1197120101,
+      "scenario_sha256": "7cf1ccd3eb78415cf21a7e854242d162867d393dddb2c399580625f40b5ddbb0",
+      "physical_sha256": "d9cbdaab1445ff1c21bb969e5fcb925412fabca85f9c96150ae70abb39cc5186",
+      "version": 1,
+      "requested_obstacles": 12,
+      "actual_obstacles": 12,
+      "corridor_width_m": 0.5991458422762863,
+      "exit_length_m": 2.8567721119819423,
+      "generator_seed": 1197320107,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.30000000000000004,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "zigzag",
+      "seed": 1197120202,
+      "scenario_sha256": "10e2d94047b85da4d740ca03ef4f886ef7c6f43b87ab0b661b10c3217e6fd770",
+      "physical_sha256": "0e516c71823ec6df13d0f00e198bf8156555fbd21ee3f3bfefdf4e977dcf3c13",
+      "version": 1,
+      "requested_obstacles": 16,
+      "actual_obstacles": 16,
+      "corridor_width_m": 0.5520222515636851,
+      "exit_length_m": 2.3403695895344585,
+      "generator_seed": 1197120202,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.25,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    },
+    {
+      "shape": "zigzag",
+      "seed": 1197120303,
+      "scenario_sha256": "d7ef80e5845a4db5866ea2cfdbb2f58852f5f00ccd85d99e11dbe32071e5a9e5",
+      "physical_sha256": "8d1b8f2d1bbac3c405a12d0afdf240756df4d0d48145790bf64da59c98f4aad6",
+      "version": 1,
+      "requested_obstacles": 20,
+      "actual_obstacles": 20,
+      "corridor_width_m": 0.5333044296821313,
+      "exit_length_m": 2.034488253669271,
+      "generator_seed": 1197120303,
+      "geometry_checks": [
+        {
+          "start_clearance_m": 0.25,
+          "minimum_body_clearance_m": 0.23435533905932737,
+          "resolution_m": 0.05,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        },
+        {
+          "start_clearance_m": 0.275,
+          "minimum_body_clearance_m": 0.2166776695296637,
+          "resolution_m": 0.025,
+          "all_marker_approaches_reachable": true,
+          "evidence": "offline geometry only; no native or hardware success claim"
+        }
+      ],
+      "policy_receives_ground_truth": false
+    }
+  ]
+}

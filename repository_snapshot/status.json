@@ -677,5 +677,7 @@
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
   "crowded_start_native_validated": false,
   "crowded_start_runtime_tests_passed": 378,
-  "active_priority_regression": "crowded_start_regression_v1"
+  "active_priority_regression": "crowded_start_regression_v1",
+  "crowded_scene_geometry": "repository_snapshot/crowded_scene_geometry.json",
+  "crowded_supervisor_and_geometry_tests_passed": 12
 }
