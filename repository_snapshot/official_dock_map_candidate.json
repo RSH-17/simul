@@ -1,12 +1,12 @@
 {
-  "captured_utc": "2026-11-14T18:14:27.418112+00:00",
-  "evidence_type": "Candidate unit/integration checks and offline map overlay; native repair pending",
+  "captured_utc": "2026-11-14T19:15:41.038935+00:00",
+  "evidence_type": "Completed native dock departure trials; partial collision repair, sideways escape still fails",
   "candidate": "policy_candidates/2026-11-15_official_tb4_v10",
   "parent_candidate": "2026-11-15_official_tb4_v7",
   "runtime": "training_robust/native90/official_tb4_v12/runtime",
   "campaign": "official_dock_screen_v1",
   "coordinator": "osp-official-dock-screen-v1.service",
-  "status": "waiting_for_native_slots",
+  "status": "completed",
   "runtime_tests_passed": 412,
   "observer_supervisor_tests_passed": 11,
   "ros_integration": {
@@ -150,7 +150,7 @@
       "number": 0,
       "seed": 1205000404,
       "profile": "sideways_small",
-      "status": "prepared",
+      "status": "done",
       "baseline": {
         "success": false,
         "targets": 0,
@@ -160,13 +160,122 @@
         "infrastructure_failure": false,
         "reason": "timeout",
         "start_screen_passed": false
+      },
+      "outcome": {
+        "success": false,
+        "targets": 0,
+        "approached": 0,
+        "contacts": 0,
+        "seconds": 90.21,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": false
+      },
+      "escape_audit": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/00_sideways_small/episodes/1205000404",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": null,
+        "actual_path_m": 6.696360602401631,
+        "maximum_exit_axis_progress_m": 1.6550031470372275,
+        "required_progress_m": 2.5989999999999998,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "dock_map_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "all_input_gates_passed": true,
+      "localization_audit": {
+        "map": {
+          "position_error_m": {
+            "samples": 447,
+            "median": 0.0038471434197408566,
+            "p95": 0.005635700086157856,
+            "maximum": 0.006495446076372881
+          },
+          "heading_error_deg": {
+            "samples": 447,
+            "median": 0.36760117946173676,
+            "p95": 1.8623832882519802,
+            "maximum": 2.351618246942736
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 447,
+            "median": 0.23748294354209895,
+            "p95": 0.324394816243819,
+            "maximum": 0.34258808310715677
+          },
+          "heading_error_deg": {
+            "samples": 447,
+            "median": 16.795291750188785,
+            "p95": 25.96316195567946,
+            "maximum": 28.914743476941513
+          }
+        }
+      },
+      "dock_map_probe": {
+        "read_only": true,
+        "ground_truth_used": false,
+        "parameters": {
+          "local_costmap": "mission/navigation_map",
+          "global_costmap": "mission/navigation_map"
+        },
+        "anchor_samples": 6,
+        "anchor_constant": true,
+        "subscribers": [
+          "/dock_map_readonly_observer",
+          "/global_costmap/global_costmap",
+          "/local_costmap/local_costmap"
+        ],
+        "anchor": {
+          "status": "captured_before_undock",
+          "frame": "map",
+          "pose": [
+            0.157,
+            0.0,
+            3.141592
+          ],
+          "captured_seconds": 4.29,
+          "source": "observed map<-std_dock_link TF"
+        },
+        "paired_maps": {
+          "same_metadata": true,
+          "only_dock_occupied_changes": true,
+          "changed_cells": 45,
+          "dock_center_occupied": true,
+          "observed_center_value": 0
+        },
+        "local_dock_in_bounds": true,
+        "local_dock_cost": 254,
+        "global_dock_in_bounds": true,
+        "global_dock_cost": 254,
+        "gate": {
+          "passed": true,
+          "errors": []
+        }
       }
     },
     {
       "number": 1,
       "seed": 1205000000,
       "profile": "narrow",
-      "status": "prepared",
+      "status": "done",
       "baseline": {
         "success": false,
         "targets": 0,
@@ -176,23 +285,130 @@
         "infrastructure_failure": false,
         "reason": "timeout",
         "start_screen_passed": true
+      },
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 1,
+        "contacts": 0,
+        "seconds": 90.011,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      },
+      "escape_audit": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_dock_screen_v1/jobs/01_narrow/episodes/1205000000",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 1,
+        "full_task_success": false,
+        "observed_exit_seconds": 23.052,
+        "actual_path_m": 13.419580931253035,
+        "maximum_exit_axis_progress_m": 7.399751340333655,
+        "required_progress_m": 2.799,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "dock_map_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "all_input_gates_passed": true,
+      "localization_audit": {
+        "map": {
+          "position_error_m": {
+            "samples": 446,
+            "median": 0.1274583536010467,
+            "p95": 0.6354559973305984,
+            "maximum": 0.6388064599302083
+          },
+          "heading_error_deg": {
+            "samples": 446,
+            "median": 0.4773468103635887,
+            "p95": 1.889740125579761,
+            "maximum": 3.0959773543191416
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 446,
+            "median": 0.8036012564878936,
+            "p95": 1.5953314676514583,
+            "maximum": 1.7242905534847544
+          },
+          "heading_error_deg": {
+            "samples": 446,
+            "median": 14.207029885630352,
+            "p95": 24.35140620741626,
+            "maximum": 26.141260025194775
+          }
+        }
+      },
+      "dock_map_probe": {
+        "read_only": true,
+        "ground_truth_used": false,
+        "parameters": {
+          "local_costmap": "mission/navigation_map",
+          "global_costmap": "mission/navigation_map"
+        },
+        "anchor_samples": 7,
+        "anchor_constant": true,
+        "subscribers": [
+          "/dock_map_readonly_observer",
+          "/global_costmap/global_costmap",
+          "/local_costmap/local_costmap"
+        ],
+        "anchor": {
+          "status": "captured_before_undock",
+          "frame": "map",
+          "pose": [
+            0.157,
+            0.0,
+            3.141592
+          ],
+          "captured_seconds": 3.489,
+          "source": "observed map<-std_dock_link TF"
+        },
+        "paired_maps": {
+          "same_metadata": true,
+          "only_dock_occupied_changes": true,
+          "changed_cells": 40,
+          "dock_center_occupied": true,
+          "observed_center_value": 0
+        },
+        "local_dock_in_bounds": true,
+        "local_dock_cost": 254,
+        "global_dock_in_bounds": true,
+        "global_dock_cost": 254,
+        "gate": {
+          "passed": true,
+          "errors": []
+        }
       }
     }
   ],
   "native_limit": 2,
   "full_task_comparison_retained": {
-    "status": "held_for_dock_screen",
+    "status": "running",
     "active_native_jobs": [
-      0,
-      1
+      2,
+      3
     ],
     "queued_jobs": [
-      2,
-      3,
       4,
       5
     ],
-    "resume_after": "both dock departure comparisons finish"
+    "resumed_after": "both dock trials completed"
   },
   "official_robot_files_modified": false,
   "weights_retrained": false,
@@ -204,5 +420,9 @@
     "External map reset/relocalization during a mission unvalidated",
     "90-second departure qualification is not the full three-marker task"
   ],
-  "primary_jazzy_source": "https://api.nav2.org/nav2-jazzy/html/static__layer_8cpp_source.html"
+  "primary_jazzy_source": "https://api.nav2.org/nav2-jazzy/html/static__layer_8cpp_source.html",
+  "native_results_available": true,
+  "native_repair_qualified": false,
+  "native_departure_screens_passed": 1,
+  "remaining_failure": "Sideways start: 1.655 m maximum exit-axis progress versus required 2.599 m, 0 contacts, no exit within 90 s"
 }

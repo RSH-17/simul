@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T19:11:05.448174+00:00",
+  "captured_utc": "2026-11-14T19:15:41.038935+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -768,5 +768,15 @@
   "next_passive_marker_captures": [
     2,
     3
-  ]
+  ],
+  "active_priority_regression_status": "completed: 1/2 departure screens passed; not qualified",
+  "latest_dock_native_result": {
+    "departure_screens_passed": 1,
+    "total": 2,
+    "sideways_contacts_before": 4,
+    "sideways_contacts_after": 0,
+    "sideways_escape_passed": false,
+    "narrow_exit_s": 23.052,
+    "production_promoted": false
+  }
 }
