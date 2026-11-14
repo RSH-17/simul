@@ -1,0 +1,16 @@
+{
+  "candidate_id": "2026-11-14_crowded_start_v2",
+  "parent_candidate": "2026-11-14_crowded_start_v1",
+  "status": "offline_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "overlay_files": {
+    "test/test_crowded_start.py": "c4a5c7da14687b45d1052413dc7fc499b8c6063642abdbf968369af7a21986d6",
+    "test/test_start_waypoints.py": "d6ca71a30feac8255fd11eedba2c5d697c194f61c3df7cd873f72acd409bbc48",
+    "osp_mission/mission.py": "b370c0b29ce9e65eb4b5bf0fd6e3ce4f3a24ed07f4b5bb7df5f361b9e721e8c9",
+    "osp_mission/edge_policy.py": "d998193d46aa38693e3bc77ab89cbce0f99aa02b50d6d1c4538acf96a14663d0",
+    "osp_mission/exploration_memory.py": "d8f6a180b8f0047d84ae5aeeceb82f3448d1ff57ba6d7dc838f4a2c6a4477687",
+    "osp_mission/start_waypoints.py": "58b09eb48404df0061d7b5ed33b3e4f7099b3a838687d758be6d69e927c3d3c6"
+  },
+  "build_script_sha256": "23b063061ee47eda3b4fb6416a3613f0c9c334ed56f34e5807663cb57126c066"
+}

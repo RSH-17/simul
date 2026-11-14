@@ -1,0 +1,113 @@
+{
+  "evidence_type": "new Gazebo trials on nominal TB4 platform; not hardware",
+  "completed": [
+    {
+      "number": 0,
+      "phase": "train",
+      "generation": 0,
+      "role": "0",
+      "parameters": [
+        1.0,
+        2.8591034016767987,
+        0.6404669719880953,
+        0.7004548758531984,
+        0.9518906847047067
+      ],
+      "scenario": {
+        "file": "/home/peter/simul/training_robust/native90/tb4_platform_cem_v1/scenarios/1195000000.yaml",
+        "seed": 1195000000,
+        "sha256": "892e05a8036a1ccdbd1866fd1920f0dbff74ed42241ff04a5e27c4903d869614",
+        "requested_obstacles": 8,
+        "actual_obstacles": 8,
+        "mount_profile": "hidden_obstacles",
+        "arena": {
+          "shape": "c_shape",
+          "width_m": 17.145993299323056,
+          "height_m": 13.765684144566551,
+          "area_m2": 133.54936127747564
+        },
+        "physical_sha256": "ce325cb066a6711f364d9c9ddf5e065ea76f71e930f32bca73564b4312f65a2b"
+      },
+      "output": "/home/peter/simul/training_robust/native90/tb4_platform_cem_v1/jobs/00000_train_g0_0",
+      "status": "done",
+      "stress_profile": "none",
+      "stress_seed": 1195000007,
+      "workspace": "/home/peter/simul/training_robust/native90/tb4_platform_v5/runtime",
+      "unit": "osp-spatial-nov14-tb4-platform1-00000.service",
+      "domain": 161,
+      "floor_sensor_gate": true,
+      "runtime_configuration_gate": true,
+      "configuration_observation_attempts": 1,
+      "slam_transport_gate": true,
+      "velocity_profile_gate": true,
+      "velocity_observation_attempts": 1,
+      "transfer_input_gate": true,
+      "outcome": {
+        "success": false,
+        "targets": 2,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.502,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "completed_utc": "2026-11-14T14:20:10.472646+00:00",
+      "candidate_output_profiles_gate": true
+    },
+    {
+      "number": 1,
+      "phase": "train",
+      "generation": 0,
+      "role": "0",
+      "parameters": [
+        1.0,
+        2.8591034016767987,
+        0.6404669719880953,
+        0.7004548758531984,
+        0.9518906847047067
+      ],
+      "scenario": {
+        "file": "/home/peter/simul/training_robust/native90/tb4_platform_cem_v1/scenarios/1195000101.yaml",
+        "seed": 1195000101,
+        "sha256": "bc9c15d85d027afcaf613907af2dd44d99f380be5d6d235dc88cd25c4f21e392",
+        "requested_obstacles": 12,
+        "actual_obstacles": 12,
+        "mount_profile": "hidden_obstacles",
+        "arena": {
+          "shape": "u_shape",
+          "width_m": 20.896727242942962,
+          "height_m": 16.227428381243556,
+          "area_m2": 152.16943486757935
+        },
+        "physical_sha256": "20aca1e552774ab170deb4ffd694a7af600f531e4ae0c14387ac5afcd6d2e774"
+      },
+      "output": "/home/peter/simul/training_robust/native90/tb4_platform_cem_v1/jobs/00001_train_g0_0",
+      "status": "done",
+      "stress_profile": "mild",
+      "stress_seed": 1195000024,
+      "workspace": "/home/peter/simul/training_robust/native90/tb4_platform_v5/runtime",
+      "unit": "osp-spatial-nov14-tb4-platform1-00001.service",
+      "domain": 162,
+      "floor_sensor_gate": true,
+      "runtime_configuration_gate": true,
+      "configuration_observation_attempts": 1,
+      "slam_transport_gate": true,
+      "velocity_profile_gate": true,
+      "velocity_observation_attempts": 1,
+      "transfer_input_gate": true,
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.419,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "completed_utc": "2026-11-14T14:20:10.796453+00:00",
+      "candidate_output_profiles_gate": true
+    }
+  ],
+  "queued_preserved": 10,
+  "production_promoted": false
+}
