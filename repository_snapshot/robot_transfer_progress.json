@@ -1,7 +1,7 @@
 {
   "campaign": "official_frontier_comparison_v1",
-  "status": "running",
-  "coordinator_active": true,
+  "status": "held_for_pocket_screen",
+  "coordinator_active": false,
   "generation": 0,
   "phase": "development",
   "recorded_completed": 2,
@@ -41,7 +41,7 @@
         "state": "running",
         "targets": 0,
         "collisions": 0,
-        "elapsed_seconds": 12.239,
+        "elapsed_seconds": 128.239,
         "readiness_reason": ""
       }
     },
@@ -65,7 +65,7 @@
         "state": "running",
         "targets": 0,
         "collisions": 0,
-        "elapsed_seconds": 12.451,
+        "elapsed_seconds": 132.951,
         "readiness_reason": ""
       }
     }
@@ -73,7 +73,7 @@
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
-  "captured_utc": "2026-11-14T19:17:02.004532+00:00",
+  "captured_utc": "2026-11-14T19:31:07.044458+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
