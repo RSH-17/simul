@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T20:07:42.934939+00:00",
+  "captured_utc": "2026-11-14T20:19:56.963709+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Verified pocket continuation through full edge generation and memory/selection interfaces; native departure and post-exit performance still pending",
+  "latest_change": "Built isolated central LiDAR fallback after raw mixed-surface failures; preserves successful ranges; 23 additional recorded ranges independently checked, native validation pending",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -182,9 +182,9 @@
   "dashboard": "dashboard.json",
   "spatial_geometry": "spatial_geometry_v6.json",
   "revisit_analysis": "revisit_analysis.json",
-  "latest_candidate_tests_passed": 412,
+  "latest_candidate_tests_passed": 429,
   "latest_candidate_tests_skipped": 0,
-  "latest_candidate_runtime": "training_robust/native90/official_tb4_v12/runtime",
+  "latest_candidate_runtime": "training_robust/native90/official_tb4_v17/runtime",
   "production_promoted": false,
   "floor_diagnosis": "floor_pose_diagnosis.json",
   "local_navigation_diagnosis": "local_navigation_diagnosis.json",
@@ -234,9 +234,9 @@
     "hardware_validated": false
   },
   "latest_auxiliary_validation": {
-    "recorded_generation_and_ranking_reproductions": 16,
-    "counterfactual_filter_selection_checks": 90,
-    "marker_override_decisions_excluded": 1,
+    "unit_tests_passed": 11,
+    "recorded_sensor_function_checks": 65,
+    "independent_sensor_geometry_evaluated_ranges": 54,
     "new_completed_native_trials": 0
   },
   "current_training_runtime": "/home/peter/simul/training_robust/native90/official_tb4_v8/runtime",
@@ -380,8 +380,8 @@
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline",
       "status": "running",
       "campaign": "official_frontier_comparison_v1",
-      "elapsed_sim_seconds": 432.239,
-      "targets": 1,
+      "elapsed_sim_seconds": 520.739,
+      "targets": 2,
       "contacts": 0,
       "not_final_evaluation": true
     },
@@ -392,7 +392,7 @@
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate",
       "status": "running",
       "campaign": "official_frontier_comparison_v1",
-      "elapsed_sim_seconds": 431.451,
+      "elapsed_sim_seconds": 531.951,
       "targets": 0,
       "contacts": 0,
       "not_final_evaluation": true
@@ -659,7 +659,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T20:07:42.934939+00:00",
+  "latest_status_check_utc": "2026-11-14T20:19:56.963709+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -744,7 +744,7 @@
     "initial_undock_actual_path_m": 0.3533574240864025,
     "task_screen_scope": "60-second integration only; 2.749m actual path, zero contacts, map and pose graph saved",
     "full_task_success": false,
-    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v14"
+    "latest_experimental_candidate": "policy_candidates/2026-11-15_official_tb4_v15"
   },
   "current_diagnostic_runtimes": [
     "training_robust/native90/official_tb4_v9/runtime",
@@ -774,13 +774,15 @@
   "official_sensor_ranking_audit": "repository_snapshot/official_sensor_ranking_audit.json",
   "official_exposure_time_candidate": "repository_snapshot/official_exposure_time_candidate.json",
   "latest_candidate_validation": {
-    "candidate": "policy_candidates/2026-11-15_official_tb4_v14",
-    "runtime_tests_passed": 417,
-    "additional_tests_passed": 8,
-    "native_validation_status": "not_scheduled",
-    "production_promoted": false,
+    "candidate": "policy_candidates/2026-11-15_official_tb4_v15",
+    "runtime_tests_passed": 429,
+    "auxiliary_tests_passed": 11,
+    "raw_function_checks": 65,
     "native_queued": false,
-    "native_validation_complete": false
+    "native_validated": false,
+    "production_promoted": false,
+    "native_validation_complete": false,
+    "native_validation_status": "built_not_queued"
   },
   "official_deadline_candidate": "repository_snapshot/official_deadline_candidate.json",
   "official_exposure_shadow": "repository_snapshot/official_exposure_shadow.json",
@@ -878,5 +880,6 @@
     "actual_native_velocity_profile_verified": true
   },
   "official_exposure_u_shadow": "repository_snapshot/official_exposure_u_shadow.json",
-  "official_pocket_selection_audit": "repository_snapshot/official_pocket_selection_audit.json"
+  "official_pocket_selection_audit": "repository_snapshot/official_pocket_selection_audit.json",
+  "official_central_range_candidate": "repository_snapshot/official_central_range_candidate.json"
 }

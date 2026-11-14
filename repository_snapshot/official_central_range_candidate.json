@@ -1,0 +1,159 @@
+{
+  "captured_utc": "2026-11-14T20:19:56.963709+00:00",
+  "evidence_type": "Candidate unit/integration checks and recorded sensor replay; no new native policy result",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v15",
+  "parent_candidate": "policy_candidates/2026-11-15_official_tb4_v11",
+  "runtime": "training_robust/native90/official_tb4_v17/runtime",
+  "status": "built_not_queued",
+  "runtime_tests_passed": 429,
+  "auxiliary_tests_passed": 11,
+  "raw_function_checks": 65,
+  "raw_frames": 64,
+  "original_range_attempts": 54,
+  "original_returned": 31,
+  "candidate_returned": 54,
+  "recovered": 23,
+  "recovered_at_least_18px": 9,
+  "studies": [
+    {
+      "snapshot": 2,
+      "frames": 45,
+      "function_checks": 46,
+      "range_attempts": 35,
+      "original_returned": 22,
+      "candidate_returned": 35,
+      "recovered": 13,
+      "recovered_at_least_18px": 0,
+      "recovered_ids": [
+        81
+      ],
+      "recovered_pixels": [
+        10.0,
+        15.0
+      ],
+      "recovered_sensor_xy_error_max_m": 0.014552407610791419,
+      "originally_returned_ranges_unchanged": true,
+      "sensor_geometry_groups": [
+        {
+          "id": 81,
+          "method": "candidate",
+          "error_m": {
+            "samples": 19,
+            "median": 0.013548700976173816,
+            "p95": 0.028706147690688688,
+            "maximum": 0.0307242258906075
+          }
+        },
+        {
+          "id": 81,
+          "method": "original",
+          "error_m": {
+            "samples": 6,
+            "median": 0.028481916779586468,
+            "p95": 0.030163648612851195,
+            "maximum": 0.03072422589060606
+          }
+        },
+        {
+          "id": 204,
+          "method": "candidate",
+          "error_m": {
+            "samples": 16,
+            "median": 0.010666336611749292,
+            "p95": 0.030576664108142616,
+            "maximum": 0.03736409672823663
+          }
+        },
+        {
+          "id": 204,
+          "method": "original",
+          "error_m": {
+            "samples": 16,
+            "median": 0.010666336611749108,
+            "p95": 0.030576664108142616,
+            "maximum": 0.03736409672823663
+          }
+        }
+      ],
+      "source_sha256": {
+        "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v2/snapshot.json": "fe1ade2add167fc569ba7eda2a43cb01e11588bfb198fc8461471c408a1b4875",
+        "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v2/candidate_comparison.json": "e9d408afa1a1002f273614bca26459e7c4ec23f98f5a69d9e49c9105627b4a8b",
+        "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v2/candidate_independent_evaluation_v1/evaluation.json": "799d77f447edac0cafab093afcfecdb125bc46c823e69b97785cb939d9dd379f"
+      },
+      "nonoverlapping_continuation": false,
+      "held_out_generalization": false
+    },
+    {
+      "snapshot": 3,
+      "frames": 19,
+      "function_checks": 19,
+      "range_attempts": 19,
+      "original_returned": 9,
+      "candidate_returned": 19,
+      "recovered": 10,
+      "recovered_at_least_18px": 9,
+      "recovered_ids": [
+        81
+      ],
+      "recovered_pixels": [
+        16.0,
+        19.0
+      ],
+      "recovered_sensor_xy_error_max_m": 0.01311389109871137,
+      "originally_returned_ranges_unchanged": true,
+      "sensor_geometry_groups": [
+        {
+          "id": 81,
+          "method": "candidate",
+          "error_m": {
+            "samples": 19,
+            "median": 0.011817095805636535,
+            "p95": 0.01932252113879158,
+            "maximum": 0.02425606417559653
+          }
+        },
+        {
+          "id": 81,
+          "method": "original",
+          "error_m": {
+            "samples": 9,
+            "median": 0.015897181590632622,
+            "p95": 0.022063378381461947,
+            "maximum": 0.024256064175598106
+          }
+        }
+      ],
+      "source_sha256": {
+        "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v3/snapshot.json": "8b9456af8dd929543f3a16678d8814224fce1b2ec5295d7be7f31b3c46715df8",
+        "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v3/candidate_comparison.json": "718a2669078d282455061b5abd63d1045942c189bf5c797f6a620b48b718d30a",
+        "training_robust/native90/official_frontier_comparison_v1/u_baseline_raw_range_replay_v3/candidate_independent_evaluation_v1/evaluation.json": "a6433eda15b1e1b45e0e06399d087692645740f7c3198e642c68a00aaa61487e"
+      },
+      "nonoverlapping_continuation": true,
+      "held_out_generalization": false
+    }
+  ],
+  "change": "Preserve successful broad fits; after >6cm plane residual only, retry +/-0.03rad with >=4 consecutive points, >=2 on each side, original parallelism/age/range gates",
+  "build_log_sha256": "a0162cf91acbb9505ac74b57506a1d2441a79da68b242a9491e227313340ff69",
+  "source_sha256": {
+    "policy_candidates/2026-11-15_official_tb4_v15/overlay/osp_mission/detector.py": "bc2808571aded359f1b7f8f18d9d0034fa03b4d12cd92bd01f14c7b30344ed8c",
+    "policy_candidates/2026-11-15_official_tb4_v15/overlay/test/test_center_lidar_fallback.py": "5a852c2e2dc33f574c961308f3705009706183703b86e26d5fe332d46d85872b",
+    "training_robust/compare_recorded_lidar_candidate.py": "723269bb1c4be69b10b876d1c7da9f0adfdbc127375bcfd6a24d090d2c6d8f91",
+    "training_robust/evaluate_recorded_marker_ranges.py": "52e40082cabe6bfceaac6fff6ab90cde3b646f991d3d6cac4c31f7680f295107",
+    "training_robust/test_recorded_marker_evaluation.py": "040ed1d75fe1fbda3240feb5063343e1f643baa6d304f6e929c4826712db4f3a"
+  },
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "truth_supplied_to_policy": false,
+  "native_validated": false,
+  "native_queued": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "limits": [
+    "64 correlated frames from one developing U-shape run, including a disjoint later segment; not independent held-out scenes",
+    "Sensor geometry evaluation uses interpolated planar base truth and the verified fixed sensor mount; SLAM map accuracy is not evaluated",
+    "Only 9 recovered frames reach the 18px size threshold; no confirmation or physical-approach credit is inferred",
+    "Actual mixed/occluded surface accuracy beyond these examples is unverified",
+    "Parent includes exposure buffering and camera-distance candidate, but not dock-map, pocket continuation, frontier-area, deadline, or map-frame face-sweep candidates"
+  ]
+}

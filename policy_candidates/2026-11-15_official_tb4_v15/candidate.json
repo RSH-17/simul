@@ -1,0 +1,28 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v15",
+  "parent_candidate": "2026-11-15_official_tb4_v11",
+  "status": "central_surface_fallback_candidate",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "ground_truth_input": false,
+  "native_queued": false,
+  "broad_half_angle_rad": 0.07,
+  "fallback_half_angle_rad": 0.03,
+  "minimum_fallback_points": 4,
+  "minimum_points_each_side": 2,
+  "maximum_adjacent_support_step_factor": 1.5,
+  "maximum_plane_residual_m": 0.06,
+  "only_retry_after_broad_plane_residual_failure": true,
+  "overlay_files": {
+    "test/test_center_lidar_fallback.py": "5a852c2e2dc33f574c961308f3705009706183703b86e26d5fe332d46d85872b",
+    "osp_mission/detector.py": "bc2808571aded359f1b7f8f18d9d0034fa03b4d12cd92bd01f14c7b30344ed8c"
+  },
+  "build_script_sha256": "1a69c34e43231ae02099eecdca7d2c423fcffaa5a20d537bc78b16b38898c6fd",
+  "runtime_tests_passed": 429,
+  "recorded_sensor_function_checks": 65,
+  "evidence": "repository_snapshot/official_central_range_candidate.json"
+}
