@@ -1,5 +1,5 @@
 {
-  "captured_utc": "2026-11-14T20:01:04.815070+00:00",
+  "captured_utc": "2026-11-14T20:07:42.934939+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "tests_passed_final": 189,
   "native_validation_complete": false,
@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Preserve raw sensor inputs without delayed global TF; distinguish exact range-function replay from approximate archival diagnosis; no policy change",
+  "latest_change": "Verified pocket continuation through full edge generation and memory/selection interfaces; native departure and post-exit performance still pending",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -234,8 +234,9 @@
     "hardware_validated": false
   },
   "latest_auxiliary_validation": {
-    "unit_tests_passed": 12,
-    "actual_raw_range_function_comparisons_passed": 16,
+    "recorded_generation_and_ranking_reproductions": 16,
+    "counterfactual_filter_selection_checks": 90,
+    "marker_override_decisions_excluded": 1,
     "new_completed_native_trials": 0
   },
   "current_training_runtime": "/home/peter/simul/training_robust/native90/official_tb4_v8/runtime",
@@ -379,7 +380,7 @@
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline",
       "status": "running",
       "campaign": "official_frontier_comparison_v1",
-      "elapsed_sim_seconds": 347.239,
+      "elapsed_sim_seconds": 432.239,
       "targets": 1,
       "contacts": 0,
       "not_final_evaluation": true
@@ -391,7 +392,7 @@
       "output": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate",
       "status": "running",
       "campaign": "official_frontier_comparison_v1",
-      "elapsed_sim_seconds": 349.951,
+      "elapsed_sim_seconds": 431.451,
       "targets": 0,
       "contacts": 0,
       "not_final_evaluation": true
@@ -658,7 +659,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T20:01:04.815070+00:00",
+  "latest_status_check_utc": "2026-11-14T20:07:42.934939+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -876,5 +877,6 @@
     "runtime_source_tests_passed": 259,
     "actual_native_velocity_profile_verified": true
   },
-  "official_exposure_u_shadow": "repository_snapshot/official_exposure_u_shadow.json"
+  "official_exposure_u_shadow": "repository_snapshot/official_exposure_u_shadow.json",
+  "official_pocket_selection_audit": "repository_snapshot/official_pocket_selection_audit.json"
 }

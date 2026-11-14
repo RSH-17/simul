@@ -1,0 +1,208 @@
+{
+  "captured_utc": "2026-11-14T20:07:42.934939+00:00",
+  "evidence_type": "Observed input generation/ranking replay and explicit memory stress; no new native result",
+  "candidate": "policy_candidates/2026-11-15_official_tb4_v13",
+  "runtime": "training_robust/native90/official_tb4_v15/runtime",
+  "rows": [
+    {
+      "profile": "sideways_small",
+      "report": "training_robust/native90/official_pocket_screen_v1/sideways_selection_integration_audit_v2.json",
+      "sha256": "1c48917da6753ed95e9e148cfcc223857ad1a55cb282e09c3d527a46061d23cc",
+      "original_generation_and_ranking_checks": 6,
+      "counterfactual_filter_selection_checks": 36,
+      "decisions": 6,
+      "rows": [
+        {
+          "elapsed_seconds": 13.21,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 10,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 29.71,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 6,
+          "candidate_count": 6,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 38.21,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 11,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 50.71,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 9,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 64.71,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 12,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 76.71,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 13,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        }
+      ]
+    },
+    {
+      "profile": "narrow",
+      "report": "training_robust/native90/official_pocket_screen_v1/narrow_selection_integration_audit.json",
+      "sha256": "b60d95fd3452e36dc0bdd3dec8b6ba86e8f518ffd265068578bce05249f4e764",
+      "original_generation_and_ranking_checks": 10,
+      "counterfactual_filter_selection_checks": 54,
+      "decisions": 11,
+      "rows": [
+        {
+          "elapsed_seconds": 11.011,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 1,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 13.511,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 1,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 16.012,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 1,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 18.511,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 3,
+          "candidate_count": 3,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 21.011,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 4,
+          "candidate_count": 4,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 23.511,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 6,
+          "candidate_count": 6,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 26.011,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 47,
+          "candidate_count": 2,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 39.011,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": true,
+          "candidate_pocket_continuation": false,
+          "original_raw_candidates": 72,
+          "candidate_count": 72,
+          "integration_skipped": "Ordinary viewpoints should retain their existing memory suppression"
+        },
+        {
+          "elapsed_seconds": 55.511,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 62,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        },
+        {
+          "elapsed_seconds": 66.011,
+          "original_generation_and_ranking_reproduced": false,
+          "integration_skipped": "Recorded marker override is not ordinary exploration ranking"
+        },
+        {
+          "elapsed_seconds": 71.511,
+          "original_generation_and_ranking_reproduced": true,
+          "candidate_generation_unchanged": false,
+          "candidate_pocket_continuation": true,
+          "original_raw_candidates": 58,
+          "candidate_count": 1,
+          "selection_same_in_all_stress_cases": true
+        }
+      ]
+    }
+  ],
+  "original_generation_and_ranking_checks": 16,
+  "counterfactual_filter_selection_checks": 90,
+  "marker_override_decisions_excluded": 1,
+  "memory_stress_conditions": {
+    "map_to_odom_transforms": 3,
+    "duplicate_views_and_saturated_revisit_penalty": [
+      false,
+      true
+    ],
+    "failure_cooldowns": "Absent in these recorded decisions; no invented native memory state"
+  },
+  "conclusions": [
+    "Sideways failure: all six original candidate generations and rankings reproduced; five new continuation choices survive filter and selection",
+    "Narrow baseline: first six recorded candidate sets unchanged; three later sets change to pocket transit",
+    "No synthetic successful transit gives surface-observation credit",
+    "Native departure and post-exit exploration must both be checked before combining or promoting this candidate"
+  ],
+  "source_sha256": {
+    "training_robust/audit_pocket_selection.py": "186c11c6bdedcca0103df2dd34852471097c0a6872e009c0ee5d78f8ff6cc660"
+  },
+  "policy_modified": false,
+  "ground_truth_supplied_to_policy": false,
+  "native_success_established": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "limits": [
+    "The complete original odom memory and action timing are not archived",
+    "Injected duplicate-view/revisit states test an interface; they are not the native memory",
+    "A selected safe map waypoint does not establish Nav2 execution or departure success",
+    "No future map, marker recognition, path, collision or duration is predicted"
+  ]
+}

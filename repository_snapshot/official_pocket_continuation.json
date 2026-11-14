@@ -305,5 +305,7 @@
     "full_task_success_claimed": false
   },
   "validation_log_sha256": "f9246a0e3d7db6715f1de251d634a4fbcafce42a5b6a7aec39f60c5239fb62d9",
-  "source_scope": "Dock repair parent only; exposure-buffer, camera-distance, frontier-area and deadline candidates are not merged."
+  "source_scope": "Dock repair parent only; exposure-buffer, camera-distance, frontier-area and deadline candidates are not merged.",
+  "selection_integration_audit": "repository_snapshot/official_pocket_selection_audit.json",
+  "selection_integration_scope": "16 recorded generation/ranking reproductions; 90 explicit memory stress checks; not exact full mission replay"
 }
