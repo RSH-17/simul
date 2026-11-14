@@ -1,0 +1,156 @@
+{
+  "evidence_type": "Completed fixed loop-gate retained-scan comparison; not new navigation",
+  "rows": [
+    {
+      "case": 4,
+      "scans": 869,
+      "identical_recorded_ids_timestamps_odometry": true,
+      "parameter_delta": {
+        "LoopMatchMinimumResponseFine": [
+          "0.45",
+          "0.65"
+        ],
+        "LoopMatchMaximumVarianceCoarse": [
+          "9",
+          "1"
+        ],
+        "LoopMatchMinimumResponseCoarse": [
+          "0.35",
+          "0.55"
+        ]
+      },
+      "metrics": {
+        "baseline": {
+          "samples": 868,
+          "median": 0.2722470679043733,
+          "p95": 1.0079989177178972,
+          "maximum": 1.026838690103414
+        },
+        "strict_loop": {
+          "samples": 868,
+          "median": 0.9855774165235685,
+          "p95": 1.0848304189445308,
+          "maximum": 1.1138445365695586
+        }
+      },
+      "accepted_loops": {
+        "baseline": 1,
+        "strict_loop": 0
+      },
+      "native_online": {
+        "samples": 2947,
+        "median": 0.2710674688766479,
+        "p95": 1.0012476269125972,
+        "maximum": 1.0267690761175488
+      },
+      "first_half_m_error": {
+        "stamp_sim_s": 24.785,
+        "error_m": 0.5170244090014043
+      },
+      "marker_graph_changes": [
+        {
+          "id": 54,
+          "original_error_m": 0.0359935159299408,
+          "finalized_error_m": 0.035827748084411186,
+          "shift_m": 0.0003789927321320006,
+          "error_change_m": -0.00016576784552961576
+        }
+      ],
+      "evaluation": "/home/peter/simul/training_robust/native90/official_zigzag_slam_study_v1/case_04/evaluation.json",
+      "evaluation_sha256": "58b22b4e59009765fa83fd03967a2f5383741d9d6849b27b8e4c85fbb23c2a75"
+    },
+    {
+      "case": 5,
+      "scans": 846,
+      "identical_recorded_ids_timestamps_odometry": true,
+      "parameter_delta": {
+        "LoopMatchMinimumResponseFine": [
+          "0.45",
+          "0.65"
+        ],
+        "LoopMatchMaximumVarianceCoarse": [
+          "9",
+          "1"
+        ],
+        "LoopMatchMinimumResponseCoarse": [
+          "0.35",
+          "0.55"
+        ]
+      },
+      "metrics": {
+        "baseline": {
+          "samples": 845,
+          "median": 0.9793020616495586,
+          "p95": 1.0911272986851748,
+          "maximum": 1.143286142623723
+        },
+        "strict_loop": {
+          "samples": 845,
+          "median": 0.9793020616495586,
+          "p95": 1.0911272986851748,
+          "maximum": 1.143286142623723
+        }
+      },
+      "accepted_loops": {
+        "baseline": 0,
+        "strict_loop": 0
+      },
+      "native_online": {
+        "samples": 2947,
+        "median": 0.9859354573521615,
+        "p95": 1.072315072365988,
+        "maximum": 1.1428767016164305
+      },
+      "first_half_m_error": {
+        "stamp_sim_s": 26.36,
+        "error_m": 0.5163216523276146
+      },
+      "marker_graph_changes": [
+        {
+          "id": 54,
+          "original_error_m": 0.9752381978372974,
+          "finalized_error_m": 0.9747402428505434,
+          "shift_m": 0.0030612490110584895,
+          "error_change_m": -0.000497954986753979
+        }
+      ],
+      "evaluation": "/home/peter/simul/training_robust/native90/official_zigzag_slam_study_v1/case_05/evaluation.json",
+      "evaluation_sha256": "375cb628152c9aef9e8fb27fc72e2cfbf229719470059fefedb47595357f3161"
+    }
+  ],
+  "ground_truth_evaluator_only": true,
+  "strict_parameters_changed_since_C_U_study": false,
+  "production_promoted": false,
+  "captured_utc": "2026-11-14T22:15:56.463259+00:00",
+  "study_configuration": {
+    "source_sha256": {
+      "/home/peter/simul/training_robust/run_official_zigzag_slam_study.py": "34f99a12da9cb9ceb3dfc621628692833ccc9aad29acb2a4c3515927899f9c0f",
+      "/home/peter/simul/training_robust/run_official_slam_gate_study.py": "587832e87aa11d9c42b7ea1e952a492a7d58a60868ed475252ea608f1d448682",
+      "/home/peter/simul/training_robust/native90/fresh_failure_study_v1/slam_diagnostics_v4/replay_karto_component": "bf65d1b4bb8123088d03b9068015cd52369f34067c070d2849517689ab6dc23c",
+      "/home/peter/simul/training_robust/native90/fresh_failure_study_v1/budgeted_solver_v2/install/lib/libosp_solver_budget.so": "4cd5e4d4871529deab8e31ebecac32ea35c6973e8e61db4e28c8f9068f46f5d2",
+      "/home/peter/simul/training_robust/replay_karto_component.cpp": "623c463b39d51ded6112ee95a63a07621d92a67caa37e8255eb274d0a8c83e76",
+      "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline/episodes/1205020505/20261115_065137/map.data": "2bf084484465ecd2c8e8d954d97a47391ce56048b7a1c52c5f21f78d41415d19",
+      "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline/episodes/1205020505/20261115_065137/map.posegraph": "465c1f427d8fe985b53da3923b9570427742486806930d09ac25a0705245cd1a",
+      "/home/peter/simul/training_robust/native90/official_zigzag_slam_study_v1/case_04/configuration.json": "93ad87e13ea53d637c31229042c8b76a137d459cf6f17188259a8d5cd0aa99bd",
+      "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate/episodes/1205020505/20261115_065026/map.data": "40134d58c8d8d2c513662e77cbd65be4ffff16f05d3415d406050ac93d7ef804",
+      "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate/episodes/1205020505/20261115_065026/map.posegraph": "8726c317f543ad65e038043fceb806a0fae5e30dcb4e9f0eb1cc049598f4eea7",
+      "/home/peter/simul/training_robust/native90/official_zigzag_slam_study_v1/case_05/configuration.json": "84edeaa1714e3aaf016ec6409a287b1ee2545cfe0b35f5d814b2ba8efa933aa5"
+    },
+    "native_mission": false,
+    "ground_truth_input": false,
+    "maximum_simultaneous_components": 1,
+    "hardware_validated": false,
+    "production_promoted": false,
+    "previous_fixed_study": "/home/peter/simul/training_robust/native90/official_slam_gate_study_v1"
+  },
+  "scan_count": 1715,
+  "supervisor_checks_passed": 5,
+  "interpretation": "Strict loop gates rejected a useful loop in original zigzag baseline: median error worsened; original zigzag candidate unchanged. Not a universally improved setting.",
+  "combined_six_development_recordings": {
+    "improved": 1,
+    "worsened": 1,
+    "unchanged": 4,
+    "retained_scans": 5722
+  },
+  "queued_native_comparison_preserved": true
+}

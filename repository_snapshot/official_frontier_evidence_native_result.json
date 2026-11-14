@@ -1,0 +1,204 @@
+{
+  "captured_utc": "2026-11-14T22:15:56.463259+00:00",
+  "evidence_type": "Two completed native official TB4 v16 departure tests compared with preserved v13 development recordings",
+  "rows": [
+    {
+      "number": 0,
+      "profile": "sideways_small",
+      "original_escape": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": 29.172,
+        "actual_path_m": 10.575528201277592,
+        "maximum_exit_axis_progress_m": 2.911414060336739,
+        "required_progress_m": 2.5989999999999998,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "candidate_escape": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_frontier_evidence_screen_v1/jobs/00_sideways_small/episodes/1205000404",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": 29.988,
+        "actual_path_m": 13.487799572079508,
+        "maximum_exit_axis_progress_m": 5.2371485006560246,
+        "required_progress_m": 2.5989999999999998,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "candidate_outcome": {
+        "success": false,
+        "targets": 0,
+        "approached": 0,
+        "contacts": 0,
+        "seconds": 90.133,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      },
+      "candidate_input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "dock_map_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "original_returns": {
+        "first_full_exit_seconds": 29.172,
+        "full_body_corridor_reentries": 2,
+        "reentry_seconds": [
+          36.516,
+          88.332
+        ],
+        "final_exit_axis_progress_m": 2.2692985646514963,
+        "maximum_exit_axis_progress_m": 2.911414060336739,
+        "body_radius_plus_margin_m": 0.199,
+        "criterion": "Entire body exits rail end, then entirely enters original rail corridor",
+        "interpretation": "Geometric return count only; not a proof that a return was unnecessary",
+        "ground_truth_supplied_to_policy": false,
+        "source_sha256": {
+          "/home/peter/simul/training_robust/audit_departure_returns.py": "1b61dc826aca86e9f673e992f8d8204321f6e50a1c7f1834c2964031e0f5e231",
+          "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/ground_truth_trajectory.csv": "89715478c4f1824a7b2531833054fe0b9cfee68f5c188fd1c8bde66c6ff4ff8e",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000404.yaml": "55123d211e9bb2140c1f6d0c572846acc3ed995b93f7953e77d5a7fad5e0e731"
+        }
+      },
+      "candidate_returns": {
+        "first_full_exit_seconds": 29.988,
+        "full_body_corridor_reentries": 1,
+        "reentry_seconds": [
+          62.832
+        ],
+        "final_exit_axis_progress_m": 2.255520736035372,
+        "maximum_exit_axis_progress_m": 5.2371485006560246,
+        "body_radius_plus_margin_m": 0.199,
+        "criterion": "Entire body exits rail end, then entirely enters original rail corridor",
+        "interpretation": "Geometric return count only; not a proof that a return was unnecessary",
+        "ground_truth_supplied_to_policy": false,
+        "source_sha256": {
+          "/home/peter/simul/training_robust/audit_departure_returns.py": "1b61dc826aca86e9f673e992f8d8204321f6e50a1c7f1834c2964031e0f5e231",
+          "/home/peter/simul/training_robust/native90/official_frontier_evidence_screen_v1/jobs/00_sideways_small/episodes/1205000404/ground_truth_trajectory.csv": "b7cf61e408a50f7c2192a243f49f5ed370e3c4c8d33999be751876de7e164e6d",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000404.yaml": "55123d211e9bb2140c1f6d0c572846acc3ed995b93f7953e77d5a7fad5e0e731"
+        }
+      }
+    },
+    {
+      "number": 1,
+      "profile": "narrow",
+      "original_escape": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": 23.868000000000002,
+        "actual_path_m": 12.406136285367067,
+        "maximum_exit_axis_progress_m": 3.699466884401053,
+        "required_progress_m": 2.799,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "candidate_escape": {
+        "evidence_type": "Independent native trajectory audit; no data supplied to policy",
+        "episode": "/home/peter/simul/training_robust/native90/official_frontier_evidence_screen_v1/jobs/01_narrow/episodes/1205000000",
+        "completed": true,
+        "reason": "timeout",
+        "contacts": 0,
+        "targets": 0,
+        "full_task_success": false,
+        "observed_exit_seconds": 24.072,
+        "actual_path_m": 14.934072947324706,
+        "maximum_exit_axis_progress_m": 7.659882178247747,
+        "required_progress_m": 2.799,
+        "timing_origin": "first independent ground-truth sample, including undock",
+        "criterion": "body plus 1 cm fully beyond corridor rail end"
+      },
+      "candidate_outcome": {
+        "success": false,
+        "targets": 0,
+        "approached": 1,
+        "contacts": 0,
+        "seconds": 90.1,
+        "infrastructure_failure": false,
+        "reason": "timeout",
+        "start_screen_passed": true
+      },
+      "candidate_input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "dock_map_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "original_returns": {
+        "first_full_exit_seconds": 23.868000000000002,
+        "full_body_corridor_reentries": 0,
+        "reentry_seconds": [],
+        "final_exit_axis_progress_m": -0.5730756061724983,
+        "maximum_exit_axis_progress_m": 3.699466884401053,
+        "body_radius_plus_margin_m": 0.199,
+        "criterion": "Entire body exits rail end, then entirely enters original rail corridor",
+        "interpretation": "Geometric return count only; not a proof that a return was unnecessary",
+        "ground_truth_supplied_to_policy": false,
+        "source_sha256": {
+          "/home/peter/simul/training_robust/audit_departure_returns.py": "1b61dc826aca86e9f673e992f8d8204321f6e50a1c7f1834c2964031e0f5e231",
+          "/home/peter/simul/training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/ground_truth_trajectory.csv": "90f2cb8da961d9e76f5c34a05c0ef1a34dff376141a34c9b995dbe61b94c2387",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446"
+        }
+      },
+      "candidate_returns": {
+        "first_full_exit_seconds": 24.072,
+        "full_body_corridor_reentries": 1,
+        "reentry_seconds": [
+          37.74
+        ],
+        "final_exit_axis_progress_m": 7.659882178247747,
+        "maximum_exit_axis_progress_m": 7.659882178247747,
+        "body_radius_plus_margin_m": 0.199,
+        "criterion": "Entire body exits rail end, then entirely enters original rail corridor",
+        "interpretation": "Geometric return count only; not a proof that a return was unnecessary",
+        "ground_truth_supplied_to_policy": false,
+        "source_sha256": {
+          "/home/peter/simul/training_robust/audit_departure_returns.py": "1b61dc826aca86e9f673e992f8d8204321f6e50a1c7f1834c2964031e0f5e231",
+          "/home/peter/simul/training_robust/native90/official_frontier_evidence_screen_v1/jobs/01_narrow/episodes/1205000000/ground_truth_trajectory.csv": "df5a7c594bebeeae396b59077f98aceb85aa500add3b349bb95d989aa1ee47da",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446"
+        }
+      }
+    }
+  ],
+  "production_promoted": false,
+  "hardware_validated": false,
+  "full_task_qualification": false,
+  "return_audit_tests_passed": 4,
+  "limitations": [
+    "Both 90-second trials still confirmed zero IDs and failed the full task.",
+    "Return counts describe complete geometric corridor re-entry, not whether a return was necessary.",
+    "One run per source/scene does not establish general success or a causal effect size."
+  ],
+  "handoff": {
+    "status": "integrated_dispatcher_started",
+    "unit": "osp-official-integrated-comparison-v1.service",
+    "native_stop_requested": false,
+    "original_queued_jobs_preserved": true
+  }
+}

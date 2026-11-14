@@ -1,0 +1,188 @@
+{
+  "common_start_s": 528.748,
+  "common_end_s": 546.361,
+  "duration_s": 17.612999999999943,
+  "actual_path_m": 2.7952898116163807,
+  "actual_absolute_turn_rad": 7.395473282167854,
+  "estimators": {
+    "wheel": {
+      "position_error_m": {
+        "samples": 1092,
+        "median": 0.045489983008809354,
+        "p95": 0.05625076470717625,
+        "maximum": 0.062017510731479264
+      },
+      "heading_error_deg": {
+        "samples": 1092,
+        "median": 2.548088841049103,
+        "p95": 8.219257064039015,
+        "maximum": 10.076181796251786
+      },
+      "initial_alignment": [
+        3.988202640391509,
+        9.09868615808259,
+        7.36046241125919
+      ],
+      "final_position_error_m": 0.061985197224693776,
+      "final_heading_error_deg": 7.535950956801792
+    },
+    "ekf": {
+      "position_error_m": {
+        "samples": 1092,
+        "median": 0.1012885691337623,
+        "p95": 0.2853468762131432,
+        "maximum": 0.2906559225396459
+      },
+      "heading_error_deg": {
+        "samples": 1092,
+        "median": 0.14306512237932079,
+        "p95": 0.47044834008592556,
+        "maximum": 1.947112980432556
+      },
+      "initial_alignment": [
+        11.232208896478244,
+        2.570368712825797,
+        9.405407656301158
+      ],
+      "final_position_error_m": 0.28856528452576685,
+      "final_heading_error_deg": 0.2523118095791904
+    },
+    "pose_increment_gyro": {
+      "position_error_m": {
+        "samples": 1092,
+        "median": 0.002275448932747729,
+        "p95": 0.0033573011244487764,
+        "maximum": 0.004942911047555515
+      },
+      "heading_error_deg": {
+        "samples": 1092,
+        "median": 0.2130980755589849,
+        "p95": 0.5584424625200918,
+        "maximum": 2.2189980194412517
+      },
+      "initial_alignment": [
+        3.9894896135231086,
+        9.100118543382779,
+        7.360265308096164
+      ],
+      "final_position_error_m": 0.002249144236402309,
+      "final_heading_error_deg": 0.607502060193914
+    }
+  },
+  "evidence_type": "Offline full-rate recorded odometry/gyro integration; not native navigation",
+  "wheel_twist_pose_consistency": {
+    "scope": "Recorded wheel pose versus its reported twist over the full wheel interval; no truth",
+    "pose_forward_distance_m": 2.045096507608419,
+    "reported_twist_forward_integral_m": 2.2913873497233137,
+    "pose_signed_turn_rad": -2.2827761586407247,
+    "reported_twist_signed_turn_integral_rad": -2.5566333185363543,
+    "twist_integration_method": "Past-sample hold at acquisition timestamps; no fitted scale or offset"
+  },
+  "source_sha256": {
+    "/home/peter/simul/training_robust/audit_pose_increment_gyro.py": "9df29b1e3464cc6ac01a7a72321ebba9f0fb1ab1d5d768ea4967eee16b928a59",
+    "/home/peter/simul/training_robust/pose_increment_gyro.py": "c264f4512ab4df29f3aabb7e88a4ff0a62328c64b57a9c3e1389dedd75ea721d",
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/recording.json": "c2896ae41b585fa0f33ad3461a0220d3f0996ce2ee3eae87c9faf87ab2aa761a",
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/inputs.csv": "47813a61630d6e2e5e6b7972e05d5b5f774f739c60ecbf99cff6897c7916b7e6",
+    "/home/peter/simul/training_robust/native90/official_tb4_cem_v2/jobs/00001_train_g0_0/imu_shadow_v2/ground_truth_snapshot.csv": "8fffdd83417535e4f1f7cf83281f012718381b1e74354bc804d3d1bae5421a03"
+  },
+  "ground_truth_supplied_to_estimator": false,
+  "scale_fitted": false,
+  "absolute_imu_orientation_used": false,
+  "production_promoted": false,
+  "native_validated": false,
+  "hardware_validated": false,
+  "limitations": [
+    "One 17.6-second development segment, not a long-run or unseen-scenario qualification.",
+    "Only common initial alignment is used; error accumulated before this interval is excluded.",
+    "Requires planar motion and gyro expressed about the base vertical axis.",
+    "No gyro bias, covariance, relocalization or missing-stream runtime adapter has been validated."
+  ],
+  "captured_utc": "2026-11-14T22:15:56.463259+00:00",
+  "estimator_and_existing_audit_tests_passed": 15,
+  "capture_lifetime_tests_passed": 4,
+  "configuration_deployed": false,
+  "decision": "Sensor-only offline candidate; gather independent full-rate U-shape recordings before any localization change",
+  "ongoing_recorders": [
+    {
+      "job": 0,
+      "launch": {
+        "job": 0,
+        "episode": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303",
+        "domain": 230,
+        "native_pid": 2642378,
+        "native_process_start": "356439862",
+        "command": [
+          "/usr/bin/python3",
+          "/home/peter/simul/training_robust/record_odometry_inputs.py",
+          "--domain",
+          "230",
+          "--seconds",
+          "7200.0",
+          "--output",
+          "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_00/inputs.csv"
+        ],
+        "ground_truth_input": false,
+        "controls_robot": false,
+        "tf_published": false,
+        "benchmark_launched_or_restarted": false,
+        "sensor_scope": "Odometry pose/twist and IMU quaternion/yaw rate; absolute IMU orientation is not fused"
+      },
+      "progress_at_capture": {
+        "status": "recording",
+        "recorder_pid": 2645648,
+        "native_pid": 2642378,
+        "platform_checks": 134,
+        "wall_seconds": 266.1644315449521
+      },
+      "passivity_check": {
+        "observed_publishers": [
+          "/rosout"
+        ],
+        "passed": true,
+        "method": "Actual ROS graph endpoints of the passive recorder",
+        "commands_or_tf_allowed": false
+      }
+    },
+    {
+      "job": 1,
+      "launch": {
+        "job": 1,
+        "episode": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303",
+        "domain": 231,
+        "native_pid": 2642388,
+        "native_process_start": "356439869",
+        "command": [
+          "/usr/bin/python3",
+          "/home/peter/simul/training_robust/record_odometry_inputs.py",
+          "--domain",
+          "231",
+          "--seconds",
+          "7200.0",
+          "--output",
+          "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/odometry_inputs_job_01/inputs.csv"
+        ],
+        "ground_truth_input": false,
+        "controls_robot": false,
+        "tf_published": false,
+        "benchmark_launched_or_restarted": false,
+        "sensor_scope": "Odometry pose/twist and IMU quaternion/yaw rate; absolute IMU orientation is not fused"
+      },
+      "progress_at_capture": {
+        "status": "recording",
+        "recorder_pid": 2645484,
+        "native_pid": 2642388,
+        "platform_checks": 142,
+        "wall_seconds": 282.11408014781773
+      },
+      "passivity_check": {
+        "observed_publishers": [
+          "/parameter_events",
+          "/rosout"
+        ],
+        "passed": true,
+        "method": "Actual ROS graph endpoints of the passive recorder",
+        "commands_or_tf_allowed": false
+      }
+    }
+  ]
+}
