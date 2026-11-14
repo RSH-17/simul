@@ -1116,5 +1116,7 @@
     ],
     "policy_outputs": false,
     "hardware_validated": false
-  }
+  },
+  "official_face_proposal_candidate": "repository_snapshot/official_face_proposal_candidate.json",
+  "official_face_proposal_candidate_status": "offline_validated_native_unqueued"
 }

@@ -1,0 +1,760 @@
+{
+  "evidence_type": "Offline proposal allocation on fixed observed policy maps; not a new trajectory",
+  "baseline": "/home/peter/simul/training_robust/native90/official_tb4_v19/runtime",
+  "candidate": "/home/peter/simul/training_robust/native90/official_tb4_v22/runtime",
+  "source_sha256": {
+    "/home/peter/simul/training_robust/audit_face_proposals.py": "50627f9a2771824e237c6a09a3e1b4200f951f7a896a0772e91ff67c5000d762",
+    "/home/peter/simul/training_robust/native90/official_tb4_v19/runtime/src/osp_mission/osp_mission/edge_policy.py": "bf40e2aa8a4049db6b89f2a199878fa0474584603861369642b84d6e6b59d0e9",
+    "/home/peter/simul/training_robust/native90/official_tb4_v22/runtime/src/osp_mission/osp_mission/edge_policy.py": "7f3bd8ca8e5fc5d41490e8c216e505e1ffbd9cfca79fac974ba4fc83e386cafa",
+    "/home/peter/simul/training_robust/native90/official_tb4_v22/runtime/src/osp_mission/osp_mission/face_proposals.py": "aa2dc07e188165eac4dfaec035bea25f0f9de3965ea5d45a106ed661bf01a6e0",
+    "training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/exploration_memory.jsonl": "38e38a9abdf9c3f56dbb8800655d963bb3003c3434c818f0f5c027d180618eb0",
+    "training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/exploration_memory.jsonl": "a6c423a56775e5f33fb9fcc6b5459ed72c830a1cffb6b852efb9e5d1990949df",
+    "training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/exploration_memory.jsonl": "c5cf63d4ccad192f7022721101bfc03226009f394f339f6f31eabe784262c90f",
+    "training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/exploration_memory.jsonl": "001f0a592653c529c5975c315adb7e0b035df1d9a33fa6393dbb422d58db0cca",
+    "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/exploration_memory.jsonl": "423a4e4624dcaf1b8ea25eaf8f7595dae35ab04533e2b880252dcdf7c9f698a9",
+    "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/exploration_memory.jsonl": "4e72ace54194971448dd52467b43d5b03fec87a8f82d481d14e1ec2a18c6fad8"
+  },
+  "rows": [
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0013.npz",
+      "input_sha256": "262737d3a81b23d98ce3722a24e784f1325be3a3d469b8f13f92e7a894140255",
+      "elapsed_seconds": 257.979,
+      "selection": "midpoint",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 7908,
+            "feasible_faces": 3894,
+            "selected_faces": 48,
+            "selected_feasible_faces": 24
+          },
+          "raw_candidates": 143,
+          "directed_candidates": 47,
+          "readable_boundary_length_m": 41.650000620633364,
+          "directed_boundary_length_m": 15.825000235810876,
+          "wall_seconds_including_audit": 1.1168849561363459,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 7908,
+            "feasible_faces": 3894,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 189,
+          "directed_candidates": 93,
+          "readable_boundary_length_m": 53.62500079907477,
+          "directed_boundary_length_m": 33.20000049471855,
+          "wall_seconds_including_audit": 1.141374811064452,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 11.975000178441405,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0026.npz",
+      "input_sha256": "f0c01201be4197b7a5211d11108ad91c1d1e36c484a41b1baaa8d0f02870fa92",
+      "elapsed_seconds": 599.479,
+      "selection": "last",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 8049,
+            "feasible_faces": 4639,
+            "selected_faces": 48,
+            "selected_feasible_faces": 24
+          },
+          "raw_candidates": 129,
+          "directed_candidates": 47,
+          "readable_boundary_length_m": 47.22500070370734,
+          "directed_boundary_length_m": 19.30000028759241,
+          "wall_seconds_including_audit": 1.2836004891432822,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 8049,
+            "feasible_faces": 4639,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 176,
+          "directed_candidates": 94,
+          "readable_boundary_length_m": 60.10000089555979,
+          "directed_boundary_length_m": 37.65000056102872,
+          "wall_seconds_including_audit": 1.3102888893336058,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 12.87500019185245,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/policy_decisions/0017.npz",
+      "input_sha256": "1e60cc4d0ec595b2a5378c4701c1fbcde54208511a13754083d2f4a95a1abf76",
+      "elapsed_seconds": 380.134,
+      "selection": "midpoint",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 8549,
+            "feasible_faces": 4529,
+            "selected_faces": 48,
+            "selected_feasible_faces": 30
+          },
+          "raw_candidates": 151,
+          "directed_candidates": 58,
+          "readable_boundary_length_m": 52.35000078007579,
+          "directed_boundary_length_m": 23.75000035390258,
+          "wall_seconds_including_audit": 1.258004950825125,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 8549,
+            "feasible_faces": 4529,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 185,
+          "directed_candidates": 92,
+          "readable_boundary_length_m": 61.52500091679394,
+          "directed_boundary_length_m": 36.950000550597906,
+          "wall_seconds_including_audit": 1.2939432780258358,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 9.175000136718154,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/policy_decisions/0033.npz",
+      "input_sha256": "9597f9be74995012a279fdbc70a0d2d6a6a8e7d4638dc070f8f66db40fb7af90",
+      "elapsed_seconds": 599.634,
+      "selection": "last",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 11617,
+            "feasible_faces": 4432,
+            "selected_faces": 48,
+            "selected_feasible_faces": 21
+          },
+          "raw_candidates": 123,
+          "directed_candidates": 42,
+          "readable_boundary_length_m": 48.00000071525574,
+          "directed_boundary_length_m": 14.350000213831663,
+          "wall_seconds_including_audit": 1.2140143499709666,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 11617,
+            "feasible_faces": 4432,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 173,
+          "directed_candidates": 92,
+          "readable_boundary_length_m": 61.10000091046095,
+          "directed_boundary_length_m": 34.400000512599945,
+          "wall_seconds_including_audit": 1.3018334480002522,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 13.100000195205212,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/policy_decisions/0019.npz",
+      "input_sha256": "9a1d9c1a8d6312634873e054fd02facfb441810df025d3f66f2ed78b0bb702ce",
+      "elapsed_seconds": 228.239,
+      "selection": "midpoint",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.2724491599947214,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.27706754114478827,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/policy_decisions/0037.npz",
+      "input_sha256": "83fbcc235df5eca3bfd43ed550fb448bc28129c3aa76b064d1a18162aedd2031",
+      "elapsed_seconds": 595.239,
+      "selection": "last",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 15101,
+            "feasible_faces": 5623,
+            "selected_faces": 48,
+            "selected_feasible_faces": 13
+          },
+          "raw_candidates": 147,
+          "directed_candidates": 25,
+          "readable_boundary_length_m": 69.10000102967024,
+          "directed_boundary_length_m": 11.300000168383121,
+          "wall_seconds_including_audit": 1.6719828550703824,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 15101,
+            "feasible_faces": 5623,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 208,
+          "directed_candidates": 86,
+          "readable_boundary_length_m": 84.6500012613833,
+          "directed_boundary_length_m": 36.500000543892384,
+          "wall_seconds_including_audit": 1.629228281788528,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 15.550000231713057,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/policy_decisions/0018.npz",
+      "input_sha256": "19eb7f1a02ec0c7e3cc4a9b9925cde6b410a8b635994c2f3dd31f8116f18a500",
+      "elapsed_seconds": 284.451,
+      "selection": "midpoint",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 6689,
+            "feasible_faces": 4316,
+            "selected_faces": 48,
+            "selected_feasible_faces": 39
+          },
+          "raw_candidates": 175,
+          "directed_candidates": 75,
+          "readable_boundary_length_m": 65.82500098086894,
+          "directed_boundary_length_m": 29.500000439584255,
+          "wall_seconds_including_audit": 1.0956057761795819,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 6689,
+            "feasible_faces": 4316,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 191,
+          "directed_candidates": 91,
+          "readable_boundary_length_m": 69.6750010382384,
+          "directed_boundary_length_m": 37.27500055544078,
+          "wall_seconds_including_audit": 1.1045322348363698,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 3.8500000573694706,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/policy_decisions/0036.npz",
+      "input_sha256": "783dd45a63363c68d0b2ccf0b1784c0e8f1382a01423fa93834004d99ee69cb9",
+      "elapsed_seconds": 565.951,
+      "selection": "last",
+      "arms": {
+        "uniform": {
+          "allocation": {
+            "unseen_faces": 8914,
+            "feasible_faces": 5863,
+            "selected_faces": 48,
+            "selected_feasible_faces": 37
+          },
+          "raw_candidates": 186,
+          "directed_candidates": 70,
+          "readable_boundary_length_m": 81.10000120848417,
+          "directed_boundary_length_m": 27.975000416859984,
+          "wall_seconds_including_audit": 1.5805679732002318,
+          "all_transit": false
+        },
+        "feasible_spread": {
+          "allocation": {
+            "unseen_faces": 8914,
+            "feasible_faces": 5863,
+            "selected_faces": 48,
+            "selected_feasible_faces": 48
+          },
+          "raw_candidates": 207,
+          "directed_candidates": 91,
+          "readable_boundary_length_m": 87.70000130683184,
+          "directed_boundary_length_m": 37.07500055246055,
+          "wall_seconds_including_audit": 1.6036642650142312,
+          "all_transit": false
+        }
+      },
+      "new_readable_boundary_m": 6.600000098347664,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": false,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0000.npz",
+      "input_sha256": "8d8236aad24aa6d0bba72a81e3d4bc85043866f17a677e78d4cdd23c200ec41c",
+      "elapsed_seconds": 12.907,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.029184017796069384,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.031845102086663246,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0001.npz",
+      "input_sha256": "e41c71d8de9bd81716fbb7c88262cede12acb2d7b72aacb63008dd80c4aed762",
+      "elapsed_seconds": 17.407,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.02984318183735013,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.03347542602568865,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0002.npz",
+      "input_sha256": "975ca17901d8a9185db5b4d9d1380667b3c285d09ddcfd45309539f6059baec2",
+      "elapsed_seconds": 19.907,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.036220393143594265,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.03559229290112853,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0003.npz",
+      "input_sha256": "e6c0ec111e04b98fc969886ceff603f7e1f3aba66176184fd546fcc51c99c8d9",
+      "elapsed_seconds": 22.407,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.0427322662435472,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.03953786799684167,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0004.npz",
+      "input_sha256": "e9eab736846f6609790ed6bbd0b476b940bb1bd4a7eb65603fa2460507fd2748",
+      "elapsed_seconds": 24.907,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 5,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.05004315171390772,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 5,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.05224435916170478,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/00_sideways_small/episodes/1205000404/policy_decisions/0005.npz",
+      "input_sha256": "7437d2d7a42c9e4867a88fd1f6c9d562c94868d942dc118c470c17890b0981b6",
+      "elapsed_seconds": 27.407,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 7,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.07782691018655896,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 7,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.07110601710155606,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0000.npz",
+      "input_sha256": "a153c3251124df86bdecacf26afe55f4b5d5915f92fc0c025bd67cfe4cc104df",
+      "elapsed_seconds": 10.998999999999999,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.0046254717744886875,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.0046002063900232315,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0001.npz",
+      "input_sha256": "23fd57559be97865db448cebfda7ea9b6e89e4308acfd5f2a7a2ef57b67adb5e",
+      "elapsed_seconds": 13.501999999999999,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.004756051115691662,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.004925731103867292,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0002.npz",
+      "input_sha256": "00308db34114ce5f8595c9b7c69f22d003edfc64766dd099eef82b7405c36d74",
+      "elapsed_seconds": 15.998999999999999,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.010891975834965706,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 1,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.01110983220860362,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0003.npz",
+      "input_sha256": "070becfab882063b166dfeaef7c9b5b4acc681b7fb728992cebff910726b4d72",
+      "elapsed_seconds": 18.499,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 3,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.016301020979881287,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 3,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.015442702919244766,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0004.npz",
+      "input_sha256": "611334b0525f0ca6b777aa124639d1876283ffa4861a367672a88f8fcd282e93",
+      "elapsed_seconds": 20.999,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 3,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.024215191137045622,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 3,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.025007029063999653,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0005.npz",
+      "input_sha256": "40461d2063970f94bdd7fc3e0eae734c46d38905acc4f30412f3c8c4ee5c0873",
+      "elapsed_seconds": 23.499,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 6,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.03027273202314973,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 6,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.030160837806761265,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    },
+    {
+      "input": "training_robust/native90/official_pocket_screen_v1/jobs/01_narrow/episodes/1205000000/policy_decisions/0006.npz",
+      "input_sha256": "48bcae4adcc9e484b2af5e360e223db504487d36732a47bf4d822d6a6d0123a2",
+      "elapsed_seconds": 25.999,
+      "selection": "early_departure",
+      "arms": {
+        "uniform": {
+          "allocation": {},
+          "raw_candidates": 11,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.06664723297581077,
+          "all_transit": true
+        },
+        "feasible_spread": {
+          "allocation": {},
+          "raw_candidates": 11,
+          "directed_candidates": 0,
+          "readable_boundary_length_m": 0.0,
+          "directed_boundary_length_m": 0.0,
+          "wall_seconds_including_audit": 0.07085977913811803,
+          "all_transit": true
+        }
+      },
+      "new_readable_boundary_m": 0.0,
+      "lost_readable_boundary_m": 0.0,
+      "raw_candidates_identical": true,
+      "raw_parent_candidates_preserved": true
+    }
+  ],
+  "parent_source_reproduction_checked": true,
+  "ground_truth_used": false,
+  "weights_retrained": false,
+  "native_validated": false,
+  "production_promoted": false,
+  "limitations": [
+    "Midpoint and last maps are selected diagnostics, not representative success statistics.",
+    "No memory filtering, deadline ranking, safe arrival, camera feedback or later SLAM updates are rolled out.",
+    "Readable boundary length is geometric proposal coverage, not correctly detected marker IDs.",
+    "Timing includes additional audit work and host contention; it is not runtime performance."
+  ],
+  "candidate_id": "2026-11-15_official_tb4_v19",
+  "status": "offline_validated_native_unqueued",
+  "runtime_tests_passed": 491,
+  "native_queued": false,
+  "production_source_changes": [
+    "osp_mission/edge_policy.py",
+    "osp_mission/face_proposals.py"
+  ],
+  "clearance_margins_changed": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "policy_weights_unchanged": true,
+  "summary": {
+    "observed_maps": 8,
+    "normal_inspection_maps": 7,
+    "transit_map_unchanged": 1,
+    "early_departure_decisions": 13,
+    "early_departure_identical": 13,
+    "all_parent_candidate_sets_preserved": 21,
+    "parent_feasible_proposals_range": [
+      13,
+      39
+    ],
+    "candidate_feasible_proposals_per_map": 48,
+    "added_readable_boundary_range_m": [
+      3.8500000573694706,
+      15.550000231713057
+    ],
+    "lost_readable_boundary_m": 0
+  }
+}

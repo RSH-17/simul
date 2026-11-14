@@ -1,0 +1,24 @@
+{
+  "candidate_id": "2026-11-15_official_tb4_v19",
+  "parent_candidate": "2026-11-15_official_tb4_v17",
+  "status": "offline_validated_native_unqueued",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "native_queued": false,
+  "official_robot_files_modified": false,
+  "odometry_changed": false,
+  "weights_retrained": false,
+  "ground_truth_inputs": false,
+  "clearance_margins_changed": false,
+  "loop_parameters_changed": false,
+  "source_branch_reason": "Preserve useful legacy face proposals in original order; fill wasted slots within the existing 48-face budget using observed reachability, free-space sightlines and spatial diversity.",
+  "overlay_files": {
+    "osp_mission/edge_policy.py": "7f3bd8ca8e5fc5d41490e8c216e505e1ffbd9cfca79fac974ba4fc83e386cafa",
+    "osp_mission/face_proposals.py": "aa2dc07e188165eac4dfaec035bea25f0f9de3965ea5d45a106ed661bf01a6e0",
+    "test/test_face_proposals.py": "fe3014f20e78f2e3160f02ede00bda11c38eb8a20b56ccaff0120054b0c324af"
+  },
+  "build_script_sha256": "b64570c1b46b7ee606151a518d21e3fa566e29750b600ab42bb7f82a848b9c57",
+  "runtime_tests_passed": 491,
+  "validated_workspace": "training_robust/native90/official_tb4_v22/runtime"
+}
