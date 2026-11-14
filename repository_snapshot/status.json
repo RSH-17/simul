@@ -531,45 +531,24 @@
   "latest_observed_repository_visibility": "PUBLIC",
   "robot_transfer_progress": "repository_snapshot/robot_transfer_progress.json",
   "robot_transfer_training_observation": {
-    "campaign": "official_frontier_comparison_v1",
-    "status": "held_for_pocket_screen",
-    "coordinator_active": false,
-    "scope": "Three shapes, paired fixed weights, complete hidden-marker task",
+    "campaign": "official_frontier_evidence_screen_v1",
+    "status": "running",
+    "coordinator_active": true,
+    "scope": "Same 90-second pocket trials; frontier evidence source only",
     "generation": 0,
-    "phase": "development",
-    "recorded_completed": 4,
-    "valid_completed": 4,
+    "phase": "diagnostic",
+    "recorded_completed": 0,
+    "valid_completed": 0,
     "successes": 0,
     "infrastructure_failures": 0,
-    "by_phase_role_profile_shape": {
-      "development/baseline/official_nominal/c_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/candidate/official_nominal/c_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/baseline/official_nominal/u_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/candidate/official_nominal/u_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      }
-    },
+    "by_phase_role_profile_shape": {},
     "active": [
       {
-        "number": 4,
-        "unit": "osp-official-frontier-v1-04.service",
+        "number": 0,
+        "unit": "osp-official-frontier-evidence-v1-00.service",
         "service_active": true,
-        "main_pid": 2574274,
-        "shape": "zigzag",
+        "main_pid": 2622131,
+        "shape": "c_shape",
         "profile": "official_nominal",
         "gates": {
           "runtime_configuration_gate": true,
@@ -579,38 +558,30 @@
           "drive_path_gate": true,
           "official_description_gate": true,
           "slam_transport_gate": true,
-          "navigation_grid_gate": true
+          "navigation_grid_gate": true,
+          "dock_map_gate": true
         },
         "live": {
           "state": "running",
-          "targets": 1,
+          "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 493.714,
+          "elapsed_seconds": 23.634,
           "readiness_reason": ""
         }
       },
       {
-        "number": 5,
-        "unit": "osp-official-frontier-v1-05.service",
+        "number": 1,
+        "unit": "osp-official-frontier-evidence-v1-01.service",
         "service_active": true,
-        "main_pid": 2574284,
-        "shape": "zigzag",
+        "main_pid": 2624213,
+        "shape": "c_shape",
         "profile": "official_nominal",
-        "gates": {
-          "runtime_configuration_gate": true,
-          "velocity_profile_gate": true,
-          "scan_adapter_gate": true,
-          "floor_sensor_gate": true,
-          "drive_path_gate": true,
-          "official_description_gate": true,
-          "slam_transport_gate": true,
-          "navigation_grid_gate": true
-        },
+        "gates": {},
         "live": {
           "state": "running",
-          "targets": 1,
+          "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 503.215,
+          "elapsed_seconds": 6.6,
           "readiness_reason": ""
         }
       }
@@ -621,7 +592,7 @@
     "campaign_selection": {
       "reason": "live_native_process",
       "live_native_campaigns": [
-        "official_frontier_comparison_v1"
+        "official_frontier_evidence_screen_v1"
       ],
       "unavailable": [],
       "policy": "Explicit allowlist; live native MainPID first; keep campaign results separate"
@@ -646,7 +617,7 @@
       },
       {
         "campaign": "official_frontier_evidence_screen_v1",
-        "status": "waiting_for_native_slots",
+        "status": "running",
         "coordinator_active": true,
         "scope": "Same 90-second pocket trials; frontier evidence source only",
         "generation": 0,
@@ -656,7 +627,50 @@
         "successes": 0,
         "infrastructure_failures": 0,
         "by_phase_role_profile_shape": {},
-        "active": [],
+        "active": [
+          {
+            "number": 0,
+            "unit": "osp-official-frontier-evidence-v1-00.service",
+            "service_active": true,
+            "main_pid": 2622131,
+            "shape": "c_shape",
+            "profile": "official_nominal",
+            "gates": {
+              "runtime_configuration_gate": true,
+              "velocity_profile_gate": true,
+              "scan_adapter_gate": true,
+              "floor_sensor_gate": true,
+              "drive_path_gate": true,
+              "official_description_gate": true,
+              "slam_transport_gate": true,
+              "navigation_grid_gate": true,
+              "dock_map_gate": true
+            },
+            "live": {
+              "state": "running",
+              "targets": 0,
+              "collisions": 0,
+              "elapsed_seconds": 23.634,
+              "readiness_reason": ""
+            }
+          },
+          {
+            "number": 1,
+            "unit": "osp-official-frontier-evidence-v1-01.service",
+            "service_active": true,
+            "main_pid": 2624213,
+            "shape": "c_shape",
+            "profile": "official_nominal",
+            "gates": {},
+            "live": {
+              "state": "running",
+              "targets": 0,
+              "collisions": 0,
+              "elapsed_seconds": 6.6,
+              "readiness_reason": ""
+            }
+          }
+        ],
         "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
         "production_promoted": false,
         "hardware_validated": false
@@ -691,8 +705,8 @@
         "scope": "Three shapes, paired fixed weights, complete hidden-marker task",
         "generation": 0,
         "phase": "development",
-        "recorded_completed": 4,
-        "valid_completed": 4,
+        "recorded_completed": 6,
+        "valid_completed": 6,
         "successes": 0,
         "infrastructure_failures": 0,
         "by_phase_role_profile_shape": {
@@ -715,66 +729,25 @@
             "completed": 1,
             "successes": 0,
             "contacts": 0
+          },
+          "development/baseline/official_nominal/zigzag": {
+            "completed": 1,
+            "successes": 0,
+            "contacts": 0
+          },
+          "development/candidate/official_nominal/zigzag": {
+            "completed": 1,
+            "successes": 0,
+            "contacts": 0
           }
         },
-        "active": [
-          {
-            "number": 4,
-            "unit": "osp-official-frontier-v1-04.service",
-            "service_active": true,
-            "main_pid": 2574274,
-            "shape": "zigzag",
-            "profile": "official_nominal",
-            "gates": {
-              "runtime_configuration_gate": true,
-              "velocity_profile_gate": true,
-              "scan_adapter_gate": true,
-              "floor_sensor_gate": true,
-              "drive_path_gate": true,
-              "official_description_gate": true,
-              "slam_transport_gate": true,
-              "navigation_grid_gate": true
-            },
-            "live": {
-              "state": "running",
-              "targets": 1,
-              "collisions": 0,
-              "elapsed_seconds": 493.714,
-              "readiness_reason": ""
-            }
-          },
-          {
-            "number": 5,
-            "unit": "osp-official-frontier-v1-05.service",
-            "service_active": true,
-            "main_pid": 2574284,
-            "shape": "zigzag",
-            "profile": "official_nominal",
-            "gates": {
-              "runtime_configuration_gate": true,
-              "velocity_profile_gate": true,
-              "scan_adapter_gate": true,
-              "floor_sensor_gate": true,
-              "drive_path_gate": true,
-              "official_description_gate": true,
-              "slam_transport_gate": true,
-              "navigation_grid_gate": true
-            },
-            "live": {
-              "state": "running",
-              "targets": 1,
-              "collisions": 0,
-              "elapsed_seconds": 503.215,
-              "readiness_reason": ""
-            }
-          }
-        ],
+        "active": [],
         "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
         "production_promoted": false,
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-14T21:39:37.775114+00:00",
+    "captured_utc": "2026-11-14T21:53:55.852586+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
@@ -793,7 +766,7 @@
       "official_local_grid_matrix_v1"
     ],
     "selection": "Actual native service MainPID first, then live coordinator, then original campaign fallback; retain separate campaign scopes and results",
-    "selection_checks_passed": 9
+    "selection_checks_passed": 10
   },
   "user_robot_profile": {
     "user_confirmed_model_family": "TurtleBot4",
@@ -807,7 +780,7 @@
   "tb4_platform_hardware_validated": false,
   "tb4_platform_native_screen_passed": true,
   "tb4_platform_full_task_validated": false,
-  "active_tb4_campaign": "official_frontier_comparison_v1",
+  "active_tb4_campaign": "official_frontier_evidence_screen_v1",
   "tb4_early_odometry_audit": "repository_snapshot/tb4_early_odometry_audit.json",
   "tb4_long_run_localization_reliable": false,
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
@@ -1118,5 +1091,15 @@
     "hardware_validated": false
   },
   "official_face_proposal_candidate": "repository_snapshot/official_face_proposal_candidate.json",
-  "official_face_proposal_candidate_status": "offline_validated_native_unqueued"
+  "official_face_proposal_candidate_status": "offline_validated_native_unqueued",
+  "official_zigzag_pair_result": "repository_snapshot/official_zigzag_pair_result.json",
+  "official_frontier_original_campaign_result": {
+    "completed": 6,
+    "strict_successes": 0,
+    "contacts": 0,
+    "infrastructure_failures": 0
+  },
+  "active_tb4_campaigns": [
+    "official_frontier_evidence_screen_v1"
+  ]
 }

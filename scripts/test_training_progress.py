@@ -111,6 +111,20 @@ def test_no_process_uses_fallback_and_reports_unavailable_followup(tmp_path,monk
     assert report['campaign_selection']['unavailable']==[dict(campaign='missing',error='FileNotFoundError')]
 
 
+def test_status_campaign_alias_tracks_the_actual_handoff(tmp_path,monkeypatch):
+    (tmp_path/'repository_snapshot').mkdir();(tmp_path/'README.md').write_text('Original\n')
+    status=tmp_path/'repository_snapshot/status.json';status.write_text('{"active_tb4_campaign":"official_old"}')
+    old=make_campaign(tmp_path,'official_old',[running_job(tmp_path,'old-native.service')])
+    new=make_campaign(tmp_path,'official_new',[running_job(tmp_path,'new-native.service')])
+    monkeypatch.setattr(publisher,'service_status',lambda unit:dict(service_active=unit=='new-native.service',main_pid=42))
+    publisher.snapshot(tmp_path,tmp_path,old,[new])
+    assert json.loads(status.read_text())['active_tb4_campaign']=='official_new'
+    monkeypatch.setattr(publisher,'service_status',lambda unit:dict(service_active=False,main_pid=0))
+    publisher.snapshot(tmp_path,tmp_path,old,[new])
+    assert json.loads(status.read_text())['active_tb4_campaign'] is None
+    assert json.loads(status.read_text())['active_tb4_campaigns']==[]
+
+
 @pytest.mark.parametrize('fields,expected',[
     ('ActiveState=active\nMainPID=0\n',False),
     ('ActiveState=inactive\nMainPID={pid}\n',False),

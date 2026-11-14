@@ -130,6 +130,11 @@ def snapshot(source, checkout, campaign, follow_campaigns=()):
     status=json.loads(status_path.read_text())
     status['robot_transfer_progress']='repository_snapshot/robot_transfer_progress.json'
     status['robot_transfer_training_observation']=summary
+    official=[s for s in summary.get('followed_campaigns',[summary]) if s['campaign'].startswith('official_')]
+    if official:
+        live=[s['campaign'] for s in official if any(j['service_active'] for j in s['active'])]
+        status['active_tb4_campaigns']=live
+        status['active_tb4_campaign']=live[0] if live else None
     status_path.write_text(json.dumps(status,indent=2)+'\n')
     readme=checkout/'README.md';text=readme.read_text()
     block='\n'.join([START,'',

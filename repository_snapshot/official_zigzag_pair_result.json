@@ -1,0 +1,340 @@
+{
+  "captured_utc": "2026-11-14T21:53:55.662093+00:00",
+  "evidence_type": "Two completed original official Gazebo runs, same zigzag development scene with 20 obstacles; fixed weights; not the integrated or v19 candidates",
+  "rows": [
+    {
+      "number": 4,
+      "role": "baseline",
+      "workspace": "/home/peter/simul/training_robust/native90/official_tb4_v10/runtime",
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.2,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "54": 0.035827748084411463
+        },
+        "expected_ids": [
+          54,
+          216,
+          259
+        ],
+        "found_ids": [
+          54
+        ],
+        "closest_approach_m": {
+          "259": 0.7422494223466981,
+          "54": 0.572201351722092,
+          "216": 0.4551014404504993
+        },
+        "approached_within_1_5m": 3,
+        "approach_radius_m": 1.5,
+        "all_approached": true,
+        "approached_within_2m": 3,
+        "world_to_map": [
+          1.4525919241349197,
+          1.795341403800384,
+          -3.0368244421976276
+        ],
+        "trajectory_samples": 2948
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.2710674688766479,
+            "p95": 1.0012476269125972,
+            "maximum": 1.0267690761175488
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 0.5833541703788484,
+            "p95": 2.0511700390577805,
+            "maximum": 3.299642962986319
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 4.069996898168327,
+            "p95": 6.8003358952605995,
+            "maximum": 6.835102876447745
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 11.388725629294678,
+            "p95": 71.29569082276697,
+            "maximum": 93.49901461159288
+          }
+        }
+      },
+      "saved_artifacts": {
+        "map.pgm": true,
+        "map.yaml": true,
+        "map.posegraph": true,
+        "map.data": true,
+        "markers.csv": true
+      },
+      "serialization_result": 0,
+      "camera_diagnostics": {
+        "received": 18252,
+        "late": 2,
+        "invalid_calibration": 0,
+        "duplicate": 0,
+        "accepted": 18250,
+        "coverage_updates": 12250,
+        "tf_waits": 6399
+      },
+      "detector": {
+        "frames": 18252,
+        "decoded": {
+          "54": 250
+        },
+        "small": 78,
+        "border": 0,
+        "no_range": 1,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 26,
+        "errors": 105,
+        "last_error": "Lookup would require extrapolation into the future.  Requested time 259.578000 but the latest data is at time 259.575000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          54
+        ],
+        "by_id": {
+          "54": {
+            "last_min_edge_pixels": 36.0,
+            "last_stamp": 259.578,
+            "small": 78,
+            "no_range": 1,
+            "accepted": 26
+          }
+        },
+        "confirmations": {
+          "54": 26
+        }
+      },
+      "observations": {
+        "face_directed_look": {
+          "version": 1,
+          "frame": "odom",
+          "maximum_turn_rad": 2.0943951023931953,
+          "executed": 2,
+          "unavailable": 0,
+          "creates_coverage_or_recognition_credit": false,
+          "assumption": "Existing robot camera optical heading is aligned with body heading"
+        },
+        "marker_directed_look": {
+          "version": 1,
+          "target_frame": "odom",
+          "camera_axis": "optical_z",
+          "maximum_turn_rad": 3.141592653589793,
+          "selected": 1,
+          "executed": 1,
+          "unavailable": 0,
+          "creates_recognition_or_approach_credit": false,
+          "ground_truth_inputs": false
+        }
+      },
+      "complete_visual_sources": true,
+      "video": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline/episodes/1205020505/video/mission.mp4"
+    },
+    {
+      "number": 5,
+      "role": "candidate",
+      "workspace": "/home/peter/simul/training_robust/native90/official_tb4_v11/runtime",
+      "outcome": {
+        "success": false,
+        "targets": 1,
+        "approached": 3,
+        "contacts": 0,
+        "seconds": 600.215,
+        "infrastructure_failure": false,
+        "reason": "timeout"
+      },
+      "input_gates": {
+        "runtime_configuration_gate": true,
+        "velocity_profile_gate": true,
+        "scan_adapter_gate": true,
+        "floor_sensor_gate": true,
+        "drive_path_gate": true,
+        "official_description_gate": true,
+        "slam_transport_gate": true,
+        "navigation_grid_gate": true,
+        "candidate_output_profiles_gate": true
+      },
+      "truth_audit": {
+        "available": true,
+        "correct_ids": false,
+        "correct_positions": false,
+        "position_tolerance_m": 0.5,
+        "position_errors_m": {
+          "54": 0.9747402428505435
+        },
+        "expected_ids": [
+          54,
+          216,
+          259
+        ],
+        "found_ids": [
+          54
+        ],
+        "closest_approach_m": {
+          "259": 1.1516810483536615,
+          "54": 0.5946584517924917,
+          "216": 0.9721083976491209
+        },
+        "approached_within_1_5m": 3,
+        "approach_radius_m": 1.5,
+        "all_approached": true,
+        "approached_within_2m": 3,
+        "world_to_map": [
+          1.4535516634287717,
+          1.7951411146374316,
+          -3.0369998591220733
+        ],
+        "trajectory_samples": 2948
+      },
+      "pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.9859354573521615,
+            "p95": 1.072315072365988,
+            "maximum": 1.1428767016164305
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 1.4170254605510664,
+            "p95": 2.1031724760782993,
+            "maximum": 4.262191467474392
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 2.650222853409316,
+            "p95": 4.389573805766837,
+            "maximum": 4.5093984871587045
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 12.895376832246887,
+            "p95": 168.82809253754706,
+            "maximum": 179.8479924638945
+          }
+        }
+      },
+      "saved_artifacts": {
+        "map.pgm": true,
+        "map.yaml": true,
+        "map.posegraph": true,
+        "map.data": true,
+        "markers.csv": true
+      },
+      "serialization_result": 0,
+      "camera_diagnostics": {
+        "received": 18256,
+        "late": 0,
+        "invalid_calibration": 0,
+        "duplicate": 0,
+        "accepted": 18256,
+        "coverage_updates": 12047,
+        "tf_waits": 6620
+      },
+      "detector": {
+        "frames": 18256,
+        "decoded": {
+          "54": 247
+        },
+        "small": 122,
+        "border": 0,
+        "no_range": 4,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 20,
+        "errors": 105,
+        "last_error": "Lookup would require extrapolation into the future.  Requested time 207.669000 but the latest data is at time 207.667000, when looking up transform from frame [oakd_rgb_camera_optical_frame] to frame [map]",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          54
+        ],
+        "by_id": {
+          "54": {
+            "last_min_edge_pixels": 29.0,
+            "last_stamp": 207.669,
+            "small": 122,
+            "no_range": 4,
+            "accepted": 20
+          }
+        },
+        "confirmations": {
+          "54": 20
+        }
+      },
+      "observations": {
+        "face_directed_look": {
+          "version": 1,
+          "frame": "odom",
+          "maximum_turn_rad": 2.0943951023931953,
+          "executed": 0,
+          "unavailable": 0,
+          "creates_coverage_or_recognition_credit": false,
+          "assumption": "Existing robot camera optical heading is aligned with body heading"
+        },
+        "marker_directed_look": {
+          "version": 1,
+          "target_frame": "odom",
+          "camera_axis": "optical_z",
+          "maximum_turn_rad": 3.141592653589793,
+          "selected": 1,
+          "executed": 1,
+          "unavailable": 0,
+          "creates_recognition_or_approach_credit": false,
+          "ground_truth_inputs": false
+        }
+      },
+      "complete_visual_sources": true,
+      "video": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate/episodes/1205020505/video/mission.mp4"
+    }
+  ],
+  "source_sha256": {
+    "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline/episodes/1205020505/evaluation.json": "af38b2cdf286f8da465e8a2f4376391cecffbf18b4d6c9e4c7a7ae178662c1d9",
+    "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate/episodes/1205020505/evaluation.json": "79850d5330d720fec8e8f914400fb23992770432864ce616d6a6d2f630a21e55"
+  },
+  "all_original_six": {
+    "completed": 6,
+    "strict_successes": 0,
+    "contacts": 0,
+    "infrastructure_failures": 0
+  },
+  "ground_truth_evaluator_only": true,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "limitations": [
+    "Each source ran once per shape; these are development comparisons, not holdout success rates.",
+    "Actual proximity does not establish readable viewing direction or correct identification.",
+    "The newer v16/v17/v18/v19 changes were not active in these completed runs."
+  ]
+}

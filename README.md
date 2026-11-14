@@ -1,5 +1,7 @@
 # OSP Final Project — ROS 2 Jazzy
 
+**2026-11-15 기존 v8/v9 지그재그 비교 종료:** 두 공식 TurtleBot4 회차 모두 **600초 시간 초과·ID 1/3·실제 1.5m 접근 3/3·접촉 0회**입니다. 확인한 ID54의 최종 지도 오차는 기준 **0.036m**, 탐색 후보 **0.975m**였습니다. 입력 검사를 통과했고 PGM/YAML/pose graph 저장도 완료했지만 전체 과제에는 실패했습니다. 기존 ㄷ/U/zigzag **6회 중 엄격한 완주 0회**이며, 새 통합 후보의 결과와 구분합니다. 두 실행 자리는 v16 출발 회귀로 전환됐고, 통과한 뒤 v17/v18의 600초 비교를 실행하도록 유지합니다. [원본 결과·독립 위치 평가·검증 범위](repository_snapshot/official_zigzag_pair_result.json).
+
 **2026-11-15 장애물 관찰 후보 누락 보완·v19 오프라인 검사:** 관찰할 표면 48개를 먼저 뽑고 접근 가능 여부를 검사하던 방식에서, 쓸 수 있는 기존 후보를 보존하고 빈자리만 접근·시야 조건을 만족하는 표면으로 채웁니다. **491개 런타임 검사 통과**. 저장 지도 8개 중 일반 관찰 7개에서 유효 표면 후보가 **13–39개→48개**, 기하상 관찰 가능한 경계가 **3.85–15.55m 증가**했고 기존 경계 손실은 없었습니다. 초기 출발 결정 13개와 진행 지도 1개는 동일하며 전체 21개 입력에서 기존 후보를 보존했습니다. **새 주행·ID 인식·완주 성공 결과가 아니며 native 예약·승격하지 않았습니다.** 기존 v16 출발 및 v17/v18 전체 과제 시험을 보존합니다. [변경·입력 해시·한계](repository_snapshot/official_face_proposal_candidate.json).
 
 **2026-11-15 루프 검사 비교 완료·통합 600초 시험 연결:** 공식 ㄷ/U형 저장 기록 네 개의 **4,007 스캔**을 같은 입력으로 비교했습니다. 엄격한 루프 검사는 문제 U형의 최대 위치 오차를 **1.592m→0.148m**로 줄였고, 다른 세 기록은 동일했습니다. 다른 장면의 루프 폐쇄 4개는 유지했지만 ㄷ자 최대 오차 **0.607m/0.823m**는 남아 있습니다. 이 결과는 오프라인 SLAM 비교입니다. [완료 기록](repository_snapshot/official_slam_loop_diagnosis.json).
@@ -90,7 +92,7 @@
 
 **이전 2026-11-14 실물 대응 후보:** 열린 길 오판·동일 경로 반복에 대응하는 [새 후보와 재현 방법](policy_candidates/2026-11-14_robot_transfer_v1)을 별도 준비했습니다. 시작점 연결·방문/실패 기억·실물 실행 기본값을 수정하고, ㄷ/U/zigzag에서 합성 LiDAR 잡음·지연·누락과 encoder 오차를 넣어 native 학습을 진행했습니다. 새 플랫폼으로 전환하며 원래 실험을 보존합니다. 새 후보357개, 동일 입력의 비교 기준348개 테스트를 통과했습니다. 사용자 실물은 **TurtleBot4**로 확인됐습니다. 시뮬레이션은 원래 과제의 Standard 모델을 유지하며, 실제 센서 설정·로그는 아직 확인하지 못했습니다. 실제 로봇 성공 여부와 개선 폭은 아직 검증하지 않았습니다. [변경·이전 학습 분석](repository_snapshot/robot_transfer_candidate.json).
 
-GitHub 진행 기록·완성 영상 게시용 로컬 `osp-training-progress.timer`를 **30분 간격**으로 활성화했고, 첫 자동 커밋·푸시까지 확인했습니다. 별도 checkout에서 요약 파일만 반영하며 호스트의 사용자 서비스가 실행되는 동안 동작합니다. **2026-11-15 게시 대상 수정:** 기존 비교·v16 출발·통합 비교·기존 조건 행렬 중 실제 native 서비스 PID가 살아 있는 시험을 우선 표시합니다. 둘 이상 실행되면 기록을 함께 남기고, 출발 통과와 전체 과제 성공은 합산하지 않습니다. 오래된 상태 파일·전환 대기·병행 실행·게시 충돌 복구 등 **9개 검사 통과**. 자동 코드 수정·무인 코드 리뷰나 실제 로봇 원격 조작은 구성하지 않았습니다. [게시 서비스 설정](scripts/systemd/osp-training-progress.service) · [타이머](scripts/systemd/osp-training-progress.timer).
+GitHub 진행 기록·완성 영상 게시용 로컬 `osp-training-progress.timer`를 **30분 간격**으로 활성화했고, 첫 자동 커밋·푸시까지 확인했습니다. 별도 checkout에서 요약 파일만 반영하며 호스트의 사용자 서비스가 실행되는 동안 동작합니다. **2026-11-15 게시 대상 수정:** 기존 비교·v16 출발·통합 비교·기존 조건 행렬 중 실제 native 서비스 PID가 살아 있는 시험을 우선 표시합니다. 둘 이상 실행되면 기록을 함께 남기고, 출발 통과와 전체 과제 성공은 합산하지 않습니다. 오래된 상태 파일·전환 대기·병행 실행·게시 충돌 복구·활성 시험 표기 전환 등 **10개 검사 통과**. 자동 코드 수정·무인 코드 리뷰나 실제 로봇 원격 조작은 구성하지 않았습니다. [게시 서비스 설정](scripts/systemd/osp-training-progress.service) · [타이머](scripts/systemd/osp-training-progress.timer).
 
 최신 실제 검증 정책: [정책 계수](policy_releases/2026-11-13_face_intent_v2/policy.json) · [고정 실행 소스·빌드 방법·검증 결과](policy_releases/2026-11-13_face_intent_v2) · [최신 묶음 정보](policy_releases/latest.json). 별도 작업 공간의 재빌드와348개 테스트를 확인했습니다. 직사각형388.627초 완주 후보이며, 여러 공간의 독립 검증과 실제 로봇 검증은 아직 완료하지 않았습니다.
 
@@ -1118,9 +1120,9 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 
 <!-- ROBOT_TRANSFER_PROGRESS:START -->
 
-실물 대응 후보 `official_frontier_comparison_v1`: 상태 `held_for_pocket_screen`, 세대 0, 단계 `development`.
-독립 입력 검사를 통과한 native 개발 회차 4개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
+실물 대응 후보 `official_frontier_evidence_screen_v1`: 상태 `running`, 세대 0, 단계 `diagnostic`.
+독립 입력 검사를 통과한 native 개발 회차 0개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
 형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 출발 진단·전체 과제·계수 학습은 각각의 scope/phase를 확인해야 하며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-14T21:39:37.775114+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+관측 UTC: 2026-11-14T21:53:55.852586+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->
