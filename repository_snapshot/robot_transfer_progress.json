@@ -1,21 +1,52 @@
 {
-  "campaign": "official_navigation_budget_comparison_v1",
-  "status": "queued_after_original_campaign",
-  "coordinator_active": true,
-  "scope": "Three shapes, full 600-second independent hidden-marker task",
+  "campaign": "official_frontier_comparison_v1",
+  "status": "completed",
+  "coordinator_active": false,
+  "scope": "Three shapes, paired fixed weights, complete hidden-marker task",
   "generation": 0,
   "phase": "development",
-  "recorded_completed": 0,
-  "valid_completed": 0,
+  "recorded_completed": 6,
+  "valid_completed": 6,
   "successes": 0,
   "infrastructure_failures": 0,
-  "by_phase_role_profile_shape": {},
+  "by_phase_role_profile_shape": {
+    "development/baseline/official_nominal/c_shape": {
+      "completed": 1,
+      "successes": 0,
+      "contacts": 0
+    },
+    "development/candidate/official_nominal/c_shape": {
+      "completed": 1,
+      "successes": 0,
+      "contacts": 0
+    },
+    "development/baseline/official_nominal/u_shape": {
+      "completed": 1,
+      "successes": 0,
+      "contacts": 0
+    },
+    "development/candidate/official_nominal/u_shape": {
+      "completed": 1,
+      "successes": 0,
+      "contacts": 0
+    },
+    "development/baseline/official_nominal/zigzag": {
+      "completed": 1,
+      "successes": 0,
+      "contacts": 0
+    },
+    "development/candidate/official_nominal/zigzag": {
+      "completed": 1,
+      "successes": 0,
+      "contacts": 0
+    }
+  },
   "active": [],
   "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
   "production_promoted": false,
   "hardware_validated": false,
   "campaign_selection": {
-    "reason": "live_coordinator",
+    "reason": "fallback",
     "live_native_campaigns": [],
     "unavailable": [],
     "policy": "Explicit allowlist; live native MainPID first; keep campaign results separate"
@@ -24,7 +55,7 @@
     {
       "campaign": "official_navigation_budget_comparison_v1",
       "status": "queued_after_original_campaign",
-      "coordinator_active": true,
+      "coordinator_active": false,
       "scope": "Three shapes, full 600-second independent hidden-marker task",
       "generation": 0,
       "phase": "development",
@@ -207,7 +238,7 @@
       "hardware_validated": false
     }
   ],
-  "captured_utc": "2026-11-15T10:30:29.571380+00:00",
+  "captured_utc": "2026-11-15T11:00:30.177159+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
