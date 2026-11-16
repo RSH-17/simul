@@ -1,0 +1,196 @@
+{
+  "captured_utc": "2026-11-16T18:39:39.154315+00:00",
+  "candidate": "2026-11-17_rolling_goal_v1",
+  "baseline": "2026-11-17_frontier_coverage_v1",
+  "hypothesis": "Reassessing destinations while driving may avoid committing to outdated frontier/coverage goals, but switch overhead and oscillation may hurt completion.",
+  "runtime_tests_passed": 530,
+  "new_runtime_tests": 17,
+  "supervisor_tests_passed": 5,
+  "publisher_tests_passed": 11,
+  "validated_workspace": "training_robust/native90/rolling_goal_v2/runtime",
+  "runtime_delta": [
+    "osp_mission/mission.py",
+    "osp_mission/rolling_goal.py",
+    "test/test_rolling_goal.py"
+  ],
+  "conditions": {
+    "period_sim_s": 8.0,
+    "minimum_hold_s": 12.0,
+    "cooldown_s": 20.0,
+    "switch_cost_s": 5.0,
+    "improvement_ratio": 1.4,
+    "minimum_advantage": 0.01,
+    "max_switches": 6,
+    "abandoned_cooldown_s": 45.0,
+    "minimum_destination_change_m": 0.8
+  },
+  "offline_diagnostic": {
+    "evidence_type": "Offline diagnostic across stored decision maps, not mid-navigation rollout",
+    "rows": [
+      {
+        "input": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0007.npz",
+        "elapsed_s": 40.763999999999996,
+        "gap_s": 15.000999999999998,
+        "decision": null,
+        "retained": true,
+        "candidates": 124,
+        "previous_destination": [
+          -4.459044489677629,
+          0.5240106630465253,
+          -2.466462861251316
+        ]
+      },
+      {
+        "input": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0008.npz",
+        "elapsed_s": 54.763,
+        "gap_s": 13.999000000000002,
+        "decision": null,
+        "retained": true,
+        "candidates": 121,
+        "previous_destination": [
+          -5.309044502343616,
+          0.810566397951475,
+          -2.4234447972335347
+        ]
+      },
+      {
+        "input": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0009.npz",
+        "elapsed_s": 70.263,
+        "gap_s": 15.500000000000007,
+        "decision": null,
+        "retained": true,
+        "candidates": 114,
+        "previous_destination": [
+          -6.8340445250678865,
+          1.3605664061471137,
+          -2.4234447972335347
+        ]
+      },
+      {
+        "input": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0010.npz",
+        "elapsed_s": 84.76400000000001,
+        "gap_s": 14.501000000000005,
+        "decision": null,
+        "retained": true,
+        "candidates": 127,
+        "previous_destination": [
+          -7.834044539969048,
+          1.71056641136252,
+          -2.4234447972335347
+        ]
+      },
+      {
+        "input": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0011.npz",
+        "elapsed_s": 98.76400000000001,
+        "gap_s": 14.0,
+        "decision": null,
+        "retained": true,
+        "candidates": 127,
+        "previous_destination": [
+          -8.743995446862755,
+          2.0355664162053975,
+          -2.4234447972335347
+        ]
+      }
+    ],
+    "checks": 5,
+    "suggested_reselections": 0,
+    "source_sha256": {
+      "/home/peter/simul/training_robust/replay_rolling_goal_decisions.py": "57b5d145af54d72b2fad8ae2e4541662afa2fa21cbc33e028ad8c1207f8bbd34",
+      "/home/peter/simul/training_robust/native90/rolling_goal_v2/runtime/src/osp_mission/osp_mission/rolling_goal.py": "3869666aa1a677acfe7659ecbd202019135e03adbdcc2eefbfd702d887b77b95",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0000.npz": "dda630ea1979e5a8f230180fad9cbe6eb30cefe31cbffb66e519767c527246d2",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0001.npz": "a99f1f5b78f8a7cf0170a863f5c14a28897e313e8f8ee0a8d163a4f8402adf7e",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0002.npz": "3922698f1805de78a8b62cce2711abebeae739debdbde77cb91143b43836abdb",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0003.npz": "6951d7a27401a8f02b757a27c6bcccf9c5d1b0355d80824d0d8957442d739128",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0004.npz": "4f0ed6494c2c29f386316b2586abf8b479e06cbb822d68461ae366631f8a75d7",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0005.npz": "3cb41a420da15e0e57d5dc6278b76a78fda12e74e7cd4881c263de9c82a91b05",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0006.npz": "ec56deb863b63816891dc8c48edd01970de54d36ee36b4ef33b00bfdba47875a",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0007.npz": "3c78ab873c519d6f126380a1cf8b2fba38baba64d28ccca0d4638d5ed93cdb4d",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0008.npz": "07bca233903f411cba9be01ad1e0970822f0041b8ef8bc7f8a56320e17b1fc96",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0009.npz": "2e95433e142e7f3e06c4b46aaf324e590000483e2dfa0918e0451e5689309ad3",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0010.npz": "f7dd5f1aefad278361b27f1036e94faae783008b0f3a9593187b092d5646d548",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0011.npz": "c3b82f3676285c49c631b6413be6ec83bf675721fbe2a655b4af62dfff16787c",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0012.npz": "845729d5360b8582fc56e39ad944b83b848d8f50900bf43a37e1c1f159f26ae3",
+      "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/policy_decisions/0013.npz": "3ceb097d0fcc50390ab3effa9c8aa75171ef818e4c9e8b38242b6b8429e78bf7"
+    },
+    "ground_truth_input": false,
+    "native_improvement_proven": false,
+    "limitations": [
+      "Input lacks per-tick active-action state, cancellation handshake and exact candidate metadata.",
+      "Current-goal features are matched on the subsequent map; no future trajectory is simulated.",
+      "Exploration-memory filtering is already in the recorded candidates; no new memory rollout occurs.",
+      "No hardware result, completion improvement or saved navigation time is established."
+    ]
+  },
+  "native_comparison": {
+    "campaign": "/home/peter/simul/training_robust/native90/official_rolling_goal_comparison_v1",
+    "status": "waiting_for_original_campaign",
+    "coordinator_unit": "osp-official-rolling-goal-v1.service",
+    "verified_main_pid": 3213492,
+    "coordinator_service_properties": [
+      "MainPID=3213492",
+      "ActiveState=active"
+    ],
+    "configuration_sha256": "c01f8b132f7a43bc5345e9d866e39d61dbca9df2eb0c7c1bcf52d5efe2157c99",
+    "waits_for": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1",
+    "duration_s": 600.0,
+    "max_concurrent_native": 2,
+    "actual_new_native_started": false,
+    "jobs": [
+      {
+        "number": 0,
+        "role": "baseline",
+        "shape": "u_shape",
+        "seed": 1205010303,
+        "status": "prepared"
+      },
+      {
+        "number": 1,
+        "role": "candidate",
+        "shape": "u_shape",
+        "seed": 1205010303,
+        "status": "prepared"
+      },
+      {
+        "number": 2,
+        "role": "baseline",
+        "shape": "c_shape",
+        "seed": 1205000000,
+        "status": "prepared"
+      },
+      {
+        "number": 3,
+        "role": "candidate",
+        "shape": "c_shape",
+        "seed": 1205000000,
+        "status": "prepared"
+      },
+      {
+        "number": 4,
+        "role": "baseline",
+        "shape": "zigzag",
+        "seed": 1205020505,
+        "status": "prepared"
+      },
+      {
+        "number": 5,
+        "role": "candidate",
+        "shape": "zigzag",
+        "seed": 1205020505,
+        "status": "prepared"
+      }
+    ]
+  },
+  "ground_truth_inputs": false,
+  "weights_retrained": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_improvement_proven": false,
+  "required_outcome": "Three correct IDs; each actual approach <=1.5m; each map error <=0.5m; zero contacts; <=600s",
+  "limitations": [
+    "The new native pair has not launched; all six previous native trials are preserved.",
+    "Passing tests establish action handling and hysteresis, not task-performance improvement.",
+    "The stored-map diagnostic uses decision snapshots, not actual periodic mid-navigation states.",
+    "Parameters are fixed development hypotheses; no optimality, holdout or hardware claim."
+  ]
+}

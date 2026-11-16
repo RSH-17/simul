@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Built Nav2 frontier-cluster plus surface-coverage task policy; 513 runtime tests and 6 supervisor checks; first matched official TB4 U pair actually started",
+  "latest_change": "Built destination re-evaluation candidate with hysteresis and acknowledgement-safe cancellation; 530 runtime checks; six paired full-task trials queued after preserved frontier/coverage campaign",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -941,7 +941,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-16T18:24:13.047190+00:00",
+  "latest_status_check_utc": "2026-11-16T18:39:39.154315+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -1277,5 +1277,13 @@
     "completed": 0,
     "planned": 6,
     "native_improvement_verified": false
+  },
+  "rolling_goal_experiment": "repository_snapshot/rolling_goal_experiment.json",
+  "rolling_goal_native_comparison": {
+    "status": "waiting_for_original_campaign",
+    "verified_main_pid": 3213492,
+    "prepared": 6,
+    "actual_new_native_started": false,
+    "native_improvement_proven": false
   }
 }

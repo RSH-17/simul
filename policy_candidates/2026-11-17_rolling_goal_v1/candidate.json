@@ -1,0 +1,15 @@
+{
+  "candidate_id": "2026-11-17_rolling_goal_v1",
+  "parent_candidate": "2026-11-17_frontier_coverage_v1",
+  "status": "built_pending_native_validation",
+  "ground_truth_inputs": false,
+  "native_validated": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "overlay_files": {
+    "test/test_rolling_goal.py": "c0a8d794dc89eaf03cfd8af3d9d0412aa1118d017b5eeaafdf0edc0030153294",
+    "osp_mission/mission.py": "766c50b371c01e7a5fd28e7f05797484f36dd1bafcd1eee0cdb0ba8cfda4e85e",
+    "osp_mission/rolling_goal.py": "3869666aa1a677acfe7659ecbd202019135e03adbdcc2eefbfd702d887b77b95"
+  },
+  "build_script_sha256": "8aa968c98b6ec5f27ea8551f10b0c5338560779ee8b55e983d911f08a8be4303"
+}
