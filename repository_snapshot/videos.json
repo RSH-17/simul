@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-16T20:31:13.116088+00:00",
+  "updated_utc": "2026-11-16T21:00:44.396871+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 334,
+  "uploaded_verified": 336,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -2143,6 +2143,38 @@
       "targets": 0,
       "collisions": 0,
       "actual_approach_1_5m": false,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "frontier_coverage_comparison_v1__02_c_shape_baseline__1205000000.mp4",
+      "local_path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/video/mission.mp4",
+      "bytes": 9901404,
+      "sha256": "19ef4390e4d8692eb269bb8f3ae83f3faf3b0eaf0eae9bceb29785cbb276a63a",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/frontier_coverage_comparison_v1__02_c_shape_baseline__1205000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.294,
+      "targets": 1,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "frontier_coverage_comparison_v1__03_c_shape_candidate__1205000000.mp4",
+      "local_path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/video/mission.mp4",
+      "bytes": 12373444,
+      "sha256": "f2d0b6b7a710db140fda781e37eac9751a59e6224482147cf524b2962a0a11c0",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/frontier_coverage_comparison_v1__03_c_shape_candidate__1205000000.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.275,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
       "recording_frames": 3003,
       "recording_seconds": 600.6,
       "uploaded_verified": true
@@ -5357,14 +5389,6 @@
   "skipped": [
     {
       "path": "training_robust/native90/approach_v8_screen3/episodes/8600133/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {

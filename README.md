@@ -411,7 +411,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 334개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 336개
 
 아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
 
@@ -553,6 +553,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [fresh_map_cem_v2__00002_train_g0_2__1123200202.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fresh_map_cem_v2__00002_train_g0_2__1123200202.mp4) | 성공 | 확인 | 541.282 |
 | [frontier_coverage_comparison_v1__00_u_shape_baseline__1205010303.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/frontier_coverage_comparison_v1__00_u_shape_baseline__1205010303.mp4) | 실패 | 미달 | 600.464 |
 | [frontier_coverage_comparison_v1__01_u_shape_candidate__1205010303.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/frontier_coverage_comparison_v1__01_u_shape_candidate__1205010303.mp4) | 실패 | 미달 | 600.263 |
+| [frontier_coverage_comparison_v1__02_c_shape_baseline__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/frontier_coverage_comparison_v1__02_c_shape_baseline__1205000000.mp4) | 실패 | 확인 | 600.294 |
+| [frontier_coverage_comparison_v1__03_c_shape_candidate__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/frontier_coverage_comparison_v1__03_c_shape_candidate__1205000000.mp4) | 실패 | 확인 | 600.275 |
 | [graph_landmark_regression_v1__case_0__1171300202.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/graph_landmark_regression_v1__case_0__1171300202.mp4) | 성공 | 확인 | 524.241 |
 | [heading_prior_regression_v1__case_0__1163000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/heading_prior_regression_v1__case_0__1163000000.mp4) | 실패 | 확인 | 247.622 |
 | [low_rotation_video_20261112__episode_8000001.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/low_rotation_video_20261112__episode_8000001.mp4) | 성공 | 확인 | 494.534 |
@@ -1143,9 +1145,9 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 
 <!-- ROBOT_TRANSFER_PROGRESS:START -->
 
-실물 대응 후보 `frontier_coverage_comparison_v1`: 상태 `running`, 세대 0, 단계 `development`.
-독립 입력 검사를 통과한 native 개발 회차 0개 중 엄격한 완주 0개; 인프라 실패 2개 별도.
+실물 대응 후보 `official_rolling_goal_comparison_v1`: 상태 `waiting_for_original_campaign`, 세대 0, 단계 `development`.
+독립 입력 검사를 통과한 native 개발 회차 0개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
 형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 출발 진단·전체 과제·계수 학습은 각각의 scope/phase를 확인해야 하며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-16T20:31:13.281927+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+관측 UTC: 2026-11-16T21:00:44.484771+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->
