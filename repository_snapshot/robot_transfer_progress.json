@@ -35,9 +35,9 @@
       },
       "live": {
         "state": "running",
-        "targets": 0,
+        "targets": 1,
         "collisions": 0,
-        "elapsed_seconds": 26.465,
+        "elapsed_seconds": 335.964,
         "readiness_reason": ""
       }
     },
@@ -67,7 +67,7 @@
         "state": "running",
         "targets": 0,
         "collisions": 0,
-        "elapsed_seconds": 25.762999999999998,
+        "elapsed_seconds": 312.763,
         "readiness_reason": ""
       }
     }
@@ -84,6 +84,23 @@
     "policy": "Explicit allowlist; live native MainPID first; keep campaign results separate"
   },
   "followed_campaigns": [
+    {
+      "campaign": "official_rolling_goal_comparison_v1",
+      "status": "waiting_for_original_campaign",
+      "coordinator_active": true,
+      "scope": "Three shapes, full 600-second independent hidden-marker task",
+      "generation": 0,
+      "phase": "development",
+      "recorded_completed": 0,
+      "valid_completed": 0,
+      "successes": 0,
+      "infrastructure_failures": 0,
+      "by_phase_role_profile_shape": {},
+      "active": [],
+      "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
+      "production_promoted": false,
+      "hardware_validated": false
+    },
     {
       "campaign": "frontier_coverage_comparison_v1",
       "status": "running",
@@ -121,9 +138,9 @@
           },
           "live": {
             "state": "running",
-            "targets": 0,
+            "targets": 1,
             "collisions": 0,
-            "elapsed_seconds": 26.465,
+            "elapsed_seconds": 335.964,
             "readiness_reason": ""
           }
         },
@@ -153,7 +170,7 @@
             "state": "running",
             "targets": 0,
             "collisions": 0,
-            "elapsed_seconds": 25.762999999999998,
+            "elapsed_seconds": 312.763,
             "readiness_reason": ""
           }
         }
@@ -348,7 +365,7 @@
       "hardware_validated": false
     }
   ],
-  "captured_utc": "2026-11-16T18:25:56.900699+00:00",
+  "captured_utc": "2026-11-16T19:01:10.636606+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
