@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16T18:00:30.505629+00:00",
+  "updated_utc": "2026-11-16T18:25:56.739120+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
   "uploaded_verified": 332,
   "videos": [
@@ -5325,6 +5325,14 @@
   "skipped": [
     {
       "path": "training_robust/native90/approach_v8_screen3/episodes/8600133/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {

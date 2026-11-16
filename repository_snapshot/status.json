@@ -531,59 +531,169 @@
   "latest_observed_repository_visibility": "PUBLIC",
   "robot_transfer_progress": "repository_snapshot/robot_transfer_progress.json",
   "robot_transfer_training_observation": {
-    "campaign": "official_frontier_comparison_v1",
-    "status": "completed",
-    "coordinator_active": false,
-    "scope": "Three shapes, paired fixed weights, complete hidden-marker task",
+    "campaign": "frontier_coverage_comparison_v1",
+    "status": "running",
+    "coordinator_active": true,
+    "scope": "Three shapes, full 600-second independent hidden-marker task",
     "generation": 0,
     "phase": "development",
-    "recorded_completed": 6,
-    "valid_completed": 6,
+    "recorded_completed": 0,
+    "valid_completed": 0,
     "successes": 0,
     "infrastructure_failures": 0,
-    "by_phase_role_profile_shape": {
-      "development/baseline/official_nominal/c_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
+    "by_phase_role_profile_shape": {},
+    "active": [
+      {
+        "number": 0,
+        "unit": "osp-official-frontier-coverage-v1-00.service",
+        "service_active": true,
+        "main_pid": 3193022,
+        "shape": "u_shape",
+        "profile": "official_nominal",
+        "gates": {
+          "deadline_settings_gate": true,
+          "navigation_budget_gate": true,
+          "hybrid_algorithm_gate": true,
+          "runtime_configuration_gate": true,
+          "velocity_profile_gate": true,
+          "scan_adapter_gate": true,
+          "floor_sensor_gate": true,
+          "drive_path_gate": true,
+          "official_description_gate": true,
+          "slam_transport_gate": true,
+          "navigation_grid_gate": true,
+          "loop_settings_gate": true,
+          "dock_map_gate": true
+        },
+        "live": {
+          "state": "running",
+          "targets": 0,
+          "collisions": 0,
+          "elapsed_seconds": 26.465,
+          "readiness_reason": ""
+        }
       },
-      "development/candidate/official_nominal/c_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/baseline/official_nominal/u_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/candidate/official_nominal/u_shape": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/baseline/official_nominal/zigzag": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
-      },
-      "development/candidate/official_nominal/zigzag": {
-        "completed": 1,
-        "successes": 0,
-        "contacts": 0
+      {
+        "number": 1,
+        "unit": "osp-official-frontier-coverage-v1-01.service",
+        "service_active": true,
+        "main_pid": 3193032,
+        "shape": "u_shape",
+        "profile": "official_nominal",
+        "gates": {
+          "deadline_settings_gate": true,
+          "navigation_budget_gate": true,
+          "hybrid_algorithm_gate": true,
+          "runtime_configuration_gate": true,
+          "velocity_profile_gate": true,
+          "scan_adapter_gate": true,
+          "floor_sensor_gate": true,
+          "drive_path_gate": true,
+          "official_description_gate": true,
+          "slam_transport_gate": true,
+          "navigation_grid_gate": true,
+          "loop_settings_gate": true,
+          "dock_map_gate": true
+        },
+        "live": {
+          "state": "running",
+          "targets": 0,
+          "collisions": 0,
+          "elapsed_seconds": 25.762999999999998,
+          "readiness_reason": ""
+        }
       }
-    },
-    "active": [],
+    ],
     "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
     "production_promoted": false,
     "hardware_validated": false,
     "campaign_selection": {
-      "reason": "fallback",
-      "live_native_campaigns": [],
+      "reason": "live_native_process",
+      "live_native_campaigns": [
+        "frontier_coverage_comparison_v1"
+      ],
       "unavailable": [],
       "policy": "Explicit allowlist; live native MainPID first; keep campaign results separate"
     },
     "followed_campaigns": [
+      {
+        "campaign": "frontier_coverage_comparison_v1",
+        "status": "running",
+        "coordinator_active": true,
+        "scope": "Three shapes, full 600-second independent hidden-marker task",
+        "generation": 0,
+        "phase": "development",
+        "recorded_completed": 0,
+        "valid_completed": 0,
+        "successes": 0,
+        "infrastructure_failures": 0,
+        "by_phase_role_profile_shape": {},
+        "active": [
+          {
+            "number": 0,
+            "unit": "osp-official-frontier-coverage-v1-00.service",
+            "service_active": true,
+            "main_pid": 3193022,
+            "shape": "u_shape",
+            "profile": "official_nominal",
+            "gates": {
+              "deadline_settings_gate": true,
+              "navigation_budget_gate": true,
+              "hybrid_algorithm_gate": true,
+              "runtime_configuration_gate": true,
+              "velocity_profile_gate": true,
+              "scan_adapter_gate": true,
+              "floor_sensor_gate": true,
+              "drive_path_gate": true,
+              "official_description_gate": true,
+              "slam_transport_gate": true,
+              "navigation_grid_gate": true,
+              "loop_settings_gate": true,
+              "dock_map_gate": true
+            },
+            "live": {
+              "state": "running",
+              "targets": 0,
+              "collisions": 0,
+              "elapsed_seconds": 26.465,
+              "readiness_reason": ""
+            }
+          },
+          {
+            "number": 1,
+            "unit": "osp-official-frontier-coverage-v1-01.service",
+            "service_active": true,
+            "main_pid": 3193032,
+            "shape": "u_shape",
+            "profile": "official_nominal",
+            "gates": {
+              "deadline_settings_gate": true,
+              "navigation_budget_gate": true,
+              "hybrid_algorithm_gate": true,
+              "runtime_configuration_gate": true,
+              "velocity_profile_gate": true,
+              "scan_adapter_gate": true,
+              "floor_sensor_gate": true,
+              "drive_path_gate": true,
+              "official_description_gate": true,
+              "slam_transport_gate": true,
+              "navigation_grid_gate": true,
+              "loop_settings_gate": true,
+              "dock_map_gate": true
+            },
+            "live": {
+              "state": "running",
+              "targets": 0,
+              "collisions": 0,
+              "elapsed_seconds": 25.762999999999998,
+              "readiness_reason": ""
+            }
+          }
+        ],
+        "evidence_type": "native_gazebo_training_and_paired_development_not_hardware",
+        "production_promoted": false,
+        "hardware_validated": false
+      },
       {
         "campaign": "official_navigation_budget_comparison_v1",
         "status": "queued_after_original_campaign",
@@ -770,7 +880,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-16T18:00:30.570247+00:00",
+    "captured_utc": "2026-11-16T18:25:56.900699+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
