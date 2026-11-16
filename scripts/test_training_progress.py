@@ -89,6 +89,18 @@ def test_live_native_beats_stale_job_and_waiting_coordinator(tmp_path,monkeypatc
     assert not report['followed_campaigns'][2]['active'][0]['service_active']
 
 
+def test_frontier_coverage_campaign_updates_actual_tb4_campaign(tmp_path,monkeypatch):
+    (tmp_path/'repository_snapshot').mkdir()
+    (tmp_path/'repository_snapshot/status.json').write_text('{}')
+    (tmp_path/'README.md').write_text('Project\n')
+    old=make_campaign(tmp_path,'official_old')
+    new=make_campaign(tmp_path,'frontier_coverage_comparison_v1',[running_job(tmp_path,'hybrid.service')])
+    monkeypatch.setattr(publisher,'service_status',lambda unit:dict(service_active=unit=='hybrid.service',main_pid=42))
+    publisher.snapshot(tmp_path,tmp_path,old,[new])
+    status=json.loads((tmp_path/'repository_snapshot/status.json').read_text())
+    assert status['active_tb4_campaigns']==['frontier_coverage_comparison_v1']
+
+
 def test_parallel_campaigns_stay_separate_and_screen_is_not_full_success(tmp_path,monkeypatch):
     done=dict(status='done',phase='diagnostic',role='candidate',
         scenario=dict(arena=dict(shape='c_shape')),

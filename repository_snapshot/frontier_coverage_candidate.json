@@ -1,0 +1,162 @@
+{
+  "captured_utc": "2026-11-16T18:24:13.047190+00:00",
+  "candidate": "2026-11-17_frontier_coverage_v1",
+  "baseline": "2026-11-15_official_tb4_v20",
+  "architecture": [
+    "Observed-map connected frontier clustering with safe free-space standoff and line of sight.",
+    "Feasible camera-facing surface coverage, greedy next-view gain per motion/observation time.",
+    "Local uninspected surfaces before distant frontier transit; deadline returns to remaining coverage.",
+    "Unchanged narrow-start escape, cumulative navigation allowance, marker overrides and Nav2 path execution."
+  ],
+  "implementation_scope": "Custom online frontier and surface-coverage task policy on Nav2 NavigateToPose. opennav_coverage/Fields2Cover is not installed or used.",
+  "official_sources": [
+    "https://docs.nav2.org/configuration/packages/configuring-coverage-server.html",
+    "https://github.com/open-navigation/opennav_coverage"
+  ],
+  "runtime_tests_passed": 513,
+  "supervisor_tests_passed": 6,
+  "publisher_tests_passed": 11,
+  "offline_observed_map_checks": {
+    "evidence_type": "Sensor-map candidate generation only; no native success claim",
+    "rows": [
+      {
+        "job": "00_c_shape_baseline",
+        "input": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/00_c_shape_baseline/episodes/1205000000/policy_decisions/0013.npz",
+        "elapsed_s": 257.979,
+        "candidates": 184,
+        "frontier_clusters": 5,
+        "surface_views": 179,
+        "transit": 0,
+        "selected_kind": "surface",
+        "cpu_seconds": 1.237230029
+      },
+      {
+        "job": "01_c_shape_candidate",
+        "input": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/01_c_shape_candidate/episodes/1205000000/policy_decisions/0017.npz",
+        "elapsed_s": 380.134,
+        "candidates": 187,
+        "frontier_clusters": 2,
+        "surface_views": 185,
+        "transit": 0,
+        "selected_kind": "surface",
+        "cpu_seconds": 1.327870914
+      },
+      {
+        "job": "02_u_shape_baseline",
+        "input": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/02_u_shape_baseline/episodes/1205010303/policy_decisions/0019.npz",
+        "elapsed_s": 228.239,
+        "candidates": 1,
+        "frontier_clusters": 0,
+        "surface_views": 0,
+        "transit": 1,
+        "selected_kind": "transit",
+        "cpu_seconds": 0.29032188299999984
+      },
+      {
+        "job": "03_u_shape_candidate",
+        "input": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/03_u_shape_candidate/episodes/1205010303/policy_decisions/0018.npz",
+        "elapsed_s": 284.451,
+        "candidates": 192,
+        "frontier_clusters": 9,
+        "surface_views": 183,
+        "transit": 0,
+        "selected_kind": "surface",
+        "cpu_seconds": 1.2998429850000002
+      },
+      {
+        "job": "04_zigzag_baseline",
+        "input": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/04_zigzag_baseline/episodes/1205020505/policy_decisions/0019.npz",
+        "elapsed_s": 285.2,
+        "candidates": 190,
+        "frontier_clusters": 11,
+        "surface_views": 179,
+        "transit": 0,
+        "selected_kind": "surface",
+        "cpu_seconds": 1.0212798239999996
+      },
+      {
+        "job": "05_zigzag_candidate",
+        "input": "/home/peter/simul/training_robust/native90/official_frontier_comparison_v1/jobs/05_zigzag_candidate/episodes/1205020505/policy_decisions/0020.npz",
+        "elapsed_s": 368.715,
+        "candidates": 222,
+        "frontier_clusters": 3,
+        "surface_views": 219,
+        "transit": 0,
+        "selected_kind": "surface",
+        "cpu_seconds": 1.7143041019999998
+      }
+    ],
+    "ground_truth_input": false
+  },
+  "prior_integrated_U_results": [
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303",
+      "elapsed_s": 600.483,
+      "ids": 2,
+      "collisions": 0,
+      "success": false,
+      "approached": 2,
+      "position_errors": {
+        "81": 0.028873836294247612,
+        "204": 0.08900383443903877
+      },
+      "evaluation_sha256": "437529b2b7c0e392296a9609d73dbf15c881303e4ed7924e3cca1ab605224a1f"
+    },
+    {
+      "episode": "/home/peter/simul/training_robust/native90/official_integrated_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303",
+      "elapsed_s": 600.3,
+      "ids": 0,
+      "collisions": 0,
+      "success": false,
+      "approached": 0,
+      "position_errors": {},
+      "evaluation_sha256": "c73000df55e529104e33912e7e31a36037e1b9d94229ef65f9e0f33eb4a14f28"
+    }
+  ],
+  "prior_coordinator_status": "Original integrated coordinator failed on missing transient systemd unit; original navigation-budget coordinator subsequently timed out. No old campaign was reported as running or source-modified.",
+  "supervisor_repair": "New supervisor treats LoadState=not-found as terminal and fails closed for service-bus errors. Original queued drivers and runtime sources remain frozen.",
+  "native_comparison": {
+    "campaign": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1",
+    "coordinator": "osp-official-frontier-coverage-v1.service",
+    "verified_service_properties": [
+      "MainPID=3193000",
+      "ActiveState=active"
+    ],
+    "configuration_sha256": "af8d218d2960f6b3b15a6f0e57785bf110326b3748f7a0870853c695aa044aa9",
+    "duration_s": 600.0,
+    "native_limit": 2,
+    "active": [
+      {
+        "number": 0,
+        "role": "baseline",
+        "unit": "osp-official-frontier-coverage-v1-00.service",
+        "domain": 230,
+        "status": "running"
+      },
+      {
+        "number": 1,
+        "role": "candidate",
+        "unit": "osp-official-frontier-coverage-v1-01.service",
+        "domain": 231,
+        "status": "running"
+      }
+    ],
+    "prepared_jobs": 4,
+    "shapes": [
+      "u_shape",
+      "c_shape",
+      "zigzag"
+    ],
+    "ground_truth_evaluator_only": true
+  },
+  "weights_retrained": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "improved_native_success_established": false,
+  "limitations": [
+    "Tests and stored-map candidate checks do not prove mission improvement.",
+    "Coverage here means camera-observed obstacle surfaces; it is not a claimed Fields2Cover lawnmower route.",
+    "The candidate includes the prior feasibility-first face proposals; the paired trial compares the whole bundle against v20.",
+    "Six trials use development scenes; unseen holdout and physical TurtleBot4 validation remain outstanding."
+  ]
+}

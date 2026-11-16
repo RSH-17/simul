@@ -1,0 +1,11 @@
+[Unit]
+Description=Official TurtleBot4 frontier and camera coverage comparison
+
+[Service]
+Type=simple
+WorkingDirectory=%h/simul
+ExecStart=/usr/bin/python3 -u %h/simul/training_robust/run_frontier_coverage_comparison.py --output %h/simul/training_robust/native90/frontier_coverage_comparison_v1 --run-prepared
+MemoryMax=768M
+Restart=no
+StandardOutput=append:%h/simul/training_robust/native90/frontier_coverage_comparison_v1/coordinator.log
+StandardError=append:%h/simul/training_robust/native90/frontier_coverage_comparison_v1/coordinator.log

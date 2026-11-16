@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Fixed navigation allowance reset across inspection/sensor resumes in isolated v20; 490 runtime checks, 22 supervisor/audit checks; six full native comparisons queued after frozen original campaign",
+  "latest_change": "Built Nav2 frontier-cluster plus surface-coverage task policy; 513 runtime tests and 6 supervisor checks; first matched official TB4 U pair actually started",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -803,7 +803,7 @@
   "tb4_platform_hardware_validated": false,
   "tb4_platform_native_screen_passed": true,
   "tb4_platform_full_task_validated": false,
-  "active_tb4_campaign": null,
+  "active_tb4_campaign": "frontier_coverage_comparison_v1",
   "tb4_early_odometry_audit": "repository_snapshot/tb4_early_odometry_audit.json",
   "tb4_long_run_localization_reliable": false,
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
@@ -831,7 +831,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-14T22:44:25.916903+00:00",
+  "latest_status_check_utc": "2026-11-16T18:24:13.047190+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -1131,12 +1131,14 @@
     "contacts": 0,
     "infrastructure_failures": 0
   },
-  "active_tb4_campaigns": [],
+  "active_tb4_campaigns": [
+    "frontier_coverage_comparison_v1"
+  ],
   "official_frontier_evidence_native_result": "repository_snapshot/official_frontier_evidence_native_result.json",
   "official_zigzag_loop_gate_result": "repository_snapshot/official_zigzag_loop_gate_result.json",
   "official_pose_gyro_diagnosis": "repository_snapshot/official_pose_gyro_diagnosis.json",
   "official_strict_loop_universal_improvement_established": false,
-  "official_integrated_native_status": "running_first_U_pair; no completed integrated trials yet",
+  "official_integrated_native_status": "coordinator_failed_missing_transient_service; first_U_pair_completed_both_failed_full_task",
   "official_pose_gyro_u_partial_result": "repository_snapshot/official_pose_gyro_u_partial_result.json",
   "official_odometry_input_validation": {
     "tests_passed": 35,
@@ -1149,16 +1151,21 @@
   },
   "official_navigation_budget_candidate": "repository_snapshot/official_navigation_budget_candidate.json",
   "official_navigation_budget_comparison": {
-    "campaign": "training_robust/native90/official_navigation_budget_comparison_v1",
-    "status": "queued_after_original_campaign",
-    "verified_main_pid": 2668519,
-    "actual_new_native_started": false,
-    "native_jobs_prepared": 6
+    "status": "coordinator_timeout_no_native_started",
+    "original_preserved": true
   },
   "official_navigation_budget_validation": {
     "runtime_tests_passed": 490,
     "supervisor_and_audit_tests_passed": 22,
     "native_performance_validated": false,
     "hardware_validated": false
+  },
+  "frontier_coverage_candidate": "repository_snapshot/frontier_coverage_candidate.json",
+  "frontier_coverage_comparison": {
+    "status": "running_first_U_pair",
+    "coordinator_main_pid": 3193000,
+    "completed": 0,
+    "planned": 6,
+    "native_improvement_verified": false
   }
 }

@@ -1,0 +1,17 @@
+{
+  "candidate_id": "2026-11-17_frontier_coverage_v1",
+  "parent_candidate": "2026-11-15_official_tb4_v20",
+  "additional_candidate": "2026-11-15_official_tb4_v19",
+  "status": "built_pending_native_comparison",
+  "production_promoted": false,
+  "native_validated": false,
+  "hardware_validated": false,
+  "ground_truth_inputs": false,
+  "overlay_files": {
+    "test/test_frontier_coverage.py": "ddbef8c8e9a2f9948801a8a6a9b809c57755fe27086bd999f48541dc2f0e26b6",
+    "osp_mission/frontier_support.py": "20e0849121371c51046a4c6091d8a3170ec281914f4ba35678394271a355e8da",
+    "osp_mission/frontier_coverage.py": "6de676e332b7f3c704a6bb82df9442cbd56c94b7fc7cabcb392a71a3ee66ccc0",
+    "osp_mission/mission.py": "4a326d35d8788368d988de2370c9b04055f228c1bf350e8a7e454d6ada8a1b81"
+  },
+  "build_script_sha256": "d8cf0f3c7bcb60ea21431938702a6b24c6f930caa78e2baf2b92eb8d58d86835"
+}
