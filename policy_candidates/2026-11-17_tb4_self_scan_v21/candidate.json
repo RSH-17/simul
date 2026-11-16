@@ -1,0 +1,19 @@
+{
+  "candidate_id": "2026-11-17_tb4_self_scan_v21",
+  "parent_candidate": "2026-11-15_official_tb4_v20",
+  "status": "code_candidate_unverified",
+  "production_promoted": false,
+  "hardware_validated": false,
+  "native_validated": false,
+  "raw_scan_retained": true,
+  "self_filter_radius_m": 0.16,
+  "overlay_files": {
+    "launch/robot.launch.py": "42cea7c65581b698da54b9fbf9fc2e879a56095a3fd1af6afd7bea8fca9c67dc",
+    "osp_mission/self_scan_filter.py": "b8a40923c45cc008eaf3e1b406fe6db743a19d45e27299426223819f6c7bbc86",
+    "setup.py": "4470ed7bcfecc84412e616fad56e7405979230b6d13d27f5fd42f06fcaf0db09",
+    "test/test_self_scan_filter.py": "0babf37f7f412ebc4d1af4659046dbb089b041cad2286fdee1072603c656cf7f"
+  },
+  "build_script_sha256": "f4c53f74f27f010eb8837093a62e7fe7a95f1c09ae7d11d29d7c59758ab4b311",
+  "runtime_tests_passed": 494,
+  "validated_workspace": "VM osp-jazzy /home/ubuntu/osp-v21c"
+}
