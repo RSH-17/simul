@@ -497,7 +497,7 @@ h2 .pill {
   position:relative;
   flex:1;
   min-height:220px;
-  background:#181e27;
+  background:#14305e;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -1357,3 +1357,7 @@ img:not([src]),img.broken {
   font-weight:600;
   margin-right:4px
 }
+
+/* Live navigation map */
+.legend-line.yellow { background: #ffd700; }
+.legend-line.pink { background: #ff82f5; }

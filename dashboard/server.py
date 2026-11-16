@@ -324,6 +324,8 @@ class Observatory:
             audit['raw_rubric_passed'] = audit['passed']
             audit['passed'] = False
         camera = read_json(self.cache / identifier / 'metadata.json')
+        navigation_map = read_json(self.cache / identifier / 'map_metadata.json')
+        navigation_map['age'] = max(0,time.time()-navigation_map['received_unix']) if navigation_map.get('received_unix') else None
         camera_age = max(0, time.time() - camera['received_unix']) if camera.get('received_unix') else None
         frame = self.frame_path(entry)
         return {**entry['job'], 'status': status, 'metrics': live.get('runtime_metrics', {}),
@@ -332,6 +334,7 @@ class Observatory:
                 'approached_ids': status.get('approached_ids', []),
                 'result': result, 'environment_invalidation': invalidation,
                 'exploration_memory': read_json_lines_last(episode / 'exploration_memory.jsonl') if episode else {},
+                'navigation_map':navigation_map,
                 'camera': {**camera, 'age': camera_age,
                     'live': entry['job']['state'] in ('running', 'starting') and camera_age is not None and camera_age < 10},
                 'frame_age': age(frame) if frame else None,
@@ -461,6 +464,9 @@ class Handler(BaseHTTPRequestHandler):
             if view not in ('robot', 'map', 'overview', 'composite'):
                 raise ValueError(view)
             camera = store.cache / get('id') / 'frame.jpg'
+            navigation_map = store.cache / get('id') / 'map.png'
+            if view == 'map' and entry['job']['state'] in ('running','starting') and age(navigation_map) is not None and age(navigation_map)<10:
+                return self.file(navigation_map)
             if view == 'robot' and entry['job']['state'] in ('running', 'starting') and (age(camera) or 999) < 10:
                 return self.file(camera)
             path = store.frame_path(entry)

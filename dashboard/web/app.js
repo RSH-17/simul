@@ -78,7 +78,9 @@ function renderDetail(d) {
   $('camera-source').textContent=d.camera.live ? '실제 ROS RGB · 읽기 전용 구독' : '실제 녹화의 로봇 카메라 프레임';
   $('camera-age').textContent=d.camera.live ? `${format(d.camera.age,0)}초 전 수신` : d.frame_age!==null ? `${format(d.frame_age,0)}초 전 저장` : '프레임 대기';
   $('camera-stamp').textContent=d.camera.live ? `SIM ${format(d.camera.source_sim_seconds)}s` : `SEED ${d.seed}`;
-  $('map-age').textContent=d.frame_age!==null ? `${format(d.frame_age,0)}초 전 저장` : '지도 대기';
+  const nav=d.navigation_map || {}, plans=nav.plans || {};
+  const liveMap=active && nav.age!==null && nav.age!==undefined && nav.age<10;
+  $('map-age').textContent=liveMap ? `LIVE · 전역 #${plans.global?.sequence || 0} · 로컬 #${plans.local?.sequence || 0}` : d.frame_age!==null ? `${format(d.frame_age,0)}초 전 저장 · 경로 수신 대기` : '지도·경로 대기';
   const shapes={pdf_original:'PDF 원래 공간',circle:'원형',triangle:'삼각형',trapezoid:'사다리꼴',rectangle:'직사각형',l_shape:'L자',u_shape:'U자',rooms:'다중 방'};
   $('scene-info').textContent=`${shapes[d.arena.shape] || d.arena.shape} · ${format(d.arena.width_m)}×${format(d.arena.height_m)}m · 장애물 ${d.obstacles ?? '?'}개`;
   $('domain-label').textContent=`DOMAIN ${d.domain ?? '—'}`;
@@ -111,7 +113,7 @@ function updateImages(force=false) {
   if(!state.job || state.tab!=='live' || document.hidden) return;
   const views=[['robot-frame','robot'],['map-frame','map'],['overview-frame','overview']];
   for(const [id,view] of views){
-    if(!force && view!=='robot' && Date.now() - Number($(id).dataset.updated || 0)<10000) continue;
+    if(!force && view==='overview' && Date.now() - Number($(id).dataset.updated || 0)<10000) continue;
     if(!force && $(id).dataset.loading==='1') continue;
     const image=$(id);image.dataset.updated=String(Date.now());image.dataset.loading='1';
     image.src='/api/frame?'+params({id:state.job,view,t:Date.now()});

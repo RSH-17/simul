@@ -18,10 +18,13 @@ def main():
     from rclpy.node import Node
     from rclpy.qos import QoSProfile, ReliabilityPolicy
     from sensor_msgs.msg import Image
+    from rclpy.parameter import Parameter
+    from map_observer import MapObserver
 
     args.output.mkdir(parents=True, exist_ok=True)
     rclpy.init()
-    node = Node('osp_dashboard_camera')
+    node = Node('osp_dashboard_camera',parameter_overrides=[Parameter('use_sim_time',value=True)])
+    map_observer = MapObserver(node,args.output)
     bridge = CvBridge()
     last_write = 0.0
     frames = 0
