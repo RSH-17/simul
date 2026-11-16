@@ -537,18 +537,18 @@
     "scope": "Three shapes, full 600-second independent hidden-marker task",
     "generation": 0,
     "phase": "development",
-    "recorded_completed": 0,
+    "recorded_completed": 2,
     "valid_completed": 0,
     "successes": 0,
-    "infrastructure_failures": 0,
+    "infrastructure_failures": 2,
     "by_phase_role_profile_shape": {},
     "active": [
       {
-        "number": 0,
-        "unit": "osp-official-frontier-coverage-v1-00.service",
+        "number": 2,
+        "unit": "osp-official-frontier-coverage-v1-02.service",
         "service_active": true,
-        "main_pid": 3193022,
-        "shape": "u_shape",
+        "main_pid": 3249067,
+        "shape": "c_shape",
         "profile": "official_nominal",
         "gates": {
           "deadline_settings_gate": true,
@@ -567,18 +567,18 @@
         },
         "live": {
           "state": "running",
-          "targets": 2,
+          "targets": 1,
           "collisions": 0,
-          "elapsed_seconds": 591.464,
+          "elapsed_seconds": 261.292,
           "readiness_reason": ""
         }
       },
       {
-        "number": 1,
-        "unit": "osp-official-frontier-coverage-v1-01.service",
+        "number": 3,
+        "unit": "osp-official-frontier-coverage-v1-03.service",
         "service_active": true,
-        "main_pid": 3193032,
-        "shape": "u_shape",
+        "main_pid": 3251920,
+        "shape": "c_shape",
         "profile": "official_nominal",
         "gates": {
           "deadline_settings_gate": true,
@@ -597,9 +597,9 @@
         },
         "live": {
           "state": "running",
-          "targets": 0,
+          "targets": 1,
           "collisions": 0,
-          "elapsed_seconds": 565.763,
+          "elapsed_seconds": 220.776,
           "readiness_reason": ""
         }
       }
@@ -640,18 +640,18 @@
         "scope": "Three shapes, full 600-second independent hidden-marker task",
         "generation": 0,
         "phase": "development",
-        "recorded_completed": 0,
+        "recorded_completed": 2,
         "valid_completed": 0,
         "successes": 0,
-        "infrastructure_failures": 0,
+        "infrastructure_failures": 2,
         "by_phase_role_profile_shape": {},
         "active": [
           {
-            "number": 0,
-            "unit": "osp-official-frontier-coverage-v1-00.service",
+            "number": 2,
+            "unit": "osp-official-frontier-coverage-v1-02.service",
             "service_active": true,
-            "main_pid": 3193022,
-            "shape": "u_shape",
+            "main_pid": 3249067,
+            "shape": "c_shape",
             "profile": "official_nominal",
             "gates": {
               "deadline_settings_gate": true,
@@ -670,18 +670,18 @@
             },
             "live": {
               "state": "running",
-              "targets": 2,
+              "targets": 1,
               "collisions": 0,
-              "elapsed_seconds": 591.464,
+              "elapsed_seconds": 261.292,
               "readiness_reason": ""
             }
           },
           {
-            "number": 1,
-            "unit": "osp-official-frontier-coverage-v1-01.service",
+            "number": 3,
+            "unit": "osp-official-frontier-coverage-v1-03.service",
             "service_active": true,
-            "main_pid": 3193032,
-            "shape": "u_shape",
+            "main_pid": 3251920,
+            "shape": "c_shape",
             "profile": "official_nominal",
             "gates": {
               "deadline_settings_gate": true,
@@ -700,9 +700,9 @@
             },
             "live": {
               "state": "running",
-              "targets": 0,
+              "targets": 1,
               "collisions": 0,
-              "elapsed_seconds": 565.763,
+              "elapsed_seconds": 220.776,
               "readiness_reason": ""
             }
           }
@@ -897,7 +897,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-16T19:31:09.859400+00:00",
+    "captured_utc": "2026-11-16T20:01:21.207401+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
