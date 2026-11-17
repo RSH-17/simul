@@ -44,10 +44,14 @@
   "coordinate_accuracy_independently_verified": false,
   "task_success_independently_verified": false,
   "profile": "robot_profiles/wired_flow_v3/profile.json",
-  "raw_logs_uploaded": false,
+  "raw_logs_uploaded": true,
   "raw_logs_local": "run_logs/robot/20261117T131010-6b8219501f",
   "original_run_git_commit": null,
   "production_promoted": false,
   "saved_profile_session_tests_passed": 22,
-  "live_check_result": "existing_board_started_session_detected_and_left_running"
+  "live_check_result": "existing_board_started_session_detected_and_left_running",
+  "raw_log_index": "repository_snapshot/run_logs/robot/20261117T131010-6b8219501f.json",
+  "raw_log_release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11",
+  "raw_log_size_and_sha256_verified": true,
+  "raw_log_upload_verified_utc": "2026-11-17T13:29:16.352363+00:00"
 }

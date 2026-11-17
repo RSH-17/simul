@@ -32,4 +32,5 @@ accuracy were not evaluated, and final graph coordinate correction was rejected
 for insufficient matched evidence. This is one recorded run, not general proof.
 
 Raw camera/ROS/map data is retained locally under the ignored `run_logs/robot/`
-directory. Public Release upload is pending explicit user approval.
+directory. The user approved public upload; the archive is on GitHub Release
+`policy-logs-robot-2026-11`. Both asset sizes and SHA-256 were verified.

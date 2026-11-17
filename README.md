@@ -1,6 +1,6 @@
 # OSP Final Project — ROS 2 Jazzy
 
-**2026-11-17 실물 실행 결과·다음 실행 설정 저장:** 마지막 실행은 로그상 **265.928초, 확인·접근 ID 0·45·68, 범퍼 0회·센서 중단 0회**로 종료했습니다. 다음 구동 쉘은 저장소의 [동일 설정](robot_profiles/wired_flow_v3/README.md)을 바로 사용합니다(Original·18픽셀 유지). 독립 실측 정답/지도 좌표 정확도 검증은 없으며 원시 기록은 로컬 보존, 공개 업로드는 승인 대기입니다. [결과 요약](repository_snapshot/physical_run_20261117_original18_result.json).
+**2026-11-17 실물 실행 결과·다음 실행 설정 저장:** 마지막 실행은 로그상 **265.928초, 확인·접근 ID 0·45·68, 범퍼 0회·센서 중단 0회**로 종료했습니다. 다음 구동 쉘은 저장소의 [동일 설정](robot_profiles/wired_flow_v3/README.md)을 바로 사용합니다(Original·18픽셀 유지). 독립 실측 정답/지도 좌표 정확도 검증은 없으며 원시 기록은 로컬 보존 및 [공개 Release](https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11)에 업로드했고 크기·SHA-256을 검증했습니다. [결과 요약](repository_snapshot/physical_run_20261117_original18_result.json).
 
 **2026-11-17 실물 범퍼 복구:** 단발 범퍼 접촉은 기존 후방 안전 검사·Nav2 충돌 검사 아래 20cm 후진 후 접촉 목표를 제외하고 재계획하도록 감독기 종료 조건을 변경했습니다. 접촉 횟수 제한 없이 복구하며, 지속 접촉과 낭떠러지/스톨/바퀴 들림 정지는 유지합니다. 감독기 22개·정책 접촉/후방 검사 10개 통과, 새 실물 접촉 시험은 미실시입니다. [동작과 한계](dashboard/ROBOT_BOARD.md#범퍼-접촉-뒤-복구).
 

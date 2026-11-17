@@ -1391,7 +1391,8 @@
       68
     ],
     "reported_elapsed_seconds": 265.9283384260016,
-    "raw_logs_public_upload": "pending_explicit_approval",
-    "independent_ground_truth_verified": false
+    "raw_logs_public_upload": "uploaded_size_and_sha256_verified",
+    "independent_ground_truth_verified": false,
+    "raw_log_release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11"
   }
 }
