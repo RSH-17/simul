@@ -419,7 +419,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 338개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 340개
 
 아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
 
@@ -662,6 +662,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [official_local_grid_screen_v1__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_local_grid_screen_v1__1205000000.mp4) | 실패 | 미달 | 90.248 |
 | [official_localization_validation_v1__00_u_shape_baseline__1205010303.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_localization_validation_v1__00_u_shape_baseline__1205010303.mp4) | 실패 | 미달 | 600.456 |
 | [official_localization_validation_v1__01_u_shape_candidate__1205010303.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_localization_validation_v1__01_u_shape_candidate__1205010303.mp4) | 실패 | 미달 | 600.451 |
+| [official_localization_validation_v1__02_c_shape_baseline__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_localization_validation_v1__02_c_shape_baseline__1205000000.mp4) | 실패 | 확인 | 600.1 |
+| [official_localization_validation_v1__03_c_shape_candidate__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_localization_validation_v1__03_c_shape_candidate__1205000000.mp4) | 실패 | 확인 | 600.468 |
 | [official_no_return_screen_v1__1200100000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_no_return_screen_v1__1200100000.mp4) | 실패 | 미달 | 90.167 |
 | [official_pocket_screen_v1__00_sideways_small__1205000404.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_pocket_screen_v1__00_sideways_small__1205000404.mp4) | 실패 | 미달 | 90.407 |
 | [official_pocket_screen_v1__01_narrow__1205000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_pocket_screen_v1__01_narrow__1205000000.mp4) | 실패 | 미달 | 90.499 |
@@ -1156,8 +1158,8 @@ ros2 launch osp_mission simulation.launch.py planner:=edge camera_width:=960 \
 <!-- ROBOT_TRANSFER_PROGRESS:START -->
 
 실물 대응 후보 `official_localization_validation_v1`: 상태 `running`, 세대 0, 단계 `development`.
-독립 입력 검사를 통과한 native 개발 회차 2개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
+독립 입력 검사를 통과한 native 개발 회차 4개 중 엄격한 완주 0개; 인프라 실패 0개 별도.
 형태·잡음·후보/기준별 결과는 [진행 기록](repository_snapshot/robot_transfer_progress.json)에 분리합니다. 출발 진단·전체 과제·계수 학습은 각각의 scope/phase를 확인해야 하며 실물 검증·production 승격 결과가 아닙니다.
-관측 UTC: 2026-11-17T06:01:19.161831+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
+관측 UTC: 2026-11-17T06:31:20.998591+00:00. 로컬 게시 작업은 요약·완성 영상만 갱신하며 자동 코드 수정/리뷰를 수행하지 않습니다.
 
 <!-- ROBOT_TRANSFER_PROGRESS:END -->

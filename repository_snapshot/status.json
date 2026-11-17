@@ -537,8 +537,8 @@
     "scope": "Three shapes, full 600-second independent hidden-marker task",
     "generation": 0,
     "phase": "development",
-    "recorded_completed": 2,
-    "valid_completed": 2,
+    "recorded_completed": 4,
+    "valid_completed": 4,
     "successes": 0,
     "infrastructure_failures": 0,
     "by_phase_role_profile_shape": {
@@ -551,15 +551,25 @@
         "completed": 1,
         "successes": 0,
         "contacts": 0
+      },
+      "development/baseline/official_nominal/c_shape": {
+        "completed": 1,
+        "successes": 0,
+        "contacts": 0
+      },
+      "development/candidate/official_nominal/c_shape": {
+        "completed": 1,
+        "successes": 0,
+        "contacts": 0
       }
     },
     "active": [
       {
-        "number": 2,
-        "unit": "osp-official-localization-v1-02.service",
+        "number": 4,
+        "unit": "osp-official-localization-v1-04.service",
         "service_active": true,
-        "main_pid": 3512469,
-        "shape": "c_shape",
+        "main_pid": 3561675,
+        "shape": "zigzag",
         "profile": "official_nominal",
         "gates": {
           "deadline_settings_gate": true,
@@ -578,18 +588,18 @@
         },
         "live": {
           "state": "running",
-          "targets": 1,
+          "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 570.101,
+          "elapsed_seconds": 238.003,
           "readiness_reason": ""
         }
       },
       {
-        "number": 3,
-        "unit": "osp-official-localization-v1-03.service",
+        "number": 5,
+        "unit": "osp-official-localization-v1-05.service",
         "service_active": true,
-        "main_pid": 3516492,
-        "shape": "c_shape",
+        "main_pid": 3565287,
+        "shape": "zigzag",
         "profile": "official_nominal",
         "gates": {
           "deadline_settings_gate": true,
@@ -608,9 +618,9 @@
         },
         "live": {
           "state": "running",
-          "targets": 1,
+          "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 526.468,
+          "elapsed_seconds": 183.383,
           "readiness_reason": ""
         }
       }
@@ -634,8 +644,8 @@
         "scope": "Three shapes, full 600-second independent hidden-marker task",
         "generation": 0,
         "phase": "development",
-        "recorded_completed": 2,
-        "valid_completed": 2,
+        "recorded_completed": 4,
+        "valid_completed": 4,
         "successes": 0,
         "infrastructure_failures": 0,
         "by_phase_role_profile_shape": {
@@ -648,15 +658,25 @@
             "completed": 1,
             "successes": 0,
             "contacts": 0
+          },
+          "development/baseline/official_nominal/c_shape": {
+            "completed": 1,
+            "successes": 0,
+            "contacts": 0
+          },
+          "development/candidate/official_nominal/c_shape": {
+            "completed": 1,
+            "successes": 0,
+            "contacts": 0
           }
         },
         "active": [
           {
-            "number": 2,
-            "unit": "osp-official-localization-v1-02.service",
+            "number": 4,
+            "unit": "osp-official-localization-v1-04.service",
             "service_active": true,
-            "main_pid": 3512469,
-            "shape": "c_shape",
+            "main_pid": 3561675,
+            "shape": "zigzag",
             "profile": "official_nominal",
             "gates": {
               "deadline_settings_gate": true,
@@ -675,18 +695,18 @@
             },
             "live": {
               "state": "running",
-              "targets": 1,
+              "targets": 0,
               "collisions": 0,
-              "elapsed_seconds": 570.101,
+              "elapsed_seconds": 238.003,
               "readiness_reason": ""
             }
           },
           {
-            "number": 3,
-            "unit": "osp-official-localization-v1-03.service",
+            "number": 5,
+            "unit": "osp-official-localization-v1-05.service",
             "service_active": true,
-            "main_pid": 3516492,
-            "shape": "c_shape",
+            "main_pid": 3565287,
+            "shape": "zigzag",
             "profile": "official_nominal",
             "gates": {
               "deadline_settings_gate": true,
@@ -705,9 +725,9 @@
             },
             "live": {
               "state": "running",
-              "targets": 1,
+              "targets": 0,
               "collisions": 0,
-              "elapsed_seconds": 526.468,
+              "elapsed_seconds": 183.383,
               "readiness_reason": ""
             }
           }
@@ -967,7 +987,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-17T06:01:19.161831+00:00",
+    "captured_utc": "2026-11-17T06:31:20.998591+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
