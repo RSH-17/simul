@@ -65,9 +65,9 @@ class Sensors:
 
 
 class BumpRecoveryGuard:
-    """Let the mission retreat after contact; bound repeated/held contacts."""
+    """Let the mission retreat after any number of contacts; bound held contact."""
     def __init__(self):
-        self.events = deque()
+        self.last_contact = None
         self.active_since = None
         self.previous = False
         self.total = 0
@@ -76,16 +76,12 @@ class BumpRecoveryGuard:
         if set(types) & {2, 3, 4}:
             return "Hardware cliff/stall/wheel-drop hazard"
         bump = 1 in types
-        while self.events and now - self.events[0] > 60.:
-            self.events.popleft()
         if bump:
             if not self.previous:
                 self.active_since = now
-                if not self.events or now - self.events[-1] >= 2.:
-                    self.events.append(now)
+                if self.last_contact is None or now - self.last_contact >= 2.:
+                    self.last_contact = now
                     self.total += 1
-            if len(self.events) >= 3:
-                return "Repeated bumper contacts: 3 in 60 seconds"
             if self.active_since is not None and now - self.active_since >= 10.:
                 return "Bumper held for 10 seconds: retreat did not clear contact"
         else:

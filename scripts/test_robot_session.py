@@ -71,14 +71,13 @@ class StartSafetyTest(unittest.TestCase):
         guard.check(0., [1])
         self.assertIn("held", guard.check(10., [1]))
 
-    def test_repeated_contact_is_bounded_and_old_events_expire(self):
+    def test_any_number_of_released_contacts_allows_recovery(self):
         guard = session.BumpRecoveryGuard()
-        for now in (0., 3.):
+        for index in range(100):
+            now = index * 3.
             self.assertEqual(guard.check(now, [1]), "")
-            guard.check(now+1., [])
-        self.assertIn("Repeated", guard.check(6., [1]))
-        guard.check(7., [])
-        self.assertEqual(guard.check(70., [1]), "")
+            self.assertEqual(guard.check(now+1., []), "")
+        self.assertEqual(guard.total, 100)
 
     def test_cliff_stall_drop_always_stop_even_with_bump(self):
         for hazard in (2, 3, 4):

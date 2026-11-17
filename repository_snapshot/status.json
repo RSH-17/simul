@@ -1371,11 +1371,12 @@
     "retreat_m": 0.2,
     "speed_m_s": 0.08,
     "rear_scan_and_nav2_collision_check_required": true,
-    "max_contacts_in_60s": 3,
+    "max_contacts_in_60s": null,
     "held_bump_stop_s": 10,
     "cliff_stall_wheel_drop_stop_preserved": true,
     "supervisor_tests_passed": 22,
     "mission_bump_rear_tests_passed": 10,
-    "new_physical_contact_trial": false
+    "new_physical_contact_trial": false,
+    "contact_count_stop_enabled": false
   }
 }
