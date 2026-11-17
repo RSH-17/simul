@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "20261117T131010-6b8219501f",
+  "mode": "robot",
+  "state": "finished",
+  "evidence_type": "policy_execution",
+  "started_utc": "2026-11-17T13:10:10.257316+00:00",
+  "finished_utc": "2026-11-17T13:14:56.424518+00:00",
+  "git_commit": null,
+  "policy_sha256": "ca67b32c20a17e74e0bc8292b117240e19d80f24137cbf092d473a743be5eb36",
+  "exit_code": 0,
+  "capture_complete": true,
+  "bag_enabled": true,
+  "release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11",
+  "archive": {
+    "format": "Concatenate numbered parts, then extract as tar.gz",
+    "assets": [
+      {
+        "name": "20261117T131010-6b8219501f.tar.gz.part0001",
+        "bytes": 268435456,
+        "sha256": "954fc9bd947890f7e7bcbb43f70854c5b8fe875fd53d08570530e3b7ccf8b878",
+        "url": "https://github.com/peter010905/simul/releases/download/policy-logs-robot-2026-11/20261117T131010-6b8219501f.tar.gz.part0001"
+      },
+      {
+        "name": "20261117T131010-6b8219501f.tar.gz.part0002",
+        "bytes": 52116692,
+        "sha256": "dbaa592b85ec6b296f341188cc09378c9ae9c04c6a002f1defff3af4e5b295b0",
+        "url": "https://github.com/peter010905/simul/releases/download/policy-logs-robot-2026-11/20261117T131010-6b8219501f.tar.gz.part0002"
+      }
+    ]
+  },
+  "uploaded_utc": "2026-11-17T13:29:14.441802+00:00",
+  "task_success_claimed": false
+}
