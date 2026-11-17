@@ -59,6 +59,31 @@ class StartSafetyTest(unittest.TestCase):
             session.repair_camera(io, session.StopFlag(), Mock())
         io.node.create_client.assert_not_called()
 
+    def test_single_bump_allows_existing_mission_recovery(self):
+        guard = session.BumpRecoveryGuard()
+        self.assertEqual(guard.check(0., [1]), "")
+        self.assertEqual(guard.check(1., [1]), "")
+        self.assertEqual(guard.total, 1)
+        self.assertEqual(guard.check(3., []), "")
+
+    def test_held_bump_stops_if_retreat_does_not_clear_it(self):
+        guard = session.BumpRecoveryGuard()
+        guard.check(0., [1])
+        self.assertIn("held", guard.check(10., [1]))
+
+    def test_repeated_contact_is_bounded_and_old_events_expire(self):
+        guard = session.BumpRecoveryGuard()
+        for now in (0., 3.):
+            self.assertEqual(guard.check(now, [1]), "")
+            guard.check(now+1., [])
+        self.assertIn("Repeated", guard.check(6., [1]))
+        guard.check(7., [])
+        self.assertEqual(guard.check(70., [1]), "")
+
+    def test_cliff_stall_drop_always_stop_even_with_bump(self):
+        for hazard in (2, 3, 4):
+            self.assertIn("Hardware", session.BumpRecoveryGuard().check(0., [1, hazard]))
+
     def client(self):
         client = Mock()
         client.service_is_ready.return_value = True

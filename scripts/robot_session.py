@@ -64,6 +64,36 @@ class Sensors:
             for v in recent)
 
 
+class BumpRecoveryGuard:
+    """Let the mission retreat after contact; bound repeated/held contacts."""
+    def __init__(self):
+        self.events = deque()
+        self.active_since = None
+        self.previous = False
+        self.total = 0
+
+    def check(self, now, types):
+        if set(types) & {2, 3, 4}:
+            return "Hardware cliff/stall/wheel-drop hazard"
+        bump = 1 in types
+        while self.events and now - self.events[0] > 60.:
+            self.events.popleft()
+        if bump:
+            if not self.previous:
+                self.active_since = now
+                if not self.events or now - self.events[-1] >= 2.:
+                    self.events.append(now)
+                    self.total += 1
+            if len(self.events) >= 3:
+                return "Repeated bumper contacts: 3 in 60 seconds"
+            if self.active_since is not None and now - self.active_since >= 10.:
+                return "Bumper held for 10 seconds: retreat did not clear contact"
+        else:
+            self.active_since = None
+        self.previous = bump
+        return ""
+
+
 class StartGate:
     """One outstanding start request; a lost reply fails closed without retry."""
     def __init__(self, timeout=5.0):
@@ -405,13 +435,21 @@ def start(args, io, flag, state_path):
         state["phase"] = "running"
         save(state_path, state)
         first_motion = first_nav = False
+        bump_guard = BumpRecoveryGuard()
         while not flag.stopped:
             io.spin()
             if process.poll() is not None:
                 raise RuntimeError("ROS launch exited during mission")
             hazards = io.sensors.samples.get("hazards")
-            if hazards and set(hazards[2]) & {1, 2, 3, 4}:
-                raise RuntimeError("Hardware hazard; stopping session")
+            if hazards:
+                before = bump_guard.total
+                reason = bump_guard.check(time.monotonic(), hazards[2])
+                if reason:
+                    report("safety_stop", reason=reason, hazard_types=hazards[2])
+                    raise RuntimeError(reason)
+                if bump_guard.total != before:
+                    report("bumper_recovery", contacts=bump_guard.total,
+                           action="mission_cancel_safe_backup_replan")
             if not first_motion and io.sensors.odom and any(abs(v) > 0.01 for v in io.sensors.odom[-1][1:]):
                 report("first_motion")
                 first_motion = True

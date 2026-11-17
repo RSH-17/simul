@@ -1365,5 +1365,17 @@
     "restart_first_motion_s": 15.715,
     "start_rpc_transient_camera_delay_cancels": false,
     "session_tests_passed": 18
+  },
+  "bumper_recovery": {
+    "single_bump_ends_session": false,
+    "retreat_m": 0.2,
+    "speed_m_s": 0.08,
+    "rear_scan_and_nav2_collision_check_required": true,
+    "max_contacts_in_60s": 3,
+    "held_bump_stop_s": 10,
+    "cliff_stall_wheel_drop_stop_preserved": true,
+    "supervisor_tests_passed": 22,
+    "mission_bump_rear_tests_passed": 10,
+    "new_physical_contact_trial": false
   }
 }
