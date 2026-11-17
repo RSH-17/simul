@@ -1,0 +1,209 @@
+{
+  "captured_utc": "2026-11-17T03:05:21.051582+00:00",
+  "evidence_type": "Final original Gazebo results plus scheduler failure diagnosis; not new replay success",
+  "frontier_coverage": {
+    "scheduler_status": "needs_infrastructure_repair",
+    "raw_completed": 4,
+    "scheduled": 6,
+    "strict_raw_successes": 0,
+    "rows": [
+      {
+        "job": 0,
+        "role": "baseline",
+        "shape": "u_shape",
+        "scheduler_status": "done",
+        "raw_native_completed": true,
+        "found_ids": [
+          81,
+          204
+        ],
+        "ids": 2,
+        "actual_approaches": 2,
+        "contacts": 0,
+        "elapsed_seconds": 600.464,
+        "success": false,
+        "reason": "timeout",
+        "position_errors_m": {
+          "81": 1.3332033316017218,
+          "204": 1.6494382603111941
+        },
+        "closest_approach_m": {
+          "76": 2.1575477424984246,
+          "81": 0.5928792557727116,
+          "204": 0.6426839996737088
+        },
+        "original_scheduler_outcome": {
+          "success": false,
+          "targets": 2,
+          "approached": 2,
+          "contacts": 0,
+          "seconds": 600.464,
+          "infrastructure_failure": true,
+          "reason": "integrated_runtime_gate_unverified"
+        },
+        "face_look_profile": {
+          "version": 2,
+          "frame": "map",
+          "frame_parameter": "map_frame",
+          "maximum_turn_rad": 2.0943951023931953,
+          "executed": 5,
+          "unavailable": 0,
+          "creates_coverage_or_recognition_credit": false,
+          "assumption": "Existing robot camera optical heading is aligned with body heading"
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/evaluation.json",
+        "evaluation_sha256": "a2a763398a4a89a7c205a2e108c0d520ff33756a7bf4d7ad467239d8664f5822"
+      },
+      {
+        "job": 1,
+        "role": "candidate",
+        "shape": "u_shape",
+        "scheduler_status": "done",
+        "raw_native_completed": true,
+        "found_ids": [],
+        "ids": 0,
+        "actual_approaches": 1,
+        "contacts": 0,
+        "elapsed_seconds": 600.263,
+        "success": false,
+        "reason": "timeout",
+        "position_errors_m": {},
+        "closest_approach_m": {
+          "76": 1.016946752628486,
+          "81": 10.812022873263855,
+          "204": 15.829823858389236
+        },
+        "original_scheduler_outcome": {
+          "success": false,
+          "targets": 0,
+          "approached": 1,
+          "contacts": 0,
+          "seconds": 600.263,
+          "infrastructure_failure": true,
+          "reason": "integrated_runtime_gate_unverified"
+        },
+        "face_look_profile": {
+          "version": 2,
+          "frame": "map",
+          "frame_parameter": "map_frame",
+          "maximum_turn_rad": 2.0943951023931953,
+          "executed": 13,
+          "unavailable": 0,
+          "creates_coverage_or_recognition_credit": false,
+          "assumption": "Existing robot camera optical heading is aligned with body heading"
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/evaluation.json",
+        "evaluation_sha256": "0bdf213076215732a194a6911fc974f1ee300f5c90470411eb4db26387454989"
+      },
+      {
+        "job": 2,
+        "role": "baseline",
+        "shape": "c_shape",
+        "scheduler_status": "done",
+        "raw_native_completed": true,
+        "found_ids": [
+          903
+        ],
+        "ids": 1,
+        "actual_approaches": 3,
+        "contacts": 0,
+        "elapsed_seconds": 600.294,
+        "success": false,
+        "reason": "timeout",
+        "position_errors_m": {
+          "903": 0.14228535133124087
+        },
+        "closest_approach_m": {
+          "903": 0.7544405689034612,
+          "319": 0.9405795269303568,
+          "795": 0.8704408129399526
+        },
+        "original_scheduler_outcome": {
+          "success": false,
+          "targets": 1,
+          "approached": 3,
+          "contacts": 0,
+          "seconds": 600.294,
+          "infrastructure_failure": true,
+          "reason": "integrated_runtime_gate_unverified"
+        },
+        "face_look_profile": {
+          "version": 2,
+          "frame": "map",
+          "frame_parameter": "map_frame",
+          "maximum_turn_rad": 2.0943951023931953,
+          "executed": 3,
+          "unavailable": 0,
+          "creates_coverage_or_recognition_credit": false,
+          "assumption": "Existing robot camera optical heading is aligned with body heading"
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/evaluation.json",
+        "evaluation_sha256": "c7fadb204d8c76f4bb21a1f0b74ac25a5cbb665793430dda40892c492acda86e"
+      },
+      {
+        "job": 3,
+        "role": "candidate",
+        "shape": "c_shape",
+        "scheduler_status": "running",
+        "raw_native_completed": true,
+        "found_ids": [
+          319,
+          903
+        ],
+        "ids": 2,
+        "actual_approaches": 3,
+        "contacts": 0,
+        "elapsed_seconds": 600.275,
+        "success": false,
+        "reason": "timeout",
+        "position_errors_m": {
+          "903": 0.6580127840804546,
+          "319": 0.5640724436289334
+        },
+        "closest_approach_m": {
+          "903": 0.8415406279760302,
+          "319": 0.8580438838282615,
+          "795": 0.8601355111939342
+        },
+        "original_scheduler_outcome": null,
+        "face_look_profile": {
+          "version": 2,
+          "frame": "map",
+          "frame_parameter": "map_frame",
+          "maximum_turn_rad": 2.0943951023931953,
+          "executed": 28,
+          "unavailable": 0,
+          "creates_coverage_or_recognition_credit": false,
+          "assumption": "Existing robot camera optical heading is aligned with body heading"
+        },
+        "evaluation": "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/evaluation.json",
+        "evaluation_sha256": "b4a7af0bb78f43c1eda3ba094f25089ad3ec2f2268e2322ea1b7d24f856003c8"
+      }
+    ],
+    "zigzag_started": false
+  },
+  "blocker": {
+    "gate": "candidate_output_profiles_gate",
+    "checker": "training_robust/official_tb4_curriculum_v2.py:candidate_profiles",
+    "required_version": 1,
+    "observed_version": 2,
+    "diagnosis": "All four report.json result rows fail only the legacy face_directed_look version equality among its eight profile checks; runtime sensor/TF/configuration gates observed passing.",
+    "checker_source_sha256": "e7ea40ed802bd4910cc78eaecc17892c0d6941a224c40c9e05d37cb8e2041e03",
+    "original_results_reclassified": false,
+    "original_files_preserved": true
+  },
+  "rolling_goal": {
+    "status": "waiting_for_original_campaign",
+    "completed": 0,
+    "started": 0,
+    "scheduled": 6,
+    "coordinator_main_pid": 3213492,
+    "reason": "Waiting for original frontier/coverage campaign to finish; it stopped at infrastructure repair."
+  },
+  "actual_native_processes": [],
+  "native_improvement_proven": false,
+  "hardware_validated": false,
+  "production_promoted": false,
+  "conclusion": "No full-task improvement established. U candidate is worse on observed IDs/approaches; C candidate finds more IDs but both coordinates exceed 0.5m. Rolling-goal hypothesis remains untested in Gazebo.",
+  "next_required": "Repair the version-specific output contract under a new source-frozen supervisor, preserve original evaluations, finish pending trials and release the rolling-goal queue."
+}

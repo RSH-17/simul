@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Built destination re-evaluation candidate with hysteresis and acknowledgement-safe cancellation; 530 runtime checks; six paired full-task trials queued after preserved frontier/coverage campaign",
+  "latest_change": "Reported four completed frontier/coverage native failures and legacy face-look version gate mismatch; rolling-goal native experiment has not started",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -865,7 +865,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-16T18:39:39.154315+00:00",
+  "latest_status_check_utc": "2026-11-17T03:05:21.051582+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -1194,18 +1194,20 @@
   },
   "frontier_coverage_candidate": "repository_snapshot/frontier_coverage_candidate.json",
   "frontier_coverage_comparison": {
-    "status": "running_first_U_pair",
-    "coordinator_main_pid": 3193000,
-    "completed": 0,
+    "status": "needs_infrastructure_repair",
+    "raw_completed": 4,
+    "strict_raw_successes": 0,
     "planned": 6,
     "native_improvement_verified": false
   },
   "rolling_goal_experiment": "repository_snapshot/rolling_goal_experiment.json",
   "rolling_goal_native_comparison": {
-    "status": "waiting_for_original_campaign",
-    "verified_main_pid": 3213492,
+    "status": "waiting_for_original_campaign_blocked_by_legacy_profile_gate",
+    "completed": 0,
+    "started": 0,
     "prepared": 6,
     "actual_new_native_started": false,
     "native_improvement_proven": false
-  }
+  },
+  "frontier_coverage_partial_native_result": "repository_snapshot/frontier_coverage_partial_native_result.json"
 }
