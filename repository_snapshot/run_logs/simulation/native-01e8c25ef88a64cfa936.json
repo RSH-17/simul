@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "native-01e8c25ef88a64cfa936",
+  "mode": "simulation",
+  "state": "finished",
+  "evidence_type": "native_gazebo_policy_execution",
+  "started_utc": "2026-11-17T03:44:47.938217+00:00",
+  "finished_utc": "2026-11-17T04:59:54.075301+00:00",
+  "git_commit": null,
+  "policy_sha256": "571eb9d0a704a6a2e5e86c16926b5913e258943830e32a03c5a07683f8ec871c",
+  "exit_code": null,
+  "capture_complete": true,
+  "bag_enabled": false,
+  "release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-simulation-2026-11",
+  "archive": {
+    "format": "Concatenate numbered parts, then extract as tar.gz",
+    "assets": [
+      {
+        "name": "native-01e8c25ef88a64cfa936.tar.gz.part0001",
+        "bytes": 21210498,
+        "sha256": "286c87ed03ae6653d658861fa6a9281b1f9a09fae4263e76bb4f28b16d16ab1d",
+        "url": "https://github.com/peter010905/simul/releases/download/policy-logs-simulation-2026-11/native-01e8c25ef88a64cfa936.tar.gz.part0001"
+      }
+    ]
+  },
+  "uploaded_utc": "2026-11-17T05:01:21.811731+00:00",
+  "task_success_claimed": false
+}
