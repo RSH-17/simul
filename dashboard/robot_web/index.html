@@ -17,8 +17,10 @@
       <article class="card hero"><span class="label">미션</span><strong id="mission-state">대기</strong><small id="mission-detail">상태 수신 전</small></article>
       <article class="card"><span class="label">출발 지도 셀</span><strong id="start-cell">—</strong><small id="start-cell-detail">지도·TF 수신 전</small></article>
       <article class="card"><span class="label">충돌 감시</span><strong id="collision">—</strong><small id="collision-detail">상태 수신 전</small></article>
-      <article class="card"><span class="label">확인된 마커</span><strong id="markers">—</strong><small id="marker-detail">미션 상태 수신 전</small></article>
+      <article class="card"><span class="label">발견한 마커</span><strong id="detected-markers">—</strong><small id="detected-detail">탐지 결과 수신 전</small></article>
+      <article class="card"><span class="label">접근 완료</span><strong id="markers">—</strong><small id="marker-detail">미션 상태 수신 전</small></article>
     </section>
+    <div id="marker-alert" class="marker-alert" role="status" aria-live="polite" hidden></div>
     <section class="visuals">
       <article class="card visual"><div class="section-heading"><div><span class="label">SLAM + NAV2</span><h2>지도와 계획 경로</h2></div><div class="map-tools"><button id="map-fullscreen" type="button">전체 화면</button><span id="map-age" class="age">대기</span></div></div><div id="map-frame" class="frame"><img id="map-image" alt="로봇 위치와 Nav2 경로가 표시된 실시간 지도"><span id="map-empty" class="placeholder">/map 및 map→base_link TF 대기 중</span></div><div class="legend"><span><i class="robot"></i>로봇</span><span><i class="global"></i>전역 경로</span><span><i class="local"></i>로컬 경로</span></div></article>
       <article class="card visual"><div class="section-heading"><div><span class="label">OAK-D RGB</span><h2>실제 로봇 시점</h2></div><span id="camera-age" class="age">대기</span></div><div class="frame camera"><img id="camera-image" alt="로봇 OAK-D 실시간 카메라"><span id="camera-empty" class="placeholder">RGB 프레임 대기 중</span></div><p class="note">화면이 멈추면 오른쪽 수신 시각이 오래된 값으로 바뀝니다.</p></article>

@@ -49,6 +49,8 @@ def run(args):
             self.plans = {'global': {}, 'local': {}}
             self.plan_counts = {'global': 0, 'local': 0}
             self.targets = []
+            self.discovered_ids = set()
+            self.latest_discovery = None
             self.timestamps = {}
             self.map_png = None
             self.camera_jpeg = None
@@ -86,6 +88,8 @@ def run(args):
                     self.plans = {'global': {}, 'local': {}}
                     self.plan_counts = {'global': 0, 'local': 0}
                     self.targets = []
+                    self.discovered_ids.clear()
+                    self.latest_discovery = None
                     self.raw_scan = None
                     self.filtered_scan = None
                     self.map_png = None
@@ -130,6 +134,10 @@ def run(args):
                 self.targets = [(int(m.id), m.pose.position.x, m.pose.position.y)
                                 for m in message.markers if m.ns == 'point' and m.action == 0
                                 and m.header.frame_id == args.map_frame]
+                new_ids = sorted({ident for ident, _, _ in self.targets} - self.discovered_ids)
+                if new_ids:
+                    self.discovered_ids.update(new_ids)
+                    self.latest_discovery = {'ids': new_ids, 'time': time.time()}
                 self.mark('targets')
 
         def on_plan(self, message, kind):
@@ -253,6 +261,8 @@ def run(args):
                 camera_ready = self.camera_jpeg is not None
                 map_ready = self.map_png is not None
                 scan_ready = self.scan_png is not None
+                discovered_ids = sorted(self.discovered_ids)
+                latest_discovery = self.latest_discovery
             now = time.time()
             ages = {name: round(now-stamp, 1) for name, stamp in stamps.items()}
             return {'server_time': now, 'mode': 'simulation' if args.sim else 'hardware',
@@ -260,6 +270,8 @@ def run(args):
                     'policy_prefix': self.policy_prefix, 'status': status, 'collision_monitor': collision,
                     'start_cell': cell, 'robot_pose': pose, 'pose_age_s': pose_age,
                     'scan': scan, 'ages_s': ages,
+                    'discovered_ids': discovered_ids,
+                    'latest_discovery': latest_discovery,
                     'plans': plans, 'camera_ready': camera_ready, 'map_ready': map_ready,
                     'scan_ready': scan_ready,
                     'read_only': True}

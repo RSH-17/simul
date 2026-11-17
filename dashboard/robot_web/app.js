@@ -40,8 +40,17 @@ function render(data){
   $('collision').className=collision.action==='STOP'?'bad':'';
   $('collision-detail').textContent=`${collision.polygon||'다각형 미수신'} · ${sec(ages.collision_monitor)}`;
   const ids=status.approached_ids||[];
+  const detected=data.discovered_ids||[];
+  $('detected-markers').textContent=`${detected.length} / 3`;
+  $('detected-detail').textContent=detected.length?`탐지 확인 ID ${detected.join(', ')}`:'탐지 확인된 ID 없음';
   $('markers').textContent=`${ids.length} / 3`;
   $('marker-detail').textContent=ids.length?`접근 확인 ID ${ids.join(', ')}`:'접근 확인된 ID 없음';
+  const found=data.latest_discovery;
+  const alert=$('marker-alert');
+  if(found&&data.server_time-found.time<15){
+    alert.textContent=`마커 발견: ID ${found.ids.join(', ')} · 현재 ${detected.length} / 3개 탐지`;
+    alert.hidden=false;
+  }else alert.hidden=true;
   rows('scan-details',[
     ['원본 LiDAR',sec(ages.raw_scan),ages.raw_scan>3?'bad':''],
     ['필터 LiDAR',sim?'원본 스캔 사용':sec(ages.filtered_scan),!sim&&ages.filtered_scan>3?'bad':''],
