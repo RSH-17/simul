@@ -1378,5 +1378,20 @@
     "mission_bump_rear_tests_passed": 10,
     "new_physical_contact_trial": false,
     "contact_count_stop_enabled": false
+  },
+  "saved_physical_profile": {
+    "profile": "robot_profiles/wired_flow_v3/profile.json",
+    "result": "repository_snapshot/physical_run_20261117_original18_result.json",
+    "next_launch_uses_saved_profile": true,
+    "min_marker_pixels": 18,
+    "dictionary": "DICT_ARUCO_ORIGINAL",
+    "reported_verified_ids": [
+      0,
+      45,
+      68
+    ],
+    "reported_elapsed_seconds": 265.9283384260016,
+    "raw_logs_public_upload": "pending_explicit_approval",
+    "independent_ground_truth_verified": false
   }
 }

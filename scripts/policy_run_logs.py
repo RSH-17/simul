@@ -149,7 +149,8 @@ def run_policy(root,mode,argv,workspace=None,policy=None,namespace='',bag=True,u
         if policy and Path(policy).is_file():
             (run/'policy.json').write_bytes(Path(policy).read_bytes());manifest['policy_sha256']=sha(Path(policy))
         if workspace:
-            configs=[Path(workspace)/'nav2_robot_active.yaml']
+            configs=[Path(workspace)/'nav2_robot_active.yaml',
+                     root/'robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml']
             configs+=list((Path(workspace)/'install/osp_mission/share/osp_mission/config').glob('*.yaml'))
             for path in configs:
                 if path.is_file():

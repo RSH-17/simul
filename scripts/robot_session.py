@@ -222,7 +222,7 @@ def runtime_check(args):
     expected = args.workspace / "install/osp_mission"
     if Path(get_package_prefix("osp_mission")).resolve() != expected.resolve():
         raise RuntimeError("Wrong osp_mission overlay; source the prepared workspace")
-    for path in (args.workspace / "install/setup.bash", args.workspace / "nav2_hardware_profile.yaml",
+    for path in (args.workspace / "install/setup.bash", args.repo / "robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml",
                  args.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"):
         if not path.is_file():
             raise FileNotFoundError("Prepare this file before start: " + str(path))
@@ -238,7 +238,7 @@ def launch_command(args, output):
             "rviz:=false", "planner:=edge", "planner_start_ignore_radius_m:=0.30",
             "navigation_flow_enabled:=true", "allow_mid_route_wall_inspection:=false",
             "undock:=false", "duration:=" + str(args.duration),
-            "nav2_params:=" + str(args.workspace / "nav2_hardware_profile.yaml"),
+            "nav2_params:=" + str(args.repo / "robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml"),
             "policy_file:=" + str(args.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"),
             "output_dir:=" + str(output)]
 
