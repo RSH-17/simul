@@ -1,4 +1,4 @@
-"""Read-only live board for a physical TurtleBot4 ROS graph."""
+"""Read-only live board for a physical or simulated TurtleBot4 ROS graph."""
 import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -24,6 +24,7 @@ def run(args):
     from nav2_msgs.msg import CollisionMonitorState
     from nav_msgs.msg import OccupancyGrid, Path as NavPath
     from rclpy.node import Node
+    from rclpy.parameter import Parameter
     from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, qos_profile_sensor_data
     from rclpy.time import Time
     from sensor_msgs.msg import Image, LaserScan
@@ -35,10 +36,10 @@ def run(args):
 
     class Monitor(Node):
         def __init__(self):
-            super().__init__('osp_physical_robot_board')
+            super().__init__('osp_robot_board', parameter_overrides=[Parameter('use_sim_time', value=args.sim)])
             self.lock = threading.RLock()
             self.bridge = CvBridge()
-            self.tf = Buffer()
+            self.tf = Buffer(node=self)
             self.listener = TransformListener(self.tf, self)
             self.grid = None
             self.raw_scan = None
@@ -142,7 +143,7 @@ def run(args):
             try:
                 stamped = self.tf.lookup_transform(args.map_frame, args.base_frame, Time())
                 stamp = stamped.header.stamp.sec + stamped.header.stamp.nanosec/1e9
-                age = time.time() - stamp
+                age = self.get_clock().now().nanoseconds/1e9 - stamp
                 with self.lock:
                     self.pose_age_s = age
                 if age > 3 or age < -.5:
@@ -237,7 +238,8 @@ def run(args):
                 scan_ready = self.scan_png is not None
             now = time.time()
             ages = {name: round(now-stamp, 1) for name, stamp in stamps.items()}
-            return {'server_time': now, 'namespace': args.namespace, 'ros_domain_id': args.domain,
+            return {'server_time': now, 'mode': 'simulation' if args.sim else 'hardware',
+                    'namespace': args.namespace, 'ros_domain_id': args.domain,
                     'policy_prefix': self.policy_prefix, 'status': status, 'collision_monitor': collision,
                     'start_cell': cell, 'robot_pose': pose, 'pose_age_s': pose_age,
                     'scan': scan, 'ages_s': ages,
@@ -282,7 +284,7 @@ def run(args):
             return
 
     server = ThreadingHTTPServer((args.host, args.port), Handler)
-    print(f'Physical robot board: http://{args.host}:{args.port}  ROS_DOMAIN_ID={args.domain}', flush=True)
+    print(f'{"Simulation" if args.sim else "Physical robot"} board: http://{args.host}:{args.port}  ROS_DOMAIN_ID={args.domain}', flush=True)
     try:
         server.serve_forever()
     finally:
@@ -303,6 +305,7 @@ def main():
     parser.add_argument('--rgb', default='oakd/rgb/preview/image_raw')
     parser.add_argument('--map-frame', default='map')
     parser.add_argument('--base-frame', default='base_link')
+    parser.add_argument('--sim', action='store_true', help='Use ROS /clock for TF freshness')
     args = parser.parse_args()
     if not 0 <= args.domain <= 232 or not 1024 <= args.port <= 65535:
         parser.error('Domain must be 0..232 and port 1024..65535')
