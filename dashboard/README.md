@@ -1,5 +1,9 @@
 # OSP Robot Observatory
 
+실물 TurtleBot4의 현재 주행·출발 셀·원본/필터 LiDAR를 보려면
+[실물 주행 보드](ROBOT_BOARD.md)를 사용합니다. 아래 대시보드는 Gazebo
+실험 캠페인용입니다.
+
 실제 로봇 시점, Gazebo 관찰 카메라, SLAM 지도와 LiDAR, 마커 진행, 로그와 완료 영상을
 확인하는 **로컬 읽기 전용 대시보드**입니다. 기존 Tk 2D 재생 대시보드와 별개입니다.
 
