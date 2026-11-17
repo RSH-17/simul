@@ -26,9 +26,9 @@ function render(data){
   $('board-title').textContent=sim?'Gazebo 시뮬 주행 보드':'실물 주행 보드';
   $('board-subtitle').textContent=`${sim?'ROS 시뮬 시간':'실물 ROS'} · 읽기 전용 · 주행 명령 없음`;
   const live=(ages.mission_status!==undefined&&ages.mission_status<statusLimit)||(ages.raw_scan!==undefined&&ages.raw_scan<5);
-  $('connection').textContent=live?'ROS 수신 중':'ROS 데이터 대기 / 끊김';
+  $('connection').textContent=live?'ROS 수신 중':sim&&ages.raw_scan!==undefined?'시뮬 종료 · 마지막 화면':sim?'시뮬 시작 대기':'ROS 데이터 대기 / 끊김';
   $('connection').classList.toggle('offline',!live);
-  $('mission-state').textContent=status.state||'상태 대기';
+  $('mission-state').textContent=!live&&sim&&ages.raw_scan!==undefined?'시뮬 종료':status.state||'상태 대기';
   $('mission-state').className=ages.mission_status>statusLimit?'bad':'';
   $('mission-detail').textContent=`${status.active_action||'동작 없음'} · 상태 ${sec(ages.mission_status)}`;
   const cellName={start_free:'빈 공간',start_not_free:'출발 셀 점유',start_unknown:'출발 셀 미관측',start_outside_map:'지도 밖',map_or_pose_unavailable:'지도 / TF 대기'};
@@ -74,7 +74,8 @@ function render(data){
   const warnings=[];
   if(cell.reason==='start_not_free')warnings.push('출발 위치의 지도 셀이 점유 상태입니다. 원본/필터 LiDAR와 지도상의 로봇 위치를 대조하세요.');
   if(collision.action==='STOP')warnings.push('Nav2 충돌 감시가 STOP 상태입니다.');
-  if(!live)warnings.push('ROS 데이터가 갱신되지 않습니다. 도메인·네임스페이스·RMW와 로봇 bringup을 확인하세요.');
+  if(!live)warnings.push(sim&&ages.raw_scan!==undefined?'Gazebo 실행이 끝났습니다. 현재 화면은 마지막으로 받은 데이터입니다.':
+    'ROS 데이터가 갱신되지 않습니다. 도메인·네임스페이스·RMW와 로봇 bringup을 확인하세요.');
   if(live&&ages.map!==undefined&&ages.map>visualLimit)warnings.push('지도가 갱신되지 않습니다. 표시된 경로와 출발 셀은 오래된 지도 기준입니다.');
   if(live&&data.pose_age_s!==null&&data.pose_age_s>3)warnings.push('map→base_link TF가 3초 넘게 갱신되지 않아 출발 셀 판정을 숨겼습니다.');
   if(!sim&&ages.filtered_scan===undefined&&ages.raw_scan!==undefined&&ages.raw_scan<3)warnings.push('필터 스캔이 없습니다. v21 필터가 실행 중인지 확인하세요.');

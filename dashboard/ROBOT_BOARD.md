@@ -49,7 +49,8 @@ python3 dashboard/robot_board.py --sim --domain 48 --host 0.0.0.0 --port 8767
 ```
 
 Mac에서 `http://<VM-IP>:8767`을 열면 현재 진행 중인 미션·지도·경로·RGB·LiDAR를
-볼 수 있습니다. 시뮬이 끝나면 수신 시각이 멈춘 것으로 표시됩니다. v20 시뮬은
+볼 수 있습니다. 시뮬이 끝나면 `시뮬 종료 · 마지막 화면`으로 표시됩니다. 새
+Gazebo 실행으로 `/clock`이 되감기면 이전 실행의 경로와 상태를 지웁니다. v20 시뮬은
 실물용 `scan_self_filtered`를 발행하지 않으므로 필터 항목은 적용되지 않았다고
 표시합니다. 완료된 Gazebo 캠페인 영상과 평가 결과는 기존
 `dashboard/server.py` 대시보드에서 확인합니다.

@@ -76,6 +76,23 @@ def run(args):
 
         def on_map(self, message):
             with self.lock:
+                source = message.header.stamp.sec + message.header.stamp.nanosec/1e9
+                previous = getattr(self, 'last_map_source_s', None)
+                if args.sim and previous is not None and source < previous-1:
+                    # A new Gazebo run reset /clock. Drop the previous run's
+                    # status, paths and images instead of showing them as live.
+                    self.status = {}
+                    self.collision = None
+                    self.plans = {'global': {}, 'local': {}}
+                    self.plan_counts = {'global': 0, 'local': 0}
+                    self.targets = []
+                    self.raw_scan = None
+                    self.filtered_scan = None
+                    self.map_png = None
+                    self.camera_jpeg = None
+                    self.scan_png = None
+                    self.timestamps.clear()
+                self.last_map_source_s = source
                 self.grid = message
                 self.mark('map')
 
