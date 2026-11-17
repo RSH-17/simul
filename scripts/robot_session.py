@@ -47,7 +47,8 @@ class Sensors:
             received, stamp, _ = sample
             if wall - received > 2.0:
                 return name + "_not_receiving"
-            if stamp is not None and not -0.1 <= ros_now - stamp <= 2.0:
+            limit = 0.65 if name in ("camera", "camera_info") else 2.0
+            if stamp is not None and not -0.1 <= ros_now - stamp <= limit:
                 return name + "_clock_or_stamp_stale"
         if self.samples["dock"][2]:
             return "robot_docked: move off the dock before start (no automatic undock)"
@@ -282,6 +283,34 @@ def preflight(io, flag, timeout):
     raise TimeoutError("Preflight: " + reason)
 
 
+def repair_camera(io, flag, report):
+    # Only before launching our stack, with measured stationary wheels.
+    if flag.stopped or io.conflicts() or not io.sensors.stationary(time.monotonic()):
+        raise RuntimeError("Camera repair requires stopped robot and no active navigation")
+    report("camera_reinitialization", reason="stale_capture_timestamp")
+    for service in ("/oakd/stop_camera", "/oakd/start_camera"):
+        client = io.node.create_client(io.Trigger, service)
+        future = None
+        try:
+            deadline = time.monotonic() + 12.
+            while not client.service_is_ready():
+                if flag.stopped or time.monotonic() > deadline:
+                    raise RuntimeError("Camera service unavailable or operator stop")
+                io.spin()
+            future = client.call_async(io.Trigger.Request())
+            while not future.done():
+                if flag.stopped or time.monotonic() > deadline:
+                    raise RuntimeError("Camera repair interrupted or timed out")
+                io.spin()
+            if not future.result().success:
+                raise RuntimeError("Camera repair rejected: " + service)
+        finally:
+            if future is not None and not future.done():
+                future.cancel()
+                client.remove_pending_request(future)
+            io.node.destroy_client(client)
+
+
 def wait_for_start(io, flag, process, timeout, report):
     gate = StartGate()
     deadline = time.monotonic() + timeout
@@ -355,7 +384,13 @@ def start(args, io, flag, state_path):
         report("entry")
         runtime_check(args)
         clock_check(args.ntp_server)
-        preflight(io, flag, min(args.timeout, 8.0))
+        try:
+            preflight(io, flag, min(args.timeout, 8.0))
+        except TimeoutError as exc:
+            if "camera" not in str(exc):
+                raise
+            repair_camera(io, flag, report)
+            preflight(io, flag, min(args.timeout, 8.0))
         report("preflight_passed")
         if flag.stopped:
             raise InterruptedError("operator_stop")

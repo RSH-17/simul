@@ -125,3 +125,10 @@ loginctl show-user ubuntu --property=Linger
 `~/.config/systemd/user/osp-wired-discovery.service`에 복사한 뒤
 `systemctl --user daemon-reload`, `systemctl --user enable --now osp-wired-discovery.service`,
 `loginctl enable-linger ubuntu` 순서로 수행합니다.
+
+실물 시작 점검은 카메라 촬영 시각 오차를 0.65초 이하로 제한합니다(미션 수락 한도
+0.75초보다 엄격). 오래된 시각이 감지되면 주행 노드가 없고 실제 odom 정지가
+확인될 때만 OAK-D stop/start를 한 번 수행하고 신선도를 재검증합니다. 정지 요청,
+서비스 실패, 반복 지연은 출발 차단으로 종료하며 안전 신호를 무시하지 않습니다.
+실물 rosbag은 OAK-D의 정책 입력인 `rgb/preview`를 보존하고 다른 대용량 영상은
+제외합니다. 이 제외는 녹화 범위 변경이며 카메라 시각 오차의 원인으로 확정하지 않습니다.

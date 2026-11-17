@@ -65,6 +65,7 @@ def bag_command(directory,mode,namespace=''):
         prefix='/'+re.escape(namespace.strip('/'))
         args+=['--regex','^('+prefix+'(/|$)|/(tf|tf_static|clock|rosout|parameter_events)$)']
     else:args+=['--all']
+    if mode=='robot':args+=['--exclude-regex',r'^(/[^/]+)*/oakd/(?!rgb/preview/).*']
     if mode=='simulation':args+=['--use-sim-time']
     return args
 

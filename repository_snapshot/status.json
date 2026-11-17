@@ -1353,5 +1353,12 @@
     "preflight_elapsed_s": 1.233,
     "reboot_tested": false,
     "new_drive_started": false
+  },
+  "robot_start_recovery": {
+    "camera_age_limit_s": 0.65,
+    "automatic_camera_restart": "once_before_launch_only_with_stationary_odom_and_no_navigation",
+    "raw_safety_checks_preserved": true,
+    "latest_hardware_start_blocked_by": "cliff_and_stall_hazards_types_2_3",
+    "full_hardware_drive_verified": false
   }
 }

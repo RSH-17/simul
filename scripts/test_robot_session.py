@@ -47,6 +47,18 @@ class StartSafetyTest(unittest.TestCase):
             sensors.update("odom", 10., value=value)
             self.assertFalse(sensors.stationary(10.))
 
+    def test_camera_is_rejected_before_mission_would_reject_it(self):
+        sensors = self.healthy()
+        sensors.update("camera", 10., 99.2)
+        self.assertEqual(sensors.reason(10., 100.), "camera_clock_or_stamp_stale")
+
+    def test_camera_repair_refuses_active_navigation(self):
+        io = Mock()
+        io.conflicts.return_value = ["mission"]
+        with self.assertRaises(RuntimeError):
+            session.repair_camera(io, session.StopFlag(), Mock())
+        io.node.create_client.assert_not_called()
+
     def client(self):
         client = Mock()
         client.service_is_ready.return_value = True
