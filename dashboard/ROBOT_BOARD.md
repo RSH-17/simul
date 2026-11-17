@@ -66,6 +66,11 @@ python3 -u dashboard/robot_board.py --domain 4 --host 0.0.0.0 --port 8767 \
 
 터미널에서는 Mac의 저장소 루트에서 같은 실행기를 사용할 수 있습니다.
 
+Finder에서는 저장소 루트의 **`start_robot.command`를 더블클릭하면 구동**,
+**`stop_robot.command`를 더블클릭하면 정지**합니다. Terminal에서 실행되며
+보드나 채팅이 필요 없습니다. 이 파일들은 기존 실행기를 호출하므로 센서 수신이나
+시간 점검에 실패하면 사유를 출력하고 출발하지 않습니다.
+
 ```bash
 ./robot.sh start     # 실제 주행; Ctrl-C 또는 다른 터미널의 stop으로 종료
 ./robot.sh stop
