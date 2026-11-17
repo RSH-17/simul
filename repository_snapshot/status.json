@@ -580,7 +580,7 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 31.6,
+          "elapsed_seconds": 297.6,
           "readiness_reason": ""
         }
       },
@@ -594,13 +594,23 @@
         "gates": {
           "deadline_settings_gate": true,
           "navigation_budget_gate": true,
-          "hybrid_algorithm_gate": true
+          "hybrid_algorithm_gate": true,
+          "runtime_configuration_gate": true,
+          "velocity_profile_gate": true,
+          "scan_adapter_gate": true,
+          "floor_sensor_gate": true,
+          "drive_path_gate": true,
+          "official_description_gate": true,
+          "slam_transport_gate": true,
+          "navigation_grid_gate": true,
+          "loop_settings_gate": true,
+          "dock_map_gate": true
         },
         "live": {
           "state": "running",
-          "targets": 0,
+          "targets": 1,
           "collisions": 0,
-          "elapsed_seconds": 1.968,
+          "elapsed_seconds": 278.968,
           "readiness_reason": ""
         }
       }
@@ -667,7 +677,7 @@
               "state": "running",
               "targets": 0,
               "collisions": 0,
-              "elapsed_seconds": 31.6,
+              "elapsed_seconds": 297.6,
               "readiness_reason": ""
             }
           },
@@ -681,13 +691,23 @@
             "gates": {
               "deadline_settings_gate": true,
               "navigation_budget_gate": true,
-              "hybrid_algorithm_gate": true
+              "hybrid_algorithm_gate": true,
+              "runtime_configuration_gate": true,
+              "velocity_profile_gate": true,
+              "scan_adapter_gate": true,
+              "floor_sensor_gate": true,
+              "drive_path_gate": true,
+              "official_description_gate": true,
+              "slam_transport_gate": true,
+              "navigation_grid_gate": true,
+              "loop_settings_gate": true,
+              "dock_map_gate": true
             },
             "live": {
               "state": "running",
-              "targets": 0,
+              "targets": 1,
               "collisions": 0,
-              "elapsed_seconds": 1.968,
+              "elapsed_seconds": 278.968,
               "readiness_reason": ""
             }
           }
@@ -947,7 +967,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-17T05:01:07.546083+00:00",
+    "captured_utc": "2026-11-17T05:31:11.418773+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17T05:01:07.377411+00:00",
+  "updated_utc": "2026-11-17T05:31:11.257578+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
   "uploaded_verified": 338,
   "videos": [
@@ -5429,6 +5429,10 @@
     },
     {
       "path": "training_robust/native90/official_localization_validation_v1/jobs/02_c_shape_baseline/episodes/1205000000/video/mission.mp4",
+      "reason": "Final evaluation or recording metadata absent"
+    },
+    {
+      "path": "training_robust/native90/official_localization_validation_v1/jobs/03_c_shape_candidate/episodes/1205000000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {
