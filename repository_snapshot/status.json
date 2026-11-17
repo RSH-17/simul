@@ -590,7 +590,7 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 238.003,
+          "elapsed_seconds": 474.503,
           "readiness_reason": ""
         }
       },
@@ -620,7 +620,7 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 183.383,
+          "elapsed_seconds": 457.883,
           "readiness_reason": ""
         }
       }
@@ -697,7 +697,7 @@
               "state": "running",
               "targets": 0,
               "collisions": 0,
-              "elapsed_seconds": 238.003,
+              "elapsed_seconds": 474.503,
               "readiness_reason": ""
             }
           },
@@ -727,7 +727,7 @@
               "state": "running",
               "targets": 0,
               "collisions": 0,
-              "elapsed_seconds": 183.383,
+              "elapsed_seconds": 457.883,
               "readiness_reason": ""
             }
           }
@@ -739,7 +739,7 @@
       {
         "campaign": "official_rolling_goal_comparison_v1",
         "status": "waiting_for_original_campaign",
-        "coordinator_active": true,
+        "coordinator_active": false,
         "scope": "Three shapes, full 600-second independent hidden-marker task",
         "generation": 0,
         "phase": "development",
@@ -987,7 +987,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-17T06:31:20.998591+00:00",
+    "captured_utc": "2026-11-17T07:01:09.341234+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
