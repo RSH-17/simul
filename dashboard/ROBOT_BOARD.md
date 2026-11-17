@@ -132,3 +132,9 @@ loginctl show-user ubuntu --property=Linger
 서비스 실패, 반복 지연은 출발 차단으로 종료하며 안전 신호를 무시하지 않습니다.
 실물 rosbag은 OAK-D의 정책 입력인 `rgb/preview`를 보존하고 다른 대용량 영상은
 제외합니다. 이 제외는 녹화 범위 변경이며 카메라 시각 오차의 원인으로 확정하지 않습니다.
+
+로봇 bringup의 `50-osp-reliability.conf`는 chrony 오차가 10ms 이내로 안정된 뒤
+드라이버를 초기화하게 하고, 종료 시 자식 센서 프로세스까지 10초 내 정리하도록
+설정합니다. 설정 적용을 위한 현재 실행 중단은 하지 않습니다. 실제 재시작에서
+직렬 초기화에 멈췄던 LiDAR는 단독 recovery 서비스로 정상 스캔을 복구했습니다.
+압축 파생 토픽도 녹화에서 제외하여 RGB의 compressedDepth 변환을 유발하지 않습니다.
