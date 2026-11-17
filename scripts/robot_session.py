@@ -77,9 +77,12 @@ class StartGate:
         if stopped:
             raise InterruptedError("operator_stop")
         if reason:
-            if self.future is not None:
+            if reason.startswith(("active_hazard", "robot_docked")) and self.future is not None:
                 raise RuntimeError("Safety changed during start: " + reason)
-            return False
+            if self.future is None:
+                return False
+            # An outstanding RPC is answered by the mission's own fresh-data
+            # readiness gate. Brief camera delay must not discard that answer.
         if self.future is not None:
             if not self.future.done():
                 if now - self.requested > self.timeout:

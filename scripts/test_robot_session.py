@@ -86,6 +86,14 @@ class StartSafetyTest(unittest.TestCase):
             gate.step(10., False, "", "running", client, object)
         client.call_async.assert_not_called()
 
+    def test_transient_camera_delay_does_not_discard_start_response(self):
+        gate, client = session.StartGate(), self.client()
+        gate.step(10., False, "", "idle", client, object)
+        client.call_async.return_value.done.return_value = True
+        client.call_async.return_value.result.return_value = SimpleNamespace(success=True)
+        self.assertTrue(gate.step(10.05, False, "camera_clock_or_stamp_stale", "running", client, object))
+        client.call_async.assert_called_once()
+
     def test_lost_start_reply_is_not_retried_and_pending_is_removed(self):
         gate, client = session.StartGate(), self.client()
         gate.step(10., False, "", "idle", client, object)
