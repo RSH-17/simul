@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-17T04:31:17.745015+00:00",
+  "updated_utc": "2026-11-17T05:01:07.377411+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 336,
+  "uploaded_verified": 338,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -3732,6 +3732,38 @@
       "uploaded_verified": true
     },
     {
+      "asset": "official_localization_validation_v1__00_u_shape_baseline__1205010303.mp4",
+      "local_path": "training_robust/native90/official_localization_validation_v1/jobs/00_u_shape_baseline/episodes/1205010303/video/mission.mp4",
+      "bytes": 11252653,
+      "sha256": "8bf06ecc257c4cd7f8ebed84048b54c4f7756d6de5495c4ba481fc5a4454131f",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_localization_validation_v1__00_u_shape_baseline__1205010303.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.456,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "official_localization_validation_v1__01_u_shape_candidate__1205010303.mp4",
+      "local_path": "training_robust/native90/official_localization_validation_v1/jobs/01_u_shape_candidate/episodes/1205010303/video/mission.mp4",
+      "bytes": 10535183,
+      "sha256": "a4cb179e8a61a79d18e1cae6178dd9df772e4cd4516c20167458a5bef6356970",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/official_localization_validation_v1__01_u_shape_candidate__1205010303.mp4",
+      "original_evaluator_success": false,
+      "reason": "timeout",
+      "elapsed_sim_seconds": 600.451,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3003,
+      "recording_seconds": 600.6,
+      "uploaded_verified": true
+    },
+    {
       "asset": "official_no_return_screen_v1__1200100000.mp4",
       "local_path": "training_robust/native90/official_no_return_screen_v1/episodes/1200100000/video/mission.mp4",
       "bytes": 352418,
@@ -5396,11 +5428,7 @@
       "reason": "Final evaluation or recording metadata absent"
     },
     {
-      "path": "training_robust/native90/official_localization_validation_v1/jobs/00_u_shape_baseline/episodes/1205010303/video/mission.mp4",
-      "reason": "Final evaluation or recording metadata absent"
-    },
-    {
-      "path": "training_robust/native90/official_localization_validation_v1/jobs/01_u_shape_candidate/episodes/1205010303/video/mission.mp4",
+      "path": "training_robust/native90/official_localization_validation_v1/jobs/02_c_shape_baseline/episodes/1205000000/video/mission.mp4",
       "reason": "Final evaluation or recording metadata absent"
     },
     {

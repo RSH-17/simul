@@ -537,48 +537,29 @@
     "scope": "Three shapes, full 600-second independent hidden-marker task",
     "generation": 0,
     "phase": "development",
-    "recorded_completed": 0,
-    "valid_completed": 0,
+    "recorded_completed": 2,
+    "valid_completed": 2,
     "successes": 0,
     "infrastructure_failures": 0,
-    "by_phase_role_profile_shape": {},
+    "by_phase_role_profile_shape": {
+      "development/baseline/official_nominal/u_shape": {
+        "completed": 1,
+        "successes": 0,
+        "contacts": 0
+      },
+      "development/candidate/official_nominal/u_shape": {
+        "completed": 1,
+        "successes": 0,
+        "contacts": 0
+      }
+    },
     "active": [
       {
-        "number": 0,
-        "unit": "osp-official-localization-v1-00.service",
+        "number": 2,
+        "unit": "osp-official-localization-v1-02.service",
         "service_active": true,
-        "main_pid": 3457047,
-        "shape": "u_shape",
-        "profile": "official_nominal",
-        "gates": {
-          "deadline_settings_gate": true,
-          "navigation_budget_gate": true,
-          "hybrid_algorithm_gate": true,
-          "runtime_configuration_gate": true,
-          "velocity_profile_gate": true,
-          "scan_adapter_gate": true,
-          "floor_sensor_gate": true,
-          "drive_path_gate": true,
-          "official_description_gate": true,
-          "slam_transport_gate": true,
-          "navigation_grid_gate": true,
-          "loop_settings_gate": true,
-          "dock_map_gate": true
-        },
-        "live": {
-          "state": "running",
-          "targets": 2,
-          "collisions": 0,
-          "elapsed_seconds": 388.956,
-          "readiness_reason": ""
-        }
-      },
-      {
-        "number": 1,
-        "unit": "osp-official-localization-v1-01.service",
-        "service_active": true,
-        "main_pid": 3457057,
-        "shape": "u_shape",
+        "main_pid": 3512469,
+        "shape": "c_shape",
         "profile": "official_nominal",
         "gates": {
           "deadline_settings_gate": true,
@@ -599,7 +580,27 @@
           "state": "running",
           "targets": 0,
           "collisions": 0,
-          "elapsed_seconds": 366.452,
+          "elapsed_seconds": 31.6,
+          "readiness_reason": ""
+        }
+      },
+      {
+        "number": 3,
+        "unit": "osp-official-localization-v1-03.service",
+        "service_active": true,
+        "main_pid": 3516492,
+        "shape": "c_shape",
+        "profile": "official_nominal",
+        "gates": {
+          "deadline_settings_gate": true,
+          "navigation_budget_gate": true,
+          "hybrid_algorithm_gate": true
+        },
+        "live": {
+          "state": "running",
+          "targets": 0,
+          "collisions": 0,
+          "elapsed_seconds": 1.968,
           "readiness_reason": ""
         }
       }
@@ -623,48 +624,29 @@
         "scope": "Three shapes, full 600-second independent hidden-marker task",
         "generation": 0,
         "phase": "development",
-        "recorded_completed": 0,
-        "valid_completed": 0,
+        "recorded_completed": 2,
+        "valid_completed": 2,
         "successes": 0,
         "infrastructure_failures": 0,
-        "by_phase_role_profile_shape": {},
+        "by_phase_role_profile_shape": {
+          "development/baseline/official_nominal/u_shape": {
+            "completed": 1,
+            "successes": 0,
+            "contacts": 0
+          },
+          "development/candidate/official_nominal/u_shape": {
+            "completed": 1,
+            "successes": 0,
+            "contacts": 0
+          }
+        },
         "active": [
           {
-            "number": 0,
-            "unit": "osp-official-localization-v1-00.service",
+            "number": 2,
+            "unit": "osp-official-localization-v1-02.service",
             "service_active": true,
-            "main_pid": 3457047,
-            "shape": "u_shape",
-            "profile": "official_nominal",
-            "gates": {
-              "deadline_settings_gate": true,
-              "navigation_budget_gate": true,
-              "hybrid_algorithm_gate": true,
-              "runtime_configuration_gate": true,
-              "velocity_profile_gate": true,
-              "scan_adapter_gate": true,
-              "floor_sensor_gate": true,
-              "drive_path_gate": true,
-              "official_description_gate": true,
-              "slam_transport_gate": true,
-              "navigation_grid_gate": true,
-              "loop_settings_gate": true,
-              "dock_map_gate": true
-            },
-            "live": {
-              "state": "running",
-              "targets": 2,
-              "collisions": 0,
-              "elapsed_seconds": 388.956,
-              "readiness_reason": ""
-            }
-          },
-          {
-            "number": 1,
-            "unit": "osp-official-localization-v1-01.service",
-            "service_active": true,
-            "main_pid": 3457057,
-            "shape": "u_shape",
+            "main_pid": 3512469,
+            "shape": "c_shape",
             "profile": "official_nominal",
             "gates": {
               "deadline_settings_gate": true,
@@ -685,7 +667,27 @@
               "state": "running",
               "targets": 0,
               "collisions": 0,
-              "elapsed_seconds": 366.452,
+              "elapsed_seconds": 31.6,
+              "readiness_reason": ""
+            }
+          },
+          {
+            "number": 3,
+            "unit": "osp-official-localization-v1-03.service",
+            "service_active": true,
+            "main_pid": 3516492,
+            "shape": "c_shape",
+            "profile": "official_nominal",
+            "gates": {
+              "deadline_settings_gate": true,
+              "navigation_budget_gate": true,
+              "hybrid_algorithm_gate": true
+            },
+            "live": {
+              "state": "running",
+              "targets": 0,
+              "collisions": 0,
+              "elapsed_seconds": 1.968,
               "readiness_reason": ""
             }
           }
@@ -945,7 +947,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-17T04:31:17.924312+00:00",
+    "captured_utc": "2026-11-17T05:01:07.546083+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
