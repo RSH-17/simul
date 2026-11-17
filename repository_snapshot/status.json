@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Diagnosed coordinate errors: U final graph reprojection amplifies small online errors; C candidate observation errors mostly follow robot localization; evaluator-only pose-substitution audit, original results preserved",
+  "latest_change": "Validated causal odom/IMU integration on two 599/600s quarantined recordings; built guarded final reprojection and file-only observer; 503 runtime checks, 8 supervisor checks; fresh native U pair running",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -837,7 +837,7 @@
   "tb4_platform_hardware_validated": false,
   "tb4_platform_native_screen_passed": true,
   "tb4_platform_full_task_validated": false,
-  "active_tb4_campaign": null,
+  "active_tb4_campaign": "official_localization_validation_v1",
   "tb4_early_odometry_audit": "repository_snapshot/tb4_early_odometry_audit.json",
   "tb4_long_run_localization_reliable": false,
   "crowded_start_candidate": "repository_snapshot/crowded_start_candidate.json",
@@ -865,7 +865,7 @@
     "successful_candidate_escapes": 1,
     "successful_baseline_escapes": 0
   },
-  "latest_status_check_utc": "2026-11-17T03:05:21.051582+00:00",
+  "latest_status_check_utc": "2026-11-17T03:47:21.635259+00:00",
   "crowded_start_v2_native": "repository_snapshot/crowded_start_v2_native.json",
   "crowded_start_v3_native": "repository_snapshot/crowded_start_v3_native.json",
   "crowded_start_v4": {
@@ -1165,7 +1165,9 @@
     "contacts": 0,
     "infrastructure_failures": 0
   },
-  "active_tb4_campaigns": [],
+  "active_tb4_campaigns": [
+    "official_localization_validation_v1"
+  ],
   "official_frontier_evidence_native_result": "repository_snapshot/official_frontier_evidence_native_result.json",
   "official_zigzag_loop_gate_result": "repository_snapshot/official_zigzag_loop_gate_result.json",
   "official_pose_gyro_diagnosis": "repository_snapshot/official_pose_gyro_diagnosis.json",
@@ -1210,5 +1212,14 @@
     "native_improvement_proven": false
   },
   "frontier_coverage_partial_native_result": "repository_snapshot/frontier_coverage_partial_native_result.json",
-  "marker_coordinate_error_diagnosis": "repository_snapshot/marker_coordinate_error_diagnosis.json"
+  "marker_coordinate_error_diagnosis": "repository_snapshot/marker_coordinate_error_diagnosis.json",
+  "localization_validation_progress": "repository_snapshot/localization_validation_progress.json",
+  "localization_native_comparison": {
+    "status": "running",
+    "planned": 6,
+    "completed": 0,
+    "actual_native_started": true,
+    "shadow_only_odometry": true,
+    "hardware_validated": false
+  }
 }

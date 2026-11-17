@@ -1,0 +1,21 @@
+{
+  "candidate_id": "2026-11-17_localization_validation_v1",
+  "parent_candidate": "2026-11-15_official_tb4_v20",
+  "status": "built_pending_native_validation",
+  "shadow_only_odometry": true,
+  "tf_published_by_shadow": false,
+  "production_promoted": false,
+  "hardware_validated": false,
+  "ground_truth_inputs": false,
+  "overlay_files": {
+    "setup.py": "97372c9741adee307cf4b6d134964bbd66e2a962b7ed22be92c1d0da90a401c9",
+    "launch/robot.launch.py": "59906b434af0df469dcd976f99ee843c431be3cd86c58bb1f59df3f27cec6899",
+    "test/test_localization_validation.py": "ed0eaa44c4c9fa18a54e03155c7f75594494c45a751508a468dcf11403ef587b",
+    "osp_mission/pose_gyro_shadow.py": "805830add8ae1a71a15aeb9858dad2a03d2c05d7a34fa2017a3dc06c2902424e",
+    "osp_mission/mission.py": "042d989d6eea0c6abf7cb9ffc1a2a3c75dacfac4c5a5ec95eb2ffbd113664227",
+    "osp_mission/pose_increment_gyro.py": "c264f4512ab4df29f3aabb7e88a4ff0a62328c64b57a9c3e1389dedd75ea721d",
+    "osp_mission/pose_gyro_stream.py": "9490057cf979a047e1890ec0427143da9b224d13bd67c3c486cc32e928561dc6",
+    "osp_mission/validated_graph_landmarks.py": "60d28b68d35ac7fd0a811893b97c4ba292f68bbaef366707240ac48838546a6a"
+  },
+  "build_script_sha256": "f4c53f74f27f010eb8837093a62e7fe7a95f1c09ae7d11d29d7c59758ab4b311"
+}
