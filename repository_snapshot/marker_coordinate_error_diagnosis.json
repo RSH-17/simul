@@ -1,0 +1,1632 @@
+{
+  "captured_utc": "2026-11-17T03:10:18.566119+00:00",
+  "evidence_type": "Offline diagnosis of four preserved native runs",
+  "tests_passed": 3,
+  "rows": [
+    {
+      "episode": "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303",
+      "evidence_type": "Offline independent coordinate diagnosis of an original completed native run",
+      "observation_metrics": {
+        "204": {
+          "observed_marker_error_m": {
+            "samples": 41,
+            "median": 0.14072445862680066,
+            "p95": 0.1479369398682156,
+            "maximum": 0.15079759049281127
+          },
+          "truth_pose_substituted_residual_m": {
+            "samples": 41,
+            "median": 0.012299665757871604,
+            "p95": 0.019371714312917614,
+            "maximum": 0.02126319550588869
+          },
+          "robot_position_error_m": {
+            "samples": 41,
+            "median": 0.1506218157932422,
+            "p95": 0.15883128830329465,
+            "maximum": 0.15939602808483222
+          },
+          "robot_heading_error_deg": {
+            "samples": 41,
+            "median": 1.0387539386516251,
+            "p95": 1.638576978821675,
+            "maximum": 2.256191899308237
+          }
+        },
+        "81": {
+          "observed_marker_error_m": {
+            "samples": 37,
+            "median": 0.05591019772079124,
+            "p95": 0.0577848265184866,
+            "maximum": 0.06110384806765709
+          },
+          "truth_pose_substituted_residual_m": {
+            "samples": 37,
+            "median": 0.012019158938476942,
+            "p95": 0.016941163468984312,
+            "maximum": 0.02078554204569896
+          },
+          "robot_position_error_m": {
+            "samples": 37,
+            "median": 0.06916481156498029,
+            "p95": 0.06976440159742582,
+            "maximum": 0.07027773254597157
+          },
+          "robot_heading_error_deg": {
+            "samples": 37,
+            "median": 0.5454846243252479,
+            "p95": 0.7208307278493191,
+            "maximum": 0.7564760103527441
+          }
+        }
+      },
+      "excluded_observations": 0,
+      "marker_finalization": [
+        {
+          "id": 204,
+          "original_error_m": 0.14072445862680066,
+          "finalized_error_m": 1.6494382603111932,
+          "shift_m": 1.5107421407583337,
+          "error_change_m": 1.5087138016843926
+        },
+        {
+          "id": 81,
+          "original_error_m": 0.05566173214705743,
+          "finalized_error_m": 1.3332033316017213,
+          "shift_m": 1.2787774583979579,
+          "error_change_m": 1.277541599454664
+        }
+      ],
+      "native_pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2948,
+            "median": 0.0754275762897682,
+            "p95": 1.8092379438122745,
+            "maximum": 2.18541926805029
+          },
+          "heading_error_deg": {
+            "samples": 2948,
+            "median": 0.6833385413427233,
+            "p95": 5.228756961558334,
+            "maximum": 17.305416862228103
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2948,
+            "median": 3.7664847194756437,
+            "p95": 5.422412843441821,
+            "maximum": 6.445502102841935
+          },
+          "heading_error_deg": {
+            "samples": 2948,
+            "median": 17.8428071223544,
+            "p95": 33.1423796783293,
+            "maximum": 35.16994207407326
+          }
+        }
+      },
+      "graph_audit": {
+        "evidence_type": "Independent evaluation of recorded native and retained-scan component coordinates",
+        "original_world_to_map": [
+          -11.22882076530317,
+          5.928287993023702,
+          -1.9219013035762664
+        ],
+        "trajectories": {
+          "native_online": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/pose_trace.csv",
+            "sha256": "c51be65e3c18ed182cdae53b18fff00d80c0fae250449bd3e26566694c7243a2",
+            "accounting": {
+              "finite_unique_poses": 2949,
+              "evaluated": 2948,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 2948,
+              "median": 0.0754275762897682,
+              "p95": 1.8092379438122745,
+              "maximum": 2.18541926805029
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 504.011,
+              "error_m": 2.185401552595083
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 230,
+                  "median": 0.02035326400569541,
+                  "p95": 0.062285554552811574,
+                  "maximum": 0.0642643080612139
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.06806629835818552,
+                  "p95": 0.0764742991864462,
+                  "maximum": 0.0778170851427333
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.06338501562212655,
+                  "p95": 0.07023732397281149,
+                  "maximum": 0.07508242375106348
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.05936845783212093,
+                  "p95": 0.06309389553439118,
+                  "maximum": 0.06585243155993394
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.08399265662992625,
+                  "p95": 0.1106266012372745,
+                  "maximum": 0.11613484642079147
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.14918409783024306,
+                  "p95": 0.1825121038468154,
+                  "maximum": 0.19261805860054762
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 246,
+                  "median": 0.24824224166255335,
+                  "p95": 0.2599480814711657,
+                  "maximum": 0.26095139527016215
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.13236693851853945,
+                  "p95": 0.22291107414730044,
+                  "maximum": 0.2361200403676686
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.06243255315629288,
+                  "p95": 0.08334695051588367,
+                  "maximum": 0.0890804891785144
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.05133220597854124,
+                  "p95": 0.06337728608424897,
+                  "maximum": 0.07035617095007891
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 1.819254554676001,
+                  "p95": 2.1235724691495688,
+                  "maximum": 2.18541926805029
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 1.5483680235627066,
+                  "p95": 1.7374228216589938,
+                  "maximum": 1.7546730270707813
+                }
+              },
+              {
+                "start_sim_s": 600,
+                "position_error_m": {
+                  "samples": 22,
+                  "median": 1.6317307832324928,
+                  "p95": 1.701125825182076,
+                  "maximum": 1.7054376199341736
+                }
+              }
+            ]
+          },
+          "finalized_graph": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/20261117_043200/graph_scan_poses.csv",
+            "sha256": "aa9c530a7a6e91f7700b71219d6c5f6cea9104540b3b8ece9b8b352eb5cf00ec",
+            "accounting": {
+              "finite_unique_poses": 1006,
+              "evaluated": 1005,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 1005,
+              "median": 1.3846244225591127,
+              "p95": 1.8225165953217377,
+              "maximum": 2.185131117572526
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 28.769,
+              "error_m": 0.5253976007923317
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 71,
+                  "median": 0.48520236358182056,
+                  "p95": 1.2164971869720214,
+                  "maximum": 1.2794320572040006
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 79,
+                  "median": 1.2303669849544097,
+                  "p95": 1.3841758654738727,
+                  "maximum": 1.3977772631272187
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 84,
+                  "median": 1.09336737612472,
+                  "p95": 1.1250082506325434,
+                  "maximum": 1.1259304505086165
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 82,
+                  "median": 1.1452494276951757,
+                  "p95": 1.2907406460956974,
+                  "maximum": 1.3057629933028196
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 81,
+                  "median": 1.4013332015869433,
+                  "p95": 1.5163924197222953,
+                  "maximum": 1.538231458200848
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 74,
+                  "median": 1.63862351926285,
+                  "p95": 1.7231227426425113,
+                  "maximum": 1.7298648187067944
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 81,
+                  "median": 1.8003440384795624,
+                  "p95": 1.8253130466401863,
+                  "maximum": 1.8278456190166068
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 97,
+                  "median": 1.6007037332952212,
+                  "p95": 1.765516040116109,
+                  "maximum": 1.7839528148454382
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 86,
+                  "median": 1.2977654592504182,
+                  "p95": 1.395800449373784,
+                  "maximum": 1.413007495252741
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 97,
+                  "median": 1.1777439663916243,
+                  "p95": 1.864199034652816,
+                  "maximum": 2.0077808428883523
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 78,
+                  "median": 1.8177834171319,
+                  "p95": 2.143853914721133,
+                  "maximum": 2.185131117572526
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 88,
+                  "median": 1.594617161871955,
+                  "p95": 1.7344106459841306,
+                  "maximum": 1.754620628368462
+                }
+              },
+              {
+                "start_sim_s": 600,
+                "position_error_m": {
+                  "samples": 7,
+                  "median": 1.6431277448460653,
+                  "p95": 1.6933965840868201,
+                  "maximum": 1.6993500896698563
+                }
+              }
+            ]
+          }
+        },
+        "markers": [
+          {
+            "id": 204,
+            "original_error_m": 0.14072445862680066,
+            "finalized_error_m": 1.6494382603111932,
+            "shift_m": 1.5107421407583337,
+            "error_change_m": 1.5087138016843926
+          },
+          {
+            "id": 81,
+            "original_error_m": 0.05566173214705743,
+            "finalized_error_m": 1.3332033316017213,
+            "shift_m": 1.2787774583979579,
+            "error_change_m": 1.277541599454664
+          }
+        ],
+        "component_replays": {},
+        "source_sha256": {
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/evaluation.json": "a2a763398a4a89a7c205a2e108c0d520ff33756a7bf4d7ad467239d8664f5822",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/ground_truth_trajectory.csv": "8cb18cbea69c5cd90dcc5cb6b79943fd6a0f1a6e39e008a410dda9395673cb1e",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205010303.yaml": "575e8ad1583d6bcb2fed96cde0bef06f29637613ee1b6661edc1cf7cd073e93c",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/20261117_043200/graph_scan_poses.csv": "aa9c530a7a6e91f7700b71219d6c5f6cea9104540b3b8ece9b8b352eb5cf00ec",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/pose_trace.csv": "c51be65e3c18ed182cdae53b18fff00d80c0fae250449bd3e26566694c7243a2"
+        },
+        "ground_truth_supplied_to_policy": false,
+        "original_results_modified": false,
+        "native_success_established": false,
+        "hardware_validated": false,
+        "limits": [
+          "Retained scans omit the original ROS transport, discarded scans and mapper scheduling.",
+          "Component output is not a new navigation, recognition or completion result.",
+          "Loop event timing plus a controlled no-loop comparison is evidence about this recording only."
+        ]
+      },
+      "source_sha256": {
+        "/home/peter/simul/training_robust/audit_marker_localization.py": "33af91a61bf50de2e755327d04482fa396d63cdee5987a8c072757813a4cb267",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/evaluation.json": "a2a763398a4a89a7c205a2e108c0d520ff33756a7bf4d7ad467239d8664f5822",
+        "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205010303.yaml": "575e8ad1583d6bcb2fed96cde0bef06f29637613ee1b6661edc1cf7cd073e93c",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/ground_truth_trajectory.csv": "8cb18cbea69c5cd90dcc5cb6b79943fd6a0f1a6e39e008a410dda9395673cb1e",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/pose_trace.csv": "c51be65e3c18ed182cdae53b18fff00d80c0fae250449bd3e26566694c7243a2",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/00_u_shape_baseline/episodes/1205010303/marker_observations.json": "379222ca1c965d5357715d14ecfcfca4eba1630f47b580e86e3cfba6b2926a48",
+        "/home/peter/simul/training_robust/audit_pose_trace.py": "586ff563216cedb65b03e0935d182ebdb8d99840a23e24829bc0df13206ffb49",
+        "/home/peter/simul/training_robust/audit_slam_coordinate_changes.py": "0c864d9f970be0f58fd2576074221b8187efe3d3883d43392db7d1cd452bc9a5"
+      },
+      "truth_supplied_to_policy": false,
+      "original_results_changed": false,
+      "hardware_calibration_claim": false,
+      "limitations": [
+        "Truth substitution is retrospective diagnosis, not deployable localization or navigation success.",
+        "Robot poses are interpolated across at most 0.35s gaps; residuals include timing and interpolation uncertainty.",
+        "This audit identifies localization/final-graph contributions, not the underlying cause of every SLAM update."
+      ],
+      "job": "00_u_shape_baseline"
+    },
+    {
+      "episode": "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303",
+      "evidence_type": "Offline independent coordinate diagnosis of an original completed native run",
+      "observation_metrics": {},
+      "excluded_observations": 0,
+      "marker_finalization": [],
+      "native_pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.10791315214280262,
+            "p95": 2.2724765608622715,
+            "maximum": 2.2817932055969474
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 1.5790966402006121,
+            "p95": 16.50560745905726,
+            "maximum": 26.2928852415573
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 1.6738833630308554,
+            "p95": 2.8394109618531767,
+            "maximum": 2.9703904486328354
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 13.91630578004337,
+            "p95": 29.141879411977236,
+            "maximum": 34.79591440300132
+          }
+        }
+      },
+      "graph_audit": {
+        "evidence_type": "Independent evaluation of recorded native and retained-scan component coordinates",
+        "original_world_to_map": [
+          -11.228820643791822,
+          5.928288200169134,
+          -1.9219013205000808
+        ],
+        "trajectories": {
+          "native_online": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/pose_trace.csv",
+            "sha256": "7d57b51bb9f8e4ff835e7bc4201a39d4c500c7c23c439b428a0531826f793fde",
+            "accounting": {
+              "finite_unique_poses": 2948,
+              "evaluated": 2947,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 2947,
+              "median": 0.10791315214280262,
+              "p95": 2.2724765608622715,
+              "maximum": 2.2817932055969474
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 303.996,
+              "error_m": 1.4057191800378417
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 231,
+                  "median": 0.028396946929370788,
+                  "p95": 0.06203165654308164,
+                  "maximum": 0.06374662573287627
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 246,
+                  "median": 0.0687459479569264,
+                  "p95": 0.07597070221379223,
+                  "maximum": 0.07839184580631753
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.07894699904007713,
+                  "p95": 0.09703258547564818,
+                  "maximum": 0.1080892890898147
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.06698865267564649,
+                  "p95": 0.07590840984263508,
+                  "maximum": 0.09113925418563018
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.06218021687882291,
+                  "p95": 0.06221651181665649,
+                  "maximum": 0.06224581495446201
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.05577033589945707,
+                  "p95": 0.05816836250250685,
+                  "maximum": 0.05912568628795126
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 1.498950702421641,
+                  "p95": 1.5683755680930278,
+                  "maximum": 1.5914628568250917
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 2.2579052588303226,
+                  "p95": 2.273775360887928,
+                  "maximum": 2.276422779607184
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.67272544260403,
+                  "p95": 2.273425554194032,
+                  "maximum": 2.2817932055969474
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.9595388576629245,
+                  "p95": 1.0687950539301547,
+                  "maximum": 1.1206573496425352
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 1.3876319247307909,
+                  "p95": 1.532195291875065,
+                  "maximum": 1.5605640186984004
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 246,
+                  "median": 1.293351949235947,
+                  "p95": 1.293351949235947,
+                  "maximum": 1.2933519492359473
+                }
+              },
+              {
+                "start_sim_s": 600,
+                "position_error_m": {
+                  "samples": 19,
+                  "median": 1.293351949235947,
+                  "p95": 1.293351949235947,
+                  "maximum": 1.2933519492359473
+                }
+              }
+            ]
+          },
+          "finalized_graph": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/20261117_043458/graph_scan_poses.csv",
+            "sha256": "0e2e51469a756b310f978ee86f0cb81e0f692adf7a91e0dddd2d7587b8b76bc7",
+            "accounting": {
+              "finite_unique_poses": 630,
+              "evaluated": 629,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 629,
+              "median": 0.6790811256458255,
+              "p95": 1.529263135502535,
+              "maximum": 1.588331168172147
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 46.304,
+              "error_m": 0.5095482087246982
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 70,
+                  "median": 0.29852146839834537,
+                  "p95": 0.541186771473605,
+                  "maximum": 0.5955157237214954
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 79,
+                  "median": 0.6738713794001316,
+                  "p95": 0.6785832411883894,
+                  "maximum": 0.6793411002130821
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 77,
+                  "median": 0.6747395293951385,
+                  "p95": 0.680342038781716,
+                  "maximum": 0.6908928178336599
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 66,
+                  "median": 0.6731652043231735,
+                  "p95": 0.7293350084634873,
+                  "maximum": 0.750051090773747
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 27,
+                  "median": 0.8417733230199173,
+                  "p95": 0.9819578331475705,
+                  "maximum": 1.0031069662727898
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 81,
+                  "median": 1.412984638653281,
+                  "p95": 1.5271337893478385,
+                  "maximum": 1.5367500369318612
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 52,
+                  "median": 1.5264499143654584,
+                  "p95": 1.574768627304698,
+                  "maximum": 1.588331168172147
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 43,
+                  "median": 0.9313899730953319,
+                  "p95": 1.4410464512940104,
+                  "maximum": 1.4578664766538796
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 54,
+                  "median": 0.6188594147083872,
+                  "p95": 0.7118188032456891,
+                  "maximum": 0.7430637372732629
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 19,
+                  "median": 1.0232212859786258,
+                  "p95": 1.138087885747199,
+                  "maximum": 1.2682614963445182
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 61,
+                  "median": 1.4347225122667853,
+                  "p95": 1.5461867283835153,
+                  "maximum": 1.561044431236017
+                }
+              }
+            ]
+          }
+        },
+        "markers": [],
+        "component_replays": {},
+        "source_sha256": {
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/evaluation.json": "0bdf213076215732a194a6911fc974f1ee300f5c90470411eb4db26387454989",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/ground_truth_trajectory.csv": "ae51ac6e83abe7fca222f8210b1482d8cb9ab9f58d599a76ac07d41e784a7abe",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205010303.yaml": "575e8ad1583d6bcb2fed96cde0bef06f29637613ee1b6661edc1cf7cd073e93c",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/20261117_043458/graph_scan_poses.csv": "0e2e51469a756b310f978ee86f0cb81e0f692adf7a91e0dddd2d7587b8b76bc7",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/pose_trace.csv": "7d57b51bb9f8e4ff835e7bc4201a39d4c500c7c23c439b428a0531826f793fde"
+        },
+        "ground_truth_supplied_to_policy": false,
+        "original_results_modified": false,
+        "native_success_established": false,
+        "hardware_validated": false,
+        "limits": [
+          "Retained scans omit the original ROS transport, discarded scans and mapper scheduling.",
+          "Component output is not a new navigation, recognition or completion result.",
+          "Loop event timing plus a controlled no-loop comparison is evidence about this recording only."
+        ]
+      },
+      "source_sha256": {
+        "/home/peter/simul/training_robust/audit_marker_localization.py": "33af91a61bf50de2e755327d04482fa396d63cdee5987a8c072757813a4cb267",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/evaluation.json": "0bdf213076215732a194a6911fc974f1ee300f5c90470411eb4db26387454989",
+        "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205010303.yaml": "575e8ad1583d6bcb2fed96cde0bef06f29637613ee1b6661edc1cf7cd073e93c",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/ground_truth_trajectory.csv": "ae51ac6e83abe7fca222f8210b1482d8cb9ab9f58d599a76ac07d41e784a7abe",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/pose_trace.csv": "7d57b51bb9f8e4ff835e7bc4201a39d4c500c7c23c439b428a0531826f793fde",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/01_u_shape_candidate/episodes/1205010303/marker_observations.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "/home/peter/simul/training_robust/audit_pose_trace.py": "586ff563216cedb65b03e0935d182ebdb8d99840a23e24829bc0df13206ffb49",
+        "/home/peter/simul/training_robust/audit_slam_coordinate_changes.py": "0c864d9f970be0f58fd2576074221b8187efe3d3883d43392db7d1cd452bc9a5"
+      },
+      "truth_supplied_to_policy": false,
+      "original_results_changed": false,
+      "hardware_calibration_claim": false,
+      "limitations": [
+        "Truth substitution is retrospective diagnosis, not deployable localization or navigation success.",
+        "Robot poses are interpolated across at most 0.35s gaps; residuals include timing and interpolation uncertainty.",
+        "This audit identifies localization/final-graph contributions, not the underlying cause of every SLAM update."
+      ],
+      "job": "01_u_shape_candidate"
+    },
+    {
+      "episode": "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000",
+      "evidence_type": "Offline independent coordinate diagnosis of an original completed native run",
+      "observation_metrics": {
+        "903": {
+          "observed_marker_error_m": {
+            "samples": 42,
+            "median": 0.13233248709287196,
+            "p95": 0.16281030118534784,
+            "maximum": 0.1762048015622119
+          },
+          "truth_pose_substituted_residual_m": {
+            "samples": 42,
+            "median": 0.013644204795165288,
+            "p95": 0.02521390307494175,
+            "maximum": 0.03558486798161625
+          },
+          "robot_position_error_m": {
+            "samples": 42,
+            "median": 0.12506393350043932,
+            "p95": 0.126131638499623,
+            "maximum": 0.12621414232021166
+          },
+          "robot_heading_error_deg": {
+            "samples": 42,
+            "median": 0.3642844935706085,
+            "p95": 1.3054416647804796,
+            "maximum": 1.4049787302250287
+          }
+        }
+      },
+      "excluded_observations": 0,
+      "marker_finalization": [
+        {
+          "id": 903,
+          "original_error_m": 0.1373385488304421,
+          "finalized_error_m": 0.14228535133124176,
+          "shift_m": 0.011080972753204086,
+          "error_change_m": 0.004946802500799652
+        }
+      ],
+      "native_pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.29361466803966546,
+            "p95": 0.7332766246045016,
+            "maximum": 2.38412342571923
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 0.39258954320325407,
+            "p95": 1.709625975183717,
+            "maximum": 3.142413819490989
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 7.048947956130297,
+            "p95": 11.678982805417938,
+            "maximum": 11.93489787023126
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 16.001668645527367,
+            "p95": 39.713095851625454,
+            "maximum": 42.84707900732139
+          }
+        }
+      },
+      "graph_audit": {
+        "evidence_type": "Independent evaluation of recorded native and retained-scan component coordinates",
+        "original_world_to_map": [
+          -18.43514403300933,
+          -1.878775323598405,
+          -1.9550425941488857e-05
+        ],
+        "trajectories": {
+          "native_online": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/pose_trace.csv",
+            "sha256": "afe3d1ec5fe2738a0d7eccd5a5564abab415d341f61332cc9031c18f9c57f2c1",
+            "accounting": {
+              "finite_unique_poses": 2948,
+              "evaluated": 2947,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 2947,
+              "median": 0.29361466803966546,
+              "p95": 0.7332766246045016,
+              "maximum": 2.38412342571923
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 65.376,
+              "error_m": 2.2261073559528644
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 224,
+                  "median": 0.14002451456937107,
+                  "p95": 0.16314928585094837,
+                  "maximum": 0.16618121028311497
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 1.3739946451145122,
+                  "p95": 2.3126855023056923,
+                  "maximum": 2.38412342571923
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.30797972609780194,
+                  "p95": 0.6842545242960962,
+                  "maximum": 0.7445188386046561
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.3306777597458158,
+                  "p95": 0.4948449315547247,
+                  "maximum": 0.4953659823386149
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 246,
+                  "median": 0.2965681850932963,
+                  "p95": 0.31885062552011684,
+                  "maximum": 0.3195670290545769
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.27708392844481805,
+                  "p95": 0.3169906896270997,
+                  "maximum": 0.3173808297978568
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.0504964585880606,
+                  "p95": 0.29237385054472864,
+                  "maximum": 0.34215394702729085
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.41434458243815075,
+                  "p95": 0.42669079527483295,
+                  "maximum": 0.42673155994801176
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.426661445857236,
+                  "p95": 0.4306724661437566,
+                  "maximum": 0.4379702082210449
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.08892578880386859,
+                  "p95": 0.34432579578411465,
+                  "maximum": 0.4002684693428057
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.27493813758677893,
+                  "p95": 0.2971818141536951,
+                  "maximum": 0.3100038039808229
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.31579584251256215,
+                  "p95": 0.31764324279930684,
+                  "maximum": 0.31842538121198705
+                }
+              },
+              {
+                "start_sim_s": 600,
+                "position_error_m": {
+                  "samples": 27,
+                  "median": 0.31699668120303726,
+                  "p95": 0.31699668120303726,
+                  "maximum": 0.31699668120303726
+                }
+              }
+            ]
+          },
+          "finalized_graph": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/20261117_053946/graph_scan_poses.csv",
+            "sha256": "2e31d3d0736fe6743b51d1c9e674bad80ab66cb7ca5bb8a711d6ff7a49c35a53",
+            "accounting": {
+              "finite_unique_poses": 958,
+              "evaluated": 957,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 957,
+              "median": 0.2931211515593412,
+              "p95": 1.0059253605120595,
+              "maximum": 2.5959818564838795
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 50.96,
+              "error_m": 0.5267277715275915
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 69,
+                  "median": 0.118994727359425,
+                  "p95": 0.4406934794494284,
+                  "maximum": 0.47085028631462433
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 90,
+                  "median": 1.15572997301605,
+                  "p95": 2.532140329241803,
+                  "maximum": 2.5959818564838795
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 87,
+                  "median": 0.30757829658860064,
+                  "p95": 0.5535458881552845,
+                  "maximum": 0.5928552823874501
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 90,
+                  "median": 0.32212406407573313,
+                  "p95": 0.5483306062964158,
+                  "maximum": 0.5492620341239534
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 93,
+                  "median": 0.3011271287659073,
+                  "p95": 0.32214409600297705,
+                  "maximum": 0.3230569734394382
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 88,
+                  "median": 0.2837338799948794,
+                  "p95": 0.3178801631057105,
+                  "maximum": 0.31848699439175865
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 94,
+                  "median": 0.054810873526104434,
+                  "p95": 0.2969216893352406,
+                  "maximum": 0.3456165465396342
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 58,
+                  "median": 0.40443759742354346,
+                  "p95": 0.42675043701669857,
+                  "maximum": 0.42921854663844144
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 44,
+                  "median": 0.42091144541232395,
+                  "p95": 0.4378164982966816,
+                  "maximum": 0.44065029088516916
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 89,
+                  "median": 0.08161619204739681,
+                  "p95": 0.3319085595747794,
+                  "maximum": 0.4081095265949992
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 90,
+                  "median": 0.27675770747855544,
+                  "p95": 0.2978134075775171,
+                  "maximum": 0.3099840734763482
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 65,
+                  "median": 0.31248226059832257,
+                  "p95": 0.3177502403697637,
+                  "maximum": 0.31832743799658053
+                }
+              }
+            ]
+          }
+        },
+        "markers": [
+          {
+            "id": 903,
+            "original_error_m": 0.1373385488304421,
+            "finalized_error_m": 0.14228535133124176,
+            "shift_m": 0.011080972753204086,
+            "error_change_m": 0.004946802500799652
+          }
+        ],
+        "component_replays": {},
+        "source_sha256": {
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/evaluation.json": "c7fadb204d8c76f4bb21a1f0b74ac25a5cbb665793430dda40892c492acda86e",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/ground_truth_trajectory.csv": "7437be6f32e02951694512c39eb32f124f7f0eebbff00989fd89203be3617098",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/20261117_053946/graph_scan_poses.csv": "2e31d3d0736fe6743b51d1c9e674bad80ab66cb7ca5bb8a711d6ff7a49c35a53",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/pose_trace.csv": "afe3d1ec5fe2738a0d7eccd5a5564abab415d341f61332cc9031c18f9c57f2c1"
+        },
+        "ground_truth_supplied_to_policy": false,
+        "original_results_modified": false,
+        "native_success_established": false,
+        "hardware_validated": false,
+        "limits": [
+          "Retained scans omit the original ROS transport, discarded scans and mapper scheduling.",
+          "Component output is not a new navigation, recognition or completion result.",
+          "Loop event timing plus a controlled no-loop comparison is evidence about this recording only."
+        ]
+      },
+      "source_sha256": {
+        "/home/peter/simul/training_robust/audit_marker_localization.py": "33af91a61bf50de2e755327d04482fa396d63cdee5987a8c072757813a4cb267",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/evaluation.json": "c7fadb204d8c76f4bb21a1f0b74ac25a5cbb665793430dda40892c492acda86e",
+        "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/ground_truth_trajectory.csv": "7437be6f32e02951694512c39eb32f124f7f0eebbff00989fd89203be3617098",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/pose_trace.csv": "afe3d1ec5fe2738a0d7eccd5a5564abab415d341f61332cc9031c18f9c57f2c1",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/02_c_shape_baseline/episodes/1205000000/marker_observations.json": "246f8a07c990450d703a527270ef3f96dc44094af6632f16a5e965111fec78b9",
+        "/home/peter/simul/training_robust/audit_pose_trace.py": "586ff563216cedb65b03e0935d182ebdb8d99840a23e24829bc0df13206ffb49",
+        "/home/peter/simul/training_robust/audit_slam_coordinate_changes.py": "0c864d9f970be0f58fd2576074221b8187efe3d3883d43392db7d1cd452bc9a5"
+      },
+      "truth_supplied_to_policy": false,
+      "original_results_changed": false,
+      "hardware_calibration_claim": false,
+      "limitations": [
+        "Truth substitution is retrospective diagnosis, not deployable localization or navigation success.",
+        "Robot poses are interpolated across at most 0.35s gaps; residuals include timing and interpolation uncertainty.",
+        "This audit identifies localization/final-graph contributions, not the underlying cause of every SLAM update."
+      ],
+      "job": "02_c_shape_baseline"
+    },
+    {
+      "episode": "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000",
+      "evidence_type": "Offline independent coordinate diagnosis of an original completed native run",
+      "observation_metrics": {
+        "903": {
+          "observed_marker_error_m": {
+            "samples": 69,
+            "median": 0.6695693692442938,
+            "p95": 0.6816628298245512,
+            "maximum": 0.6874128060098369
+          },
+          "truth_pose_substituted_residual_m": {
+            "samples": 69,
+            "median": 0.011151667608813606,
+            "p95": 0.016516761437624157,
+            "maximum": 0.017809424531473023
+          },
+          "robot_position_error_m": {
+            "samples": 69,
+            "median": 0.6663390283335395,
+            "p95": 0.6697252893340646,
+            "maximum": 0.6712892802316177
+          },
+          "robot_heading_error_deg": {
+            "samples": 69,
+            "median": 0.5001039278733386,
+            "p95": 1.0511244940330164,
+            "maximum": 1.5244188251687254
+          }
+        },
+        "319": {
+          "observed_marker_error_m": {
+            "samples": 58,
+            "median": 0.5578341573620768,
+            "p95": 0.5631884899411403,
+            "maximum": 0.565370011682695
+          },
+          "truth_pose_substituted_residual_m": {
+            "samples": 58,
+            "median": 0.016399790149881664,
+            "p95": 0.02041440066857968,
+            "maximum": 0.02302845508665698
+          },
+          "robot_position_error_m": {
+            "samples": 58,
+            "median": 0.49344837507066386,
+            "p95": 0.5046237624293621,
+            "maximum": 0.5059810557604307
+          },
+          "robot_heading_error_deg": {
+            "samples": 58,
+            "median": 3.109751327620432,
+            "p95": 3.354169013806059,
+            "maximum": 3.73429760608532
+          }
+        }
+      },
+      "excluded_observations": 0,
+      "marker_finalization": [
+        {
+          "id": 903,
+          "original_error_m": 0.6689962715364296,
+          "finalized_error_m": 0.6580127840804555,
+          "shift_m": 0.011284861206169452,
+          "error_change_m": -0.010983487455974106
+        },
+        {
+          "id": 319,
+          "original_error_m": 0.5558027411787948,
+          "finalized_error_m": 0.5640724436289334,
+          "shift_m": 0.008320085251954677,
+          "error_change_m": 0.008269702450138583
+        }
+      ],
+      "native_pose_errors": {
+        "map": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 0.6565398552514597,
+            "p95": 0.9484811955801916,
+            "maximum": 0.9924662353930798
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 1.550608456192217,
+            "p95": 4.0195030170086685,
+            "maximum": 5.826179469363181
+          }
+        },
+        "odom": {
+          "position_error_m": {
+            "samples": 2947,
+            "median": 6.7853922578319965,
+            "p95": 10.232876394228525,
+            "maximum": 10.912085358398489
+          },
+          "heading_error_deg": {
+            "samples": 2947,
+            "median": 33.506435378652185,
+            "p95": 41.947092099460455,
+            "maximum": 46.410626242523655
+          }
+        }
+      },
+      "graph_audit": {
+        "evidence_type": "Independent evaluation of recorded native and retained-scan component coordinates",
+        "original_world_to_map": [
+          -18.43514403300933,
+          -1.878775323598405,
+          -1.955042594148885e-05
+        ],
+        "trajectories": {
+          "native_online": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/pose_trace.csv",
+            "sha256": "3fdb3c07d48f68bcd4467ee4062fd3fc2fe77e56f48793812f5c474dbc023186",
+            "accounting": {
+              "finite_unique_poses": 2948,
+              "evaluated": 2947,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 2947,
+              "median": 0.6565398552514597,
+              "p95": 0.9484811955801916,
+              "maximum": 0.9924662353930798
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 81.005,
+              "error_m": 0.5025629365599301
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 227,
+                  "median": 0.11032519255585385,
+                  "p95": 0.1291448548239613,
+                  "maximum": 0.16439265490300098
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.32820247046196066,
+                  "p95": 0.7086991646502929,
+                  "maximum": 0.7100108563719837
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.6718228425786827,
+                  "p95": 0.6886075942739552,
+                  "maximum": 0.6982285299669426
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.6567337003629605,
+                  "p95": 0.7069479338794924,
+                  "maximum": 0.7370091070475313
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.8143027738324087,
+                  "p95": 0.9698911197883671,
+                  "maximum": 0.9907271440127092
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.9407415807642979,
+                  "p95": 0.9896156992064427,
+                  "maximum": 0.9924662353930798
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.8232924488898206,
+                  "p95": 0.9039355365690415,
+                  "maximum": 0.9209614963988337
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.6434050673284268,
+                  "p95": 0.7357143408828131,
+                  "maximum": 0.7385450419021209
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.4933897832464503,
+                  "p95": 0.5863333081405299,
+                  "maximum": 0.5967865003898754
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.6143527345322704,
+                  "p95": 0.6372805459139864,
+                  "maximum": 0.6450598989348721
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 246,
+                  "median": 0.6971853300107538,
+                  "p95": 0.7758092305386733,
+                  "maximum": 0.7770049876183357
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 245,
+                  "median": 0.545627608713737,
+                  "p95": 0.6323514174992131,
+                  "maximum": 0.6369922300822817
+                }
+              },
+              {
+                "start_sim_s": 600,
+                "position_error_m": {
+                  "samples": 24,
+                  "median": 0.545801653199897,
+                  "p95": 0.545801653199897,
+                  "maximum": 0.545801653199897
+                }
+              }
+            ]
+          },
+          "finalized_graph": {
+            "path": "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/20261117_054207/graph_scan_poses.csv",
+            "sha256": "79a6a23bd04dbca0d2ef5c0ebef04120f816fddb0f947a7950325e82f6379b7e",
+            "accounting": {
+              "finite_unique_poses": 942,
+              "evaluated": 941,
+              "excluded": 1,
+              "maximum_truth_interpolation_gap_s": 0.35
+            },
+            "position_error_m": {
+              "samples": 941,
+              "median": 0.6430109558639916,
+              "p95": 0.9394716749574313,
+              "maximum": 0.984787099341008
+            },
+            "first_over_half_m": {
+              "stamp_sim_s": 85.521,
+              "error_m": 0.5088522560464008
+            },
+            "windows": [
+              {
+                "start_sim_s": 0,
+                "position_error_m": {
+                  "samples": 72,
+                  "median": 0.13228358216585295,
+                  "p95": 0.18562544606386372,
+                  "maximum": 0.19014059196918837
+                }
+              },
+              {
+                "start_sim_s": 50,
+                "position_error_m": {
+                  "samples": 77,
+                  "median": 0.23605351843801164,
+                  "p95": 0.6831397282487102,
+                  "maximum": 0.6846716369643652
+                }
+              },
+              {
+                "start_sim_s": 100,
+                "position_error_m": {
+                  "samples": 79,
+                  "median": 0.6557826435344343,
+                  "p95": 0.6697831799805928,
+                  "maximum": 0.6751712084076607
+                }
+              },
+              {
+                "start_sim_s": 150,
+                "position_error_m": {
+                  "samples": 79,
+                  "median": 0.6419798837396979,
+                  "p95": 0.7019313627908537,
+                  "maximum": 0.7229200868805736
+                }
+              },
+              {
+                "start_sim_s": 200,
+                "position_error_m": {
+                  "samples": 81,
+                  "median": 0.8212199838689158,
+                  "p95": 0.9621677313086784,
+                  "maximum": 0.9829543554099941
+                }
+              },
+              {
+                "start_sim_s": 250,
+                "position_error_m": {
+                  "samples": 75,
+                  "median": 0.9344122203639779,
+                  "p95": 0.9821382449296261,
+                  "maximum": 0.984787099341008
+                }
+              },
+              {
+                "start_sim_s": 300,
+                "position_error_m": {
+                  "samples": 82,
+                  "median": 0.827250242871018,
+                  "p95": 0.9005949068520187,
+                  "maximum": 0.9154406848615783
+                }
+              },
+              {
+                "start_sim_s": 350,
+                "position_error_m": {
+                  "samples": 83,
+                  "median": 0.6467568491349411,
+                  "p95": 0.7388518820703659,
+                  "maximum": 0.7419628200578114
+                }
+              },
+              {
+                "start_sim_s": 400,
+                "position_error_m": {
+                  "samples": 76,
+                  "median": 0.48970144919286046,
+                  "p95": 0.5941358000183741,
+                  "maximum": 0.6024238097613717
+                }
+              },
+              {
+                "start_sim_s": 450,
+                "position_error_m": {
+                  "samples": 82,
+                  "median": 0.6219591933611273,
+                  "p95": 0.6452431162669863,
+                  "maximum": 0.6496921683644359
+                }
+              },
+              {
+                "start_sim_s": 500,
+                "position_error_m": {
+                  "samples": 83,
+                  "median": 0.6945019631469456,
+                  "p95": 0.7717379467612371,
+                  "maximum": 0.7737378872426612
+                }
+              },
+              {
+                "start_sim_s": 550,
+                "position_error_m": {
+                  "samples": 72,
+                  "median": 0.5401033764508298,
+                  "p95": 0.6192141707338883,
+                  "maximum": 0.6227324120393802
+                }
+              }
+            ]
+          }
+        },
+        "markers": [
+          {
+            "id": 903,
+            "original_error_m": 0.6689962715364296,
+            "finalized_error_m": 0.6580127840804555,
+            "shift_m": 0.011284861206169452,
+            "error_change_m": -0.010983487455974106
+          },
+          {
+            "id": 319,
+            "original_error_m": 0.5558027411787948,
+            "finalized_error_m": 0.5640724436289334,
+            "shift_m": 0.008320085251954677,
+            "error_change_m": 0.008269702450138583
+          }
+        ],
+        "component_replays": {},
+        "source_sha256": {
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/evaluation.json": "b4a7af0bb78f43c1eda3ba094f25089ad3ec2f2268e2322ea1b7d24f856003c8",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/ground_truth_trajectory.csv": "5c663423de7473a585af7e27bccfe2fe831fe9f4a86278b5a5d39a968d40a133",
+          "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/20261117_054207/graph_scan_poses.csv": "79a6a23bd04dbca0d2ef5c0ebef04120f816fddb0f947a7950325e82f6379b7e",
+          "training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/pose_trace.csv": "3fdb3c07d48f68bcd4467ee4062fd3fc2fe77e56f48793812f5c474dbc023186"
+        },
+        "ground_truth_supplied_to_policy": false,
+        "original_results_modified": false,
+        "native_success_established": false,
+        "hardware_validated": false,
+        "limits": [
+          "Retained scans omit the original ROS transport, discarded scans and mapper scheduling.",
+          "Component output is not a new navigation, recognition or completion result.",
+          "Loop event timing plus a controlled no-loop comparison is evidence about this recording only."
+        ]
+      },
+      "source_sha256": {
+        "/home/peter/simul/training_robust/audit_marker_localization.py": "33af91a61bf50de2e755327d04482fa396d63cdee5987a8c072757813a4cb267",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/evaluation.json": "b4a7af0bb78f43c1eda3ba094f25089ad3ec2f2268e2322ea1b7d24f856003c8",
+        "/home/peter/simul/training_robust/native90/official_constraints_v1/train/1205000000.yaml": "376f3d003809b7ddc05729bff1cbc7ac3d35376a022ccf8048c5518f54e76446",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/ground_truth_trajectory.csv": "5c663423de7473a585af7e27bccfe2fe831fe9f4a86278b5a5d39a968d40a133",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/pose_trace.csv": "3fdb3c07d48f68bcd4467ee4062fd3fc2fe77e56f48793812f5c474dbc023186",
+        "/home/peter/simul/training_robust/native90/frontier_coverage_comparison_v1/jobs/03_c_shape_candidate/episodes/1205000000/marker_observations.json": "6be84040f9682c5849925976f41a27c5edbeebeb5922cd8ccacd64d6f4b6cb77",
+        "/home/peter/simul/training_robust/audit_pose_trace.py": "586ff563216cedb65b03e0935d182ebdb8d99840a23e24829bc0df13206ffb49",
+        "/home/peter/simul/training_robust/audit_slam_coordinate_changes.py": "0c864d9f970be0f58fd2576074221b8187efe3d3883d43392db7d1cd452bc9a5"
+      },
+      "truth_supplied_to_policy": false,
+      "original_results_changed": false,
+      "hardware_calibration_claim": false,
+      "limitations": [
+        "Truth substitution is retrospective diagnosis, not deployable localization or navigation success.",
+        "Robot poses are interpolated across at most 0.35s gaps; residuals include timing and interpolation uncertainty.",
+        "This audit identifies localization/final-graph contributions, not the underlying cause of every SLAM update."
+      ],
+      "job": "03_c_shape_candidate"
+    }
+  ],
+  "conclusion": "U baseline final pose-graph landmark reprojection amplifies already small online errors; C candidate landmarks are primarily displaced by online robot localization. Relative measurement residuals after evaluator-only pose substitution are small.",
+  "native_results_modified": false,
+  "truth_used_by_policy": false,
+  "hardware_validated": false
+}

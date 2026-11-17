@@ -135,7 +135,7 @@
   ],
   "latest_training": "spatial_curriculum.json",
   "previous_regressions_complete": true,
-  "latest_change": "Reported four completed frontier/coverage native failures and legacy face-look version gate mismatch; rolling-goal native experiment has not started",
+  "latest_change": "Diagnosed coordinate errors: U final graph reprojection amplifies small online errors; C candidate observation errors mostly follow robot localization; evaluator-only pose-substitution audit, original results preserved",
   "latest_recording": {
     "evidence_type": "fresh_space_native_training_not_holdout",
     "scenario_seed": 1191300909,
@@ -1209,5 +1209,6 @@
     "actual_new_native_started": false,
     "native_improvement_proven": false
   },
-  "frontier_coverage_partial_native_result": "repository_snapshot/frontier_coverage_partial_native_result.json"
+  "frontier_coverage_partial_native_result": "repository_snapshot/frontier_coverage_partial_native_result.json",
+  "marker_coordinate_error_diagnosis": "repository_snapshot/marker_coordinate_error_diagnosis.json"
 }
