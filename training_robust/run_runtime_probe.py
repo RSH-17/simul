@@ -16,6 +16,7 @@ def main():
     parser.add_argument('--wall-timeout',type=float,default=5400.)
     parser.add_argument('--record-video',action='store_true',help='Record Gazebo cameras and live LiDAR/SLAM to video/mission.mp4')
     parser.add_argument('--scene-index',type=int,default=0,help='Index in the prepared 20-scene manifest')
+    parser.add_argument('--output',type=Path,help='Isolated run artifact directory (default: prepared/runtime_probes/timestamp)')
     args=parser.parse_args();prepared=Path(args.prepared).resolve()
     manifest=json.loads((prepared/'manifest.json').read_text())
     if not 0<=args.scene_index<len(manifest['scenarios']):parser.error('--scene-index is outside the prepared manifest')
@@ -25,7 +26,7 @@ def main():
         raise ValueError('Prepared policy changed')
     if hashlib.sha256(scenario.read_bytes()).hexdigest()!=entry['sha256']:
         raise ValueError('Prepared scenario changed')
-    out=prepared/'runtime_probes'/datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')
+    out=args.output.resolve() if args.output else prepared/'runtime_probes'/datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')
     out.mkdir(parents=True,exist_ok=False)
     files=list(Path('src/osp_mission/osp_mission').glob('*.py'))+list(Path('src/osp_mission/config').glob('*.yaml'))+list(Path('src/osp_mission/launch').glob('*.py'))
     (out/'probe_configuration.json').write_text(json.dumps(dict(scenario=entry,domain=args.domain,

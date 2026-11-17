@@ -3,6 +3,7 @@
 set -eo pipefail
 
 repo_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+osp_original_arguments=("$@")
 runtime_dir="$repo_dir/deployment/robot_v13"
 domain="${ROS_DOMAIN_ID:-}"
 namespace=""
@@ -90,7 +91,7 @@ command=(ros2 launch osp_mission robot.launch.py
     "undock:=$undock" "rviz:=$rviz"
     "policy_file:=$runtime_dir/install/osp_mission/share/osp_mission/config/edge_policy.json"
     "nav2_params:=$runtime_dir/nav2_robot_active.yaml"
-    "output_dir:=$repo_dir/results/robot_$(date +%Y%m%dT%H%M%S)_$$")
+    "output_dir:=${OSP_RUN_DIR:-$repo_dir/results/robot_$(date +%Y%m%dT%H%M%S)_$$}/artifacts")
 service_prefix="/${namespace:+$namespace/}mission"
 if $low_rotation; then
     printf 'Unverified low-rotation candidate, ROS_DOMAIN_ID=%s\n' "$domain"
@@ -101,6 +102,12 @@ printf 'Launch command '; printf '%q ' "${command[@]}"; printf '\n'
 printf 'Start: ROS_DOMAIN_ID=%s ros2 service call %s/start std_srvs/srv/Trigger "{}"\n' "$domain" "$service_prefix"
 printf 'Stop:  ROS_DOMAIN_ID=%s ros2 service call %s/stop std_srvs/srv/Trigger "{}"\n' "$domain" "$service_prefix"
 if $dry_run; then exit 0; fi
+
+if ! $check && ! $build_only && [[ "${OSP_LOGGED_RUN:-}" != 1 ]]; then
+    exec bash "$repo_dir/run_policy.sh" --mode robot --workspace "$runtime_dir" \
+        --policy "$runtime_dir/install/osp_mission/share/osp_mission/config/edge_policy.json" \
+        --namespace "$namespace" -- bash "$repo_dir/run_robot_policy.sh" "${osp_original_arguments[@]}"
+fi
 
 [[ -f /opt/ros/jazzy/setup.bash ]] || fail 'ROS 2 Jazzy is required at /opt/ros/jazzy.'
 source /opt/ros/jazzy/setup.bash

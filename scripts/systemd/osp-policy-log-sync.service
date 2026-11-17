@@ -1,0 +1,11 @@
+[Unit]
+Description=Upload completed simulation and TurtleBot4 policy logs to GitHub
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/simul
+ExecStart=/usr/bin/python3 %h/simul/scripts/policy_run_logs.py sync --limit 3
+MemoryMax=768M
+CPUQuota=20%
+Nice=10
+TimeoutStartSec=30min

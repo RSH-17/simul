@@ -1362,5 +1362,12 @@
     "actual_native_started": true,
     "shadow_only_odometry": true,
     "hardware_validated": false
+  },
+  "policy_log_automation": {
+    "evidence": "repository_snapshot/policy_log_automation.json",
+    "enabled_on_current_host": true,
+    "simulation_and_robot_separated": true,
+    "smoke_tests_only": true,
+    "physical_hardware_execution_tested": false
   }
 }

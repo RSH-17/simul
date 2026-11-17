@@ -1,0 +1,10 @@
+[Unit]
+Description=Retry pending policy log uploads every two minutes
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=2min
+Unit=osp-policy-log-sync.service
+
+[Install]
+WantedBy=timers.target

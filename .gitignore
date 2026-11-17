@@ -3,6 +3,7 @@ install/
 log/
 results/
 deployment/
+/run_logs/
 __pycache__/
 .pytest_cache/
 training_runs/

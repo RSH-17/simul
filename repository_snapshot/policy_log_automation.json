@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-11-17T04:40:51.405202+00:00",
+  "change": "Automatic per-execution policy logs with separate simulation/robot archives and indexes",
+  "tests": {
+    "logging_regressions_passed": 14,
+    "hardware_adapter_regressions_passed": 4,
+    "shell_syntax_passed": true,
+    "python_compile_passed": true,
+    "systemd_unit_verify_passed": true
+  },
+  "retry": {
+    "timer": "osp-policy-log-sync.timer",
+    "enabled": true,
+    "interval_seconds": 120,
+    "service_last_result": "Result=success\nExecMainStatus=0",
+    "user_linger_enabled": true,
+    "installed_on": "peter-System-Product-Name",
+    "other_computers_require_install": true
+  },
+  "smoke_tests": [
+    {
+      "id": "20261117T043551-9b7c496d58",
+      "mode": "robot",
+      "evidence_type": "logging_smoke_test",
+      "physical_robot_or_gazebo_started": false,
+      "policy_task_success_claimed": false,
+      "recorder_exit_code": 0,
+      "bag_message_count": 58,
+      "synthetic_topic_messages": 48,
+      "upload_verified": true,
+      "download_and_sha256_verified": true,
+      "archive_contains_mcap_verified": true,
+      "index": "repository_snapshot/run_logs/robot/20261117T043551-9b7c496d58.json",
+      "release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11"
+    },
+    {
+      "id": "20261117T043531-92664daa50",
+      "mode": "simulation",
+      "evidence_type": "logging_smoke_test",
+      "physical_robot_or_gazebo_started": false,
+      "policy_task_success_claimed": false,
+      "recorder_exit_code": 0,
+      "bag_message_count": 109,
+      "synthetic_topic_messages": 48,
+      "upload_verified": true,
+      "download_and_sha256_verified": true,
+      "archive_contains_mcap_verified": true,
+      "index": "repository_snapshot/run_logs/simulation/20261117T043531-92664daa50.json",
+      "release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-simulation-2026-11"
+    }
+  ],
+  "existing_frozen_campaign_driver_hashes_unchanged": true,
+  "new_native_benchmark_claimed": false,
+  "physical_hardware_execution_tested": false,
+  "policy_production_promotion": false,
+  "documentation": "repository_snapshot/run_logs/README.md"
+}
