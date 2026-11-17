@@ -351,7 +351,7 @@
       "hardware_validated": false
     }
   ],
-  "captured_utc": "2026-11-17T22:30:33.852420+00:00",
+  "captured_utc": "2026-11-17T23:00:31.734858+00:00",
   "synthetic_stress_is_real_robot_calibration": false,
   "automation_scope": "local systemd timer: summary and finished-video publication only"
 }
