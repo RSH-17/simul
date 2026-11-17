@@ -1319,5 +1319,14 @@
     "simulation_and_robot_separated": true,
     "smoke_tests_only": true,
     "physical_hardware_execution_tested": false
+  },
+  "physical_robot_trial": {
+    "observed_utc": "2026-11-17T09:39:48.711400+00:00",
+    "report": "repository_snapshot/physical_robot_trial_20261117.json",
+    "candidate": "policy_candidates/2026-11-17_face_intent_start30_v1",
+    "physical_task_success": false,
+    "production_promoted": false,
+    "runtime_tests_passed": 356,
+    "scope": "physical_trial_and_offline_replay"
   }
 }
