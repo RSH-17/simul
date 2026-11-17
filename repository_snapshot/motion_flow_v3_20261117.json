@@ -1,0 +1,58 @@
+{
+  "captured_utc": "2026-11-17T10:51:05.778519+00:00",
+  "scope": "recorded_physical_run_diagnosis_and_offline_regression_tests",
+  "baseline_runs": [
+    {
+      "name": "face_intent_start30_robot_20261117",
+      "elapsed_seconds": 526.2976793869998,
+      "near_pass_interruptions": 8,
+      "near_pass_observation_seconds": 34.267597435000425,
+      "sensor_interruptions": 6,
+      "navigation_goals_succeeded": 9,
+      "bump_reports": 0,
+      "markers": 0,
+      "reason": "operator_stop"
+    },
+    {
+      "name": "face_intent_body_scan_v2_restart_20261117",
+      "elapsed_seconds": 273.8113619730002,
+      "near_pass_interruptions": 6,
+      "near_pass_observation_seconds": 24.30305170599877,
+      "sensor_interruptions": 0,
+      "navigation_goals_succeeded": 10,
+      "bump_reports": 0,
+      "markers": 0,
+      "reason": "operator_stop"
+    }
+  ],
+  "diagnosis": "The latest run stopped for optional wall inspections despite no bump reports or sensor interruptions. Generic zero-turn observations also had a fixed 1.5-second wait in the source.",
+  "candidate": "policy_candidates/2026-11-17_face_intent_flow_v3",
+  "changes": {
+    "mid_route_wall_inspection_default": false,
+    "arrival_and_marker_looks_preserved": true,
+    "zero_angle_generic_wait_removed": true,
+    "observation_settle_min_s": 0.5,
+    "observation_settle_max_s": 1.5,
+    "fresh_processed_frames": 3,
+    "nav_stall_timeout_s": 8.0,
+    "nav_minimum_net_progress_m": 0.06,
+    "failed_goal_cooldown_s": 60.0,
+    "failed_goal_radius_m": 0.45,
+    "failed_backup_cooldown_s": 60.0,
+    "raw_collision_monitor_and_bump_checks_unchanged": true
+  },
+  "verification": {
+    "runtime_tests_passed": 383,
+    "dashboard_tests_passed": 8,
+    "isolated_test_ros_domain": 184,
+    "new_gazebo_run_started": false,
+    "new_physical_run_started": false,
+    "physical_stop_frequency_improvement_verified": false,
+    "marker_task_improvement_verified": false,
+    "control_processes_stopped_confirmed": true,
+    "awaiting_explicit_drive_command": true
+  },
+  "prepared_workspace": "/home/ubuntu/face_intent_flow_v3_ws",
+  "prepared_speed_profile_sha256": "cd1a23bb40bcdfb4481f74d37e6ef91a4ffb93aab7214fd818c3bf4845d94cd6",
+  "production_promoted": false
+}

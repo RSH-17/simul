@@ -1,0 +1,17 @@
+{
+  "candidate_id": "2026-11-17_face_intent_flow_v3",
+  "parent": "policy_candidates/2026-11-17_face_intent_body_scan_v2",
+  "status": "prepared_not_driven",
+  "physical_validation": false,
+  "mid_route_wall_inspection": false,
+  "marker_interrupts_preserved": true,
+  "collision_monitor_unchanged": true,
+  "overlay_files": {
+    "osp_mission/navigation_flow.py": "156b878622e1483f7c2f54a5896713aa009c1d0a146d2f7f206aaf9f6d46e172",
+    "test/test_navigation_flow.py": "82d6d729ac102f1d8bc98e8b1a4d5e519a9a351716301c29e109e01b343540e6"
+  },
+  "transform_sha256": "2c0a2a29db2445f8fc528d60efbf7d27eee5814290ab449253fdb752f347a2b1",
+  "runtime_tests_passed": 383,
+  "physical_completion_validated": false,
+  "verification_report": "repository_snapshot/motion_flow_v3_20261117.json"
+}

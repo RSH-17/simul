@@ -28,9 +28,10 @@ function render(data){
   const live=(ages.mission_status!==undefined&&ages.mission_status<statusLimit)||(ages.raw_scan!==undefined&&ages.raw_scan<5);
   $('connection').textContent=live?'ROS 수신 중':sim&&ages.raw_scan!==undefined?'시뮬 종료 · 마지막 화면':sim?'시뮬 시작 대기':'ROS 데이터 대기 / 끊김';
   $('connection').classList.toggle('offline',!live);
-  $('mission-state').textContent=!live&&sim&&ages.raw_scan!==undefined?'시뮬 종료':status.state||'상태 대기';
-  $('mission-state').className=ages.mission_status>statusLimit?'bad':'';
-  $('mission-detail').textContent=`${status.active_action||'동작 없음'} · 상태 ${sec(ages.mission_status)}`;
+  const outcome=data.mission_display||{label:status.state==='done'?'종료 · 미완료':status.state||'상태 대기',detail:'',kind:''};
+  $('mission-state').textContent=!live&&sim&&ages.raw_scan!==undefined?'시뮬 종료':outcome.label;
+  $('mission-state').className=ages.mission_status>statusLimit?'bad':outcome.kind;
+  $('mission-detail').textContent=`${outcome.detail||status.active_action||'동작 없음'} · 상태 ${sec(ages.mission_status)}`;
   const cellName={start_free:'빈 공간',start_not_free:'출발 셀 점유',start_unknown:'출발 셀 미관측',start_outside_map:'지도 밖',map_or_pose_unavailable:'지도 / TF 대기'};
   $('start-cell').textContent=cellName[cell.reason]||cell.reason||'대기';
   $('start-cell').className=cell.reason==='start_not_free'?'bad':cell.reason==='start_free'?'good':'';
@@ -61,6 +62,7 @@ function render(data){
   const pose=data.robot_pose;
   rows('nav-details',[
     ['현재 동작',status.active_action||'없음'],
+    ['종료 사유',outcome.detail||'진행 중 / 대기'],
     ['미션 경과',status.elapsed_seconds===undefined?'—':`${number(status.elapsed_seconds,1)} s`],
     ['시작 준비',status.readiness_reason||'별도 거절 사유 없음',status.readiness_reason?'warn':''],
     ['로봇 위치',pose?`${number(pose[0])}, ${number(pose[1])} m`:'TF 대기'],

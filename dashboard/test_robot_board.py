@@ -6,7 +6,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from robot_board import topic
-from robot_board_core import map_cell, scan_summary
+from robot_board_core import map_cell, scan_summary, mission_display
 
 
 def test_start_cell_distinguishes_occupied_from_narrow_clearance():
@@ -37,3 +37,25 @@ def test_scan_metrics_require_same_acquisition_stamp():
 def test_namespace_and_absolute_topic_selection():
     assert topic('tb4', 'scan') == '/tb4/scan'
     assert topic('tb4', '/scan') == '/scan'
+
+
+def test_done_with_no_reason_is_not_presented_as_task_success():
+    display=mission_display({'state':'done','targets':0})
+    assert display['label']=='종료 · 미완료' and display['kind']!='good'
+
+
+def test_operator_stop_and_timeout_are_distinct_from_completion():
+    assert mission_display({'state':'done','termination_reason':'operator_stop','task_success':False})['label']=='주행 중지'
+    assert mission_display({'state':'done','termination_reason':'timeout','task_success':False})['label']=='시간 초과'
+    assert mission_display({'state':'done','termination_reason':'all_targets_found','task_success':True})['label']=='마커 임무 완료'
+
+
+def test_saving_results_does_not_turn_a_stop_into_success():
+    display=mission_display({'state':'saving','termination_reason':'operator_stop','task_success':False})
+    assert '주행 중지' in display['label'] and display['kind']!='good'
+
+
+def test_safety_supervisor_stop_reports_bump_without_claiming_success():
+    display=mission_display({'state':'done','termination_reason':'operator_stop',
+                            'task_success':False,'collisions':1})
+    assert display['label']=='범퍼 감지 후 중지' and display['kind']!='good'

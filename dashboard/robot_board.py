@@ -32,7 +32,7 @@ def run(args):
     from tf2_ros import Buffer, TransformListener
     from visualization_msgs.msg import MarkerArray
     from map_observer import render_map
-    from robot_board_core import map_cell, scan_summary
+    from robot_board_core import map_cell, scan_summary, mission_display
 
     class Monitor(Node):
         def __init__(self):
@@ -220,7 +220,6 @@ def run(args):
                 center = (320,320)
                 scale = 450
                 cv2.circle(canvas, center, round(.189*scale), (75,90,110), 2)
-                cv2.circle(canvas, center, round(.16*scale), (55,160,160), 1)
                 cv2.line(canvas, (320,320), (320+round(.25*scale),320), (80,80,100), 1)
                 matched = filtered is not None and raw.header.stamp == filtered.header.stamp and len(raw.ranges)==len(filtered.ranges)
                 for index, distance in enumerate(raw.ranges):
@@ -238,7 +237,7 @@ def run(args):
                 sy = 320-round(tr.translation.y*scale)
                 cv2.circle(canvas,(sx,sy),5,(255,255,255),-1)
                 cv2.circle(canvas,center,5,(110,235,140),-1)
-                cv2.putText(canvas,'BASE_LINK  +X RIGHT  |  0.16m FILTER / 0.189m BODY',
+                cv2.putText(canvas,'BASE_LINK  +X RIGHT  |  BODY REFERENCE r=0.189m',
                             (20,30),cv2.FONT_HERSHEY_SIMPLEX,.51,(225,235,235),1,cv2.LINE_AA)
                 ok,png = cv2.imencode('.png',canvas)
                 if ok:
@@ -267,7 +266,8 @@ def run(args):
             ages = {name: round(now-stamp, 1) for name, stamp in stamps.items()}
             return {'server_time': now, 'mode': 'simulation' if args.sim else 'hardware',
                     'namespace': args.namespace, 'ros_domain_id': args.domain,
-                    'policy_prefix': self.policy_prefix, 'status': status, 'collision_monitor': collision,
+                    'policy_prefix': self.policy_prefix, 'status': status,
+                    'mission_display': mission_display(status), 'collision_monitor': collision,
                     'start_cell': cell, 'robot_pose': pose, 'pose_age_s': pose_age,
                     'scan': scan, 'ages_s': ages,
                     'discovered_ids': discovered_ids,

@@ -1328,5 +1328,14 @@
     "production_promoted": false,
     "runtime_tests_passed": 356,
     "scope": "physical_trial_and_offline_replay"
+  },
+  "motion_flow_v3": {
+    "observed_utc": "2026-11-17T10:51:05.778519+00:00",
+    "report": "repository_snapshot/motion_flow_v3_20261117.json",
+    "candidate": "policy_candidates/2026-11-17_face_intent_flow_v3",
+    "status": "prepared_stopped_awaiting_drive_command",
+    "runtime_tests_passed": 383,
+    "dashboard_tests_passed": 8,
+    "physical_validation": false
   }
 }

@@ -1,0 +1,20 @@
+{
+  "candidate_id": "2026-11-17_face_intent_body_scan_v2",
+  "parent": "policy_candidates/2026-11-17_face_intent_start30_v1",
+  "status": "experimental_hardware_trial_adapter",
+  "maximum_self_mask_radius_m": 0.18,
+  "footprint_inset_m": 0.005,
+  "collision_monitor_raw_scan": true,
+  "hardware_bump_unchanged": true,
+  "physical_completion_validated": false,
+  "overlay_files": {
+    "osp_mission/body_scan_filter.py": "ba1b817fb24a441f4e8a8c98f1c0ed9deece5b70cc463d86263e4040e161bf43",
+    "osp_mission/mission_outcome.py": "d1d02cf1f75d576a73cc4a2705816d74808f78d70012a4474f61d688cd346fcb",
+    "osp_mission/near_start.py": "0319a759983b8aead576f40ec2dfdbf2cfb576ca76e52df958969cace8b7b8e0",
+    "test/test_body_scan_filter.py": "b1f3ff7e29e588113120b315792ef8b5f83299f85101dd636b4883afcba81a37",
+    "test/test_near_start.py": "3d0f5de6ef7d6fdec89c4b34726ebc76a91dd307c618772c6b746043c12ac461"
+  },
+  "transform_sha256": "4501bd49554403fae8a5102be685515ebcb430d737d4bd5c19db37a8b4de82e4",
+  "parent_transform_sha256": "179541cc1a89346f5876377d91615cd4493fe7cdaeb3813dd604c4918611bf27",
+  "runtime_tests_passed": 366
+}
