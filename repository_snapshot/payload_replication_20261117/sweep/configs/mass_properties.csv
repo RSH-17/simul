@@ -1,0 +1,11 @@
+condition,variant,config,macbook_mass_kg,mount_height_offset_m,com_offset_x_m,com_offset_y_m,physically_valid_without_custom_mount,robot_mass_kg,robot_com_z_m,note
+mass_0,baseline,/home/ubuntu/payload_results/sweep/configs/mass_0.yaml,0.0,0.0,0.0,0.0,True,5.389999999999994,0.13012038631539907,Rigidly fixed hypothetical mount; actual bracket not measured
+mass_1_0,mass_only,/home/ubuntu/payload_results/sweep/configs/mass_1_0.yaml,1.0,0.0,0.0,0.0,True,6.389999999999994,0.16562580316744932,Rigidly fixed hypothetical mount; actual bracket not measured
+mass_1_5,mass_only,/home/ubuntu/payload_results/sweep/configs/mass_1_5.yaml,1.5,0.0,0.0,0.0,True,6.889999999999994,0.1795136258693761,Rigidly fixed hypothetical mount; actual bracket not measured
+mass_2_0,mass_only,/home/ubuntu/payload_results/sweep/configs/mass_2_0.yaml,2.0,0.0,0.0,0.0,True,7.389999999999994,0.19152217621650897,Rigidly fixed hypothetical mount; actual bracket not measured
+height_low,mass_only,/home/ubuntu/payload_results/sweep/configs/height_low.yaml,1.5,-0.05,0.0,0.0,False,6.889999999999994,0.16862828479535574,Lower mounting intersects the existing official plate; do not run as physical comparison
+height_high,mass_only,/home/ubuntu/payload_results/sweep/configs/height_high.yaml,1.5,0.05,0.0,0.0,True,6.889999999999994,0.1903989669433964,Rigidly fixed hypothetical mount; actual bracket not measured
+offset_front,mass_only,/home/ubuntu/payload_results/sweep/configs/offset_front.yaml,1.5,0.0,0.05,0.0,True,6.889999999999994,0.1795136258693761,Rigidly fixed hypothetical mount; actual bracket not measured
+offset_back,mass_only,/home/ubuntu/payload_results/sweep/configs/offset_back.yaml,1.5,0.0,-0.05,0.0,True,6.889999999999994,0.1795136258693761,Rigidly fixed hypothetical mount; actual bracket not measured
+offset_left,mass_only,/home/ubuntu/payload_results/sweep/configs/offset_left.yaml,1.5,0.0,0.0,0.05,True,6.889999999999994,0.1795136258693761,Rigidly fixed hypothetical mount; actual bracket not measured
+offset_right,mass_only,/home/ubuntu/payload_results/sweep/configs/offset_right.yaml,1.5,0.0,0.0,-0.05,True,6.889999999999994,0.1795136258693761,Rigidly fixed hypothetical mount; actual bracket not measured

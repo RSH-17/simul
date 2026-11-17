@@ -1,0 +1,23 @@
+{
+  "max_speed_mps": 8.321793774912428e-12,
+  "max_odom_accel_mps2": 3.8173168330029567e-10,
+  "max_angular_speed_radps": 0.7199999990883349,
+  "max_angular_accel_radps2": 12.359999991995101,
+  "max_abs_roll_rad": 4.830527627731056e-07,
+  "max_abs_pitch_rad": 0.004402609558801246,
+  "max_horizontal_imu_accel_mps2": 0.9409113039533994,
+  "reason": "completed",
+  "variant": "mass_only",
+  "profile": "turn",
+  "config": "/home/ubuntu/payload_results/sweep/configs/offset_right.yaml",
+  "final_distance_m": 5.530893469508973e-12,
+  "stopping_distance_m": 4.386765387874026e-13,
+  "net_x_after_stop_m": 9.102146543093697e-14,
+  "max_pitch_change_rad": 3.0101501525842816e-07,
+  "yaw_change_rad": 1.2021218984986999,
+  "observed_hazard_types": [],
+  "hazard_events": {},
+  "elapsed_sim_s": 3.0,
+  "elapsed_wall_s": 29.988936312000078,
+  "scope": "Open-loop physical response only; Nav2 safety is not in this trial"
+}

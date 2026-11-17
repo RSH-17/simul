@@ -1,0 +1,15 @@
+layout,condition,variant,samples,minimum_range_m,max_within_40cm,wall_seconds,navigation,scope,payload_config
+side,adapter_only,adapter_only,12,0.9900152683258057,0,9.228,False,Observed /scan only; no navigation or physical-robot conclusion,
+side,baseline,baseline,12,0.9900152683258057,0,9.093,False,Observed /scan only; no navigation or physical-robot conclusion,
+side,cable_only,cable_only,12,0.1651591658592224,1,9.284,False,Observed /scan only; no navigation or physical-robot conclusion,
+front,adapter_only,adapter_only,12,0.18500284850597382,19,10.77,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+front,baseline,baseline,12,0.9900152683258057,0,10.93,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+front,cable_only,cable_only,12,0.2166982740163803,11,10.763,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+front,full,full,12,0.18500284850597382,19,10.684,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+front,mass_only,mass_only,12,0.9900152683258057,0,10.459,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+front,occlusion_only,occlusion_only,12,0.18500283360481262,19,9.784,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+front,repositioned,repositioned,12,0.9899934530258179,0,11.047,False,Observed /scan only; no navigation or physical-robot conclusion,/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml
+side,full,full,12,0.16515938937664032,1,9.324,False,Observed /scan only; no navigation or physical-robot conclusion,
+side,mass_only,mass_only,12,0.9900152683258057,0,9.203,False,Observed /scan only; no navigation or physical-robot conclusion,
+side,occlusion_only,occlusion_only,12,0.16515906155109406,1,9.292,False,Observed /scan only; no navigation or physical-robot conclusion,
+side,repositioned,repositioned,12,0.9900152683258057,0,9.584,False,Observed /scan only; no navigation or physical-robot conclusion,

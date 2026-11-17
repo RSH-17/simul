@@ -1,0 +1,9 @@
+{
+  "variant": "repositioned",
+  "samples": 12,
+  "minimum_range_m": 0.9900152683258057,
+  "max_within_40cm": 0,
+  "wall_seconds": 9.584,
+  "navigation": false,
+  "scope": "Observed /scan only; no navigation or physical-robot conclusion"
+}

@@ -1,6 +1,20 @@
 {
   "captured_utc": "2026-11-14T20:19:56.963709+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
+  "payload_replication": {
+    "status": "experimental_gazebo_sensor_and_nav2_comparison",
+    "experiment_date": "2026-11-17",
+    "report": "turtlebot4_payload_sim/README.md",
+    "data": "repository_snapshot/payload_replication_20261117",
+    "observed_front_adapter_scan_min_m": 0.185,
+    "front_adapter_only_no_motion_wall_s": 75,
+    "front_repositioned_nav2_goal_succeeded": true,
+    "selective_filter_same_ray_safety_passed": false,
+    "exact_start_not_free_reproduced": false,
+    "physical_robot_validated": false,
+    "trials_per_condition": 1,
+    "open_loop_mass_1_5_straight_cliff_detected": true
+  },
   "tests_passed_final": 189,
   "native_validation_complete": false,
   "jobs": [

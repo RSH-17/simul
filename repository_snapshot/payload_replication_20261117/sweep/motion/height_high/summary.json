@@ -1,0 +1,27 @@
+{
+  "max_speed_mps": 0.2299999999781611,
+  "max_odom_accel_mps2": 1.999999999808283,
+  "max_abs_roll_rad": 0.0020375695850195392,
+  "max_abs_pitch_rad": 0.09096694241538188,
+  "max_horizontal_imu_accel_mps2": 17.14276748401724,
+  "reason": "completed",
+  "variant": "mass_only",
+  "config": "/home/ubuntu/payload_results/sweep/configs/height_high.yaml",
+  "final_distance_m": 0.11129355055507631,
+  "stopping_distance_m": 0.006986699086892901,
+  "net_x_after_stop_m": -0.006847552089952719,
+  "max_pitch_change_rad": 0.08656394300998187,
+  "observed_hazard_types": [
+    2
+  ],
+  "hazard_events": {
+    "2:base_link": {
+      "first_sim_s": 5.583,
+      "last_sim_s": 6.129,
+      "count": 42
+    }
+  },
+  "elapsed_sim_s": 3.0,
+  "elapsed_wall_s": 26.570889428000555,
+  "scope": "Open-loop physical response only; Nav2 safety is not in this trial"
+}

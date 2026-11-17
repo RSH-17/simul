@@ -1,0 +1,21 @@
+{
+  "map_width_m": 4.90000007301569,
+  "map_height_m": 4.90000007301569,
+  "costmap_lethal": 0,
+  "costmap_inflated": 244,
+  "collision_action": null,
+  "commanded_linear_max_mps": 0.26,
+  "actual_linear_max_mps": 0.29899999999035176,
+  "first_motion_wall_s": 20.109465651999926,
+  "goal_sent_wall_s": 19.133725368999876,
+  "goal_accepted": true,
+  "goal_status": 4,
+  "reason": "goal_result",
+  "variant": "occlusion_only",
+  "goal_map_m": [
+    0.5,
+    0.0
+  ],
+  "wall_seconds": 23.594,
+  "scope": "One Gazebo run on a VM; no physical-robot conclusion"
+}

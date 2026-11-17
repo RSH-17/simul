@@ -1,0 +1,9 @@
+{
+  "variant": "occlusion_only",
+  "samples": 12,
+  "minimum_range_m": 0.16515906155109406,
+  "max_within_40cm": 1,
+  "wall_seconds": 9.292,
+  "navigation": false,
+  "scope": "Observed /scan only; no navigation or physical-robot conclusion"
+}

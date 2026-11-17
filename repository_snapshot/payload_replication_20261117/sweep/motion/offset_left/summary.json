@@ -1,0 +1,27 @@
+{
+  "max_speed_mps": 0.21999999998594472,
+  "max_odom_accel_mps2": 2.330999999399434,
+  "max_abs_roll_rad": 0.0017219328232797016,
+  "max_abs_pitch_rad": 0.09125354621838518,
+  "max_horizontal_imu_accel_mps2": 8.843334828098394,
+  "reason": "completed",
+  "variant": "mass_only",
+  "config": "/home/ubuntu/payload_results/sweep/configs/offset_left.yaml",
+  "final_distance_m": 0.11406698119020554,
+  "stopping_distance_m": 0.017811294459525177,
+  "net_x_after_stop_m": -0.017433504700513344,
+  "max_pitch_change_rad": 0.08685124365930526,
+  "observed_hazard_types": [
+    2
+  ],
+  "hazard_events": {
+    "2:base_link": {
+      "first_sim_s": 5.562,
+      "last_sim_s": 6.126,
+      "count": 49
+    }
+  },
+  "elapsed_sim_s": 3.000000000000001,
+  "elapsed_wall_s": 26.581925381000474,
+  "scope": "Open-loop physical response only; Nav2 safety is not in this trial"
+}

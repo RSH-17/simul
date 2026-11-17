@@ -1,0 +1,30 @@
+{
+  "map_width_m": 4.90000007301569,
+  "map_height_m": 4.950000073760748,
+  "costmap_lethal": 0,
+  "costmap_inflated": 241,
+  "collision_action": null,
+  "commanded_linear_max_mps": 0.26,
+  "actual_linear_max_mps": 0.2729999999864661,
+  "first_motion_wall_s": 19.792794627999683,
+  "goal_sent_wall_s": 18.940302582000186,
+  "first_motion_sim_s": 5.964,
+  "goal_sent_sim_s": 5.724,
+  "goal_completion_sim_s": null,
+  "max_abs_roll_rad": 0.002688424447988542,
+  "max_abs_pitch_rad": 0.09212079316847242,
+  "max_horizontal_accel_mps2": 40.49096468172491,
+  "max_odom_accel_mps2": 2.213333311027887,
+  "goal_accepted": true,
+  "goal_status": null,
+  "reason": "wall_timeout",
+  "variant": "mass_only",
+  "goal_map_m": [
+    0.5,
+    0.0
+  ],
+  "payload_config": "/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml",
+  "fixture_filter": false,
+  "wall_seconds": 75.279,
+  "scope": "One Gazebo run on a VM; no physical-robot conclusion"
+}

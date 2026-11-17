@@ -1,0 +1,10 @@
+{
+  "variant": "full",
+  "samples": 12,
+  "payload_config": "/home/ubuntu/simul/turtlebot4_payload_sim/config/front_fixture_hypothesis.yaml",
+  "minimum_range_m": 0.18500284850597382,
+  "max_within_40cm": 19,
+  "wall_seconds": 10.684,
+  "navigation": false,
+  "scope": "Observed /scan only; no navigation or physical-robot conclusion"
+}

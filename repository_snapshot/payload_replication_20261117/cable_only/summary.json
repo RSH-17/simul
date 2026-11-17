@@ -1,0 +1,9 @@
+{
+  "variant": "cable_only",
+  "samples": 12,
+  "minimum_range_m": 0.1651591658592224,
+  "max_within_40cm": 1,
+  "wall_seconds": 9.284,
+  "navigation": false,
+  "scope": "Observed /scan only; no navigation or physical-robot conclusion"
+}
