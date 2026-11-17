@@ -1344,5 +1344,14 @@
     "runtime_tests_passed": 383,
     "dashboard_tests_passed": 8,
     "physical_validation": false
+  },
+  "wired_discovery_fix": {
+    "robot_user_service": "osp-wired-discovery.service",
+    "enabled": true,
+    "linger": true,
+    "new_process_preflight_passed": true,
+    "preflight_elapsed_s": 1.233,
+    "reboot_tested": false,
+    "new_drive_started": false
   }
 }

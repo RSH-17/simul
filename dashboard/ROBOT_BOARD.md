@@ -106,3 +106,22 @@ Gazebo 실행으로 `/clock`이 되감기면 이전 실행의 경로와 상태�
 실물용 `scan_self_filtered`를 발행하지 않으므로 필터 항목은 적용되지 않았다고
 표시합니다. 완료된 Gazebo 캠페인 영상과 평가 결과는 기존
 `dashboard/server.py` 대시보드에서 확인합니다.
+
+## 유선 연결에서 새 노드가 센서를 못 찾는 경우
+
+2026-11-17 실물에서 eth0의 DDS 발견 그룹(239.255.0.1) 가입이 없고,
+기존 보드는 수신하지만 새 VM 구독기는 메시지 0개인 상태를 확인했습니다.
+로봇의 `osp-wired-discovery.service`가 유선 그룹 가입을 유지하도록 설치했습니다.
+`scripts/keep_ros_discovery.py`는 발견 패킷을 수신·폐기하며 주행 명령은 보내지 않습니다.
+사용자 서비스 자동 시작과 linger를 켰으며, 새 `./robot.sh check`가 통과했습니다.
+재부팅 후 검증은 별도입니다. 로봇에서 상태는 아래처럼 확인합니다.
+
+```bash
+systemctl --user status osp-wired-discovery.service
+loginctl show-user ubuntu --property=Linger
+```
+
+재설치는 스크립트를 `/home/ubuntu/keep_ros_discovery.py`, 서비스 파일을
+`~/.config/systemd/user/osp-wired-discovery.service`에 복사한 뒤
+`systemctl --user daemon-reload`, `systemctl --user enable --now osp-wired-discovery.service`,
+`loginctl enable-linger ubuntu` 순서로 수행합니다.

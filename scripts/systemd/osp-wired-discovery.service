@@ -1,0 +1,8 @@
+[Unit]
+Description=Keep ROS discovery multicast on the TurtleBot wired interface
+[Service]
+ExecStart=/usr/bin/python3 -u /home/ubuntu/keep_ros_discovery.py --address 192.168.185.3 --domain 4
+Restart=always
+RestartSec=2
+[Install]
+WantedBy=default.target
