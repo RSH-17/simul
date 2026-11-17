@@ -1,5 +1,7 @@
 # OSP Final Project — ROS 2 Jazzy
 
+**2026-11-17 실물 보드 구동·정지 버튼:** [실물 주행 보드](dashboard/ROBOT_BOARD.md#이-mac의-실물-제어) 상단에서 직접 시작·정지할 수 있습니다. 준비된 Flow v3를 재빌드 없이 실행하며, 시간·센서·범퍼·도크 상태를 확인한 뒤 준비 직후 미션을 자동 시작합니다. 준비 중 정지도 지원하고 실제 odom 정지를 확인합니다. Mac 터미널의 `./robot.sh start/stop`도 같은 실행기를 사용합니다. 페이지 열기·새로고침은 구동하지 않습니다. 격리 ROS/가짜 HTTP 시험과 화면 확인을 수행했으며 **새 실물 주행이나 출발 지연 개선은 아직 측정하지 않았습니다.**
+
 **2026-11-17 TurtleBot4 MacBook 장착 재현 실험:** 공식 Standard 모델에 1.5kg 노트북·LAN 어댑터·케이블을 물리 링크로 추가하는 별도 ROS 패키지를 만들었습니다. 가정한 앞쪽 어댑터 배치에서는 `/scan` 19개 빔이 약 18.5cm를 읽고, 하중 없는 어댑터 조건에서도 Nav2 목표를 수락한 채 출발하지 않았습니다. 어댑터·케이블을 스캔 평면 위로 옮기고 노트북을 전방 5cm 이동한 조건은 같은 목표를 완료했습니다. 필터는 같은 방향의 외부 장애물을 가려 실물 안전 대책으로 채택할 수 없습니다. 가정한 1.5kg 중앙 장착 모델은 개방 루프 명령에서 출발 후 cliff 감지가 발생했습니다. **실물 장착 치수·센서 로그가 없고 정확한 `start_not_free` 지도 셀 상태는 재현되지 않아, 실제 원인은 미확정입니다.** [코드·명령·한계](turtlebot4_payload_sim/README.md), [CSV·그래프](repository_snapshot/payload_replication_20261117/).
 
 **2026-11-17 정책 실행 로그 자동 업로드:** 실물 `run_robot_policy.sh`와 Gazebo 진입점에서 콘솔·ROS 로그·토픽 rosbag·정책/설정·생성 결과를 자동 기록하고 종료 시 GitHub Release로 업로드합니다. `simulation`/`robot`별 로컬 경로·Release·색인을 분리하며 업로드 실패는 보관 후 2분 간격으로 재시도합니다. 직접 ROS 명령은 `run_policy.sh --mode ... -- 명령`을 사용해야 합니다. 로그 기능 시험은 실제 로봇/Gazebo 성능과 구분합니다. [실행 방법·수집 범위·재시도](repository_snapshot/run_logs/README.md).

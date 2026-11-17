@@ -1,8 +1,9 @@
-"""Read-only live board for a physical or simulated TurtleBot4 ROS graph."""
+"""Live TurtleBot4 board, with opt-in physical start/stop controls."""
 import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
+import signal
 import threading
 import time
 
@@ -15,6 +16,69 @@ def topic(namespace, name):
     return '/' + '/'.join(part for part in (namespace.strip('/'), name.strip('/')) if part)
 
 
+def make_handler(monitor, control=None):
+    from robot_board_control import valid_request
+    class Handler(BaseHTTPRequestHandler):
+        def send_json(self, status, value):
+            content = json.dumps(value).encode()
+            self.send_response(status)
+            self.send_header('Content-Type', 'application/json; charset=utf-8')
+            self.send_header('Cache-Control', 'no-store')
+            self.send_header('Content-Length', str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+
+        def do_POST(self):
+            if self.path not in ('/api/control/start', '/api/control/stop'):
+                self.send_json(404, {'error': 'Unknown control action'})
+                return
+            if control is None or not valid_request(self.headers, control.token):
+                self.send_json(403, {'error': 'Control is disabled or request is not from this board'})
+                return
+            if self.headers.get('Content-Length', '0') != '2' or self.rfile.read(2) != b'{}':
+                self.send_json(400, {'error': 'Expected an empty JSON object'})
+                return
+            try:
+                result = control.request(self.path.rsplit('/', 1)[-1])
+                self.send_json(202, result)
+            except RuntimeError as exc:
+                self.send_json(409, {'error': str(exc)})
+            except OSError as exc:
+                self.send_json(500, {'error': str(exc)})
+
+        def do_GET(self):
+            path = self.path.split('?', 1)[0]
+            if path in ('/', '/index.html'):
+                content, mime = (HERE/'robot_web/index.html').read_bytes(), 'text/html; charset=utf-8'
+            elif path == '/app.js':
+                content, mime = (HERE/'robot_web/app.js').read_bytes(), 'text/javascript; charset=utf-8'
+            elif path == '/style.css':
+                content, mime = (HERE/'robot_web/style.css').read_bytes(), 'text/css; charset=utf-8'
+            elif path == '/api/state':
+                content, mime = json.dumps(monitor.snapshot()).encode(), 'application/json; charset=utf-8'
+            elif path in ('/api/map.png', '/api/camera.jpg', '/api/scan.png'):
+                with monitor.lock:
+                    content = monitor.map_png if path == '/api/map.png' else monitor.scan_png if path == '/api/scan.png' else monitor.camera_jpeg
+                if content is None:
+                    self.send_error(503, 'ROS frame unavailable')
+                    return
+                mime = 'image/png' if path.endswith('.png') else 'image/jpeg'
+            else:
+                self.send_error(404)
+                return
+            self.send_response(200)
+            self.send_header('Content-Type', mime)
+            self.send_header('Cache-Control', 'no-store')
+            self.send_header('Content-Length', str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+
+        def log_message(self, format, *values):
+            return
+
+    return Handler
+
+
 def run(args):
     import cv2
     import numpy as np
@@ -25,6 +89,7 @@ def run(args):
     from nav_msgs.msg import OccupancyGrid, Path as NavPath
     from rclpy.node import Node
     from rclpy.parameter import Parameter
+    from rclpy.signals import SignalHandlerOptions
     from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, qos_profile_sensor_data
     from rclpy.time import Time
     from sensor_msgs.msg import Image, LaserScan
@@ -33,6 +98,10 @@ def run(args):
     from visualization_msgs.msg import MarkerArray
     from map_observer import render_map
     from robot_board_core import map_cell, scan_summary, mission_display
+    from robot_board_control import BoardControl
+    control = (BoardControl(HERE.parent, args.control_workspace, args.domain,
+                            args.control_ntp_server, args.control_duration)
+               if args.enable_control else None)
 
     class Monitor(Node):
         def __init__(self):
@@ -274,45 +343,16 @@ def run(args):
                     'latest_discovery': latest_discovery,
                     'plans': plans, 'camera_ready': camera_ready, 'map_ready': map_ready,
                     'scan_ready': scan_ready,
-                    'read_only': True}
+                    'read_only': control is None,
+                    'control': control.snapshot() if control else {'enabled': False}}
 
-    rclpy.init()
+    rclpy.init(signal_handler_options=SignalHandlerOptions.NO)
     monitor = Monitor()
     worker = threading.Thread(target=rclpy.spin, args=(monitor,), daemon=True)
     worker.start()
 
-    class Handler(BaseHTTPRequestHandler):
-        def do_GET(self):
-            path = self.path.split('?', 1)[0]
-            if path in ('/', '/index.html'):
-                content, mime = (HERE/'robot_web/index.html').read_bytes(), 'text/html; charset=utf-8'
-            elif path == '/app.js':
-                content, mime = (HERE/'robot_web/app.js').read_bytes(), 'text/javascript; charset=utf-8'
-            elif path == '/style.css':
-                content, mime = (HERE/'robot_web/style.css').read_bytes(), 'text/css; charset=utf-8'
-            elif path == '/api/state':
-                content, mime = json.dumps(monitor.snapshot()).encode(), 'application/json; charset=utf-8'
-            elif path in ('/api/map.png', '/api/camera.jpg', '/api/scan.png'):
-                with monitor.lock:
-                    content = monitor.map_png if path == '/api/map.png' else monitor.scan_png if path == '/api/scan.png' else monitor.camera_jpeg
-                if content is None:
-                    self.send_error(503, 'ROS frame unavailable')
-                    return
-                mime = 'image/png' if path.endswith('.png') else 'image/jpeg'
-            else:
-                self.send_error(404)
-                return
-            self.send_response(200)
-            self.send_header('Content-Type', mime)
-            self.send_header('Cache-Control', 'no-store')
-            self.send_header('Content-Length', str(len(content)))
-            self.end_headers()
-            self.wfile.write(content)
-
-        def log_message(self, format, *values):
-            return
-
-    server = ThreadingHTTPServer((args.host, args.port), Handler)
+    server = ThreadingHTTPServer((args.host, args.port), make_handler(monitor, control))
+    signal.signal(signal.SIGTERM, lambda *_: threading.Thread(target=server.shutdown, daemon=True).start())
     print(f'{"Simulation" if args.sim else "Physical robot"} board: http://{args.host}:{args.port}  ROS_DOMAIN_ID={args.domain}', flush=True)
     try:
         server.serve_forever()
@@ -335,9 +375,18 @@ def main():
     parser.add_argument('--map-frame', default='map')
     parser.add_argument('--base-frame', default='base_link')
     parser.add_argument('--sim', action='store_true', help='Use ROS /clock for TF freshness')
+    parser.add_argument('--enable-control', action='store_true', help='Enable explicit physical start/stop buttons')
+    parser.add_argument('--control-workspace', type=Path, default=Path.home()/'face_intent_flow_v3_ws')
+    parser.add_argument('--control-ntp-server', default='192.168.185.3')
+    parser.add_argument('--control-duration', type=float, default=600.)
     args = parser.parse_args()
     if not 0 <= args.domain <= 232 or not 1024 <= args.port <= 65535:
         parser.error('Domain must be 0..232 and port 1024..65535')
+    if args.enable_control and (args.sim or args.namespace or args.scan != 'scan' or args.rgb != 'oakd/rgb/preview/image_raw'):
+        parser.error('Control currently supports the root-namespace physical hardware configuration only')
+    import math
+    if not math.isfinite(args.control_duration) or args.control_duration <= 0:
+        parser.error('Control duration must be positive and finite')
     import os
     os.environ['ROS_DOMAIN_ID'] = str(args.domain)
     run(args)

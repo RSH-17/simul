@@ -2,6 +2,43 @@ const $=id=>document.getElementById(id);
 const sec=(value)=>value===undefined||value===null?'수신 전':`${Number(value).toFixed(1)}초 전`;
 const oldest=(...values)=>{const known=values.filter(v=>v!==undefined&&v!==null);return known.length?Math.max(...known):undefined};
 const number=(value,digits=2)=>value===null||value===undefined?'—':Number(value).toFixed(digits);
+let controlToken='',commandSequence=0;
+const pendingCommands=new Set();
+function renderControl(control){
+  const enabled=Boolean(control?.enabled);
+  $('robot-controls').hidden=!enabled;
+  if(!enabled){controlToken='';return}
+  controlToken=control.token||'';
+  const labels={idle:'구동 대기',queued:'구동 요청 접수',preflight:'시간·센서 확인 중',starting:'주행 준비 중',running:'주행 중',stopping:'정지 중',stopped:'정지 완료',failed:'구동 확인 필요',stop_unverified:'정지 확인 필요'};
+  $('control-state').textContent=labels[control.phase]||control.phase;
+  $('control-state').className=['failed','stop_unverified'].includes(control.phase)?'bad':control.phase==='running'?'good':'';
+  $('control-detail').textContent=control.detail||'';
+  $('robot-start').disabled=!controlToken||!control.can_start||pendingCommands.size>0;
+  $('robot-stop').disabled=!controlToken||pendingCommands.has('stop');
+  $('robot-start').textContent=['queued','preflight','starting'].includes(control.phase)?'준비 중…':'구동';
+  const started=(control.events||[]).find(e=>e.event==='mission_started');
+  $('control-timing').textContent=started?`자동 시작까지 ${number(started.elapsed_s,1)}초`:'';
+}
+async function controlCommand(action){
+  if(!controlToken||pendingCommands.has(action))return;
+  const sequence=++commandSequence;
+  pendingCommands.add(action);
+  $('robot-start').disabled=true;
+  $('robot-stop').disabled=pendingCommands.has('stop');
+  $('control-detail').textContent=action==='start'?'구동 요청을 보내는 중…':'정지 요청을 보내는 중…';
+  try{
+    const response=await fetch(`/api/control/${action}`,{method:'POST',headers:{'Content-Type':'application/json','X-OSP-Control-Token':controlToken},body:'{}'});
+    const result=await response.json();
+    if(!response.ok)throw new Error(result.error||`HTTP ${response.status}`);
+    if(sequence===commandSequence)renderControl(result);
+  }catch(error){
+    if(sequence===commandSequence){$('control-state').textContent='요청 확인 필요';$('control-detail').textContent=error.message}
+  }finally{
+    pendingCommands.delete(action);
+    $('robot-stop').disabled=pendingCommands.has('stop');
+    poll();
+  }
+}
 function rows(id,items){
   const parent=$(id);parent.replaceChildren();
   for(const [name,value,kind] of items){
@@ -24,7 +61,8 @@ function render(data){
   const sim=data.mode==='simulation';
   const statusLimit=sim?10:3,visualLimit=sim?15:5;
   $('board-title').textContent=sim?'Gazebo 시뮬 주행 보드':'실물 주행 보드';
-  $('board-subtitle').textContent=`${sim?'ROS 시뮬 시간':'실물 ROS'} · 읽기 전용 · 주행 명령 없음`;
+  $('board-subtitle').textContent=`${sim?'ROS 시뮬 시간':'실물 ROS'} · ${data.control?.enabled?'보드에서 직접 구동·정지':'읽기 전용'}`;
+  renderControl(data.control);
   const live=(ages.mission_status!==undefined&&ages.mission_status<statusLimit)||(ages.raw_scan!==undefined&&ages.raw_scan<5);
   $('connection').textContent=live?'ROS 수신 중':sim&&ages.raw_scan!==undefined?'시뮬 종료 · 마지막 화면':sim?'시뮬 시작 대기':'ROS 데이터 대기 / 끊김';
   $('connection').classList.toggle('offline',!live);
@@ -80,7 +118,7 @@ function render(data){
   image('map-image','map-empty',data.map_ready,oldest(ages.map,ages.map_image),visualLimit,'/api/map.png');
   image('camera-image','camera-empty',data.camera_ready,ages.camera,visualLimit,'/api/camera.jpg');
   image('scan-image','scan-empty',data.scan_ready,oldest(ages.raw_scan,ages.scan_image),visualLimit,'/api/scan.png');
-  $('source').textContent=`osp_mission: ${data.policy_prefix||'설치 경로 확인 불가'} · 읽기 전용`;
+  $('source').textContent=`osp_mission: ${data.policy_prefix||'설치 경로 확인 불가'} · ${data.control?.enabled?'직접 제어 사용':'읽기 전용'}`;
   $('domain').textContent=`DOMAIN ${data.ros_domain_id} · ${data.namespace||'루트 네임스페이스'}`;
   const warnings=[];
   if(cell.reason==='start_not_free')warnings.push('출발 위치의 지도 셀이 점유 상태입니다. 원본/필터 LiDAR와 지도상의 로봇 위치를 대조하세요.');
@@ -98,9 +136,12 @@ async function poll(){
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     render(await response.json());
   }catch(error){
+    $('robot-start').disabled=true;
     $('connection').textContent='보드 서버 연결 끊김';$('connection').classList.add('offline');
     $('warning').textContent=`보드 서버 응답 없음: ${error.message}`;$('warning').hidden=false;
   }
 }
 $('map-fullscreen').addEventListener('click',()=>$('map-frame').requestFullscreen?.());
+$('robot-start').addEventListener('click',()=>controlCommand('start'));
+$('robot-stop').addEventListener('click',()=>controlCommand('stop'));
 poll();setInterval(poll,1000);

@@ -1,4 +1,11 @@
 {
+  "robot_board_control": {
+    "status": "deployed_buttons_no_new_hardware_drive",
+    "report": "repository_snapshot/robot_board_control_20261117.json",
+    "instructions": "dashboard/ROBOT_BOARD.md",
+    "prepared_runtime": "face_intent_flow_v3_ws",
+    "hardware_start_latency_verified": false
+  },
   "captured_utc": "2026-11-14T20:19:56.963709+00:00",
   "purpose": "Repository upload snapshot; not a live dashboard",
   "payload_replication": {

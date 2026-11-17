@@ -1,7 +1,8 @@
 # TurtleBot4 실물·시뮬 주행 보드
 
 기존 `dashboard/server.py`는 Gazebo 캠페인용입니다. 이 보드는 실물 로봇의
-ROS 토픽을 직접 구독하며 주행 명령이나 `/mission/start` 호출을 하지 않습니다.
+ROS 토픽을 직접 구독합니다. 기본 실행은 읽기 전용이며, 실물 전용
+`--enable-control`을 지정하면 상단 **구동·정지 버튼**을 사용할 수 있습니다.
 미션 상태, 출발 지도 셀, 충돌 감시, 원본/필터 LiDAR, RGB, 지도와 Nav2 경로를
 1초마다 표시합니다. 데이터가 끊기면 마지막 수신 시각과 경고를 보여줍니다.
 지도 이미지는 카드 안에 전체가 들어오도록 맞추며, `전체 화면` 버튼으로 확대할 수 있습니다.
@@ -35,6 +36,48 @@ LAN에서 `--host 0.0.0.0`을 사용합니다. 인터넷에는 공개하지 마�
 `/map`, `/scan`, `/scan_self_filtered`, `/mission/status`,
 `/collision_monitor_state`, RGB 이미지, `/plan`, `/local_plan`, TF를 구독합니다.
 실물에서 확인한 값과 시뮬레이션 평가 점수는 별개입니다.
+
+## 이 Mac의 실물 제어
+
+준비된 Flow v3 런타임과 유선 DDS·NTP 설정을 재사용합니다. 브라우저에서
+<http://192.168.252.2:8767/>을 열고 **구동**을 누르면 시간·센서·실제 범퍼·도크
+상태 확인, SLAM/Nav2 실행, 준비 직후 미션 시작까지 자동 처리합니다.
+재빌드나 수동 시작 서비스 호출은 없습니다. **정지**는 준비 중인 요청도 취소하고,
+주행 프로세스 종료·액션 취소·0 속도 명령 후 실제 odom으로 정지를 확인합니다.
+속도를 수신하지 못하면 정지 확인 실패로 표시합니다. 도크에 있으면 자동 출발하지
+않고 도크 밖으로 옮기라는 이유를 표시합니다.
+
+현재 VM에서 제어 보드를 실행하는 명령은 아래와 같습니다. 실행 환경에 유선
+`FASTRTPS_DEFAULT_PROFILES_FILE`과 `RMW_IMPLEMENTATION=rmw_fastrtps_cpp`가 필요합니다.
+
+```bash
+source /opt/ros/jazzy/setup.bash
+source /home/ubuntu/face_intent_flow_v3_ws/install/setup.bash
+export ROS_DOMAIN_ID=4 RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export FASTRTPS_DEFAULT_PROFILES_FILE=/home/ubuntu/fastdds_tb4_wired.xml
+python3 -u dashboard/robot_board.py --domain 4 --host 0.0.0.0 --port 8767 \
+  --enable-control --control-workspace /home/ubuntu/face_intent_flow_v3_ws
+```
+
+버튼은 같은 보드 페이지에서 보낸 토큰 포함 POST만 받습니다. GET·페이지 새로고침은
+주행을 시작하지 않습니다. 시뮬·네임스페이스 변경 구성에서는 제어를 허용하지 않습니다.
+보드 재시작 후에도 실행 중 세션을 표시하며, 브라우저를 닫으면 주행은 계속됩니다.
+구동 준비/실패 사유와 자동 시작까지 걸린 시간을 상단에 표시합니다.
+
+터미널에서는 Mac의 저장소 루트에서 같은 실행기를 사용할 수 있습니다.
+
+```bash
+./robot.sh start     # 실제 주행; Ctrl-C 또는 다른 터미널의 stop으로 종료
+./robot.sh stop
+./robot.sh check     # 읽기 전용 시간·센서 점검
+./robot.sh status
+./robot.sh dry-run   # VM 연결도 하지 않고 명령 표시
+```
+
+각 주행은 기존 `run_policy.sh`의 콘솔·rosbag·업로드 재시도 경로를 사용합니다.
+`startup.jsonl`에는 진입·점검 완료·launch·미션 시작·첫 움직임/이동·정지를 기록합니다.
+격리 도메인 184의 가짜 센서/서비스 시험은 실제 출발 지연이나 마커 과제 성능의
+측정이 아닙니다. 실제 구동은 별도 사용자 지시/버튼 클릭이 있어야 합니다.
 
 ## Gazebo 시뮬레이션
 

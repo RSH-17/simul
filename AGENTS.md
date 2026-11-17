@@ -1,5 +1,15 @@
 # Project maintenance
 
+- Physical robot commands on this Mac use `./robot.sh start` and
+  `./robot.sh stop` with the prepared `face_intent_flow_v3_ws` in `osp-jazzy`.
+  The physical board also supports explicit start/stop buttons when launched
+  with `--enable-control`. Both use `scripts/robot_session.py` and the same
+  readiness checks. Do not rebuild, redeploy, restart the board, or manually
+  call `/mission/start` for an ordinary drive request. Execute the prepared
+  entry point first; investigate only a reported failure. `check` and `status`
+  are read-only. A stop remains in force until the user explicitly requests
+  driving or presses the board's start button. Never start for a UI/code test.
+
 - The user authorized ongoing maintenance of the private GitHub repository
   `peter010905/simul`. After completing a project change, run relevant checks,
   review the intended diff, commit it, and push to `main`. No repeated upload
