@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "20261117T043531-92664daa50",
+  "mode": "simulation",
+  "state": "finished",
+  "evidence_type": "logging_smoke_test",
+  "started_utc": "2026-11-17T04:35:31.951886+00:00",
+  "finished_utc": "2026-11-17T04:35:38.365097+00:00",
+  "git_commit": "01f42b0d53778f7d0817e92774ae24fda8df44eb",
+  "policy_sha256": null,
+  "exit_code": 0,
+  "capture_complete": true,
+  "bag_enabled": true,
+  "release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-simulation-2026-11",
+  "archive": {
+    "format": "Concatenate numbered parts, then extract as tar.gz",
+    "assets": [
+      {
+        "name": "20261117T043531-92664daa50.tar.gz.part0001",
+        "bytes": 9268,
+        "sha256": "d72df19750074fdbc244bb1cc94a43273d8cdfd3b17abd7f515173175e1a6783",
+        "url": "https://github.com/peter010905/simul/releases/download/policy-logs-simulation-2026-11/20261117T043531-92664daa50.tar.gz.part0001"
+      }
+    ]
+  },
+  "uploaded_utc": "2026-11-17T04:35:42.739222+00:00",
+  "task_success_claimed": false
+}
