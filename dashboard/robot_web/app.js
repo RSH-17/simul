@@ -91,4 +91,5 @@ async function poll(){
     $('warning').textContent=`보드 서버 응답 없음: ${error.message}`;$('warning').hidden=false;
   }
 }
+$('map-fullscreen').addEventListener('click',()=>$('map-frame').requestFullscreen?.());
 poll();setInterval(poll,1000);
