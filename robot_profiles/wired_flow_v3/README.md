@@ -34,3 +34,8 @@ for insufficient matched evidence. This is one recorded run, not general proof.
 Raw camera/ROS/map data is retained locally under the ignored `run_logs/robot/`
 directory. The user approved public upload; the archive is on GitHub Release
 `policy-logs-robot-2026-11`. Both asset sizes and SHA-256 were verified.
+
+Offline video review found all three confirmed examples were handheld screens.
+The runtime completion is not validation of autonomous search for fixed markers.
+See `repository_snapshot/physical_run_analysis_20261118.json` for measured motion
+time, evidence, coordinate-finalization limits and review timestamps.

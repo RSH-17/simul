@@ -1,0 +1,587 @@
+{
+  "run_id": "20261117T131010-6b8219501f",
+  "scope": "offline_recorded_ros_messages_no_ground_truth",
+  "interval": {
+    "start_epoch_s": 1794921022.4033546,
+    "end_epoch_s": 1794921288.3316932,
+    "duration_s": 265.92833852767944
+  },
+  "message_counts": {
+    "/tf": 21255,
+    "/hazard_detection": 1332,
+    "/scan": 2068,
+    "/odom": 5306,
+    "/mission/detector_status": 532,
+    "/mission/status": 532,
+    "/cmd_vel": 5081,
+    "/collision_monitor_state": 4,
+    "/mission/marker_observations": 30
+  },
+  "motion": {
+    "duration_s": {
+      "stationary": 16.329627752304077,
+      "rotation_only": 86.4474401473999,
+      "translation": 163.06524634361267
+    },
+    "odom_position_path_m": 29.61039305040762,
+    "integrated_abs_linear_speed_m": 29.517129474974645,
+    "integrated_abs_yaw_rad": 62.41237270085148,
+    "translation_speed_m_s": {
+      "n": 3250,
+      "min": 0.020101253681238884,
+      "median": 0.17993267108791838,
+      "p95": 0.2612416000119361,
+      "max": 0.3422150442537116
+    },
+    "all_linear_speed_m_s": {
+      "n": 5306,
+      "min": 0.0,
+      "median": 0.1171514894569916,
+      "p95": 0.2582971278499796,
+      "max": 0.3422150442537116
+    },
+    "odom_gap_over_half_second_s": [],
+    "stationary_thresholds": {
+      "linear_m_s": 0.02,
+      "angular_rad_s": 0.05
+    },
+    "stationary_episodes_over_1s": [
+      {
+        "nav": 0.0,
+        "other": 1.0503156185150146,
+        "max_command_linear": 0.12,
+        "duration_s": 1.0503156185150146,
+        "start_s": 253.84366035461426
+      }
+    ],
+    "phase_by_active_action_s": {
+      "stationary:unknown": 0.39251232147216797,
+      "stationary:none": 13.804572343826294,
+      "rotation_only:none": 5.3171000480651855,
+      "rotation_only:spin": 18.36811590194702,
+      "stationary:spin": 0.13763117790222168,
+      "rotation_only:nav": 62.762224197387695,
+      "translation:nav": 160.22517323493958,
+      "translation:none": 2.8400731086730957,
+      "stationary:nav": 1.9949119091033936
+    },
+    "time_above_linear_speed_s": {
+      "0.12": 127.32305932044983,
+      "0.2": 71.18759322166443,
+      "0.25": 35.072065591812134,
+      "0.275": 1.4204072952270508,
+      "0.3": 0.14460277557373047
+    }
+  },
+  "hazard_sample_counts": {
+    "0": 59
+  },
+  "hazard_state_changes": [
+    {
+      "time_s": 0.023000240325927734,
+      "signals": [
+        [
+          0,
+          "base_link"
+        ]
+      ]
+    },
+    {
+      "time_s": 11.566280841827393,
+      "signals": []
+    }
+  ],
+  "collision_monitor_changes": [
+    {
+      "time_s": 49.299548387527466,
+      "action": 3,
+      "polygon": "FootprintApproach"
+    },
+    {
+      "time_s": 49.49683499336243,
+      "action": 0,
+      "polygon": ""
+    },
+    {
+      "time_s": 145.8623926639557,
+      "action": 1,
+      "polygon": "invalid source"
+    },
+    {
+      "time_s": 146.06034970283508,
+      "action": 0,
+      "polygon": ""
+    }
+  ],
+  "receive_minus_header_age_s": {
+    "/hazard_detection": {
+      "n": 1332,
+      "min": 0.0028176307678222656,
+      "median": 0.004305839538574219,
+      "p95": 0.008614182472229004,
+      "max": 679.755448102951
+    },
+    "/scan": {
+      "n": 2068,
+      "min": 0.0013604164123535156,
+      "median": 0.00926196575164795,
+      "p95": 0.016605138778686523,
+      "max": 0.4338350296020508
+    },
+    "/odom": {
+      "n": 5306,
+      "min": 0.01593327522277832,
+      "median": 0.0311887264251709,
+      "p95": 0.04390561580657959,
+      "max": 0.14313364028930664
+    },
+    "/cmd_vel": {
+      "n": 5081,
+      "min": 0.00010752677917480469,
+      "median": 0.08620190620422363,
+      "p95": 0.2073345184326172,
+      "max": 1.037998914718628
+    }
+  },
+  "last_mission_status": {
+    "state": "running",
+    "approached_ids": [
+      0,
+      45,
+      68
+    ],
+    "targets": 3,
+    "collisions": 0,
+    "termination_reason": "",
+    "task_success": false,
+    "elapsed_seconds": 265.9279223830017,
+    "active_action": "",
+    "readiness_reason": "",
+    "sensor_interruptions": 0,
+    "planner_start_ignore_radius_m": 0.3,
+    "nav2_lifecycle": {
+      "controller_server": 3,
+      "planner_server": 3,
+      "behavior_server": 3,
+      "bt_navigator": 3
+    },
+    "drive_controllers": {},
+    "confirmed_surface_cells": 16,
+    "confirmed_face_anchors": 0,
+    "reassociated_face_records": 0,
+    "camera_diagnostics": {
+      "received": 2670,
+      "late": 0,
+      "invalid_calibration": 0,
+      "duplicate": 0,
+      "accepted": 2670,
+      "coverage_updates": 1898,
+      "tf_waits": 929
+    },
+    "navigation_flow": {
+      "mid_route_wall_inspection": false,
+      "skipped_zero_turn_waits": 18,
+      "stalls_cancelled": 1,
+      "failed_goals_filtered": 6,
+      "failed_goal_cooldown_s": 60.0,
+      "stall_timeout_s": 8.0,
+      "minimum_progress_m": 0.06,
+      "observation_settle_min_s": 0.5,
+      "observation_settle_max_s": 1.5,
+      "observation_fresh_frames": 3
+    }
+  },
+  "last_detector_status": {
+    "frames": 2668,
+    "decoded": {
+      "0": 31,
+      "1023": 1,
+      "45": 21,
+      "84": 1,
+      "68": 9
+    },
+    "small": 7,
+    "border": 0,
+    "no_range": 2,
+    "horizontal": 0,
+    "inconsistent": 1,
+    "accepted": 29,
+    "errors": 0,
+    "last_error": "",
+    "identity_conflicts": [],
+    "resolved_ids": [
+      0,
+      45,
+      68
+    ],
+    "by_id": {
+      "0": {
+        "last_min_edge_pixels": 3.605551242828369,
+        "last_stamp": 1794921235.4994757,
+        "small": 6,
+        "accepted": 13,
+        "no_range": 1
+      },
+      "1023": {
+        "last_min_edge_pixels": 9.0,
+        "last_stamp": 1794921212.4025915,
+        "small": 1
+      },
+      "45": {
+        "last_min_edge_pixels": 39.81205749511719,
+        "last_stamp": 1794921279.4934986,
+        "accepted": 10,
+        "no_range": 1,
+        "inconsistent": 1
+      },
+      "84": {
+        "last_min_edge_pixels": 25.495098114013672,
+        "last_stamp": 1794921286.8924792,
+        "accepted": 1
+      },
+      "68": {
+        "last_min_edge_pixels": 28.284271240234375,
+        "last_stamp": 1794921287.9923244,
+        "accepted": 5
+      }
+    },
+    "confirmations": {
+      "0": 13,
+      "45": 10,
+      "84": 1,
+      "68": 5
+    }
+  },
+  "observations": {
+    "0": {
+      "frames": 13,
+      "first_s": 178.70075368881226,
+      "last_s": 181.10045838356018,
+      "min_edge_px": {
+        "n": 13,
+        "min": 48.041648864746094,
+        "median": 50.03998565673828,
+        "p95": 52.426842498779294,
+        "max": 53.00943374633789
+      },
+      "range_m": {
+        "n": 13,
+        "min": 0.4175416129231283,
+        "median": 0.5914336085105071,
+        "p95": 0.604474556731117,
+        "max": 0.604816213247786
+      }
+    },
+    "45": {
+      "frames": 10,
+      "first_s": 253.19069290161133,
+      "last_s": 257.0901439189911,
+      "min_edge_px": {
+        "n": 10,
+        "min": 23.021728515625,
+        "median": 25.549548149108887,
+        "p95": 33.63119564056395,
+        "max": 39.81205749511719
+      },
+      "range_m": {
+        "n": 10,
+        "min": 0.6285920724353805,
+        "median": 0.9793350725200622,
+        "p95": 1.0593476743547767,
+        "max": 1.0702591201947347
+      }
+    },
+    "84": {
+      "frames": 1,
+      "first_s": 264.4891245365143,
+      "last_s": 264.4891245365143,
+      "min_edge_px": {
+        "n": 1,
+        "min": 25.495098114013672,
+        "median": 25.495098114013672,
+        "p95": 25.495098114013672,
+        "max": 25.495098114013672
+      },
+      "range_m": {
+        "n": 1,
+        "min": 0.9699168877791136,
+        "median": 0.9699168877791136,
+        "p95": 0.9699168877791136,
+        "max": 0.9699168877791136
+      }
+    },
+    "68": {
+      "frames": 6,
+      "first_s": 264.68909645080566,
+      "last_s": 265.688955783844,
+      "min_edge_px": {
+        "n": 6,
+        "min": 27.658634185791016,
+        "median": 28.363597869873047,
+        "p95": 31.440553188323975,
+        "max": 32.202484130859375
+      },
+      "range_m": {
+        "n": 6,
+        "min": 0.8800621756922546,
+        "median": 0.8826183390284574,
+        "p95": 0.9001606916178059,
+        "max": 0.9047461128227497
+      }
+    }
+  },
+  "candidate_counts": {},
+  "map_to_odom": {
+    "samples": 13290,
+    "corrections_over_10cm_or_0_1rad": [
+      {
+        "time_s": 259.5079417228699,
+        "translation_m": 0.9233352456877416,
+        "yaw_rad": 0.041874829000675726
+      },
+      {
+        "time_s": 232.76791262626648,
+        "translation_m": 0.7159306737104644,
+        "yaw_rad": 0.03799528233276018
+      },
+      {
+        "time_s": 187.8285174369812,
+        "translation_m": 0.520408459067228,
+        "yaw_rad": 0.03849433164749184
+      },
+      {
+        "time_s": 250.26795768737793,
+        "translation_m": 0.2954284102519759,
+        "yaw_rad": 0.014095202018522008
+      },
+      {
+        "time_s": 244.96795845031738,
+        "translation_m": 0.22447444001714284,
+        "yaw_rad": 0.010453091586084672
+      },
+      {
+        "time_s": 239.0679624080658,
+        "translation_m": 0.20869727644434197,
+        "yaw_rad": 0.01032076392239676
+      },
+      {
+        "time_s": 234.66790676116943,
+        "translation_m": 0.20280977516091547,
+        "yaw_rad": 0.010436813547733669
+      },
+      {
+        "time_s": 155.2699646949768,
+        "translation_m": 0.19489112611578865,
+        "yaw_rad": 0.01677408170747423
+      },
+      {
+        "time_s": 222.06813287734985,
+        "translation_m": 0.181389378846465,
+        "yaw_rad": 0.01053723361881171
+      },
+      {
+        "time_s": 263.6086812019348,
+        "translation_m": 0.16391315167408932,
+        "yaw_rad": 0.006972442097921722
+      },
+      {
+        "time_s": 255.40845274925232,
+        "translation_m": 0.16189962934529625,
+        "yaw_rad": 0.006975180515232716
+      },
+      {
+        "time_s": 239.4681785106659,
+        "translation_m": 0.15682598215417634,
+        "yaw_rad": 0.007015622908148663
+      },
+      {
+        "time_s": 175.96805834770203,
+        "translation_m": 0.15633232428348065,
+        "yaw_rad": 0.010526780726193731
+      },
+      {
+        "time_s": 241.3879590034485,
+        "translation_m": 0.14603171964350142,
+        "yaw_rad": 0.006981886254045035
+      },
+      {
+        "time_s": 258.10800075531006,
+        "translation_m": 0.14469897786731178,
+        "yaw_rad": 0.006978562591220663
+      },
+      {
+        "time_s": 239.96795272827148,
+        "translation_m": 0.14027486311637224,
+        "yaw_rad": 0.006943497664967949
+      },
+      {
+        "time_s": 149.70830869674683,
+        "translation_m": 0.13885566567670615,
+        "yaw_rad": 0.012996946746862283
+      },
+      {
+        "time_s": 159.6080560684204,
+        "translation_m": 0.12710363209530762,
+        "yaw_rad": 0.010531076826153396
+      },
+      {
+        "time_s": 207.27092123031616,
+        "translation_m": 0.1260778215806682,
+        "yaw_rad": 0.007091842664833828
+      },
+      {
+        "time_s": 137.6078748703003,
+        "translation_m": 0.12053507373617983,
+        "yaw_rad": 0.013805492322912973
+      }
+    ],
+    "effects_at_current_robot_top": [
+      {
+        "time_s": 240.72814774513245,
+        "origin_shift_m": 0.1026525011179399,
+        "correction_at_robot_m": 0.10264221417754837,
+        "yaw_rad": 8.310353994588071e-06
+      },
+      {
+        "time_s": 242.00821137428284,
+        "origin_shift_m": 0.08507834745474502,
+        "correction_at_robot_m": 0.0849370314493974,
+        "yaw_rad": 6.173987169299372e-05
+      },
+      {
+        "time_s": 239.4681785106659,
+        "origin_shift_m": 0.15682598215417634,
+        "correction_at_robot_m": 0.08415101586418901,
+        "yaw_rad": 0.007015622908148663
+      },
+      {
+        "time_s": 40.30793070793152,
+        "origin_shift_m": 0.06534201916312235,
+        "correction_at_robot_m": 0.07118119270888264,
+        "yaw_rad": 0.007028266953533391
+      },
+      {
+        "time_s": 116.56802344322205,
+        "origin_shift_m": 0.07832258542781839,
+        "correction_at_robot_m": 0.0705158787367682,
+        "yaw_rad": 0.0035182027465133986
+      },
+      {
+        "time_s": 82.4678430557251,
+        "origin_shift_m": 0.06903678809031694,
+        "correction_at_robot_m": 0.06559127943242973,
+        "yaw_rad": 0.041878373528878146
+      },
+      {
+        "time_s": 95.20823097229004,
+        "origin_shift_m": 0.06355374565531749,
+        "correction_at_robot_m": 0.06358255264168193,
+        "yaw_rad": 8.397582158162394e-05
+      },
+      {
+        "time_s": 110.76802158355713,
+        "origin_shift_m": 0.06341649667306745,
+        "correction_at_robot_m": 0.06331314393631657,
+        "yaw_rad": 0.0035022616920752023
+      },
+      {
+        "time_s": 112.56802916526794,
+        "origin_shift_m": 0.06325102273925523,
+        "correction_at_robot_m": 0.06327221760350109,
+        "yaw_rad": 3.838285256033135e-05
+      },
+      {
+        "time_s": 95.86796021461487,
+        "origin_shift_m": 0.06292073625444529,
+        "correction_at_robot_m": 0.06323414808777054,
+        "yaw_rad": 0.0035112905301827968
+      }
+    ],
+    "largest_origin_shift_effect": {
+      "time_s": 259.5079417228699,
+      "origin_shift_m": 0.9233352456877416,
+      "correction_at_robot_m": 0.02368617575759896,
+      "yaw_rad": 0.041874829000675726
+    },
+    "landmark_first_to_final_transform_difference_m": {
+      "0": 1.6781757942486026,
+      "45": 0.27770321136108866,
+      "84": 0.02034602873034215,
+      "68": 0.010060026431387198
+    }
+  },
+  "command_limits": {
+    "linear_abs": {
+      "n": 5081,
+      "min": 0.0,
+      "median": 0.12,
+      "p95": 0.25,
+      "max": 0.25
+    },
+    "angular_abs": {
+      "n": 5081,
+      "min": 0.0,
+      "median": 0.17241612986607274,
+      "p95": 0.5,
+      "max": 0.5
+    }
+  },
+  "method_notes": [
+    "Uses receipt-time mission interval; no ground-truth trajectory or fixed marker survey.",
+    "Translation is |v|>=0.02 m/s; otherwise rotation-only is |w|>=0.05 rad/s.",
+    "Header ages are receipt minus message header, not pure network latency.",
+    "map->odom origin translation is not robot pose jump; the actual current odom point is transformed under both transforms.",
+    "Re-expressing historical odom landmarks with the final transform is sensitivity analysis, not a valid ground-truth correction."
+  ],
+  "analysis_date_kst": "2026-11-18",
+  "visual_review": {
+    "fixed_landmark_autonomy_verified": false,
+    "observation": "All three confirmed marker examples are screens held by a person. Target motion and manual presentation are uncontrolled.",
+    "reviewed_ids": [
+      0,
+      45,
+      68
+    ],
+    "reviewed_frame_stamps": {
+      "0": 1794921201.1041083,
+      "45": 1794921275.5940475,
+      "84": 1794921286.8924792,
+      "68": 1794921287.092451
+    },
+    "transient_id_84": "One accepted observation of ID84 followed 0.2s later by ID68 on an apparently matching handheld display; possible misdecode, not independently proven. ID84 was never confirmed."
+  },
+  "interpretation_limits": [
+    "Recorded relative range witnesses support near-marker conditions, but do not establish robot-driven approach to fixed targets.",
+    "The final map->odom sensitivity difference of 1.678m for ID0 is not measured coordinate error and must not be applied as a correction; odometry can drift.",
+    "The first marker appears at 178.7s; manual marker presentation time is unknown, so this is not a detector latency measurement.",
+    "Commanded limits are 0.25m/s and 0.5rad/s. Brief higher odometry speed samples do not prove a higher commanded limit.",
+    "Hazard header age is not treated as transport latency; only type0 BACKUP_LIMIT occurred during the selected interval."
+  ],
+  "graph_finalization": {
+    "applied": false,
+    "id0_nearest_scan_gap_s": [
+      1.7736518383,
+      4.1733565331
+    ],
+    "reason_id0": "no_time_matched_valid_odom_observations",
+    "reason_id45_and_68": "insufficient_consistent_frames_or_distinct_scan_nodes",
+    "independent_map_accuracy_verified": false
+  },
+  "navigation_console_counts": {
+    "Navigation goal": 27,
+    "Goal succeeded": 24,
+    "Cancel nav: navigation_stalled": 1,
+    "Cancel nav: marker_hint": 2
+  },
+  "source_release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11",
+  "source_archive_sha256": {
+    "20261117T131010-6b8219501f.tar.gz.part0001": "954fc9bd947890f7e7bcbb43f70854c5b8fe875fd53d08570530e3b7ccf8b878",
+    "20261117T131010-6b8219501f.tar.gz.part0002": "dbaa592b85ec6b296f341188cc09378c9ae9c04c6a002f1defff3af4e5b295b0"
+  },
+  "recommended_order": [
+    "Validate on surveyed, fixed markers without manual target presentation.",
+    "Reduce heading alignment overhead in goal selection; preserve useful inspection turns.",
+    "Anchor exposures to SLAM keyframes via relative odometry instead of blindly widening the timestamp matching gate.",
+    "Keep three-frame ID confirmation and the current 18-pixel threshold until a separate experiment supports changing them."
+  ]
+}

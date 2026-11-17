@@ -1394,5 +1394,16 @@
     "raw_logs_public_upload": "uploaded_size_and_sha256_verified",
     "independent_ground_truth_verified": false,
     "raw_log_release_url": "https://github.com/peter010905/simul/releases/tag/policy-logs-robot-2026-11"
+  },
+  "physical_run_offline_analysis": {
+    "report": "repository_snapshot/physical_run_analysis_20261118.json",
+    "translation_s": 163.06524634361267,
+    "rotation_only_s": 86.4474401473999,
+    "stationary_s": 16.329627752304077,
+    "odom_path_m": 29.61039305040762,
+    "handheld_markers_observed": true,
+    "fixed_marker_autonomy_verified": false,
+    "new_hardware_run_started": false,
+    "policy_changed": false
   }
 }
