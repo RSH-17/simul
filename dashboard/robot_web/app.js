@@ -4,6 +4,8 @@ const oldest=(...values)=>{const known=values.filter(v=>v!==undefined&&v!==null)
 const number=(value,digits=2)=>value===null||value===undefined?'—':Number(value).toFixed(digits);
 let controlToken='',commandSequence=0;
 const pendingCommands=new Set();
+const startButtons = document.querySelectorAll('.control-buttons .start-button');
+function disableStarts(disabled){for(const button of startButtons)button.disabled=disabled}
 function renderControl(control){
   const enabled=Boolean(control?.enabled);
   $('robot-controls').hidden=!enabled;
@@ -12,10 +14,9 @@ function renderControl(control){
   const labels={idle:'구동 대기',queued:'구동 요청 접수',preflight:'시간·센서 확인 중',starting:'주행 준비 중',running:'주행 중',stopping:'정지 중',stopped:'정지 완료',failed:'구동 확인 필요',stop_unverified:'정지 확인 필요'};
   $('control-state').textContent=labels[control.phase]||control.phase;
   $('control-state').className=['failed','stop_unverified'].includes(control.phase)?'bad':control.phase==='running'?'good':'';
-  $('control-detail').textContent=control.detail||'';
-  $('robot-start').disabled=!controlToken||!control.can_start||pendingCommands.size>0;
+  $('control-detail').textContent=[control.policy,control.detail].filter(Boolean).join(' · ');
+  disableStarts(!controlToken||!control.can_start||pendingCommands.size>0);
   $('robot-stop').disabled=!controlToken||pendingCommands.has('stop');
-  $('robot-start').textContent=['queued','preflight','starting'].includes(control.phase)?'준비 중…':'구동';
   const started=(control.events||[]).find(e=>e.event==='mission_started');
   $('control-timing').textContent=started?`자동 시작까지 ${number(started.elapsed_s,1)}초`:'';
 }
@@ -23,9 +24,9 @@ async function controlCommand(action){
   if(!controlToken||pendingCommands.has(action))return;
   const sequence=++commandSequence;
   pendingCommands.add(action);
-  $('robot-start').disabled=true;
+  disableStarts(true);
   $('robot-stop').disabled=pendingCommands.has('stop');
-  $('control-detail').textContent=action==='start'?'구동 요청을 보내는 중…':'정지 요청을 보내는 중…';
+  $('control-detail').textContent=action!=='stop'?'구동 요청을 보내는 중…':'정지 요청을 보내는 중…';
   try{
     const response=await fetch(`/api/control/${action}`,{method:'POST',headers:{'Content-Type':'application/json','X-OSP-Control-Token':controlToken},body:'{}'});
     const result=await response.json();
@@ -62,7 +63,8 @@ function render(data){
   const statusLimit=sim?10:3,visualLimit=sim?15:5;
   $('board-title').textContent=sim?'Gazebo 시뮬 주행 보드':'실물 주행 보드';
   $('board-subtitle').textContent=`${sim?'ROS 시뮬 시간':'실물 ROS'} · ${data.control?.enabled?'보드에서 직접 구동·정지':'읽기 전용'}`;
-  renderControl(data.control);
+  const dockBlocksStart=data.docked===true&&data.control?.can_start;
+  renderControl(dockBlocksStart?{...data.control,can_start:false,detail:'로봇이 도크에 있어요. 바닥으로 옮기면 구동할 수 있어요.'}:data.control);
   const live=(ages.mission_status!==undefined&&ages.mission_status<statusLimit)||(ages.raw_scan!==undefined&&ages.raw_scan<5);
   $('connection').textContent=live?'ROS 수신 중':sim&&ages.raw_scan!==undefined?'시뮬 종료 · 마지막 화면':sim?'시뮬 시작 대기':'ROS 데이터 대기 / 끊김';
   $('connection').classList.toggle('offline',!live);
@@ -92,14 +94,16 @@ function render(data){
   }else alert.hidden=true;
   rows('scan-details',[
     ['원본 LiDAR',sec(ages.raw_scan),ages.raw_scan>3?'bad':''],
-    ['필터 LiDAR',sim?'원본 스캔 사용':sec(ages.filtered_scan),!sim&&ages.filtered_scan>3?'bad':''],
+    ['필터 LiDAR',(sim||status.runtime==='upstream-r32')?'원본 스캔 사용':sec(ages.filtered_scan),!sim&&status.runtime!=='upstream-r32'&&ages.filtered_scan>3?'bad':''],
     ['원본 최소 거리',scan.min_range_m===null?'반사 없음':`${number(scan.min_range_m,3)} m`],
     ['LiDAR 기준 25cm 미만',scan.within_25cm_from_laser??'—'],
-    ['몸체 내부 제거',sim?'시뮬 후보 미적용':scan.filtered_frame_matched?`${scan.removed_returns}개`:'동일 시각 프레임 대기',scan.removed_returns>0?'warn':'']
+    ['몸체 내부 제거',status.runtime==='upstream-r32'?'원본 R32 스캔 사용':sim?'시뮬 후보 미적용':scan.filtered_frame_matched?`${scan.removed_returns}개`:'동일 시각 프레임 대기',scan.removed_returns>0?'warn':'']
   ]);
   const pose=data.robot_pose;
   rows('nav-details',[
     ['현재 동작',status.active_action||'없음'],
+    ...(status.drive_policy ? [['R32 주행 판단',({detour:'짧은 우회',frontier:'미지 경계로 이동',inspect:'관측 위치로 이동',no_route:'안전한 경로 대기',waiting_for_global_costmap:'비용 지도 대기'})[status.drive_policy.kind||status.drive_policy.reason]||status.drive_policy.kind||'대기']] : []),
+    ...(status.navigation_flow?.candidates?.proposed!==undefined ? [['기존 정책 후보',`${status.navigation_flow.candidates.proposed}개 중 ${status.navigation_flow.candidates.selected_from}개${status.navigation_flow.candidates.shared_exit?' · 같은 출구의 다른 목표 허용':''}`]] : []),
     ['종료 사유',outcome.detail||'진행 중 / 대기'],
     ['미션 경과',status.elapsed_seconds===undefined?'—':`${number(status.elapsed_seconds,1)} s`],
     ['시작 준비',status.readiness_reason||'별도 거절 사유 없음',status.readiness_reason?'warn':''],
@@ -118,7 +122,7 @@ function render(data){
   image('map-image','map-empty',data.map_ready,oldest(ages.map,ages.map_image),visualLimit,'/api/map.png');
   image('camera-image','camera-empty',data.camera_ready,ages.camera,visualLimit,'/api/camera.jpg');
   image('scan-image','scan-empty',data.scan_ready,oldest(ages.raw_scan,ages.scan_image),visualLimit,'/api/scan.png');
-  $('source').textContent=`osp_mission: ${data.policy_prefix||'설치 경로 확인 불가'} · ${data.control?.enabled?'직접 제어 사용':'읽기 전용'}`;
+  $('source').textContent=`${data.control?.policy||data.policy_prefix||'정책 선택 대기'} · ${data.control?.enabled?'직접 제어 사용':'읽기 전용'}`;
   $('domain').textContent=`DOMAIN ${data.ros_domain_id} · ${data.namespace||'루트 네임스페이스'}`;
   const warnings=[];
   if(cell.reason==='start_not_free')warnings.push('출발 위치의 지도 셀이 점유 상태입니다. 원본/필터 LiDAR와 지도상의 로봇 위치를 대조하세요.');
@@ -127,7 +131,7 @@ function render(data){
     'ROS 데이터가 갱신되지 않습니다. 도메인·네임스페이스·RMW와 로봇 bringup을 확인하세요.');
   if(live&&ages.map!==undefined&&ages.map>visualLimit)warnings.push('지도가 갱신되지 않습니다. 표시된 경로와 출발 셀은 오래된 지도 기준입니다.');
   if(live&&data.pose_age_s!==null&&data.pose_age_s>3)warnings.push('map→base_link TF가 3초 넘게 갱신되지 않아 출발 셀 판정을 숨겼습니다.');
-  if(!sim&&ages.filtered_scan===undefined&&ages.raw_scan!==undefined&&ages.raw_scan<3)warnings.push('필터 스캔이 없습니다. v21 필터가 실행 중인지 확인하세요.');
+  if(!sim&&status.runtime!=='upstream-r32'&&ages.filtered_scan===undefined&&ages.raw_scan!==undefined&&ages.raw_scan<3)warnings.push('필터 스캔이 없습니다. v21 필터가 실행 중인지 확인하세요.');
   $('warning').textContent=warnings.join(' ');$('warning').hidden=!warnings.length;
 }
 async function poll(){
@@ -136,12 +140,12 @@ async function poll(){
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
     render(await response.json());
   }catch(error){
-    $('robot-start').disabled=true;
+    disableStarts(true);
     $('connection').textContent='보드 서버 연결 끊김';$('connection').classList.add('offline');
     $('warning').textContent=`보드 서버 응답 없음: ${error.message}`;$('warning').hidden=false;
   }
 }
 $('map-fullscreen').addEventListener('click',()=>$('map-frame').requestFullscreen?.());
-$('robot-start').addEventListener('click',()=>controlCommand('start'));
+for(const button of startButtons)button.addEventListener('click',()=>controlCommand(button.dataset.action));
 $('robot-stop').addEventListener('click',()=>controlCommand('stop'));
 poll();setInterval(poll,1000);

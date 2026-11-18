@@ -4,10 +4,13 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 import signal
+import sys
 import threading
 import time
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent / 'scripts'))
+from r32_board_status import normalize as normalize_r32
 
 
 def topic(namespace, name):
@@ -17,7 +20,8 @@ def topic(namespace, name):
 
 
 def make_handler(monitor, control=None):
-    from robot_board_control import valid_request
+    from robot_board_control import START_WORKSPACES, valid_request
+    routes = {"/api/control/" + action for action in (*START_WORKSPACES, "stop")}
     class Handler(BaseHTTPRequestHandler):
         def send_json(self, status, value):
             content = json.dumps(value).encode()
@@ -29,7 +33,7 @@ def make_handler(monitor, control=None):
             self.wfile.write(content)
 
         def do_POST(self):
-            if self.path not in ('/api/control/start', '/api/control/stop'):
+            if self.path not in routes:
                 self.send_json(404, {'error': 'Unknown control action'})
                 return
             if control is None or not valid_request(self.headers, control.token):
@@ -110,6 +114,7 @@ def run(args):
             self.bridge = CvBridge()
             self.tf = Buffer(node=self)
             self.listener = TransformListener(self.tf, self)
+            self.is_docked = None
             self.grid = None
             self.raw_scan = None
             self.filtered_scan = None
@@ -131,6 +136,10 @@ def run(args):
             base = args.namespace
             latched = QoSProfile(depth=1, reliability=ReliabilityPolicy.RELIABLE,
                                  durability=DurabilityPolicy.TRANSIENT_LOCAL)
+            if not args.sim:
+                from irobot_create_msgs.msg import DockStatus
+                self.create_subscription(DockStatus, topic(base, 'dock_status'), self.on_dock, qos_profile_sensor_data)
+                self.create_subscription(String, topic(base, 'osp/status'), lambda msg: self.on_status(msg, native=True), latched)
             self.create_subscription(OccupancyGrid, topic(base, 'map'), self.on_map, latched)
             self.create_subscription(LaserScan, topic(base, args.scan), self.on_raw, qos_profile_sensor_data)
             self.create_subscription(LaserScan, topic(base, args.filtered_scan), self.on_filtered, qos_profile_sensor_data)
@@ -141,6 +150,11 @@ def run(args):
             self.create_subscription(NavPath, topic(base, 'plan'), lambda m: self.on_plan(m, 'global'), 10)
             self.create_subscription(NavPath, topic(base, 'local_plan'), lambda m: self.on_plan(m, 'local'), 10)
             self.create_timer(1.0, self.render)
+
+        def on_dock(self, message):
+            with self.lock:
+                self.is_docked = bool(message.is_docked)
+                self.mark('dock')
 
         def mark(self, name):
             self.timestamps[name] = time.time()
@@ -179,7 +193,7 @@ def run(args):
                 self.filtered_scan = message
                 self.mark('filtered_scan')
 
-        def on_status(self, message):
+        def on_status(self, message, native=False):
             try:
                 parsed = json.loads(message.data)
                 if not isinstance(parsed, dict):
@@ -187,7 +201,16 @@ def run(args):
             except ValueError:
                 return
             with self.lock:
+                parsed = normalize_r32(parsed) if native else parsed
+                if (self.status.get('runtime') != parsed.get('runtime')
+                        or (parsed.get('state') == 'idle' and self.status.get('state') != 'idle')
+                        or (native and self.status.get('run_id') != parsed.get('run_id'))):
+                    self.targets = []
+                    self.discovered_ids.clear()
+                    self.latest_discovery = None
                 self.status = parsed
+                if native:
+                    self.update_targets(parsed['confirmed_targets'])
                 self.mark('mission_status')
 
         def on_collision(self, message):
@@ -200,14 +223,18 @@ def run(args):
 
         def on_targets(self, message):
             with self.lock:
-                self.targets = [(int(m.id), m.pose.position.x, m.pose.position.y)
-                                for m in message.markers if m.ns == 'point' and m.action == 0
-                                and m.header.frame_id == args.map_frame]
-                new_ids = sorted({ident for ident, _, _ in self.targets} - self.discovered_ids)
-                if new_ids:
-                    self.discovered_ids.update(new_ids)
-                    self.latest_discovery = {'ids': new_ids, 'time': time.time()}
-                self.mark('targets')
+                if self.status.get('runtime') != 'upstream-r32':
+                    self.update_targets([(int(m.id), m.pose.position.x, m.pose.position.y)
+                                         for m in message.markers if m.ns == 'point' and m.action == 0
+                                         and m.header.frame_id == args.map_frame])
+
+        def update_targets(self, targets):
+            self.targets = targets
+            new_ids = sorted({ident for ident, _, _ in targets} - self.discovered_ids)
+            if new_ids:
+                self.discovered_ids.update(new_ids)
+                self.latest_discovery = {'ids': new_ids, 'time': time.time()}
+            self.mark('targets')
 
         def on_plan(self, message, kind):
             if message.header.frame_id != args.map_frame:
@@ -331,6 +358,7 @@ def run(args):
                 scan_ready = self.scan_png is not None
                 discovered_ids = sorted(self.discovered_ids)
                 latest_discovery = self.latest_discovery
+                docked = self.is_docked
             now = time.time()
             ages = {name: round(now-stamp, 1) for name, stamp in stamps.items()}
             return {'server_time': now, 'mode': 'simulation' if args.sim else 'hardware',
@@ -339,6 +367,7 @@ def run(args):
                     'mission_display': mission_display(status), 'collision_monitor': collision,
                     'start_cell': cell, 'robot_pose': pose, 'pose_age_s': pose_age,
                     'scan': scan, 'ages_s': ages,
+                    'docked': docked if ages.get('dock', float('inf')) <= 2. else None,
                     'discovered_ids': discovered_ids,
                     'latest_discovery': latest_discovery,
                     'plans': plans, 'camera_ready': camera_ready, 'map_ready': map_ready,
@@ -376,7 +405,7 @@ def main():
     parser.add_argument('--base-frame', default='base_link')
     parser.add_argument('--sim', action='store_true', help='Use ROS /clock for TF freshness')
     parser.add_argument('--enable-control', action='store_true', help='Enable explicit physical start/stop buttons')
-    parser.add_argument('--control-workspace', type=Path, default=Path.home()/'face_intent_flow_v4_ws')
+    parser.add_argument('--control-workspace', type=Path, default=Path.home()/'face_intent_flow_v4r2_ws')
     parser.add_argument('--control-ntp-server', default='192.168.185.3')
     parser.add_argument('--control-duration', type=float, default=600.)
     args = parser.parse_args()
