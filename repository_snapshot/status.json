@@ -1,6 +1,10 @@
 {
   "hardware_board_experiments": {
-    "choices": ["flow_v3", "flow_v3_r32_print", "upstream_r32"],
+    "choices": [
+      "flow_v3",
+      "flow_v3_r32_print",
+      "upstream_r32"
+    ],
     "upstream_commit": "b1ed300e0052e147f17590f0219d8c794fb66f8a",
     "physical_trial": false
   },
@@ -931,7 +935,7 @@
         "hardware_validated": false
       }
     ],
-    "captured_utc": "2026-11-18T15:30:31.933279+00:00",
+    "captured_utc": "2026-11-18T16:00:34.427465+00:00",
     "synthetic_stress_is_real_robot_calibration": false,
     "automation_scope": "local systemd timer: summary and finished-video publication only"
   },
