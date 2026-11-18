@@ -1,0 +1,11 @@
+{
+  "candidate_id": "2026-11-18_face_intent_flow_v4",
+  "parent": "2026-11-17_face_intent_flow_v3",
+  "physical_validation": false,
+  "overlay_files": {
+    "osp_mission/local_recovery.py": "52284e00154c7e14f914bb275dccfe120c61e8625ffd0ff6e377b9f00d075e7f",
+    "osp_mission/recovery_control.py": "a18c52eb88d973e14f68774c3328f12189916f3f231e74579b93c288836ab5f1",
+    "test/test_local_recovery.py": "9bc678b3d60d356226a01276db28b9bc9c66e71e76375a41dd3404ca463b1415"
+  },
+  "transform_sha256": "ac6e7cd5831cd2492df5a9503b6cd179ab37a5f4c08b5a8fbe3c075b0b12d8f9"
+}

@@ -6,5 +6,5 @@ robot_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 if [[ "${1:-}" == --dry-run ]]; then
   exec bash "$robot_root/robot.sh" dry-run
 fi
-printf 'TurtleBot4 구동 · Flow v3\n시간·센서 확인 후 자동 시작합니다. 정지는 stop_robot.command 또는 Ctrl+C입니다.\n\n'
+printf 'TurtleBot4 구동 · Flow v4\n시간·센서 확인 후 자동 시작합니다. 정지는 stop_robot.command 또는 Ctrl+C입니다.\n\n'
 exec bash "$robot_root/robot.sh" start "$@"

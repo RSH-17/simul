@@ -517,7 +517,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("start", "stop", "check", "status", "dry-run"))
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
-    parser.add_argument("--workspace", type=Path, default=Path.home() / "face_intent_flow_v3_ws")
+    parser.add_argument("--workspace", type=Path, default=Path.home() / "face_intent_flow_v4_ws")
     parser.add_argument("--domain", type=int, default=int(os.environ.get("ROS_DOMAIN_ID", "4")))
     parser.add_argument("--ntp-server", default="192.168.185.3")
     parser.add_argument("--duration", type=float, default=600.0)

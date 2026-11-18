@@ -1,9 +1,17 @@
 {
+  "physical_navigation_recovery": {
+    "candidate": "policy_candidates/2026-11-18_face_intent_flow_v4",
+    "reference_run": "20261118T025452-9e81af1edd",
+    "offline_pairwise_transitions": 10,
+    "blocked_previous_choice": 8,
+    "runtime_tests_passed": 394,
+    "physical_escape_verified": false
+  },
   "robot_board_control": {
     "status": "deployed_buttons_no_new_hardware_drive",
     "report": "repository_snapshot/robot_board_control_20261117.json",
     "instructions": "dashboard/ROBOT_BOARD.md",
-    "prepared_runtime": "face_intent_flow_v3_ws",
+    "prepared_runtime": "face_intent_flow_v4_ws",
     "hardware_start_latency_verified": false
   },
   "captured_utc": "2026-11-14T20:19:56.963709+00:00",

@@ -173,11 +173,11 @@ class StartSafetyTest(unittest.TestCase):
             session.end_launch(process)
         self.assertEqual([v.args[1] for v in kill.call_args_list], [session.signal.SIGINT, session.signal.SIGTERM])
 
-    def test_dry_run_uses_prepared_flow_v3_and_never_builds(self):
+    def test_dry_run_uses_prepared_flow_v4_and_never_builds(self):
         root = Path(__file__).resolve().parents[1]
         result = subprocess.run(["bash", str(root / "robot.sh"), "dry-run"], capture_output=True, text=True, check=True)
         self.assertIn("robot_session.py start", result.stdout)
-        self.assertIn("face_intent_flow_v3_ws", result.stdout)
+        self.assertIn("face_intent_flow_v4_ws", result.stdout)
         self.assertNotIn("colcon", result.stdout)
         result = subprocess.run(["python3", str(root / "scripts/robot_session.py"), "dry-run"], capture_output=True, text=True, check=True)
         command = json.loads(result.stdout)

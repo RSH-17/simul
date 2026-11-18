@@ -376,7 +376,7 @@ def main():
     parser.add_argument('--base-frame', default='base_link')
     parser.add_argument('--sim', action='store_true', help='Use ROS /clock for TF freshness')
     parser.add_argument('--enable-control', action='store_true', help='Enable explicit physical start/stop buttons')
-    parser.add_argument('--control-workspace', type=Path, default=Path.home()/'face_intent_flow_v3_ws')
+    parser.add_argument('--control-workspace', type=Path, default=Path.home()/'face_intent_flow_v4_ws')
     parser.add_argument('--control-ntp-server', default='192.168.185.3')
     parser.add_argument('--control-duration', type=float, default=600.)
     args = parser.parse_args()

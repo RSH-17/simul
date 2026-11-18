@@ -10,14 +10,14 @@ import shutil
 import subprocess
 
 
-def build(workspace, tests):
+def build(workspace, tests, extra_stages=()):
     candidate=Path(__file__).resolve().parent
     release=candidate.parents[1]/'policy_releases/2026-11-13_face_intent_v2'
     for relative,expected in json.loads((release/'release.json').read_text())['files'].items():
         if hashlib.sha256((release/relative).read_bytes()).hexdigest()!=expected:
             raise ValueError(f'Frozen release changed: {relative}')
     stages=[candidate.parent/'2026-11-17_face_intent_start30_v1',
-            candidate.parent/'2026-11-17_face_intent_body_scan_v2',candidate]
+            candidate.parent/'2026-11-17_face_intent_body_scan_v2',candidate, *extra_stages]
     for stage in stages:
         manifest=json.loads((stage/'candidate.json').read_text())
         for relative,expected in manifest['overlay_files'].items():

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Mac entry point for the already-built TurtleBot4 Flow v3 runtime.
+# Mac entry point for the already-built TurtleBot4 Flow v4 runtime.
 set -euo pipefail
 action="${1:-status}"
 if (($#)); then shift; fi
@@ -13,7 +13,7 @@ Usage: ./robot.sh {start|stop|check|status|dry-run} [--duration SECONDS]
   check    Read-only readiness check; never launches the policy or moves the robot.
   status   Read-only live state and tracked process status.
   dry-run  Print the command without contacting the VM.
-Defaults: osp-jazzy VM, ROS domain 4, prepared face_intent_flow_v3_ws.
+Defaults: osp-jazzy VM, ROS domain 4, prepared face_intent_flow_v4_ws.
 Override OSP_ROBOT_VM, OSP_ROBOT_REPO, OSP_ROBOT_WORKSPACE,
 OSP_ROBOT_DOMAIN, OSP_ROBOT_DDS_PROFILE or OSP_ROBOT_NTP_SERVER if needed.
 Start runs in the foreground; Ctrl-C stops the session. Stop also works in another terminal.
@@ -23,7 +23,7 @@ HELP
 esac
 robot_vm="${OSP_ROBOT_VM:-osp-jazzy}"
 robot_repo="${OSP_ROBOT_REPO:-/home/ubuntu/simul}"
-robot_workspace="${OSP_ROBOT_WORKSPACE:-/home/ubuntu/face_intent_flow_v3_ws}"
+robot_workspace="${OSP_ROBOT_WORKSPACE:-/home/ubuntu/face_intent_flow_v4_ws}"
 robot_domain="${OSP_ROBOT_DOMAIN:-4}"
 robot_profile="${OSP_ROBOT_DDS_PROFILE:-$robot_repo/robot_profiles/wired_flow_v3/fastdds_vm.xml}"
 robot_ntp="${OSP_ROBOT_NTP_SERVER:-192.168.185.3}"
