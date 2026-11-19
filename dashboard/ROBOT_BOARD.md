@@ -11,6 +11,7 @@
 | Mixed · 꼼꼼 탐색 | 기존 Mixed를 보존한 별도 후보. 네 면 전체가 연결되면 순서대로 보고, 일부만 연결되면 도달 가능한 면을 관찰한다. 스쳐 지난 인쇄 테두리 후보는 관측했던 쪽으로 돌아가 다시 본다 | `~/flow_v3_r32_thorough_ws` |
 | Mixed · 각진 구조 우선 | 벽에 붙은 직각 돌출부를 임시 사각형 후보로 추적한다. 갈 수 있는 면은 방문하고 경로가 불충분하면 제자리에서 코너를 먼저 본다 | `~/flow_v3_r32_corner_ws` |
 | Mixed · 이동 중 옆면 관찰 | 꼼꼼 탐색을 바탕으로 상자·면 목표로 이동할 때 보이는 옆면을 제한된 횟수와 시간 안에서 관찰한다. 마커 접근 목표는 보호한다 | `~/flow_v3_r32_side_ws` |
+| Mixed · 일반 장애물 집중 탐색 | 상자 형태가 아니어도 주행 중 큰 미관찰 표면은 잠깐 회전해 보고, 여전히 안 본 면이 있을 때만 안전한 관찰 지점으로 최대 3회·총 5m 추가 이동한다 | `~/flow_v3_r32_general_ws` |
 | 원본 · R32 | 원본 osp_project 주행·탐지와 600초 실물 프리셋 | `~/r32_upstream_b1ed300_ws` |
 
 원본 R32는 [비교에 사용한 커밋](https://github.com/yeonslay/turtlebot4-marker-slam/tree/b1ed300e0052e147f17590f0219d8c794fb66f8a)을 별도 작업공간의 `src/upstream`에 체크아웃한 뒤 ROS Jazzy에서 `colcon build --packages-select osp_project`로 설치한다. 보드는 `/osp/status`의 확정 ID와 접근 완료 ID를 별도로 표시한다. 원본 기록은 해당 작업공간의 `session_logs/<실험>/artifacts/upstream/<run_id>/latest.json`에서 확인할 수 있다.

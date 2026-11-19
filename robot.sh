@@ -9,14 +9,19 @@ case "$action" in
     action="${action%-side}"
     default_side_workspace=/home/ubuntu/flow_v3_r32_side_ws
     side_inspection=true ;;
+  start-general|dry-run-general|check-general)
+    action="${action%-general}"
+    default_side_workspace=/home/ubuntu/flow_v3_r32_general_ws
+    side_inspection=true ;;
 esac
 case "$action" in
   start|stop|check|status|dry-run) ;;
   -h|--help)
     cat <<'HELP'
-Usage: ./robot.sh {start|start-side|stop|check|check-side|status|dry-run|dry-run-side} [--duration SECONDS]
+Usage: ./robot.sh {start|start-side|start-general|stop|check|check-side|check-general|status|dry-run|dry-run-side|dry-run-general} [--duration SECONDS]
   start    Check clocks/sensors, launch the prepared runtime, then start when ready.
   start-side  Run Mixed with bounded side-face inspection during travel.
+  start-general  Run Mixed with brief looks at general surfaces and safe follow-up.
   stop     Cancel motion, terminate this session, and verify stationary odometry.
   check    Read-only readiness check; never launches the policy or moves the robot.
   status   Read-only live state and tracked process status.

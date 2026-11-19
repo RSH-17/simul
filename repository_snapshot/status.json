@@ -1492,5 +1492,16 @@
     "board_tests_passed": 23,
     "session_tests_passed": 26,
     "physical_trial": false
+  },
+  "mixed_general_surface": {
+    "report": "policy_candidates/2026-11-19_mixed_general_surface/README.md",
+    "workspace": "flow_v3_r32_general_ws",
+    "hardware_board": true,
+    "offline_decision_maps": 40,
+    "offline_old_static_candidate_maps": 2,
+    "offline_new_static_candidate_maps": 29,
+    "offline_front_dwell_candidate_maps": 15,
+    "synthetic_regressions_passed": 4,
+    "physical_trial": false
   }
 }

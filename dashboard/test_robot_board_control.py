@@ -53,7 +53,7 @@ def test_get_and_cross_origin_requests_never_start(board_server):
     control.request.assert_not_called()
 
 
-@pytest.mark.parametrize('action', ['start', 'start-v3-mppi', 'start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-upstream-r32', 'stop'])
+@pytest.mark.parametrize('action', ['start', 'start-v3-mppi', 'start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-upstream-r32', 'stop'])
 def test_authorized_post_dispatches_exactly_one_action(board_server, action):
     url, control = board_server
     request = Request(url + '/api/control/' + action, data=b'{}', headers={
@@ -140,14 +140,15 @@ def test_board_start_supplies_wired_dds_even_without_launcher_environment(tmp_pa
                                                 ('start-mixed','flow_v3_r32_full_box_ws'),
                                                 ('start-thorough','flow_v3_r32_thorough_ws'),
                                                 ('start-corner','flow_v3_r32_corner_ws'),
-                                                ('start-side','flow_v3_r32_side_ws')])
+                                                ('start-side','flow_v3_r32_side_ws'),
+                                                ('start-general','flow_v3_r32_general_ws')])
 def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(tmp_path, action, workspace):
     board = BoardControl(tmp_path, tmp_path/'baseline', 184, state_dir=tmp_path)
     cmd = board.command(action)
     assert cmd[cmd.index('--workspace')+1] == str(tmp_path/workspace)
     assert cmd[cmd.index('--')+1:].count('start') == 1
     assert '2026-11-13_face_intent_v2/policy.json' in cmd[cmd.index('--policy')+1]
-    assert ('--side-inspection' in cmd) == (action == 'start-side')
+    assert ('--side-inspection' in cmd) == (action in ('start-side', 'start-general'))
     with patch.object(board, 'spawn', return_value=(process(1), tmp_path/'start.log')):
         board.request(action)
         with pytest.raises(RuntimeError):
@@ -162,7 +163,7 @@ def test_upstream_separate_detector_common_stop_and_interlock(tmp_path):
     assert '--policy' not in cmd and 'run_policy.sh' not in ' '.join(cmd)
     with patch.object(board, 'spawn', return_value=(process(123), tmp_path/'cmd.log')):
         assert board.request('start-upstream-r32')['policy'] == '원본 · R32'
-        for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-v3-mppi'):
+        for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-v3-mppi'):
             with pytest.raises(RuntimeError):
                 board.request(action)
         with patch('robot_board_control.os.killpg'):
