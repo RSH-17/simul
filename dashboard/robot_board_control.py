@@ -20,11 +20,13 @@ START_WORKSPACES = {
     "start-v3-mppi": "face_intent_v3_sweep_ws",
     "start-mixed": "flow_v3_r32_full_box_ws",
     "start-thorough": "flow_v3_r32_thorough_ws",
+    "start-corner": "flow_v3_r32_corner_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-v3-mppi": "기존 · Flow v3", "start-mixed": "Mixed · 상자 전면 관찰",
           "start-thorough": "Mixed · 꼼꼼 탐색",
+          "start-corner": "Mixed · 각진 구조 우선",
           "start-upstream-r32": "원본 · R32"}
 
 

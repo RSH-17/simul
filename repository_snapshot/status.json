@@ -1465,6 +1465,19 @@
     "original_near_decoded_frames": 57,
     "candidate_near_decoded_frames": 59,
     "synthetic_regressions_passed": 4,
+    "physical_trial": true,
+    "latest_run": "20261119T102346-b814220173",
+    "latest_run_phase": "stop_unverified",
+    "latest_run_elapsed_s": 41.755
+  },
+  "mixed_corner_first": {
+    "report": "policy_candidates/2026-11-19_mixed_corner_first/README.md",
+    "workspace": "flow_v3_r32_corner_ws",
+    "hardware_board": true,
+    "recent_run_decision_maps": 2,
+    "recent_map_corner_hypotheses": 1,
+    "recent_map_offline_glance_goals": 1,
+    "synthetic_regressions_passed": 4,
     "physical_trial": false
   }
 }
