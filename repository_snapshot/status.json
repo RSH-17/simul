@@ -1503,5 +1503,17 @@
     "offline_front_dwell_candidate_maps": 15,
     "synthetic_regressions_passed": 4,
     "physical_trial": false
+  },
+  "mixed_center_first": {
+    "workspace": "flow_v3_r32_center_ws",
+    "report": "policy_candidates/2026-11-19_mixed_center_first/README.md",
+    "physical_trial": false,
+    "short_log_snapshot_count": 7,
+    "short_log_interior_choices": 5,
+    "long_log_snapshot_count": 40,
+    "long_log_interior_choices": 33,
+    "long_log_wall_choices": 1,
+    "long_log_first_wall_elapsed_s": 533,
+    "synthetic_tests_passed": 5
   }
 }
