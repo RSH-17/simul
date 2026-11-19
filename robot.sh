@@ -3,12 +3,20 @@
 set -euo pipefail
 action="${1:-status}"
 if (($#)); then shift; fi
+side_inspection=false
+case "$action" in
+  start-side|dry-run-side|check-side)
+    action="${action%-side}"
+    default_side_workspace=/home/ubuntu/flow_v3_r32_side_ws
+    side_inspection=true ;;
+esac
 case "$action" in
   start|stop|check|status|dry-run) ;;
   -h|--help)
     cat <<'HELP'
-Usage: ./robot.sh {start|stop|check|status|dry-run} [--duration SECONDS]
+Usage: ./robot.sh {start|start-side|stop|check|check-side|status|dry-run|dry-run-side} [--duration SECONDS]
   start    Check clocks/sensors, launch the prepared runtime, then start when ready.
+  start-side  Run Mixed with bounded side-face inspection during travel.
   stop     Cancel motion, terminate this session, and verify stationary odometry.
   check    Read-only readiness check; never launches the policy or moves the robot.
   status   Read-only live state and tracked process status.
@@ -23,13 +31,16 @@ HELP
 esac
 robot_vm="${OSP_ROBOT_VM:-osp-jazzy}"
 robot_repo="${OSP_ROBOT_REPO:-/home/ubuntu/simul}"
-robot_workspace="${OSP_ROBOT_WORKSPACE:-/home/ubuntu/face_intent_flow_v4_ws}"
+robot_workspace="${OSP_ROBOT_WORKSPACE:-${default_side_workspace:-/home/ubuntu/face_intent_flow_v4_ws}}"
 robot_domain="${OSP_ROBOT_DOMAIN:-4}"
 robot_profile="${OSP_ROBOT_DDS_PROFILE:-$robot_repo/robot_profiles/wired_flow_v3/fastdds_vm.xml}"
 robot_ntp="${OSP_ROBOT_NTP_SERVER:-192.168.185.3}"
 robot_args=(python3 -u "$robot_repo/scripts/robot_session.py" "$action"
   --repo "$robot_repo" --workspace "$robot_workspace" --domain "$robot_domain"
   --ntp-server "$robot_ntp" "$@")
+if [[ "$side_inspection" == true ]]; then
+  robot_args+=(--side-inspection)
+fi
 if [[ "$action" == start || "$action" == dry-run ]]; then
   robot_args[3]=start
   robot_args=(bash "$robot_repo/run_policy.sh" --mode robot --workspace "$robot_workspace"

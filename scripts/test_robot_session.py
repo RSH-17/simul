@@ -3,6 +3,8 @@ import json
 import math
 from pathlib import Path
 import subprocess
+import tempfile
+import time
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
@@ -31,6 +33,39 @@ class StartSafetyTest(unittest.TestCase):
         self.assertIn('config:=/ws/install/osp_project/share/osp_project/resources/mission_r32_hardware.yaml', cmd)
         self.assertIn('output_directory:=/trial/upstream', cmd)
         self.assertIn('use_sim_time:=false', cmd)
+
+    def test_side_inspection_is_explicit_and_other_flow_runs_keep_it_disabled(self):
+        args = SimpleNamespace(workspace=Path('/ws'), repo=Path('/repo'), duration=600., runtime='flow')
+        original = session.launch_command(args, Path('/trial'))
+        self.assertIn('allow_mid_route_wall_inspection:=false', original)
+        args.side_inspection = True
+        selected = session.launch_command(args, Path('/trial'))
+        self.assertIn('allow_mid_route_wall_inspection:=true', selected)
+
+    def test_later_verified_stop_clears_stale_unverified_state(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / 'session.json'
+            path.write_text(json.dumps(dict(phase='stop_unverified', runtime='flow',
+                                            requested_wall_epoch_s=123., stationary_verified=False)))
+            with patch.object(session, 'stop_motion', return_value=True), \
+                 patch.object(session, 'owned_alive', return_value=False), \
+                 patch.object(session, 'tracked_group_active', return_value=False):
+                self.assertEqual(session.stop(SimpleNamespace(), Mock(sensors=Mock(odom=[])), path), 0)
+            result = json.loads(path.read_text())
+            self.assertEqual(result['phase'], 'stopped')
+            self.assertTrue(result['stationary_verified'])
+
+    def test_zero_velocity_wait_returns_after_a_fresh_stable_second(self):
+        io = Mock()
+        io.cancel_clients = {}
+        io.stop_client.service_is_ready.return_value = False
+        io.spin.side_effect = lambda: time.sleep(.05)
+        io.sensors.stationary.return_value = True
+        started = time.monotonic()
+        self.assertTrue(session.stop_motion(io, 3.0))
+        elapsed = time.monotonic()-started
+        self.assertGreaterEqual(elapsed, 1.)
+        self.assertLess(elapsed, 2.5)
 
     def healthy(self):
         sensors = session.Sensors()

@@ -1466,9 +1466,12 @@
     "candidate_near_decoded_frames": 59,
     "synthetic_regressions_passed": 4,
     "physical_trial": true,
-    "latest_run": "20261119T102346-b814220173",
+    "latest_run": "20261119T110237-11c9096872",
     "latest_run_phase": "stop_unverified",
-    "latest_run_elapsed_s": 41.755
+    "latest_run_elapsed_s": 607.299,
+    "latest_run_goals": 40,
+    "latest_run_mid_route_side_looks": 0,
+    "stop_later_verified": true
   },
   "mixed_corner_first": {
     "report": "policy_candidates/2026-11-19_mixed_corner_first/README.md",
@@ -1478,6 +1481,16 @@
     "recent_map_corner_hypotheses": 1,
     "recent_map_offline_glance_goals": 1,
     "synthetic_regressions_passed": 4,
+    "physical_trial": false
+  },
+  "mixed_side_pass": {
+    "report": "policy_candidates/2026-11-19_mixed_side_pass/README.md",
+    "workspace": "flow_v3_r32_side_ws",
+    "hardware_board": true,
+    "offline_decision_maps": 40,
+    "offline_side_opportunity_maps": 2,
+    "board_tests_passed": 23,
+    "session_tests_passed": 26,
     "physical_trial": false
   }
 }

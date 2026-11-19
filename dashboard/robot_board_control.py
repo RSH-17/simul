@@ -21,12 +21,14 @@ START_WORKSPACES = {
     "start-mixed": "flow_v3_r32_full_box_ws",
     "start-thorough": "flow_v3_r32_thorough_ws",
     "start-corner": "flow_v3_r32_corner_ws",
+    "start-side": "flow_v3_r32_side_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-v3-mppi": "기존 · Flow v3", "start-mixed": "Mixed · 상자 전면 관찰",
           "start-thorough": "Mixed · 꼼꼼 탐색",
           "start-corner": "Mixed · 각진 구조 우선",
+          "start-side": "Mixed · 이동 중 옆면 관찰",
           "start-upstream-r32": "원본 · R32"}
 
 
@@ -87,6 +89,7 @@ class BoardControl:
     def command(self, action):
         workspace = self.workspace
         native = action == "start-upstream-r32"
+        side_inspection = action == "start-side"
         if START_WORKSPACES.get(action):
             workspace = self.workspace.parent / START_WORKSPACES[action]
             action = "start"
@@ -94,6 +97,8 @@ class BoardControl:
                    "--repo", str(self.repo), "--workspace", str(workspace),
                    "--domain", str(self.domain), "--ntp-server", self.ntp_server,
                    "--duration", str(self.duration)]
+        if side_inspection:
+            command.append("--side-inspection")
         if native:
             return ["bash", "-c", 'source /opt/ros/jazzy/setup.bash && source "$1/install/setup.bash" && shift && exec "$@"',
                     "r32-board", str(workspace), *command, "--runtime", "upstream-r32"]

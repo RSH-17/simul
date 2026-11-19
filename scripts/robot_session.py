@@ -257,7 +257,8 @@ def launch_command(args, output):
                 "use_sim_time:=false", "bringup:=true", "rviz:=false"]
     return ["ros2", "launch", "osp_mission", "robot.launch.py", "use_sim_time:=false",
             "rviz:=false", "planner:=edge", "planner_start_ignore_radius_m:=0.30",
-            "navigation_flow_enabled:=true", "allow_mid_route_wall_inspection:=false",
+            "navigation_flow_enabled:=true", "allow_mid_route_wall_inspection:=" +
+            ("true" if getattr(args, "side_inspection", False) else "false"),
             "undock:=false", "duration:=" + str(args.duration),
             "nav2_params:=" + str(args.repo / "robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml"),
             "policy_file:=" + str(args.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"),
@@ -388,7 +389,8 @@ def wait_for_start(io, flag, process, timeout, report):
 
 
 def stop_motion(io, seconds=3.0):
-    deadline = time.monotonic() + seconds
+    started = time.monotonic()
+    deadline = started + seconds
     pending = {}
     while time.monotonic() < deadline:
         io.zero()
@@ -398,6 +400,12 @@ def stop_motion(io, seconds=3.0):
                 request = io.Trigger.Request() if name == "mission_stop" else io.CancelGoal.Request()
                 pending[name] = client.call_async(request)
         io.spin()
+        # The one-second odometry window must be filled after issuing zero
+        # velocity. Return when it is stable; do not let a transient sample at
+        # the fixed deadline turn a measured stop into an unverified one.
+        now = time.monotonic()
+        if now-started >= 1.0 and io.sensors.stationary(now):
+            return True
     return io.sensors.stationary(time.monotonic())
 
 
@@ -503,7 +511,7 @@ def start(args, io, flag, state_path):
                 stop_motion(io, 3.0)
             finally:
                 end_launch(process)
-            stopped = stop_motion(io, 1.2)
+            stopped = stop_motion(io, 3.0)
             report("stopped", stationary_verified=stopped)
             state["stationary_verified"] = stopped
         state["phase"] = ("stopped" if stopped else "stop_unverified") if process else "not_started"
@@ -543,6 +551,12 @@ def stop(args, io, state_path):
             pass
         stationary = stop_motion(io, 1.2)
     launch_alive = tracked_group_active(state)
+    if stationary and not launch_alive:
+        latest = read_state(state_path)
+        if (latest.get("requested_wall_epoch_s") == state.get("requested_wall_epoch_s")
+                and not owned_alive(latest, "supervisor")):
+            latest.update(phase="stopped", stationary_verified=True)
+            save(state_path, latest)
     print(json.dumps(dict(stationary_verified=stationary, tracked_launch_alive=launch_alive,
                           odometry=list(io.sensors.odom)[-5:])), flush=True)
     return 0 if stationary and not launch_alive else 1
@@ -552,6 +566,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("start", "stop", "check", "status", "dry-run"))
     parser.add_argument("--runtime", choices=("flow", "upstream-r32"), default="flow")
+    parser.add_argument("--side-inspection", action="store_true")
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--workspace", type=Path, default=Path.home() / "face_intent_flow_v4r2_ws")
     parser.add_argument("--domain", type=int, default=int(os.environ.get("ROS_DOMAIN_ID", "4")))
