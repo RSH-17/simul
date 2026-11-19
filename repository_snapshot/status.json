@@ -1447,5 +1447,12 @@
     "fixed_marker_autonomy_verified": false,
     "new_hardware_run_started": false,
     "policy_changed": false
+  },
+  "mixed_full_box": {
+    "hardware_board": true,
+    "workspace": "flow_v3_r32_full_box_ws",
+    "synthetic_four_face_check": true,
+    "synthetic_blocked_route_check": true,
+    "physical_trial": false
   }
 }
