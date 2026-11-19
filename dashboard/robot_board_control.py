@@ -104,7 +104,11 @@ class BoardControl:
 
     def spawn(self, action):
         path = self.state_dir / ("board-" + action + "-" + secrets.token_hex(6) + ".log")
-        env = dict(os.environ, ROS_DOMAIN_ID=str(self.domain), OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1")
+        profile = self.repo / "robot_profiles/wired_flow_v3/fastdds_vm.xml"
+        env = dict(os.environ, ROS_DOMAIN_ID=str(self.domain),
+                   RMW_IMPLEMENTATION="rmw_fastrtps_cpp",
+                   FASTRTPS_DEFAULT_PROFILES_FILE=str(profile),
+                   OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1")
         with path.open("wb") as output:
             process = subprocess.Popen(self.command(action), cwd=self.repo, env=env,
                                        stdout=output, stderr=subprocess.STDOUT, start_new_session=True)

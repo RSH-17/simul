@@ -124,6 +124,17 @@ def test_start_command_uses_same_prebuilt_session_and_recorder(tmp_path):
     assert 'stop' in stop and str(tmp_path/'run_policy.sh') not in stop
 
 
+def test_board_start_supplies_wired_dds_even_without_launcher_environment(tmp_path):
+    board = BoardControl(tmp_path, tmp_path/'runtime', 4, state_dir=tmp_path)
+    with patch.dict('robot_board_control.os.environ', {}, clear=True), \
+         patch('robot_board_control.subprocess.Popen', return_value=process(123)) as popen:
+        board.spawn('start-thorough')
+    env = popen.call_args.kwargs['env']
+    assert env['ROS_DOMAIN_ID'] == '4'
+    assert env['RMW_IMPLEMENTATION'] == 'rmw_fastrtps_cpp'
+    assert env['FASTRTPS_DEFAULT_PROFILES_FILE'] == str(tmp_path/'robot_profiles/wired_flow_v3/fastdds_vm.xml')
+
+
 @pytest.mark.parametrize(('action','workspace'), [('start-r32','r32_drive_original18_ws'),
                                                 ('start-v3-mppi','face_intent_v3_sweep_ws'),
                                                 ('start-mixed','flow_v3_r32_full_box_ws'),
