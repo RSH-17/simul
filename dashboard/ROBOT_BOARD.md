@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | 기존 · Flow v3 | 기존 Flow v3 MPPI 주행과 face_intent_v2 | `~/face_intent_v3_sweep_ws` |
 | Mixed · 상자 전면 관찰 | Flow v3 마커 판독·R32 주행과 확인된 상자의 네 면 관찰 | `~/flow_v3_r32_full_box_ws` |
+| Mixed · 꼼꼼 탐색 | 기존 Mixed를 보존한 별도 후보. 네 면 전체가 연결되면 순서대로 보고, 일부만 연결되면 도달 가능한 면을 관찰한다. 스쳐 지난 인쇄 테두리 후보는 관측했던 쪽으로 돌아가 다시 본다 | `~/flow_v3_r32_thorough_ws` |
 | 원본 · R32 | 원본 osp_project 주행·탐지와 600초 실물 프리셋 | `~/r32_upstream_b1ed300_ws` |
 
 원본 R32는 [비교에 사용한 커밋](https://github.com/yeonslay/turtlebot4-marker-slam/tree/b1ed300e0052e147f17590f0219d8c794fb66f8a)을 별도 작업공간의 `src/upstream`에 체크아웃한 뒤 ROS Jazzy에서 `colcon build --packages-select osp_project`로 설치한다. 보드는 `/osp/status`의 확정 ID와 접근 완료 ID를 별도로 표시한다. 원본 기록은 해당 작업공간의 `session_logs/<실험>/artifacts/upstream/<run_id>/latest.json`에서 확인할 수 있다.

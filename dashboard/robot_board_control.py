@@ -19,10 +19,12 @@ START_WORKSPACES = {
     "start-r32": "r32_drive_original18_ws",
     "start-v3-mppi": "face_intent_v3_sweep_ws",
     "start-mixed": "flow_v3_r32_full_box_ws",
+    "start-thorough": "flow_v3_r32_thorough_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-v3-mppi": "기존 · Flow v3", "start-mixed": "Mixed · 상자 전면 관찰",
+          "start-thorough": "Mixed · 꼼꼼 탐색",
           "start-upstream-r32": "원본 · R32"}
 
 
