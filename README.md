@@ -1,5 +1,8 @@
 # OSP Final Project — ROS 2 Jazzy
 
+[Gazebo 9회 비교 · 10cm 간격의 7번과 103번](experiments/2026-11-19_pair_7_103/README.md)에서 두 ID의 개별 등록과 실제 1.5m 접근은 기존 Flow v3 3/3, Mixed 3/3, 원본 R32 0/3이었습니다. 범퍼 접촉은 총 0회였습니다.
+
+
 실물 보드에서 기존 Flow v3, Mixed, 원본 R32를 각각 선택해 비교할 수 있습니다. [버튼별 정책과 실험 기록](dashboard/ROBOT_BOARD.md#실물-정책-비교)
 
 **Flow v3 · R32 합성 후보** · 같은 면의 인쇄 테두리를 반복해서 보면 안전한 관찰 지점을 요청하고, 일반 탐색에는 R32 복도 전진·우회를 사용할 수 있다. [선택 실행과 검증 결과](policy_candidates/2026-11-18_flow_v3_r32_print/README.md)
