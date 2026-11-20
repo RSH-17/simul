@@ -1515,5 +1515,24 @@
     "long_log_wall_choices": 1,
     "long_log_first_wall_elapsed_s": 533,
     "synthetic_tests_passed": 5
+  },
+  "mixed_wall_cues_five_maps": {
+    "report": "experiments/2026-11-20_five_wall_cues/README.md",
+    "criteria": "registered and within 1.5 m, 600 s Gazebo, one run per map per policy",
+    "box_batch": {
+      "complete": 3,
+      "near": 13,
+      "wall": 4,
+      "mean": 416.06,
+      "bumped": 0
+    },
+    "wall_cues": {
+      "complete": 5,
+      "near": 15,
+      "wall": 5,
+      "mean": 352.3752,
+      "bumped": 0
+    },
+    "hardware": "dashboard option deployed; no physical mission in this comparison"
   }
 }
