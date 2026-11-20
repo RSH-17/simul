@@ -1,4 +1,37 @@
 {
+  "mixed_marker_relook": {
+    "report": "policy_candidates/2026-11-20_mixed_marker_relook/README.md",
+    "validation": "offline detector replay and expanded installed Nav2 launch",
+    "physical_drive_test": false,
+    "replays": [
+      {
+        "frames": 2612,
+        "frame": "odom",
+        "baseline_ids": [],
+        "candidate_ids": [
+          5
+        ]
+      },
+      {
+        "frames": 2413,
+        "frame": "map",
+        "baseline_ids": [
+          42
+        ],
+        "candidate_ids": [
+          42
+        ]
+      }
+    ],
+    "forward_controller_limits_m_s": [
+      0.25,
+      0.45
+    ],
+    "forward_smoother_limits_m_s": [
+      0.27,
+      0.45
+    ]
+  },
   "paired_wall_7_103": {
     "report": "experiments/2026-11-19_pair_7_103/README.md",
     "environment": "Gazebo Harmonic",

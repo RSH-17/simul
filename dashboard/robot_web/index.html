@@ -25,6 +25,8 @@
         <button data-action="start-center" class="start-button" type="button" disabled>Mixed · 가운데 장애물 → 벽</button>
         <button data-action="start-wall-cues" class="start-button" type="button" disabled>Mixed · 작은 벽 후보 기억 (v1.0.0)</button>
         <button data-action="start-cluster-exit" class="start-button" type="button" disabled>Mixed · 상자 재방문 줄이기 (v1.1.0)</button>
+        <button data-action="start-marker-relook" class="start-button" type="button" disabled>Mixed · 판독 마커 재관찰 (v1.2 실험)</button>
+        <button data-action="start-marker-relook-045" class="start-button" type="button" disabled>Mixed · 판독 마커 재관찰 (v1.2 · 0.45 m/s)</button>
         <button data-action="start-upstream-r32" class="start-button" type="button" disabled>원본 · R32</button>
         <button id="robot-stop" class="stop-button" type="button">정지</button></div>
     </section>
@@ -32,7 +34,8 @@
       <article class="card hero"><span class="label">미션</span><strong id="mission-state">대기</strong><small id="mission-detail">상태 수신 전</small></article>
       <article class="card"><span class="label">출발 지도 셀</span><strong id="start-cell">—</strong><small id="start-cell-detail">지도·TF 수신 전</small></article>
       <article class="card"><span class="label">충돌 감시</span><strong id="collision">—</strong><small id="collision-detail">상태 수신 전</small></article>
-      <article class="card"><span class="label">발견한 마커</span><strong id="detected-markers">—</strong><small id="detected-detail">탐지 결과 수신 전</small></article>
+      <article class="card" id="visual-card" hidden><span class="label">카메라에서 읽은 ID</span><strong id="visual-ids">—</strong></article>
+      <article class="card"><span class="label">지도 등록</span><strong id="detected-markers">—</strong><small id="detected-detail">탐지 결과 수신 전</small></article>
       <article class="card"><span class="label">접근 완료</span><strong id="markers">—</strong><small id="marker-detail">미션 상태 수신 전</small></article>
     </section>
     <div id="marker-alert" class="marker-alert" role="status" aria-live="polite" hidden></div>

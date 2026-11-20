@@ -13,6 +13,12 @@ import robot_session as session
 
 
 class StartSafetyTest(unittest.TestCase):
+    def test_forward_045_reaches_only_the_selected_launch(self):
+        args = SimpleNamespace(repo=Path('/repo'), duration=600, forward_045=False)
+        baseline = session.launch_command(args, Path('/trial'))
+        args.forward_045 = True
+        self.assertEqual(session.launch_command(args, Path('/trial')), baseline + ['forward_045:=true'])
+
     def test_upstream_status_separates_discovery_approach_and_stop(self):
         targets = [dict(id=i, x=.1, y=.5, confirmed=i != 8, approached=i in (7, 8)) for i in (7, 8, 103)]
         packet = dict(state='FINISHED', reason='operator_stop', targets=targets, stop_confirmed=True)

@@ -89,10 +89,13 @@ function render(data){
   $('collision').textContent=collision.action||'상태 대기';
   $('collision').className=collision.action==='STOP'?'bad':'';
   $('collision-detail').textContent=`${collision.polygon||'다각형 미수신'} · ${sec(ages.collision_monitor)}`;
+  const visual = status.visual_ids;
+  $('visual-card').hidden = !Array.isArray(visual);
+  $('visual-ids').textContent = visual?.length ? visual.join(', ') : '아직 없음';
   const ids=status.approached_ids||[];
   const detected=data.discovered_ids||[];
   $('detected-markers').textContent=`${detected.length} / 3`;
-  $('detected-detail').textContent=detected.length?`탐지 확인 ID ${detected.join(', ')}`:'탐지 확인된 ID 없음';
+  $('detected-detail').textContent=detected.length?`등록 ID ${detected.join(', ')}`:'지도에 등록된 ID 없음';
   $('markers').textContent=`${ids.length} / 3`;
   $('marker-detail').textContent=ids.length?`접근 확인 ID ${ids.join(', ')}`:'접근 확인된 ID 없음';
   const found=data.latest_discovery;

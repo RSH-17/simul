@@ -26,6 +26,8 @@ START_WORKSPACES = {
     "start-center": "flow_v3_r32_center_ws",
     "start-wall-cues": "flow_v3_r32_wall_cues_final_ws",
     "start-cluster-exit": "flow_v3_r32_cluster_exit_ws",
+    "start-marker-relook": "flow_v3_r32_marker_relook_ws",
+    "start-marker-relook-045": "flow_v3_r32_marker_relook_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
@@ -37,6 +39,8 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-center": "Mixed · 가운데 장애물 → 벽",
           "start-wall-cues": "Mixed · 작은 벽 후보 기억 (v1.0.0)",
           "start-cluster-exit": "Mixed · 상자 재방문 줄이기 (v1.1.0)",
+          "start-marker-relook": "Mixed · 판독 마커 재관찰 (v1.2 실험)",
+          "start-marker-relook-045": "Mixed · 판독 마커 재관찰 (v1.2 · 0.45 m/s)",
           "start-upstream-r32": "원본 · R32"}
 
 
@@ -96,6 +100,7 @@ class BoardControl:
 
     def command(self, action):
         workspace = self.workspace
+        forward_045 = action == "start-marker-relook-045"
         native = action == "start-upstream-r32"
         side_inspection = action in ("start-side", "start-general")
         if START_WORKSPACES.get(action):
@@ -105,6 +110,8 @@ class BoardControl:
                    "--repo", str(self.repo), "--workspace", str(workspace),
                    "--domain", str(self.domain), "--ntp-server", self.ntp_server,
                    "--duration", str(self.duration)]
+        if forward_045:
+            command.append("--forward-045")
         if side_inspection:
             command.append("--side-inspection")
         if native:
@@ -181,6 +188,8 @@ class BoardControl:
             if belongs and state.get("workspace"):
                 name = Path(state["workspace"]).name
                 selected = next((key for key, value in START_WORKSPACES.items() if value == name), "start")
+                if selected == "start-marker-relook" and state.get("forward_045"):
+                    selected = "start-marker-relook-045"
             return dict(policy=LABELS.get(selected), enabled=True, token=self.token, phase=phase, detail=detail,
                         can_start=not busy, can_stop=True, events=events[-8:])
 

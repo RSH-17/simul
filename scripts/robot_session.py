@@ -262,7 +262,7 @@ def launch_command(args, output):
             "undock:=false", "duration:=" + str(args.duration),
             "nav2_params:=" + str(args.repo / "robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml"),
             "policy_file:=" + str(args.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"),
-            "output_dir:=" + str(output)]
+            "output_dir:=" + str(output)] + (["forward_045:=true"] if getattr(args, "forward_045", False) else [])
 
 
 def identity(pid):
@@ -439,6 +439,7 @@ def start(args, io, flag, state_path):
     state = dict(supervisor_pid=os.getpid(), supervisor_start=identity(os.getpid()),
                  boot_id=Path("/proc/sys/kernel/random/boot_id").read_text().strip(),
                  phase="preflight", workspace=str(args.workspace), runtime=getattr(args, "runtime", "flow"),
+                 forward_045=getattr(args, "forward_045", False),
                  output=str(output), domain=args.domain, requested_wall_epoch_s=time.time())
     save(state_path, state)
     try:
@@ -567,6 +568,7 @@ def main():
     parser.add_argument("action", choices=("start", "stop", "check", "status", "dry-run"))
     parser.add_argument("--runtime", choices=("flow", "upstream-r32"), default="flow")
     parser.add_argument("--side-inspection", action="store_true")
+    parser.add_argument("--forward-045", action="store_true", help="Use the 0.45 m/s Mixed forward profile")
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--workspace", type=Path, default=Path.home() / "face_intent_flow_v4r2_ws")
     parser.add_argument("--domain", type=int, default=int(os.environ.get("ROS_DOMAIN_ID", "4")))
@@ -574,6 +576,8 @@ def main():
     parser.add_argument("--duration", type=float, default=600.0)
     parser.add_argument("--timeout", type=float, default=60.0)
     args = parser.parse_args()
+    if args.forward_045 and args.runtime != "flow":
+        parser.error("--forward-045 requires the Flow runtime")
     if not 0 <= args.domain <= 232 or not all(math.isfinite(v) and v > 0 for v in (args.duration, args.timeout)):
         parser.error("Valid ROS domain and positive finite duration/timeout required")
     if args.action == "dry-run":
