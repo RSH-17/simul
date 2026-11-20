@@ -1242,3 +1242,5 @@ Mac 시계를 보정하고 VM은 로봇의 유선 NTP 서버를 참조하도록 
 ### 작은 벽 후보를 기억하는 Mixed 실험판
 
 상자 관찰 중 여러 영상에서 잡힌 작은 흑백 단서를 기억하고, 관찰할 상자 면이 없을 때 벽 관찰점을 선택한다. 실물 보드의 **Mixed · 작은 벽 후보 기억** 버튼이 이 버전을 구동한다. [설치와 후보 판정 기준](policy_candidates/2026-11-20_mixed_wall_cues_6px/README.md)
+
+[상자 재방문 줄이기 실험판과 동일 맵 비교](experiments/2026-11-20_cluster_exit/README.md)

@@ -1534,5 +1534,18 @@
       "bumped": 0
     },
     "hardware": "dashboard option deployed; no physical mission in this comparison"
+  },
+  "mixed_cluster_exit": {
+    "report": "experiments/2026-11-20_cluster_exit/README.md",
+    "matched_gazebo_pairs": 1,
+    "verified_approaches": [
+      3,
+      3
+    ],
+    "bumper_events": [
+      0,
+      0
+    ],
+    "hardware": "separate board button; no physical trial"
   }
 }
