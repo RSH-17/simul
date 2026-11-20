@@ -25,6 +25,7 @@ START_WORKSPACES = {
     "start-general": "flow_v3_r32_general_ws",
     "start-center": "flow_v3_r32_center_ws",
     "start-wall-cues": "flow_v3_r32_wall_cues_final_ws",
+    "start-cluster-exit": "flow_v3_r32_cluster_exit_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
@@ -35,6 +36,7 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-general": "Mixed · 일반 장애물 집중 탐색",
           "start-center": "Mixed · 가운데 장애물 → 벽",
           "start-wall-cues": "Mixed · 작은 벽 후보 기억",
+          "start-cluster-exit": "Mixed · 상자 재방문 줄이기",
           "start-upstream-r32": "원본 · R32"}
 
 

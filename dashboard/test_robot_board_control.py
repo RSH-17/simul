@@ -53,7 +53,7 @@ def test_get_and_cross_origin_requests_never_start(board_server):
     control.request.assert_not_called()
 
 
-@pytest.mark.parametrize('action', ['start', 'start-v3-mppi', 'start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-upstream-r32', 'stop'])
+@pytest.mark.parametrize('action', ['start', 'start-v3-mppi', 'start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-cluster-exit', 'start-upstream-r32', 'stop'])
 def test_authorized_post_dispatches_exactly_one_action(board_server, action):
     url, control = board_server
     request = Request(url + '/api/control/' + action, data=b'{}', headers={
@@ -143,7 +143,8 @@ def test_board_start_supplies_wired_dds_even_without_launcher_environment(tmp_pa
                                                 ('start-side','flow_v3_r32_side_ws'),
                                                 ('start-general','flow_v3_r32_general_ws'),
                                                 ('start-center','flow_v3_r32_center_ws'),
-                                                ('start-wall-cues','flow_v3_r32_wall_cues_final_ws')])
+                                                ('start-wall-cues','flow_v3_r32_wall_cues_final_ws'),
+                                                ('start-cluster-exit','flow_v3_r32_cluster_exit_ws')])
 def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(tmp_path, action, workspace):
     board = BoardControl(tmp_path, tmp_path/'baseline', 184, state_dir=tmp_path)
     cmd = board.command(action)
@@ -165,7 +166,7 @@ def test_upstream_separate_detector_common_stop_and_interlock(tmp_path):
     assert '--policy' not in cmd and 'run_policy.sh' not in ' '.join(cmd)
     with patch.object(board, 'spawn', return_value=(process(123), tmp_path/'cmd.log')):
         assert board.request('start-upstream-r32')['policy'] == '원본 · R32'
-        for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-v3-mppi'):
+        for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-cluster-exit', 'start-v3-mppi'):
             with pytest.raises(RuntimeError):
                 board.request(action)
         with patch('robot_board_control.os.killpg'):
