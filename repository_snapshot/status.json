@@ -1633,6 +1633,7 @@
     "physical_defaults_changed": false,
     "candidate_profiles": "experiments/2026-11-20_v12_camera_rate/profiles.json",
     "success_protocol": "registered IDs plus independent distance <=1.5m within 90s; not policy-witness completion",
-    "video_publication": "auto_review_blocked_pending_explicit_approval"
+    "video_publication": "16_public_assets_size_and_sha256_verified",
+    "video_index": "experiments/2026-11-20_v12_camera_rate/video_index.json"
   }
 }

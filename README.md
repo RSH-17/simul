@@ -462,7 +462,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 342개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 358개
 
 아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
 
@@ -812,6 +812,23 @@ python3 scripts/publish_simulation_videos.py --upload
 | [tf_restamp_v1__regression__case_1__1121200101.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/tf_restamp_v1__regression__case_1__1121200101.mp4) | 성공 | 확인 | 229.859 |
 | [velocity_calibration_regression_v1__case_0__1163000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/velocity_calibration_regression_v1__case_0__1163000000.mp4) | 성공 | 확인 | 204.2 |
 | [windowed_witness_regression_v2__case_0__1171300000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/windowed_witness_regression_v2__case_0__1171300000.mp4) | 성공 | 확인 | 236.793 |
+
+| [camera-v12__v12-high-fps-480px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-high-fps-480px-15fps-m112022-expanded1120.mp4) | 성공 | 확인 | 47.516 |
+| [camera-v12__v12-intermediate-400px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-intermediate-400px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 72.684 |
+| [camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4) | 미달 | 미달 | 45.0 |
+| [camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4) | 미달 | 미달 | 45.0 |
+| [camera-v12__v12-repeat-a-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-a-480px-10fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.408 |
+| [camera-v12__v12-repeat-a-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-a-480px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 70.22 |
+| [camera-v12__v12-repeat-b-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-10fps-m112021-expanded1120.mp4) | 성공 | 확인 | 50.792 |
+| [camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4) | 미달 | 미달 | 90.0 |
+| [camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4) | 미달 | 미달 | 90.0 |
+| [camera-v12__v12-validation-250px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 78.088 |
+| [camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4) | 미달 | 미달 | 90.0 |
+| [camera-v12__v12-validation-480px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 50.856 |
+| [camera-v12__v12-validation-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.279999999999994 |
+| [camera-v12__v12-validation-480px-5fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-5fps-m112022-expanded1120.mp4) | 성공 | 확인 | 51.84 |
+| [camera-v12__v12-validation-640px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-640px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.144 |
+| [camera-v12__v12-validation-640px-5fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-640px-5fps-m112022-expanded1120.mp4) | 성공 | 확인 | 73.512 |
 
 </details>
 

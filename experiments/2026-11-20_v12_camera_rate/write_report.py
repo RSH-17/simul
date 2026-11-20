@@ -79,6 +79,6 @@ lines += ['',
 '- [14회 상세 결과](comparison.json), [집계](aggregate.json), [15조합 선정](screening.json), [영상1 재생](replay-map-1.json), [영상2 재생](replay-map-2.json), [소스 해시](source_integrity.json), [실물 보존 CameraInfo](real_camera_reference.json).',
 '- VM 결과: `/home/ubuntu/camera-v12-expanded-1120`, 원본 영상/센서 기록: `/home/ubuntu/corridor-board-73bbb05/recordings/v12-*expanded1120*`.',
 '- 시뮬 보드: `http://192.168.252.2:8780/`, 카드 이름 `v12-validation-*`, `v12-repeat-*`, `v12-intermediate-*`, `v12-high-fps-*`.',
-'- 완성 MP4 16개는 Mac `vm_runs/v12-camera-benchmark-20261121/`에 보존했다. [영상 해시·프레임 검증](video_index.json). MP4는 timestamp 기준 5FPS로 재표본화한 시청용 영상이며, 분석은 원래 수신 프레임을 사용했다. 최종 평가 메타데이터는 `/private/tmp/camera-v12-export1121/`에도 있다. 공개 Release 업로드는 자동 승인 검토에서 보류돼 공개 영상 링크는 아직 없다.', '']
+'- 완성 MP4 16개는 Mac `vm_runs/v12-camera-benchmark-20261121/`에 보존했다. [영상 해시·프레임 검증](video_index.json). MP4는 timestamp 기준 5FPS로 재표본화한 시청용 영상이며, 분석은 원래 수신 프레임을 사용했다. 최종 평가 메타데이터는 `/private/tmp/camera-v12-export1121/`에도 있다. 소유자 승인 후 16개 모두 공개 Release 업로드·크기·SHA-256을 검증했다. [공개 영상 목록](videos.md).', '']
 (HERE / 'README.md').write_text('\n'.join(lines))
 print(json.dumps(dict(native_validation_runs=len(comparison['runs']), profiles=3, report=str(HERE/'README.md'))))
