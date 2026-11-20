@@ -1635,5 +1635,30 @@
     "success_protocol": "registered IDs plus independent distance <=1.5m within 90s; not policy-witness completion",
     "video_publication": "16_public_assets_size_and_sha256_verified",
     "video_index": "experiments/2026-11-20_v12_camera_rate/video_index.json"
+  },
+  "mixed_camera_aware": {
+    "version": "1.5.0",
+    "base": "1.2",
+    "profiles": [
+      "balanced",
+      "glance",
+      "detail"
+    ],
+    "baseline_variants_preserved": true,
+    "physical_drive": false,
+    "physical_camera_changed": false,
+    "production_promoted": false,
+    "validation_state": "strict_simulation_campaign_running",
+    "planned_native_runs": 18,
+    "targeted_checks_passed": 30,
+    "synthetic_tf_delay_s": 0.12,
+    "synthetic_baseline_registered_ids": [],
+    "synthetic_candidate_registered_ids": [
+      42
+    ],
+    "unchanged_original_files": 218,
+    "report": "policy_candidates/2026-11-21_mixed_camera_aware/README.md",
+    "comparison": "experiments/2026-11-21_camera_aware_policy/README.md",
+    "simulation_entry": "sim-camera.sh"
   }
 }

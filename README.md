@@ -1,3 +1,5 @@
+별도 **Mixed v1.5.0 카메라 처리 개선 후보**와 해상도별 6개 버전을 준비했습니다. TF 대기·이웃 ID 예외·다중 시점 관측을 수정했고, 공통 2맵·새 3맵의 엄격한 주행 비교를 실행 중입니다. 실물 기본값은 보존합니다. [구현과 검증](policy_candidates/2026-11-21_mixed_camera_aware/README.md)
+
 Frozen Mixed v1.2 카메라 실험: **15조합·90개 파생 재생 조건, 새 Gazebo 16회(주행 검증 14회)**를 완료했습니다. 실물 첫 시험 후보는 480×480·5FPS, 스침용 480×480·10FPS, 먼 마커용 640×640·5FPS입니다. 실물 안정성·다운 방지는 미검증이며 기본 설정은 유지합니다. [결과와 한계](experiments/2026-11-20_v12_camera_rate/README.md)
 
 밀집 구간에서 후보 소진·반복 실패를 줄이는 **별도 실험판 Mixed v1.4.0**을 추가했습니다. v1.2·v1.3.1은 보존합니다. [변경 근거와 검증 범위](policy_candidates/2026-11-20_mixed_crowded_navigation/README.md)
