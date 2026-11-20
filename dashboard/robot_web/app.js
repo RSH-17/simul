@@ -81,6 +81,11 @@ function render(data){
   $('mission-state').textContent=!live&&sim&&ages.raw_scan!==undefined?'시뮬 종료':outcome.label;
   $('mission-state').className=ages.mission_status>statusLimit?'bad':outcome.kind;
   $('mission-detail').textContent=`${outcome.detail||status.active_action||'동작 없음'} · 상태 ${sec(ages.mission_status)}`;
+  if (ages.mission_status < statusLimit && status.motor_stall_recovery?.paused) {
+    $('mission-state').textContent = '스톨 정지 · 해제 확인 중';
+    $('mission-state').className = 'warn';
+    $('mission-detail').textContent = '위험 신호 해제와 바퀴 정지를 확인하고 안전 후진을 검토합니다.';
+  }
   const cellName={start_free:'빈 공간',start_not_free:'출발 셀 점유',start_unknown:'출발 셀 미관측',start_outside_map:'지도 밖',map_or_pose_unavailable:'지도 / TF 대기'};
   $('start-cell').textContent=cellName[cell.reason]||cell.reason||'대기';
   $('start-cell').className=cell.reason==='start_not_free'?'bad':cell.reason==='start_free'?'good':'';

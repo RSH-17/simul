@@ -13,6 +13,12 @@ import robot_session as session
 
 
 class StartSafetyTest(unittest.TestCase):
+    def test_stall_recovery_launch_is_explicit(self):
+        args = SimpleNamespace(repo=Path('/repo'), duration=600., recover_stall=False)
+        original = session.launch_command(args, Path('/trial'))
+        args.recover_stall = True
+        self.assertEqual(session.launch_command(args, Path('/trial')), original + ['stall_recovery_enabled:=true'])
+
     def test_forward_045_reaches_only_the_selected_launch(self):
         args = SimpleNamespace(repo=Path('/repo'), duration=600, forward_045=False)
         baseline = session.launch_command(args, Path('/trial'))

@@ -1,4 +1,15 @@
 {
+  "mixed_stall_recovery": {
+    "version": "1.3.0",
+    "report": "policy_candidates/2026-11-20_mixed_stall_recovery/README.md",
+    "baseline": "v1.2",
+    "physical_drive_test": false,
+    "validation": "recorded callback and scan replay",
+    "stall_cancellations": 7,
+    "baseline_recovery_requests": 0,
+    "candidate_recovery_requests": 7,
+    "recorded_rear_clear_states": 5
+  },
   "mixed_marker_relook": {
     "report": "policy_candidates/2026-11-20_mixed_marker_relook/README.md",
     "validation": "offline detector replay and expanded installed Nav2 launch",
