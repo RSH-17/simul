@@ -37,6 +37,14 @@ def analyze(root):
             p95_percent_one_core=float(np.percentile([value[0] for (_,k),value in bins.items() if k==kind],95)),
             max_sampled_rss_mib=max(value[1] for (_,k),value in bins.items() if k==kind))
             for kind in {sample['kind'] for sample in resources}}
+        mission_samples=[]
+        if (run/'mission_resources.jsonl').exists():
+            mission_samples=[json.loads(line) for line in (run/'mission_resources.jsonl').read_text().splitlines()]
+            if mission_samples:
+                values=[row['cpu_percent_one_core'] for row in mission_samples]
+                cpu['mission']=dict(median_percent_one_core=float(np.median(values)),p95_percent_one_core=float(np.percentile(values,95)),
+                    max_sampled_rss_mib=max(row['rss_mib'] for row in mission_samples),samples=len(values),
+                    coverage='external sampler, partial for the first active trial; later trials sampled from startup')
         events=[json.loads(line) for line in (run/'events.jsonl').read_text().splitlines()]
         start=next(event for event in events if event['event']=='start_ack')
         text=(run/'launch.log').read_text(errors='replace')
@@ -56,6 +64,7 @@ def analyze(root):
         saved_map_ok=set(map(int,errors))=={7,32,103} and max(errors.values(),default=math.inf)<=.25
         status=metric['last_policy_status']
         rows.append(dict(run=run.name,variant=metric['variant'],profile=metric['profile'],
+            reason=metric['reason'],mission_start_clock_s=start['sim'],start_world_pose=start['pose'],
             split='held_out' if '-heldout' in run.name else 'development',
             seed=int(re.search(r'-m(\d+)-',run.name)[1]),
             strict_live_success=metric['strict_success'],strict_saved_map_success=bool(metric['strict_success'] and saved_map_ok),
@@ -75,7 +84,7 @@ def analyze(root):
             detector=metric['last_detector_status'],video=audit['video']))
     groups=[]
     for split in ('development','held_out'):
-        for variant in ('baseline','candidate'):
+        for variant in sorted({row['variant'] for row in rows}):
             for profile in ('balanced','glance','detail'):
                 selected=[r for r in rows if (r['split'],r['variant'],r['profile'])==(split,variant,profile)]
                 if not selected:continue
@@ -87,6 +96,7 @@ def analyze(root):
                     mean_path_m=statistics.mean(r['path_length_m'] for r in selected),
                     mean_stopped_s=statistics.mean(r['motion']['stopped_s'] for r in selected),
                     bumper_events=sum(r['bumper_events'] for r in selected),
+                    sensor_interruptions=sum(r['sensor_interruptions'] or 0 for r in selected),
                     worst_saved_map_error_m=max((error for r in selected for error in r['map_errors_saved_m'].values()),default=None)))
     return dict(complete=(root/'complete.json').is_file(),runs=rows,groups=groups,
         selection=json.loads((root/'selection.json').read_text()) if (root/'selection.json').exists() else None,

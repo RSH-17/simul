@@ -13,5 +13,11 @@
   "confirmations": 3,
   "mppi_forward_m_s": 0.25,
   "smoother_forward_m_s": 0.27,
-  "maximum_angular_rad_s": 0.5
+  "maximum_angular_rad_s": 0.5,
+  "native_validation_summary": {
+    "n": 2,
+    "strict_successes": 2,
+    "bumps": 0
+  },
+  "selected_simulation_default": false
 }

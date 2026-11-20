@@ -32,7 +32,8 @@ def execute(root,variant,profile,seed,phase,duration):
     print('START',run.name,flush=True)
     try:
         with (run/'observer.log').open('w') as log:
-            subprocess.run(['bash','-lc','source /opt/ros/jazzy/setup.bash && source "$CAMERA_POLICY_WORKSPACE/install/setup.bash" && exec python3 -u "'+str(HERE/'strict_trial.py')+'"'],
+            trial_script=Path(env.get('CAMERA_BENCH_TRIAL_SCRIPT',str(HERE/'strict_trial.py')))
+            subprocess.run(['bash','-lc','source /opt/ros/jazzy/setup.bash && source "$CAMERA_POLICY_WORKSPACE/install/setup.bash" && exec python3 -u "'+str(trial_script)+'"'],
                            env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=900)
         helper=Path(env['CAMERA_BENCH_HELPERS'])/'2026-11-19_corridor_box/finish_trial.py'
         with (run/'observer.log').open('a') as log:

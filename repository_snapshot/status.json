@@ -1637,7 +1637,7 @@
     "video_index": "experiments/2026-11-20_v12_camera_rate/video_index.json"
   },
   "mixed_camera_aware": {
-    "version": "1.5.0",
+    "version": "1.5.1",
     "base": "1.2",
     "profiles": [
       "balanced",
@@ -1648,9 +1648,9 @@
     "physical_drive": false,
     "physical_camera_changed": false,
     "production_promoted": false,
-    "validation_state": "strict_simulation_campaign_running",
-    "planned_native_runs": 18,
-    "targeted_checks_passed": 30,
+    "validation_state": "completed_42_native_runs_in_11_worlds",
+    "planned_native_runs": 42,
+    "targeted_checks_passed": 44,
     "synthetic_tf_delay_s": 0.12,
     "synthetic_baseline_registered_ids": [],
     "synthetic_candidate_registered_ids": [
@@ -1659,6 +1659,35 @@
     "unchanged_original_files": 218,
     "report": "policy_candidates/2026-11-21_mixed_camera_aware/README.md",
     "comparison": "experiments/2026-11-21_camera_aware_policy/README.md",
-    "simulation_entry": "sim-camera.sh"
+    "simulation_entry": "sim-camera.sh",
+    "completed_native_runs": 42,
+    "selected_algorithm": "1.5.1",
+    "variant_versions": [
+      "1.2",
+      "1.5.0",
+      "1.5.1",
+      "1.6.0"
+    ],
+    "snapshot_source_files_identical": 223,
+    "strict_successes": 41,
+    "distinct_worlds": 11,
+    "selected_profile": "balanced",
+    "selected_version": "v1.5.1-balanced",
+    "selected_native_successes": 14,
+    "selected_native_trials": 14,
+    "final_unseen_successes": 3,
+    "final_unseen_trials": 3,
+    "final_same_camera_reference_mean_sim_s": 142.84133333333332,
+    "final_selected_mean_sim_s": 88.33733333333333,
+    "final_same_camera_reference_path_m": 19.88503159351613,
+    "final_selected_path_m": 12.225023212464544,
+    "bumper_events": 0,
+    "display_checks_passed": 2,
+    "portable_snapshot": "policy_releases/2026-11-21_mixed_camera_sync_v151",
+    "portable_text_files": 221,
+    "portable_binary_hash_matches": 2,
+    "video_publication": "42_public_synthetic_assets_size_and_sha256_verified",
+    "video_index": "experiments/2026-11-21_camera_aware_policy/video_index.json",
+    "publication_branch": "codex/mixed-camera-aware"
   }
 }

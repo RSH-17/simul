@@ -1,4 +1,4 @@
-별도 **Mixed v1.5.0 카메라 처리 개선 후보**와 해상도별 6개 버전을 준비했습니다. TF 대기·이웃 ID 예외·다중 시점 관측을 수정했고, 공통 2맵·새 3맵의 엄격한 주행 비교를 실행 중입니다. 실물 기본값은 보존합니다. [구현과 검증](policy_candidates/2026-11-21_mixed_camera_aware/README.md)
+**Mixed v1.5.1-balanced 시뮬 선정판**: 11개 world에서 42회 native 주행을 완료했습니다. 세 마커 등록·실제 1.5m 접근·근거리 영상 증거·저장 지도 정확도를 함께 평가했으며 전체 41/42회, 선정판은 14/14회 통과했습니다. 카메라는 480×480·5FPS입니다. 마지막 미사용 3맵에서 같은 카메라의 v1.5.0 대비 평균 142.8→88.3초, 거리 19.9→12.2m, 범퍼 0회였습니다. `./sim-camera.sh`로 선정 조합을 실행하며 총 10개 선택 버전을 제공하며 기존판도 보존합니다. 실물 기본값은 그대로입니다. [비교·반례·영상](experiments/2026-11-21_camera_aware_policy/README.md) · [독립 소스 스냅샷](policy_releases/2026-11-21_mixed_camera_sync_v151/README.md)
 
 Frozen Mixed v1.2 카메라 실험: **15조합·90개 파생 재생 조건, 새 Gazebo 16회(주행 검증 14회)**를 완료했습니다. 실물 첫 시험 후보는 480×480·5FPS, 스침용 480×480·10FPS, 먼 마커용 640×640·5FPS입니다. 실물 안정성·다운 방지는 미검증이며 기본 설정은 유지합니다. [결과와 한계](experiments/2026-11-20_v12_camera_rate/README.md)
 
@@ -464,9 +464,9 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 358개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 400개
 
-아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
+성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
 <details><summary>전체 영상과 평가 결과 펼치기</summary>
 
@@ -814,23 +814,64 @@ python3 scripts/publish_simulation_videos.py --upload
 | [tf_restamp_v1__regression__case_1__1121200101.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/tf_restamp_v1__regression__case_1__1121200101.mp4) | 성공 | 확인 | 229.859 |
 | [velocity_calibration_regression_v1__case_0__1163000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/velocity_calibration_regression_v1__case_0__1163000000.mp4) | 성공 | 확인 | 204.2 |
 | [windowed_witness_regression_v2__case_0__1171300000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/windowed_witness_regression_v2__case_0__1171300000.mp4) | 성공 | 확인 | 236.793 |
-
 | [camera-v12__v12-high-fps-480px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-high-fps-480px-15fps-m112022-expanded1120.mp4) | 성공 | 확인 | 47.516 |
 | [camera-v12__v12-intermediate-400px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-intermediate-400px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 72.684 |
-| [camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4) | 미달 | 미달 | 45.0 |
-| [camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4) | 미달 | 미달 | 45.0 |
+| [camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4) | 실패 | 미달 | 45.0 |
+| [camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4) | 실패 | 미달 | 45.0 |
 | [camera-v12__v12-repeat-a-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-a-480px-10fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.408 |
 | [camera-v12__v12-repeat-a-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-a-480px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 70.22 |
 | [camera-v12__v12-repeat-b-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-10fps-m112021-expanded1120.mp4) | 성공 | 확인 | 50.792 |
-| [camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4) | 미달 | 미달 | 90.0 |
-| [camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4) | 미달 | 미달 | 90.0 |
+| [camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4) | 실패 | 미달 | 90.0 |
+| [camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4) | 실패 | 미달 | 90.0 |
 | [camera-v12__v12-validation-250px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 78.088 |
-| [camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4) | 미달 | 미달 | 90.0 |
+| [camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4) | 실패 | 미달 | 90.0 |
 | [camera-v12__v12-validation-480px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 50.856 |
 | [camera-v12__v12-validation-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.279999999999994 |
 | [camera-v12__v12-validation-480px-5fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-5fps-m112022-expanded1120.mp4) | 성공 | 확인 | 51.84 |
 | [camera-v12__v12-validation-640px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-640px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.144 |
 | [camera-v12__v12-validation-640px-5fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-640px-5fps-m112022-expanded1120.mp4) | 성공 | 확인 | 73.512 |
+| [camera-policy-1121__v15-baseline-balanced-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-balanced-m112021-dev.mp4) | 성공 | 확인 | 93.93599999999999 |
+| [camera-policy-1121__v15-baseline-balanced-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-balanced-m112022-dev.mp4) | 성공 | 확인 | 68.7 |
+| [camera-policy-1121__v15-baseline-detail-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-detail-m112021-dev.mp4) | 성공 | 확인 | 104.1 |
+| [camera-policy-1121__v15-baseline-detail-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-detail-m112022-dev.mp4) | 성공 | 확인 | 69.452 |
+| [camera-policy-1121__v15-baseline-glance-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112021-dev.mp4) | 성공 | 확인 | 103.32 |
+| [camera-policy-1121__v15-baseline-glance-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112022-dev.mp4) | 성공 | 확인 | 56.692 |
+| [camera-policy-1121__v15-baseline-glance-m112101-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112101-heldout.mp4) | 성공 | 확인 | 94.364 |
+| [camera-policy-1121__v15-baseline-glance-m112102-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112102-heldout.mp4) | 성공 | 확인 | 116.824 |
+| [camera-policy-1121__v15-baseline-glance-m112103-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112103-heldout.mp4) | 성공 | 확인 | 220.34799999999998 |
+| [camera-policy-1121__v15-camera-balanced-m112301-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-balanced-m112301-heldout-final.mp4) | 성공 | 확인 | 113.508 |
+| [camera-policy-1121__v15-camera-balanced-m112302-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-balanced-m112302-heldout-final.mp4) | 성공 | 확인 | 108.504 |
+| [camera-policy-1121__v15-camera-balanced-m112303-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-balanced-m112303-heldout-final.mp4) | 성공 | 확인 | 206.512 |
+| [camera-policy-1121__v15-camera-detail-m112021-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112021-dev2.mp4) | 성공 | 확인 | 86.004 |
+| [camera-policy-1121__v15-camera-detail-m112101-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112101-dev2.mp4) | 실패 | 확인 | 180.0 |
+| [camera-policy-1121__v15-camera-detail-m112201-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112201-heldout2.mp4) | 성공 | 확인 | 154.872 |
+| [camera-policy-1121__v15-camera-detail-m112202-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112202-heldout2.mp4) | 성공 | 확인 | 123.74 |
+| [camera-policy-1121__v15-camera-detail-m112203-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112203-heldout2.mp4) | 성공 | 확인 | 91.344 |
+| [camera-policy-1121__v15-candidate-balanced-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-balanced-m112021-dev.mp4) | 성공 | 확인 | 85.876 |
+| [camera-policy-1121__v15-candidate-balanced-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-balanced-m112022-dev.mp4) | 성공 | 확인 | 51.82 |
+| [camera-policy-1121__v15-candidate-detail-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112021-dev.mp4) | 성공 | 확인 | 75.78 |
+| [camera-policy-1121__v15-candidate-detail-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112022-dev.mp4) | 성공 | 확인 | 49.72 |
+| [camera-policy-1121__v15-candidate-detail-m112101-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112101-heldout.mp4) | 성공 | 확인 | 115.332 |
+| [camera-policy-1121__v15-candidate-detail-m112102-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112102-heldout.mp4) | 성공 | 확인 | 104.356 |
+| [camera-policy-1121__v15-candidate-detail-m112103-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112103-heldout.mp4) | 성공 | 확인 | 70.83600000000001 |
+| [camera-policy-1121__v15-candidate-glance-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-glance-m112021-dev.mp4) | 성공 | 확인 | 90.52000000000001 |
+| [camera-policy-1121__v15-candidate-glance-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-glance-m112022-dev.mp4) | 성공 | 확인 | 51.568000000000005 |
+| [camera-policy-1121__v15-committed-detail-m112021-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-committed-detail-m112021-dev2.mp4) | 성공 | 확인 | 82.324 |
+| [camera-policy-1121__v15-committed-detail-m112101-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-committed-detail-m112101-dev2.mp4) | 성공 | 확인 | 104.188 |
+| [camera-policy-1121__v15-sync-balanced-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112201-matrix-dev.mp4) | 성공 | 확인 | 130.508 |
+| [camera-policy-1121__v15-sync-balanced-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112202-matrix-dev.mp4) | 성공 | 확인 | 119.012 |
+| [camera-policy-1121__v15-sync-balanced-m112301-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112301-heldout-final.mp4) | 성공 | 확인 | 82.004 |
+| [camera-policy-1121__v15-sync-balanced-m112302-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112302-heldout-final.mp4) | 성공 | 확인 | 109.508 |
+| [camera-policy-1121__v15-sync-balanced-m112303-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112303-heldout-final.mp4) | 성공 | 확인 | 73.5 |
+| [camera-policy-1121__v15-sync-detail-m112021-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112021-dev2.mp4) | 성공 | 확인 | 61.964 |
+| [camera-policy-1121__v15-sync-detail-m112101-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112101-dev2.mp4) | 성공 | 확인 | 105.74000000000001 |
+| [camera-policy-1121__v15-sync-detail-m112201-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112201-heldout2.mp4) | 성공 | 확인 | 136.29999999999998 |
+| [camera-policy-1121__v15-sync-detail-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112201-matrix-dev.mp4) | 성공 | 확인 | 124.012 |
+| [camera-policy-1121__v15-sync-detail-m112202-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112202-heldout2.mp4) | 성공 | 확인 | 122.96399999999998 |
+| [camera-policy-1121__v15-sync-detail-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112202-matrix-dev.mp4) | 성공 | 확인 | 120.00399999999999 |
+| [camera-policy-1121__v15-sync-detail-m112203-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112203-heldout2.mp4) | 성공 | 확인 | 94.74 |
+| [camera-policy-1121__v15-sync-glance-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112201-matrix-dev.mp4) | 성공 | 확인 | 129.508 |
+| [camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4) | 성공 | 확인 | 120.56800000000001 |
 
 </details>
 
