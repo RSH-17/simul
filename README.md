@@ -1,3 +1,5 @@
+Frozen Mixed v1.2 카메라 실험: **15조합·90개 파생 재생 조건, 새 Gazebo 16회(주행 검증 14회)**를 완료했습니다. 실물 첫 시험 후보는 480×480·5FPS, 스침용 480×480·10FPS, 먼 마커용 640×640·5FPS입니다. 실물 안정성·다운 방지는 미검증이며 기본 설정은 유지합니다. [결과와 한계](experiments/2026-11-20_v12_camera_rate/README.md)
+
 밀집 구간에서 후보 소진·반복 실패를 줄이는 **별도 실험판 Mixed v1.4.0**을 추가했습니다. v1.2·v1.3.1은 보존합니다. [변경 근거와 검증 범위](policy_candidates/2026-11-20_mixed_crowded_navigation/README.md)
 
 실물 보드의 **Mixed v1.3.1 부드러운 주행·회전**은 전진 상한 0.30 m/s와 일치시킨 가속·감속 설정을 사용합니다. [설정과 검증 범위](policy_candidates/2026-11-20_mixed_smooth_030/README.md)

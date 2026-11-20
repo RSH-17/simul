@@ -1,0 +1,17 @@
+{
+  "width": 250,
+  "height": 250,
+  "k": [
+    199.2552947998047,
+    0.0,
+    123.67389678955078,
+    0.0,
+    199.2552947998047,
+    127.07687377929688,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "nominal_horizontal_fov_deg": 64.20304947351752,
+  "source": "last physical run CameraInfo, approximate pinhole FoV"
+}

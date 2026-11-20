@@ -1619,5 +1619,20 @@
       0
     ],
     "hardware": "separate board button; no physical trial"
+  },
+  "mixed_v12_camera_rate": {
+    "report": "experiments/2026-11-20_v12_camera_rate/README.md",
+    "native_validation_runs": 14,
+    "native_reference_runs": 2,
+    "replay_combinations": 15,
+    "derived_replay_cases": 90,
+    "matched_maps": 2,
+    "frozen_unchanged_source_files": 219,
+    "sensor_condition_checks_passed": 15,
+    "physical_validated": false,
+    "physical_defaults_changed": false,
+    "candidate_profiles": "experiments/2026-11-20_v12_camera_rate/profiles.json",
+    "success_protocol": "registered IDs plus independent distance <=1.5m within 90s; not policy-witness completion",
+    "video_publication": "auto_review_blocked_pending_explicit_approval"
   }
 }

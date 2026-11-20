@@ -1,0 +1,1156 @@
+{
+  "run": "v12-reference-640px-15fps-m112021-expanded1120-retry2",
+  "role": "selection",
+  "native_camera": {
+    "width": 640,
+    "height": 640,
+    "requested_fps": 15.0,
+    "camera_info": {
+      "width": 640,
+      "height": 640,
+      "k": [
+        443.5300081599877,
+        0.0,
+        320.0,
+        0.0,
+        443.5300081599877,
+        320.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "input_frames": 675,
+    "input_fps_sim": 15.000445117065787,
+    "processed_frames": 668,
+    "processed_fps_sim": 14.867154065620543,
+    "processed_age_sim_p50_s": 0.03200000000000003,
+    "processed_age_sim_p95_s": 0.06799999999999899,
+    "input_max_gap_sim_s": 0.06800000000000495,
+    "real_time_factor": 0.9446894633734643,
+    "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+  },
+  "opencv_threads": 6,
+  "frames": 675,
+  "expected_ids": [
+    7,
+    32,
+    103
+  ],
+  "rows": [
+    {
+      "size": 250,
+      "fps": 5,
+      "raw_rgb_mbps": 7.5,
+      "decode_median_ms": 0.9309025008406024,
+      "decode_p95_ms": 1.5421780026372285,
+      "decode_p95_fraction_of_frame_budget": 0.007710890013186143,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.35714285714285715,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 27.024
+          },
+          "readable_frames": {
+            "32": 4,
+            "103": 29,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.556000000000004,
+            "103": 26.956000000000003
+          },
+          "readable_frames": {
+            "32": 3,
+            "103": 29,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 224,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 27.024
+          },
+          "readable_frames": {
+            "32": 4,
+            "103": 29,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 250,
+      "fps": 10,
+      "raw_rgb_mbps": 15.0,
+      "decode_median_ms": 0.9309025008406024,
+      "decode_p95_ms": 1.5421780026372285,
+      "decode_p95_fraction_of_frame_budget": 0.015421780026372286,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.35714285714285715,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 26.956000000000003
+          },
+          "readable_frames": {
+            "32": 7,
+            "103": 58,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 27.024
+          },
+          "readable_frames": {
+            "32": 7,
+            "103": 58,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 26.956000000000003
+          },
+          "readable_frames": {
+            "32": 7,
+            "103": 58,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 250,
+      "fps": 15,
+      "raw_rgb_mbps": 22.5,
+      "decode_median_ms": 0.9309025008406024,
+      "decode_p95_ms": 1.5421780026372285,
+      "decode_p95_fraction_of_frame_budget": 0.023132670039558427,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.35714285714285715,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 26.956000000000003
+          },
+          "readable_frames": {
+            "32": 7,
+            "103": 58,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 26.956000000000003
+          },
+          "readable_frames": {
+            "32": 10,
+            "103": 87,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 40.424,
+            "103": 26.956000000000003
+          },
+          "readable_frames": {
+            "32": 10,
+            "103": 87,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 5,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 320,
+      "fps": 5,
+      "raw_rgb_mbps": 12.288,
+      "decode_median_ms": 1.3057594987913035,
+      "decode_p95_ms": 2.1701882484194353,
+      "decode_p95_fraction_of_frame_budget": 0.010850941242097177,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.42857142857142855,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.424,
+            "103": 25.624000000000002
+          },
+          "readable_frames": {
+            "32": 19,
+            "103": 35,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.356,
+            "103": 25.756
+          },
+          "readable_frames": {
+            "32": 19,
+            "103": 34,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 224,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.424,
+            "103": 25.624000000000002
+          },
+          "readable_frames": {
+            "32": 19,
+            "103": 35,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 320,
+      "fps": 10,
+      "raw_rgb_mbps": 24.576,
+      "decode_median_ms": 1.3057594987913035,
+      "decode_p95_ms": 2.1701882484194353,
+      "decode_p95_fraction_of_frame_budget": 0.021701882484194353,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.42857142857142855,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.356,
+            "103": 25.624000000000002
+          },
+          "readable_frames": {
+            "32": 38,
+            "103": 69,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.424,
+            "103": 25.488
+          },
+          "readable_frames": {
+            "32": 37,
+            "103": 72,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.356,
+            "103": 25.624000000000002
+          },
+          "readable_frames": {
+            "32": 38,
+            "103": 69,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 320,
+      "fps": 15,
+      "raw_rgb_mbps": 36.864,
+      "decode_median_ms": 1.3057594987913035,
+      "decode_p95_ms": 2.1701882484194353,
+      "decode_p95_fraction_of_frame_budget": 0.03255282372629153,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.42857142857142855,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.356,
+            "103": 25.624000000000002
+          },
+          "readable_frames": {
+            "32": 38,
+            "103": 69,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.356,
+            "103": 25.488
+          },
+          "readable_frames": {
+            "32": 56,
+            "103": 106,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 37.356,
+            "103": 25.488
+          },
+          "readable_frames": {
+            "32": 56,
+            "103": 106,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 6,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 400,
+      "fps": 5,
+      "raw_rgb_mbps": 19.2,
+      "decode_median_ms": 1.8298674985999241,
+      "decode_p95_ms": 2.7779907990407082,
+      "decode_p95_fraction_of_frame_budget": 0.013889953995203541,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.5714285714285714,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.624,
+            "103": 0.02400000000000002
+          },
+          "readable_frames": {
+            "32": 33,
+            "103": 50,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.556000000000004,
+            "103": 0.1559999999999997
+          },
+          "readable_frames": {
+            "32": 33,
+            "103": 48,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 224,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.624,
+            "103": 0.4240000000000004
+          },
+          "readable_frames": {
+            "32": 33,
+            "103": 49,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 400,
+      "fps": 10,
+      "raw_rgb_mbps": 38.4,
+      "decode_median_ms": 1.8298674985999241,
+      "decode_p95_ms": 2.7779907990407082,
+      "decode_p95_fraction_of_frame_budget": 0.027779907990407082,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.5714285714285714,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.556000000000004,
+            "103": 0.02400000000000002
+          },
+          "readable_frames": {
+            "32": 66,
+            "103": 98,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.624,
+            "103": 0.08800000000000008
+          },
+          "readable_frames": {
+            "32": 65,
+            "103": 100,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.556000000000004,
+            "103": 0.1559999999999997
+          },
+          "readable_frames": {
+            "32": 66,
+            "103": 97,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 400,
+      "fps": 15,
+      "raw_rgb_mbps": 57.6,
+      "decode_median_ms": 1.8298674985999241,
+      "decode_p95_ms": 2.7779907990407082,
+      "decode_p95_fraction_of_frame_budget": 0.04166986198561062,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.5714285714285714,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.556000000000004,
+            "103": 0.02400000000000002
+          },
+          "readable_frames": {
+            "32": 66,
+            "103": 98,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.556000000000004,
+            "103": 0.08800000000000008
+          },
+          "readable_frames": {
+            "32": 98,
+            "103": 148,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 34.556000000000004,
+            "103": 0.08800000000000008
+          },
+          "readable_frames": {
+            "32": 98,
+            "103": 148,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 8,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 480,
+      "fps": 5,
+      "raw_rgb_mbps": 27.648,
+      "decode_median_ms": 2.480289498635102,
+      "decode_p95_ms": 3.6535807990730964,
+      "decode_p95_fraction_of_frame_budget": 0.018267903995365483,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.7380952380952381,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.4240000000000004,
+            "103": 0.02400000000000002
+          },
+          "readable_frames": {
+            "32": 49,
+            "103": 67,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 10,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.3560000000000008,
+            "103": 0.1559999999999997
+          },
+          "readable_frames": {
+            "32": 48,
+            "103": 64,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 224,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.4240000000000004,
+            "103": 0.2240000000000002
+          },
+          "readable_frames": {
+            "32": 49,
+            "103": 66,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 10,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 480,
+      "fps": 10,
+      "raw_rgb_mbps": 55.296,
+      "decode_median_ms": 2.480289498635102,
+      "decode_p95_ms": 3.6535807990730964,
+      "decode_p95_fraction_of_frame_budget": 0.036535807990730966,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.7857142857142857,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.3560000000000008,
+            "103": 0.02400000000000002
+          },
+          "readable_frames": {
+            "32": 97,
+            "103": 131,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.088,
+            "103": 0.08800000000000008
+          },
+          "readable_frames": {
+            "32": 100,
+            "103": 138,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.3560000000000008,
+            "103": 0.1559999999999997
+          },
+          "readable_frames": {
+            "32": 97,
+            "103": 130,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 480,
+      "fps": 15,
+      "raw_rgb_mbps": 82.944,
+      "decode_median_ms": 2.480289498635102,
+      "decode_p95_ms": 3.6535807990730964,
+      "decode_p95_fraction_of_frame_budget": 0.054803711986096446,
+      "mean_readable_id_count": 2.0,
+      "episode_capture_fraction": 0.7857142857142857,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.3560000000000008,
+            "103": 0.02400000000000002
+          },
+          "readable_frames": {
+            "32": 97,
+            "103": 131,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.088,
+            "103": 0.08800000000000008
+          },
+          "readable_frames": {
+            "32": 148,
+            "103": 202,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103
+          ],
+          "first_readable_s": {
+            "32": 2.088,
+            "103": 0.08800000000000008
+          },
+          "readable_frames": {
+            "32": 148,
+            "103": 202,
+            "7": 0
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 11,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 640,
+      "fps": 5,
+      "raw_rgb_mbps": 49.152,
+      "decode_median_ms": 4.193009499431355,
+      "decode_p95_ms": 5.974959300692716,
+      "decode_p95_fraction_of_frame_budget": 0.029874796503463582,
+      "mean_readable_id_count": 3.0,
+      "episode_capture_fraction": 0.9523809523809523,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.02400000000000002,
+            "103": 0.2240000000000002,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 90,
+            "103": 70,
+            "7": 21
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 13,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 225,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.1559999999999997,
+            "103": 0.1559999999999997,
+            "7": 37.956
+          },
+          "readable_frames": {
+            "32": 88,
+            "103": 72,
+            "7": 23
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 224,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.2240000000000002,
+            "103": 0.2240000000000002,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 89,
+            "103": 70,
+            "7": 21
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 13,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 640,
+      "fps": 10,
+      "raw_rgb_mbps": 98.304,
+      "decode_median_ms": 4.193009499431355,
+      "decode_p95_ms": 5.974959300692716,
+      "decode_p95_fraction_of_frame_budget": 0.059749593006927164,
+      "mean_readable_id_count": 3.0,
+      "episode_capture_fraction": 1.0,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.02400000000000002,
+            "103": 0.1559999999999997,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 178,
+            "103": 142,
+            "7": 44
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.08800000000000008,
+            "103": 0.2240000000000002,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 176,
+            "103": 142,
+            "7": 44
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 449,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.1559999999999997,
+            "103": 0.1559999999999997,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 177,
+            "103": 142,
+            "7": 44
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    },
+    {
+      "size": 640,
+      "fps": 15,
+      "raw_rgb_mbps": 147.456,
+      "decode_median_ms": 4.193009499431355,
+      "decode_p95_ms": 5.974959300692716,
+      "decode_p95_fraction_of_frame_budget": 0.08962438951039074,
+      "mean_readable_id_count": 3.0,
+      "episode_capture_fraction": 1.0,
+      "unexpected_raw_id_frames": 0,
+      "phases": [
+        {
+          "phase": 0.0,
+          "frames": 450,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.02400000000000002,
+            "103": 0.1559999999999997,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 178,
+            "103": 142,
+            "7": 44
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.3333333333333333,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.08800000000000008,
+            "103": 0.1559999999999997,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 264,
+            "103": 214,
+            "7": 67
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        },
+        {
+          "phase": 0.6666666666666666,
+          "frames": 674,
+          "readable_ids": [
+            32,
+            103,
+            7
+          ],
+          "first_readable_s": {
+            "32": 0.08800000000000008,
+            "103": 0.1559999999999997,
+            "7": 37.824
+          },
+          "readable_frames": {
+            "32": 264,
+            "103": 214,
+            "7": 67
+          },
+          "native_visible_episodes": 14,
+          "episodes_sampled_and_readable": 14,
+          "unexpected_raw_id_frames": 0
+        }
+      ]
+    }
+  ],
+  "limits": "Decode-only timing includes v1.2 small-wall proposal generation, not TF/range/consensus or full ROS callback; readable IDs are not final registration"
+}
