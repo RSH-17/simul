@@ -1,3 +1,5 @@
+밀집 구간에서 후보 소진·반복 실패를 줄이는 **별도 실험판 Mixed v1.4.0**을 추가했습니다. v1.2·v1.3.1은 보존합니다. [변경 근거와 검증 범위](policy_candidates/2026-11-20_mixed_crowded_navigation/README.md)
+
 실물 보드의 **Mixed v1.3.1 부드러운 주행·회전**은 전진 상한 0.30 m/s와 일치시킨 가속·감속 설정을 사용합니다. [설정과 검증 범위](policy_candidates/2026-11-20_mixed_smooth_030/README.md)
 
 실물 보드에 **Mixed v1.3 막힘·스톨 복구**를 별도 추가했습니다. 정체 시 안전 후진 검토와 짧은 모터 스톨의 정지·해제 확인을 연결합니다. [변경·검증·실물 미검증 범위](policy_candidates/2026-11-20_mixed_stall_recovery/README.md)

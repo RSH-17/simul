@@ -29,6 +29,7 @@ START_WORKSPACES = {
     "start-marker-relook": "flow_v3_r32_marker_relook_ws",
     "start-marker-relook-045": "flow_v3_r32_marker_relook_ws",
     "start-stall-recovery": "flow_v3_r32_smooth030_ws",
+    "start-crowded": "flow_v3_r32_crowded_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
@@ -43,6 +44,7 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-marker-relook": "Mixed · 판독 마커 재관찰 (v1.2 실험)",
           "start-marker-relook-045": "Mixed · 판독 마커 재관찰 (v1.2 · 0.45 m/s)",
           "start-stall-recovery": "Mixed · 부드러운 주행·복구 (v1.3.1 · 0.30 m/s)",
+          "start-crowded": "Mixed · 밀집 장애물 판단 (v1.4 실험 · 0.30 m/s)",
           "start-upstream-r32": "원본 · R32"}
 
 
@@ -103,7 +105,7 @@ class BoardControl:
     def command(self, action):
         workspace = self.workspace
         forward_045 = action == "start-marker-relook-045"
-        recover_stall = action == "start-stall-recovery"
+        recover_stall = action in ("start-stall-recovery", "start-crowded")
         native = action == "start-upstream-r32"
         side_inspection = action in ("start-side", "start-general")
         if START_WORKSPACES.get(action):
