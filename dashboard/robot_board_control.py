@@ -28,7 +28,7 @@ START_WORKSPACES = {
     "start-cluster-exit": "flow_v3_r32_cluster_exit_ws",
     "start-marker-relook": "flow_v3_r32_marker_relook_ws",
     "start-marker-relook-045": "flow_v3_r32_marker_relook_ws",
-    "start-stall-recovery": "flow_v3_r32_stall_recovery_ws",
+    "start-stall-recovery": "flow_v3_r32_smooth030_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
@@ -42,7 +42,7 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-cluster-exit": "Mixed · 상자 재방문 줄이기 (v1.1.0)",
           "start-marker-relook": "Mixed · 판독 마커 재관찰 (v1.2 실험)",
           "start-marker-relook-045": "Mixed · 판독 마커 재관찰 (v1.2 · 0.45 m/s)",
-          "start-stall-recovery": "Mixed · 막힘·스톨 복구 (v1.3 · 0.45 m/s)",
+          "start-stall-recovery": "Mixed · 부드러운 주행·복구 (v1.3.1 · 0.30 m/s)",
           "start-upstream-r32": "원본 · R32"}
 
 
@@ -102,7 +102,7 @@ class BoardControl:
 
     def command(self, action):
         workspace = self.workspace
-        forward_045 = action in ("start-marker-relook-045", "start-stall-recovery")
+        forward_045 = action == "start-marker-relook-045"
         recover_stall = action == "start-stall-recovery"
         native = action == "start-upstream-r32"
         side_inspection = action in ("start-side", "start-general")

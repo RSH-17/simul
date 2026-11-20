@@ -1,3 +1,5 @@
+실물 보드의 **Mixed v1.3.1 부드러운 주행·회전**은 전진 상한 0.30 m/s와 일치시킨 가속·감속 설정을 사용합니다. [설정과 검증 범위](policy_candidates/2026-11-20_mixed_smooth_030/README.md)
+
 실물 보드에 **Mixed v1.3 막힘·스톨 복구**를 별도 추가했습니다. 정체 시 안전 후진 검토와 짧은 모터 스톨의 정지·해제 확인을 연결합니다. [변경·검증·실물 미검증 범위](policy_candidates/2026-11-20_mixed_stall_recovery/README.md)
 
 실물 대시보드의 **Mixed v1.2 판독 마커 재관찰**은 기본판과 전진 상한 0.45 m/s판 중 선택할 수 있습니다. 놓쳤던 실물 녹화에서 등록 ID가 0개에서 5번 한 개로 바뀌었습니다. [재생 결과와 실험 범위](policy_candidates/2026-11-20_mixed_marker_relook/README.md)

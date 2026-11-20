@@ -147,14 +147,14 @@ def test_board_start_supplies_wired_dds_even_without_launcher_environment(tmp_pa
                                                 ('start-cluster-exit','flow_v3_r32_cluster_exit_ws'),
                                                 ('start-marker-relook','flow_v3_r32_marker_relook_ws'),
                                                 ('start-marker-relook-045','flow_v3_r32_marker_relook_ws'),
-                                                ('start-stall-recovery','flow_v3_r32_stall_recovery_ws')])
+                                                ('start-stall-recovery','flow_v3_r32_smooth030_ws')])
 def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(tmp_path, action, workspace):
     board = BoardControl(tmp_path, tmp_path/'baseline', 184, state_dir=tmp_path)
     cmd = board.command(action)
     assert cmd[cmd.index('--workspace')+1] == str(tmp_path/workspace)
     assert cmd[cmd.index('--')+1:].count('start') == 1
     assert '2026-11-13_face_intent_v2/policy.json' in cmd[cmd.index('--policy')+1]
-    assert ('--forward-045' in cmd) == (action in ('start-marker-relook-045','start-stall-recovery'))
+    assert ('--forward-045' in cmd) == (action == 'start-marker-relook-045')
     assert ('--recover-stall' in cmd) == (action == 'start-stall-recovery')
     assert ('--side-inspection' in cmd) == (action in ('start-side', 'start-general'))
     with patch.object(board, 'spawn', return_value=(process(1), tmp_path/'start.log')):
