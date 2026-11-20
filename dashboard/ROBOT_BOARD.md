@@ -169,3 +169,14 @@ loginctl show-user ubuntu --property=Linger
 접촉 횟수에 따른 종료 제한은 없습니다. 감독기는 10초 연속 접촉과 낭떠러지/스톨/바퀴 들림에만 안전 정지합니다.
 시작 시 이미 눌린 범퍼는 여전히 출발을 거부합니다. 감독기 22개 및 기존 정책의
 범퍼/후방 검사 10개가 통과했으며, 새 설정으로 실물 접촉을 고의 유발하지 않았습니다.
+
+## Mixed 벽 후보 탐색 버전
+
+실물 보드에서 정책 이름 옆의 버전 번호로 선택한다. 아래 태그는 각각 설치 가능한 소스와 설정을 가리킨다.
+
+| 보드 표시 | Git 태그 | 설치된 작업공간 |
+|---|---|---|
+| Mixed · 작은 벽 후보 기억 (v1.0.0) | [mixed-wall-search-v1.0.0](https://github.com/peter010905/simul/tree/mixed-wall-search-v1.0.0) | `flow_v3_r32_wall_cues_final_ws` |
+| Mixed · 상자 재방문 줄이기 (v1.1.0) | [mixed-wall-search-v1.1.0](https://github.com/peter010905/simul/tree/mixed-wall-search-v1.1.0) | `flow_v3_r32_cluster_exit_ws` |
+
+정책 동작이나 실행 설정이 바뀌면 새 태그와 작업공간을 만들고 보드의 표시 버전을 함께 갱신한다. 재현할 때는 해당 태그를 체크아웃한다.

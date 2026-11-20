@@ -35,8 +35,8 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-side": "Mixed · 이동 중 옆면 관찰",
           "start-general": "Mixed · 일반 장애물 집중 탐색",
           "start-center": "Mixed · 가운데 장애물 → 벽",
-          "start-wall-cues": "Mixed · 작은 벽 후보 기억",
-          "start-cluster-exit": "Mixed · 상자 재방문 줄이기",
+          "start-wall-cues": "Mixed · 작은 벽 후보 기억 (v1.0.0)",
+          "start-cluster-exit": "Mixed · 상자 재방문 줄이기 (v1.1.0)",
           "start-upstream-r32": "원본 · R32"}
 
 
