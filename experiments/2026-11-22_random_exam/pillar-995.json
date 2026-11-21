@@ -1,0 +1,1198 @@
+{
+  "labels": [
+    "Balanced",
+    "R5"
+  ],
+  "runs": [
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "seed": 2437656298,
+      "id": 995,
+      "host": "wall_structure_column_nc_3",
+      "printed_outward_xy": [
+        -1.0,
+        0.0
+      ],
+      "elapsed_sim_s": 600.0,
+      "registered_s": null,
+      "body_near_front_s": 0.0,
+      "body_near_back_s": 0.0,
+      "decisions": 42,
+      "options_close_front": 259,
+      "selected_close_front": 0,
+      "options_readable_at_goal_heading": 70,
+      "decisions_with_readable_option": 41,
+      "selected_readable_at_goal_heading": 0,
+      "evidence": [
+        {
+          "elapsed_s": 19.816,
+          "proposed_xy": [
+            [
+              -3.544,
+              4.971
+            ],
+            [
+              -2.616,
+              5.173
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "explore_open_frontier"
+        },
+        {
+          "elapsed_s": 33.316,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ],
+            [
+              -3.269,
+              5.088
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 44.816,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 51.316,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ],
+            [
+              -2.908,
+              4.604
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 62.816,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ],
+            [
+              -3.46,
+              4.79
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 76.316,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 96.316,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 105.816,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 119.316,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ],
+            [
+              -3.379,
+              4.654
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 127.816,
+          "proposed_xy": [
+            [
+              -3.552,
+              4.975
+            ],
+            [
+              -3.254,
+              4.784
+            ],
+            [
+              -2.903,
+              4.349
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "explore_open_frontier"
+        },
+        {
+          "elapsed_s": 147.316,
+          "proposed_xy": [
+            [
+              -3.554,
+              4.975
+            ],
+            [
+              -2.906,
+              4.348
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 160.316,
+          "proposed_xy": [
+            [
+              -3.558,
+              4.989
+            ],
+            [
+              -2.63,
+              5.191
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 175.816,
+          "proposed_xy": [
+            [
+              -3.558,
+              4.989
+            ],
+            [
+              -2.63,
+              5.191
+            ],
+            [
+              -3.233,
+              4.906
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 197.816,
+          "proposed_xy": [
+            [
+              -3.568,
+              4.986
+            ],
+            [
+              -2.64,
+              5.189
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 209.816,
+          "proposed_xy": [
+            [
+              -3.568,
+              4.986
+            ],
+            [
+              -2.64,
+              5.189
+            ],
+            [
+              -3.273,
+              4.334
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 227.316,
+          "proposed_xy": [
+            [
+              -3.568,
+              4.986
+            ],
+            [
+              -2.64,
+              5.189
+            ],
+            [
+              -3.175,
+              4.356
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 249.316,
+          "proposed_xy": [
+            [
+              -3.56,
+              4.981
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 261.816,
+          "proposed_xy": [
+            [
+              -3.56,
+              4.981
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 272.316,
+          "proposed_xy": [
+            [
+              -3.56,
+              4.981
+            ],
+            [
+              -3.235,
+              4.898
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 283.816,
+          "proposed_xy": [
+            [
+              -3.56,
+              4.981
+            ],
+            [
+              -3.235,
+              4.898
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 307.816,
+          "proposed_xy": [
+            [
+              -3.561,
+              4.985
+            ],
+            [
+              -3.235,
+              4.902
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 328.816,
+          "proposed_xy": [
+            [
+              -3.561,
+              4.985
+            ],
+            [
+              -3.235,
+              4.902
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 341.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -3.238,
+              4.902
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 350.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -3.238,
+              4.902
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 366.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -3.012,
+              4.337
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "explore_open_frontier"
+        },
+        {
+          "elapsed_s": 392.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -3.12,
+              4.365
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "explore_open_frontier"
+        },
+        {
+          "elapsed_s": 414.316,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 439.316,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -2.708,
+              4.352
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "flow_or_marker",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 454.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 461.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 473.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 488.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -2.757,
+              4.342
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 501.316,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 519.316,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 528.316,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 540.316,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -3.12,
+              4.365
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 547.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ],
+            [
+              -2.751,
+              4.548
+            ],
+            [
+              -2.963,
+              4.348
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 558.816,
+          "proposed_xy": [
+            [
+              -3.563,
+              4.985
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 571.316,
+          "proposed_xy": [
+            [
+              -3.561,
+              4.984
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 579.316,
+          "proposed_xy": [
+            [
+              -3.561,
+              4.984
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 589.316,
+          "proposed_xy": [
+            [
+              -3.561,
+              4.984
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        }
+      ]
+    },
+    {
+      "run": "v151-survey-candidate-track-m2437656298-526684097893377877",
+      "seed": 2437656298,
+      "id": 995,
+      "host": "wall_structure_column_nc_3",
+      "printed_outward_xy": [
+        -1.0,
+        0.0
+      ],
+      "elapsed_sim_s": 600.016,
+      "registered_s": null,
+      "body_near_front_s": 0.0,
+      "body_near_back_s": 11.24,
+      "decisions": 32,
+      "options_close_front": 184,
+      "selected_close_front": 0,
+      "options_readable_at_goal_heading": 56,
+      "decisions_with_readable_option": 30,
+      "selected_readable_at_goal_heading": 0,
+      "evidence": [
+        {
+          "elapsed_s": 25.172,
+          "proposed_xy": [
+            [
+              -3.538,
+              4.965
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 33.672,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.972
+            ],
+            [
+              -2.75,
+              4.377
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 42.672,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.972
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 59.172,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.972
+            ],
+            [
+              -2.617,
+              5.174
+            ],
+            [
+              -3.104,
+              4.352
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 78.672,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.974
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 91.672,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.974
+            ],
+            [
+              -3.261,
+              4.37
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 113.172,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.974
+            ],
+            [
+              -3.261,
+              4.37
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 149.672,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.974
+            ],
+            [
+              -3.31,
+              4.36
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 170.172,
+          "proposed_xy": [
+            [
+              -3.545,
+              4.974
+            ],
+            [
+              -3.252,
+              5.037
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 177.672,
+          "proposed_xy": [
+            [
+              -3.546,
+              4.975
+            ],
+            [
+              -3.21,
+              4.843
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 191.672,
+          "proposed_xy": [
+            [
+              -3.546,
+              4.977
+            ],
+            [
+              -3.213,
+              4.385
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 218.172,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.97
+            ],
+            [
+              -3.138,
+              4.35
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 230.172,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.97
+            ],
+            [
+              -3.295,
+              4.367
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "nearby_distinct_object_face"
+        },
+        {
+          "elapsed_s": 246.672,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.97
+            ],
+            [
+              -3.138,
+              4.35
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 254.672,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.97
+            ],
+            [
+              -3.138,
+              4.35
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 280.672,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.968
+            ],
+            [
+              -3.09,
+              4.358
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 304.672,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.968
+            ],
+            [
+              -3.139,
+              4.347
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 321.172,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.968
+            ],
+            [
+              -3.139,
+              4.347
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 353.672,
+          "proposed_xy": [
+            [
+              -3.58,
+              4.968
+            ],
+            [
+              -3.296,
+              4.364
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 379.672,
+          "proposed_xy": [
+            [
+              -3.576,
+              4.971
+            ],
+            [
+              -2.879,
+              4.354
+            ],
+            [
+              -2.83,
+              4.365
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 400.172,
+          "proposed_xy": [
+            [
+              -3.568,
+              4.973
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 439.172,
+          "proposed_xy": [
+            [
+              -3.571,
+              4.972
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 453.672,
+          "proposed_xy": [
+            [
+              -3.571,
+              4.972
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 502.672,
+          "proposed_xy": [
+            [
+              -3.567,
+              4.974
+            ],
+            [
+              -3.232,
+              4.842
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "flow_or_marker",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 524.172,
+          "proposed_xy": [
+            [
+              -3.567,
+              4.974
+            ],
+            [
+              -3.232,
+              4.842
+            ],
+            [
+              -3.126,
+              4.353
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 536.672,
+          "proposed_xy": [
+            [
+              -3.567,
+              4.974
+            ],
+            [
+              -3.232,
+              4.842
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 557.172,
+          "proposed_xy": [
+            [
+              -3.567,
+              4.974
+            ],
+            [
+              -3.232,
+              4.842
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 571.172,
+          "proposed_xy": [
+            [
+              -3.567,
+              4.974
+            ],
+            [
+              -3.232,
+              4.842
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 585.172,
+          "proposed_xy": [
+            [
+              -3.566,
+              4.974
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 598.172,
+          "proposed_xy": [
+            [
+              -3.566,
+              4.977
+            ],
+            [
+              -2.638,
+              5.178
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        }
+      ]
+    }
+  ],
+  "minimum_px": 18,
+  "max_incidence_deg": 60,
+  "scope": "Arrival yaw only, initial map-to-world alignment. Saved alternatives include the base planning pool and the selected hybrid goal. Five SDF rays are geometric opportunities, not completed motion or successful Nav2 plans. In-place sweeps and subsequent turns are not counted."
+}

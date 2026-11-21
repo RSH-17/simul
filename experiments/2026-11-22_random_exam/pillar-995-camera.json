@@ -1,0 +1,118 @@
+{
+  "baseline": {
+    "projection": {
+      "printed_normal_xy": [
+        -1.0,
+        0.0
+      ],
+      "printed_side_sdf_x_sign": -1.0,
+      "physical_near_frames": 0,
+      "physical_near_s": 0.0,
+      "physical_near_spans": [],
+      "near_center_in_image_frames": 0,
+      "near_min_off_axis_deg": null,
+      "near_median_off_axis_deg": null,
+      "near_quasistationary_s": 0.0,
+      "near_direction_s": {
+        "east": 0.0,
+        "north": 0.0,
+        "west": 0.0,
+        "south": 0.0
+      },
+      "near_incidence_s": {
+        "front_to_60_deg": 0.0,
+        "front_oblique": 0.0,
+        "behind": 0.0
+      },
+      "front_in_fov_18px_frames": 0,
+      "center_ray_clear_18px_frames": 0,
+      "five_rays_clear_18px_frames": 0,
+      "five_rays_clear_18px_within_1p5m_frames": 0,
+      "first_5ray_18px_s": null,
+      "five_rays_clear_18px_frames_before_registration": 0,
+      "near_5ray_18px_spans": [],
+      "small_6_to_lt18_px": {
+        "clear_all": 0,
+        "partial_1_to_4_rays_clear": 0,
+        "all_five_blocked": 0
+      },
+      "online_decoded_count": 0,
+      "registered_s": null,
+      "registered_then_actual_near_s": null
+    },
+    "raw_jpeg_decodes": {
+      "frames": 0,
+      "first": null,
+      "last": null
+    },
+    "closest_m": 7.602395799513624,
+    "native_fingerprints": {
+      "scene.json": "018337bae68c5b122b783acc12839d168c50287cc53d96a19ffc908ef629c3c9",
+      "headings.csv": "9e38f035fc6386d846938768ce19328fd4dd4f26a07e129b13e4994aa5f3b49d",
+      "frames.csv": "20fa42b09d2fec2f2188c02dda0d67df401f0d8f2f198b5f27ae9bc8c5d1b580",
+      "world/osp_studio.sdf": "8b8b20d71ba4a1df1fd5b36975413daf8098ecdea05cdee304174850c2ccddba",
+      "metrics.json": "709e979c8608914bd9808b6de16dd66e411002d577332153413b4cbd729d9897"
+    }
+  },
+  "candidate": {
+    "projection": {
+      "printed_normal_xy": [
+        -1.0,
+        0.0
+      ],
+      "printed_side_sdf_x_sign": -1.0,
+      "physical_near_frames": 57,
+      "physical_near_s": 11.4,
+      "physical_near_spans": [
+        [
+          588.76,
+          599.96,
+          57
+        ]
+      ],
+      "near_center_in_image_frames": 30,
+      "near_min_off_axis_deg": 1.1965652860307245,
+      "near_median_off_axis_deg": 31.51015898535224,
+      "near_quasistationary_s": 1.6,
+      "near_direction_s": {
+        "east": 3.4,
+        "north": 0.0,
+        "west": 0.0,
+        "south": 8.0
+      },
+      "near_incidence_s": {
+        "front_to_60_deg": 0.0,
+        "front_oblique": 0.0,
+        "behind": 11.4
+      },
+      "front_in_fov_18px_frames": 0,
+      "center_ray_clear_18px_frames": 0,
+      "five_rays_clear_18px_frames": 0,
+      "five_rays_clear_18px_within_1p5m_frames": 0,
+      "first_5ray_18px_s": null,
+      "five_rays_clear_18px_frames_before_registration": 0,
+      "near_5ray_18px_spans": [],
+      "small_6_to_lt18_px": {
+        "clear_all": 0,
+        "partial_1_to_4_rays_clear": 0,
+        "all_five_blocked": 0
+      },
+      "online_decoded_count": 0,
+      "registered_s": null,
+      "registered_then_actual_near_s": null
+    },
+    "raw_jpeg_decodes": {
+      "frames": 0,
+      "first": null,
+      "last": null
+    },
+    "closest_m": 0.9626881010363911,
+    "native_fingerprints": {
+      "scene.json": "018337bae68c5b122b783acc12839d168c50287cc53d96a19ffc908ef629c3c9",
+      "headings.csv": "9fce32487577f6a0011776f16ec8a389e1a76e4430a58306d5e9e7aed9c59089",
+      "frames.csv": "45bae1a59838069e52ffe1148a828daacd903f4af96c25816480b6ef81c4a917",
+      "world/osp_studio.sdf": "8b8b20d71ba4a1df1fd5b36975413daf8098ecdea05cdee304174850c2ccddba",
+      "metrics.json": "46317dfae188bdd3eedf852de6a6a5b1891ca6e8e9b10f1fc6ac3b314348bcf0"
+    }
+  }
+}

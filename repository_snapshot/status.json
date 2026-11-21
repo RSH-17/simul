@@ -2141,7 +2141,15 @@
       "episodes": 8,
       "max_display_difference_m": 0.020874404646207267,
       "source": "native Gazebo trajectory"
-    }
+    },
+    "enrolled_print_geometry": {
+      "worlds": 12,
+      "prints": 35,
+      "visible_at_enrolled_pose": 35,
+      "connected_on_40cm_grid": 35,
+      "source": "experiments/2026-11-22_random_exam/geometric-witnesses.json"
+    },
+    "missed_column_case": "experiments/2026-11-22_random_exam/pillar-995.json"
   },
   "mixed_v151_balanced_print_relook": {
     "policy": "Mixed v1.5.1-balanced + edge print relook",
