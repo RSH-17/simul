@@ -1925,14 +1925,71 @@
     "guide": "docs/team-policy-lab/README.md",
     "shared_board_verified_from_host": true,
     "teammate_remote_access_verified": false,
-    "message_sent": false
+    "message_sent": false,
+    "mode": "each_teammate_ubuntu24_jazzy_local_simulation",
+    "entry": "team-sim.sh",
+    "setup_new_workspace_build_verified": true,
+    "portable_smoke": {
+      "stage": "portable_fresh_workspace_integration",
+      "mission_task_success": false,
+      "integration_check_passed": true,
+      "full_mission_test": false,
+      "physical_drive": false,
+      "run": "/home/ubuntu/team-portable-data1122/results/team-team-portable-balanced1122-track-m112601-1795277031081303114",
+      "sim_s": 60.0,
+      "distance_m": 8.355684855483927,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 300,
+        "input_fps_sim": 5.0,
+        "processed_frames": 300,
+        "processed_fps_sim": 5.0,
+        "processed_age_sim_p50_s": 0.06800000000000139,
+        "processed_age_sim_p95_s": 0.08400000000000318,
+        "input_max_gap_sim_s": 0.20000000000000284,
+        "real_time_factor": 0.6214711605142582,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "bumper_events": 0,
+      "video": {
+        "frames": 300,
+        "duration_s": 60.0,
+        "recorded_frames": 300,
+        "max_frame_gap_s": 0.20000000000000284,
+        "sha256": "178b3dc0f79206b00b54ed967d6e5d80851b1fa61e6461a3ed873e074cefecbe"
+      },
+      "simultaneous_benchmarks": 1,
+      "reason": "One-minute installation smoke test, not a 600-second marker-search success sample"
+    },
+    "fixture_archive_sha256": "354358fdbc079902ec49c7d19a761b6baca782abdc142766529502df4a82c758"
   },
   "latest_upstream_comparison": {
     "commit": "d8704f64d7b9098c79a9c42dfec81e29d6d789a8",
     "checked_date_kst": "2026-11-22",
     "tests_passed": 264,
-    "phase": "native_five_running",
+    "phase": "clean_single_simulator_five_running",
     "report": "experiments/2026-11-22_latest_r32_compare/README.md",
-    "physical_drive": false
+    "physical_drive": false,
+    "initial_campaign_preserved": true,
+    "initial_campaign_ranking_eligible": false,
+    "current_root": "/home/ubuntu/r32-latest-d8704f6-1795277159207082213",
+    "initial_interruption": "overlap with portable setup integration; action readiness loss not causally isolated"
   }
 }

@@ -1,7 +1,7 @@
 {
   "updated_utc": "2026-11-21T14:23:15.329068+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 419,
+  "uploaded_verified": 421,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -6796,6 +6796,38 @@
       "recording_frames": 2970,
       "recording_seconds": 594.0,
       "uploaded_verified": true
+    },
+    {
+      "asset": "team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795276801220550538.mp4",
+      "local_path": "training_robust/native90/team-jazzy-installation-check-1122/team-team-portable-balanced1122-track-m112601-1795276801220550538/video/mission.mp4",
+      "bytes": 663507,
+      "sha256": "467194c99193915864b256aacbfa3cd4f79266c15b3e1e5be57736fc3db1f681",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795276801220550538.mp4",
+      "original_evaluator_success": false,
+      "reason": "60-second installation integration only; not a complete marker mission",
+      "elapsed_sim_seconds": 60.0,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 300,
+      "recording_seconds": 60.0,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795277031081303114.mp4",
+      "local_path": "training_robust/native90/team-jazzy-installation-check-1122/team-team-portable-balanced1122-track-m112601-1795277031081303114/video/mission.mp4",
+      "bytes": 662557,
+      "sha256": "178b3dc0f79206b00b54ed967d6e5d80851b1fa61e6461a3ed873e074cefecbe",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795277031081303114.mp4",
+      "original_evaluator_success": false,
+      "reason": "60-second installation integration only; not a complete marker mission",
+      "elapsed_sim_seconds": 60.0,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 300,
+      "recording_seconds": 60.0,
+      "uploaded_verified": true
     }
   ],
   "skipped": [
@@ -6814,5 +6846,5 @@
   ],
   "repository_private": false,
   "note": "Original evaluator success may use an older protocol; actual 1.5m approach is listed separately. Public release downloads; uploads authorized by the repository owner.",
-  "eligible": 419
+  "eligible": 421
 }

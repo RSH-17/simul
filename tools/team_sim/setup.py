@@ -1,0 +1,56 @@
+"""Fetch identical simulation fixtures and build an independent editable policy."""
+import argparse
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tarfile
+import urllib.request
+
+HERE=Path(__file__).resolve().parent
+REPO=HERE.parents[1]
+
+def home():return Path(os.environ.get('TEAM_SIM_HOME',str(Path.home()/'.local/share/simul-team'))).resolve()
+def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+
+def fixtures(archive=None):
+    cfg=json.loads((HERE/'fixtures.json').read_text());cache=home();cache.mkdir(parents=True,exist_ok=True)
+    destination=cache/cfg['root']
+    if not destination.exists():
+        download=Path(archive).resolve() if archive else cache/'fixtures-download.tar.gz'
+        if not download.exists():
+            temporary=download.with_suffix('.download')
+            urllib.request.urlretrieve(cfg['url'],temporary);temporary.replace(download)
+        if digest(download)!=cfg['sha256']:raise ValueError('Fixture archive SHA-256 mismatch')
+        with tarfile.open(download) as tar:
+            for item in tar.getmembers():
+                target=(cache/item.name).resolve()
+                if not target.is_relative_to(cache) or item.issym() or item.islnk():raise ValueError('Unsafe fixture archive')
+            tar.extractall(cache,filter='data')
+    manifest=json.loads((destination/'manifest.json').read_text())
+    for name,sha in manifest['sha256'].items():
+        if digest(destination/name)!=sha:raise ValueError('Modified fixture: '+name)
+    return destination
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360'],default='balanced');p.add_argument('--archive',type=Path)
+    a=p.parse_args();workspace=a.workspace.expanduser().resolve()
+    if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
+    workspace.parent.mkdir(parents=True,exist_ok=True)
+    fixture=fixtures(a.archive)
+    release=REPO/'policy_releases/2026-11-21_mixed_camera_sync_v151'
+    if a.policy=='balanced':
+        subprocess.run([sys.executable,str(release/'build.py'),str(workspace)],check=True)
+    else:
+        subprocess.run([sys.executable,str(REPO/'policy_candidates/2026-11-21_v151_rescue360/install.py'),str(release),str(workspace)],check=True)
+        pkg=workspace/'src/osp_mission'
+        subprocess.run(['c++','-std=c++17','-O3','-ffp-contract=off','-fno-fast-math','-shared','-fPIC',str(pkg/'osp_mission/raycast.cpp'),'-o',str(pkg/'osp_mission/_raycast.so')],check=True)
+        subprocess.run(['g++','-std=c++17','-O1','-I/opt/ros/jazzy/include','-I/usr/include/eigen3',str(pkg/'tools/export_slam_graph_poses.cpp'),'-L/opt/ros/jazzy/lib','-Wl,-rpath,/opt/ros/jazzy/lib','-lkartoSlamToolbox','-lboost_serialization','-lboost_thread','-lpthread','-o',str(pkg/'tools/export_slam_graph_poses')],check=True)
+        subprocess.run(['colcon','build','--symlink-install','--packages-select','osp_mission'],cwd=workspace,check=True)
+    (workspace/'team_policy.json').write_text(json.dumps(dict(policy=a.policy,fixtures=str(fixture),source='frozen-v1.5.1',editable_source=str(workspace/'src/osp_mission/osp_mission')),indent=2)+'\n')
+    print('Prepared',workspace,'with',fixture)
+
+if __name__=='__main__':main()
