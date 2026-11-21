@@ -4,10 +4,27 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from board_results import apply
+from opportunities import print_relooks
 from report import layout_results, missed_markers, report, supplemental
 
 
 class ReportingTests(unittest.TestCase):
+    def test_new_relook_log_distinguishes_request_turn_and_restoring_a_navigation_goal(self):
+        def event(kind, stamp, **extra):
+            return dict(event=kind, stamp=stamp, **extra)
+        choice=dict(source='edge_print',candidate_id=0,measured_pixels=11.)
+        log=[event('requested',20.,choice=dict(source='near_pass')),
+             event('finished',21.,reason='ordinary'),
+             event('requested',25.,choice=choice), event('turn_started',26.,turn_rad=.5),
+             event('finished',28.,reason='processed_frame_dwell',resumed_navigation=True),
+             event('requested',125.,choice=dict(choice,candidate_id=900))]
+        records=print_relooks(log,10.,{'records': {'0': {}}})
+        self.assertEqual((len(records),records[0]['request_s'],records[0]['end_s']),(2,15.,18.))
+        self.assertEqual(records[0]['turn_rad'],.5)
+        self.assertTrue(records[0]['enrolled_id'] and records[0]['navigation_queued'])
+        self.assertIsNone(records[1]['end_s'])
+        self.assertFalse(records[1]['enrolled_id'])
+
     def test_layout_and_camera_failure_counts_only_use_matched_independent_worlds(self):
         with TemporaryDirectory() as temp:
             root = Path(temp)

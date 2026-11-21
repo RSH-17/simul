@@ -40,6 +40,7 @@ def layout_results(pairs, worlds, candidate='R5'):
 
 def missed_markers(root, pairs, candidate='R5'):
     counts = {'baseline': Counter(), 'candidate': Counter()}
+    activity = {'baseline': [], 'candidate': []}
     names = {'registered_without_both_near_witnesses': '등록 후 근거리 증거 부족',
              'decoded_without_registration': '주행 중 번호 판독 후 미등록',
              'predicted_readable_view_without_online_decode': '판독 가능한 기하 조건에서 주행 중 판독 0회',
@@ -57,6 +58,7 @@ def missed_markers(root, pairs, candidate='R5'):
             result = read(path)
             if result['run'] != pair[role]['name'] or set(result['targets']) != set(pair[role]['score']['records']):
                 raise ValueError('Camera audit and scored marker roster disagree')
+            activity[role].append(result)
             for target in result['targets'].values():
                 stage = target['stage']
                 if stage != 'verified' and stage not in names:
@@ -64,11 +66,30 @@ def missed_markers(root, pairs, candidate='R5'):
                 counts[role][stage] += 1
     if not audited:
         return []
-    return ['', f'### 접근을 마치지 못한 마커 ({audited}개 독립 배치)', '',
+    lines = ['', f'### 접근을 마치지 못한 마커 ({audited}개 독립 배치)', '',
             f'| 확인한 마지막 단계 | Balanced | {candidate} |', '|---|---:|---:|',
             *(f"| {label} | {counts['baseline'][stage]} | {counts['candidate'][stage]} |"
               for stage, label in names.items()),
             '', '카메라 보정값, 시뮬레이션 안의 실제 인쇄물·가림과 영상 시각을 대조했다. 기하학적으로 보일 기회와 검출기가 실제로 번호를 읽은 횟수를 구분했다.']
+    if all('stationary_s_below_2cm_per_s' in row for group in activity.values() for row in group):
+        lines.extend(['', '| 정책 | 정지·저속 시간(평균 초) | 선택한 목표 | 같은 종류·35cm 내 재선택 |',
+                      '|---|---:|---:|---:|'])
+        for role, label in (('baseline','Balanced'), ('candidate',candidate)):
+            group=activity[role]
+            lines.append(f"| {label} | {mean(row['stationary_s_below_2cm_per_s'] for row in group):.1f} | "
+                         f"{sum(row['selected_hybrid_goals'] for row in group)} | "
+                         f"{sum(row['repeated_same_kind_within_35cm'] for row in group)} |")
+        lines+=['', '저속 기준은 0.02m/s이며 제자리 회전과 촬영 대기도 포함한다. 같은 위치의 목표는 서로 다른 방향을 보려는 방문도 포함할 수 있다.']
+    if candidate == 'Balanced Print' and all('logged_print_relooks' in r for r in activity['candidate']):
+        looks=[look for row in activity['candidate'] for look in row['logged_print_relooks']]
+        turned=sum(look['turn_rad'] is not None for look in looks)
+        extra=sum(look['outcome']=='new_marker_evidence' for look in looks)
+        resume=sum(look['navigation_queued'] for look in looks)
+        foreign=sum(not look['enrolled_id'] for look in looks)
+        lines+=['',f'새 단서로 요청한 재관찰 {len(looks)}건 중 Nav2 회전 명령을 보낸 건수는 {turned}건이다. '
+                f'추가 마커 증거로 재계획한 경우는 {extra}건, 원래 목표를 복귀 대기열에 넣은 경우는 {resume}건이다. '
+                f'실제 부착 목록에 없는 ID에 대한 요청은 {foreign}건이다.']
+    return lines
 
 
 def supplemental(root, pairs, candidate='R5'):

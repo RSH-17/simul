@@ -15,6 +15,31 @@ def read(path):
     return json.loads(path.read_text())
 
 
+def print_relooks(events, start, score):
+    """A logged request, an actual turn and a later approach are separate observations."""
+    result = []
+    active = None
+    for event in events:
+        kind = event['event']
+        if kind == 'requested':
+            active = None
+            choice = event['choice']
+            if choice.get('source') != 'edge_print':
+                continue
+            ident = str(choice['candidate_id'])
+            active = dict(id=int(ident), request_s=event['stamp']-start, measured_pixels=choice['measured_pixels'],
+                          enrolled_id=ident in score['records'], turn_rad=None, end_s=None,
+                          outcome='no_terminal_event', navigation_queued=False)
+            result.append(active)
+        elif active is not None and kind == 'turn_started':
+            active['turn_rad'] = event['turn_rad']
+        elif active is not None and kind == 'finished':
+            active.update(end_s=event['stamp']-start, outcome=event['reason'],
+                          navigation_queued=event.get('resumed_navigation',False))
+            active = None
+    return result
+
+
 def analyze(folder, score, calibration):
     metrics=read(folder/'metrics.json')
     sensed=metrics['camera']['camera_info']
@@ -47,6 +72,7 @@ def analyze(folder, score, calibration):
                             geometric_first_18px_s=observation['first_5ray_18px_s'],
                             online_decodes=decoded,offline_jpeg_decodes=offline.get(ident,{}).get('frames',0),
                             near_s=observation['physical_near_s'], near_center_frames=observation['near_center_in_image_frames'],
+                            near_incidence_s=observation['near_incidence_s'],
                             near_min_off_axis_deg=observation['near_min_off_axis_deg'],
                             near_median_off_axis_deg=observation['near_median_off_axis_deg'],
                             detector_breakdown={k:v for k,v in metrics['last_detector_status'].get('by_id',{}).get(ident,{}).items()
@@ -60,7 +86,13 @@ def analyze(folder, score, calibration):
             if any(math.dist(xy,point)<=.35 and goal['kind']==kind for point,kind in prior):
                 repeats+=1
             prior.append((xy,goal['kind']))
+    inspection_log=folder/'native/near_pass_inspections.jsonl'
+    events=[json.loads(line) for line in inspection_log.read_text().splitlines() if line.strip()] if inspection_log.is_file() else []
+    start_events=[json.loads(line) for line in (folder/'events.jsonl').read_text().splitlines() if line.strip()]
+    starts=[event['sim'] for event in start_events if event['event']=='start_ack']
+    if len(starts)!=1:raise ValueError('The mission start event is ambiguous: '+folder.name)
     return dict(run=folder.name,evidence=projection['source_sha256'],targets=targets,
+                audit_version=3, logged_print_relooks=print_relooks(events,starts[0],score),
                 selected_hybrid_goals=len(selected),repeated_same_kind_within_35cm=repeats,
                 stationary_s_below_2cm_per_s=metrics['stationary_time_s'],
                 note='Camera exposure projection uses the measured optical transform and five rays. The saved JPEG and online decoder counts measure different things. Repeated goal locations can include purposeful returns with a different heading.')
@@ -76,7 +108,7 @@ def main():
     dst=args.exam/'camera-opportunities';dst.mkdir(exist_ok=True)
     for row in read(args.exam/'episodes.json'):
         path=dst/(row['name']+'.json')
-        if path.exists():continue
+        if path.exists() and read(path).get('audit_version')==3:continue
         record=analyze(args.recordings/row['name'],row['score'],calibration)
         record['calibration_sha256']=hashlib.sha256(args.calibration.read_bytes()).hexdigest()
         tmp=path.with_suffix('.new');tmp.write_text(json.dumps(record,indent=2,allow_nan=False)+'\n');tmp.replace(path)
