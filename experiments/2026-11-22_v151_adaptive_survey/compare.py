@@ -7,6 +7,8 @@ import statistics
 
 import yaml
 
+from diagnostics import extract
+
 
 def load(path):
     return json.loads(path.read_text())
@@ -34,7 +36,8 @@ def measurements(run, row):
                 stopped_s=row['motion']['stopped_s'], selected_goal_counts=row['selected_goal_counts'],
                 cancellations=row['cancellations'],duplicate_selections=row['consecutive_same_selected_goal_count'],
                 settled_start_world_xy=row['start_world_pose'][:2],cpu=row['cpu'].get('detector'),
-                camera_p95_age_s=row['camera']['processed_age_sim_p95_s'])
+                camera_p95_age_s=row['camera']['processed_age_sim_p95_s'],
+                mission=extract(run,row,metric,set(by_id)))
 
 
 def read_group(root):

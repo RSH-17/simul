@@ -1,0 +1,254 @@
+{
+  "seed": 11220431,
+  "opencv": "4.6.0",
+  "rig": {
+    "pixels": 480,
+    "fixture_fx": 332.6475061199908,
+    "policy_fx": 332.6475061199908,
+    "cx": 240.0
+  },
+  "tagged": {
+    "groups": {
+      "frontal/clear": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 16
+      },
+      "frontal/occluded": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 16,
+        "second_entirely_undecoded": 16,
+        "second_undecoded_raw_outline": 14,
+        "second_undecoded_retained_outline": 14,
+        "second_undecoded_with_tiny_or_outline": 14,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "frontal/motion_blur": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 13,
+        "first_id_readable_second_not_readable": 1,
+        "second_entirely_undecoded": 1,
+        "second_undecoded_raw_outline": 1,
+        "second_undecoded_retained_outline": 1,
+        "second_undecoded_with_tiny_or_outline": 1,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "frontal/far": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 16,
+        "second_entirely_undecoded": 16,
+        "second_undecoded_raw_outline": 0,
+        "second_undecoded_retained_outline": 0,
+        "second_undecoded_with_tiny_or_outline": 16,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "skew/clear": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 13,
+        "first_id_readable_second_not_readable": 3
+      },
+      "skew/occluded": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 14,
+        "second_entirely_undecoded": 14,
+        "second_undecoded_raw_outline": 0,
+        "second_undecoded_retained_outline": 0,
+        "second_undecoded_with_tiny_or_outline": 0,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "skew/motion_blur": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 5,
+        "first_id_readable_second_not_readable": 9,
+        "second_entirely_undecoded": 9,
+        "second_undecoded_raw_outline": 5,
+        "second_undecoded_retained_outline": 5,
+        "second_undecoded_with_tiny_or_outline": 6,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "skew/far": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 15,
+        "second_entirely_undecoded": 15,
+        "second_undecoded_raw_outline": 0,
+        "second_undecoded_retained_outline": 0,
+        "second_undecoded_with_tiny_or_outline": 0,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "lateral_clip/clear": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 16,
+        "second_entirely_undecoded": 16,
+        "second_undecoded_raw_outline": 5,
+        "second_undecoded_retained_outline": 5,
+        "second_undecoded_with_tiny_or_outline": 5,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "lateral_clip/occluded": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 15,
+        "second_entirely_undecoded": 15,
+        "second_undecoded_raw_outline": 4,
+        "second_undecoded_retained_outline": 4,
+        "second_undecoded_with_tiny_or_outline": 4,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "lateral_clip/motion_blur": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 16,
+        "second_entirely_undecoded": 16,
+        "second_undecoded_raw_outline": 10,
+        "second_undecoded_retained_outline": 10,
+        "second_undecoded_with_tiny_or_outline": 10,
+        "separate_outline_wrongly_suppressed": 0
+      },
+      "lateral_clip/far": {
+        "frames": 16,
+        "frames_with_spurious_decoded_id": 0,
+        "frames_candidate_changed_decoded_ids": 0,
+        "both_ids_ge18_and_interior": 0,
+        "first_id_readable_second_not_readable": 16,
+        "second_entirely_undecoded": 16,
+        "second_undecoded_raw_outline": 0,
+        "second_undecoded_retained_outline": 0,
+        "second_undecoded_with_tiny_or_outline": 0,
+        "separate_outline_wrongly_suppressed": 0
+      }
+    },
+    "distinct_dictionary_ids": 181
+  },
+  "printed_and_texture_negatives": {
+    "plain": {
+      "frames": 24,
+      "frozen_any_decoded_id": 0,
+      "r2_any_decoded_id": 0,
+      "frozen_any_tiny": 7,
+      "r2_any_tiny": 8,
+      "generic_outline_frames": 8
+    },
+    "gradient_noise": {
+      "frames": 24,
+      "frozen_any_decoded_id": 0,
+      "r2_any_decoded_id": 0,
+      "frozen_any_tiny": 5,
+      "r2_any_tiny": 5,
+      "generic_outline_frames": 10
+    },
+    "furniture_lines": {
+      "frames": 24,
+      "frozen_any_decoded_id": 0,
+      "r2_any_decoded_id": 0,
+      "frozen_any_tiny": 8,
+      "r2_any_tiny": 8,
+      "generic_outline_frames": 8
+    },
+    "checker_fabric": {
+      "frames": 24,
+      "frozen_any_decoded_id": 0,
+      "r2_any_decoded_id": 0,
+      "frozen_any_tiny": 7,
+      "r2_any_tiny": 8,
+      "generic_outline_frames": 8
+    }
+  },
+  "identity_guard": [
+    {
+      "map_spacing_m": 0.0,
+      "simultaneous_clear_frames": 0,
+      "resolved": [],
+      "conflict": true
+    },
+    {
+      "map_spacing_m": 0.0,
+      "simultaneous_clear_frames": 2,
+      "resolved": [],
+      "conflict": true
+    },
+    {
+      "map_spacing_m": 0.0,
+      "simultaneous_clear_frames": 3,
+      "resolved": [
+        7,
+        103
+      ],
+      "conflict": false
+    },
+    {
+      "map_spacing_m": 0.1,
+      "simultaneous_clear_frames": 0,
+      "resolved": [],
+      "conflict": true
+    },
+    {
+      "map_spacing_m": 0.1,
+      "simultaneous_clear_frames": 2,
+      "resolved": [],
+      "conflict": true
+    },
+    {
+      "map_spacing_m": 0.1,
+      "simultaneous_clear_frames": 3,
+      "resolved": [
+        7,
+        103
+      ],
+      "conflict": false
+    },
+    {
+      "map_spacing_m": 0.13,
+      "simultaneous_clear_frames": 0,
+      "resolved": [
+        7,
+        103
+      ],
+      "conflict": false
+    },
+    {
+      "map_spacing_m": 0.13,
+      "simultaneous_clear_frames": 2,
+      "resolved": [
+        7,
+        103
+      ],
+      "conflict": false
+    },
+    {
+      "map_spacing_m": 0.13,
+      "simultaneous_clear_frames": 3,
+      "resolved": [
+        7,
+        103
+      ],
+      "conflict": false
+    }
+  ],
+  "limits": "Synthetic planar image tests; counted decoder outputs and >=18px interior admission separately from registry logic. They do not measure TF/depth, time-consensus in actual motion, registration, safe approach, map accuracy, or navigation. Static image-level negatives are not counts of false turns. 480 simulation calibration does not identify a physical camera profile."
+}

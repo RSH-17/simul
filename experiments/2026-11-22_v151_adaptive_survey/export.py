@@ -9,6 +9,26 @@ import shutil
 from compare import report
 
 
+def save_track(run,dst):
+    host=dst/'tracks'/run.name
+    host.mkdir(parents=True)
+    for filename in ('scene.json','policy_revision.txt','policy_manifest.json'):
+        if (run/filename).is_file():
+            shutil.copy2(run/filename,host/filename)
+    if (run/'run/simulation/demo_layout.json').is_file():
+        shutil.copy2(run/'run/simulation/demo_layout.json',host/'layout.json')
+    with (run/'headings.csv').open() as source, (host/'track.csv').open('w') as output:
+        reader=csv.DictReader(source)
+        writer=csv.DictWriter(output,fieldnames=reader.fieldnames)
+        writer.writeheader()
+        last=-1.
+        for pose in reader:
+            time=float(pose['elapsed_sim_s'])
+            if time >= 0 and time-last >= .25:
+                writer.writerow(pose)
+                last=time
+
+
 def export(root,dst,partial=False):
     result=report(root)
     if not result['complete'] and not partial:
@@ -21,6 +41,8 @@ def export(root,dst,partial=False):
             shutil.copy2(root/name,dst/name)
     archive=json.loads((root/'protocol.json').read_text())['archived_runs']
     archived_names={Path(row).name for row in archive}
+    for path in archive:
+        save_track(Path(path),dst)
     collected=[]
     for role in ('baseline','candidate'):
         runs_file=root/role/'runs.json'
@@ -34,22 +56,7 @@ def export(root,dst,partial=False):
             info=json.loads((run/'audit.json').read_text())['video']
             summary=json.loads((root/role/'report.json').read_text())
             row=next(item for item in summary['runs'] if item['run']==run.name)
-            host=dst/'tracks'/run.name
-            host.mkdir(parents=True)
-            for filename in ('scene.json','policy_revision.txt','policy_manifest.json'):
-                shutil.copy2(run/filename,host/filename)
-            if (run/'run/simulation/demo_layout.json').is_file():
-                shutil.copy2(run/'run/simulation/demo_layout.json',host/'layout.json')
-            with (run/'headings.csv').open() as source, (host/'track.csv').open('w') as output:
-                reader=csv.DictReader(source)
-                writer=csv.DictWriter(output,fieldnames=reader.fieldnames)
-                writer.writeheader()
-                last=-1.
-                for pose in reader:
-                    time=float(pose['elapsed_sim_s'])
-                    if time >= 0 and time-last >= .25:
-                        writer.writerow(pose)
-                        last=time
+            save_track(run,dst)
             episode=dst/'training_robust/native90/v151-adaptive-survey-1122'/run.name
             media=episode/'video'
             media.mkdir(parents=True)
