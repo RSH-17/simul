@@ -1737,6 +1737,10 @@
       112605
     ],
     "physical_drive": false,
-    "report": "experiments/2026-11-21_v151_track5_boxes5/README.md"
+    "report": "experiments/2026-11-21_v151_track5_boxes5/README.md",
+    "completed_verified_at_snapshot": 1,
+    "strict_successes_at_snapshot": 0,
+    "outer_wall_guard_s": 2400,
+    "first_observer_preserved_during_supervisor_handoff": true
   }
 }

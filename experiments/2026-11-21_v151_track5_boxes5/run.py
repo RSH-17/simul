@@ -57,7 +57,7 @@ def main():
         print('START',index,run,flush=True)
         try:
             with (run/'observer.log').open('w') as log:
-                subprocess.run(['bash','-lc','source /opt/ros/jazzy/setup.bash && source "$CAMERA_POLICY_WORKSPACE/install/setup.bash" && exec python3 -u "'+str(HERE/'trial.py')+'"'],env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=1200)
+                subprocess.run(['bash','-lc','source /opt/ros/jazzy/setup.bash && source "$CAMERA_POLICY_WORKSPACE/install/setup.bash" && exec python3 -u "'+str(HERE/'trial.py')+'"'],env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=2400)
             with (run/'observer.log').open('a') as log:
                 subprocess.run(['python3',str(Path(env['CAMERA_BENCH_HELPERS'])/'2026-11-19_corridor_box/finish_trial.py'),str(run),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=180)
                 subprocess.run(['python3',str(BASE.parent/'2026-11-20_v12_camera_rate/refresh_final.py'),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=30)

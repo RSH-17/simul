@@ -19,15 +19,21 @@ def export(root,destination):
     for r in report['runs']:r['split']='large_track_validation'
     for g in report['groups']:g['split']='large_track_validation'
     report['notes'][0]='Five different predetermined large-track layouts; one frozen policy, no tuning or inter-policy matched comparison.'
+    report['boxes_per_layout']=5
     destination.mkdir(exist_ok=False)
     (destination/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     for name in ('protocol.json','runtime_parameters.json'):shutil.copy2(root/name,destination/name)
+    if (root/'supervisor_revision.json').exists():shutil.copy2(root/'supervisor_revision.json',destination/'supervisor_revision.json')
     provenance=[]
     for name,row in zip(json.loads((root/'runs.json').read_text()),report['runs']):
         run=Path(name);assert run.name==row['run']
         metrics=json.loads((run/'metrics.json').read_text());audit=json.loads((run/'audit.json').read_text())
         scene=json.loads((run/'scene.json').read_text())
+        assert len(scene['obstacles'])==5 and scene['room_size']==[20.15,11.35]
         row['rendered_seed']=scene['seed']
+        row['wall_marker_ids']=sorted(t['id'] for t in scene['targets'] if t['attached_to'].startswith('wall_'))
+        row['box_marker_ids']=sorted(t['id'] for t in scene['targets'] if not t['attached_to'].startswith('wall_'))
+        row['independent_closest_m']=metrics['min_ground_truth_m']
         episode=destination/'training_robust/native90/v151-track-five-boxes5-1121'/run.name
         (episode/'video').mkdir(parents=True)
         shutil.copy2(run/'mission.mp4',episode/'video/mission.mp4')
