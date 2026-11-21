@@ -15,7 +15,12 @@ def plot(root,output):
     for ax,row in zip(axes.flat,report['runs']):
         source=root/'plot_inputs'/row['run'];scene=json.loads((source/'scene.json').read_text())
         tables=json.loads((source/'demo_layout.json').read_text())['tables']
-        width,height=scene['room_size'];ax.add_patch(Rectangle((-width/2,-height/2),width,height,fill=False,color='#50575f'))
+        width,height=scene['room_size'];west,east,south,north=-width/2,width/2,-height/2,height/2
+        outline=[(west,south)]
+        if scene.get('south_recess'):
+            r=scene['south_recess'];outline += [(r['x_min'],south),(r['x_min'],south-r['depth']),(r['x_max'],south-r['depth']),(r['x_max'],south)]
+        outline += [(east,south),(east,north),(west,north),(west,south)]
+        ax.plot([p[0] for p in outline],[p[1] for p in outline],color='#50575f',lw=1)
         for b in scene['partitions']+tables+scene['obstacles']:
             color='#dbc7a5' if b in tables else '#9b9f94'
             rect=Rectangle((b['x']-b['sx']/2,b['y']-b['sy']/2),b['sx'],b['sy'],facecolor=color,alpha=.75)
