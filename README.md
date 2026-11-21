@@ -1,5 +1,7 @@
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
+R5 비교의 독립 배치 다섯 곳에서 근거리 확인은 Balanced 14/15장, R5 11/15장이었다. 전체 마커를 확인한 배치는 각각 4/5, 1/5였다. [시험장 비교 결과와 영상](experiments/2026-11-22_random_exam/results/surface-r5/RESULTS.md)
+
 [Balanced · 스친 마커 재관찰](policy_candidates/2026-11-22_v151_balanced_print_relook/README.md) · [책상까지 전부 재배치한 5개 독립 시험](experiments/2026-11-22_random_exam/balanced_print/enrollment.json)
 
 팀 실행기에서 시드를 생략하면 같은 시험장에 책상·장애물·마커를 새로 배치합니다. 출력한 시드로 동일한 장면을 다시 실행할 수 있습니다. [팀 대시보드 실행법](docs/team-policy-lab/README.md)
@@ -492,7 +494,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 435개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 447개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -500,6 +502,18 @@ python3 scripts/publish_simulation_videos.py --upload
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [v151-random-exam-112209__v151-survey-baseline-track-m178349315-106374630088071414.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m178349315-106374630088071414.mp4) | 성공 | 확인 | 306.55600000000004 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m2437656298-526684097893377877.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m2437656298-526684097893377877.mp4) | 실패 | 미달 | 600.0 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m3280183581-269900596522503902.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m3280183581-269900596522503902.mp4) | 성공 | 확인 | 129.07600000000002 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m545514539-663389709141213120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m545514539-663389709141213120.mp4) | 성공 | 확인 | 530.192 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m647911238-1066999508311362768.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m647911238-1066999508311362768.mp4) | 성공 | 확인 | 258.864 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m647911238-328852813392071914.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m647911238-328852813392071914.mp4) | 성공 | 확인 | 262.88399999999996 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m178349315-106374630088071414.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m178349315-106374630088071414.mp4) | 실패 | 미달 | 600.0 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m2437656298-526684097893377877.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m2437656298-526684097893377877.mp4) | 실패 | 미달 | 600.016 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m3280183581-269900596522503902.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m3280183581-269900596522503902.mp4) | 성공 | 확인 | 238.804 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m545514539-663389709141213120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m545514539-663389709141213120.mp4) | 실패 | 미달 | 600.0 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m647911238-1066999508311362768.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m647911238-1066999508311362768.mp4) | 실패 | 미달 | 600.0160000000001 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m647911238-328852813392071914.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m647911238-328852813392071914.mp4) | 성공 | 확인 | 293.308 |
 | [v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4) | 성공 | 확인 | 84.224 |
 | [v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4) | 성공 | 확인 | 223.812 |
 | [v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4) | 성공 | 확인 | 137.99599999999998 |

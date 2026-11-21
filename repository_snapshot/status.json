@@ -2125,7 +2125,7 @@
     "shell_sha256": "8f4a4d592addbb191c7ea4df4777972f4a5200565da094c66cc5317591d0a8be",
     "registration_sha256": "b286ead54801b00a326b6b5c3f319fba0808f22d715bea6d6ccc7e525b32ffee",
     "protocol_sha256": "a6b9665f1c34e79e72fdd666d568e68ebe0d71e8e0365934a882c81dd880560f",
-    "phase": "randomized_native_comparison_enrolled",
+    "phase": "completed_paired_native",
     "case_of_missed_reachable_print": "experiments/2026-11-22_random_exam/face-443.json",
     "independent_worlds": 5,
     "paired_repeats": 1,
@@ -2149,7 +2149,44 @@
       "connected_on_40cm_grid": 35,
       "source": "experiments/2026-11-22_random_exam/geometric-witnesses.json"
     },
-    "missed_column_case": "experiments/2026-11-22_random_exam/pillar-995.json"
+    "missed_column_case": "experiments/2026-11-22_random_exam/pillar-995.json",
+    "paired_comparison": "experiments/2026-11-22_random_exam/results/surface-r5/RESULTS.md",
+    "valid_pairs": 6,
+    "first_five_layouts": {
+      "baseline": {
+        "runs": 5,
+        "strict": 4,
+        "registered": 14,
+        "all_markers": 15,
+        "verified": 14,
+        "wall_verified": 9,
+        "walls": 10,
+        "obstacle_verified": 5,
+        "obstacles": 5,
+        "bumps": 0,
+        "false_registered_instances": 0,
+        "mean_time_with_failures_at_limit_s": 364.5576,
+        "mean_actual_mission_s": 364.93760000000003,
+        "mean_travel_m": 53.40284303444275
+      },
+      "candidate": {
+        "runs": 5,
+        "strict": 1,
+        "registered": 11,
+        "all_markers": 15,
+        "verified": 11,
+        "wall_verified": 8,
+        "walls": 10,
+        "obstacle_verified": 3,
+        "obstacles": 5,
+        "bumps": 0,
+        "false_registered_instances": 0,
+        "mean_time_with_failures_at_limit_s": 527.6600000000001,
+        "mean_actual_mission_s": 527.7672,
+        "mean_travel_m": 86.85064104876433
+      }
+    },
+    "videos_verified": 12
   },
   "mixed_v151_balanced_print_relook": {
     "policy": "Mixed v1.5.1-balanced + edge print relook",
