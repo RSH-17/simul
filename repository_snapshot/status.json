@@ -2135,7 +2135,13 @@
     "hardware_drive": false,
     "production_promoted": false,
     "report": "experiments/2026-11-22_random_exam/README.md",
-    "enrollment": "experiments/2026-11-22_random_exam/enrollment.json"
+    "enrollment": "experiments/2026-11-22_random_exam/enrollment.json",
+    "viewer_distance_audit": {
+      "path": "experiments/2026-11-22_random_exam/board-distance-audit.json",
+      "episodes": 8,
+      "max_display_difference_m": 0.020874404646207267,
+      "source": "native Gazebo trajectory"
+    }
   },
   "mixed_v151_balanced_print_relook": {
     "policy": "Mixed v1.5.1-balanced + edge print relook",
