@@ -1,3 +1,5 @@
+**v1.5.3 구역 전환**을 같은 5개 대형 트랙 배치에서 비교했습니다. 후보판의 벽 접근은 4/5, 상자 접근은 4/10, 엄격 완주는 0/5였습니다. [기준판 비교와 경로·영상](experiments/2026-11-21_region_wall_v153/README.md)
+
 **Mixed v1.5.1-wall-balance**는 방향별 미관찰 벽과 대기시간을 함께 반영하는 별도 시뮬레이션 후보입니다. [동일 5맵 비교](experiments/2026-11-21_v151_wall_balance/README.md)
 
 **Mixed v1.5.1-wall-sections**는 지도 정보량이 낮은 미관찰 벽의 대기시간을 따로 셉니다. 저장한 두 주행의 선택 재생과 112602 동쪽 벽 촬영 기회를 확인했습니다. [분석과 검증 범위](experiments/2026-11-21_v151_wall_sections/README.md)
@@ -474,7 +476,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 408개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 413개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -892,6 +894,11 @@ python3 scripts/publish_simulation_videos.py --upload
 | [v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4) | 성공 | 확인 | 368.46 |
 | [v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4) | 실패 | 미달 | 600.0 |
 | [v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4) | 실패 | 미달 | 600.0 |
+| [v153-region-wall-1121__v153-region-track-m112601-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112601-1795256846066447941.mp4) | 실패 | 미달 | 600.004 |
+| [v153-region-wall-1121__v153-region-track-m112602-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112602-1795256846066447941.mp4) | 실패 | 미달 | 600.0 |
+| [v153-region-wall-1121__v153-region-track-m112603-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112603-1795256846066447941.mp4) | 실패 | 미달 | 600.0200000000001 |
+| [v153-region-wall-1121__v153-region-track-m112604-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112604-1795256846066447941.mp4) | 실패 | 미달 | 600.012 |
+| [v153-region-wall-1121__v153-region-track-m112605-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112605-1795256846066447941.mp4) | 실패 | 확인 | 600.04 |
 
 </details>
 

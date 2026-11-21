@@ -1,0 +1,436 @@
+{
+  "complete": true,
+  "planned": 5,
+  "pairs": [
+    {
+      "baseline": {
+        "seed": 112601,
+        "run": "v151-boxes5-track-m112601-trial1",
+        "initial_world_xy": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "wall_id": 7,
+        "box_ids": [
+          32,
+          103
+        ],
+        "registered": [
+          32,
+          103
+        ],
+        "approached": [
+          32,
+          103
+        ],
+        "wall_approached": false,
+        "box_approached": 2,
+        "strict": false,
+        "wall_min_m": 3.3347482947502463,
+        "first_wall_goal_s": null,
+        "first_wall_strip_s": null,
+        "region_low_yield_switches": 0,
+        "selected_reasons": {
+          "explore_open_frontier": 2,
+          "unseen_reachable_object": 22,
+          "inspect_other_surface": 1
+        },
+        "transit_deadline_cancels": 0,
+        "elapsed_sim_s": 600.004,
+        "path_m": 112.5010060741611,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 113.34000000000015,
+        "eligible_near_box_s": 309.5120000000001,
+        "low_new_local_surface_s": 216.01200000000014
+      },
+      "candidate": {
+        "seed": 112601,
+        "run": "v153-region-track-m112601-1795256846066447941",
+        "initial_world_xy": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "wall_id": 7,
+        "box_ids": [
+          32,
+          103
+        ],
+        "registered": [
+          7,
+          103
+        ],
+        "approached": [
+          7,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 1,
+        "strict": false,
+        "wall_min_m": 1.0292808731235341,
+        "first_wall_goal_s": 58.24,
+        "first_wall_strip_s": 58.24,
+        "region_low_yield_switches": 5,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 12,
+          "region_low_yield": 7,
+          "continue_wall_strip": 11,
+          "wall_strip_due": 5,
+          "remaining_time_for_mapped_walls": 2
+        },
+        "transit_deadline_cancels": 2,
+        "elapsed_sim_s": 600.004,
+        "path_m": 89.48308097317266,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 52.519999999999996,
+        "eligible_near_box_s": 185.91199999999995,
+        "low_new_local_surface_s": 98.73199999999994
+      }
+    },
+    {
+      "baseline": {
+        "seed": 112602,
+        "run": "v151-boxes5-track-m112602-trial2",
+        "initial_world_xy": [
+          8.050899908331369,
+          -4.350223730004102
+        ],
+        "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+        "wall_id": 32,
+        "box_ids": [
+          7,
+          103
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 2,
+        "strict": true,
+        "wall_min_m": 1.106778806947953,
+        "first_wall_goal_s": 339.124,
+        "first_wall_strip_s": null,
+        "region_low_yield_switches": 0,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 19,
+          "inspect_other_surface": 5,
+          "persistent_small_wall_candidate": 5
+        },
+        "transit_deadline_cancels": 0,
+        "elapsed_sim_s": 558.604,
+        "path_m": 94.53470891854161,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 281.77999999999986,
+        "eligible_near_box_s": 440.65999999999997,
+        "low_new_local_surface_s": 336.536
+      },
+      "candidate": {
+        "seed": 112602,
+        "run": "v153-region-track-m112602-1795256846066447941",
+        "initial_world_xy": [
+          8.050899908331369,
+          -4.350223730004102
+        ],
+        "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+        "wall_id": 32,
+        "box_ids": [
+          7,
+          103
+        ],
+        "registered": [],
+        "approached": [],
+        "wall_approached": false,
+        "box_approached": 0,
+        "strict": false,
+        "wall_min_m": 17.35810737642169,
+        "first_wall_goal_s": 60.6,
+        "first_wall_strip_s": 60.6,
+        "region_low_yield_switches": 2,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 3,
+          "region_low_yield": 2,
+          "continue_wall_strip": 4
+        },
+        "transit_deadline_cancels": 0,
+        "elapsed_sim_s": 600.0,
+        "path_m": 13.560392207576548,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 0.0,
+        "eligible_near_box_s": 114.2,
+        "low_new_local_surface_s": 38.2
+      }
+    },
+    {
+      "baseline": {
+        "seed": 112603,
+        "run": "v151-boxes5-track-m112603-trial3",
+        "initial_world_xy": [
+          -7.750254705096283,
+          -2.4007471224201833
+        ],
+        "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+        "wall_id": 32,
+        "box_ids": [
+          7,
+          103
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 2,
+        "strict": true,
+        "wall_min_m": 1.0144352783578876,
+        "first_wall_goal_s": null,
+        "first_wall_strip_s": null,
+        "region_low_yield_switches": 0,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 18
+        },
+        "transit_deadline_cancels": 0,
+        "elapsed_sim_s": 321.1,
+        "path_m": 52.08980654797787,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 0.0,
+        "eligible_near_box_s": 195.22799999999998,
+        "low_new_local_surface_s": 131.22799999999998
+      },
+      "candidate": {
+        "seed": 112603,
+        "run": "v153-region-track-m112603-1795256846066447941",
+        "initial_world_xy": [
+          -7.750254705096283,
+          -2.4007471224201833
+        ],
+        "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+        "wall_id": 32,
+        "box_ids": [
+          7,
+          103
+        ],
+        "registered": [
+          32,
+          103
+        ],
+        "approached": [
+          32,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 1,
+        "strict": false,
+        "wall_min_m": 1.0191098041379854,
+        "first_wall_goal_s": 86.344,
+        "first_wall_strip_s": 86.344,
+        "region_low_yield_switches": 2,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 12,
+          "region_low_yield": 2,
+          "continue_wall_strip": 9,
+          "wall_strip_due": 7,
+          "remaining_time_for_mapped_walls": 2
+        },
+        "transit_deadline_cancels": 4,
+        "elapsed_sim_s": 600.0200000000001,
+        "path_m": 90.23581656281372,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 145.45999999999995,
+        "eligible_near_box_s": 261.0799999999999,
+        "low_new_local_surface_s": 208.27599999999995
+      }
+    },
+    {
+      "baseline": {
+        "seed": 112604,
+        "run": "v151-boxes5-track-m112604-trial4",
+        "initial_world_xy": [
+          -6.299316343239879,
+          -4.848948368069747
+        ],
+        "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+        "wall_id": 103,
+        "box_ids": [
+          7,
+          32
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 2,
+        "strict": true,
+        "wall_min_m": 0.8358903455887727,
+        "first_wall_goal_s": 124.976,
+        "first_wall_strip_s": null,
+        "region_low_yield_switches": 0,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 20,
+          "persistent_small_wall_candidate": 1
+        },
+        "transit_deadline_cancels": 0,
+        "elapsed_sim_s": 368.46,
+        "path_m": 58.928960011958395,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 15.180000000000007,
+        "eligible_near_box_s": 239.57199999999997,
+        "low_new_local_surface_s": 178.57199999999997
+      },
+      "candidate": {
+        "seed": 112604,
+        "run": "v153-region-track-m112604-1795256846066447941",
+        "initial_world_xy": [
+          -6.299316343239879,
+          -4.848948368069747
+        ],
+        "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+        "wall_id": 103,
+        "box_ids": [
+          7,
+          32
+        ],
+        "registered": [
+          32,
+          103
+        ],
+        "approached": [
+          32,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 1,
+        "strict": false,
+        "wall_min_m": 0.8144867609519151,
+        "first_wall_goal_s": 93.076,
+        "first_wall_strip_s": 93.076,
+        "region_low_yield_switches": 5,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 12,
+          "wall_strip_due": 5,
+          "continue_wall_strip": 9,
+          "region_low_yield": 5,
+          "remaining_time_for_mapped_walls": 3
+        },
+        "transit_deadline_cancels": 3,
+        "elapsed_sim_s": 600.012,
+        "path_m": 93.20650489976286,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 90.78,
+        "eligible_near_box_s": 180.12,
+        "low_new_local_surface_s": 90.888
+      }
+    },
+    {
+      "baseline": {
+        "seed": 112605,
+        "run": "v151-boxes5-track-m112605-trial5",
+        "initial_world_xy": [
+          -8.650917193435967,
+          -4.7000692002953715
+        ],
+        "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "wall_id": 7,
+        "box_ids": [
+          32,
+          103
+        ],
+        "registered": [
+          103
+        ],
+        "approached": [
+          103
+        ],
+        "wall_approached": false,
+        "box_approached": 1,
+        "strict": false,
+        "wall_min_m": 6.742422981950127,
+        "first_wall_goal_s": null,
+        "first_wall_strip_s": null,
+        "region_low_yield_switches": 0,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 23,
+          "inspect_other_surface": 5
+        },
+        "transit_deadline_cancels": 0,
+        "elapsed_sim_s": 600.0,
+        "path_m": 100.8345781837402,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 131.36,
+        "eligible_near_box_s": 421.676,
+        "low_new_local_surface_s": 320.67599999999993
+      },
+      "candidate": {
+        "seed": 112605,
+        "run": "v153-region-track-m112605-1795256846066447941",
+        "initial_world_xy": [
+          -8.650917193435967,
+          -4.7000692002953715
+        ],
+        "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "wall_id": 7,
+        "box_ids": [
+          32,
+          103
+        ],
+        "registered": [
+          7,
+          103
+        ],
+        "approached": [
+          7,
+          103
+        ],
+        "wall_approached": true,
+        "box_approached": 1,
+        "strict": false,
+        "wall_min_m": 1.0365532404271705,
+        "first_wall_goal_s": 70.304,
+        "first_wall_strip_s": 70.304,
+        "region_low_yield_switches": 4,
+        "selected_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 14,
+          "region_low_yield": 6,
+          "continue_wall_strip": 8,
+          "wall_strip_due": 6
+        },
+        "transit_deadline_cancels": 2,
+        "elapsed_sim_s": 600.04,
+        "path_m": 91.33276909526134,
+        "bumps": 0,
+        "revisited_box_neighborhood_s": 49.72000000000003,
+        "eligible_near_box_s": 247.98000000000008,
+        "low_new_local_surface_s": 138.7360000000001
+      }
+    }
+  ]
+}

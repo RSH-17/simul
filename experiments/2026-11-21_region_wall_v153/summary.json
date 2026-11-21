@@ -1,0 +1,34 @@
+{
+  "version": "1.5.3-region-wall",
+  "runs": 5,
+  "held_out_runs": 0,
+  "physical_robot_used": false,
+  "default_promoted": false,
+  "policy_tests_passed": 32,
+  "recorder_test_passed": true,
+  "baseline": "1.5.1-balanced",
+  "groups": {
+    "baseline": {
+      "strict": 3,
+      "wall": 3,
+      "boxes": 9,
+      "bumps": 0,
+      "avg_time": 489.6336,
+      "avg_path": 83.77781194727584,
+      "revisit_s": 541.6600000000001,
+      "low_gain_s": 1183.024,
+      "eligible_s": 1606.648
+    },
+    "candidate": {
+      "strict": 0,
+      "wall": 4,
+      "boxes": 4,
+      "bumps": 0,
+      "avg_time": 600.0152,
+      "avg_path": 75.56371274771743,
+      "revisit_s": 338.48,
+      "low_gain_s": 574.832,
+      "eligible_s": 989.2919999999999
+    }
+  }
+}

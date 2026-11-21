@@ -1,0 +1,45 @@
+{
+  "/mission": {
+    "allow_mid_route_wall_inspection": true,
+    "navigation_flow_enabled": true
+  },
+  "/controller_server": {
+    "FollowPath.plugin": "nav2_mppi_controller::MPPIController",
+    "FollowPath.vx_max": 0.25,
+    "FollowPath.wz_max": 0.5,
+    "controller_frequency": 20.0
+  },
+  "/velocity_smoother": {
+    "max_velocity": [
+      0.27,
+      0.0,
+      0.5
+    ],
+    "max_accel": [
+      0.8,
+      0.0,
+      1.0
+    ],
+    "max_decel": [
+      -2.5,
+      0.0,
+      -3.2
+    ],
+    "smoothing_frequency": 20.0
+  },
+  "/local_costmap/local_costmap": {
+    "footprint": "[[ 0.189,  0.000], [ 0.134, -0.134], [ 0.000, -0.189], [-0.134, -0.134], [-0.189,  0.000], [-0.134,  0.134], [ 0.000,  0.189], [ 0.134,  0.134]]",
+    "inflation_layer.inflation_radius": 0.45,
+    "update_frequency": 5.0
+  },
+  "/global_costmap/global_costmap": {
+    "footprint": "[[ 0.189,  0.000], [ 0.134, -0.134], [ 0.000, -0.189], [-0.134, -0.134], [-0.189,  0.000], [-0.134,  0.134], [ 0.000,  0.189], [ 0.134,  0.134]]",
+    "inflation_layer.inflation_radius": 0.45,
+    "update_frequency": 1.0
+  },
+  "/aruco_detector": {
+    "min_marker_pixels": 18,
+    "confirmations": 3
+  },
+  "scope": "read-only parameters of isolated simulation domain 174"
+}
