@@ -83,7 +83,7 @@ def spans(mask,t):
             for q in np.split(ids,np.flatnonzero(np.diff(ids)>1)+1) if len(q)]
 
 
-def measure(folder, calibration):
+def measure(folder, calibration, figure_id=32):
     scene=json.loads((folder/'scene.json').read_text())
     metrics=json.loads((folder/'metrics.json').read_text())
     world=ET.parse(folder/'world/osp_studio.sdf').find('.//world')
@@ -163,7 +163,7 @@ def measure(folder, calibration):
                     all_five_blocked=int((tiny&(count_clear==0)).sum())),
                 online_decoded_count=metrics['last_detector_status'].get('decoded',{}).get(key,0),
                 registered_s=named,registered_then_actual_near_s=metrics['registered_and_within_s'].get(key))
-        if ident==32:
+        if ident==figure_id and not tag['attached_to'].startswith('wall_'):
             host=next(o for o in scene['obstacles'] if o['name']==tag['attached_to'])
             figure=dict(host=host,tag=tag,normal=normal,origin=origin,yaw=yaw,x=x,y=y,t=t,dt=dt,near=near,
                         five=five, behind=incidence<=0)
