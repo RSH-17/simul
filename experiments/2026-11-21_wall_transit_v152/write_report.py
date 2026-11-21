@@ -25,6 +25,9 @@ summary = dict(version='1.5.2-wall-transit-r2', development_seed=pair['seed'],
     native_validation_complete=True, production_promoted=False, physical_drive=False)
 (HERE/'summary.json').write_text(json.dumps(summary, indent=2)+'\n')
 fmt = lambda x: f'{int(x)//60}:{x%60:04.1f}'
+def error_label(row):
+    error = max(row['map_errors_saved_m'].values(), default=None)
+    return '등록 없음' if error is None else f'{100*error:.1f}cm'
 lines = ['# v1.5.2 r2 · 이동 중 벽 관찰 · 동일 맵 개발 회귀 완료', '',
     f"벽 관찰 요청 **{looks['requests']}회**, 새 처리 영상3장 이상을 확인한 관찰 **{looks['completed_fresh_frame_dwells']}회**, "
     f"원래 이동 재개 예약 **{looks['requested_navigation_resumptions']}회**를 기록했다. "
@@ -43,7 +46,7 @@ rows = [
     ('범퍼', old['bumper_events'], new['bumper_events']),
     ('정지 시간', f"{old['motion']['stopped_s']:.1f}s", f"{new['motion']['stopped_s']:.1f}s"),
     ('제자리 회전', f"{old['motion']['rotation_only_s']:.1f}s", f"{new['motion']['rotation_only_s']:.1f}s"),
-    ('저장한 ID의 지도오차 최대', f"{100*max(old['map_errors_saved_m'].values(),default=0):.1f}cm", f"{100*max(new['map_errors_saved_m'].values(),default=0):.1f}cm")]
+    ('저장한 ID의 지도오차 최대', error_label(old), error_label(new))]
 lines += [f'| {name} | {a} | {b} |' for name, a, b in rows]
 lines += ['', '미등록 ID를 지도오차0으로 인정하지 않는다. 엄격 완주는 세 ID와 등록 후 각각 실제1.5m 접근, '
     '기존 세 장1.3m 영상 증거, 고정 초기 정렬의 live·저장 지도오차0.25m, 범퍼0을 모두 요구한다.', '',
@@ -54,6 +57,7 @@ lines += ['', '미등록 ID를 지도오차0으로 인정하지 않는다. 엄�
     f"관찰에 직접 쓴 시간은 {looks['actual_observation_s']:.1f}초, 복귀 방향 전환까지 포함해 차감한 예산은 {looks['budget_charged_s']:.1f}초였다. "
     f"미션의 실제 navigation 재개 로그는 {looks['mission_navigation_resume_log_count']}건이다. "
     '정지·회전 시간 차이 전체가 이 기능 때문이라고 해석하지 않는다.', '',
+    '두 회차 모두600초에 미완주했다. 거리 감소와 정지·회전 증가가 함께 나타났으므로 이동거리가 짧아졌다는 것만으로 탐색 효율이 개선됐다고 판단하지 않는다.', '',
     '| 미션 경과 | 회전 요청 | 새 처리 프레임 | 종료 이유 | 복귀 예약 | 이후10초 실제 이동 |',
     '|---:|---:|---:|---|---|---:|']
 for l in looks['history']:
@@ -68,6 +72,8 @@ if preview:
 lines += ['## 적용과 검증 범위', '',
     '이동 중 미관찰 벽 유사 면을 짧게 확인하고 복귀하는 기능, 마지막 벽 시간 예산의 조기 반환 우회 수정을 별도 버전에 적용했다. '
     '한 번의 비교에서는 두 변경의 효과를 각각 분리할 수 없다. 작은 후보 검출 모델 자체는 바꾸지 않았다.', '',
+    f"첫 벽 면 목표 선택은 {new['first_wall_surface_selection_s']}초, 마지막 예산 사유의 첫 선택은 {new['first_reserved_wall_selection_s']}초였다. "
+    '예산 검사는 목표 재선택 시점에 적용된다. 진행 중인 긴 내부 이동은 벽 전환을 늦출 수 있으므로 마지막90초 전체를 벽 관찰에 보장했다고 해석하지 않는다.', '',
     '실제 조회한 MPPI·smoother·footprint·inflation·costmap 주기·18px/3프레임 판독 설정은 기준판과 같았다. '
     '480×480·5FPS를 유지한다. world SHA256·배치·예정 spawn을 그대로 사용하고 정답 위치는 평가기에만 제공했다. '
     '확인된 마커 접근·안전 복구를 보호하며 관찰 실패를 인식 성공으로 바꾸지 않는다.', '',
@@ -81,6 +87,10 @@ lines += ['## 적용과 검증 범위', '',
     '## 남은 한계', '',
     ('이 한 곳에서는 완주가 개선됐지만 다른 네 배치와 실물에서는 아직 검증하지 않았다.' if new['strict_saved_map_success'] else
      '벽 관찰 기능은 발동했지만 이번 회차의 전체 완주 향상은 확인하지 못했다. 결과를 기본 정책 승격의 근거로 사용하지 않는다.'), '',
+    f"벽{wall}의 실제 최소거리는 {new['independent_closest_m'][wall]:.3f}m였고 판독기 ID 기록은 "
+    f"{'있었다' if wall in new['detector'].get('by_id',{}) else '없었다'}. "
+    '벽을 향한 관찰 목표가 생겨도 남은 시간에 미관찰 벽 구간까지 이동하지 못하면 탐색을 완료할 수 없다. '
+    '이 실행에서는 이동 중 벽 정보 수집과 남은 벽 구간을 고르는 경로 선택을 구분해야 한다.', '',
     f"후보 취소 사유 {new['cancellations']}, 스케줄 단계 {new['scheduler_phases']}, 마지막 벽 예산 우회 기록 {len(new['late_fresh_interior_wall_budget_bypass'])}건. "
     '마지막 값0은 이 실행에서 해당 선택이 기록되지 않았다는 뜻이며, 모든 마커를 볼 수 있었다는 증명은 아니다.', '',
     '[정책 설명·재현](../../policy_candidates/2026-11-21_mixed_wall_transit_v152/README.md) · [상세 비교](result.json) · '

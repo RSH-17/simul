@@ -92,6 +92,9 @@ def export(root, baseline_export, destination):
         events = [json.loads(line) for line in (run/'native/center_wall.jsonl').read_text().splitlines()]
         row['scheduler_phases'] = dict(collections.Counter(e['phase'] for e in events))
         row['scheduler_reasons'] = dict(collections.Counter(e['reason'] for e in events))
+        row['first_wall_surface_selection_s'] = next((e['elapsed'] for e in events if e['kind'] == 'wall_surface'), None)
+        row['first_reserved_wall_selection_s'] = next((e['elapsed'] for e in events
+            if e['reason'] == 'remaining_time_for_mapped_walls'), None)
         row['late_fresh_interior_wall_budget_bypass'] = [e for e in events if e['reason'] == 'unseen_reachable_object'
             and e['available'].get('wall', 0) > 0 and 600-e['elapsed'] <= min(90, 12+5*e['available']['wall'])]
         report['comparisons'].append(dict(seed=row['seed'], same_world_sha256=True, baseline=old, candidate=row))

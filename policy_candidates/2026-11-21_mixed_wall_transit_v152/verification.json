@@ -8,10 +8,17 @@
   ],
   "preexisting_near_pass_geometry_failures": 3,
   "preexisting_failures_reproduced_in_frozen_v151": true,
-  "native_validation_complete": false,
+  "native_validation_complete": true,
   "physical_validation_performed": false,
   "production_promoted": false,
   "public_source_reproduction_sha256_match": true,
   "reproduced_changed_modules": 4,
-  "recorder_concurrent_writer_test_passed": true
+  "recorder_concurrent_writer_test_passed": true,
+  "completed_native_runs": 1,
+  "native_full_task_success": false,
+  "wall_looks_with_fresh_frames": 6,
+  "processed_frames": 33,
+  "policy_hashes_match_after_run": true,
+  "baseline_scheduler_hash_unchanged": true,
+  "remaining_domain174_native_processes": 0
 }

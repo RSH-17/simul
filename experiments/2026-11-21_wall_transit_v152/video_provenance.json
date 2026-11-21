@@ -1,0 +1,17 @@
+{
+  "videos": [
+    {
+      "run": "v152-wall-r2-track-m112601-1795254354085795341",
+      "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+      "video_sha256": "4ec7926f69e1cf00dba2756d5de3a0fca0d46c3cebd50ced50cf7e47e2c5c903",
+      "camera": [
+        480,
+        480,
+        5
+      ],
+      "physical_images": false
+    }
+  ],
+  "domain": 174,
+  "physical_robot_used": false
+}

@@ -393,7 +393,7 @@
   "pixel_focus_batch_replay": "pixel_focus_batch_replay.json",
   "pixel_focus_startup_failure": "pixel_focus_startup_failure.json",
   "fresh_space_failure_analysis": "fresh_space_failure_analysis.json",
-  "video_release_verified_count": 407,
+  "video_release_verified_count": 408,
   "priority_diagnostic": {
     "root": "/home/peter/simul/training_robust/native90/face_intent_regression_v2",
     "unit": "osp-face-intent-v2.service",
@@ -1766,7 +1766,7 @@
     "results": "experiments/2026-11-21_v151_track5_boxes5/result.json"
   },
   "mixed_v152_wall_transit": {
-    "state": "native_validation_in_progress",
+    "state": "native_development_complete",
     "version": "1.5.2-wall-transit-r2",
     "workspace": "flow_v152_wall_transit_r2_ws",
     "development_seed": 112601,
@@ -1777,6 +1777,40 @@
     "report": "experiments/2026-11-21_wall_transit_v152/README.md",
     "recorder_shared_temp_race_fixed": true,
     "incomplete_infrastructure_attempts": 1,
-    "current_run": "v152-wall-r2-track-m112601-1795254354085795341"
+    "current_run": "v152-wall-r2-track-m112601-1795254354085795341",
+    "completed_native_runs": 1,
+    "held_out_runs": 0,
+    "native_full_task_success": false,
+    "summary": {
+      "version": "1.5.2-wall-transit-r2",
+      "development_seed": 112601,
+      "completed_native_runs": 1,
+      "held_out_runs": 0,
+      "baseline_strict_success": false,
+      "candidate_strict_success": false,
+      "wall_look_requests": 6,
+      "completed_fresh_frame_wall_looks": 6,
+      "wall_registered_before": false,
+      "wall_registered_after": false,
+      "wall_near_rgb_verified_before": false,
+      "wall_near_rgb_verified_after": false,
+      "wall_closest_before_m": 3.3347482947502463,
+      "wall_closest_after_m": 3.3347482964727053,
+      "time_before_sim_s": 600.004,
+      "time_after_sim_s": 600.0,
+      "path_before_m": 112.5010060741611,
+      "path_after_m": 95.95509892824434,
+      "candidate_bumps": 0,
+      "source_tests_passed": 29,
+      "recorder_test_passed": 1,
+      "native_validation_complete": true,
+      "production_promoted": false,
+      "physical_drive": false
+    },
+    "wall_looks_with_fresh_frames": 6,
+    "processed_frames_during_wall_dwells": 33,
+    "remaining_native_processes": 0,
+    "production_promoted": false,
+    "video_assets_verified": 1
   }
 }

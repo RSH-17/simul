@@ -1,4 +1,4 @@
-별도 후보 **Mixed v1.5.2 r2 · 이동 중 벽 관찰**을 구현해 같은 대형 트랙 실패 배치에서 검증 중입니다. 29개 선택 검사와 빌드를 통과했으며 원본 v1.5.1·실물 기본값을 보존합니다. [변경·현재 검증 범위](policy_candidates/2026-11-21_mixed_wall_transit_v152/README.md)
+별도 후보 **Mixed v1.5.2 r2 · 이동 중 벽 관찰**의 동일 대형 트랙 개발 회귀1회를 완료했습니다. 벽 관찰6회·새 처리 영상33장·복귀6회를 확인했지만 벽7 미발견으로 완주는 미달이었습니다. 기존 v1.5.1과 실물 기본값은 보존합니다. [변경·실제 결과·영상](experiments/2026-11-21_wall_transit_v152/README.md)
 
 사진의 **20.15×11.35m 책상·트랙·상자 총 5개에서 v1.5.1 다섯 회차를 완료**했습니다. 엄격 완주3/5, 상자 마커9/10·벽 마커3/5, 범퍼0회입니다. 실패도 보존했으며 벽 관찰 예산을 우회하는 순서 문제와 작은 후보 생성 실패를 확인했습니다. [결과·다섯 영상·경로](experiments/2026-11-21_v151_track5_boxes5/README.md)
 
@@ -470,7 +470,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 407개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 408개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -887,6 +887,7 @@ python3 scripts/publish_simulation_videos.py --upload
 | [v151-track-five-boxes5-1121__v151-boxes5-track-m112603-trial3.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112603-trial3.mp4) | 성공 | 확인 | 321.1 |
 | [v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4) | 성공 | 확인 | 368.46 |
 | [v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4) | 실패 | 미달 | 600.0 |
+| [v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4) | 실패 | 미달 | 600.0 |
 
 </details>
 
