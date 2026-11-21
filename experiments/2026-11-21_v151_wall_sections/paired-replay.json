@@ -1,0 +1,942 @@
+{
+  "protocol": "Open-loop replay of saved SLAM, viewpoint coverage and original trajectory; each selector keeps its own dispatch history. Static map-to-odom, SLAM-derived costmap proxy, no live Nav2, box fits, marker interrupts or new camera observations.",
+  "results": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "decisions": 25,
+      "rows": [
+        {
+          "elapsed": 4.676,
+          "baseline": {
+            "kind": null,
+            "reason": "mission_start"
+          },
+          "candidate": {
+            "kind": null,
+            "reason": "mission_start"
+          }
+        },
+        {
+          "elapsed": 15.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 31.176000000000002,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 43.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 58.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 65.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 68.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 75.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 84.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              0,
+              7,
+              -5
+            ],
+            "wait_s": 69.0,
+            "surface_world_m": [
+              9.62191723177708,
+              1.558440892032479
+            ],
+            "near_east_boundary": true
+          }
+        },
+        {
+          "elapsed": 99.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 109.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 128.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 139.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 167.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              4,
+              -24,
+              1
+            ],
+            "wait_s": 152.0,
+            "surface_world_m": [
+              1.5985622766256853,
+              5.609347770093306
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 192.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 223.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 293.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              0,
+              7,
+              5
+            ],
+            "wait_s": 277.5,
+            "surface_world_m": [
+              0.6168686957944853,
+              -6.10784554445223
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 305.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 321.676,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 333.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 346.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 357.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              0,
+              6,
+              4
+            ],
+            "wait_s": 341.5,
+            "surface_world_m": [
+              1.1483523040402268,
+              -6.112863769760322
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 421.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 485.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              0,
+              8,
+              5
+            ],
+            "wait_s": 469.5,
+            "surface_world_m": [
+              0.1456886349401616,
+              -6.112302083082233
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 556.176,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112602-trial2",
+      "decisions": 30,
+      "rows": [
+        {
+          "elapsed": 2.624,
+          "baseline": {
+            "kind": null,
+            "reason": "mission_start"
+          },
+          "candidate": {
+            "kind": null,
+            "reason": "mission_start"
+          }
+        },
+        {
+          "elapsed": 14.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 25.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 37.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 49.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 63.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 83.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              4,
+              0,
+              -4
+            ],
+            "wait_s": 69.0,
+            "surface_world_m": [
+              9.682021129547849,
+              -0.7981456078000724
+            ],
+            "near_east_boundary": true
+          }
+        },
+        {
+          "elapsed": 93.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 112.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 132.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 142.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 159.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              6,
+              -15,
+              -6
+            ],
+            "wait_s": 145.0,
+            "surface_world_m": [
+              5.852466470786338,
+              5.012981285257586
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 161.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 172.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 185.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 202.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 217.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 239.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              4,
+              0,
+              -3
+            ],
+            "wait_s": 225.0,
+            "surface_world_m": [
+              9.66235980512051,
+              -1.236072329732683
+            ],
+            "near_east_boundary": true
+          }
+        },
+        {
+          "elapsed": 265.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 305.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              6,
+              -13,
+              -8
+            ],
+            "wait_s": 291.0,
+            "surface_world_m": [
+              3.4129580466725153,
+              5.5904370428722
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 339.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 384.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              0,
+              -23,
+              4
+            ],
+            "wait_s": 370.0,
+            "surface_world_m": [
+              0.045857239709324205,
+              5.581847536193951
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 407.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 442.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 472.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              0,
+              -16,
+              5
+            ],
+            "wait_s": 447.0,
+            "surface_world_m": [
+              4.18342549265699,
+              5.567992317510162
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 521.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 527.624,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 533.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "wall_surface",
+            "reason": "camera_unseen_wall_section_due",
+            "section": [
+              6,
+              -9,
+              -11
+            ],
+            "wait_s": 507.5,
+            "surface_world_m": [
+              -1.406141465356452,
+              5.573720641116875
+            ],
+            "near_east_boundary": false
+          }
+        },
+        {
+          "elapsed": 539.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        },
+        {
+          "elapsed": 549.124,
+          "baseline": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          },
+          "candidate": {
+            "kind": "interior_surface",
+            "reason": "unseen_reachable_object",
+            "section": null,
+            "wait_s": null
+          }
+        }
+      ]
+    }
+  ]
+}

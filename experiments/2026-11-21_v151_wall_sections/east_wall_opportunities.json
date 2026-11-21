@@ -1,0 +1,46 @@
+{
+  "run": "v151-boxes5-track-m112602-trial2",
+  "wall": "east facing west including its inset",
+  "ground_truth_targets": [
+    {
+      "attached_to": "aisle_box_c",
+      "id": 7,
+      "size": 0.2,
+      "x": 6.7,
+      "y": 2.4862774385839996,
+      "yaw": 0.0,
+      "z": 0.32
+    },
+    {
+      "attached_to": "aisle_box_s",
+      "id": 103,
+      "size": 0.3,
+      "x": -8.03312070945887,
+      "y": 4.000000000000002,
+      "yaw": 4.71238898038469,
+      "z": 0.32
+    },
+    {
+      "attached_to": "wall_west",
+      "id": 32,
+      "size": 0.25,
+      "x": -9.999999999999998,
+      "y": 4.558680262969381,
+      "yaw": 3.141592653589793,
+      "z": 0.32
+    }
+  ],
+  "scope": "Captured RGB timestamps; ideal level camera, ignores occlusion, exposure and blur. Opportunities only.",
+  "0.08": {
+    "eligible_samples": 41,
+    "samples": 112,
+    "rgb_frames": 2793,
+    "fraction": 0.36607142857142855
+  },
+  "0.2": {
+    "eligible_samples": 89,
+    "samples": 112,
+    "rgb_frames": 2793,
+    "fraction": 0.7946428571428571
+  }
+}

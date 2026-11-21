@@ -1,4 +1,13 @@
 {
+  "mixed_v151_wall_sections": {
+    "parent": "1.5.1-balanced",
+    "version": "1.5.1-wall-sections",
+    "phase": "offline_policy_replay",
+    "simulated_new_paths": 0,
+    "production_promoted": false,
+    "passed_tests": 30,
+    "report": "experiments/2026-11-21_v151_wall_sections/README.md"
+  },
   "mixed_crowded_navigation": {
     "version": "1.4.0",
     "base": "1.3.1",
