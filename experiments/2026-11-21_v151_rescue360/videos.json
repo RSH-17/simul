@@ -1,0 +1,26 @@
+{
+  "updated_utc": "2026-11-21T14:23:15.329068+00:00",
+  "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
+  "uploaded_verified": 1,
+  "videos": [
+    {
+      "asset": "rescue360-integration-pilot1121__v15-rescue360-balanced-m112601-pilot1121.mp4",
+      "local_path": "training_robust/native90/rescue360-integration-pilot1121/v15-rescue360-balanced-m112601-pilot1121/video/mission.mp4",
+      "bytes": 1562980,
+      "sha256": "a67cdb21ec5362a39d1207dcf9b3bcd539ed04d588a7c2bc99ff6cf529ea8eef",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/rescue360-integration-pilot1121__v15-rescue360-balanced-m112601-pilot1121.mp4",
+      "original_evaluator_success": false,
+      "reason": "rescue_budget_exhausted",
+      "elapsed_sim_seconds": 132.988,
+      "targets": 1,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 665,
+      "recording_seconds": 133.0,
+      "uploaded_verified": true
+    }
+  ],
+  "skipped": [],
+  "repository_private": false,
+  "note": "Original evaluator success may use an older protocol; actual 1.5m approach is listed separately. Public release downloads; uploads authorized by the repository owner."
+}

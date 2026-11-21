@@ -482,7 +482,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 413개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 414개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -905,6 +905,7 @@ python3 scripts/publish_simulation_videos.py --upload
 | [v153-region-wall-1121__v153-region-track-m112603-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112603-1795256846066447941.mp4) | 실패 | 미달 | 600.0200000000001 |
 | [v153-region-wall-1121__v153-region-track-m112604-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112604-1795256846066447941.mp4) | 실패 | 미달 | 600.012 |
 | [v153-region-wall-1121__v153-region-track-m112605-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112605-1795256846066447941.mp4) | 실패 | 확인 | 600.04 |
+| [rescue360-integration-pilot1121__v15-rescue360-balanced-m112601-pilot1121.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/rescue360-integration-pilot1121__v15-rescue360-balanced-m112601-pilot1121.mp4) | 실패 | 미달 | 132.988 |
 
 </details>
 
