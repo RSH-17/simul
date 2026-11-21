@@ -33,6 +33,19 @@ def evaluation_label(entry):
     return '성공' if entry['original_evaluator_success'] else '실패'
 
 
+def verified_approach(audit):
+    if 'expected_ids' in audit:
+        expected=set(audit['expected_ids'])
+        witnesses=set(audit['verified_after_registration_ids'])
+        if not expected or not witnesses<=expected:
+            raise ValueError('Inconsistent expected and verified marker IDs')
+        return witnesses==expected
+    distances=audit.get('closest_approach_m',{})
+    if not distances:
+        return None
+    return len(distances)==3 and all(v is not None and v<=1.5 for v in distances.values())
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--repo',default='peter010905/simul')
@@ -89,14 +102,15 @@ def main():
             else:
                 print('Pending '+name,flush=True)
             audit=result.get('ground_truth_audit',{})
-            distances=audit.get('closest_approach_m',{})
-            approach=bool(len(distances)==3 and all(v is not None and v<=1.5 for v in distances.values()))
             entry=dict(asset=name,local_path=str(video.relative_to(data_root)),bytes=size,sha256=sha,
                 url=f'https://github.com/{args.repo}/releases/download/{args.tag}/{name}',
                 original_evaluator_success=result.get('success'),reason=result.get('reason'),
                 elapsed_sim_seconds=result.get('elapsed_seconds'),targets=result.get('targets'),collisions=result.get('collisions'),
-                actual_approach_1_5m=approach if distances else None,
+                actual_approach_1_5m=verified_approach(audit),
                 recording_frames=rec['frames'],recording_seconds=rec.get('duration_seconds'))
+            if result.get('policy_training_sample_valid') is False:
+                entry.update(policy_training_sample_valid=False,
+                             environment_invalidation_reason=result.get('invalid_reason','Paired trial evidence did not validate'))
             output=episode.parent.parent if episode.parent.name=='episodes' else episode.parent
             invalidation=output/'environment_invalidation.json'
             if invalidation.exists():
