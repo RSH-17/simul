@@ -1,0 +1,14 @@
+{
+  "baseline_and_frozen_selected_match": true,
+  "files": [
+    {
+      "path": "/home/ubuntu/flow_v12_camera_bench_ws/src/osp_mission/osp_mission/center_wall.py",
+      "sha256": "362cf58362335676d259ea4e998cd41aa1ef9dc4a478786de663510ec49987a5"
+    },
+    {
+      "path": "/home/ubuntu/flow_v151_exposure_sync_r2_ws/src/osp_mission/osp_mission/center_wall.py",
+      "sha256": "362cf58362335676d259ea4e998cd41aa1ef9dc4a478786de663510ec49987a5"
+    }
+  ],
+  "read_only_policy_audit": true
+}

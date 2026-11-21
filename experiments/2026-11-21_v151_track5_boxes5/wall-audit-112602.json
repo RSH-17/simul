@@ -1,0 +1,86 @@
+{
+  "run": "v151-boxes5-track-m112602-trial2",
+  "walls": [
+    {
+      "id": 32,
+      "size_m": 0.25,
+      "closest_actual_m": 1.106778806947953,
+      "horizontal_fov_frames": 891,
+      "max_horizontal_pixels": 69.01532063420481,
+      "opportunity_frames": {
+        "6": 514,
+        "8": 339,
+        "18": 119
+      },
+      "best_frames": [
+        {
+          "frame": 2793,
+          "elapsed_s": 558.4159999999999,
+          "horizontal_pixels": 69.01532063420481,
+          "center_u": 214.85438587880788,
+          "camera_xy": [
+            -8.7956765780476,
+            4.654011229137979
+          ],
+          "camera_yaw": -9.42127179870468,
+          "image": "/home/ubuntu/corridor-board-73bbb05/recordings/v151-boxes5-track-m112602-trial2/camera/02793.jpg"
+        },
+        {
+          "frame": 2788,
+          "elapsed_s": 557.4159999999999,
+          "horizontal_pixels": 57.31633427268605,
+          "center_u": 206.1138599173741,
+          "camera_xy": [
+            -8.539364374491567,
+            4.6464763199391275
+          ],
+          "camera_yaw": -9.465958479222902,
+          "image": "/home/ubuntu/corridor-board-73bbb05/recordings/v151-boxes5-track-m112602-trial2/camera/02788.jpg"
+        },
+        {
+          "frame": 2783,
+          "elapsed_s": 556.4159999999999,
+          "horizontal_pixels": 48.87790147399414,
+          "center_u": 205.27570900323207,
+          "camera_xy": [
+            -8.283228754540074,
+            4.631719441045742
+          ],
+          "camera_yaw": -9.485945109603623,
+          "image": "/home/ubuntu/corridor-board-73bbb05/recordings/v151-boxes5-track-m112602-trial2/camera/02783.jpg"
+        },
+        {
+          "frame": 2778,
+          "elapsed_s": 555.4159999999999,
+          "horizontal_pixels": 43.116057538595555,
+          "center_u": 189.41342651231002,
+          "camera_xy": [
+            -8.027950392674345,
+            4.606701618023006
+          ],
+          "camera_yaw": -9.550837667927562,
+          "image": "/home/ubuntu/corridor-board-73bbb05/recordings/v151-boxes5-track-m112602-trial2/camera/02778.jpg"
+        },
+        {
+          "frame": 2767,
+          "elapsed_s": 553.216,
+          "horizontal_pixels": 42.09606539090174,
+          "center_u": 67.45973811443054,
+          "camera_xy": [
+            -7.503568805702535,
+            4.409332813191955
+          ],
+          "camera_yaw": -9.961581415236648,
+          "image": "/home/ubuntu/corridor-board-73bbb05/recordings/v151-boxes5-track-m112602-trial2/camera/02767.jpg"
+        }
+      ],
+      "detector_id_diagnostics": {
+        "last_min_edge_pixels": 68.0,
+        "last_stamp": 561.8,
+        "small": 45,
+        "accepted": 112
+      }
+    }
+  ],
+  "limitations": "Horizontal planar approximation only: ignores occlusion, vertical clipping, pitch and body roll. It does not prove a marker was visible or readable. Actual JPEG frames must be inspected."
+}

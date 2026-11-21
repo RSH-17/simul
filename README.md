@@ -1,4 +1,4 @@
-사진의 **20.15×11.35m 책상·트랙에서 상자 총 5개·v1.5.1을 새로 5회 평가 중**입니다. 이전 4상자 시험은 사용자 조건 변경으로 중단·보존합니다. [조건·실행 기록](experiments/2026-11-21_v151_track5_boxes5/README.md)
+사진의 **20.15×11.35m 책상·트랙·상자 총 5개에서 v1.5.1 다섯 회차를 완료**했습니다. 엄격 완주3/5, 상자 마커9/10·벽 마커3/5, 범퍼0회입니다. 실패도 보존했으며 벽 관찰 예산을 우회하는 순서 문제와 작은 후보 생성 실패를 확인했습니다. [결과·다섯 영상·경로](experiments/2026-11-21_v151_track5_boxes5/README.md)
 
 v1.5.1에 **장애물 5개를 추가한 총 8개 장면**의 새 시뮬을 완료했습니다. 세 마커 등록·접근·저장 지도 검사 통과, 308.6초·35.7m·범퍼 0회입니다. [실행 조건·기록](experiments/2026-11-21_v151_clutter/README.md)
 
@@ -468,7 +468,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 402개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 407개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -880,6 +880,11 @@ python3 scripts/publish_simulation_videos.py --upload
 | [v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4) | 성공 | 확인 | 308.61600000000004 |
 
 | [v151-fourbox-archive1121__v151-track-m112501-trial1.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-fourbox-archive1121__v151-track-m112501-trial1.mp4) | 성공 | 확인 | 336.38399999999996 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112601-trial1.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112601-trial1.mp4) | 실패 | 미달 | 600.004 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112602-trial2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112602-trial2.mp4) | 성공 | 확인 | 558.604 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112603-trial3.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112603-trial3.mp4) | 성공 | 확인 | 321.1 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4) | 성공 | 확인 | 368.46 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4) | 실패 | 미달 | 600.0 |
 
 </details>
 

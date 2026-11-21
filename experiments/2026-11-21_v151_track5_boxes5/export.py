@@ -35,6 +35,7 @@ def export(root,destination):
         row['rendered_seed']=scene['seed']
         row['wall_marker_ids']=sorted(t['id'] for t in scene['targets'] if t['attached_to'].startswith('wall_'))
         row['box_marker_ids']=sorted(t['id'] for t in scene['targets'] if not t['attached_to'].startswith('wall_'))
+        row['marker_sizes_m']={str(t['id']):t['size'] for t in scene['targets']}
         row['independent_closest_m']=metrics['min_ground_truth_m']
         row['registered_s']=metrics['registered_s']
         row['registered_and_within_s']=metrics['registered_and_within_s']
@@ -45,6 +46,15 @@ def export(root,destination):
             events=[json.loads(line) for line in scheduler.read_text().splitlines()]
             row['scheduler_phases']=dict(collections.Counter(e['phase'] for e in events))
             row['scheduler_last_available']=events[-1]['available'] if events else {}
+            row['scheduler_reasons']=dict(collections.Counter(e['reason'] for e in events))
+            row['weak_wall_goal_selections']=sum(bool(e.get('weak_wall')) for e in events)
+            wall_events=[e for e in events if e['kind']=='wall_surface']
+            row['first_wall_surface_selection_s']=wall_events[0]['elapsed'] if wall_events else None
+            # Dispatched selection records, not independent Nav2 path feasibility.
+            row['late_interior_before_wall_budget']=[dict(elapsed=e['elapsed'],available=e['available'])
+                for e in events if e['reason']=='unseen_reachable_object'
+                and e['available'].get('wall',0)>0
+                and 600-e['elapsed']<=min(.15*600,12+5*e['available']['wall'])]
         episode=destination/'training_robust/native90/v151-track-five-boxes5-1121'/run.name
         (episode/'video').mkdir(parents=True)
         shutil.copy2(run/'mission.mp4',episode/'video/mission.mp4')
@@ -60,6 +70,8 @@ def export(root,destination):
         provenance.append(dict(run=run.name,requested_seed=row['seed'],rendered_seed=scene['seed'],world_sha256=row['world_sha256'],video_sha256=audit['video']['sha256'],
             physical_images=False,source='native Gazebo demo track',camera=[480,480,5],viewing_fps=5))
     assert len({r['geometry_sha256'] for r in report['runs']})==5
+    for file in [root/'camera_geometry.json',root/'wall-glimpse-replay.json',root/'scheduler_integrity.json',*root.glob('wall-audit-*.json')]:
+        if file.exists():shutil.copy2(file,destination/file.name)
     (destination/'video_provenance.json').write_text(json.dumps(dict(domain=174,physical_robot_used=False,videos=provenance),indent=2)+'\n')
     (destination/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     with tarfile.open(destination.with_suffix('.tgz'),'w:gz') as tar:tar.add(destination,arcname=destination.name)

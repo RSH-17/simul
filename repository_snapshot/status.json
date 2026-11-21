@@ -393,7 +393,7 @@
   "pixel_focus_batch_replay": "pixel_focus_batch_replay.json",
   "pixel_focus_startup_failure": "pixel_focus_startup_failure.json",
   "fresh_space_failure_analysis": "fresh_space_failure_analysis.json",
-  "video_release_verified_count": 281,
+  "video_release_verified_count": 407,
   "priority_diagnostic": {
     "root": "/home/peter/simul/training_robust/native90/face_intent_regression_v2",
     "unit": "osp-face-intent-v2.service",
@@ -1725,7 +1725,7 @@
     "interruption_is_policy_failure": false
   },
   "mixed_v151_track5_boxes5": {
-    "state": "in_progress",
+    "state": "complete",
     "planned": 5,
     "boxes": 5,
     "version": "1.5.1-balanced",
@@ -1738,9 +1738,31 @@
     ],
     "physical_drive": false,
     "report": "experiments/2026-11-21_v151_track5_boxes5/README.md",
-    "completed_verified_at_snapshot": 1,
-    "strict_successes_at_snapshot": 0,
+    "completed_verified_at_snapshot": 5,
+    "strict_successes_at_snapshot": 3,
     "outer_wall_guard_s": 2400,
-    "first_observer_preserved_during_supervisor_handoff": true
+    "first_observer_preserved_during_supervisor_handoff": true,
+    "summary": {
+      "native_runs": 5,
+      "boxes": 5,
+      "successes": 3,
+      "bumps": 0,
+      "sensor_interruptions": 1,
+      "mean_sim_s": 489.6336,
+      "mean_wall_s": 1082.378045477401,
+      "mean_path_m": 83.77781194727584,
+      "policy_changed": false,
+      "physical_drive": false,
+      "box_marker_registered": 9,
+      "box_marker_rgb_verified": 9,
+      "box_marker_total": 10,
+      "wall_marker_registered": 3,
+      "wall_marker_rgb_verified": 3,
+      "wall_marker_total": 5
+    },
+    "policy_changed": false,
+    "wall_budget_defect_confirmed": true,
+    "video_assets_verified": 5,
+    "results": "experiments/2026-11-21_v151_track5_boxes5/result.json"
   }
 }

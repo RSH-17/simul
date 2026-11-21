@@ -1,0 +1,1288 @@
+{
+  "complete": true,
+  "runs": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "variant": "sync",
+      "profile": "balanced",
+      "reason": "common_time_limit",
+      "mission_start_clock_s": 3.832,
+      "start_world_pose": [
+        7.599286988882613,
+        -4.848980438435453
+      ],
+      "split": "large_track_validation",
+      "seed": 112601,
+      "strict_live_success": false,
+      "strict_saved_map_success": false,
+      "independent_approach_complete": false,
+      "policy_sensor_proof_complete": false,
+      "registered_ids": [
+        32,
+        103
+      ],
+      "sensor_verified_ids": [
+        32,
+        103
+      ],
+      "elapsed_sim_s": 600.004,
+      "elapsed_wall_s": 1356.7458824269997,
+      "path_length_m": 112.5010060741611,
+      "motion": {
+        "translation_s": 469.8600000000001,
+        "rotation_only_s": 92.9999999999997,
+        "stopped_s": 37.06000000000014,
+        "integrated_abs_turn_rad": 97.17178481031952
+      },
+      "bumper_events": 0,
+      "minimum_valid_scan_range_m": 0.38995426893234253,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 3000,
+        "input_fps_sim": 4.999999999999999,
+        "processed_frames": 3000,
+        "processed_fps_sim": 4.999999999999999,
+        "processed_age_sim_p50_s": 0.06799999999998363,
+        "processed_age_sim_p95_s": 0.08799999999999422,
+        "input_max_gap_sim_s": 0.20000000000004547,
+        "real_time_factor": 0.4422375684138356,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "cpu": {
+        "gazebo": {
+          "median_percent_one_core": 116.42890911547106,
+          "p95_percent_one_core": 129.51460512076198,
+          "max_sampled_rss_mib": 1398.328125
+        },
+        "slam": {
+          "median_percent_one_core": 34.235206860567054,
+          "p95_percent_one_core": 75.97069138587165,
+          "max_sampled_rss_mib": 130.3515625
+        },
+        "nav2": {
+          "median_percent_one_core": 25.87626796680645,
+          "p95_percent_one_core": 30.22627923410049,
+          "max_sampled_rss_mib": 56.9609375
+        },
+        "detector": {
+          "median_percent_one_core": 22.991916846698796,
+          "p95_percent_one_core": 26.430894953352343,
+          "max_sampled_rss_mib": 208.45703125
+        }
+      },
+      "sensor_interruptions": 0,
+      "navigation_flow": {
+        "mid_route_wall_inspection": false,
+        "skipped_zero_turn_waits": 1,
+        "stalls_cancelled": 0,
+        "failed_goals_filtered": 5,
+        "failed_goal_cooldown_s": 60.0,
+        "stall_timeout_s": 8.0,
+        "minimum_progress_m": 0.06,
+        "observation_settle_min_s": 0.5,
+        "observation_settle_max_s": 1.5,
+        "observation_fresh_frames": 3,
+        "controller": "MPPI",
+        "turning_stall_timeout_s": 16.0
+      },
+      "map_errors_live_m": {
+        "103": 0.04646768879664919,
+        "32": 0.17750678725702068
+      },
+      "map_errors_saved_m": {
+        "32": 0.17750678725702068,
+        "103": 0.04646768879664919
+      },
+      "initial_registered_ids": [],
+      "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+      "selected_goal_counts": {
+        "interior_frontier": 2,
+        "interior_surface": 22,
+        "approach": 1
+      },
+      "consecutive_same_selected_goal_count": 1,
+      "cancellations": {
+        "readable_marker": 1,
+        "marker_hint": 1,
+        "inspection_due": 1,
+        "action_timeout": 2
+      },
+      "nav2_control_rate_warnings": 497,
+      "detector": {
+        "frames": 3013,
+        "decoded": {
+          "103": 97,
+          "32": 29
+        },
+        "small": 15,
+        "border": 1,
+        "no_range": 35,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 90,
+        "errors": 0,
+        "last_error": "",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          32,
+          103
+        ],
+        "by_id": {
+          "103": {
+            "last_min_edge_pixels": 150.0,
+            "last_stamp": 90.0,
+            "small": 12,
+            "no_range": 32,
+            "accepted": 65
+          },
+          "32": {
+            "last_min_edge_pixels": 65.53052520751953,
+            "last_stamp": 363.4,
+            "small": 3,
+            "no_range": 3,
+            "accepted": 25,
+            "border": 1
+          }
+        },
+        "exposure_queue": {
+          "received": 3016,
+          "replaced": 1,
+          "expired": 1,
+          "future": 1,
+          "duplicate": 0,
+          "tf_waits": 21,
+          "dispatched": 3013,
+          "clock_resets": 0,
+          "pending": 0
+        },
+        "pipeline": {
+          "samples": 256,
+          "capture_age_p95_s": 0.07999999999992724,
+          "callback_wall_p95_s": 0.07558671300648712,
+          "dispatched_fps_ros": 5.0
+        },
+        "sensor_history": {
+          "scans_buffered": 64,
+          "depths_buffered": 0,
+          "latest_scan_skew_s": 0.10000000000002274,
+          "latest_depth_skew_s": null
+        },
+        "confirmations": {
+          "103": 30,
+          "32": 25
+        }
+      },
+      "video": {
+        "frames": 3000,
+        "duration_s": 600.0,
+        "recorded_frames": 2999,
+        "max_frame_gap_s": 0.20000000000004547,
+        "sha256": "3cc32cf24769cbab7acc3a063a86748b86c66914e9c27387ea66ee80ce0a3a1e"
+      },
+      "rendered_seed": 112601,
+      "wall_marker_ids": [
+        7
+      ],
+      "box_marker_ids": [
+        32,
+        103
+      ],
+      "marker_sizes_m": {
+        "32": 0.25,
+        "103": 0.3,
+        "7": 0.2
+      },
+      "independent_closest_m": {
+        "32": 0.9126525503636198,
+        "103": 0.618271013830396,
+        "7": 3.3347482947502463
+      },
+      "registered_s": {
+        "103": 68.152,
+        "32": 355.128
+      },
+      "registered_and_within_s": {
+        "103": 68.144,
+        "32": 355.144
+      },
+      "geometry_sha256": "9980d94befacb7def6e18d6cbce20499f335e58c9ea6b1e3599f634e9cb49e67",
+      "scheduler_phases": {
+        "interior": 25
+      },
+      "scheduler_last_available": {
+        "interior": 37,
+        "wall": 190
+      },
+      "scheduler_reasons": {
+        "explore_open_frontier": 2,
+        "unseen_reachable_object": 22,
+        "inspect_other_surface": 1
+      },
+      "weak_wall_goal_selections": 0,
+      "first_wall_surface_selection_s": null,
+      "late_interior_before_wall_budget": [
+        {
+          "elapsed": 556.176,
+          "available": {
+            "interior": 37,
+            "wall": 190
+          }
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112602-trial2",
+      "variant": "sync",
+      "profile": "balanced",
+      "reason": "all_registered_and_within_1.5m",
+      "mission_start_clock_s": 3.384,
+      "start_world_pose": [
+        8.050899908331369,
+        -4.350223730004102
+      ],
+      "split": "large_track_validation",
+      "seed": 112602,
+      "strict_live_success": true,
+      "strict_saved_map_success": true,
+      "independent_approach_complete": true,
+      "policy_sensor_proof_complete": true,
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "sensor_verified_ids": [
+        7,
+        32,
+        103
+      ],
+      "elapsed_sim_s": 558.604,
+      "elapsed_wall_s": 1228.939811973003,
+      "path_length_m": 94.53470891854161,
+      "motion": {
+        "translation_s": 402.88000000000005,
+        "rotation_only_s": 104.21999999999989,
+        "stopped_s": 51.38000000000011,
+        "integrated_abs_turn_rad": 110.20746792833668
+      },
+      "bumper_events": 0,
+      "minimum_valid_scan_range_m": 0.42592954635620117,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 2793,
+        "input_fps_sim": 5.0,
+        "processed_frames": 2793,
+        "processed_fps_sim": 5.0,
+        "processed_age_sim_p50_s": 0.06799999999998363,
+        "processed_age_sim_p95_s": 0.08400000000006003,
+        "input_max_gap_sim_s": 0.20000000000004547,
+        "real_time_factor": 0.4545413815695241,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "cpu": {
+        "gazebo": {
+          "median_percent_one_core": 119.43813474763921,
+          "p95_percent_one_core": 130.92696323276257,
+          "max_sampled_rss_mib": 1398.43359375
+        },
+        "slam": {
+          "median_percent_one_core": 32.398354900279486,
+          "p95_percent_one_core": 71.12154189944795,
+          "max_sampled_rss_mib": 120.09765625
+        },
+        "nav2": {
+          "median_percent_one_core": 25.33525772396697,
+          "p95_percent_one_core": 29.62090802096173,
+          "max_sampled_rss_mib": 57.625
+        },
+        "detector": {
+          "median_percent_one_core": 22.990732433404787,
+          "p95_percent_one_core": 26.584745444044522,
+          "max_sampled_rss_mib": 208.28125
+        }
+      },
+      "sensor_interruptions": 0,
+      "navigation_flow": {
+        "mid_route_wall_inspection": false,
+        "skipped_zero_turn_waits": 1,
+        "stalls_cancelled": 2,
+        "failed_goals_filtered": 4,
+        "failed_goal_cooldown_s": 60.0,
+        "stall_timeout_s": 8.0,
+        "minimum_progress_m": 0.06,
+        "observation_settle_min_s": 0.5,
+        "observation_settle_max_s": 1.5,
+        "observation_fresh_frames": 3,
+        "controller": "MPPI",
+        "turning_stall_timeout_s": 16.0
+      },
+      "map_errors_live_m": {
+        "7": 0.011224836444065585,
+        "32": 0.05041194051210485,
+        "103": 0.05524834619812077
+      },
+      "map_errors_saved_m": {
+        "7": 0.011224836444065585,
+        "32": 0.05041194051210485,
+        "103": 0.05524834619812077
+      },
+      "initial_registered_ids": [],
+      "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+      "selected_goal_counts": {
+        "interior_frontier": 1,
+        "interior_surface": 22,
+        "approach": 4,
+        "wall_surface": 2,
+        "focus": 1
+      },
+      "consecutive_same_selected_goal_count": 0,
+      "cancellations": {
+        "navigation_stalled": 2,
+        "marker_hint": 3,
+        "registered_marker": 1
+      },
+      "nav2_control_rate_warnings": 317,
+      "detector": {
+        "frames": 2805,
+        "decoded": {
+          "7": 143,
+          "32": 157,
+          "103": 114
+        },
+        "small": 106,
+        "border": 3,
+        "no_range": 70,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 296,
+        "errors": 0,
+        "last_error": "",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          7,
+          32,
+          103
+        ],
+        "by_id": {
+          "7": {
+            "last_min_edge_pixels": 33.0,
+            "last_stamp": 425.8,
+            "accepted": 86,
+            "small": 53,
+            "no_range": 54,
+            "border": 3
+          },
+          "32": {
+            "last_min_edge_pixels": 68.0,
+            "last_stamp": 561.8,
+            "small": 45,
+            "accepted": 112
+          },
+          "103": {
+            "last_min_edge_pixels": 45.607017517089844,
+            "last_stamp": 555.0,
+            "small": 8,
+            "no_range": 16,
+            "accepted": 98
+          }
+        },
+        "exposure_queue": {
+          "received": 2808,
+          "replaced": 1,
+          "expired": 1,
+          "future": 1,
+          "duplicate": 0,
+          "tf_waits": 17,
+          "dispatched": 2805,
+          "clock_resets": 0,
+          "pending": 0
+        },
+        "pipeline": {
+          "samples": 256,
+          "capture_age_p95_s": 0.07999999999992724,
+          "callback_wall_p95_s": 0.061813280000933446,
+          "dispatched_fps_ros": 5.000000000000005
+        },
+        "sensor_history": {
+          "scans_buffered": 64,
+          "depths_buffered": 0,
+          "latest_scan_skew_s": 0.09999999999990905,
+          "latest_depth_skew_s": null
+        },
+        "confirmations": {
+          "7": 30,
+          "32": 30,
+          "103": 30
+        }
+      },
+      "video": {
+        "frames": 2793,
+        "duration_s": 558.6,
+        "recorded_frames": 2793,
+        "max_frame_gap_s": 0.20000000000004547,
+        "sha256": "ac07116769484368db2ac0758180ded6d41ac8d38e4be9d907c5ae666270a26a"
+      },
+      "rendered_seed": 4144184517,
+      "wall_marker_ids": [
+        32
+      ],
+      "box_marker_ids": [
+        7,
+        103
+      ],
+      "marker_sizes_m": {
+        "7": 0.2,
+        "103": 0.3,
+        "32": 0.25
+      },
+      "independent_closest_m": {
+        "7": 0.75877121933419,
+        "103": 0.5952251013697049,
+        "32": 1.106778806947953
+      },
+      "registered_s": {
+        "7": 159.068,
+        "32": 526.644,
+        "103": 532.092
+      },
+      "registered_and_within_s": {
+        "7": 159.08,
+        "103": 532.1,
+        "32": 557.04
+      },
+      "geometry_sha256": "444af58f1d4f2e3deb8e006b83f1c1bc41270b9e87c57e2e55520e67529b7aa2",
+      "scheduler_phases": {
+        "interior": 25,
+        "wall": 5
+      },
+      "scheduler_last_available": {
+        "interior": 40,
+        "wall": 168
+      },
+      "scheduler_reasons": {
+        "explore_open_frontier": 1,
+        "unseen_reachable_object": 19,
+        "inspect_other_surface": 5,
+        "persistent_small_wall_candidate": 5
+      },
+      "weak_wall_goal_selections": 2,
+      "first_wall_surface_selection_s": 339.124,
+      "late_interior_before_wall_budget": [
+        {
+          "elapsed": 539.124,
+          "available": {
+            "interior": 40,
+            "wall": 168
+          }
+        },
+        {
+          "elapsed": 549.124,
+          "available": {
+            "interior": 40,
+            "wall": 168
+          }
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112603-trial3",
+      "variant": "sync",
+      "profile": "balanced",
+      "reason": "all_registered_and_within_1.5m",
+      "mission_start_clock_s": 4.436,
+      "start_world_pose": [
+        -7.750254705096283,
+        -2.4007471224201833
+      ],
+      "split": "large_track_validation",
+      "seed": 112603,
+      "strict_live_success": true,
+      "strict_saved_map_success": true,
+      "independent_approach_complete": true,
+      "policy_sensor_proof_complete": true,
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "sensor_verified_ids": [
+        7,
+        32,
+        103
+      ],
+      "elapsed_sim_s": 321.1,
+      "elapsed_wall_s": 725.9847226860002,
+      "path_length_m": 52.08980654797787,
+      "motion": {
+        "translation_s": 225.93999999999988,
+        "rotation_only_s": 65.58000000000003,
+        "stopped_s": 29.560000000000095,
+        "integrated_abs_turn_rad": 70.84999269696652
+      },
+      "bumper_events": 0,
+      "minimum_valid_scan_range_m": 0.2859252095222473,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 1605,
+        "input_fps_sim": 5.0,
+        "processed_frames": 1606,
+        "processed_fps_sim": 5.0,
+        "processed_age_sim_p50_s": 0.06400000000000006,
+        "processed_age_sim_p95_s": 0.08400000000000318,
+        "input_max_gap_sim_s": 0.2000000000000739,
+        "real_time_factor": 0.44229580866659757,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "cpu": {
+        "gazebo": {
+          "median_percent_one_core": 121.9999953382206,
+          "p95_percent_one_core": 133.10313121074455,
+          "max_sampled_rss_mib": 1398.78125
+        },
+        "slam": {
+          "median_percent_one_core": 20.671484777277417,
+          "p95_percent_one_core": 37.93566183403321,
+          "max_sampled_rss_mib": 90.82421875
+        },
+        "nav2": {
+          "median_percent_one_core": 25.983054587437373,
+          "p95_percent_one_core": 29.54277146537352,
+          "max_sampled_rss_mib": 55.38671875
+        },
+        "detector": {
+          "median_percent_one_core": 23.34580477849778,
+          "p95_percent_one_core": 26.801698410394422,
+          "max_sampled_rss_mib": 211.09765625
+        }
+      },
+      "sensor_interruptions": 1,
+      "navigation_flow": {
+        "mid_route_wall_inspection": false,
+        "skipped_zero_turn_waits": 1,
+        "stalls_cancelled": 0,
+        "failed_goals_filtered": 0,
+        "failed_goal_cooldown_s": 60.0,
+        "stall_timeout_s": 8.0,
+        "minimum_progress_m": 0.06,
+        "observation_settle_min_s": 0.5,
+        "observation_settle_max_s": 1.5,
+        "observation_fresh_frames": 3,
+        "controller": "MPPI",
+        "turning_stall_timeout_s": 16.0
+      },
+      "map_errors_live_m": {
+        "103": 0.0054494780553154855,
+        "32": 0.0226233549228453,
+        "7": 0.021847164112518396
+      },
+      "map_errors_saved_m": {
+        "7": 0.021588712731377222,
+        "32": 0.0226233549228453,
+        "103": 0.0054494780553154855
+      },
+      "initial_registered_ids": [],
+      "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+      "selected_goal_counts": {
+        "interior_frontier": 1,
+        "interior_surface": 16,
+        "focus": 1,
+        "approach": 1
+      },
+      "consecutive_same_selected_goal_count": 0,
+      "cancellations": {
+        "marker_hint": 3,
+        "readable_marker": 1,
+        "nav": 1
+      },
+      "nav2_control_rate_warnings": 166,
+      "detector": {
+        "frames": 1622,
+        "decoded": {
+          "103": 20,
+          "32": 139,
+          "7": 6
+        },
+        "small": 46,
+        "border": 1,
+        "no_range": 6,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 119,
+        "errors": 0,
+        "last_error": "",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          7,
+          32,
+          103
+        ],
+        "by_id": {
+          "103": {
+            "last_min_edge_pixels": 131.0,
+            "last_stamp": 147.2,
+            "accepted": 20
+          },
+          "32": {
+            "last_min_edge_pixels": 81.0,
+            "last_stamp": 260.0,
+            "small": 46,
+            "border": 1,
+            "no_range": 6,
+            "accepted": 93
+          },
+          "7": {
+            "last_min_edge_pixels": 61.0,
+            "last_stamp": 325.4,
+            "accepted": 6
+          }
+        },
+        "exposure_queue": {
+          "received": 1625,
+          "replaced": 1,
+          "expired": 2,
+          "future": 0,
+          "duplicate": 0,
+          "tf_waits": 27,
+          "dispatched": 1622,
+          "clock_resets": 0,
+          "pending": 0
+        },
+        "pipeline": {
+          "samples": 256,
+          "capture_age_p95_s": 0.07999999999998408,
+          "callback_wall_p95_s": 0.0533255519985687,
+          "dispatched_fps_ros": 5.0
+        },
+        "sensor_history": {
+          "scans_buffered": 64,
+          "depths_buffered": 0,
+          "latest_scan_skew_s": 0.0999999999999659,
+          "latest_depth_skew_s": null
+        },
+        "confirmations": {
+          "103": 20,
+          "32": 30,
+          "7": 6
+        }
+      },
+      "video": {
+        "frames": 1606,
+        "duration_s": 321.2,
+        "recorded_frames": 1605,
+        "max_frame_gap_s": 0.2000000000000739,
+        "sha256": "88029e6907af412e76519bb96b5e235adf5ca37f44a97573be9c19ba7fa4930a"
+      },
+      "rendered_seed": 112603,
+      "wall_marker_ids": [
+        32
+      ],
+      "box_marker_ids": [
+        7,
+        103
+      ],
+      "marker_sizes_m": {
+        "103": 0.3,
+        "7": 0.2,
+        "32": 0.25
+      },
+      "independent_closest_m": {
+        "103": 0.5794372098367723,
+        "7": 0.8908364980306825,
+        "32": 1.0144352783578876
+      },
+      "registered_s": {
+        "103": 139.548,
+        "32": 234.04,
+        "7": 320.54400000000004
+      },
+      "registered_and_within_s": {
+        "103": 139.548,
+        "32": 248.628,
+        "7": 320.528
+      },
+      "geometry_sha256": "3d70f96f3471071fe4a2ff28b8d3df646745e96471d7807b4941abdecff3783f",
+      "scheduler_phases": {
+        "interior": 19
+      },
+      "scheduler_last_available": {
+        "interior": 50,
+        "wall": 183
+      },
+      "scheduler_reasons": {
+        "explore_open_frontier": 1,
+        "unseen_reachable_object": 18
+      },
+      "weak_wall_goal_selections": 0,
+      "first_wall_surface_selection_s": null,
+      "late_interior_before_wall_budget": []
+    },
+    {
+      "run": "v151-boxes5-track-m112604-trial4",
+      "variant": "sync",
+      "profile": "balanced",
+      "reason": "all_registered_and_within_1.5m",
+      "mission_start_clock_s": 4.024,
+      "start_world_pose": [
+        -6.299316343239879,
+        -4.848948368069747
+      ],
+      "split": "large_track_validation",
+      "seed": 112604,
+      "strict_live_success": true,
+      "strict_saved_map_success": true,
+      "independent_approach_complete": true,
+      "policy_sensor_proof_complete": true,
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "sensor_verified_ids": [
+        7,
+        32,
+        103
+      ],
+      "elapsed_sim_s": 368.46,
+      "elapsed_wall_s": 763.0529132079973,
+      "path_length_m": 58.928960011958395,
+      "motion": {
+        "translation_s": 256.09999999999997,
+        "rotation_only_s": 80.47999999999995,
+        "stopped_s": 31.860000000000106,
+        "integrated_abs_turn_rad": 80.73577104745992
+      },
+      "bumper_events": 0,
+      "minimum_valid_scan_range_m": 0.34246283769607544,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 1842,
+        "input_fps_sim": 5.0,
+        "processed_frames": 1842,
+        "processed_fps_sim": 5.0,
+        "processed_age_sim_p50_s": 0.06400000000000716,
+        "processed_age_sim_p95_s": 0.08400000000000318,
+        "input_max_gap_sim_s": 0.20000000000004547,
+        "real_time_factor": 0.4828760805734098,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "cpu": {
+        "gazebo": {
+          "median_percent_one_core": 122.87981375418853,
+          "p95_percent_one_core": 132.55522574007003,
+          "max_sampled_rss_mib": 1399.98828125
+        },
+        "slam": {
+          "median_percent_one_core": 21.601488800461212,
+          "p95_percent_one_core": 51.161336661567645,
+          "max_sampled_rss_mib": 99.53515625
+        },
+        "nav2": {
+          "median_percent_one_core": 24.316387373082605,
+          "p95_percent_one_core": 29.289716288400673,
+          "max_sampled_rss_mib": 55.29296875
+        },
+        "detector": {
+          "median_percent_one_core": 23.208563828522955,
+          "p95_percent_one_core": 26.776066517399382,
+          "max_sampled_rss_mib": 205.4765625
+        }
+      },
+      "sensor_interruptions": 0,
+      "navigation_flow": {
+        "mid_route_wall_inspection": false,
+        "skipped_zero_turn_waits": 1,
+        "stalls_cancelled": 0,
+        "failed_goals_filtered": 0,
+        "failed_goal_cooldown_s": 60.0,
+        "stall_timeout_s": 8.0,
+        "minimum_progress_m": 0.06,
+        "observation_settle_min_s": 0.5,
+        "observation_settle_max_s": 1.5,
+        "observation_fresh_frames": 3,
+        "controller": "MPPI",
+        "turning_stall_timeout_s": 16.0
+      },
+      "map_errors_live_m": {
+        "32": 0.03391408241478005,
+        "103": 0.04953592656468706,
+        "7": 0.04305664271304177
+      },
+      "map_errors_saved_m": {
+        "7": 0.04305664271304177,
+        "32": 0.03391408241478005,
+        "103": 0.04953592656468706
+      },
+      "initial_registered_ids": [],
+      "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+      "selected_goal_counts": {
+        "interior_frontier": 1,
+        "interior_surface": 17,
+        "approach": 3,
+        "wall_surface": 1
+      },
+      "consecutive_same_selected_goal_count": 0,
+      "cancellations": {
+        "marker_hint": 2,
+        "registered_marker": 1,
+        "readable_marker": 1
+      },
+      "nav2_control_rate_warnings": 114,
+      "detector": {
+        "frames": 1857,
+        "decoded": {
+          "32": 41,
+          "103": 111,
+          "7": 27
+        },
+        "small": 62,
+        "border": 1,
+        "no_range": 50,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 112,
+        "errors": 0,
+        "last_error": "",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          7,
+          32,
+          103
+        ],
+        "by_id": {
+          "32": {
+            "last_min_edge_pixels": 87.00574493408203,
+            "last_stamp": 63.4,
+            "accepted": 41
+          },
+          "103": {
+            "last_min_edge_pixels": 103.0,
+            "last_stamp": 372.4,
+            "small": 62,
+            "no_range": 50,
+            "accepted": 44,
+            "border": 1
+          },
+          "7": {
+            "last_min_edge_pixels": 87.00574493408203,
+            "last_stamp": 246.8,
+            "accepted": 27
+          }
+        },
+        "exposure_queue": {
+          "received": 1860,
+          "replaced": 1,
+          "expired": 2,
+          "future": 0,
+          "duplicate": 0,
+          "tf_waits": 31,
+          "dispatched": 1857,
+          "clock_resets": 0,
+          "pending": 0
+        },
+        "pipeline": {
+          "samples": 256,
+          "capture_age_p95_s": 0.06399999999996453,
+          "callback_wall_p95_s": 0.07250069099245593,
+          "dispatched_fps_ros": 5.0
+        },
+        "sensor_history": {
+          "scans_buffered": 64,
+          "depths_buffered": 0,
+          "latest_scan_skew_s": 0.0999999999999659,
+          "latest_depth_skew_s": null
+        },
+        "confirmations": {
+          "32": 30,
+          "103": 30,
+          "7": 27
+        }
+      },
+      "video": {
+        "frames": 1842,
+        "duration_s": 368.4,
+        "recorded_frames": 1842,
+        "max_frame_gap_s": 0.20000000000004547,
+        "sha256": "406217b7ae575d687e2dea41c498426ceeb17a0c50e2d604f584fa619e092333"
+      },
+      "rendered_seed": 1223309082,
+      "wall_marker_ids": [
+        103
+      ],
+      "box_marker_ids": [
+        7,
+        32
+      ],
+      "marker_sizes_m": {
+        "32": 0.25,
+        "7": 0.2,
+        "103": 0.3
+      },
+      "independent_closest_m": {
+        "32": 0.6383814559962643,
+        "7": 0.6068624358574092,
+        "103": 0.8358903455887727
+      },
+      "registered_s": {
+        "32": 42.44,
+        "103": 151.396,
+        "7": 238.452
+      },
+      "registered_and_within_s": {
+        "32": 42.504,
+        "7": 238.464,
+        "103": 364.144
+      },
+      "geometry_sha256": "2b5a54bd1ed0a3d4c0fabffc2015346a3a57b68327480cd2950f2a693e2abdf8",
+      "scheduler_phases": {
+        "interior": 21,
+        "wall": 1
+      },
+      "scheduler_last_available": {
+        "interior": 27,
+        "wall": 189
+      },
+      "scheduler_reasons": {
+        "explore_open_frontier": 1,
+        "unseen_reachable_object": 20,
+        "persistent_small_wall_candidate": 1
+      },
+      "weak_wall_goal_selections": 1,
+      "first_wall_surface_selection_s": 124.976,
+      "late_interior_before_wall_budget": []
+    },
+    {
+      "run": "v151-boxes5-track-m112605-trial5",
+      "variant": "sync",
+      "profile": "balanced",
+      "reason": "common_time_limit",
+      "mission_start_clock_s": 4.024,
+      "start_world_pose": [
+        -8.650917193435967,
+        -4.7000692002953715
+      ],
+      "split": "large_track_validation",
+      "seed": 112605,
+      "strict_live_success": false,
+      "strict_saved_map_success": false,
+      "independent_approach_complete": false,
+      "policy_sensor_proof_complete": false,
+      "registered_ids": [
+        103
+      ],
+      "sensor_verified_ids": [
+        103
+      ],
+      "elapsed_sim_s": 600.0,
+      "elapsed_wall_s": 1337.166897093004,
+      "path_length_m": 100.8345781837402,
+      "motion": {
+        "translation_s": 429.9,
+        "rotation_only_s": 126.96000000000029,
+        "stopped_s": 43.07999999999974,
+        "integrated_abs_turn_rad": 129.20094864441964
+      },
+      "bumper_events": 0,
+      "minimum_valid_scan_range_m": 0.2941568195819855,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 2999,
+        "input_fps_sim": 5.000000000000001,
+        "processed_frames": 3000,
+        "processed_fps_sim": 5.0,
+        "processed_age_sim_p50_s": 0.06799999999998363,
+        "processed_age_sim_p95_s": 0.08799999999999386,
+        "input_max_gap_sim_s": 0.20000000000004547,
+        "real_time_factor": 0.44870988154462826,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "cpu": {
+        "gazebo": {
+          "median_percent_one_core": 119.2906750993218,
+          "p95_percent_one_core": 131.05910508081223,
+          "max_sampled_rss_mib": 1399.1484375
+        },
+        "slam": {
+          "median_percent_one_core": 30.939718012628767,
+          "p95_percent_one_core": 67.8264531900625,
+          "max_sampled_rss_mib": 125.23828125
+        },
+        "nav2": {
+          "median_percent_one_core": 25.96008875198196,
+          "p95_percent_one_core": 29.618303964849776,
+          "max_sampled_rss_mib": 57.578125
+        },
+        "detector": {
+          "median_percent_one_core": 23.195692336995712,
+          "p95_percent_one_core": 26.423899575775938,
+          "max_sampled_rss_mib": 211.18359375
+        }
+      },
+      "sensor_interruptions": 0,
+      "navigation_flow": {
+        "mid_route_wall_inspection": false,
+        "skipped_zero_turn_waits": 1,
+        "stalls_cancelled": 0,
+        "failed_goals_filtered": 0,
+        "failed_goal_cooldown_s": 60.0,
+        "stall_timeout_s": 8.0,
+        "minimum_progress_m": 0.06,
+        "observation_settle_min_s": 0.5,
+        "observation_settle_max_s": 1.5,
+        "observation_fresh_frames": 3,
+        "controller": "MPPI",
+        "turning_stall_timeout_s": 16.0
+      },
+      "map_errors_live_m": {
+        "103": 0.031129682533326236
+      },
+      "map_errors_saved_m": {
+        "103": 0.031129682533326236
+      },
+      "initial_registered_ids": [],
+      "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+      "selected_goal_counts": {
+        "interior_frontier": 1,
+        "interior_surface": 28
+      },
+      "consecutive_same_selected_goal_count": 0,
+      "cancellations": {
+        "registered_marker": 1
+      },
+      "nav2_control_rate_warnings": 368,
+      "detector": {
+        "frames": 3014,
+        "decoded": {
+          "103": 17
+        },
+        "small": 0,
+        "border": 0,
+        "no_range": 0,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 17,
+        "errors": 0,
+        "last_error": "",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          103
+        ],
+        "by_id": {
+          "103": {
+            "last_min_edge_pixels": 119.00420379638672,
+            "last_stamp": 159.2,
+            "accepted": 17
+          }
+        },
+        "exposure_queue": {
+          "received": 3017,
+          "replaced": 1,
+          "expired": 2,
+          "future": 0,
+          "duplicate": 0,
+          "tf_waits": 36,
+          "dispatched": 3014,
+          "clock_resets": 0,
+          "pending": 0
+        },
+        "pipeline": {
+          "samples": 256,
+          "capture_age_p95_s": 0.06400000000007822,
+          "callback_wall_p95_s": 0.05485643800057005,
+          "dispatched_fps_ros": 5.0
+        },
+        "sensor_history": {
+          "scans_buffered": 64,
+          "depths_buffered": 0,
+          "latest_scan_skew_s": 0.09999999999990905,
+          "latest_depth_skew_s": null
+        },
+        "confirmations": {
+          "103": 17
+        }
+      },
+      "video": {
+        "frames": 3000,
+        "duration_s": 600.0,
+        "recorded_frames": 2999,
+        "max_frame_gap_s": 0.20000000000004547,
+        "sha256": "1a63f952469ddcf1644e400f7139dcc55b84a4ae3a607630478123312c477f40"
+      },
+      "rendered_seed": 112605,
+      "wall_marker_ids": [
+        7
+      ],
+      "box_marker_ids": [
+        32,
+        103
+      ],
+      "marker_sizes_m": {
+        "32": 0.25,
+        "103": 0.3,
+        "7": 0.2
+      },
+      "independent_closest_m": {
+        "32": 1.2846721496231572,
+        "103": 0.7782304255182638,
+        "7": 6.742422981950127
+      },
+      "registered_s": {
+        "103": 152.46
+      },
+      "registered_and_within_s": {
+        "103": 152.46
+      },
+      "geometry_sha256": "6ef7897209ae77c5a72a9552173e06ffcbd0a010900fad6624a73e357db88f88",
+      "scheduler_phases": {
+        "interior": 29
+      },
+      "scheduler_last_available": {
+        "interior": 43,
+        "wall": 164
+      },
+      "scheduler_reasons": {
+        "explore_open_frontier": 1,
+        "unseen_reachable_object": 23,
+        "inspect_other_surface": 5
+      },
+      "weak_wall_goal_selections": 0,
+      "first_wall_surface_selection_s": null,
+      "late_interior_before_wall_budget": [
+        {
+          "elapsed": 550.976,
+          "available": {
+            "interior": 33,
+            "wall": 163
+          }
+        },
+        {
+          "elapsed": 587.476,
+          "available": {
+            "interior": 40,
+            "wall": 163
+          }
+        },
+        {
+          "elapsed": 599.976,
+          "available": {
+            "interior": 43,
+            "wall": 164
+          }
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "split": "large_track_validation",
+      "variant": "sync",
+      "profile": "balanced",
+      "n": 5,
+      "strict_saved_map_successes": 3,
+      "strict_live_successes": 3,
+      "mean_sim_s": 489.6336,
+      "mean_wall_s": 1082.378045477401,
+      "mean_path_m": 83.77781194727584,
+      "mean_stopped_s": 38.58800000000004,
+      "bumper_events": 0,
+      "sensor_interruptions": 1,
+      "worst_saved_map_error_m": 0.17750678725702068
+    }
+  ],
+  "selection": null,
+  "notes": [
+    "Five different predetermined large-track layouts; one frozen policy, no tuning or inter-policy matched comparison.",
+    "Initial prestart registrations are recorded and can differ; camera processing runs during startup.",
+    "Strict live criterion and final saved-map audit are listed separately.",
+    "Stopped time excludes in-place rotation using independent simulator pose and heading.",
+    "Heartbeat publication moved to the end of processing in v1.5; raw heartbeat ages differ in semantics.",
+    "Selected goals are not an exact action dispatch count or proof of unnecessary replanning.",
+    "Minimum scan range is not footprint-adjusted clearance.",
+    "VM software-rendered camera does not validate RPi/Create3 load or physical reliability."
+  ],
+  "boxes_per_layout": 5
+}
