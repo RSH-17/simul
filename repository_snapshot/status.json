@@ -1691,8 +1691,8 @@
     "publication_branch": "codex/mixed-camera-aware"
   },
   "mixed_v151_clutter": {
-    "state": "startup_and_motion_verified_snapshot",
-    "final_result_pending": true,
+    "state": "completed_strict_saved_map_success",
+    "final_result_pending": false,
     "version": "1.5.1-balanced",
     "extra_obstacles": 5,
     "total_obstacles": 8,
@@ -1700,6 +1700,11 @@
     "duration_limit_s": 600,
     "physical_drive": false,
     "report": "experiments/2026-11-21_v151_clutter/README.md",
-    "run": "v15-sync-balanced-m112401-clutter-extra5-1795242071643397184"
+    "run": "v15-sync-balanced-m112401-clutter-extra5-1795242071643397184",
+    "elapsed_sim_s": 308.61600000000004,
+    "path_m": 35.70079421885439,
+    "bumper_events": 0,
+    "sensor_interruptions": 0,
+    "max_saved_map_error_m": 0.08937375214903985
   }
 }

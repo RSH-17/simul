@@ -1,4 +1,4 @@
-v1.5.1에 **장애물 5개를 추가한 총 8개 장면**의 새 시뮬을 구동 확인했습니다. 최종 평가 전 구동 스냅샷입니다. [실행 조건·기록](experiments/2026-11-21_v151_clutter/README.md)
+v1.5.1에 **장애물 5개를 추가한 총 8개 장면**의 새 시뮬을 완료했습니다. 세 마커 등록·접근·저장 지도 검사 통과, 308.6초·35.7m·범퍼 0회입니다. [실행 조건·기록](experiments/2026-11-21_v151_clutter/README.md)
 
 **Mixed v1.5.1-balanced 시뮬 선정판**: 11개 world에서 42회 native 주행을 완료했습니다. 세 마커 등록·실제 1.5m 접근·근거리 영상 증거·저장 지도 정확도를 함께 평가했으며 전체 41/42회, 선정판은 14/14회 통과했습니다. 카메라는 480×480·5FPS입니다. 마지막 미사용 3맵에서 같은 카메라의 v1.5.0 대비 평균 142.8→88.3초, 거리 19.9→12.2m, 범퍼 0회였습니다. `./sim-camera.sh`로 선정 조합을 실행하며 총 10개 선택 버전을 제공하며 기존판도 보존합니다. 실물 기본값은 그대로입니다. [비교·반례·영상](experiments/2026-11-21_camera_aware_policy/README.md) · [독립 소스 스냅샷](policy_releases/2026-11-21_mixed_camera_sync_v151/README.md)
 
@@ -466,7 +466,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 400개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 401개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -874,6 +874,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [camera-policy-1121__v15-sync-detail-m112203-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112203-heldout2.mp4) | 성공 | 확인 | 94.74 |
 | [camera-policy-1121__v15-sync-glance-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112201-matrix-dev.mp4) | 성공 | 확인 | 129.508 |
 | [camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4) | 성공 | 확인 | 120.56800000000001 |
+
+| [v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4) | 성공 | 확인 | 308.61600000000004 |
 
 </details>
 

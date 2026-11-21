@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-20T23:46:11.468212+00:00",
+  "updated_utc": "2026-11-21T06:30:08.038440+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 400,
+  "uploaded_verified": 401,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -6492,6 +6492,22 @@
       "uploaded_verified": true,
       "evaluation_protocol": "3 correct IDs + independent <=1.5m + three-frame <=1.3m RGB proof + saved-map error <=0.25m + zero bumps",
       "physical_images": false
+    },
+    {
+      "asset": "v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4",
+      "local_path": "training_robust/native90/v151-clutter1121/v15-sync-balanced-m112401-clutter-extra5-1795242071643397184/video/mission.mp4",
+      "bytes": 1028570,
+      "sha256": "b5e2677bc1d8b872973f5757deae47a027569c5a3d90cb6aad1868eb474dda98",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4",
+      "original_evaluator_success": true,
+      "reason": "all_registered_and_within_1.5m",
+      "elapsed_sim_seconds": 308.61600000000004,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1543,
+      "recording_seconds": 308.6,
+      "uploaded_verified": true
     }
   ],
   "skipped": [

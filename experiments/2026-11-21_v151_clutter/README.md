@@ -11,3 +11,7 @@ v1.5.1-balanced 동결 정책을 그대로 사용한다. 이전 112301 맵의 �
 - VM 결과: `/home/ubuntu/camera-clutter-1795242071643397184`
 - 실행 로그: `/home/ubuntu/v151-clutter-112401.log`
 - 실물 domain 4와 분리된 시뮬 domain 174만 사용한다.
+
+최종 저장 지도 검사도 통과했다. 시뮬 308.616초·실제 309.909초·35.701m, 세 마커 등록 및 실제 1.5m 접근과 기존 1.3m 영상 증거 완료, 범퍼 0회·센서 중단 0회, 저장 좌표 오차 최대 8.94cm다. 정지 41.18초이며 밀집 구간에서 모든 정체가 해결됐다는 뜻은 아니다. [상세 결과](result.json).
+
+[완료 주행 영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4)은 공개 Release에서 크기·SHA-256을 확인했다.
