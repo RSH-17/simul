@@ -2157,6 +2157,22 @@
     },
     "hardware_drive": false,
     "production_promoted": false,
-    "enrollment": "experiments/2026-11-22_random_exam/balanced_print/enrollment.json"
+    "enrollment": "experiments/2026-11-22_random_exam/balanced_print/enrollment.json",
+    "portable_random_exam": {
+      "venue": "8780 original SDF shell",
+      "furniture": "shuffle",
+      "marker_count_modes": {
+        "unknown": [
+          1,
+          5
+        ],
+        "three": 3
+      },
+      "preflight_tests_jazzy": 3,
+      "native_worlds_reproduced": 2,
+      "completed_native_scores_replayed": 4,
+      "unknown_count_stress_enrollment": "experiments/2026-11-22_random_exam/balanced_print/undisclosed_enrollment.json",
+      "enrollment_sha256": "0564b657073bf7046765bcec1cb2a60e718b9b57ed21dfc603df06813ce09c3d"
+    }
   }
 }

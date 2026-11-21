@@ -1,6 +1,6 @@
 # 각자 Jazzy에서 정책을 개선하는 팀 실험실
 
-팀원 각자의 Ubuntu 24.04·ROS2 Jazzy에서 우리 TurtleBot4 시뮬을 실행하고, 대시보드를 보며 정책을 개선하는 절차다. 같은 대형 트랙 다섯 장면과 기준판 소스를 받아 개인 작업공간에서 수정한다. 팀원의 컴퓨터에 `osp-jazzy`라는 VM이나 `/home/ubuntu` 경로가 있을 필요는 없다.
+팀원 각자의 Ubuntu 24.04·ROS2 Jazzy에서 시험장 시뮬을 실행하고 대시보드로 결과를 확인할 수 있습니다. 새 배치를 추첨해 연습하고, 두 정책을 비교할 때는 같은 시드를 사용해 주세요. 원래 비교에 사용한 다섯 배치도 재현할 수 있습니다.
 
 목표는 제한 시간 10분 안에 벽·상자에 붙은 Original ArUco 마커 세 ID를 등록하고 각각 실제 1.5m 안으로 접근하는 것이다. 지도에 나온 공간과 카메라로 확인한 표면은 구분한다.
 
@@ -68,6 +68,28 @@ bash team-sim.sh setup ~/simul-ws/my-rescue --policy rescue360
 장면 다운로드가 안 되는 환경에서는 [장면 묶음](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-track5-fixtures-20261122-r2.tar.gz)을 먼저 받아 설치에 `--archive /받은/파일.tar.gz`를 추가한다. 코드·빌드 결과와 장면 캐시는 분리된다.
 
 ## 3. 대시보드 열고 주행하기
+
+### 시험장 안을 매번 새로 추첨하는 주행
+
+벽의 외곽·기둥·바닥과 물리는 공유 8780 시험장과 같습니다. 시드를 생략하면 책상 14개의 위치와 방향, 추가 장애물 0~9개의 형태·자리, 출발 자세, 마커 번호·크기·높이·부착면을 새로 뽑습니다. 기본 무작위 모드에서는 마커 1~5개를 뽑으며 전체 개수도 정책에 알려주지 않습니다. 번호와 배치를 처음 보는 상태에서 3개 과제만 비교할 때는 `--markers three`를 사용해 주세요.
+
+```sh
+bash team-sim.sh setup ~/simul-ws/print-relook --policy balanced-print-relook
+bash team-sim.sh run ~/simul-ws/print-relook
+```
+
+같은 배치로 다른 정책을 비교하려면 첫 실행에서 출력한 시드를 넣어 주세요. 아래 두 명령은 책상·장애물·출발점·인쇄물이 동일한 배치에서 각각의 정책을 실행합니다.
+
+```sh
+bash team-sim.sh run ~/simul-ws/print-relook 3818821658 --random-layout --markers three
+bash team-sim.sh run ~/simul-ws/baseline 3818821658 --random-layout --markers three
+```
+
+기존 비교용 시드 112601~112605를 단독으로 지정하면 이전 다섯 배치를 그대로 엽니다. 원하는 시드에 `--random-layout`를 붙이면 해당 시드를 새 추첨기로 재생성합니다. `--check`를 추가하면 주행 전에 장면 지문과 설치를 확인할 수 있습니다. 스친 마커 재관찰판과 R5는 개수를 숨긴 경우 셋을 발견한 뒤에도 탐색을 이어갑니다. 원본 Balanced는 자체 종료 조건으로 세 마커에서 끝날 수 있습니다. 이 차이를 비교할 때는 마커 수 공개 여부도 결과에 적어 주세요.
+
+무작위 주행의 최종 점수와 보드의 초록 마커에는 등록 후 실제 1.5m 접근과 로봇의 근거리 카메라 증거가 함께 필요합니다. 감독용 평가기는 정답을 다 확인해도 주행을 종료시키지 않습니다. [8780 무작위 시험 조건과 결과](../../experiments/2026-11-22_random_exam/README.md)
+
+### 보드 접속
 
 저장소 루트에서 첫 터미널을 열어 보드를 실행한다.
 

@@ -15,6 +15,7 @@ from geometry import sample
 
 
 ORIGINAL_SDF = '589d152dcfef420f6fda37fccdc30c3d73e9f90ebbdab8359d04bf94a5538b1a'
+PORTABLE_SDF = '564be4776da7c708f0b16453c84bafcb7b71d77807bdfa89ec0f49f37ed585f6'
 FIXED_TABLE_ROOM = 'beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f'
 FILES = ('world/osp_studio.sdf','scene.json','scene.yaml','run/simulation/demo_layout.json','run/simulation/demo_floor.png')
 
@@ -122,9 +123,15 @@ def verify_prints(scene, world, dictionary):
 def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=None):
     original=original.resolve();out=out.resolve()
     source_sdf=original/FILES[0]
-    if digest(source_sdf)!=ORIGINAL_SDF:raise ValueError('Expected the photographed Gazebo exam room')
+    source_digest=digest(source_sdf)
+    if source_digest not in (ORIGINAL_SDF,PORTABLE_SDF):raise ValueError('Expected the photographed Gazebo exam room')
     out.mkdir(parents=True,exist_ok=False)
     raw=read(original/'scene.json');layout=read(original/FILES[3])
+    if source_digest==PORTABLE_SDF:
+        # The verified team archive has the same shell and furniture. Match the
+        # source room's draw order so a shared seed produces identical prints.
+        by_size={target['size']:target for target in raw['targets']}
+        raw['targets']=[by_size[size] for size in (.30,.20,.25)]
     dictionary=original_dictionary()
     scene,tables,witnesses=sample(raw,layout['tables'],seed,len(dictionary.bytesList),marker_count,furniture,host_stress)
     root=ET.parse(source_sdf).getroot();w=root.find('world')
@@ -149,7 +156,8 @@ def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=No
         shutil.copyfile(original/'run/simulation/board-floor.jpg',sim/'board-floor.jpg')
     if furniture=='fixed':shutil.copyfile(original/FILES[3],sim/'demo_layout.json')
     else:save(sim/'demo_layout.json',dict(layout,tables=tables))
-    root.find('.//albedo_map').text=floor.as_uri()
+    root.find('.//albedo_map').text=('@TEAM_MAP_ROOT@/run/simulation/demo_floor.png'
+                                   if source_digest==PORTABLE_SDF else floor.as_uri())
     (out/'world').mkdir();ET.ElementTree(root).write(out/FILES[0],encoding='utf-8',xml_declaration=True)
     save(out/'scene.json',scene);shutil.copyfile(out/'scene.json',sim/'scene.json')
     pose=scene['robot_spawn']

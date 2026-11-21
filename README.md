@@ -2,6 +2,8 @@
 
 [Balanced · 스친 마커 재관찰](policy_candidates/2026-11-22_v151_balanced_print_relook/README.md) · [책상까지 전부 재배치한 5개 독립 시험](experiments/2026-11-22_random_exam/balanced_print/enrollment.json)
 
+팀 실행기에서 시드를 생략하면 같은 시험장에 책상·장애물·마커를 새로 배치합니다. 출력한 시드로 동일한 장면을 다시 실행할 수 있습니다. [팀 대시보드 실행법](docs/team-policy-lab/README.md)
+
 [최신 원본 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md)를 마쳤습니다. 세 마커 등록은 R32 4/5, balanced·rescue360 각각 3/5였습니다. 등록 후 실제 1.5m 접근까지 포함한 R32 완주는 2회 확인했고, 2회는 종료 순간의 위치 기록이 부족해 판정이 보류됐습니다.
 
 [팀원 각자의 Jazzy 설치·대시보드·정책 개선 방법](docs/team-policy-lab/README.md) · [팀 공유 메시지](docs/team-policy-lab/TEAM_MESSAGE.md)

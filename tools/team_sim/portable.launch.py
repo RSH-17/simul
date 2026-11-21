@@ -23,12 +23,14 @@ def generate_launch_description():
                        gz_args=f'{root}/world/osp_studio.sdf -r -v 2 -s --headless-rendering')
     spawn=include(flow/'launch/spawn.launch.py',world='osp_studio',model='standard',namespace='',
                   x=x,y=y,yaw=yaw,camera_width='640',start_docked='false',rviz='false')
+    random_exam=os.environ.get('TEAM_RANDOM_EXAM')=='1'
+    detector={'rgb_topic':'/exam/detector_rgb'} if random_exam else {}
     mission=include(flow/'launch/robot.launch.py',startup_guard='true',use_sim_time='true',
         require_drive_controller='true',undock='false',rviz='false',planner='edge',
-        duration=str(cfg['duration']),navigation_flow_enabled='true',allow_mid_route_wall_inspection='true',
+        duration=str(cfg['duration']),navigation_flow_enabled='true',allow_mid_route_wall_inspection='false' if random_exam else 'true',
         planner_start_ignore_radius_m='0.30',depth_topic='unused_depth',
         policy_file=str(Path(expected)/'frozen-config/policy.json'),
-        nav2_params=str(Path(expected)/'frozen-config/nav2_hardware_profile.yaml'),output_dir=str(run/'native'))
+        nav2_params=str(Path(expected)/'frozen-config/nav2_hardware_profile.yaml'),output_dir=str(run/'native'),**detector)
     return LaunchDescription([DeclareLaunchArgument('namespace',default_value=''),
         DeclareLaunchArgument('use_sim_time',default_value='true'),SetEnvironmentVariable('LIBGL_ALWAYS_SOFTWARE','1'),
         SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH',resources),SetEnvironmentVariable('GZ_PARTITION','camera_aware_'+str(os.getpid())),

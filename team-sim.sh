@@ -8,7 +8,7 @@ if [[ "$team_action" == board ]]; then
 fi
 if [[ "$team_action" == help ]]; then
   echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook] [--archive PATH]'
-  echo 'run WORKSPACE SEED [--duration SECONDS] [--check]'
+  echo 'run WORKSPACE [SEED] [--random-layout] [--markers unknown|three] [--duration SECONDS] [--check]'
   echo 'board [--port 8780]'
   exit 0
 fi

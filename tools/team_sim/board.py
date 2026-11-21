@@ -28,10 +28,18 @@ def detail(folder):
         last=next((r for r in reversed(trace) if r.get('registered_ids') is not None and r.get('elapsed_sim_s')), {})
         elapsed=float(last.get('elapsed_sim_s',0));ids=last.get('registered_ids','').split()
     except (OSError,ValueError):elapsed=0;ids=[]
+    protocol=read(folder/'protocol.json',{})
+    randomized=protocol.get('fixture_mode')=='randomized_exam'
+    exam=read(folder/'exam-score.json',{}) if randomized else {}
+    if randomized:
+        approached=sorted(int(i) for i,r in exam.get('records',{}).items() if r['verified_s'] is not None)
+    else:
+        approached=sorted(map(int,metric.get('registered_and_within_s',{})))
     return dict(id=folder.name,scene=scene,path=points,ids=metric.get('final_ids',ids),elapsed=metric.get('elapsed_sim_s',elapsed),
-        approached=sorted(map(int,metric.get('registered_and_within_s',{}))),reason=metric.get('reason','주행 중'),
-        strict=metric.get('strict_success'),bumps=metric.get('bumper_events'),
-        finished=(folder/'audit.json').exists(),interrupted=(folder/'interruption.json').exists(),protocol=read(folder/'protocol.json',{}))
+        approached=approached,reason=metric.get('reason','주행 중'),
+        strict=exam.get('strict') if randomized else metric.get('strict_success'),bumps=metric.get('bumper_events'),
+        finished=bool(exam) if randomized else (folder/'audit.json').exists(),
+        interrupted=(folder/'interruption.json').exists(),protocol=protocol)
 
 class Handler(BaseHTTPRequestHandler):
     def send(self,data,kind='application/json'):
@@ -48,7 +56,9 @@ class Handler(BaseHTTPRequestHandler):
             if photos:return self.send(photos[-1].read_bytes(),'image/jpeg')
         if q.path=='/video.mp4' and (folder/'audit.json').exists() and (folder/'mission.mp4').exists():
             return self.send((folder/'mission.mp4').read_bytes(),'video/mp4')
-        if q.path=='/evaluation.json':return self.send(read(folder/'metrics.json',{}))
+        if q.path=='/evaluation.json':
+            exam=folder/'exam-score.json'
+            return self.send(read(exam if exam.is_file() else folder/'metrics.json',{}))
         return self.send_error(404)
     def log_message(self,*args):pass
 

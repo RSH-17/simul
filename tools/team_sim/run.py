@@ -17,11 +17,20 @@ REPO=HERE.parents[1]
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,required=True)
-    parser.add_argument('seed',type=int,choices=range(112601,112606));parser.add_argument('--duration',type=float,default=600.)
+    parser.add_argument('seed',type=int,nargs='?',help='Omit for a fresh random exam. A printed seed reproduces the draw.')
+    parser.add_argument('--random-layout',action='store_true',help='Draw a new layout even for legacy seeds 112601–112605')
+    parser.add_argument('--markers',choices=('unknown','three'),help='Random exams default to an undisclosed count (1–5)')
+    parser.add_argument('--duration',type=float,default=600.)
     parser.add_argument('--domain',type=int,choices=(173,174,175),default=174);parser.add_argument('--check',action='store_true')
     a=parser.parse_args();ws=a.workspace.resolve()
     if not 0<a.duration<=600:parser.error('Duration must be in (0,600]')
-    fixture=fixtures()/'maps'/f'map-{a.seed}'
+    from random_exam import fixture_for,selection
+    legacy=json.loads((HERE/'fixtures.json').read_text())['seeds']
+    a.seed,randomized,public_count=selection(a.seed,a.random_layout,a.markers,legacy)
+    if randomized:
+        print(f"Random exam seed {a.seed}, public marker count {public_count or 'undisclosed'}",flush=True)
+    assets=fixtures()
+    fixture=fixture_for(home(),assets,a.seed,public_count) if randomized else assets/'maps'/f'map-{a.seed}'
     from ament_index_python.packages import get_package_share_directory
     import osp_mission
     package=Path(get_package_share_directory('osp_mission')).resolve()
@@ -31,7 +40,8 @@ def main():
     for package_name in ('turtlebot4_gz_bringup','irobot_create_gz_bringup','nav2_bringup','slam_toolbox','robot_localization'):
         get_package_share_directory(package_name)
     config=dict(workspace=str(ws),module_file=osp_mission.__file__,seed=a.seed,domain=a.domain,camera=[480,480,5],
-        duration_sim_s=a.duration,physical_drive=False,fixture_sha256=digest(fixture/'world/osp_studio.sdf'))
+        duration_sim_s=a.duration,physical_drive=False,fixture_sha256=digest(fixture/'world/osp_studio.sdf'),
+        fixture_mode='randomized_exam' if randomized else 'legacy_five',public_marker_count=public_count)
     if a.check:
         print(json.dumps(dict(config,check='dependencies, fixture integrity, selected runtime resolved; no nodes started'),indent=2));return
     import psutil
@@ -79,6 +89,8 @@ def main():
             CAMERA_BENCH_WIDTH='480',CAMERA_BENCH_HEIGHT='480',CAMERA_BENCH_FPS='5',
             BENCH_ROOT=str(run),BENCH_RUN=str(run),BENCH_POLICY='mixed',CAMERA_VARIANT='team',CAMERA_PROFILE='balanced',
             ROS_HOME=str(run/'ros_home'),ROS_LOG_DIR=str(run/'ros_logs'),OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
+        env.update(TEAM_RANDOM_EXAM='1' if randomized else '0',OSP_PUBLIC_MARKER_COUNT=str(public_count),
+                   SURVEY_EXPERIMENTS=str(REPO/'experiments'))
         for name in ('FASTRTPS_DEFAULT_PROFILES_FILE','FASTDDS_DEFAULT_PROFILES_FILE','ROS_STATIC_PEERS','ROS_DISCOVERY_SERVER'):env.pop(name,None)
         env['CYCLONEDDS_URI']='file://'+str(REPO/'experiments/2026-11-19_pair_7_103/cyclone.xml')
         (home()/'cards').mkdir(exist_ok=True)
@@ -94,6 +106,9 @@ def main():
                     raise
                 if code:raise RuntimeError('Observer failed; inspect '+str(run/'observer.log'))
                 subprocess.run([sys.executable,str(HERE/'helpers/2026-11-19_corridor_box/finish_trial.py'),str(run),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+                if randomized:
+                    subprocess.run([sys.executable,str(HERE/'random_exam.py'),str(run)],
+                                   env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
                 subprocess.run([sys.executable,str(REPO/'experiments/2026-11-20_v12_camera_rate/refresh_final.py'),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
             print('COMPLETED',run,flush=True)
         except BaseException as exc:
