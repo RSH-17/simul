@@ -1,0 +1,43 @@
+{
+  "protocol_sha256": "25f13541aebb0ee6754a80cebccf13e412c3d28510439ea5a088a985e5dbc8f1",
+  "received_local_date": "2026-11-22",
+  "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f",
+  "pictured_seed": 2983619014,
+  "pictured_world_files": {
+    "world/osp_studio.sdf": "589d152dcfef420f6fda37fccdc30c3d73e9f90ebbdab8359d04bf94a5538b1a",
+    "scene.json": "26dc53bf49a4c1cba760794c6e0c9946cf4ac8e181fac3568c0bbbecddef46eb",
+    "scene.yaml": "cd7e4f4877b9c31ad48357faa4878068457563a362bfbb9f7db86d54b396dc6c",
+    "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+    "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+  },
+  "policies": {
+    "baseline": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+    "R3": "2a1be84b626436e3db3060bec0fd3304d268d7885ac3af7066e3ad7e2edfc243",
+    "R4": "c9dc226fedbac18fd3d03510d79ebbb30c9e04971308dffbfcbd75b3043f50d7"
+  },
+  "execution_sha256": {
+    "prepare.py": "989e05d157bfe3b24b1ef60c4aface64fa6fd6240deede130264288f2babbe64",
+    "paired.py": "b1b97a9ac19df9ca4a697e1bd15251396e77761260feab63fcd25662b77f09d6",
+    "run.py": "0bd9a9886c7b17c0796f4948c9c85166fe267f1c9eaeca6fa91019269f41b3d2",
+    "trial.py": "5a19a0dd3bb6713241b3e002fbce68955677f1364a1f8184bac101595f800c21",
+    "validate.py": "33ab428c928a4ad7ba47dec30d7c95964aff0ebeba44100da2d22922f8792d57"
+  },
+  "selection_sha256": {
+    "select_finalist.py": "2c6b2a622d47bcd2a259859147e83941d8e3fbd12d35dd44d4bd8ba1a963e9af",
+    "queue.py": "f652d270e7b794c6d26df334a297441ebe33bdb7674d230e82f065adc2f4441b",
+    "track_screen.py": "61202d5e2ed5a31eb979569857ff6d23bab23e6d967ad234953fcba89ae293e6"
+  },
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "duration_s": 600,
+  "physical_drive": false,
+  "layouts": 5,
+  "fresh_layouts": 4,
+  "possible_pairs": 9,
+  "mandatory_pictured_pairs": 2,
+  "receipt_type": "prospective registration before any scored episode",
+  "independence": "The pictured layout was provided by the user. Four draws after policy freeze use the same upstream room generator; track repeats are not additional independent layouts."
+}

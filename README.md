@@ -1,4 +1,4 @@
-[Mixed v1.5.1-adaptive-survey 실험](experiments/2026-11-22_v151_adaptive_survey/README.md) · [팀원용 후보 설치](policy_candidates/2026-11-22_v151_adaptive_survey/README.md)
+[8780 원본 시험장 검증](experiments/2026-11-22_exam_track_validation/README.md) · [Mixed v1.5.1-adaptive-survey 실험](experiments/2026-11-22_v151_adaptive_survey/README.md) · [팀원용 후보 설치](policy_candidates/2026-11-22_v151_adaptive_survey/README.md)
 
 [최신 원본 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md)를 마쳤습니다. 세 마커 등록은 R32 4/5, balanced·rescue360 각각 3/5였습니다. 등록 후 실제 1.5m 접근까지 포함한 R32 완주는 2회 확인했고, 2회는 종료 순간의 위치 기록이 부족해 판정이 보류됐습니다.
 

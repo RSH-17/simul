@@ -2029,5 +2029,33 @@
     "production_promoted": false,
     "dev_counterexample_m": 1.6,
     "strict_development_win_required_before_continuing": true
+  },
+  "mixed_v151_exam_track": {
+    "screenshot_layout": "uFjtqfyJ",
+    "pictured_seed": 2983619014,
+    "pictured_boxes": 4,
+    "same_room_random_boxes": 5,
+    "pictured_world_sha256": "589d152dcfef420f6fda37fccdc30c3d73e9f90ebbdab8359d04bf94a5538b1a",
+    "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f",
+    "phase": "enrolled_waiting_for_development_selection",
+    "supplemental_custom_room_service": "disabled_before_any_blind_episode",
+    "production_promoted": false,
+    "report": "experiments/2026-11-22_exam_track_validation/README.md",
+    "enrollment_sha256": "25f13541aebb0ee6754a80cebccf13e412c3d28510439ea5a088a985e5dbc8f1",
+    "pictured_and_random_layouts": 5,
+    "finalist_planned_pairs": 9,
+    "no_finalist_pictured_pairs": 2,
+    "paired_episodes_at_enrollment": 0,
+    "enrollment_receipt": "experiments/2026-11-22_exam_track_validation/enrollment_receipt.json"
+  },
+  "mixed_v151_tiny_named_relook": {
+    "version": "1.5.1-tiny-named-relook-r4",
+    "parent": "1.5.1-object-followthrough-r3",
+    "phase": "installed_waiting_for_development_track",
+    "jazzy_targeted_tests_passed": 39,
+    "promotion": false,
+    "hardware_drive": false,
+    "report": "policy_candidates/2026-11-22_v151_tiny_named_relook/README.md",
+    "stage": "experiments/2026-11-22_v151_adaptive_survey/development/r4-jazzy-stage.json"
   }
 }

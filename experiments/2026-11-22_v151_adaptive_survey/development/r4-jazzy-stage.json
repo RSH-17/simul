@@ -1,0 +1,111 @@
+{
+  "role": "Jazzy source install and targeted tests. No Gazebo or physical motion in this verification.",
+  "workspace": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws",
+  "selected_team_policy": "tiny-named-relook",
+  "test_domain": 186,
+  "opencv": "4.6.0",
+  "policy_manifest_sha256": "9787a15a2a117ccb388d42752f1324d3c60bf819e4e2a3a017985c84ece8c37c",
+  "parent_manifest_sha256": "9071751d693de94db49017ae843317b6992903d1286e6245ff86b16c4b09c75e",
+  "installed_source_manifest_sha256": "c9dc226fedbac18fd3d03510d79ebbb30c9e04971308dffbfcbd75b3043f50d7",
+  "parent_source_manifest_sha256": "2a1be84b626436e3db3060bec0fd3304d268d7885ac3af7066e3ad7e2edfc243",
+  "changed_installed_modules": {
+    "detector.py": {
+      "path": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws/src/osp_mission/osp_mission/detector.py",
+      "sha256": "c4034a509fa76d802b30111eed3cce9561dcd624cb047c4cab5007a1d4b1bd46"
+    },
+    "marker_pair.py": {
+      "path": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws/src/osp_mission/osp_mission/marker_pair.py",
+      "sha256": "46566109ad87f5464d0d68e0d50048388466add68325de7d7521a12629c02bab"
+    },
+    "mission.py": {
+      "path": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws/src/osp_mission/osp_mission/mission.py",
+      "sha256": "b5ab18fe28efb0028850c4b9a02ed0a0a2235285c7ac23d32864765681ce9000"
+    },
+    "near_pass_runtime.py": {
+      "path": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws/src/osp_mission/osp_mission/near_pass_runtime.py",
+      "sha256": "7d75b2c0945d5d9426d3a6a54b1a252283a42ca03aa425030c786e4328334222"
+    },
+    "tiny_named_relook.py": {
+      "path": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws/src/osp_mission/osp_mission/tiny_named_relook.py",
+      "sha256": "8d1789b97f2af6c9bc17983b2db6b39d5a3c1b22290829e691610f71fca426ea"
+    }
+  },
+  "installed_python_module_count": 117,
+  "launch_configs_sha256": {
+    "policy.json": "ca67b32c20a17e74e0bc8292b117240e19d80f24137cbf092d473a743be5eb36",
+    "nav2_hardware_profile.yaml": "937d1448aa1d511c2c3eb34ca0b6656ee610e068285cd88d94a03179ae56cf06",
+    "trial.py": "5a19a0dd3bb6713241b3e002fbce68955677f1364a1f8184bac101595f800c21",
+    "camera.launch.py": "0105d5c3d207a086c595774808232402c18954e60be394549910e05bb2a097eb",
+    "measure.py": "2c2c30ce9709c8bce29d9ef30eefa139a9ddbaa8aee0bc63408a7aa4e450be50"
+  },
+  "installed_executables_sha256": {
+    "body_scan_filter": "28bcb48de2bc4560b4e312b30afb3a682088fb7912d2080f08ea876d5f126c67",
+    "calibrated_wheel_twist": "2fe588bc8ce30b4c840babaad4b04c6615b364983bbd0e338ed93b23ef2d6149",
+    "continual_train": "9a0be0be52acd5a4a084ceae071e1a1a02208a595befeff8c746140431d1660f",
+    "detector": "1bc2505d7489dd007dd541ed9b73773061902bcd0e32d9895df302e6edf1986f",
+    "gazebo_eval": "20c22f10ca225ad792cb63a72141aa6d6fc502cc15e8ebd0a7ce2b095777b508",
+    "generate_assignment_scenarios": "396c362961ff52c63b6beb5fcb1d215485fbcd43faf9c86be6598f0e6e19bdc5",
+    "generate_scenarios": "fa8baa452052bef8801f65c80bf2a054bc308fbc8c4e64cee787d6bb089960bc",
+    "generate_world": "f3c419bf7451e9bfcaf6b8f06ca187578037b0b57c565819838f887f1314e3b2",
+    "mission": "d1f93c7c420dbde2314e89a45b8c1484a97b754c364fc61db08aa746282fd42a",
+    "record_video": "5fd4316a563eb25bd6638a85ffaa8ce0cbb19b8750a7f317bd632d5be7389b8a",
+    "startup_guard": "9187199155d95c3ca8a7eb4afdcaee70ef2a4e15c5102bcb3e558880c658d4ee",
+    "train_policy": "94a1b6a3b0d9fb02fe4ea96aec18f7a341683d674b6a13984b49fdebabae9b84",
+    "training_dashboard": "4bbdbf85873d62777cc81b7a0df80e38d3accaff52c22a90f96f35e5479e81c5"
+  },
+  "tests": {
+    "count": 39,
+    "passed": 39,
+    "failed": [],
+    "skipped": 0
+  },
+  "additional_near_pass_and_safety_tests": {
+    "count": 38,
+    "passed": 35,
+    "failed": [
+      "test_marker_navigation_deadline_and_initial_survey_are_protected",
+      "test_reservation_cooldown_and_odometry_memory_prevent_repeated_looks",
+      "test_side_face_gets_bounded_look_and_current_field_of_view_does_not"
+    ],
+    "skipped": 0
+  },
+  "same_additional_tests_parent_controls": {
+    "flow_v151_exposure_sync_r2_ws": {
+      "count": 38,
+      "passed": 35,
+      "failed": [
+        "test_marker_navigation_deadline_and_initial_survey_are_protected",
+        "test_reservation_cooldown_and_odometry_memory_prevent_repeated_looks",
+        "test_side_face_gets_bounded_look_and_current_field_of_view_does_not"
+      ],
+      "skipped": 0
+    },
+    "v151_object_followthrough1122_r3_ws": {
+      "count": 38,
+      "passed": 35,
+      "failed": [
+        "test_marker_navigation_deadline_and_initial_survey_are_protected",
+        "test_reservation_cooldown_and_odometry_memory_prevent_repeated_looks",
+        "test_side_face_gets_bounded_look_and_current_field_of_view_does_not"
+      ],
+      "skipped": 0
+    }
+  },
+  "additional_test_regressions_vs_r3": [],
+  "fixture_and_startup_check": {
+    "workspace": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws",
+    "module_file": "/home/ubuntu/v151_tiny_named_relook1122_r4_ws/build/osp_mission/osp_mission/__init__.py",
+    "seed": 112601,
+    "domain": 174,
+    "camera": [
+      480,
+      480,
+      5
+    ],
+    "duration_sim_s": 600.0,
+    "physical_drive": false,
+    "fixture_sha256": "564be4776da7c708f0b16453c84bafcb7b71d77807bdfa89ec0f49f37ed585f6",
+    "check": "dependencies, fixture integrity, selected runtime resolved; no nodes started"
+  },
+  "limits": "Programmatic receipt and transform checks use controlled test inputs; selected runtime --check launches no nodes. No new closed-loop navigation or marker approach result is implied by this test."
+}

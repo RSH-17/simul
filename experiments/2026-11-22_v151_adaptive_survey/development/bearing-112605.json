@@ -1,0 +1,326 @@
+{
+  "run": "v151-survey-candidate-track-m112605-1122",
+  "target": 32,
+  "opencv": "4.6.0",
+  "frames": [
+    {
+      "t": 194.252,
+      "frame": 972,
+      "measured_quad_px": [
+        [
+          56.0,
+          223.0
+        ],
+        [
+          65.0,
+          222.0
+        ],
+        [
+          65.0,
+          245.0
+        ],
+        [
+          56.0,
+          244.0
+        ]
+      ],
+      "jpeg_center_uv": [
+        60.5,
+        233.5
+      ],
+      "camera_ground_range_m": 4.051,
+      "camera_range_3d_m": 4.0517,
+      "printed_front_incidence_deg": 69.254,
+      "image_world_bearing_deg": -20.66,
+      "true_world_bearing_deg": -20.746,
+      "image_bearing_error_deg": 0.086,
+      "center_clear_static_gazebo_visuals": true,
+      "map_snapshots": [
+        {
+          "t": 184.864,
+          "delta_from_exposure_s": -9.388,
+          "by_alignment": {
+            "fixed_initial": {
+              "image_ray": {
+                "first_occupied_m": 3.89,
+                "first_unknown_m": 4.04,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -0.161
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 338,
+                  "example_map_xy": [
+                    -16.623,
+                    -2.776
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 338,
+                  "example_map_xy": [
+                    -16.623,
+                    -2.776
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            },
+            "snapshot_robot_anchor": {
+              "image_ray": {
+                "first_occupied_m": 2.2,
+                "first_unknown_m": 4.32,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -1.851
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.823,
+                    -2.826
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.823,
+                    -2.826
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            }
+          }
+        },
+        {
+          "t": 207.864,
+          "delta_from_exposure_s": 13.612,
+          "by_alignment": {
+            "fixed_initial": {
+              "image_ray": {
+                "first_occupied_m": 3.81,
+                "first_unknown_m": 4.04,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -0.241
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 308,
+                  "example_map_xy": [
+                    -16.641,
+                    -2.776
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 308,
+                  "example_map_xy": [
+                    -16.641,
+                    -2.776
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            },
+            "snapshot_robot_anchor": {
+              "image_ray": {
+                "first_occupied_m": 2.21,
+                "first_unknown_m": 4.23,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -1.841
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.791,
+                    -2.826
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.791,
+                    -2.826
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "t": 194.852,
+      "frame": 975,
+      "measured_quad_px": [
+        [
+          54.0,
+          222.0
+        ],
+        [
+          63.0,
+          221.0
+        ],
+        [
+          63.0,
+          245.0
+        ],
+        [
+          54.0,
+          245.0
+        ]
+      ],
+      "jpeg_center_uv": [
+        58.5,
+        233.25
+      ],
+      "camera_ground_range_m": 3.9159,
+      "camera_range_3d_m": 3.9167,
+      "printed_front_incidence_deg": 70.317,
+      "image_world_bearing_deg": -19.639,
+      "true_world_bearing_deg": -19.683,
+      "image_bearing_error_deg": 0.043,
+      "center_clear_static_gazebo_visuals": true,
+      "map_snapshots": [
+        {
+          "t": 184.864,
+          "delta_from_exposure_s": -9.988,
+          "by_alignment": {
+            "fixed_initial": {
+              "image_ray": {
+                "first_occupied_m": 1.55,
+                "first_unknown_m": 3.9,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -2.366
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 338,
+                  "example_map_xy": [
+                    -16.623,
+                    -2.776
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 338,
+                  "example_map_xy": [
+                    -16.623,
+                    -2.776
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            },
+            "snapshot_robot_anchor": {
+              "image_ray": {
+                "first_occupied_m": 2.09,
+                "first_unknown_m": 4.19,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -1.826
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.823,
+                    -2.826
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.823,
+                    -2.826
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            }
+          }
+        },
+        {
+          "t": 207.864,
+          "delta_from_exposure_s": 13.012,
+          "by_alignment": {
+            "fixed_initial": {
+              "image_ray": {
+                "first_occupied_m": 3.66,
+                "first_unknown_m": 3.9,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -0.256
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 308,
+                  "example_map_xy": [
+                    -16.641,
+                    -2.776
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 308,
+                  "example_map_xy": [
+                    -16.641,
+                    -2.776
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            },
+            "snapshot_robot_anchor": {
+              "image_ray": {
+                "first_occupied_m": 2.1,
+                "first_unknown_m": 4.09,
+                "first_ambiguous_m": null,
+                "hit_minus_true_m": -1.816
+              },
+              "connected_front_cells": {
+                "0.32": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.791,
+                    -2.826
+                  ]
+                },
+                "0.42": {
+                  "start_free": true,
+                  "cells": 355,
+                  "example_map_xy": [
+                    -16.791,
+                    -2.826
+                  ]
+                }
+              },
+              "archived_flow_candidates_in_front_envelope": 2
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "input_sha256": {
+    "112605-r2-grid184.npz": "d40a9b29e3e006126c6f6dcd3641ecaa1d5b75e5e8bc267f3ae97a5503224c61",
+    "112605-r2-grid207.npz": "3b0892ab9cfd7d4b9430ea6c2381832833ec7fdc6a8683cbe0e4c11b9f8a4e11",
+    "camera_geometry.json": "a53ad4f4c3d39222071727fd6d7cb9d885aa0c30a527502ed9325e1efc2dc423",
+    "frames.csv": "3b4eafa93bc08728f88d3b567c0ed673bdb8868e6547b1f856a2104adf6b8058",
+    "headings.csv": "886a91b2b8c884bb38855489b39e0325e6f0336c03fd7667d2cb9cefe4ea308c",
+    "audit.json": "068316dc6fb37dbd2d21567f7c2f4318f93e9cda2ae10dd74741439ae3f78695"
+  },
+  "limitations": "SDF only for evaluation; pixel bearing uses decoded JPEG. Occupancy >=65, known-free <=25. Snapshots bracket actual exposure; static initial transform and independent local body alignment bound drift. Occupancy first hit is not target identity. Connected 4-neighbor free cells after .32/.42m obstacle+unknown clearance with .75\u20131.3m standoff, <=45deg incidence and clear ray (last .12m untested) is a map proxy, not actual Nav2, live costmap, scanner depth or pose-tracking guarantee. Stored Flow list excludes final adaptive candidates and facing/all costmap filters."
+}

@@ -1,0 +1,328 @@
+{
+  "opencv": "4.6.0",
+  "scope": "Development excerpt plus three complete archived rescue360 missions. JPEG is not live raw; poses use truth interpolated to capture and capture+80ms as passive TF proxies. Live hazard, near-pass, accepted actions, callback ordering and actual retarget cost cannot be replayed. Registered IDs excluded using frozen registration times; other runtime guards assumed clear. GT is used only to label image coordinates after detection; 12px tolerance; conservative negative = no projected GT box within the image extended by 64px horizontally. Runtime does not consume GT or use range. CPU measurements use alternating paired old/new full native decode each fortieth frame on single-threaded Mac. Prior R3 tiny boundary relook and new typed cue share the same 2-per-mission and 30s cooldown.",
+  "runs": [
+    {
+      "run": "v151-survey-candidate-track-m112605-1122",
+      "window": [
+        184,
+        205
+      ],
+      "frames": 105,
+      "conservative_negative_frames": 22,
+      "development_bare_native_subthreshold": [
+        {
+          "frame": 950,
+          "t": 189.852,
+          "ident": 32,
+          "short_px": 6.0,
+          "printed": false
+        },
+        {
+          "frame": 972,
+          "t": 194.252,
+          "ident": 32,
+          "short_px": 9.06,
+          "printed": true
+        },
+        {
+          "frame": 975,
+          "t": 194.852,
+          "ident": 32,
+          "short_px": 9.0,
+          "printed": true
+        },
+        {
+          "frame": 989,
+          "t": 197.652,
+          "ident": 7,
+          "short_px": 5.0,
+          "printed": true
+        },
+        {
+          "frame": 993,
+          "t": 198.452,
+          "ident": 7,
+          "short_px": 5.0,
+          "printed": true
+        },
+        {
+          "frame": 993,
+          "t": 198.452,
+          "ident": 32,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 994,
+          "t": 198.652,
+          "ident": 32,
+          "short_px": 6.0,
+          "printed": false
+        },
+        {
+          "frame": 995,
+          "t": 198.852,
+          "ident": 32,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 997,
+          "t": 199.252,
+          "ident": 32,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 1001,
+          "t": 200.052,
+          "ident": 7,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 1002,
+          "t": 200.252,
+          "ident": 7,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 1003,
+          "t": 200.452,
+          "ident": 7,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 1005,
+          "t": 200.852,
+          "ident": 7,
+          "short_px": 6.0,
+          "printed": true
+        },
+        {
+          "frame": 1006,
+          "t": 201.052,
+          "ident": 7,
+          "short_px": 6.0,
+          "printed": true
+        }
+      ],
+      "eligible_native": [
+        {
+          "frame": 972,
+          "stamp": 194.252,
+          "id": 32,
+          "short_px": 9.06,
+          "pixel": [
+            60.5,
+            233.5
+          ],
+          "matched_projection": true
+        },
+        {
+          "frame": 975,
+          "stamp": 194.852,
+          "id": 32,
+          "short_px": 9.0,
+          "pixel": [
+            58.5,
+            233.2
+          ],
+          "matched_projection": true
+        }
+      ],
+      "anonymous_edge_requests_if_clear_R3": 0,
+      "shared_ledger_R4": 1,
+      "additional_named_glance_requests_if_clear": [
+        {
+          "frame": 975,
+          "stamp": 194.852,
+          "id": 32,
+          "pixel": [
+            58.5,
+            233.2
+          ],
+          "matches_same_id_projection": true,
+          "conservative_negative": false,
+          "frozen_registration_at": null,
+          "initial_error_deg": 28.59,
+          "signed_step_deg": 6.0,
+          "ideal_residual_deg": 22.59
+        }
+      ],
+      "paired_cpu_samples": 3,
+      "cpu_milliseconds_p50_p95": {
+        "R3": [
+          8.597,
+          8.674
+        ],
+        "R4": [
+          8.624,
+          8.633
+        ],
+        "paired_delta": [
+          -0.059,
+          0.027
+        ]
+      }
+    },
+    {
+      "run": "v151-rescue360-track-m112602-1795270786287973756",
+      "window": null,
+      "frames": 2289,
+      "conservative_negative_frames": 1043,
+      "development_bare_native_subthreshold": [],
+      "eligible_native": [],
+      "anonymous_edge_requests_if_clear_R3": 0,
+      "shared_ledger_R4": 0,
+      "additional_named_glance_requests_if_clear": [],
+      "paired_cpu_samples": 58,
+      "cpu_milliseconds_p50_p95": {
+        "R3": [
+          7.779,
+          10.617
+        ],
+        "R4": [
+          7.615,
+          10.609
+        ],
+        "paired_delta": [
+          -0.028,
+          1.17
+        ]
+      }
+    },
+    {
+      "run": "v151-rescue360-track-m112603-1795270786287973756",
+      "window": null,
+      "frames": 1530,
+      "conservative_negative_frames": 353,
+      "development_bare_native_subthreshold": [],
+      "eligible_native": [],
+      "anonymous_edge_requests_if_clear_R3": 0,
+      "shared_ledger_R4": 0,
+      "additional_named_glance_requests_if_clear": [],
+      "paired_cpu_samples": 39,
+      "cpu_milliseconds_p50_p95": {
+        "R3": [
+          8.502,
+          10.082
+        ],
+        "R4": [
+          8.427,
+          10.082
+        ],
+        "paired_delta": [
+          -0.039,
+          1.465
+        ]
+      }
+    },
+    {
+      "run": "v151-rescue360-track-m112604-1795270786287973756",
+      "window": null,
+      "frames": 2988,
+      "conservative_negative_frames": 1283,
+      "development_bare_native_subthreshold": [],
+      "eligible_native": [],
+      "anonymous_edge_requests_if_clear_R3": 0,
+      "shared_ledger_R4": 0,
+      "additional_named_glance_requests_if_clear": [],
+      "paired_cpu_samples": 75,
+      "cpu_milliseconds_p50_p95": {
+        "R3": [
+          8.092,
+          11.123
+        ],
+        "R4": [
+          8.126,
+          11.395
+        ],
+        "paired_delta": [
+          -0.045,
+          0.647
+        ]
+      }
+    }
+  ],
+  "development_saved_pixel_sensitivity": {
+    "jpeg_to_gray": {
+      "bare32": [
+        950,
+        972,
+        975,
+        993,
+        994,
+        995,
+        997
+      ],
+      "eligible32": [
+        972,
+        975
+      ]
+    },
+    "jpeg_to_bgr_then_gray": {
+      "bare32": [
+        950,
+        972,
+        975,
+        993,
+        994,
+        995,
+        997
+      ],
+      "eligible32": [
+        972,
+        975
+      ]
+    },
+    "extra_jpeg_q95": {
+      "bare32": [
+        950,
+        972,
+        975,
+        993,
+        994,
+        995,
+        997
+      ],
+      "eligible32": [
+        972,
+        975
+      ]
+    },
+    "extra_jpeg_q85": {
+      "bare32": [
+        950,
+        972,
+        975,
+        993,
+        994,
+        995,
+        997
+      ],
+      "eligible32": [
+        972,
+        975
+      ]
+    }
+  },
+  "development_eligible_cpu": {
+    "frames": [
+      972,
+      975
+    ],
+    "alternating_full_decode_pairs": 100,
+    "paired_delta_ms_p50_p95": [
+      0.056,
+      1.077
+    ],
+    "printed_pattern_check_ms_p50_p95": [
+      0.073,
+      0.126
+    ]
+  }
+}
