@@ -1,0 +1,20 @@
+{
+  "protocol": "Integration smoke test only. Same first world; phase transition accelerated to 30s.",
+  "run": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-rescue360-balanced-m112601-pilot1121",
+  "full_sweeps": [
+    {
+      "event": "full_sweep_result",
+      "elapsed": 121.936,
+      "completed_sweeps": 1,
+      "remaining_s": 28.063999999999993,
+      "status": 4,
+      "reason": "",
+      "measured_angle_rad": 6.285840034484863,
+      "camera_evidence_frames": 62,
+      "completed": true
+    }
+  ],
+  "physical_drive": false,
+  "confirmed": true,
+  "formal_transition_s": 360.0
+}

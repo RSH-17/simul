@@ -1,4 +1,13 @@
 {
+  "mixed_v151_rescue360": {
+    "version": "1.5.1-rescue360",
+    "baseline": "1.5.1-balanced",
+    "phase": "pilot_verified_formal_five_running",
+    "passed_tests": 52,
+    "preexisting_parent_test_failures": 1,
+    "production_promoted": false,
+    "report": "experiments/2026-11-21_v151_rescue360/README.md"
+  },
   "mixed_v151_perimeter_survey": {
     "version": "1.5.1-perimeter-survey",
     "baseline": "1.5.1-balanced",

@@ -1,3 +1,5 @@
+**Mixed v1.5.1-rescue360**는 6분 이후 전 방향의 카메라 미관찰 표면과 미지 공간 정보량으로 이동·360도 관찰 목표를 고르는 별도 시뮬레이션 후보입니다. [구조와 검증](experiments/2026-11-21_v151_rescue360/README.md)
+
 **Mixed v1.5.1-perimeter-survey**는 외곽의 미관찰 벽을 이어서 보고 가까운 상자 관찰 후 돌아오는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_perimeter_survey/README.md)
 
 **Mixed v1.5.1-object-survey**는 상자의 네 면을 확인하면 일반 탐색에서 제외하고 미방문 구역으로 이동하는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_object_survey/README.md)
