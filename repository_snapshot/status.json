@@ -2018,5 +2018,15 @@
     "terminal_censored": 2,
     "known_failed": 1,
     "report": "experiments/2026-11-22_latest_r32_compare/README.md"
+  },
+  "mixed_v151_object_followthrough": {
+    "phase": "staged_conditional_screen",
+    "version": "1.5.1-object-followthrough",
+    "parent": "1.5.1-adaptive-survey-r2",
+    "new_and_parent_tests_passed": 32,
+    "physical_drive": false,
+    "production_promoted": false,
+    "dev_counterexample_m": 1.6,
+    "strict_development_win_required_before_continuing": true
   }
 }
