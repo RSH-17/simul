@@ -1,4 +1,12 @@
 {
+  "mixed_v151_wall_balance": {
+    "version": "1.5.1-wall-balance",
+    "parent": "1.5.1-balanced",
+    "stage": "native_comparison_queued",
+    "passed_tests": 32,
+    "production_promoted": false,
+    "report": "experiments/2026-11-21_v151_wall_balance/README.md"
+  },
   "mixed_v151_wall_sections": {
     "parent": "1.5.1-balanced",
     "version": "1.5.1-wall-sections",
