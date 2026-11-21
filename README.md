@@ -1,3 +1,5 @@
+**Mixed v1.5.1-perimeter-survey**는 외곽의 미관찰 벽을 이어서 보고 가까운 상자 관찰 후 돌아오는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_perimeter_survey/README.md)
+
 **Mixed v1.5.1-object-survey**는 상자의 네 면을 확인하면 일반 탐색에서 제외하고 미방문 구역으로 이동하는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_object_survey/README.md)
 
 **v1.5.3 구역 전환**을 같은 5개 대형 트랙 배치에서 비교했습니다. 후보판의 벽 접근은 4/5, 상자 접근은 4/10, 엄격 완주는 0/5였습니다. [기준판 비교와 경로·영상](experiments/2026-11-21_region_wall_v153/README.md)
