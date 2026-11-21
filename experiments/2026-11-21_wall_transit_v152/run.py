@@ -67,6 +67,10 @@ def main(baseline, seeds):
                     env=env, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=180)
                 subprocess.run(['python3', str(BASE.parent/'2026-11-20_v12_camera_rate/refresh_final.py'), str(run)],
                     env=env, stdout=log, stderr=subprocess.STDOUT, check=True, timeout=30)
+        except BaseException as exc:
+            (run/'trial_error.json').write_text(json.dumps(dict(error=repr(exc),
+                completed_comparison_sample=False, classification='needs_investigation'), indent=2)+'\n')
+            raise
         finally:
             cleanup(run)
         assert before == hashlib.sha256((fixture/'world/osp_studio.sdf').read_bytes()).hexdigest()

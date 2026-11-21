@@ -1,0 +1,13 @@
+{
+  "reason": "Observer dashboard shared temporary-file race",
+  "error": "FileNotFoundError latest.tmp -> latest.json",
+  "policy_stage_unchanged": true,
+  "completed_comparison_sample": false,
+  "policy_bug": false,
+  "observed_sim_s": 180.1,
+  "valid_wall_looks_before_failure": 2,
+  "processed_frames": [
+    6,
+    4
+  ]
+}

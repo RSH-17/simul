@@ -12,5 +12,6 @@
   "physical_validation_performed": false,
   "production_promoted": false,
   "public_source_reproduction_sha256_match": true,
-  "reproduced_changed_modules": 4
+  "reproduced_changed_modules": 4,
+  "recorder_concurrent_writer_test_passed": true
 }
