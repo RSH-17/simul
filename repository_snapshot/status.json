@@ -1706,5 +1706,20 @@
     "bumper_events": 0,
     "sensor_interruptions": 0,
     "max_saved_map_error_m": 0.08937375214903985
+  },
+  "mixed_v151_track5": {
+    "state": "five_track_trials_in_progress",
+    "planned": 5,
+    "completed_verified_at_snapshot": 1,
+    "physical_drive": false,
+    "initial_seeds": [
+      112501,
+      112502,
+      112503,
+      112504,
+      112505
+    ],
+    "version": "1.5.1-balanced",
+    "report": "experiments/2026-11-21_v151_track5/README.md"
   }
 }
