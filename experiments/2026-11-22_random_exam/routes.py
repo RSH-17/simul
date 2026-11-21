@@ -12,6 +12,7 @@ from matplotlib.patches import Patch, Polygon
 import numpy as np
 
 from geometry import polygon, wall_segments
+from report import candidate_name
 
 
 def read(path):
@@ -53,7 +54,7 @@ def plot(root,recordings,destination):
     pairs=comparison['pairs']
     if not pairs:raise ValueError('A completed pair is required to plot actual routes')
     fig,axes=plt.subplots(len(pairs),2,squeeze=False,figsize=(12,3.6*len(pairs)+1.1),layout='constrained')
-    fig.suptitle('8780 randomized exam  |  Balanced (left) and R5 (right)',size=15)
+    fig.suptitle(f'8780 randomized exam  |  Balanced (left) and {candidate_name(root)} (right)',size=15)
     for i,pair in enumerate(pairs):
         world=root/'fixtures'/f"map-{pair['seed']}"
         for col,role in enumerate(('baseline','candidate')):

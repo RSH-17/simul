@@ -36,7 +36,7 @@ def fixtures(archive=None):
     return destination
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough'],default='balanced');p.add_argument('--archive',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook'],default='balanced');p.add_argument('--archive',type=Path)
     a=p.parse_args();workspace=a.workspace.expanduser().resolve()
     if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
     workspace.parent.mkdir(parents=True,exist_ok=True)
@@ -49,7 +49,8 @@ def main():
                      'adaptive-survey':'2026-11-22_v151_adaptive_survey',
                      'object-followthrough':'2026-11-22_v151_object_followthrough',
                      'tiny-named-relook':'2026-11-22_v151_tiny_named_relook',
-                     'surface-followthrough':'2026-11-22_v151_surface_followthrough'}[a.policy]
+                     'surface-followthrough':'2026-11-22_v151_surface_followthrough',
+                     'balanced-print-relook':'2026-11-22_v151_balanced_print_relook'}[a.policy]
         subprocess.run([sys.executable, str(REPO/'policy_candidates'/candidate/'install.py'),
                         str(release), str(workspace)], check=True)
         pkg=workspace/'src/osp_mission'

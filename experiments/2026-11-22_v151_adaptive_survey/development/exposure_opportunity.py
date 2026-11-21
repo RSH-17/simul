@@ -83,13 +83,17 @@ def spans(mask,t):
             for q in np.split(ids,np.flatnonzero(np.diff(ids)>1)+1) if len(q)]
 
 
-def measure(folder, calibration, figure_id=32):
+def measure(folder, calibration, figure_id=32, within_mission=False):
     scene=json.loads((folder/'scene.json').read_text())
     metrics=json.loads((folder/'metrics.json').read_text())
     world=ET.parse(folder/'world/osp_studio.sdf').find('.//world')
     headings=np.genfromtxt(folder/'headings.csv',names=True,delimiter=',')
     frames=np.genfromtxt(folder/'frames.csv',names=True,delimiter=',')
-    t=frames['elapsed_sim_s']; dt=np.diff(t,append=t[-1]+np.median(np.diff(t))).clip(0,.3)
+    t=frames['elapsed_sim_s']
+    if within_mission:
+        t=t[(t>=0.) & (t<=min(600.,metrics['elapsed_sim_s']))]
+    if len(t)<2:raise ValueError('Two in-window exposures are needed to estimate viewing time')
+    dt=np.diff(t,append=t[-1]+np.median(np.diff(t))).clip(0,.3)
     x,y,a=[np.interp(t,headings['elapsed_sim_s'],v) for v in (headings['x'],headings['y'],np.unwrap(headings['yaw_rad']))]
     dx,dy,z=calibration['translation']
     origin=np.column_stack((x+np.cos(a)*dx-np.sin(a)*dy,y+np.sin(a)*dx+np.cos(a)*dy,np.full_like(x,z)))
@@ -142,6 +146,9 @@ def measure(folder, calibration, figure_id=32):
         valid &= np.all((quad>=4)&(quad<=limits),axis=(0,2))
         shortest=np.linalg.norm(quad-np.roll(quad,1,axis=0),axis=-1).min(axis=0)
         count_clear=np.sum(clear,axis=0)
+        aim=np.arctan2(center[1]-origin[:,1],center[0]-origin[:,0])-yaw
+        off_axis=np.abs(np.degrees(np.arctan2(np.sin(aim),np.cos(aim))))
+        center_in_image=(depth>.1)&np.all((uv[-1]>=4)&(uv[-1]<=limits),axis=1)
         full=valid&(shortest>=18)
         tiny=valid&(shortest>=6)&(shortest<18)
         five=full&(count_clear==5)
@@ -149,6 +156,9 @@ def measure(folder, calibration, figure_id=32):
         sec=lambda mask: round(float(dt[mask].sum()),3)
         rows[key]=dict(printed_normal_xy=normal.tolist(),printed_side_sdf_x_sign=sign,
                 physical_near_frames=int(near.sum()),physical_near_s=sec(near),physical_near_spans=spans(near,t),
+                near_center_in_image_frames=int((near & center_in_image).sum()),
+                near_min_off_axis_deg=float(off_axis[near].min()) if near.any() else None,
+                near_median_off_axis_deg=float(np.median(off_axis[near])) if near.any() else None,
                 near_quasistationary_s=sec(near&stopped),
                 near_direction_s={direction:sec(near&(sectors==direction)) for direction in ('east','north','west','south')},
                 near_incidence_s=dict(front_to_60_deg=sec(near&(incidence>=.5)),front_oblique=sec(near&(incidence>0)&(incidence<.5)),

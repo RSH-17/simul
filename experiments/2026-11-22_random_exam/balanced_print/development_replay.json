@@ -1,0 +1,140 @@
+{
+  "camera": "original recorded JPEG, mono8",
+  "cv2": "4.6.0",
+  "method": "Navigation and hazard state are not replayed. Potential requests on a frozen trajectory get no approach or registration credit.",
+  "runs": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "counts": {
+        "frames": 2999,
+        "eligible_image_frames": 1
+      },
+      "ids": {
+        "32": {
+          "first_s": 337.368,
+          "matching_frames": 1,
+          "unmatched_frames": 0
+        }
+      },
+      "requests_if_navigation_and_safety_permit": [
+        {
+          "frame": 1687,
+          "elapsed_s": 337.368,
+          "id": 32,
+          "short_side_px": 12.0,
+          "same_id_at_projected_location": true,
+          "later_registration_s": 355.128
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112602-trial2",
+      "counts": {
+        "frames": 2793,
+        "eligible_image_frames": 12,
+        "already_registered_frames": 12
+      },
+      "ids": {},
+      "requests_if_navigation_and_safety_permit": []
+    },
+    {
+      "run": "v151-boxes5-track-m112603-trial3",
+      "counts": {
+        "frames": 1605,
+        "eligible_image_frames": 2
+      },
+      "ids": {
+        "32": {
+          "first_s": 213.76399999999998,
+          "matching_frames": 2,
+          "unmatched_frames": 0
+        }
+      },
+      "requests_if_navigation_and_safety_permit": [
+        {
+          "frame": 1069,
+          "elapsed_s": 213.76399999999998,
+          "id": 32,
+          "short_side_px": 15.0,
+          "same_id_at_projected_location": true,
+          "later_registration_s": 234.04
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112604-trial4",
+      "counts": {
+        "frames": 1842,
+        "eligible_image_frames": 1
+      },
+      "ids": {
+        "103": {
+          "first_s": 93.576,
+          "matching_frames": 1,
+          "unmatched_frames": 0
+        }
+      },
+      "requests_if_navigation_and_safety_permit": [
+        {
+          "frame": 468,
+          "elapsed_s": 93.576,
+          "id": 103,
+          "short_side_px": 10.0,
+          "same_id_at_projected_location": true,
+          "later_registration_s": 151.396
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112605-trial5",
+      "counts": {
+        "frames": 2999
+      },
+      "ids": {},
+      "requests_if_navigation_and_safety_permit": []
+    },
+    {
+      "run": "v151-survey-candidate-track-m647911238-1066999508311362768",
+      "counts": {
+        "frames": 3000,
+        "eligible_image_frames": 10,
+        "already_registered_frames": 4
+      },
+      "ids": {
+        "173": {
+          "first_s": 51.092000000000006,
+          "matching_frames": 4,
+          "unmatched_frames": 0
+        },
+        "518": {
+          "first_s": 287.892,
+          "matching_frames": 1,
+          "unmatched_frames": 0
+        },
+        "149": {
+          "first_s": 501.092,
+          "matching_frames": 1,
+          "unmatched_frames": 0
+        }
+      },
+      "requests_if_navigation_and_safety_permit": [
+        {
+          "frame": 256,
+          "elapsed_s": 51.092000000000006,
+          "id": 173,
+          "short_side_px": 12.0,
+          "same_id_at_projected_location": true,
+          "later_registration_s": 266.38
+        },
+        {
+          "frame": 1440,
+          "elapsed_s": 287.892,
+          "id": 518,
+          "short_side_px": 17.0,
+          "same_id_at_projected_location": true,
+          "later_registration_s": 293.876
+        }
+      ]
+    }
+  ]
+}

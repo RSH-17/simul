@@ -1,5 +1,6 @@
 """Write a human-readable paired result directly from the adjudicated ledger."""
 import argparse
+from collections import Counter
 import json
 from pathlib import Path
 from statistics import mean
@@ -13,8 +14,64 @@ def marker_ids(row):
     return '·'.join(str(i) for i in sorted(int(i) for i,v in row['score']['records'].items()
                                           if v['verified_s'] is not None)) or '없음'
 
+def candidate_name(root):
+    source = root/'registration.json'
+    label = read(source)['candidate_label'] if source.is_file() else 'surface-followthrough-r5'
+    return {'surface-followthrough-r5': 'R5', 'balanced-print-relook': 'Balanced Print'}.get(label, label)
 
-def supplemental(root, pairs):
+
+def layout_results(pairs, worlds, candidate='R5'):
+    rows = []
+    for furniture, label in (('shuffle', '책상까지 무작위'), ('fixed', '원래 책상 배치')):
+        group = [pair for pair in pairs if pair['valid'] and not pair['repeat']
+                 and worlds[pair['seed']]['tables'] == furniture]
+        for role, policy in (('baseline', 'Balanced'), ('candidate', candidate)):
+            scores = [pair[role]['score'] for pair in group]
+            if scores:
+                total = lambda key: sum(score[key] for score in scores)
+                rows.append(f"| {label} | {policy} | {total('strict')}/{len(scores)} | "
+                            f"{total('wall_near')}/{total('wall')} | {total('obstacle_near')}/{total('obstacle')} |")
+    if not rows:
+        return []
+    return ['', '### 책상 배치별 첫 주행', '',
+            '| 배치 조건 | 정책 | 엄격 완주 | 벽 접근 | 장애물 접근 |',
+            '|---|---|---:|---:|---:|', *rows]
+
+
+def missed_markers(root, pairs, candidate='R5'):
+    counts = {'baseline': Counter(), 'candidate': Counter()}
+    names = {'registered_without_both_near_witnesses': '등록 후 근거리 증거 부족',
+             'decoded_without_registration': '주행 중 번호 판독 후 미등록',
+             'predicted_readable_view_without_online_decode': '판독 가능한 기하 조건에서 주행 중 판독 0회',
+             'only_a_small_predicted_view': '예상 크기가 작은 시야만 확보',
+             'no_clear_predicted_view_at_6px': '6px 이상으로 가림 없이 볼 기회 없음'}
+    audited = 0
+    for pair in pairs:
+        if not pair['valid'] or pair['repeat']:
+            continue
+        files = {role: root/'camera-opportunities'/(pair[role]['name']+'.json') for role in counts}
+        if not all(path.is_file() for path in files.values()):
+            continue
+        audited += 1
+        for role, path in files.items():
+            result = read(path)
+            if result['run'] != pair[role]['name'] or set(result['targets']) != set(pair[role]['score']['records']):
+                raise ValueError('Camera audit and scored marker roster disagree')
+            for target in result['targets'].values():
+                stage = target['stage']
+                if stage != 'verified' and stage not in names:
+                    raise ValueError('Unrecognized camera evidence stage: ' + stage)
+                counts[role][stage] += 1
+    if not audited:
+        return []
+    return ['', f'### 접근을 마치지 못한 마커 ({audited}개 독립 배치)', '',
+            f'| 확인한 마지막 단계 | Balanced | {candidate} |', '|---|---:|---:|',
+            *(f"| {label} | {counts['baseline'][stage]} | {counts['candidate'][stage]} |"
+              for stage, label in names.items()),
+            '', '카메라 보정값, 시뮬레이션 안의 실제 인쇄물·가림과 영상 시각을 대조했다. 기하학적으로 보일 기회와 검출기가 실제로 번호를 읽은 횟수를 구분했다.']
+
+
+def supplemental(root, pairs, candidate='R5'):
     groups = {}
     for role in ('baseline', 'candidate'):
         groups[role] = []
@@ -39,7 +96,7 @@ def supplemental(root, pairs):
         def percent(kind):
             span = sum(r[kind]['mountable_center_span_m'] for r in coverage)
             return f"{100*sum(r[kind]['observed_span_m'] for r in coverage)/span:.1f}%" if span else '해당 없음'
-        lines.append(f"| {'Balanced' if role=='baseline' else 'R5'} | {percent('wall')} | {percent('obstacle')} | "
+        lines.append(f"| {'Balanced' if role=='baseline' else candidate} | {percent('wall')} | {percent('obstacle')} | "
                      f"{sum(r['boxes_all_four'] for r in coverage)}/{sum(r['boxes'] for r in coverage)} | "
                      f"{sum(r['navigate']['aborted'] for r in records)} | {sum(r['navigate']['canceled'] for r in records)} |")
     lines.extend(['', '높이 32cm에 20cm 인쇄물을 붙일 수 있는 구간을 최대 40cm 간격으로 표본 조사했다. '
@@ -50,13 +107,14 @@ def supplemental(root, pairs):
 
 def report(root):
     data=read(root/'comparison.json');protocol=read(root/'protocol.json')
+    candidate=candidate_name(root)
     worlds={w['seed']:w for w in protocol['worlds']}
     lines=['# 8780 무작위 시험장 주행 결과','',
            f"등록한 {data['planned_pairs']}쌍 중 {data['paired']}쌍의 양쪽 주행이 끝났다. "
            f"같은 출발 자세와 월드, 온전한 계측을 확인한 쌍은 {data['valid_pairs']}개다.",'',
            '| 처음 주행한 배치 | 엄격 완주 | ID 등록 | 1.5m 접근 | 벽 접근 | 장애물 접근 | 범퍼 | 오등록 | 평균 소요(초) | 평균 거리(m) |',
            '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|']
-    for key,title in (('baseline','Balanced'),('candidate','R5')):
+    for key,title in (('baseline','Balanced'),('candidate',candidate)):
         r=data['first_runs'][key]
         if r['runs']==0:continue
         lines.append(f"| {title} | {r['strict']}/{r['runs']} | {r['registered']}/{r['all_markers']} | "
@@ -64,7 +122,7 @@ def report(root):
                      f"{r['obstacle_verified']}/{r['obstacles']} | {r['bumps']} | {r['false_registered_instances']} | "
                      f"{r['mean_time_with_failures_at_limit_s']:.1f} | {r['mean_travel_m']:.1f} |")
     lines+=['','시간은 엄격 완주의 마지막 근거리 증거 시각이며 미완주에는 600초를 배정했다. 아래 주행 시간은 실제 시뮬레이션 종료 시각이다.','',
-            '| 배치 | 시드 | 책상 | 이동식 장애물 수 | 실제 등록 후 접근 ID (Balanced / R5) | 종료 시간(초) (Balanced / R5) | 엄격 완주 (Balanced / R5) | 비교쌍 |',
+            f'| 배치 | 시드 | 책상 | 이동식 장애물 수 | 실제 등록 후 접근 ID (Balanced / {candidate}) | 종료 시간(초) (Balanced / {candidate}) | 엄격 완주 (Balanced / {candidate}) | 비교쌍 |',
             '|---|---:|---|---:|---|---|---|---|']
     for p in data['pairs']:
         b,c=p['baseline'],p['candidate'];w=worlds[p['seed']]
@@ -78,8 +136,10 @@ def report(root):
           and all(p[k]['score']['strict'] for k in ('baseline','candidate'))]
     if both:
         b,c=[mean(p[k]['score']['goal_complete_by_s'] for p in both) for k in ('baseline','candidate')]
-        lines+=['',f'양쪽 모두 엄격 완주한 신규 배치 {len(both)}개에서 마지막 확인까지 평균은 Balanced {b:.1f}초, R5 {c:.1f}초였다.']
-    lines.extend(supplemental(root, data['pairs']))
+        lines+=['',f'양쪽 모두 엄격 완주한 신규 배치 {len(both)}개에서 마지막 확인까지 평균은 Balanced {b:.1f}초, {candidate} {c:.1f}초였다.']
+    lines.extend(layout_results(data['pairs'], worlds, candidate))
+    lines.extend(missed_markers(root, data['pairs'], candidate))
+    lines.extend(supplemental(root, data['pairs'], candidate))
     if (root/'routes.png').is_file():
         lines+=['','![같은 무작위 시험장에서의 두 정책 경로](routes.png)']
     lines+=['','반복 회차는 독립 배치 수에 더하지 않았다. 이 결과의 범위는 정해진 시험장과 추첨된 배치, 사용한 센서 조건이다.']

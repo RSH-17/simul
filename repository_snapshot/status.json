@@ -2135,5 +2135,26 @@
     "production_promoted": false,
     "report": "experiments/2026-11-22_random_exam/README.md",
     "enrollment": "experiments/2026-11-22_random_exam/enrollment.json"
+  },
+  "mixed_v151_balanced_print_relook": {
+    "policy": "Mixed v1.5.1-balanced + edge print relook",
+    "baseline": "Mixed v1.5.1-balanced",
+    "source_sha256": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb",
+    "registration_sha256": "d59b3f98f7050938be366b7158f44b8ef346b1c200d968f189d12f100cd57e66",
+    "protocol_sha256": "8a129e478a7989589c91ff5d5d94aeccafa996e97cb85f90664320ec982e5453",
+    "phase": "native_campaign_enrolled",
+    "official_room": "8780 uFjtqfyJ",
+    "known_marker_count": 3,
+    "all_furniture_shuffled": true,
+    "independent_layouts": 5,
+    "extra_repeat_pairs": 1,
+    "new_jazzy_tests_passed": 8,
+    "shared_tests": {
+      "passed_each": 54,
+      "same_failures_each": 3
+    },
+    "hardware_drive": false,
+    "production_promoted": false,
+    "enrollment": "experiments/2026-11-22_random_exam/balanced_print/enrollment.json"
   }
 }

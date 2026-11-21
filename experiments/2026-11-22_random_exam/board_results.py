@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 import time
 
+from report import candidate_name
+
 
 def read(path):
     return json.loads(path.read_text())
@@ -18,7 +20,7 @@ def update(path, changes):
         temporary.replace(path)
 
 
-def apply(card, episode):
+def apply(card, episode, policy=None):
     evaluation=card/'simulation_evaluation.json'
     if not evaluation.is_file():
         return False
@@ -30,7 +32,8 @@ def apply(card, episode):
         label='엄격 완주'
     else:
         label='일부 미달'
-    update(evaluation,dict(evaluation=f"{label} · 등록 {score['registered']}/{score['expected']} · 접근 {len(ids)}/{score['expected']}",
+    title = f'{policy} · {label}' if policy else label
+    update(evaluation,dict(evaluation=f"{title} · 등록 {score['registered']}/{score['expected']} · 접근 {len(ids)}/{score['expected']}",
                            marker_evaluation=', '.join(map(str,ids)) or '근거리 확인 0개',
                            exam_score=score))
     latest=card/'mission_results/flow/latest.json'
@@ -47,12 +50,13 @@ def main():
     cli.add_argument('cards',type=Path)
     cli.add_argument('--follow',action='store_true')
     args=cli.parse_args()
+    names = {'baseline': 'Balanced', 'candidate': candidate_name(args.exam)}
     seen=set()
     while True:
         file=args.exam/'episodes.json'
         records=read(file) if file.is_file() else []
         for episode in records:
-            if episode['name'] not in seen and apply(args.cards/episode['name'],episode):
+            if episode['name'] not in seen and apply(args.cards/episode['name'],episode,names[episode['role']]):
                 seen.add(episode['name'])
         state=args.exam/'status.json'
         terminal=state.is_file() and read(state)['state'] in ('complete','invalid_pair','infrastructure_hold')

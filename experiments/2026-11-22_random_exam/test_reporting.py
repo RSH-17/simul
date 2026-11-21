@@ -4,10 +4,34 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from board_results import apply
-from report import report, supplemental
+from report import layout_results, missed_markers, report, supplemental
 
 
 class ReportingTests(unittest.TestCase):
+    def test_layout_and_camera_failure_counts_only_use_matched_independent_worlds(self):
+        with TemporaryDirectory() as temp:
+            root = Path(temp)
+            audit = root/'camera-opportunities'
+            audit.mkdir()
+            score = dict(strict=False, wall_near=0, wall=1, obstacle=2, obstacle_near=1,
+                         records={'0': {}, '34': {}, '981': {}})
+            pair = dict(valid=True, repeat=False, seed=73, baseline=dict(name='b', score=score),
+                        candidate=dict(name='c', score=score))
+            pairs = [pair, dict(pair, repeat=True), dict(pair, valid=False)]
+            layout = '\n'.join(layout_results(pairs, {73: {'tables': 'shuffle'}}))
+            self.assertIn('책상까지 무작위 | R5 | 0/1 | 0/1 | 1/2', layout)
+            self.assertNotIn('원래 책상 배치', layout)
+            for name in ('b', 'c'):
+                audit_file = audit/(name+'.json')
+                if name == 'c':
+                    self.assertEqual(missed_markers(root, pairs), [])
+                audit_file.write_text(json.dumps(dict(run=name, targets={
+                    '0': {'stage': 'decoded_without_registration'}, '34': {'stage': 'verified'},
+                    '981': {'stage': 'registered_without_both_near_witnesses'}})))
+            stages = '\n'.join(missed_markers(root, pairs))
+            self.assertIn('주행 중 번호 판독 후 미등록 | 1 | 1', stages)
+            self.assertIn('1개 독립 배치', stages)
+
     def test_completed_card_keeps_zero_and_distinguishes_a_pass_by(self):
         with TemporaryDirectory() as temp:
             card=Path(temp)

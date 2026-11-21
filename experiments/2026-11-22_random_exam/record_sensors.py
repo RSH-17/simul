@@ -6,7 +6,7 @@ from pathlib import Path
 import subprocess
 import time
 
-TOPICS=('/clock','/scan','/scan_self_filtered','/tf','/tf_static',
+TOPICS=('/clock','/scan','/scan_self_filtered','/tf','/tf_static','/mission/edge_print_bearing',
         '/mission/processed_camera','/mission/marker_bearing','/mission/marker_candidates',
         '/mission/marker_observations','/mission/detector_status',
         '/navigate_to_pose/_action/status','/spin/_action/status')

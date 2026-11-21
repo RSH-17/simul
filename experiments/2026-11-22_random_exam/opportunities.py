@@ -22,7 +22,7 @@ def analyze(folder, score, calibration):
         raise ValueError('Camera dimensions differ from measured calibration')
     if any(abs(a-b)>1e-5 for a,b in zip(sensed['k'],calibration['k'],strict=True)):
         raise ValueError('Recorded camera intrinsics differ from calibration')
-    projection,_=measure(folder,calibration,figure_id=None)
+    projection,_=measure(folder,calibration,figure_id=None,within_mission=True)
     offline=read(folder/'audit.json')['offline_rgb']
     targets={}
     for ident, observation in projection['targets'].items():
@@ -46,7 +46,9 @@ def analyze(folder, score, calibration):
                             geometric_6_to_lt18px_frames=observation['small_6_to_lt18_px']['clear_all'],
                             geometric_first_18px_s=observation['first_5ray_18px_s'],
                             online_decodes=decoded,offline_jpeg_decodes=offline.get(ident,{}).get('frames',0),
-                            near_s=observation['physical_near_s'],
+                            near_s=observation['physical_near_s'], near_center_frames=observation['near_center_in_image_frames'],
+                            near_min_off_axis_deg=observation['near_min_off_axis_deg'],
+                            near_median_off_axis_deg=observation['near_median_off_axis_deg'],
                             detector_breakdown={k:v for k,v in metrics['last_detector_status'].get('by_id',{}).get(ident,{}).items()
                                                 if k in ('small','border','no_range','horizontal','inconsistent','accepted')})
     goals=folder/'native/hybrid_goals.jsonl'
