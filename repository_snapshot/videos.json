@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-21T06:30:08.038440+00:00",
+  "updated_utc": "2026-11-21T08:15:47.845931+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 401,
+  "uploaded_verified": 402,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -6507,6 +6507,22 @@
       "actual_approach_1_5m": true,
       "recording_frames": 1543,
       "recording_seconds": 308.6,
+      "uploaded_verified": true
+    },
+    {
+      "asset": "v151-fourbox-archive1121__v151-track-m112501-trial1.mp4",
+      "local_path": "training_robust/native90/v151-fourbox-archive1121/v151-track-m112501-trial1/video/mission.mp4",
+      "bytes": 5064010,
+      "sha256": "57c859aff990082fcc3f8de4dcaa67011fc671a9232e3f7c1f8b59771bb05cfb",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-fourbox-archive1121__v151-track-m112501-trial1.mp4",
+      "original_evaluator_success": true,
+      "reason": "all_registered_and_within_1.5m",
+      "elapsed_sim_seconds": 336.38399999999996,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1682,
+      "recording_seconds": 336.4,
       "uploaded_verified": true
     }
   ],

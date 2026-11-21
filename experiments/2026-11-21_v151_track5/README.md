@@ -17,3 +17,5 @@
 - 원본 RGB·위치/각도·ROS·목표 기록을 저장하고 회차 종료 후 MP4를 완성한다.
 
 사용자가 상자를 총 5개로 늘리라고 요청해 이 캠페인은 1회 완료 뒤 2회차 도중 중단했다. 완료 기록은 보존하며 중단 회차를 정책 실패나 새 5회 결과에 합산하지 않는다. 새 시험은 [상자 5개 조건](../2026-11-21_v151_track5_boxes5/README.md)이다.
+
+완료된 4상자 첫 회차는 [별도 영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-fourbox-archive1121__v151-track-m112501-trial1.mp4)으로 보존했다. 이 영상은 새 5상자 다섯 회차의 통계에 포함하지 않는다.

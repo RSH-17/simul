@@ -468,7 +468,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 401개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 402개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -878,6 +878,8 @@ python3 scripts/publish_simulation_videos.py --upload
 | [camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4) | 성공 | 확인 | 120.56800000000001 |
 
 | [v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4) | 성공 | 확인 | 308.61600000000004 |
+
+| [v151-fourbox-archive1121__v151-track-m112501-trial1.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-fourbox-archive1121__v151-track-m112501-trial1.mp4) | 성공 | 확인 | 336.38399999999996 |
 
 </details>
 
