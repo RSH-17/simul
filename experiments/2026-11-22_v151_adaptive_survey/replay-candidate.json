@@ -1,0 +1,881 @@
+{
+  "scope": "Open loop: archived SLAM map, pose, Flow candidates and camera viewed flags. Costmap estimated by .32m clearance; identity map-to-odom, no live box fitting, veto, costmap, marker interrupts, new images or action outcomes. Replayed selector maintains its own dispatch history.",
+  "runs": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "selections": {
+        "null": 1,
+        "wall": 10,
+        "frontier": 8,
+        "interior": 6
+      },
+      "rows": [
+        {
+          "file": "0000.npz",
+          "elapsed": 4.676,
+          "reason": "mission_start",
+          "wall_time_s": 0.0161
+        },
+        {
+          "file": "0001.npz",
+          "elapsed": 15.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0519,
+          "kind": "wall",
+          "surface": [
+            -2.0487648207987577,
+            -1.2964832559550832
+          ],
+          "goal_xy": [
+            -0.9680300342489208,
+            -1.2964832559550832
+          ],
+          "gain_wall": 2.0500000305473804,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0002.npz",
+          "elapsed": 31.176000000000002,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0616,
+          "kind": "wall",
+          "surface": [
+            2.6748094804064912,
+            -4.983292549069967
+          ],
+          "goal_xy": [
+            2.394809480406491,
+            -3.833292549069967
+          ],
+          "gain_wall": 2.1000000312924385,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0003.npz",
+          "elapsed": 43.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0665,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            5.0692174619406725,
+            -3.7082925300709864
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.5500000081956387
+        },
+        {
+          "file": "0004.npz",
+          "elapsed": 58.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0692,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            5.419217467156079,
+            -6.3082925688140055
+          ],
+          "gain_wall": 1.600000023841858,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0005.npz",
+          "elapsed": 65.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0743,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            7.369217496213343,
+            -6.558292572539296
+          ],
+          "gain_wall": 1.4500000216066837,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0006.npz",
+          "elapsed": 68.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0761,
+          "kind": "wall",
+          "surface": [
+            1.1942174041986733,
+            -3.6582925293259283
+          ],
+          "goal_xy": [
+            2.344217404198673,
+            -3.9382925293259285
+          ],
+          "gain_wall": 1.2000000178813934,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0007.npz",
+          "elapsed": 75.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0728,
+          "kind": "interior",
+          "surface": [
+            6.994217490625408,
+            -3.6582925293259283
+          ],
+          "goal_xy": [
+            6.044217482429769,
+            -3.658292536776509
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.6000000089406967
+        },
+        {
+          "file": "0008.npz",
+          "elapsed": 84.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0721,
+          "kind": "wall",
+          "surface": [
+            3.9442174451768666,
+            -6.058292565088715
+          ],
+          "goal_xy": [
+            4.614217445176867,
+            -5.778292565088715
+          ],
+          "gain_wall": 1.2500000186264515,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0009.npz",
+          "elapsed": 99.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.072,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            9.26921752452555,
+            -4.6582925442270895
+          ],
+          "gain_wall": 1.2500000186264515,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0010.npz",
+          "elapsed": 109.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0773,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            7.019217490997937,
+            -2.708292515169825
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.30000000447034836
+        },
+        {
+          "file": "0011.npz",
+          "elapsed": 128.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0757,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            12.119056407625502,
+            -0.8591267793571529
+          ],
+          "gain_wall": 2.1500000320374966,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0012.npz",
+          "elapsed": 139.676,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0777,
+          "kind": "wall",
+          "surface": [
+            8.394056352118676,
+            -6.259126859823423
+          ],
+          "goal_xy": [
+            7.7240563521186765,
+            -5.979126859823423
+          ],
+          "gain_wall": 1.4500000216066837,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0013.npz",
+          "elapsed": 167.676,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.0937,
+          "kind": "interior",
+          "surface": [
+            7.419056337590044,
+            -3.7841268229430494
+          ],
+          "goal_xy": [
+            7.119056325669115,
+            -2.834126814747411
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.6500000096857548
+        },
+        {
+          "file": "0014.npz",
+          "elapsed": 192.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0999,
+          "kind": "wall",
+          "surface": [
+            10.144056378195708,
+            -4.259126830021101
+          ],
+          "goal_xy": [
+            8.994056378195708,
+            -3.9791268300211007
+          ],
+          "gain_wall": 1.4000000208616257,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0015.npz",
+          "elapsed": 223.176,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.0997,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            6.870504002293955,
+            7.187625474378326
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0016.npz",
+          "elapsed": 293.176,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1311,
+          "kind": "interior",
+          "surface": [
+            7.0179594777468814,
+            -3.6070307814113622
+          ],
+          "goal_xy": [
+            7.017959470296301,
+            -2.75703077470584
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.7500000111758709
+        },
+        {
+          "file": "0017.npz",
+          "elapsed": 305.676,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1504,
+          "kind": "wall",
+          "surface": [
+            14.067959582800068,
+            0.742969283408689
+          ],
+          "goal_xy": [
+            14.347959582800067,
+            1.8929692834086889
+          ],
+          "gain_wall": 1.3500000201165676,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0018.npz",
+          "elapsed": 321.676,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1354,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            13.967959581309952,
+            10.167969423852133
+          ],
+          "gain_wall": 1.3500000201165676,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0019.npz",
+          "elapsed": 333.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.158,
+          "kind": "wall",
+          "surface": [
+            5.842959460238017,
+            7.767969388089346
+          ],
+          "goal_xy": [
+            6.992959460238017,
+            8.047969388089346
+          ],
+          "gain_wall": 1.3000000193715096,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0020.npz",
+          "elapsed": 346.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.1411,
+          "kind": "interior",
+          "surface": [
+            3.8929594311807527,
+            -3.7320307832740074
+          ],
+          "goal_xy": [
+            4.742959437886276,
+            -3.6320307743333107
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.850000012665987
+        },
+        {
+          "file": "0021.npz",
+          "elapsed": 357.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.1376,
+          "kind": "wall",
+          "surface": [
+            16.11795961334745,
+            2.592969310975837
+          ],
+          "goal_xy": [
+            15.837959613347449,
+            3.742969310975837
+          ],
+          "gain_wall": 0.9500000141561031,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0022.npz",
+          "elapsed": 421.176,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.1356,
+          "kind": "interior",
+          "surface": [
+            5.670695939978314,
+            -4.996070675315826
+          ],
+          "goal_xy": [
+            5.77069593401785,
+            -4.146070668610303
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.6000000089406967
+        },
+        {
+          "file": "0023.npz",
+          "elapsed": 485.176,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1308,
+          "kind": "wall",
+          "surface": [
+            13.646490591408327,
+            -0.2716151009903509
+          ],
+          "goal_xy": [
+            12.976490591408327,
+            0.008384899009649116
+          ],
+          "gain_wall": 1.3000000193715096,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0024.npz",
+          "elapsed": 556.176,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1359,
+          "kind": "interior",
+          "surface": [
+            7.446160944289131,
+            -3.8259840129608182
+          ],
+          "goal_xy": [
+            8.296160950994654,
+            -3.8259840055102377
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.5500000081956387
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112605-trial5",
+      "selections": {
+        "frontier": 12,
+        "wall": 10,
+        "interior": 6,
+        "interior_surface": 1
+      },
+      "rows": [
+        {
+          "file": "0000.npz",
+          "elapsed": 3.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0111,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            0.6121948010496912,
+            -0.061495129887893185
+          ],
+          "gain_wall": 1.2000000178813934,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0001.npz",
+          "elapsed": 14.975999999999999,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0354,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -0.6042589813823298,
+            -3.311495178316667
+          ],
+          "gain_wall": 0.9000000134110451,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0002.npz",
+          "elapsed": 27.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0406,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -1.2418687084361082,
+            -5.211495206628873
+          ],
+          "gain_wall": 1.2500000186264515,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0003.npz",
+          "elapsed": 39.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0461,
+          "kind": "wall",
+          "surface": [
+            0.9580109489189059,
+            -1.3114951485143447
+          ],
+          "goal_xy": [
+            -0.191989051081094,
+            -1.5914951485143447
+          ],
+          "gain_wall": 1.5000000223517418,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0004.npz",
+          "elapsed": 53.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0479,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -5.1487795670767955,
+            -4.061495189492538
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0005.npz",
+          "elapsed": 76.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0509,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -2.298779524608486,
+            -9.011495263253286
+          ],
+          "gain_wall": 1.4500000216066837,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0006.npz",
+          "elapsed": 88.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0533,
+          "kind": "wall",
+          "surface": [
+            -0.9492637515847218,
+            -6.48677031562516
+          ],
+          "goal_xy": [
+            -1.2292637515847218,
+            -5.336770315625159
+          ],
+          "gain_wall": 1.2500000186264515,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0007.npz",
+          "elapsed": 103.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0583,
+          "kind": "interior",
+          "surface": [
+            -2.79926377915187,
+            -7.686770333506553
+          ],
+          "goal_xy": [
+            -2.7992637866024506,
+            -6.83677032680103
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.6500000096857548
+        },
+        {
+          "file": "0008.npz",
+          "elapsed": 113.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0525,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -4.399263802993728,
+            -8.01177033834943
+          ],
+          "gain_wall": 0.7500000111758709,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0009.npz",
+          "elapsed": 125.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0514,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -7.099263843226863,
+            -7.51177033089885
+          ],
+          "gain_wall": 1.4500000216066837,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0010.npz",
+          "elapsed": 142.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0536,
+          "kind": "wall",
+          "surface": [
+            -6.084589045380417,
+            -8.661770348035185
+          ],
+          "goal_xy": [
+            -5.0038542588305805,
+            -8.661770348035185
+          ],
+          "gain_wall": 1.3000000193715096,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0011.npz",
+          "elapsed": 153.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0554,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -11.524450860640203,
+            -6.161770310782282
+          ],
+          "gain_wall": 1.1500000171363354,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0012.npz",
+          "elapsed": 175.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0573,
+          "kind": "wall",
+          "surface": [
+            -8.414413666208645,
+            -7.811770335369198
+          ],
+          "goal_xy": [
+            -7.264413666208645,
+            -7.531770335369198
+          ],
+          "gain_wall": 1.3000000193715096,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0013.npz",
+          "elapsed": 184.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0586,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -8.720136468998831,
+            -7.1617703256834435
+          ],
+          "gain_wall": 1.600000023841858,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0014.npz",
+          "elapsed": 206.976,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.0653,
+          "kind": "interior",
+          "surface": [
+            -7.471949871726451,
+            -6.561495226745441
+          ],
+          "goal_xy": [
+            -6.6219498650209285,
+            -6.56149521929486
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.7500000111758709
+        },
+        {
+          "file": "0015.npz",
+          "elapsed": 223.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0707,
+          "kind": "wall",
+          "surface": [
+            -11.488736631924468,
+            -6.686495228608086
+          ],
+          "goal_xy": [
+            -11.208736631924468,
+            -6.016495228608086
+          ],
+          "gain_wall": 1.700000025331974,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0016.npz",
+          "elapsed": 260.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0948,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -7.051040243153803,
+            3.42982125005741
+          ],
+          "gain_wall": 2.400000035762787,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0017.npz",
+          "elapsed": 273.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0957,
+          "kind": "wall",
+          "surface": [
+            -8.326040262152784,
+            4.629821267938803
+          ],
+          "goal_xy": [
+            -9.40677504870262,
+            4.629821267938803
+          ],
+          "gain_wall": 1.2500000186264515,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0018.npz",
+          "elapsed": 288.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0972,
+          "kind": "interior",
+          "surface": [
+            -8.126040259172552,
+            3.479821250802468
+          ],
+          "goal_xy": [
+            -7.076040249486796,
+            3.4798212582530486
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.850000012665987
+        },
+        {
+          "file": "0019.npz",
+          "elapsed": 302.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.1003,
+          "kind": "wall",
+          "surface": [
+            -5.251040216331713,
+            2.9048212422343003
+          ],
+          "goal_xy": [
+            -5.531040216331713,
+            2.2348212422343003
+          ],
+          "gain_wall": 1.650000024586916,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0020.npz",
+          "elapsed": 313.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0967,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -15.90104037502908,
+            -0.47017880805711876
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.4000000059604645
+        },
+        {
+          "file": "0021.npz",
+          "elapsed": 354.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0999,
+          "kind": "wall",
+          "surface": [
+            -13.501893052847528,
+            -5.986495218177273
+          ],
+          "goal_xy": [
+            -13.221893052847529,
+            -5.316495218177273
+          ],
+          "gain_wall": 1.700000025331974,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0022.npz",
+          "elapsed": 395.976,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1044,
+          "kind": "interior",
+          "surface": [
+            -1.396923792023376,
+            -3.5423280189023973
+          ],
+          "goal_xy": [
+            -1.3969237994739565,
+            -2.692328012196875
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.7500000111758709
+        },
+        {
+          "file": "0023.npz",
+          "elapsed": 425.476,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1048,
+          "kind": "frontier",
+          "surface": null,
+          "goal_xy": [
+            -17.99692403938265,
+            -3.317328015549636
+          ],
+          "gain_wall": 0.5500000081956387,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0024.npz",
+          "elapsed": 461.976,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1006,
+          "kind": "wall",
+          "surface": [
+            0.9280762426218239,
+            -1.3173279857473137
+          ],
+          "goal_xy": [
+            -0.22192375737817605,
+            -1.5973279857473137
+          ],
+          "gain_wall": 1.5000000223517418,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0025.npz",
+          "elapsed": 503.976,
+          "reason": "overdue_camera_or_frontier",
+          "wall_time_s": 0.1,
+          "kind": "interior",
+          "surface": [
+            -2.9469238151201758,
+            -7.692328080742216
+          ],
+          "goal_xy": [
+            -2.9469238225707564,
+            -6.842328074036693
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.800000011920929
+        },
+        {
+          "file": "0026.npz",
+          "elapsed": 550.976,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0975,
+          "kind": "wall",
+          "surface": [
+            -2.2458131827701884,
+            1.800392926289316
+          ],
+          "goal_xy": [
+            -2.5258131827701886,
+            1.130392926289316
+          ],
+          "gain_wall": 1.3000000193715096,
+          "gain_interior": 0.0
+        },
+        {
+          "file": "0027.npz",
+          "elapsed": 587.476,
+          "reason": "unseen_gain_per_travel",
+          "wall_time_s": 0.0936,
+          "kind": "interior",
+          "surface": [
+            -15.948313480004796,
+            -1.1746071180416386
+          ],
+          "goal_xy": [
+            -15.14831347404433,
+            -0.6746071031404774
+          ],
+          "gain_wall": 0.0,
+          "gain_interior": 0.4000000059604645
+        },
+        {
+          "file": "0028.npz",
+          "elapsed": 599.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.0928,
+          "kind": "interior_surface",
+          "surface": [
+            -16.07331348186744,
+            -0.9496071146888774
+          ],
+          "goal_xy": [
+            -16.07331348931802,
+            -0.09960710798335481
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "center_wall.py": "c1a831900c9093000137ecbafc22652fe2852352da547bdf333f1b3d0e7a45db",
+    "box_batch.py": "a89d6d0bc81e13fe1eda9cb4d299e18d72b62e9b7f159e44243e5cd55c4356ba",
+    "survey.py": "477b4defebf2d6f0281b72a6e7954cc58f9685f839152c02d23b71be1a9997f8",
+    "survey_distance.py": "af702da477f09e1a73abe6d35cb168107259f42999f8a043dea8f63de4a8b6a4",
+    "deferred_views.py": "40b9b8c45a68c5179de34684f7c4aae5d8e935b505d70e8bd2d2f4022d72d65a"
+  }
+}

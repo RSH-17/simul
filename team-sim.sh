@@ -7,7 +7,7 @@ if [[ "$team_action" == board ]]; then
   exec python3 "$team_repo/tools/team_sim/board.py" "$@"
 fi
 if [[ "$team_action" == help ]]; then
-  echo 'setup WORKSPACE [--policy balanced|rescue360] [--archive PATH]'
+  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey] [--archive PATH]'
   echo 'run WORKSPACE SEED [--duration SECONDS] [--check]'
   echo 'board [--port 8780]'
   exit 0

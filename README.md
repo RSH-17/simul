@@ -1,4 +1,6 @@
-[yeonslay 최신 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md) 진행 중입니다. 최신 커밋은 `d8704f6`입니다. 초기 동시 부하 구간은 별도 보존하고 단독 비교를 새로 시작했으며, 완료 전에는 우열을 정하지 않습니다.
+[Mixed v1.5.1-adaptive-survey 실험](experiments/2026-11-22_v151_adaptive_survey/README.md) · [팀원용 후보 설치](policy_candidates/2026-11-22_v151_adaptive_survey/README.md)
+
+[최신 원본 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md)를 마쳤습니다. 세 마커 등록은 R32 4/5, balanced·rescue360 각각 3/5였습니다. 등록 후 실제 1.5m 접근까지 포함한 R32 완주는 2회 확인했고, 2회는 종료 순간의 위치 기록이 부족해 판정이 보류됐습니다.
 
 [팀원 각자의 Jazzy 설치·대시보드·정책 개선 방법](docs/team-policy-lab/README.md) · [팀 공유 메시지](docs/team-policy-lab/TEAM_MESSAGE.md)
 
@@ -486,7 +488,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 421개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 426개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -494,6 +496,11 @@ python3 scripts/publish_simulation_videos.py --upload
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4) | 원본 궤적 재채점 통과 | 확인(등록 순서 무관) | 371.952 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4) | 실패 | 미달 | 113.268 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4) | 등록 직후 위치 표본 누락 | 확인(등록 순서 무관) | 488.828 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112604-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112604-1795277159207082213.mp4) | 원본 궤적 재채점 통과 | 확인(등록 순서 무관) | 398.976 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112605-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112605-1795277159207082213.mp4) | 등록 직후 위치 표본 누락 | 확인(등록 순서 무관) | 392.8 |
 | [team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795276801220550538.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795276801220550538.mp4) | 설치 검사·과제 미완주 | 미달 | 60 |
 | [team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795277031081303114.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795277031081303114.mp4) | 설치 검사·과제 미완주 | 미달 | 60 |
 | [v151-rescue360-1121__v151-rescue360-track-m112605-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112605-1795270786287973756.mp4) | 실패 | 미달 | 593.992 |

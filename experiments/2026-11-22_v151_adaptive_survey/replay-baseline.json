@@ -1,0 +1,931 @@
+{
+  "scope": "Open loop: archived SLAM map, pose, Flow candidates and camera viewed flags. Costmap estimated by .32m clearance; identity map-to-odom, no live box fitting, veto, costmap, marker interrupts, new images or action outcomes. Replayed selector maintains its own dispatch history.",
+  "runs": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "selections": {
+        "null": 1,
+        "interior_surface": 24
+      },
+      "rows": [
+        {
+          "file": "0000.npz",
+          "elapsed": 4.676,
+          "reason": "mission_start",
+          "wall_time_s": 0.0109
+        },
+        {
+          "file": "0001.npz",
+          "elapsed": 15.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.0695,
+          "kind": "interior_surface",
+          "surface": [
+            3.401235260412571,
+            -3.69648329171787
+          ],
+          "goal_xy": [
+            2.5012352529619903,
+            -3.6964832991684506
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0002.npz",
+          "elapsed": 31.176000000000002,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.0954,
+          "kind": "interior_surface",
+          "surface": [
+            3.449809491954891,
+            -4.208292537521567
+          ],
+          "goal_xy": [
+            2.4998094837592526,
+            -3.908292540501799
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0003.npz",
+          "elapsed": 43.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1117,
+          "kind": "interior_surface",
+          "surface": [
+            3.6692174410790472,
+            -3.533292527463283
+          ],
+          "goal_xy": [
+            3.6692174336284666,
+            -2.6832925207577607
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0004.npz",
+          "elapsed": 58.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1155,
+          "kind": "interior_surface",
+          "surface": [
+            3.519217438843873,
+            -4.283292538639154
+          ],
+          "goal_xy": [
+            3.919217452254918,
+            -5.133292545344677
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0005.npz",
+          "elapsed": 65.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1211,
+          "kind": "interior_surface",
+          "surface": [
+            5.0942174623132015,
+            -4.90829254795238
+          ],
+          "goal_xy": [
+            4.1942174548626205,
+            -4.90829255540296
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0006.npz",
+          "elapsed": 68.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1286,
+          "kind": "interior_surface",
+          "surface": [
+            5.1442174630582596,
+            -5.4582925561480184
+          ],
+          "goal_xy": [
+            4.1442174541175625,
+            -5.258292560618367
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0007.npz",
+          "elapsed": 75.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.142,
+          "kind": "interior_surface",
+          "surface": [
+            4.919217459705498,
+            -5.083292550560083
+          ],
+          "goal_xy": [
+            4.7192174492746854,
+            -4.23329254385456
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0008.npz",
+          "elapsed": 84.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1438,
+          "kind": "interior_surface",
+          "surface": [
+            5.219217464175847,
+            -5.5332925572656055
+          ],
+          "goal_xy": [
+            5.319217473116543,
+            -6.383292563971128
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0009.npz",
+          "elapsed": 99.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1525,
+          "kind": "interior_surface",
+          "surface": [
+            5.619217470136311,
+            -4.983292549069967
+          ],
+          "goal_xy": [
+            5.719217464175847,
+            -4.133292542364444
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0010.npz",
+          "elapsed": 109.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1738,
+          "kind": "interior_surface",
+          "surface": [
+            7.044217491370466,
+            -3.6082925285808702
+          ],
+          "goal_xy": [
+            6.094217483174827,
+            -3.608292536031451
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0011.npz",
+          "elapsed": 128.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2088,
+          "kind": "interior_surface",
+          "surface": [
+            7.194056334237283,
+            -3.609126820335346
+          ],
+          "goal_xy": [
+            8.294056344668096,
+            -3.6091268128847656
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0012.npz",
+          "elapsed": 139.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.173,
+          "kind": "interior_surface",
+          "surface": [
+            7.069056332374638,
+            -4.434126832628804
+          ],
+          "goal_xy": [
+            7.069056339825218,
+            -5.284126839334327
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0013.npz",
+          "elapsed": 167.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2096,
+          "kind": "interior_surface",
+          "surface": [
+            7.219056334609812,
+            -3.634126820707875
+          ],
+          "goal_xy": [
+            7.119056325669115,
+            -2.7841268140023527
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0014.npz",
+          "elapsed": 192.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2335,
+          "kind": "interior_surface",
+          "surface": [
+            7.444056337962573,
+            -4.159126828530985
+          ],
+          "goal_xy": [
+            8.294056344668096,
+            -4.159126821080404
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0015.npz",
+          "elapsed": 223.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2282,
+          "kind": "interior_surface",
+          "surface": [
+            3.9455039587080583,
+            -3.7623746887893894
+          ],
+          "goal_xy": [
+            4.795503965413581,
+            -3.762374681338809
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0016.npz",
+          "elapsed": 293.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2724,
+          "kind": "interior_surface",
+          "surface": [
+            15.067959597701229,
+            7.842969389206933
+          ],
+          "goal_xy": [
+            14.967959603661694,
+            6.9929693825014105
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0017.npz",
+          "elapsed": 305.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2561,
+          "kind": "interior_surface",
+          "surface": [
+            15.667959606641926,
+            7.642969386226701
+          ],
+          "goal_xy": [
+            15.667959614092506,
+            6.792969379521178
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0018.npz",
+          "elapsed": 321.676,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2689,
+          "kind": "interior_surface",
+          "surface": [
+            15.392959602544106,
+            8.367969397030043
+          ],
+          "goal_xy": [
+            14.542959595838584,
+            8.467969391069579
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0019.npz",
+          "elapsed": 333.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2658,
+          "kind": "interior_surface",
+          "surface": [
+            15.417959602916635,
+            8.392969397402572
+          ],
+          "goal_xy": [
+            15.317959593975939,
+            9.142969402617979
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0020.npz",
+          "elapsed": 346.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2597,
+          "kind": "interior_surface",
+          "surface": [
+            13.042959567526378,
+            9.417969412676262
+          ],
+          "goal_xy": [
+            13.8929595742319,
+            9.317969418636727
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0021.npz",
+          "elapsed": 357.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2672,
+          "kind": "interior_surface",
+          "surface": [
+            12.99295956678132,
+            10.117969423107075
+          ],
+          "goal_xy": [
+            13.942959574976959,
+            10.117969430557656
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0022.npz",
+          "elapsed": 421.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2773,
+          "kind": "interior_surface",
+          "surface": [
+            6.645695954506946,
+            -4.071070661532252
+          ],
+          "goal_xy": [
+            5.795695947801423,
+            -4.071070668982832
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0023.npz",
+          "elapsed": 485.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2839,
+          "kind": "interior_surface",
+          "surface": [
+            15.596490620465591,
+            8.328385027159635
+          ],
+          "goal_xy": [
+            16.646490630151344,
+            7.9283850286497515
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0024.npz",
+          "elapsed": 556.176,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2898,
+          "kind": "interior_surface",
+          "surface": [
+            6.671160932740731,
+            -4.100984017058638
+          ],
+          "goal_xy": [
+            6.571160938701196,
+            -4.9509840237641605
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112605-trial5",
+      "selections": {
+        "interior_frontier": 1,
+        "interior_surface": 28
+      },
+      "rows": [
+        {
+          "file": "0000.npz",
+          "elapsed": 3.976,
+          "reason": "explore_open_frontier",
+          "wall_time_s": 0.0107,
+          "kind": "interior_frontier",
+          "surface": null,
+          "goal_xy": [
+            -0.38780521385147004,
+            -0.8614951418088221
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0001.npz",
+          "elapsed": 14.975999999999999,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.0554,
+          "kind": "interior_surface",
+          "surface": [
+            -1.529258995165904,
+            -3.5114951812968993
+          ],
+          "goal_xy": [
+            -0.6792589884603814,
+            -3.2114951693759703
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0002.npz",
+          "elapsed": 27.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.0786,
+          "kind": "interior_surface",
+          "surface": [
+            -1.7918687166317468,
+            -3.436495180179312
+          ],
+          "goal_xy": [
+            -1.7918687240823274,
+            -2.5864951734737898
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0003.npz",
+          "elapsed": 39.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.0916,
+          "kind": "interior_surface",
+          "surface": [
+            -1.9419890942944615,
+            -3.5114951812968993
+          ],
+          "goal_xy": [
+            -2.4919890965296356,
+            -3.611495190237596
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0004.npz",
+          "elapsed": 53.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1043,
+          "kind": "interior_surface",
+          "surface": [
+            -1.348779510452383,
+            -3.8864951868848348
+          ],
+          "goal_xy": [
+            -1.048779498531454,
+            -4.786495194335416
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0005.npz",
+          "elapsed": 76.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1175,
+          "kind": "interior_surface",
+          "surface": [
+            -2.048779520883196,
+            -4.036495189120009
+          ],
+          "goal_xy": [
+            -2.048779513432615,
+            -4.886495195825532
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0006.npz",
+          "elapsed": 88.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1172,
+          "kind": "interior_surface",
+          "surface": [
+            -2.2992637717012894,
+            -7.836770335741727
+          ],
+          "goal_xy": [
+            -2.29926377915187,
+            -6.986770329036204
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0007.npz",
+          "elapsed": 103.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1304,
+          "kind": "interior_surface",
+          "surface": [
+            -2.79926377915187,
+            -7.686770333506553
+          ],
+          "goal_xy": [
+            -2.7992637866024506,
+            -6.83677032680103
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0008.npz",
+          "elapsed": 113.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1225,
+          "kind": "interior_surface",
+          "surface": [
+            -2.2742637713287603,
+            -7.861770336114256
+          ],
+          "goal_xy": [
+            -1.8242637705837024,
+            -7.561770324193327
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0009.npz",
+          "elapsed": 125.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1114,
+          "kind": "interior_surface",
+          "surface": [
+            -2.974263781759573,
+            -7.76177033462414
+          ],
+          "goal_xy": [
+            -3.8242637884650956,
+            -7.761770342074721
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0010.npz",
+          "elapsed": 142.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1232,
+          "kind": "interior_surface",
+          "surface": [
+            -7.659589068849746,
+            -6.98677032307574
+          ],
+          "goal_xy": [
+            -7.259589055438701,
+            -7.586770326055973
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0011.npz",
+          "elapsed": 153.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1515,
+          "kind": "interior_surface",
+          "surface": [
+            -2.874450731745158,
+            -8.336770343192308
+          ],
+          "goal_xy": [
+            -3.274450730255042,
+            -8.93677034617254
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0012.npz",
+          "elapsed": 175.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1521,
+          "kind": "interior_surface",
+          "surface": [
+            -7.464413652052542,
+            -6.511770315997689
+          ],
+          "goal_xy": [
+            -6.614413645347019,
+            -6.511770308547108
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0013.npz",
+          "elapsed": 184.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1432,
+          "kind": "interior_surface",
+          "surface": [
+            -8.195136461175721,
+            -6.911770321958153
+          ],
+          "goal_xy": [
+            -8.945136466391128,
+            -7.211770333879082
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0014.npz",
+          "elapsed": 206.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1546,
+          "kind": "interior_surface",
+          "surface": [
+            -7.896949878059445,
+            -6.236495221902564
+          ],
+          "goal_xy": [
+            -8.29694989147049,
+            -5.386495215197041
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0015.npz",
+          "elapsed": 223.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.1698,
+          "kind": "interior_surface",
+          "surface": [
+            -2.8137365026568943,
+            -8.361495253567531
+          ],
+          "goal_xy": [
+            -3.813736511597591,
+            -8.361495261018112
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0016.npz",
+          "elapsed": 260.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2584,
+          "kind": "interior_surface",
+          "surface": [
+            -8.401040263270371,
+            2.804821240744184
+          ],
+          "goal_xy": [
+            -8.501040257309906,
+            1.9548212340386617
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0017.npz",
+          "elapsed": 273.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2541,
+          "kind": "interior_surface",
+          "surface": [
+            -8.476040264387958,
+            3.329821248567294
+          ],
+          "goal_xy": [
+            -9.32604027109348,
+            3.329821241116713
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0018.npz",
+          "elapsed": 288.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.256,
+          "kind": "interior_surface",
+          "surface": [
+            -7.751040253584616,
+            3.354821248939823
+          ],
+          "goal_xy": [
+            -7.751040261035197,
+            3.904821251174997
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0019.npz",
+          "elapsed": 302.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2863,
+          "kind": "interior_surface",
+          "surface": [
+            -7.876040255447261,
+            2.9298212426068293
+          ],
+          "goal_xy": [
+            -7.026040248741738,
+            2.92982125005741
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0020.npz",
+          "elapsed": 313.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2736,
+          "kind": "interior_surface",
+          "surface": [
+            -8.126040259172552,
+            3.479821250802468
+          ],
+          "goal_xy": [
+            -7.076040249486796,
+            3.3798212567629324
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0021.npz",
+          "elapsed": 354.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2561,
+          "kind": "interior_surface",
+          "surface": [
+            -7.901892969401025,
+            2.8635049136980033
+          ],
+          "goal_xy": [
+            -8.401892969401025,
+            1.5635049002869583
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0022.npz",
+          "elapsed": 395.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.253,
+          "kind": "interior_surface",
+          "surface": [
+            -8.321923895213917,
+            2.782672075347447
+          ],
+          "goal_xy": [
+            -9.17192390191944,
+            2.282672060446286
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0023.npz",
+          "elapsed": 425.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2601,
+          "kind": "interior_surface",
+          "surface": [
+            -8.396923896331504,
+            3.507672086150789
+          ],
+          "goal_xy": [
+            -8.79692390974255,
+            4.107672089131022
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0024.npz",
+          "elapsed": 461.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2594,
+          "kind": "interior_surface",
+          "surface": [
+            -15.946924008835271,
+            -1.1923279838846685
+          ],
+          "goal_xy": [
+            -15.44692399393411,
+            -2.042327990590191
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0025.npz",
+          "elapsed": 503.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2495,
+          "kind": "interior_surface",
+          "surface": [
+            -15.921924008462742,
+            -1.1673279835121395
+          ],
+          "goal_xy": [
+            -15.171924003247335,
+            -1.6673279835121395
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0026.npz",
+          "elapsed": 550.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2602,
+          "kind": "interior_surface",
+          "surface": [
+            -15.895813386171039,
+            -0.9996071154339354
+          ],
+          "goal_xy": [
+            -15.89581339362162,
+            -0.14960710872841287
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0027.npz",
+          "elapsed": 587.476,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.2602,
+          "kind": "interior_surface",
+          "surface": [
+            -16.523313488572963,
+            -0.7996071124537032
+          ],
+          "goal_xy": [
+            -16.523313496023544,
+            0.050392894251819365
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        },
+        {
+          "file": "0028.npz",
+          "elapsed": 599.976,
+          "reason": "unseen_reachable_object",
+          "wall_time_s": 0.266,
+          "kind": "interior_surface",
+          "surface": [
+            -16.498313488200434,
+            -1.474607122511987
+          ],
+          "goal_xy": [
+            -17.548313497886188,
+            -1.4746071299625676
+          ],
+          "gain_wall": null,
+          "gain_interior": null
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "center_wall.py": "362cf58362335676d259ea4e998cd41aa1ef9dc4a478786de663510ec49987a5",
+    "box_batch.py": "a4c0e2d900735740c0cdbb50a50a542c8203a6d48fb84718fdfe719dc578e8ab"
+  }
+}

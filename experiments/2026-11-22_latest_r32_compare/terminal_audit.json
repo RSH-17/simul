@@ -1,0 +1,613 @@
+{
+  "protocol": "Same post-hoc audit of all 15 raw trajectories. Pose stamp at/after ID registration, pose contains registered ID, distance <=1.5 m. Post-terminal samples allowed only within 0.25 simulated seconds, 0.02 m of last pre-end position and the original 600 s deadline. No pose imputation. Fixed original map and bumper gates.",
+  "pairs": [
+    {
+      "seed": 112601,
+      "balanced": {
+        "run": "v151-boxes5-track-m112601-trial1",
+        "strict": "failed",
+        "original_common_success": false,
+        "registered_s": {
+          "103": 68.152,
+          "32": 355.128
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "103": 68.224,
+          "32": 355.144
+        },
+        "anytime_within_s": {
+          "103": 67.444,
+          "32": 343.244
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 599.944,
+            "distance_m": 5.685763294507974
+          },
+          "103": {
+            "t": 599.944,
+            "distance_m": 12.411392481641663
+          },
+          "7": {
+            "t": 599.944,
+            "distance_m": 11.829724409129309
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 600.004,
+        "extra_bump": false,
+        "terminal_reason": "common_time_limit",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112601-1795270786287973756",
+        "strict": "confirmed",
+        "original_common_success": true,
+        "registered_s": {
+          "103": 68.12400000000001,
+          "7": 166.65200000000002,
+          "32": 333.636
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "103": 68.136,
+          "7": 176.496,
+          "32": 333.636
+        },
+        "anytime_within_s": {
+          "103": 67.236,
+          "7": 176.496,
+          "32": 319.216
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 334.636,
+            "distance_m": 0.8169443306948241
+          },
+          "103": {
+            "t": 334.636,
+            "distance_m": 18.13075621105981
+          },
+          "7": {
+            "t": 334.636,
+            "distance_m": 14.587202193141827
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 334.652,
+        "extra_bump": false,
+        "terminal_reason": "all_registered_and_within_1.5m",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112601-1795277159207082213",
+        "strict": "confirmed",
+        "original_common_success": false,
+        "registered_s": {
+          "32": 195.332,
+          "7": 304.348,
+          "103": 371.952
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "32": 195.388,
+          "7": 313.548,
+          "103": 372.028
+        },
+        "anytime_within_s": {
+          "32": 183.248,
+          "7": 313.548,
+          "103": 362.068
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 372.028,
+            "distance_m": 17.455941879239486
+          },
+          "103": {
+            "t": 372.028,
+            "distance_m": 0.599321718778063
+          },
+          "7": {
+            "t": 372.028,
+            "distance_m": 9.177591417990056
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 371.952,
+        "extra_bump": false,
+        "terminal_reason": "targets_complete",
+        "health_problem": null,
+        "health_pauses": 3,
+        "navigation_retry_reason": null
+      }
+    },
+    {
+      "seed": 112602,
+      "balanced": {
+        "run": "v151-boxes5-track-m112602-trial2",
+        "strict": "confirmed",
+        "original_common_success": true,
+        "registered_s": {
+          "7": 159.068,
+          "32": 526.644,
+          "103": 532.092
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "7": 159.08,
+          "103": 532.1,
+          "32": 557.04
+        },
+        "anytime_within_s": {
+          "7": 134.8,
+          "103": 531.68,
+          "32": 557.04
+        },
+        "last_valid_pose": {
+          "7": {
+            "t": 558.58,
+            "distance_m": 15.74714217936029
+          },
+          "103": {
+            "t": 558.58,
+            "distance_m": 1.083460191354981
+          },
+          "32": {
+            "t": 558.58,
+            "distance_m": 1.106778806947953
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 558.604,
+        "extra_bump": false,
+        "terminal_reason": "all_registered_and_within_1.5m",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112602-1795270786287973756",
+        "strict": "confirmed",
+        "original_common_success": true,
+        "registered_s": {
+          "7": 147.768,
+          "32": 435.28000000000003,
+          "103": 441.76800000000003
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "7": 147.78,
+          "103": 443.26,
+          "32": 456.3
+        },
+        "anytime_within_s": {
+          "7": 120.32,
+          "103": 443.26,
+          "32": 456.3
+        },
+        "last_valid_pose": {
+          "7": {
+            "t": 457.82,
+            "distance_m": 15.745359463081163
+          },
+          "103": {
+            "t": 457.82,
+            "distance_m": 1.087792261384542
+          },
+          "32": {
+            "t": 457.82,
+            "distance_m": 1.1112341664945973
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 457.836,
+        "extra_bump": false,
+        "terminal_reason": "all_registered_and_within_1.5m",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112602-1795277159207082213",
+        "strict": "failed",
+        "original_common_success": false,
+        "registered_s": {},
+        "sensor_stamped_after_registration_within_s": {},
+        "anytime_within_s": {
+          "7": 68.156
+        },
+        "last_valid_pose": {
+          "7": {
+            "t": 113.216,
+            "distance_m": 1.2448901990929606
+          },
+          "103": {
+            "t": 113.216,
+            "distance_m": 13.629910922489989
+          },
+          "32": {
+            "t": 113.216,
+            "distance_m": 15.638357066609052
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 113.268,
+        "extra_bump": false,
+        "terminal_reason": "navigation_retry_exhausted",
+        "health_problem": "nav2_costmap_missing_or_stale",
+        "health_pauses": 4,
+        "navigation_retry_reason": "sensor:nav2_costmap_missing_or_stale"
+      }
+    },
+    {
+      "seed": 112603,
+      "balanced": {
+        "run": "v151-boxes5-track-m112603-trial3",
+        "strict": "confirmed",
+        "original_common_success": true,
+        "registered_s": {
+          "103": 139.548,
+          "32": 234.04,
+          "7": 320.54400000000004
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "103": 139.548,
+          "32": 248.628,
+          "7": 320.568
+        },
+        "anytime_within_s": {
+          "103": 79.928,
+          "32": 248.628,
+          "7": 297.608
+        },
+        "last_valid_pose": {
+          "103": {
+            "t": 321.108,
+            "distance_m": 16.904220385655773
+          },
+          "7": {
+            "t": 321.108,
+            "distance_m": 1.0007312449528833
+          },
+          "32": {
+            "t": 321.108,
+            "distance_m": 12.472728518585281
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 321.1,
+        "extra_bump": false,
+        "terminal_reason": "all_registered_and_within_1.5m",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112603-1795270786287973756",
+        "strict": "confirmed",
+        "original_common_success": true,
+        "registered_s": {
+          "103": 120.056,
+          "32": 212.548,
+          "7": 305.052
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "103": 120.064,
+          "32": 228.284,
+          "7": 305.064
+        },
+        "anytime_within_s": {
+          "103": 93.764,
+          "32": 228.284,
+          "7": 276.344
+        },
+        "last_valid_pose": {
+          "103": {
+            "t": 306.044,
+            "distance_m": 16.778553331162197
+          },
+          "7": {
+            "t": 306.044,
+            "distance_m": 0.8049060692263327
+          },
+          "32": {
+            "t": 306.044,
+            "distance_m": 12.197058348095418
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 306.056,
+        "extra_bump": false,
+        "terminal_reason": "all_registered_and_within_1.5m",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112603-1795277159207082213",
+        "strict": "unresolved_terminal_sample",
+        "original_common_success": false,
+        "registered_s": {
+          "32": 81.832,
+          "7": 175.32,
+          "103": 488.828
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "32": 85.744,
+          "7": 181.624
+        },
+        "anytime_within_s": {
+          "32": 85.744,
+          "7": 181.624,
+          "103": 421.124
+        },
+        "last_valid_pose": {
+          "103": {
+            "t": 488.804,
+            "distance_m": 0.8676780038159194
+          },
+          "7": {
+            "t": 488.804,
+            "distance_m": 18.023216694348374
+          },
+          "32": {
+            "t": 488.804,
+            "distance_m": 13.49575255110475
+          }
+        },
+        "unresolved_terminal_ids": [
+          103
+        ],
+        "end_s": 488.828,
+        "extra_bump": false,
+        "terminal_reason": "targets_complete",
+        "health_problem": null,
+        "health_pauses": 6,
+        "navigation_retry_reason": null
+      }
+    },
+    {
+      "seed": 112604,
+      "balanced": {
+        "run": "v151-boxes5-track-m112604-trial4",
+        "strict": "confirmed",
+        "original_common_success": true,
+        "registered_s": {
+          "32": 42.44,
+          "103": 151.396,
+          "7": 238.452
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "32": 42.504,
+          "7": 238.464,
+          "103": 364.144
+        },
+        "anytime_within_s": {
+          "32": 35.944,
+          "7": 194.004,
+          "103": 364.144
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 368.444,
+            "distance_m": 10.142431871311771
+          },
+          "7": {
+            "t": 368.444,
+            "distance_m": 9.839028563933137
+          },
+          "103": {
+            "t": 368.444,
+            "distance_m": 0.8358919471579439
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 368.46,
+        "extra_bump": false,
+        "terminal_reason": "all_registered_and_within_1.5m",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112604-1795270786287973756",
+        "strict": "failed",
+        "original_common_success": false,
+        "registered_s": {
+          "32": 78.584,
+          "7": 298.092
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "32": 78.588,
+          "7": 298.108
+        },
+        "anytime_within_s": {
+          "32": 36.368,
+          "7": 246.588
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 597.588,
+            "distance_m": 18.02055028861034
+          },
+          "7": {
+            "t": 597.588,
+            "distance_m": 4.079308083958641
+          },
+          "103": {
+            "t": 597.588,
+            "distance_m": 10.080842402194445
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 597.5799999999999,
+        "extra_bump": false,
+        "terminal_reason": "rescue_budget_exhausted",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112604-1795277159207082213",
+        "strict": "confirmed",
+        "original_common_success": false,
+        "registered_s": {
+          "7": 173.16400000000002,
+          "103": 286.192,
+          "32": 398.976
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "7": 173.276,
+          "103": 286.196,
+          "32": 399.036
+        },
+        "anytime_within_s": {
+          "32": 50.096,
+          "7": 145.356,
+          "103": 283.276
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 399.036,
+            "distance_m": 0.43472486444580766
+          },
+          "7": {
+            "t": 399.036,
+            "distance_m": 16.503573350417895
+          },
+          "103": {
+            "t": 399.036,
+            "distance_m": 10.739394914696128
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 398.976,
+        "extra_bump": false,
+        "terminal_reason": "targets_complete",
+        "health_problem": null,
+        "health_pauses": 3,
+        "navigation_retry_reason": null
+      }
+    },
+    {
+      "seed": 112605,
+      "balanced": {
+        "run": "v151-boxes5-track-m112605-trial5",
+        "strict": "failed",
+        "original_common_success": false,
+        "registered_s": {
+          "103": 152.46
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "103": 152.46
+        },
+        "anytime_within_s": {
+          "103": 107.28,
+          "32": 590.26
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 599.98,
+            "distance_m": 1.4269720071803238
+          },
+          "103": {
+            "t": 599.98,
+            "distance_m": 15.63503424501178
+          },
+          "7": {
+            "t": 599.98,
+            "distance_m": 7.09987148672377
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 600.0,
+        "extra_bump": false,
+        "terminal_reason": "common_time_limit",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112605-1795270786287973756",
+        "strict": "failed",
+        "original_common_success": false,
+        "registered_s": {
+          "103": 246.984,
+          "32": 440.988
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "103": 247.0,
+          "32": 451.0
+        },
+        "anytime_within_s": {
+          "103": 98.98,
+          "32": 399.38
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 594.06,
+            "distance_m": 8.679765672135094
+          },
+          "103": {
+            "t": 594.06,
+            "distance_m": 6.631357252017789
+          },
+          "7": {
+            "t": 594.06,
+            "distance_m": 14.93546517859874
+          }
+        },
+        "unresolved_terminal_ids": [],
+        "end_s": 593.992,
+        "extra_bump": false,
+        "terminal_reason": "rescue_budget_exhausted",
+        "health_problem": null,
+        "health_pauses": null,
+        "navigation_retry_reason": null
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112605-1795277159207082213",
+        "strict": "unresolved_terminal_sample",
+        "original_common_success": false,
+        "registered_s": {
+          "32": 184.4,
+          "7": 253.872,
+          "103": 392.8
+        },
+        "sensor_stamped_after_registration_within_s": {
+          "32": 184.404,
+          "7": 260.704
+        },
+        "anytime_within_s": {
+          "32": 170.884,
+          "7": 260.704,
+          "103": 376.184
+        },
+        "last_valid_pose": {
+          "32": {
+            "t": 392.784,
+            "distance_m": 15.4998974628586
+          },
+          "103": {
+            "t": 392.784,
+            "distance_m": 0.821197433738719
+          },
+          "7": {
+            "t": 392.784,
+            "distance_m": 21.051144275135076
+          }
+        },
+        "unresolved_terminal_ids": [
+          103
+        ],
+        "end_s": 392.8,
+        "extra_bump": false,
+        "terminal_reason": "targets_complete",
+        "health_problem": null,
+        "health_pauses": 3,
+        "navigation_retry_reason": null
+      }
+    }
+  ]
+}

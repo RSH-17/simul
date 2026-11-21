@@ -1,0 +1,123 @@
+{
+  "protocol": "First 5 of every 50 exposure indices plus contiguous 978..1017 on development 112601; only 112601 used to develop proposals. 112602..112605 test the frozen proposal rule.",
+  "camera_pixels": [
+    480,
+    480
+  ],
+  "opencv": "4.6.0",
+  "host": "arm64",
+  "system": "Darwin",
+  "threads": 1,
+  "comparison": "Native balanced 6\u2013<10px small hints vs the same checks with bounded partial-square proposals.",
+  "limitations": "Saved JPEG and planar camera-pose interpolation. A compatible projection is not proof of visibility, ID, stable track, safe destination, or approach. Conservative negatives exclude frames with any GT tag within the horizontal image plus 64 px on either side. Outside-all counts use projected target rectangles expanded by 12 px. Timings separately cover the added tiny component pass on sampled frames and anonymous outline search on decoded frames, excluding ROS projection.",
+  "runs": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "frames": 335,
+      "conservative_negative_frames": 88,
+      "baseline_negative_frames_with_hints": 0,
+      "candidate_negative_frames_with_hints": 0,
+      "fragment_negative_proposals": 0,
+      "fragment_proposals": 3,
+      "baseline_proposals": 0,
+      "candidate_proposals": 3,
+      "added_outside_all_projected_tags": 0,
+      "decoded_frames": 7,
+      "decoded_frames_with_separate_anonymous_prints": 0,
+      "fallback_ms_p50": 1.451,
+      "fallback_ms_p95": 2.3,
+      "mixed_outline_ms_p50": 1.466,
+      "mixed_outline_ms_p95": 2.062
+    },
+    {
+      "run": "v151-boxes5-track-m112602-trial2",
+      "frames": 280,
+      "conservative_negative_frames": 112,
+      "baseline_negative_frames_with_hints": 0,
+      "candidate_negative_frames_with_hints": 0,
+      "fragment_negative_proposals": 0,
+      "fragment_proposals": 4,
+      "baseline_proposals": 12,
+      "candidate_proposals": 16,
+      "added_outside_all_projected_tags": 0,
+      "decoded_frames": 39,
+      "decoded_frames_with_separate_anonymous_prints": 3,
+      "fallback_ms_p50": 1.403,
+      "fallback_ms_p95": 2.373,
+      "mixed_outline_ms_p50": 2.034,
+      "mixed_outline_ms_p95": 4.432
+    },
+    {
+      "run": "v151-boxes5-track-m112603-trial3",
+      "frames": 165,
+      "conservative_negative_frames": 37,
+      "baseline_negative_frames_with_hints": 0,
+      "candidate_negative_frames_with_hints": 0,
+      "fragment_negative_proposals": 0,
+      "fragment_proposals": 0,
+      "baseline_proposals": 4,
+      "candidate_proposals": 4,
+      "added_outside_all_projected_tags": 0,
+      "decoded_frames": 25,
+      "decoded_frames_with_separate_anonymous_prints": 1,
+      "fallback_ms_p50": 1.42,
+      "fallback_ms_p95": 2.148,
+      "mixed_outline_ms_p50": 1.794,
+      "mixed_outline_ms_p95": 2.861
+    },
+    {
+      "run": "v151-boxes5-track-m112604-trial4",
+      "frames": 185,
+      "conservative_negative_frames": 76,
+      "baseline_negative_frames_with_hints": 0,
+      "candidate_negative_frames_with_hints": 0,
+      "fragment_negative_proposals": 0,
+      "fragment_proposals": 0,
+      "baseline_proposals": 6,
+      "candidate_proposals": 6,
+      "added_outside_all_projected_tags": 0,
+      "decoded_frames": 17,
+      "decoded_frames_with_separate_anonymous_prints": 0,
+      "fallback_ms_p50": 1.293,
+      "fallback_ms_p95": 2.047,
+      "mixed_outline_ms_p50": 1.963,
+      "mixed_outline_ms_p95": 2.607
+    },
+    {
+      "run": "v151-boxes5-track-m112605-trial5",
+      "frames": 300,
+      "conservative_negative_frames": 119,
+      "baseline_negative_frames_with_hints": 0,
+      "candidate_negative_frames_with_hints": 0,
+      "fragment_negative_proposals": 0,
+      "fragment_proposals": 0,
+      "baseline_proposals": 0,
+      "candidate_proposals": 0,
+      "added_outside_all_projected_tags": 0,
+      "decoded_frames": 0,
+      "decoded_frames_with_separate_anonymous_prints": 0,
+      "fallback_ms_p50": 1.283,
+      "fallback_ms_p95": 1.874,
+      "mixed_outline_ms_p50": null,
+      "mixed_outline_ms_p95": null
+    }
+  ],
+  "focused_wall7": [
+    {
+      "frame": 997,
+      "t": 199.368,
+      "method": "candidate",
+      "x": 443.0,
+      "y": 237.0,
+      "size": 8.0
+    },
+    {
+      "frame": 998,
+      "t": 199.568,
+      "method": "candidate",
+      "x": 471.0,
+      "y": 237.0,
+      "size": 6.0
+    }
+  ]
+}

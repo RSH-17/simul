@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-21T14:23:15.329068+00:00",
+  "updated_utc": "2026-11-21T17:36:15.337767+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 421,
+  "uploaded_verified": 426,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -6828,6 +6828,91 @@
       "recording_frames": 300,
       "recording_seconds": 60.0,
       "uploaded_verified": true
+    },
+    {
+      "asset": "r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4",
+      "local_path": "training_robust/native90/r32-latest-d8704f6-1122/r32-latest-d8704f6-track-m112601-1795277159207082213/video/mission.mp4",
+      "bytes": 4555383,
+      "sha256": "26289806afe04def73553108f2c5614d35af1336e478a06e021db354c93e1081",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4",
+      "original_evaluator_success": false,
+      "reason": "targets_complete",
+      "elapsed_sim_seconds": 371.952,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1860,
+      "recording_seconds": 372.0,
+      "uploaded_verified": true,
+      "terminal_reaudit": "confirmed"
+    },
+    {
+      "asset": "r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4",
+      "local_path": "training_robust/native90/r32-latest-d8704f6-1122/r32-latest-d8704f6-track-m112602-1795277159207082213/video/mission.mp4",
+      "bytes": 1285315,
+      "sha256": "0ecb922433b453e7880f2fc9f06d84186ce7b13680dd0a283f6546f1c14e3c21",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4",
+      "original_evaluator_success": false,
+      "reason": "navigation_retry_exhausted",
+      "elapsed_sim_seconds": 113.268,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 566,
+      "recording_seconds": 113.2,
+      "uploaded_verified": true,
+      "terminal_reaudit": "failed"
+    },
+    {
+      "asset": "r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4",
+      "local_path": "training_robust/native90/r32-latest-d8704f6-1122/r32-latest-d8704f6-track-m112603-1795277159207082213/video/mission.mp4",
+      "bytes": 6500607,
+      "sha256": "6657b8cdd34f8c73fcbb7ba71c7c21340ed3304a08090c01cf8f8a3a541fd230",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4",
+      "original_evaluator_success": false,
+      "reason": "targets_complete",
+      "elapsed_sim_seconds": 488.828,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 2444,
+      "recording_seconds": 488.8,
+      "uploaded_verified": true,
+      "terminal_reaudit": "unresolved_terminal_sample"
+    },
+    {
+      "asset": "r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112604-1795277159207082213.mp4",
+      "local_path": "training_robust/native90/r32-latest-d8704f6-1122/r32-latest-d8704f6-track-m112604-1795277159207082213/video/mission.mp4",
+      "bytes": 5210489,
+      "sha256": "376428769a4720839e1b1814a31dc48bf5626e8599f0b44c367b682fb294fb38",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112604-1795277159207082213.mp4",
+      "original_evaluator_success": false,
+      "reason": "targets_complete",
+      "elapsed_sim_seconds": 398.976,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1995,
+      "recording_seconds": 399.0,
+      "uploaded_verified": true,
+      "terminal_reaudit": "confirmed"
+    },
+    {
+      "asset": "r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112605-1795277159207082213.mp4",
+      "local_path": "training_robust/native90/r32-latest-d8704f6-1122/r32-latest-d8704f6-track-m112605-1795277159207082213/video/mission.mp4",
+      "bytes": 5122703,
+      "sha256": "eaa89bb68951b0558baa18902369e5465f6769b1de55f4b2b51b0d2e345e7c4e",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112605-1795277159207082213.mp4",
+      "original_evaluator_success": false,
+      "reason": "targets_complete",
+      "elapsed_sim_seconds": 392.8,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1964,
+      "recording_seconds": 392.8,
+      "uploaded_verified": true,
+      "terminal_reaudit": "unresolved_terminal_sample"
     }
   ],
   "skipped": [
@@ -6846,5 +6931,5 @@
   ],
   "repository_private": false,
   "note": "Original evaluator success may use an older protocol; actual 1.5m approach is listed separately. Public release downloads; uploads authorized by the repository owner.",
-  "eligible": 421
+  "eligible": 426
 }

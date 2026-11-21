@@ -36,7 +36,7 @@ def fixtures(archive=None):
     return destination
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360'],default='balanced');p.add_argument('--archive',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey'],default='balanced');p.add_argument('--archive',type=Path)
     a=p.parse_args();workspace=a.workspace.expanduser().resolve()
     if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
     workspace.parent.mkdir(parents=True,exist_ok=True)
@@ -45,7 +45,10 @@ def main():
     if a.policy=='balanced':
         subprocess.run([sys.executable,str(release/'build.py'),str(workspace)],check=True)
     else:
-        subprocess.run([sys.executable,str(REPO/'policy_candidates/2026-11-21_v151_rescue360/install.py'),str(release),str(workspace)],check=True)
+        candidate = {'rescue360':'2026-11-21_v151_rescue360',
+                     'adaptive-survey':'2026-11-22_v151_adaptive_survey'}[a.policy]
+        subprocess.run([sys.executable, str(REPO/'policy_candidates'/candidate/'install.py'),
+                        str(release), str(workspace)], check=True)
         pkg=workspace/'src/osp_mission'
         subprocess.run(['c++','-std=c++17','-O3','-ffp-contract=off','-fno-fast-math','-shared','-fPIC',str(pkg/'osp_mission/raycast.cpp'),'-o',str(pkg/'osp_mission/_raycast.so')],check=True)
         subprocess.run(['g++','-std=c++17','-O1','-I/opt/ros/jazzy/include','-I/usr/include/eigen3',str(pkg/'tools/export_slam_graph_poses.cpp'),'-L/opt/ros/jazzy/lib','-Wl,-rpath,/opt/ros/jazzy/lib','-lkartoSlamToolbox','-lboost_serialization','-lboost_thread','-lpthread','-o',str(pkg/'tools/export_slam_graph_poses')],check=True)

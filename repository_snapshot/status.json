@@ -1991,5 +1991,32 @@
     "initial_campaign_ranking_eligible": false,
     "current_root": "/home/ubuntu/r32-latest-d8704f6-1795277159207082213",
     "initial_interruption": "overlap with portable setup integration; action readiness loss not causally isolated"
+  },
+  "mixed_v151_adaptive_survey": {
+    "version": "1.5.1-adaptive-survey-r2",
+    "parent": "1.5.1-balanced",
+    "phase": "native_comparison_running",
+    "development_track_cases": 5,
+    "new_topologies": 2,
+    "frozen_camera": [
+      480,
+      480,
+      5
+    ],
+    "physical_drive": false,
+    "production_promoted": false,
+    "report": "experiments/2026-11-22_v151_adaptive_survey/README.md",
+    "new_tests_passed": 26,
+    "shared_regression_passed": 99,
+    "shared_regression_same_failed": 10
+  },
+  "latest_r32_common_comparison": {
+    "upstream": "d8704f6",
+    "completed_maps": 5,
+    "all_registered": 4,
+    "strict_confirmed": 2,
+    "terminal_censored": 2,
+    "known_failed": 1,
+    "report": "experiments/2026-11-22_latest_r32_compare/README.md"
   }
 }

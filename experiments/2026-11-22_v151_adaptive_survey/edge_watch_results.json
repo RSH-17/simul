@@ -1,0 +1,55 @@
+{
+  "opencv": "4.6.0",
+  "scope": "JPEG sample, 5 consecutive exposures per 50 plus continuous 978..1017 for 112601. Requests computed using truth-base pose interpolated to exposure and stored static camera calibration as passive TF proxy; all runtime guards assumed clear. IDs only identify compatibility with a projected rectangle enlarged by 12 pixels. No actual turns, reacquisition, registration, approach or collision outcomes inferred.",
+  "runs": [
+    {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "frames": 335,
+      "adjacent_sample_pairs": 275,
+      "conservative_negative_frames": 88,
+      "triggers": [
+        {
+          "frame": 998,
+          "stamp": 199.568,
+          "pixel": [
+            471.0,
+            237.0
+          ],
+          "turn_deg": -6.000000000000001,
+          "compatible_gt_ids": [
+            7
+          ],
+          "conservative_negative": false
+        }
+      ]
+    },
+    {
+      "run": "v151-boxes5-track-m112602-trial2",
+      "frames": 280,
+      "adjacent_sample_pairs": 224,
+      "conservative_negative_frames": 112,
+      "triggers": []
+    },
+    {
+      "run": "v151-boxes5-track-m112603-trial3",
+      "frames": 165,
+      "adjacent_sample_pairs": 132,
+      "conservative_negative_frames": 37,
+      "triggers": []
+    },
+    {
+      "run": "v151-boxes5-track-m112604-trial4",
+      "frames": 185,
+      "adjacent_sample_pairs": 148,
+      "conservative_negative_frames": 76,
+      "triggers": []
+    },
+    {
+      "run": "v151-boxes5-track-m112605-trial5",
+      "frames": 300,
+      "adjacent_sample_pairs": 240,
+      "conservative_negative_frames": 119,
+      "triggers": []
+    }
+  ]
+}

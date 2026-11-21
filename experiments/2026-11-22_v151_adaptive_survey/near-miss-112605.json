@@ -1,0 +1,14 @@
+{
+  "id": 32,
+  "front_local_x_sign": -1.0,
+  "camera_frames": 2999,
+  "body_near_frames": 48,
+  "frustum_front_near_frames": 0,
+  "frustum_front_near_18px_frames": 0,
+  "near_best_incidence_deg": null,
+  "all_frustum_front_18px_frames": 0,
+  "best_frame": 903,
+  "best_t": 180.576,
+  "best_width_px": 2.71,
+  "limitations": "planar horizontal pinhole projection; omits occlusion, vertical cropping, chassis pitch and roll"
+}
