@@ -26,7 +26,7 @@ class ObjectSurvey:
         p=odom_point(pose[:2],transform)
         if not self.visits or np.linalg.norm(p-self.visits[-1])>=.25:
             self.visits.append(p)
-        if self.region and np.linalg.norm(p-self.region)<.65:self.region=None
+        if self.region is not None and np.linalg.norm(p-self.region)<.65:self.region=None
         return p
 
     @staticmethod

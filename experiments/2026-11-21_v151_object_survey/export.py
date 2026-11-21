@@ -18,7 +18,7 @@ def export(root, base, destination):
     for name in ('protocol.json','report.json'):
         shutil.copy2(root/name,destination/name)
     manifest=load(root/'protocol.json')['source_manifest']
-    source=Path.home()/'flow_v151_object_survey_r3_ws/src/osp_mission/osp_mission'
+    source=Path.home()/'flow_v151_object_survey_r4_ws/src/osp_mission/osp_mission'
     assert all(hashlib.sha256((source/p).read_bytes()).hexdigest()==sha for p,sha in manifest['source_sha256'].items())
     for pair in pairs['pairs']:
         for variant,row in pair.items():

@@ -75,3 +75,14 @@ def test_completed_object_cannot_return_through_generic_fallback():
     seen[:]=True
     assert choose(s,g,c,seen,40,[]) is None
     assert s.survey.finished=={1}
+
+def test_real_region_dispatch_can_be_replanned_with_numpy_coordinates():
+    s,g,c,seen=setup();choose(s,g,c,seen)
+    for f in s.survey.tasks.by_key.values():f.state='OBSERVED';f.fraction=1.
+    goal=dict(x=4.2,y=3.2,yaw=0.,scan_angle=0.,features=np.zeros(5),distance=4.)
+    first=choose(s,g,c,seen,40,[goal]);s.survey.dispatched(first,40)
+    assert s.survey.region is not None
+    again=choose(s,g,c,seen,50,[goal])
+    assert again['region_transfer']
+    s.survey.observe_pose((4.2,3.2,0.),(0.,0.,0.))
+    assert s.survey.region is None

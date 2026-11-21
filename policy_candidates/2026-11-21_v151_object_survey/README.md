@@ -24,12 +24,14 @@
 
 ```bash
 python3 policy_candidates/2026-11-21_v151_object_survey/install.py \
-  policy_releases/2026-11-21_mixed_camera_sync_v151 ~/flow_v151_object_survey_r3_ws
-cd ~/flow_v151_object_survey_r3_ws
+  policy_releases/2026-11-21_mixed_camera_sync_v151 ~/flow_v151_object_survey_r4_ws
+cd ~/flow_v151_object_survey_r4_ws
 source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install --packages-select osp_mission
 ```
 
-새 회귀검사와 기존 안전·마커·흐름 검사는 49개 통과했다. 기존 이동 중 벽 관찰 플래그에 관한 테스트 1개는 부모 v1.5.1에서도 동일하게 실패한다. 그 결과를 감춰서 전체 통과로 표기하지 않는다.
+새 회귀검사와 기존 안전·마커·흐름 검사는 50개 통과했다. 기존 이동 중 벽 관찰 플래그에 관한 테스트 1개는 부모 v1.5.1에서도 동일하게 실패한다. 그 결과를 감춰서 전체 통과로 표기하지 않는다.
 
 [동일 다섯 맵의 비교](../../experiments/2026-11-21_v151_object_survey/README.md)
+
+시험 구동에서 구역 목표 좌표를 조건문으로 평가하는 오류를 발견했다. 실제 배열 좌표를 가진 목표의 전송·재선택·도착을 재현한 검사를 추가해 수정했다. 초기 개발 구동 두 건은 별도 기록으로 보존하며 최종 고정 빌드의 다섯 회차에 합치지 않는다.
