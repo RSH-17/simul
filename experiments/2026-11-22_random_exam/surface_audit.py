@@ -40,7 +40,7 @@ def camera_poses(track, exposure_times, calibration):
         raise ValueError('No exposures with an adjacent pose sample')
     x, y = (np.interp(times, track[:, 0], track[:, i]) for i in (1, 2))
     yaw = np.interp(times, track[:, 0], np.unwrap(track[:, 3]))
-    base = Rotation.from_euler('z', yaw)
+    base = Rotation.from_euler('z', yaw[:, None])
     axes = (base * Rotation.from_quat(calibration['quaternion'])).as_matrix()
     origins = base.apply(calibration['translation']) + np.column_stack((x, y, np.zeros_like(x)))
     return times, origins, axes
@@ -56,8 +56,8 @@ def mountable(center, tangent, size, normal, solids):
     return True
 
 
-def opportunity(center, normal, tangent, size, min_pixels, camera, calibration, solids):
-    times, origins, axes = camera
+def readable_indices(center, normal, tangent, size, min_pixels, origins, axes, calibration, solids):
+    """Return view indices that satisfy incidence, image bounds, size and five clear rays."""
     delta = origins - center
     toward = delta @ normal >= .5 * np.linalg.norm(delta, axis=1)
     selected = np.flatnonzero(toward)
@@ -76,11 +76,19 @@ def opportunity(center, normal, tangent, size, min_pixels, camera, calibration, 
             & (uv <= [calibration['width']-5, calibration['height']-5]).all(axis=(1, 2)))
     selected = selected[good]
     if not len(selected):
-        return 'outside_readable_view'
+        return selected, 'outside_readable_view'
     for point in (*corners, center):
         selected = selected[~occluded(origins[selected], point, solids)]
         if not len(selected):
-            return 'line_of_sight_blocked'
+            return selected, 'line_of_sight_blocked'
+    return selected, None
+
+
+def opportunity(center, normal, tangent, size, min_pixels, camera, calibration, solids):
+    times, origins, axes = camera
+    selected, reason = readable_indices(center, normal, tangent, size, min_pixels, origins, axes, calibration, solids)
+    if reason:
+        return reason
     stamps = times[selected]
     # Three distinct useful views from the same pass. Do not combine isolated glimpses minutes apart.
     for first in np.flatnonzero(np.searchsorted(stamps, stamps + 1., side='right') >= np.arange(len(stamps)) + 3):

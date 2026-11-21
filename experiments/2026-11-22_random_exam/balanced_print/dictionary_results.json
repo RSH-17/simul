@@ -1,0 +1,123 @@
+{
+  "dictionary": "DICT_ARUCO_ORIGINAL",
+  "ids": 1024,
+  "seed": 411227,
+  "cv2": "4.6.0",
+  "source_sha256": {
+    "marker_pair": "4ae60341a856f7d6438db4c8af6452b1f7e45c27975152357be6e92405c3c2a9",
+    "edge_print": "31a95d1b52dde4aa6bdefe9937cc762c4d4da65427950795ba277b34941058cd",
+    "warped_marker": "187dddd852f1b6cb0a29752ff81498182884974e0992f347d41252963f917b8e",
+    "small_wall_cues": "ff07dfc826b4972d01505057003a4d38c6995a06541a54801eb7c51c74c2c10f"
+  },
+  "clean": {
+    "printed_side_px": 35,
+    "rotations_per_id": 4,
+    "total": 4096,
+    "correct": 4096,
+    "all_four_rotations": 1024,
+    "missed_by_id": {},
+    "wrong_id_or_location": 0,
+    "duplicate": 0
+  },
+  "edge": {
+    "original": {
+      "9": {
+        "counts": {
+          "frames": 1024,
+          "correct_decode": 0,
+          "pass_readable_pixel_gate": 0,
+          "wrong_named_frames": 0,
+          "correct_edge_cue": 0,
+          "incorrect_edge_cue": 0
+        },
+        "examples": {}
+      },
+      "14": {
+        "counts": {
+          "frames": 1024,
+          "correct_decode": 1009,
+          "pass_readable_pixel_gate": 0,
+          "wrong_named_frames": 0,
+          "correct_edge_cue": 844,
+          "incorrect_edge_cue": 0
+        },
+        "examples": {}
+      },
+      "22": {
+        "counts": {
+          "frames": 1024,
+          "correct_decode": 1024,
+          "pass_readable_pixel_gate": 1024,
+          "wrong_named_frames": 0,
+          "correct_edge_cue": 0,
+          "incorrect_edge_cue": 0
+        },
+        "examples": {}
+      }
+    },
+    "nonmarker_checker": {
+      "9": {
+        "counts": {
+          "frames": 128,
+          "correct_decode": 0,
+          "pass_readable_pixel_gate": 0,
+          "wrong_named_frames": 0,
+          "correct_edge_cue": 0,
+          "incorrect_edge_cue": 0
+        },
+        "examples": {}
+      },
+      "14": {
+        "counts": {
+          "frames": 128,
+          "correct_decode": 0,
+          "pass_readable_pixel_gate": 0,
+          "wrong_named_frames": 0,
+          "correct_edge_cue": 0,
+          "incorrect_edge_cue": 0
+        },
+        "examples": {}
+      },
+      "22": {
+        "counts": {
+          "frames": 128,
+          "correct_decode": 0,
+          "pass_readable_pixel_gate": 0,
+          "wrong_named_frames": 4,
+          "correct_edge_cue": 0,
+          "incorrect_edge_cue": 0
+        },
+        "examples": {
+          "wrong_decode": [
+            {
+              "draw": 13,
+              "proposed": [
+                887
+              ]
+            },
+            {
+              "draw": 27,
+              "proposed": [
+                887
+              ]
+            },
+            {
+              "draw": 42,
+              "proposed": [
+                887
+              ]
+            },
+            {
+              "draw": 72,
+              "proposed": [
+                887
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "edge_pixels": "ideal shortest side before rasterization",
+  "scope": "Rendered images. No measured physical approach, turns, or temporal ID registration."
+}

@@ -1,0 +1,158 @@
+{
+  "labels": [
+    "Balanced",
+    "R5"
+  ],
+  "runs": [
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "seed": 545514539,
+      "id": 443,
+      "host": "movable_3",
+      "printed_outward_xy": [
+        0.9995856969155004,
+        0.028782538490436157
+      ],
+      "elapsed_sim_s": 530.192,
+      "registered_s": 528.7,
+      "body_near_front_s": 7.86,
+      "body_near_back_s": 14.22,
+      "decisions": 31,
+      "options_close_front": 108,
+      "selected_close_front": 2,
+      "options_readable_at_goal_heading": 4,
+      "decisions_with_readable_option": 4,
+      "selected_readable_at_goal_heading": 2,
+      "evidence": [
+        {
+          "elapsed_s": 157.708,
+          "proposed_xy": [
+            [
+              8.716,
+              4.596
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "flow_or_marker",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 166.708,
+          "proposed_xy": [
+            [
+              8.724,
+              4.547
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 518.208,
+          "proposed_xy": [
+            [
+              8.302,
+              4.454
+            ]
+          ],
+          "selected_readable": true,
+          "selected_front": true,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 529.208,
+          "proposed_xy": [
+            [
+              8.285,
+              4.467
+            ]
+          ],
+          "selected_readable": true,
+          "selected_front": true,
+          "selected_kind": "flow_or_marker",
+          "selection_reason": "unseen_reachable_object"
+        }
+      ]
+    },
+    {
+      "run": "v151-survey-candidate-track-m545514539-663389709141213120",
+      "seed": 545514539,
+      "id": 443,
+      "host": "movable_3",
+      "printed_outward_xy": [
+        0.9995856969155004,
+        0.028782538490436157
+      ],
+      "elapsed_sim_s": 600.0,
+      "registered_s": null,
+      "body_near_front_s": 0.0,
+      "body_near_back_s": 24.12,
+      "decisions": 38,
+      "options_close_front": 129,
+      "selected_close_front": 1,
+      "options_readable_at_goal_heading": 4,
+      "decisions_with_readable_option": 3,
+      "selected_readable_at_goal_heading": 0,
+      "evidence": [
+        {
+          "elapsed_s": 216.1,
+          "proposed_xy": [
+            [
+              8.468,
+              4.129
+            ],
+            [
+              8.65,
+              4.259
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "overdue_camera_or_frontier"
+        },
+        {
+          "elapsed_s": 282.1,
+          "proposed_xy": [
+            [
+              8.671,
+              4.455
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_gain_per_travel"
+        },
+        {
+          "elapsed_s": 321.1,
+          "proposed_xy": [
+            [
+              8.159,
+              3.868
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "nearby_distinct_object_face"
+        },
+        {
+          "elapsed_s": 504.1,
+          "proposed_xy": [],
+          "selected_readable": false,
+          "selected_front": true,
+          "selected_kind": "interior_frontier",
+          "selection_reason": "unseen_gain_per_travel"
+        }
+      ]
+    }
+  ],
+  "minimum_px": 18,
+  "max_incidence_deg": 60,
+  "scope": "Arrival yaw only, initial map-to-world alignment. Saved alternatives include the base planning pool and the selected hybrid goal. Five SDF rays are geometric opportunities, not completed motion or successful Nav2 plans. In-place sweeps and subsequent turns are not counted."
+}
