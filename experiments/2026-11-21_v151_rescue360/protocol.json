@@ -1,0 +1,33 @@
+{
+  "version": "v1.5.1-rescue360",
+  "baseline": "/home/ubuntu/v151-track-five-boxes5-1795247134501974510",
+  "seeds": [
+    112601,
+    112602,
+    112603,
+    112604,
+    112605
+  ],
+  "split": "development_regression",
+  "maximum_mission_sim_s": 600,
+  "outer_wall_limit_s": 2400,
+  "frozen_policy": true,
+  "source_manifest": {
+    "parent": "1.5.1-balanced",
+    "version": "1.5.1-rescue360",
+    "source_sha256": {
+      "mission.py": "17c1f1452123bc9f22e12eff16b0d54d1cc63eb7726eaccae881cfe447067e91",
+      "phased_hybrid.py": "8c0f6b6e5ba192ab82c4c204db3f77293d9f0df8f7292b1d89cb9a9e91874271",
+      "rescue360.py": "0ecde8d2f51d9c088e369fd572a800babca47489a62eb3a757822ffbfea6804d"
+    }
+  },
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "physical_drive": false,
+  "domain": 174,
+  "policy_inputs": "live sensors and SLAM only; no evaluator truth",
+  "retry_failed_policy": false
+}

@@ -1,4 +1,8 @@
-**Mixed v1.5.1-rescue360**는 6분 이후 전 방향의 카메라 미관찰 표면과 미지 공간 정보량으로 이동·360도 관찰 목표를 고르는 별도 시뮬레이션 후보입니다. [구조와 검증](experiments/2026-11-21_v151_rescue360/README.md)
+[yeonslay 최신 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md) 진행 중입니다. 최신 커밋은 `d8704f6`이며 결과가 나오기 전에는 우열을 정하지 않습니다.
+
+[팀원용 진행 보고·대시보드 접속·정책 비교 방법](docs/team-policy-lab/README.md) · [팀 공유 메시지](docs/team-policy-lab/TEAM_MESSAGE.md)
+
+**Mixed v1.5.1-rescue360** 동일 5맵 비교는 엄격 완주 3/5·벽 접근 3/5로 기준판과 같았습니다. 상자 접근은 9/10→10/10이며 기본판을 대체하지 않습니다. 이 후보는 6분 이후 전 방향의 카메라 미관찰 표면과 미지 공간 정보량으로 이동·360도 관찰 목표를 고르는 별도 시뮬레이션 후보입니다. [구조와 검증](experiments/2026-11-21_v151_rescue360/README.md)
 
 **Mixed v1.5.1-perimeter-survey**는 외곽의 미관찰 벽을 이어서 보고 가까운 상자 관찰 후 돌아오는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_perimeter_survey/README.md)
 
@@ -482,7 +486,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 414개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 419개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -490,6 +494,11 @@ python3 scripts/publish_simulation_videos.py --upload
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [v151-rescue360-1121__v151-rescue360-track-m112605-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112605-1795270786287973756.mp4) | 실패 | 미달 | 593.992 |
+| [v151-rescue360-1121__v151-rescue360-track-m112604-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112604-1795270786287973756.mp4) | 실패 | 미달 | 597.58 |
+| [v151-rescue360-1121__v151-rescue360-track-m112603-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112603-1795270786287973756.mp4) | 성공 | 확인 | 306.056 |
+| [v151-rescue360-1121__v151-rescue360-track-m112602-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112602-1795270786287973756.mp4) | 성공 | 확인 | 457.836 |
+| [v151-rescue360-1121__v151-rescue360-track-m112601-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112601-1795270786287973756.mp4) | 성공 | 확인 | 334.652 |
 | [fix_v10_escape_regression3__9802005.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fix_v10_escape_regression3__9802005.mp4) | 성공 | 확인 | 335.45 |
 | [fix_v10_escape_regression3__9802009.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fix_v10_escape_regression3__9802009.mp4) | 성공 | 확인 | 345.245 |
 | [fix_v10_escape_regression3__9802018.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fix_v10_escape_regression3__9802018.mp4) | 실패 | 확인 | 600.477 |

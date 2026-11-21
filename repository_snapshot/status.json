@@ -2,11 +2,38 @@
   "mixed_v151_rescue360": {
     "version": "1.5.1-rescue360",
     "baseline": "1.5.1-balanced",
-    "phase": "pilot_verified_formal_five_running",
+    "phase": "formal_five_completed_not_promoted",
     "passed_tests": 52,
     "preexisting_parent_test_failures": 1,
     "production_promoted": false,
-    "report": "experiments/2026-11-21_v151_rescue360/README.md"
+    "report": "experiments/2026-11-21_v151_rescue360/README.md",
+    "comparison": {
+      "policy": "1.5.1-rescue360",
+      "baseline": "1.5.1-balanced",
+      "pairs": 5,
+      "held_out": false,
+      "production_promoted": false,
+      "stats": {
+        "baseline": {
+          "wall_registered": 3,
+          "wall_approached": 3,
+          "box_approached": 9,
+          "strict": 3,
+          "bumps": 0,
+          "mean_elapsed_s": 489.6336,
+          "mean_path_m": 83.77781194727584
+        },
+        "candidate": {
+          "wall_registered": 3,
+          "wall_approached": 3,
+          "box_approached": 10,
+          "strict": 3,
+          "bumps": 0,
+          "mean_elapsed_s": 458.0232,
+          "mean_path_m": 73.27769273663438
+        }
+      }
+    }
   },
   "mixed_v151_perimeter_survey": {
     "version": "1.5.1-perimeter-survey",
@@ -1892,5 +1919,20 @@
     },
     "report": "experiments/2026-11-21_region_wall_v153/README.md",
     "videos": 5
+  },
+  "team_policy_lab": {
+    "updated_date_kst": "2026-11-22",
+    "guide": "docs/team-policy-lab/README.md",
+    "shared_board_verified_from_host": true,
+    "teammate_remote_access_verified": false,
+    "message_sent": false
+  },
+  "latest_upstream_comparison": {
+    "commit": "d8704f64d7b9098c79a9c42dfec81e29d6d789a8",
+    "checked_date_kst": "2026-11-22",
+    "tests_passed": 264,
+    "phase": "native_five_running",
+    "report": "experiments/2026-11-22_latest_r32_compare/README.md",
+    "physical_drive": false
   }
 }
