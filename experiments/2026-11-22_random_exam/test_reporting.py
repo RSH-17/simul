@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from board_results import apply
-from report import report
+from report import report, supplemental
 
 
 class ReportingTests(unittest.TestCase):
@@ -31,3 +31,18 @@ class ReportingTests(unittest.TestCase):
             output=report(root)
             self.assertIn('0쌍의 양쪽 주행',output)
             self.assertNotIn('| R5 |',output)
+
+    def test_surface_comparison_uses_only_paired_nonrepeat_valid_recordings(self):
+        with TemporaryDirectory() as temp:
+            root=Path(temp)
+            folder=root/'sensor-audit';folder.mkdir()
+            pair=dict(valid=True,repeat=False,baseline={'name':'b'},candidate={'name':'c'})
+            info=dict(valid=True,navigate=dict(aborted=1,canceled=2),surface_coverage=dict(
+                wall=dict(mountable_center_span_m=8,observed_span_m=2),
+                obstacle=dict(mountable_center_span_m=0,observed_span_m=0),boxes=0,boxes_all_four=0))
+            (folder/'b.json').write_text(json.dumps(info))
+            self.assertEqual(supplemental(root,[pair]),[])
+            (folder/'c.json').write_text(json.dumps(info))
+            text='\n'.join(supplemental(root,[pair,dict(pair,repeat=True),dict(pair,valid=False)]))
+            self.assertIn('1쌍',text)
+            self.assertIn('25.0% | 해당 없음 | 0/0 | 1 | 2',text)

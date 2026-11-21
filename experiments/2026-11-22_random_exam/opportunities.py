@@ -46,7 +46,9 @@ def analyze(folder, score, calibration):
                             geometric_6_to_lt18px_frames=observation['small_6_to_lt18_px']['clear_all'],
                             geometric_first_18px_s=observation['first_5ray_18px_s'],
                             online_decodes=decoded,offline_jpeg_decodes=offline.get(ident,{}).get('frames',0),
-                            near_s=observation['physical_near_s'])
+                            near_s=observation['physical_near_s'],
+                            detector_breakdown={k:v for k,v in metrics['last_detector_status'].get('by_id',{}).get(ident,{}).items()
+                                                if k in ('small','border','no_range','horizontal','inconsistent','accepted')})
     goals=folder/'native/hybrid_goals.jsonl'
     selected=[json.loads(line) for line in goals.read_text().splitlines() if line.strip()] if goals.exists() else []
     prior=[];repeats=0

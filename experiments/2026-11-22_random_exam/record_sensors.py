@@ -3,7 +3,6 @@ import argparse
 import json
 import os
 from pathlib import Path
-import signal
 import subprocess
 import time
 
@@ -44,7 +43,9 @@ def monitor(root,recordings):
                     time.sleep(2)
             finally:
                 if recorder.poll() is None:
-                    recorder.send_signal(signal.SIGINT)
+                    # A detached shell may pass an ignored SIGINT to ros2. The
+                    # Jazzy record verb installs its own graceful SIGTERM handler.
+                    recorder.terminate()
                     recorder.wait(timeout=30)
             if not (bag/'metadata.yaml').is_file():
                 raise RuntimeError('No finalized sensor recording for '+name)

@@ -14,6 +14,40 @@ def marker_ids(row):
                                           if v['verified_s'] is not None)) or '없음'
 
 
+def supplemental(root, pairs):
+    groups = {}
+    for role in ('baseline', 'candidate'):
+        groups[role] = []
+    for pair in pairs:
+        if not pair['valid'] or pair['repeat']:
+            continue
+        files = {role: root/'sensor-audit'/(pair[role]['name']+'.json') for role in groups}
+        if not all(path.is_file() for path in files.values()):
+            continue
+        records = {role: read(path) for role, path in files.items()}
+        if all(record.get('valid') and record.get('surface_coverage') for record in records.values()):
+            for role, record in records.items():
+                groups[role].append(record)
+    n = len(groups['baseline'])
+    if not n:
+        return []
+    lines = ['', f'### 실제 카메라가 처리한 시각의 표면 관찰 기회 ({n}쌍)', '',
+             '| 정책 | 벽 관찰 가능 구간 | 장애물 관찰 가능 구간 | 네 면 관찰 기회가 있었던 상자 | Nav2 실패 | Nav2 취소 |',
+             '|---|---:|---:|---:|---:|---:|']
+    for role, records in groups.items():
+        coverage = [row['surface_coverage'] for row in records]
+        def percent(kind):
+            span = sum(r[kind]['mountable_center_span_m'] for r in coverage)
+            return f"{100*sum(r[kind]['observed_span_m'] for r in coverage)/span:.1f}%" if span else '해당 없음'
+        lines.append(f"| {'Balanced' if role=='baseline' else 'R5'} | {percent('wall')} | {percent('obstacle')} | "
+                     f"{sum(r['boxes_all_four'] for r in coverage)}/{sum(r['boxes'] for r in coverage)} | "
+                     f"{sum(r['navigate']['aborted'] for r in records)} | {sum(r['navigate']['canceled'] for r in records)} |")
+    lines.extend(['', '높이 32cm에 20cm 인쇄물을 붙일 수 있는 구간을 최대 40cm 간격으로 표본 조사했다. '
+                  '처리된 영상 세 장에서 1초 안에 최단 변 18픽셀, 입사각 60° 이내, 네 모서리와 중심까지 시야 확보를 요구했다. '
+                  '직사각 상자는 각 면의 표본 70% 이상을 네 면에서 충족해야 센다. 실제 ID 판독과 근거리 접근은 위 표에서 별도로 채점했다.'])
+    return lines
+
+
 def report(root):
     data=read(root/'comparison.json');protocol=read(root/'protocol.json')
     worlds={w['seed']:w for w in protocol['worlds']}
@@ -45,6 +79,7 @@ def report(root):
     if both:
         b,c=[mean(p[k]['score']['goal_complete_by_s'] for p in both) for k in ('baseline','candidate')]
         lines+=['',f'양쪽 모두 엄격 완주한 신규 배치 {len(both)}개에서 마지막 확인까지 평균은 Balanced {b:.1f}초, R5 {c:.1f}초였다.']
+    lines.extend(supplemental(root, data['pairs']))
     if (root/'routes.png').is_file():
         lines+=['','![같은 무작위 시험장에서의 두 정책 경로](routes.png)']
     lines+=['','반복 회차는 독립 배치 수에 더하지 않았다. 이 결과의 범위는 정해진 시험장과 추첨된 배치, 사용한 센서 조건이다.']

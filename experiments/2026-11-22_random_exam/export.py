@@ -36,8 +36,9 @@ def export(root,recordings,destination):
         for name in ('comparison.json','protocol.json','episodes.json','status.json','registration.json'):
             shutil.copy2(root/name,stage/name)
         if (root/'routes.png').is_file():shutil.copy2(root/'routes.png',stage/'routes.png')
-        if (root/'camera-opportunities').is_dir():
-            shutil.copytree(root/'camera-opportunities',stage/'camera-opportunities')
+        for folder in ('camera-opportunities', 'sensor-audit'):
+            if (root/folder).is_dir():
+                shutil.copytree(root/folder,stage/folder)
         media=[]
         for row in rows:
             name=row['name'];run=recordings/name
