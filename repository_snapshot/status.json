@@ -1995,7 +1995,7 @@
   "mixed_v151_adaptive_survey": {
     "version": "1.5.1-adaptive-survey-r2",
     "parent": "1.5.1-balanced",
-    "phase": "native_comparison_running",
+    "phase": "native_comparison_complete",
     "development_track_cases": 5,
     "new_topologies": 2,
     "frozen_camera": [
@@ -2009,7 +2009,65 @@
     "new_tests_passed": 26,
     "shared_regression_passed": 99,
     "shared_regression_same_failed": 10,
-    "r2_development_regression_bound": "experiments/2026-11-22_v151_adaptive_survey/development/first-two-bound.json"
+    "r2_development_regression_bound": "experiments/2026-11-22_v151_adaptive_survey/development/first-two-bound.json",
+    "paired_native": {
+      "regression": {
+        "baseline": {
+          "wall_reg": 3,
+          "box_reg": 9,
+          "wall_near": 3,
+          "box_near": 9,
+          "strict": 3,
+          "bumps": 0,
+          "duplicate_selections": 1,
+          "mean_elapsed_s": 489.6336,
+          "mean_distance_m": 83.77781194727584,
+          "mean_stopped_s": 38.58800000000004,
+          "n": 5
+        },
+        "candidate": {
+          "wall_reg": 4,
+          "box_reg": 4,
+          "wall_near": 4,
+          "box_near": 4,
+          "strict": 1,
+          "bumps": 0,
+          "duplicate_selections": 0,
+          "mean_elapsed_s": 546.3936,
+          "mean_distance_m": 91.46161048341727,
+          "mean_stopped_s": 49.49200000000007,
+          "n": 5
+        }
+      },
+      "heldout": {
+        "baseline": {
+          "wall_reg": 2,
+          "box_reg": 4,
+          "wall_near": 2,
+          "box_near": 4,
+          "strict": 2,
+          "bumps": 0,
+          "duplicate_selections": 0,
+          "mean_elapsed_s": 154.018,
+          "mean_distance_m": 20.79930016265123,
+          "mean_stopped_s": 16.959999999999965,
+          "n": 2
+        },
+        "candidate": {
+          "wall_reg": 2,
+          "box_reg": 3,
+          "wall_near": 2,
+          "box_near": 3,
+          "strict": 1,
+          "bumps": 0,
+          "duplicate_selections": 0,
+          "mean_elapsed_s": 369.0,
+          "mean_distance_m": 46.43731845026653,
+          "mean_stopped_s": 59.190000000000104,
+          "n": 2
+        }
+      }
+    }
   },
   "latest_r32_common_comparison": {
     "upstream": "d8704f6",

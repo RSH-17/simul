@@ -1,0 +1,18 @@
+{
+  "ended_before_candidate_native_launch": true,
+  "first_stage": "v151_adaptive_survey1122_ws",
+  "former_queue_pid": 282988,
+  "formerly_blocked_on": "locks_lock_inode_wait",
+  "candidate_run_count": 0,
+  "pre_registered_order": [
+    112601,
+    112605,
+    112801,
+    112802,
+    112602,
+    112603,
+    112604
+  ],
+  "preserved_original_workspaces": true,
+  "reason": "source review found approached marker could retire unobserved host faces; no candidate native result consumed"
+}

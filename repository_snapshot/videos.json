@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-21T17:36:15.337767+00:00",
+  "updated_utc": "2026-11-21T20:00:54.468189+00:00",
   "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
-  "uploaded_verified": 426,
+  "uploaded_verified": 435,
   "videos": [
     {
       "asset": "fix_v10_escape_regression3__9802005.mp4",
@@ -6913,6 +6913,249 @@
       "recording_seconds": 392.8,
       "uploaded_verified": true,
       "terminal_reaudit": "unresolved_terminal_sample"
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-baseline-heldout-m112801-1122/video/mission.mp4",
+      "bytes": 195690,
+      "sha256": "19f72849a8ea965f7e12aefff970b524693f97b37a545fc8051e4df8fa583891",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4",
+      "original_evaluator_success": true,
+      "reason": "all_registered_and_within_1.5m",
+      "elapsed_sim_seconds": 84.224,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 421,
+      "recording_seconds": 84.2,
+      "uploaded_verified": true,
+      "role": "baseline",
+      "seed": 112801,
+      "world_sha256": "87d978efa4140237c5d99b00174191767559d4bf1867cc233fe0dab0c829a4ba",
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        32,
+        103
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-baseline-heldout-m112802-1122/video/mission.mp4",
+      "bytes": 586473,
+      "sha256": "4fb0b4ef9adaddce0512da62a81d2de2c5934f3fe8c07ca8bc6e9ae07d4bc44c",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4",
+      "original_evaluator_success": true,
+      "reason": "all_registered_and_within_1.5m",
+      "elapsed_sim_seconds": 223.812,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1119,
+      "recording_seconds": 223.8,
+      "uploaded_verified": true,
+      "role": "baseline",
+      "seed": 112802,
+      "world_sha256": "8631368ab11cb5437ee6cb3b0e4e8eeb940491d4379340250fc20bdebfdd7b9b",
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        32,
+        103
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-heldout-m112801-1122/video/mission.mp4",
+      "bytes": 297676,
+      "sha256": "0d4b8861f89e3addcfecb39a60cb9ebb7ed67d4150c08dce68de1d6bcbaf1414",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4",
+      "original_evaluator_success": true,
+      "reason": "all_registered_and_within_1.5m",
+      "elapsed_sim_seconds": 137.99599999999998,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 690,
+      "recording_seconds": 138.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112801,
+      "world_sha256": "87d978efa4140237c5d99b00174191767559d4bf1867cc233fe0dab0c829a4ba",
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        32,
+        103
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112802-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-heldout-m112802-1122/video/mission.mp4",
+      "bytes": 1219971,
+      "sha256": "499bd0547886dbe846f81959d2336299a12f760869d329751f02d51400079bfd",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112802-1122.mp4",
+      "original_evaluator_success": false,
+      "reason": "common_time_limit",
+      "elapsed_sim_seconds": 600.004,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3000,
+      "recording_seconds": 600.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112802,
+      "world_sha256": "8631368ab11cb5437ee6cb3b0e4e8eeb940491d4379340250fc20bdebfdd7b9b",
+      "registered_ids": [
+        7,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        103
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-track-m112601-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-track-m112601-1122/video/mission.mp4",
+      "bytes": 7492153,
+      "sha256": "5c5ed042d62666d44520837c5935b8dee8b24a2971c3c152d1e69f921755dc11",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112601-1122.mp4",
+      "original_evaluator_success": false,
+      "reason": "common_time_limit",
+      "elapsed_sim_seconds": 600.0,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3000,
+      "recording_seconds": 600.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112601,
+      "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+      "registered_ids": [
+        7,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        103
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-track-m112602-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-track-m112602-1122/video/mission.mp4",
+      "bytes": 3776506,
+      "sha256": "b457eba7ef1ed6aa8e04d8a0dc3cf2ff5917cac1d44fe78b6c840ac29915d6bd",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112602-1122.mp4",
+      "original_evaluator_success": true,
+      "reason": "all_registered_and_within_1.5m",
+      "elapsed_sim_seconds": 331.916,
+      "targets": 3,
+      "collisions": 0,
+      "actual_approach_1_5m": true,
+      "recording_frames": 1660,
+      "recording_seconds": 332.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112602,
+      "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+      "registered_ids": [
+        7,
+        32,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        32,
+        103
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-track-m112603-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-track-m112603-1122/video/mission.mp4",
+      "bytes": 8167410,
+      "sha256": "be83f1142ec1393215b4797a754245667efc679121cb9c021c163e6c9521cc44",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112603-1122.mp4",
+      "original_evaluator_success": false,
+      "reason": "common_time_limit",
+      "elapsed_sim_seconds": 600.028,
+      "targets": 1,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3000,
+      "recording_seconds": 600.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112603,
+      "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+      "registered_ids": [
+        32
+      ],
+      "post_registration_near_ids": [
+        32
+      ]
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-track-m112604-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-track-m112604-1122/video/mission.mp4",
+      "bytes": 8142238,
+      "sha256": "ce7e2e405c1f949b3aa1e9dc6ed230cc092da24e0270dcdc62c013cd8a6174d4",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112604-1122.mp4",
+      "original_evaluator_success": false,
+      "reason": "common_time_limit",
+      "elapsed_sim_seconds": 600.012,
+      "targets": 0,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3000,
+      "recording_seconds": 600.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112604,
+      "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+      "registered_ids": [],
+      "post_registration_near_ids": []
+    },
+    {
+      "asset": "v151-adaptive-survey-1122__v151-survey-candidate-track-m112605-1122.mp4",
+      "local_path": "training_robust/native90/v151-adaptive-survey-1122/v151-survey-candidate-track-m112605-1122/video/mission.mp4",
+      "bytes": 6838139,
+      "sha256": "88d99a3fffce681b11cb0a7955c6506a9697410fc78b3fff6968d6849c9524eb",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112605-1122.mp4",
+      "original_evaluator_success": false,
+      "reason": "common_time_limit",
+      "elapsed_sim_seconds": 600.012,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3000,
+      "recording_seconds": 600.0,
+      "uploaded_verified": true,
+      "role": "candidate",
+      "seed": 112605,
+      "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+      "registered_ids": [
+        7,
+        103
+      ],
+      "post_registration_near_ids": [
+        7,
+        103
+      ]
     }
   ],
   "skipped": [
@@ -6931,5 +7174,5 @@
   ],
   "repository_private": false,
   "note": "Original evaluator success may use an older protocol; actual 1.5m approach is listed separately. Public release downloads; uploads authorized by the repository owner.",
-  "eligible": 426
+  "eligible": 435
 }

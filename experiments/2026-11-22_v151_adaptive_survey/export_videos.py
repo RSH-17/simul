@@ -1,5 +1,6 @@
 """Stage the nine finalized adaptive-survey RGB clips and publish their verified index."""
 import argparse
+import csv
 import hashlib
 import json
 import math
@@ -57,6 +58,23 @@ def read_video(path, info):
         capture.release()
 
 
+def trajectory_near_ids(run, metric, scene):
+    registered = {int(i): float(t) for i, t in metric['registered_s'].items()}
+    targets = {int(target['id']): (target['x'], target['y']) for target in scene['targets']}
+    near = set()
+    with (run / 'trajectory.csv').open(newline='') as stream:
+        for sample in csv.DictReader(stream):
+            elapsed = float(sample['elapsed_sim_s'])
+            if not 0 <= elapsed <= 600:
+                continue
+            point = float(sample['world_x']), float(sample['world_y'])
+            for ident in map(int, sample['registered_ids'].split()):
+                if (ident in targets and ident in registered and elapsed >= registered[ident]
+                        and math.dist(point, targets[ident]) <= 1.5):
+                    near.add(ident)
+    return near
+
+
 def collect(root, recordings, selected=None):
     protocol = load(root / 'protocol.json')
     require(protocol['physical_drive'] is False and protocol['camera'] == [480, 480, 5],
@@ -97,10 +115,12 @@ def collect(root, recordings, selected=None):
                     'World checksum mismatch ' + name)
             scene = load(run / 'scene.json')
             expected_ids = {int(t['id']) for t in scene['targets']}
-            require(scene['seed'] == seed and len(expected_ids) == 3 and audit['run'] == name,
+            enrolled_scene = root / 'fixtures' / f'map-{seed}' / 'scene.json'
+            require(enrolled_scene.is_file() and digest(enrolled_scene) == digest(run / 'scene.json')
+                    and isinstance(scene['seed'], int) and len(expected_ids) == 3 and audit['run'] == name,
                     'Wrong scenario or audit ' + name)
             ids = sorted(metric['final_ids'])
-            near_ids = sorted(map(int, metric['registered_and_within_s']))
+            near_ids = sorted(trajectory_near_ids(run, metric, scene))
             require(sorted(row['registered_ids']) == ids and metric['reason'] == row['reason']
                     and row['bumper_events'] == metric['bumper_events']
                     and metric['elapsed_sim_s'] == row['elapsed_sim_s'], 'Metrics mismatch ' + name)
@@ -119,10 +139,13 @@ def collect(root, recordings, selected=None):
             rec = dict(frames=info['frames'], duration_seconds=info['duration_s'])
             evaluation = dict(success=strict, elapsed_seconds=row['elapsed_sim_s'], targets=len(ids),
                               collisions=row['bumper_events'], reason=row['reason'],
-                              ground_truth_audit={'closest_approach_m': metric['min_ground_truth_m']},
+                              ground_truth_audit={'closest_approach_m': metric['min_ground_truth_m'],
+                                  'expected_ids': sorted(expected_ids),
+                                  'verified_after_registration_ids': sorted(set(near_ids) & set(row['sensor_verified_ids']))},
                               registered_ids=ids, post_registration_near_ids=near_ids,
                               sensor_verified_ids=row['sensor_verified_ids'], saved_errors_m=errors)
-            entry = dict(seed=seed, role=role, episode=name, world_sha256=world, sha256=info['sha256'],
+            entry = dict(seed=seed, rendered_seed=scene['seed'], scene_sha256=digest(enrolled_scene),
+                         role=role, episode=name, world_sha256=world, sha256=info['sha256'],
                          bytes=video.stat().st_size, local_path=str(relative), asset=CAMPAIGN+'__'+name+'.mp4',
                          recording=rec, evaluation=evaluation)
             results.append((video, entry))

@@ -1,4 +1,4 @@
-[8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 실험](experiments/2026-11-22_v151_adaptive_survey/README.md)
+[8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
 [최신 원본 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md)를 마쳤습니다. 세 마커 등록은 R32 4/5, balanced·rescue360 각각 3/5였습니다. 등록 후 실제 1.5m 접근까지 포함한 R32 완주는 2회 확인했고, 2회는 종료 순간의 위치 기록이 부족해 판정이 보류됐습니다.
 
@@ -488,7 +488,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 426개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 435개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -496,6 +496,15 @@ python3 scripts/publish_simulation_videos.py --upload
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4) | 성공 | 확인 | 84.224 |
+| [v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4) | 성공 | 확인 | 223.812 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4) | 성공 | 확인 | 137.99599999999998 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112802-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112802-1122.mp4) | 실패 | 미달 | 600.004 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112601-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112601-1122.mp4) | 실패 | 미달 | 600.0 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112602-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112602-1122.mp4) | 성공 | 확인 | 331.916 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112603-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112603-1122.mp4) | 실패 | 미달 | 600.028 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112604-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112604-1122.mp4) | 실패 | 미달 | 600.012 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112605-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112605-1122.mp4) | 실패 | 미달 | 600.012 |
 | [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4) | 원본 궤적 재채점 통과 | 확인(등록 순서 무관) | 371.952 |
 | [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4) | 실패 | 미달 | 113.268 |
 | [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4) | 등록 직후 위치 표본 누락 | 확인(등록 순서 무관) | 488.828 |
