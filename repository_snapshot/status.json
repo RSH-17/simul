@@ -1689,5 +1689,17 @@
     "video_publication": "42_public_synthetic_assets_size_and_sha256_verified",
     "video_index": "experiments/2026-11-21_camera_aware_policy/video_index.json",
     "publication_branch": "codex/mixed-camera-aware"
+  },
+  "mixed_v151_clutter": {
+    "state": "startup_and_motion_verified_snapshot",
+    "final_result_pending": true,
+    "version": "1.5.1-balanced",
+    "extra_obstacles": 5,
+    "total_obstacles": 8,
+    "seed": 112401,
+    "duration_limit_s": 600,
+    "physical_drive": false,
+    "report": "experiments/2026-11-21_v151_clutter/README.md",
+    "run": "v15-sync-balanced-m112401-clutter-extra5-1795242071643397184"
   }
 }
