@@ -1,5 +1,7 @@
 """Export completed five-track results and synthetic videos, never raw ROS bags."""
 import argparse
+import collections
+import hashlib
 import importlib.util
 import io
 import json
@@ -34,6 +36,15 @@ def export(root,destination):
         row['wall_marker_ids']=sorted(t['id'] for t in scene['targets'] if t['attached_to'].startswith('wall_'))
         row['box_marker_ids']=sorted(t['id'] for t in scene['targets'] if not t['attached_to'].startswith('wall_'))
         row['independent_closest_m']=metrics['min_ground_truth_m']
+        row['registered_s']=metrics['registered_s']
+        row['registered_and_within_s']=metrics['registered_and_within_s']
+        geometry={k:scene[k] for k in ('room_size','obstacles','targets','robot_spawn')}
+        row['geometry_sha256']=hashlib.sha256(json.dumps(geometry,sort_keys=True).encode()).hexdigest()
+        scheduler=run/'native/center_wall.jsonl'
+        if scheduler.exists():
+            events=[json.loads(line) for line in scheduler.read_text().splitlines()]
+            row['scheduler_phases']=dict(collections.Counter(e['phase'] for e in events))
+            row['scheduler_last_available']=events[-1]['available'] if events else {}
         episode=destination/'training_robust/native90/v151-track-five-boxes5-1121'/run.name
         (episode/'video').mkdir(parents=True)
         shutil.copy2(run/'mission.mp4',episode/'video/mission.mp4')
@@ -48,6 +59,7 @@ def export(root,destination):
         shutil.copy2(run/'run/simulation/demo_layout.json',plot/'demo_layout.json')
         provenance.append(dict(run=run.name,requested_seed=row['seed'],rendered_seed=scene['seed'],world_sha256=row['world_sha256'],video_sha256=audit['video']['sha256'],
             physical_images=False,source='native Gazebo demo track',camera=[480,480,5],viewing_fps=5))
+    assert len({r['geometry_sha256'] for r in report['runs']})==5
     (destination/'video_provenance.json').write_text(json.dumps(dict(domain=174,physical_robot_used=False,videos=provenance),indent=2)+'\n')
     (destination/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     with tarfile.open(destination.with_suffix('.tgz'),'w:gz') as tar:tar.add(destination,arcname=destination.name)

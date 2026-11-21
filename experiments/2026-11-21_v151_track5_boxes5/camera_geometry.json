@@ -1,0 +1,28 @@
+{
+  "frame": "oakd_rgb_camera_optical_frame",
+  "width": 480,
+  "height": 480,
+  "k": [
+    332.6475061199908,
+    0.0,
+    240.0,
+    0.0,
+    332.6475061199908,
+    240.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "translation": [
+    -0.05960000000000001,
+    0.0,
+    0.24353
+  ],
+  "quaternion": [
+    -0.5,
+    0.4999999999999999,
+    -0.5,
+    0.5000000000000001
+  ],
+  "scope": "static simulator camera relative to base_link; read-only, no commands"
+}

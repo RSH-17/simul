@@ -53,6 +53,8 @@ for r in rows:
     lines.append(f"- {r['seed']}: 미등록 {missing}, 독립 접근 완료 {r['independent_approach_complete']}, "
         f"저장 오차 초과 {bad}, 정지 {r['motion']['stopped_s']:.1f}초, 제자리 회전 {r['motion']['rotation_only_s']:.1f}초, "
         f"취소 사유 {r['cancellations']}.")
+    lines.append(f"  스케줄 단계 {r.get('scheduler_phases',{})}, 마지막 후보 수 {r.get('scheduler_last_available',{})}, "
+                 f"선택된 목표 종류 {r['selected_goal_counts']}.")
 lines+=['','정지·회전에는 필요한 관찰도 포함된다. 목표 선택 횟수는 실제 Action 전송 횟수와 구분한다. '
     '보드의 진행 중 거리 표시가 독립 기록보다 크게 나오는 구간이 있어 위 거리와 경로는 시뮬레이터 위치로 다시 계산했다. '
     '상자 추가의 인과 효과나 모든 밀집 환경에서의 최적성을 입증하는 비교는 아니다. 실물의 케이블·탑재 중량·OAK-D blur·RPi/Create3 부하는 검증하지 않았다.','',
