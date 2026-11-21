@@ -1,0 +1,53 @@
+{
+  "id": 32,
+  "front_local_x_sign": -1.0,
+  "camera_frames": 3000,
+  "body_near_frames": 120,
+  "frustum_front_near_frames": 0,
+  "frustum_front_near_18px_frames": 0,
+  "near_best_incidence_deg": null,
+  "all_frustum_front_18px_frames": 0,
+  "best_frame": 961,
+  "best_t": 192.052,
+  "best_width_px": 9.77,
+  "limitations": "planar horizontal pinhole projection; omits occlusion, vertical cropping, chassis pitch and roll",
+  "run": "v151-survey-candidate-track-m112605-1122",
+  "minimum_actual_m": 0.6257434652165867,
+  "native_detector_id32": null,
+  "jpeg_decoder_id32": {
+    "frames": 7,
+    "first": {
+      "t": 189.852,
+      "center_x": 0.517
+    },
+    "last": {
+      "t": 199.252,
+      "center_x": 0.113
+    }
+  },
+  "dispatches_by_120_sim_s": {
+    "0-120": {
+      "frontier": 5,
+      "wall": 2,
+      "interior": 1
+    },
+    "120-240": {
+      "frontier": 4,
+      "wall": 2,
+      "interior": 1
+    },
+    "240-360": {
+      "wall": 1,
+      "flow_or_marker": 2
+    },
+    "360-480": {
+      "interior": 2,
+      "wall": 3
+    },
+    "480-600": {
+      "wall": 4,
+      "interior": 2,
+      "interior_surface": 2
+    }
+  }
+}

@@ -2008,7 +2008,8 @@
     "report": "experiments/2026-11-22_v151_adaptive_survey/README.md",
     "new_tests_passed": 26,
     "shared_regression_passed": 99,
-    "shared_regression_same_failed": 10
+    "shared_regression_same_failed": 10,
+    "r2_development_regression_bound": "experiments/2026-11-22_v151_adaptive_survey/development/first-two-bound.json"
   },
   "latest_r32_common_comparison": {
     "upstream": "d8704f6",
