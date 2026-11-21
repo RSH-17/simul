@@ -2037,7 +2037,7 @@
     "same_room_random_boxes": 5,
     "pictured_world_sha256": "589d152dcfef420f6fda37fccdc30c3d73e9f90ebbdab8359d04bf94a5538b1a",
     "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f",
-    "phase": "enrolled_waiting_for_development_selection",
+    "phase": "superseded_before_first_episode_fixed_host_roster",
     "supplemental_custom_room_service": "disabled_before_any_blind_episode",
     "production_promoted": false,
     "report": "experiments/2026-11-22_exam_track_validation/README.md",
@@ -2046,7 +2046,8 @@
     "finalist_planned_pairs": 9,
     "no_finalist_pictured_pairs": 2,
     "paired_episodes_at_enrollment": 0,
-    "enrollment_receipt": "experiments/2026-11-22_exam_track_validation/enrollment_receipt.json"
+    "enrollment_receipt": "experiments/2026-11-22_exam_track_validation/enrollment_receipt.json",
+    "formal_episodes": 0
   },
   "mixed_v151_tiny_named_relook": {
     "version": "1.5.1-tiny-named-relook-r4",
@@ -2057,5 +2058,24 @@
     "hardware_drive": false,
     "report": "policy_candidates/2026-11-22_v151_tiny_named_relook/README.md",
     "stage": "experiments/2026-11-22_v151_adaptive_survey/development/r4-jazzy-stage.json"
+  },
+  "mixed_v151_random_exam": {
+    "policy": "Mixed v1.5.1 surface-followthrough R5",
+    "baseline": "Mixed v1.5.1-balanced",
+    "official_room": "8780 uFjtqfyJ",
+    "source_sha256": "eb144ce44ef1d2fb5ffeb158d80e012f97eb9fbce273ebfcbf9505932073fee2",
+    "shell_sha256": "8f4a4d592addbb191c7ea4df4777972f4a5200565da094c66cc5317591d0a8be",
+    "registration_sha256": "b286ead54801b00a326b6b5c3f319fba0808f22d715bea6d6ccc7e525b32ffee",
+    "protocol_sha256": "a6b9665f1c34e79e72fdd666d568e68ebe0d71e8e0365934a882c81dd880560f",
+    "phase": "randomized_native_comparison_enrolled",
+    "independent_worlds": 5,
+    "paired_repeats": 1,
+    "known_marker_count": 3,
+    "native_policy_tests": 46,
+    "native_fixture_and_scoring_tests": 5,
+    "hardware_drive": false,
+    "production_promoted": false,
+    "report": "experiments/2026-11-22_random_exam/README.md",
+    "enrollment": "experiments/2026-11-22_random_exam/enrollment.json"
   }
 }
