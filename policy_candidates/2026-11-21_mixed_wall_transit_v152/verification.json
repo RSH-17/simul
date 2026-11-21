@@ -1,0 +1,16 @@
+{
+  "version": "1.5.2-wall-transit-r2",
+  "new_regression_tests_passed": 20,
+  "existing_action_controller_tests_passed": 9,
+  "total_selected_tests_passed": 29,
+  "build_packages_passed": [
+    "osp_mission"
+  ],
+  "preexisting_near_pass_geometry_failures": 3,
+  "preexisting_failures_reproduced_in_frozen_v151": true,
+  "native_validation_complete": false,
+  "physical_validation_performed": false,
+  "production_promoted": false,
+  "public_source_reproduction_sha256_match": true,
+  "reproduced_changed_modules": 4
+}

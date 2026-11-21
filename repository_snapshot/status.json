@@ -1764,5 +1764,16 @@
     "wall_budget_defect_confirmed": true,
     "video_assets_verified": 5,
     "results": "experiments/2026-11-21_v151_track5_boxes5/result.json"
+  },
+  "mixed_v152_wall_transit": {
+    "state": "native_validation_in_progress",
+    "version": "1.5.2-wall-transit-r2",
+    "workspace": "flow_v152_wall_transit_r2_ws",
+    "development_seed": 112601,
+    "baseline_preserved": true,
+    "physical_drive": false,
+    "selected_tests_passed": 29,
+    "preexisting_geometry_failures_both_versions": 3,
+    "report": "experiments/2026-11-21_wall_transit_v152/README.md"
   }
 }
