@@ -3,7 +3,7 @@
     "version": "1.5.1-perimeter-survey",
     "baseline": "1.5.1-balanced",
     "phase": "native_comparison_started",
-    "passed_tests": 53,
+    "passed_tests": 55,
     "preexisting_parent_test_failures": 1,
     "production_promoted": false,
     "report": "experiments/2026-11-21_v151_perimeter_survey/README.md"

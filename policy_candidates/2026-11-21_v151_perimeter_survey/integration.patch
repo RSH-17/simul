@@ -1,3 +1,29 @@
+--- a/adaptive_faces.py
++++ b/adaptive_faces.py
+@@ -18,11 +18,12 @@
+
+
+ def inspection_pose(grid, cost, nav, distances, clearance, face, normal, half_width,
+-                    pose, goal_fields, veto, visibility_offset=.06):
++                    pose, goal_fields, veto, visibility_offset=.06,
++                    minimum_standoff=.40, maximum_standoff=1.5, preferred_standoff=.85):
+     # Search the camera sector in metric coordinates, independently for each
+     # face. Clearance to both boundaries shapes the valid interval at each offset.
+     step = max(.05, grid.resolution)
+-    stand, shift = np.meshgrid(np.arange(.40, 1.501, step), np.arange(-.50, .501, step*2))
++    stand, shift = np.meshgrid(np.arange(minimum_standoff, maximum_standoff+step*.1, step), np.arange(-.50, .501, step*2))
+     stand, shift = stand.ravel(), shift.ravel()
+     length = np.hypot(stand, shift)
+     # Project both ends of the fitted face into a camera aimed at its centre.
+@@ -39,7 +40,7 @@
+     room = clearance[rows[ids], cols[ids]]
+     walk = distances[rows[ids], cols[ids]]
+     legal = (room >= .32) & np.isfinite(walk) & nav[cr[ids], cc[ids]]
+-    score = walk*.24 + 2.8*np.maximum(0., .70-room) + .6*abs(stand[ids]-.85) + .35*abs(shift[ids])
++    score = walk*.24 + 2.8*np.maximum(0., .70-room) + .6*abs(stand[ids]-preferred_standoff) + .35*abs(shift[ids])
+     for i in ids[legal][np.argsort(score[legal], kind='stable')]:
+         point = points[i]
+         heading = math.atan2(face[1]-point[1], face[0]-point[0])
 --- a/center_wall.py
 +++ b/center_wall.py
 @@ -219,6 +219,15 @@

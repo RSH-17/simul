@@ -5,6 +5,7 @@ import numpy as np
 from osp_mission.adaptive_faces import inspection_pose
 from osp_mission.box_views import odom_point
 from osp_mission.edge_policy import DIRECTIONS
+from osp_mission.normal_cache import AxisNormalCache
 
 
 @dataclass
@@ -24,6 +25,9 @@ class WallSection:
 class PerimeterRoute:
     def __init__(self):
         self.sections = {}
+        self.normal_cache = AxisNormalCache()
+        self.spacing = .90
+        self.camera = None
         self.axis = None
         self.cursor = None
         self.current = None
@@ -37,37 +41,62 @@ class PerimeterRoute:
         angle = self.axis+side*math.pi/2
         normal = np.array([math.cos(angle),math.sin(angle)])
         tangent = np.array([-normal[1],normal[0]])
-        return side, round(float(point@normal)/.25), math.floor(float(point@tangent)/.75)
+        return side, round(float(point@normal)/.25), math.floor(float(point@tangent)/self.spacing)
 
     def observe(self, samples, grid, viewed, transform, owner, elapsed):
-        if self.axis is None:
-            self.axis = transform[2]+grid.origin[2]
-        groups = {}
+        normal_y,normal_x = self.normal_cache.update(grid.cells,grid.resolution)
+        records = []
         for (kind, _, side, _, _), cells in samples.items():
             if kind != 'wall':
                 continue
             dy,dx = DIRECTIONS[side]
-            normal_yaw = math.atan2(dy,dx)+grid.origin[2]+transform[2]
             for row,col in cells:
                 point = odom_point(grid.world(row+.5*dy,col+.5*dx),transform)
                 if owner(dict(surface_odom=point.tolist()),transform) is not None:
                     continue
-                key = self.key(point,normal_yaw)
-                groups.setdefault(key,[]).append((point,bool(viewed[side,row,col]),normal_yaw))
+                nx,ny = normal_x[row,col],normal_y[row,col]
+                alignment = nx*dx+ny*dy
+                if abs(alignment)<.25:
+                    nx,ny = dx,dy
+                elif alignment<0:
+                    nx,ny = -nx,-ny
+                angle = math.atan2(ny,nx)+grid.origin[2]+transform[2]
+                records.append((point,bool(viewed[side,row,col]),angle))
+        if not records:
+            return
+        if self.axis is None:
+            angles = np.array([a for _,_,a in records])
+            self.axis = math.atan2(float(np.sin(4*angles).sum()),float(np.cos(4*angles).sum()))/4
+        groups = {}
+        for point,seen,angle in records:
+            groups.setdefault(self.key(point,angle),[]).append((point,seen,angle))
         for key, cells in groups.items():
             if len(cells)*grid.resolution < .20:
                 continue
             point = np.mean([p for p,_,_ in cells],axis=0)
-            angle = cells[0][2]
+            angle = math.atan2(sum(math.sin(a) for _,_,a in cells),sum(math.cos(a) for _,_,a in cells))
             normal = np.array([math.cos(angle),math.sin(angle)])
             section = self.sections.get(key)
             if section is None:
-                section = WallSection(point,normal,.375)
+                section = WallSection(point,normal,self.spacing/2)
                 self.sections[key] = section
             section.point = point
             section.normal = normal
             section.updated = elapsed
-            section.fraction = max(section.fraction,min(1.,sum(seen for _,seen,_ in cells)*grid.resolution/.75))
+            # Merge projected witness intervals. Stair-step grid edges at a
+            # slanted wall must not double-count the same physical surface.
+            direction = self.axis+key[0]*math.pi/2
+            tangent = np.array([-math.sin(direction),math.cos(direction)])
+            lo,hi = key[2]*self.spacing,(key[2]+1)*self.spacing
+            spans = sorted((max(lo,float(p@tangent)-grid.resolution/2),
+                            min(hi,float(p@tangent)+grid.resolution/2))
+                           for p,seen,_ in cells if seen)
+            covered = 0.
+            right = lo
+            for left,end in spans:
+                covered += max(0.,end-max(right,left))
+                right = max(right,end)
+            section.fraction = max(section.fraction,min(1.,covered/self.spacing))
             if section.fraction >= .75:
                 section.observed = True
                 section.reason = 'camera_confirmed_wall'
@@ -81,7 +110,7 @@ class PerimeterRoute:
         pending = sum(not s.observed for s in self.sections.values())
         # Planning estimate from sampled unseen wall length and bounded dwell.
         # Inter-section routing and obstacle detours can make actual time longer.
-        self.remaining_estimate_s = pending*(.75/.25+2.5)
+        self.remaining_estimate_s = pending*(self.spacing/.25+2.5)
 
     def local_geometry(self, section, transform):
         tx,ty,theta = transform
@@ -91,6 +120,11 @@ class PerimeterRoute:
 
     def choose(self, grid, cost, pose, transform, distances, clearance, nav, veto, elapsed, duration):
         goals = []
+        if self.camera is None:
+            return None
+        focal,_ = self.camera
+        readable = .85*focal*.08/18.
+        preferred = min(1.,.80*readable)
         for key, section in self.sections.items():
             if section.observed or elapsed<section.deferred_until or elapsed-section.updated>45.:
                 continue
@@ -100,7 +134,16 @@ class PerimeterRoute:
                 features=np.zeros(5),scan_angle=math.radians(36),face_inspection=True,stationary=False,
                 perimeter_section=list(key))
             view = inspection_pose(grid,cost,nav,distances,clearance,point,normal,
-                                   section.half_width,pose,fields,veto)
+                                   section.half_width,pose,fields,veto,
+                                   minimum_standoff=max(.40,.85*preferred),
+                                   maximum_standoff=min(1.20,1.05*preferred),
+                                   preferred_standoff=preferred)
+            if view is None:
+                # A narrow passage can require a closer, partial observation.
+                # Completion still requires actual evidence over the full bin.
+                view = inspection_pose(grid,cost,nav,distances,clearance,point,normal,
+                                       min(.25,section.half_width),pose,fields,veto,
+                                       preferred_standoff=preferred)
             if view is None:
                 section.reason = 'no_safe_visible_connected_view'
                 continue

@@ -46,3 +46,35 @@ def test_remaining_time_budget_rejects_unaffordable_wall_goals():
     assert route.remaining_estimate_s>0
     assert route.choose(g,c,(1.,1.,0.),(0,0,0),np.full_like(g.cells,1000.,float),
                         np.ones_like(g.cells,float),np.ones_like(c.cells,bool),lambda _:False,599,600) is None
+
+def test_slanted_wall_uses_measured_normal_instead_of_grid_stair_steps():
+    from osp_mission._r32_navigation_core import Grid
+    from osp_mission.edge_policy import boundary_faces
+    from osp_mission.perimeter_route import PerimeterRoute
+    rows,cols=np.indices((160,160))
+    data=np.where(rows+cols>=180,100,0).astype(np.int8)
+    grid=Grid(data,.05,(0.,0.,0.))
+    faces=boundary_faces(data,.05)
+    samples={}
+    for side,r,c in zip(faces['side'],faces['y'],faces['x']):
+        if 35<r<140 and 35<c<140:
+            samples.setdefault(('wall',1,int(side),int(r)//15,int(c)//15),[]).append((int(r),int(c)))
+    route=PerimeterRoute()
+    route.observe(samples,grid,np.ones((4,160,160),bool),(0,0,0),lambda *args:None,10.)
+    assert 1<len(route.sections)<18
+    assert sum(s.observed for s in route.sections.values())>0
+    for section in route.sections.values():
+        assert abs(abs(section.normal[0])-abs(section.normal[1]))<.2
+
+
+def test_wall_pose_prefers_about_one_metre_without_weakening_clearance():
+    from osp_mission.adaptive_faces import clearance_grid
+    s,g,c,seen=setup()
+    choose(s,g,c,seen)
+    for f in s.survey.tasks.by_key.values():
+        f.state='OBSERVED'
+        f.fraction=1.
+    goal=choose(s,g,c,seen,40)
+    assert 'perimeter_section' in goal
+    assert .85<=goal['standoff_m']<=1.10
+    assert clearance_grid(g)[g.index(goal['x'],goal['y'])]>=.32

@@ -14,6 +14,10 @@ class SurveyHybrid(PhasedHybrid):
         super().__init__()
         self.schedule.survey=ObjectSurvey()
 
+    def select(self,owner,*args,**kwargs):
+        self.schedule.survey.perimeter.camera=getattr(owner,'inspection_camera',None)
+        return super().select(owner,*args,**kwargs)
+
     def should_interrupt(self,owner):
         survey=self.schedule.survey
         if survey.region is not None or survey.active_box is not None or survey.perimeter.current is not None:

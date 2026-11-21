@@ -29,7 +29,7 @@ def main(baseline, seeds):
     locks = [open(Path.home()/'track-recordings'/n, 'a') for n in ('.domain.lock', '.second-domain.lock')]
     for lock in locks:
         fcntl.flock(lock, fcntl.LOCK_EX)
-    workspace = Path.home()/'flow_v151_perimeter_survey_r2_ws'
+    workspace = Path.home()/'flow_v151_perimeter_survey_r3_ws'
     assert (workspace/'install/setup.bash').exists()
     root = Path.home()/('v151-perimeter-survey-'+str(time.time_ns()))
     root.mkdir()
@@ -45,12 +45,12 @@ def main(baseline, seeds):
         fixture = baseline/f'map-{seed}'
         assert len(json.loads((fixture/'scene.json').read_text())['obstacles']) == 5
         (root/f'map-{seed}').symlink_to(fixture, target_is_directory=True)
-        run = Path.home()/'corridor-board-73bbb05/recordings'/f'v151-perimeter-track-m{seed}-{root.name.split("-")[-1]}'
+        run = Path.home()/'corridor-board-73bbb05/recordings'/f'v151-perimeter-r3-track-m{seed}-{root.name.split("-")[-1]}'
         run.mkdir()
         (Path.home()/'track-recordings'/run.name).symlink_to(run, target_is_directory=True)
         for name in ('scene.json', 'scene.yaml', 'world', 'run'):
             (run/name).symlink_to(fixture/name, target_is_directory=(fixture/name).is_dir())
-        (run/'policy_revision.txt').write_text('Mixed v1.5.1 · 외곽 순회·상자 관찰 후 복귀 · development regression\n')
+        (run/'policy_revision.txt').write_text('Mixed v1.5.1 · 외곽 순회 r3·약1m 관찰·상자 복귀 · development regression\n')
         env = dict(os.environ, BENCH_ROOT=str(run), BENCH_RUN=str(run), BENCH_POLICY='mixed',
             CAMERA_VARIANT='region_wall', CAMERA_PROFILE='balanced',
             CAMERA_POLICY_WORKSPACE=str(workspace), CAMERA_BENCH_WIDTH='480',

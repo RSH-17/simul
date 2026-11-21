@@ -13,6 +13,7 @@ def setup():
     cells=np.zeros((90,110),np.int8);cells[[0,-1],:]=100;cells[:,[0,-1]]=100;cells[33:47,33:47]=100
     grid=Grid(cells,.05,(0,0,0));cost=Grid(np.zeros_like(cells),.05,(0,0,0))
     scheduler=CenterWall();scheduler.survey=ObjectSurvey()
+    scheduler.survey.perimeter.camera=(333.,math.radians(71.))
     return scheduler,grid,cost,np.zeros((4,)+cells.shape,bool)
 
 def choose(s,g,c,seen,t=1,choices=()):
