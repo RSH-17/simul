@@ -25,7 +25,7 @@ def install(release, destination):
         subprocess.run(['patch','-p1','-i',str(here/'integration.patch')],cwd=pkg,check=True)
         for name in ('face_tasks.py','object_survey.py','survey_hybrid.py'):shutil.copy2(here/name,pkg/name)
         output=dict(parent='1.5.1-balanced',version='1.5.1-object-survey',source_sha256={
-            name:digest(pkg/name) for name in ('center_wall.py','mission.py','face_tasks.py','object_survey.py','survey_hybrid.py')})
+            name:digest(pkg/name) for name in ('center_wall.py','mission.py','phased_hybrid.py','face_tasks.py','object_survey.py','survey_hybrid.py')})
         (stage/'object_survey_manifest.json').write_text(json.dumps(output,indent=2)+'\n')
         stage.rename(destination)
 

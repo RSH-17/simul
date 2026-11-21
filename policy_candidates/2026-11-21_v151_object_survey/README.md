@@ -24,12 +24,12 @@
 
 ```bash
 python3 policy_candidates/2026-11-21_v151_object_survey/install.py \
-  policy_releases/2026-11-21_mixed_camera_sync_v151 ~/flow_v151_object_survey_r2_ws
-cd ~/flow_v151_object_survey_r2_ws
+  policy_releases/2026-11-21_mixed_camera_sync_v151 ~/flow_v151_object_survey_r3_ws
+cd ~/flow_v151_object_survey_r3_ws
 source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install --packages-select osp_mission
 ```
 
-새 회귀검사와 기존 안전·마커·흐름 검사는 48개 통과했다. 기존 이동 중 벽 관찰 플래그에 관한 테스트 1개는 부모 v1.5.1에서도 동일하게 실패한다. 그 결과를 감춰서 전체 통과로 표기하지 않는다.
+새 회귀검사와 기존 안전·마커·흐름 검사는 49개 통과했다. 기존 이동 중 벽 관찰 플래그에 관한 테스트 1개는 부모 v1.5.1에서도 동일하게 실패한다. 그 결과를 감춰서 전체 통과로 표기하지 않는다.
 
 [동일 다섯 맵의 비교](../../experiments/2026-11-21_v151_object_survey/README.md)

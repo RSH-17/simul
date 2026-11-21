@@ -3,7 +3,7 @@
     "version": "1.5.1-object-survey",
     "baseline": "1.5.1-balanced",
     "phase": "native_comparison_queued",
-    "passed_tests": 48,
+    "passed_tests": 49,
     "preexisting_parent_test_failures": 1,
     "production_promoted": false,
     "report": "experiments/2026-11-21_v151_object_survey/README.md"

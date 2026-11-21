@@ -68,3 +68,10 @@ def test_nav_arrival_without_post_sweep_does_not_finish_face():
     assert s.survey.tasks.by_key[key].state!='OBSERVED'
     choose(s,g,c,seen,15)
     assert s.survey.tasks.by_key[key].state=='FAILED'
+
+def test_completed_object_cannot_return_through_generic_fallback():
+    s,g,c,seen=setup();choose(s,g,c,seen)
+    for f in s.survey.tasks.by_key.values():f.state='OBSERVED';f.fraction=1.
+    seen[:]=True
+    assert choose(s,g,c,seen,40,[]) is None
+    assert s.survey.finished=={1}

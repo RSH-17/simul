@@ -119,7 +119,8 @@ class ObjectSurvey:
             self.last_reason='next_object'
             return min(views,key=lambda x:x[0])[1]
         self.last_reason='remaining_walls_or_generic_surfaces'
-        return None
+        remaining=candidates['wall'] or candidates['interior']
+        return min(remaining,key=lambda item:item[0])[1] if remaining else None
 
     def next_region(self,grid,cost,pose,transform,choices,distances,nav,veto,elapsed,duration):
         proposals=[]

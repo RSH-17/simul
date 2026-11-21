@@ -29,7 +29,7 @@ def main(baseline, seeds):
     locks = [open(Path.home()/'track-recordings'/n, 'a') for n in ('.domain.lock', '.second-domain.lock')]
     for lock in locks:
         fcntl.flock(lock, fcntl.LOCK_EX)
-    workspace = Path.home()/'flow_v151_object_survey_r2_ws'
+    workspace = Path.home()/'flow_v151_object_survey_r3_ws'
     assert (workspace/'install/setup.bash').exists()
     root = Path.home()/('v151-object-survey-'+str(time.time_ns()))
     root.mkdir()
