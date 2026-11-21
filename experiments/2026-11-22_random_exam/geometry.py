@@ -143,7 +143,7 @@ class Access:
         inside=(x>=0)&(x<grid.shape[1])&(y>=0)&(y<grid.shape[0])
         return bool(inside.all() and grid[y,x].all())
 
-    def witness(self, point, inward, size):
+    def witness(self, point, inward, size, z=None, visible=None):
         # Connected 2D geometric examples, never Nav2 paths or policy inputs.
         tangent=np.array([-inward[1],inward[0]])
         for distance in (.95,1.25,.75):
@@ -152,7 +152,7 @@ class Access:
                 if not self.clear([view],self.connected):continue
                 ends=[point-.10*inward+offset*tangent for offset in (-size*.65,0,size*.65)]
                 rays=np.concatenate([np.linspace(view,end,70) for end in ends])
-                if self.clear(rays,~self.occ):
+                if self.clear(rays,~self.occ) and (visible is None or visible(view,point,inward,size,z)):
                     return [float(v) for v in view]
         return None
 
@@ -179,7 +179,8 @@ def mount(rng, scene, size, kind):
     return point,inward,body['name'],body['height']
 
 
-def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='fixed', host_stress=None):
+def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='fixed', host_stress=None,
+           prepare_room=None):
     if not 1<=marker_count<=dictionary_size or furniture not in ('fixed','shuffle') or host_stress not in (None,'wall','object'):
         raise ValueError('Invalid exam sampling parameters')
     rng=np.random.default_rng(seed)
@@ -199,6 +200,7 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
         scene['obstacles'].extend(bodies)
         static.extend(polygon(b) for b in bodies)
     access=Access(scene,tables,rng); scene['robot_spawn']=access.start;scene['robot_start_expected']=access.start
+    visible=prepare_room(scene,tables) if prepare_room is not None else None
     sizes=[t['size'] for t in template['targets']]
     ids=rng.choice(dictionary_size,size=marker_count,replace=False)
     witnesses={}
@@ -219,7 +221,7 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
                    abs(z-t['z'])<.65*(size+t['size']) and
                    math.dist(point,(t['x'],t['y']))<.65*(size+t['size'])+.015 for t in scene['targets']):
                 continue
-            view=access.witness(point,inward,size)
+            view=access.witness(point,inward,size,z,visible)
             if view is not None:break
         else:raise ValueError('No geometrically observable print on the sampled host class')
         scene['targets'].append(dict(id=int(ident),size=size,z=z,x=float(point[0]),y=float(point[1]),

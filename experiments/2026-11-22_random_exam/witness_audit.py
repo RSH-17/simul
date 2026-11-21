@@ -8,10 +8,9 @@ import xml.etree.ElementTree as ET
 
 import numpy as np
 from scipy import ndimage
-from scipy.spatial.transform import Rotation
 
 from geometry import RESOLUTION, raster, table_parts
-from surface_audit import blockers, readable_indices
+from surface_audit import aim_at, blockers, readable_indices
 from exposure_opportunity import pose
 
 
@@ -34,9 +33,6 @@ def inspect(fixture, manifest, camera):
         return tuple(np.floor((np.asarray(xy) - origin) / RESOLUTION).astype(int)[::-1])
 
     start = labels[cell(manifest['start'][:2])]
-    mount = Rotation.from_quat(camera['quaternion'])
-    forward = mount.apply([0., 0., 1.])
-    optical_yaw = math.atan2(forward[1], forward[0])
     rows = []
     for target in scene['targets']:
         ident = target['id']
@@ -52,10 +48,7 @@ def inspect(fixture, manifest, camera):
         center = frame[:3] + np.array([0., 0., paper[2]]) + ink[0] * axis
         normal = sign * axis
         tangent = np.array([-normal[1], normal[0], 0.])
-        theta = math.atan2(center[1] - viewer[1], center[0] - viewer[0]) - optical_yaw
-        base = Rotation.from_euler('z', [theta])
-        origins = np.array([*viewer, 0.]) + base.apply(camera['translation'])
-        axes = (base * mount).as_matrix()
+        origins, axes = aim_at(viewer, center, camera)
         zlo = min(origins[0, 2], center[2] - target['size']/2)
         zhi = max(origins[0, 2], center[2] + target['size']/2)
         indices, reason = readable_indices(center, normal, tangent, target['size'], 18., origins,

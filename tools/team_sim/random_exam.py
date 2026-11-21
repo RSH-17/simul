@@ -1,5 +1,6 @@
 """Generate or reuse a portable random exam world with its original physical shell."""
 import fcntl
+import hashlib
 from pathlib import Path
 import secrets
 import sys
@@ -9,7 +10,7 @@ import numpy as np
 
 EXAM = Path(__file__).resolve().parents[2]/'experiments/2026-11-22_random_exam'
 sys.path.insert(0,str(EXAM))
-from fixture import build, digest, read, save
+from fixture import VIEW_SOURCES, build, digest, read, save
 
 
 def selection(seed, random_layout, markers, legacy):
@@ -22,7 +23,8 @@ def selection(seed, random_layout, markers, legacy):
 
 
 def fixture_for(cache, assets, seed, public_count):
-    generator = (digest(EXAM/'geometry.py')[:12]+'-'+digest(EXAM/'fixture.py')[:12])
+    inputs = [EXAM/'geometry.py',EXAM/'fixture.py',*VIEW_SOURCES]
+    generator = hashlib.sha256(''.join(digest(p) for p in inputs).encode()).hexdigest()[:24]
     group = cache/'random-exam'/generator/('count-unknown' if public_count==0 else 'count-three')
     group.mkdir(parents=True,exist_ok=True)
     dest = group/f'map-{seed}'

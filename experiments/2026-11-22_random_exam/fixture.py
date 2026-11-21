@@ -12,12 +12,17 @@ import cv2
 import numpy as np
 
 from geometry import sample
+from surface_audit import aim_at, blockers, readable_indices
 
 
 ORIGINAL_SDF = '589d152dcfef420f6fda37fccdc30c3d73e9f90ebbdab8359d04bf94a5538b1a'
 PORTABLE_SDF = '564be4776da7c708f0b16453c84bafcb7b71d77807bdfa89ec0f49f37ed585f6'
 FIXED_TABLE_ROOM = 'beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f'
 FILES = ('world/osp_studio.sdf','scene.json','scene.yaml','run/simulation/demo_layout.json','run/simulation/demo_floor.png')
+HERE = Path(__file__).resolve().parent
+CALIBRATION = HERE.parent/'2026-11-21_v151_track5_boxes5/camera_geometry.json'
+VIEW_SOURCES = (HERE/'surface_audit.py', HERE.parent/'2026-11-22_v151_adaptive_survey/development/exposure_opportunity.py', CALIBRATION)
+INK_X = -.004
 
 
 def read(path):
@@ -79,7 +84,7 @@ def marker_model(source, target, dictionary):
     bits=symbol(dictionary,target['id']);pitch=size/len(bits)
     for row,col in zip(*np.nonzero(bits)):
         model=deepcopy(template);model.set('name',f'cell_{row}_{col}')
-        model.find('pose').text=value([-.004,size/2-(col+.5)*pitch,z+size/2-(row+.5)*pitch,0,0,0])
+        model.find('pose').text=value([INK_X,size/2-(col+.5)*pitch,z+size/2-(row+.5)*pitch,0,0,0])
         model.find('.//box/size').text=value([.002,pitch,pitch])
         marker.append(model)
     return marker
@@ -120,6 +125,22 @@ def verify_prints(scene, world, dictionary):
         if not np.array_equal(bits,rendered):raise ValueError('Physical pattern differs from dictionary ID')
 
 
+def rendered_view_check(world):
+    calibration=read(CALIBRATION)
+    solids=blockers(world,-math.inf,math.inf)
+
+    def visible(view,point,inward,size,height):
+        direction=np.array([*inward,0.])
+        center=np.array([*point,height])+INK_X*direction
+        normal=-direction
+        tangent=np.array([-normal[1],normal[0],0.])
+        origins,axes=aim_at(view,center,calibration)
+        indices,_=readable_indices(center,normal,tangent,size,18.,origins,axes,calibration,solids)
+        return bool(len(indices))
+
+    return visible
+
+
 def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=None):
     original=original.resolve();out=out.resolve()
     source_sdf=original/FILES[0]
@@ -133,7 +154,6 @@ def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=No
         by_size={target['size']:target for target in raw['targets']}
         raw['targets']=[by_size[size] for size in (.30,.20,.25)]
     dictionary=original_dictionary()
-    scene,tables,witnesses=sample(raw,layout['tables'],seed,len(dictionary.bytesList),marker_count,furniture,host_stress)
     root=ET.parse(source_sdf).getroot();w=root.find('world')
     shell=architecture(root,raw,False);fixed=architecture(root,raw,True)
     if fixed!=FIXED_TABLE_ROOM:raise ValueError('The original exam architecture or furniture changed')
@@ -142,12 +162,17 @@ def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=No
     marker_template=by_name[f"target_{raw['targets'][0]['id']}"]
     for b in raw['obstacles']:w.remove(by_name[b['name']])
     for t in raw['targets']:w.remove(by_name[f"target_{t['id']}"])
-    if furniture=='shuffle':update_tables(by_name['demo_furniture'],layout['tables'],tables)
-    for b in scene['obstacles']:
-        m=deepcopy(body_template);m.set('name',b['name'])
-        m.find('pose').text=value([b['x'],b['y'],b['height']/2,0,0,b['yaw']])
-        for dim in m.findall('.//box/size'):dim.text=value([b['sx'],b['sy'],b['height']])
-        w.append(m)
+    def prepare_room(scene,tables):
+        if furniture=='shuffle':update_tables(by_name['demo_furniture'],layout['tables'],tables)
+        for b in scene['obstacles']:
+            m=deepcopy(body_template);m.set('name',b['name'])
+            m.find('pose').text=value([b['x'],b['y'],b['height']/2,0,0,b['yaw']])
+            for dim in m.findall('.//box/size'):dim.text=value([b['sx'],b['sy'],b['height']])
+            w.append(m)
+        return rendered_view_check(w)
+
+    scene,tables,witnesses=sample(raw,layout['tables'],seed,len(dictionary.bytesList),marker_count,
+                                  furniture,host_stress,prepare_room)
     for t in scene['targets']:w.append(marker_model(marker_template,t,dictionary))
     sim=out/'run/simulation';sim.mkdir(parents=True)
     floor=sim/'demo_floor.png'

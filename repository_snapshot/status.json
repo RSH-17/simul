@@ -2186,7 +2186,18 @@
         "mean_travel_m": 86.85064104876433
       }
     },
-    "videos_verified": 12
+    "videos_verified": 12,
+    "random_layout_optical_check": {
+      "report": "experiments/2026-11-22_random_exam/fixture-visibility.json",
+      "original_blind_spots": 9,
+      "same_draws_visible": 585,
+      "same_draws_total": 585,
+      "additional_layouts": 192,
+      "additional_visible": 575,
+      "additional_total": 575,
+      "existing_jazzy_worlds_reproduced": 12,
+      "policy_performance_measurement": false
+    }
   },
   "mixed_v151_balanced_print_relook": {
     "policy": "Mixed v1.5.1-balanced + edge print relook",

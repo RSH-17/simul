@@ -14,7 +14,7 @@ import time
 
 import numpy as np
 
-from fixture import build, digest, read, save
+from fixture import VIEW_SOURCES, build, digest, read, save
 from scoring import score
 
 HERE=Path(__file__).resolve().parent
@@ -29,6 +29,7 @@ from board_audit import reconcile
 
 def file_identity():
     active=[HERE/f for f in ('geometry.py','fixture.py','scoring.py','campaign.py','trial.py','exam_camera.launch.py','run.sh')]
+    active.extend(VIEW_SOURCES)
     active += [PRIOR/'paired.py',ENGINE/'run.py',ENGINE/'validation/validate.py',
                HERE.parent/'2026-11-21_camera_aware_policy/strict_trial.py',
                HERE.parent/'2026-11-20_v12_camera_rate/trial.py',

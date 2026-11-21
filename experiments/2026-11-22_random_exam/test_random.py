@@ -9,6 +9,7 @@ import numpy as np
 from fixture import architecture,build, original_dictionary, read, verify_prints
 from geometry import sample
 from scoring import score
+from witness_audit import inspect
 
 
 class RandomExamTests(unittest.TestCase):
@@ -69,6 +70,30 @@ class RandomExamTests(unittest.TestCase):
                 marker=actual.find(f"world/model[@name='target_{scene['targets'][0]['id']}']")
                 marker.remove(next(m for m in marker.findall('model') if m.get('name').startswith('cell_')))
                 with self.assertRaisesRegex(ValueError,'pattern'):verify_prints(scene,actual,self.dictionary)
+
+    def test_one_marker_has_one_calibrated_camera_pose(self):
+        calibration=read(Path(__file__).resolve().parents[1]/'2026-11-21_v151_track5_boxes5/camera_geometry.json')
+        with TemporaryDirectory() as temp:
+            world=Path(temp)/'fixture'
+            manifest=build(self.anchor,world,1904,1,'shuffle')
+            row,=inspect(world,manifest,calibration)['targets']
+            self.assertEqual(row['id'],manifest['ids'][0])
+            self.assertTrue(row['same_connected_grid_region'])
+            self.assertTrue(row['optical_witness_18px'])
+
+    def test_wood_trim_cannot_hide_a_registered_fixture(self):
+        calibration=read(Path(__file__).resolve().parents[1]/'2026-11-21_v151_track5_boxes5/camera_geometry.json')
+        seed=1582237335
+        count=int(np.random.default_rng([seed,0x544234]).integers(1,6))
+        raw,_,_=self.draw(seed,count,'shuffle')
+        occluded=next(t for t in raw['targets'] if t['id']==449)
+        self.assertEqual(occluded['attached_to'],'wall_structure_column_sc_0')
+        with TemporaryDirectory() as temp:
+            world=Path(temp)/'fixture'
+            manifest=build(self.anchor,world,seed,count,'shuffle')
+            self.assertEqual(manifest['ids'],[t['id'] for t in raw['targets']])
+            rows=inspect(world,manifest,calibration)['targets']
+            self.assertTrue(all(r['same_connected_grid_region'] and r['optical_witness_18px'] for r in rows))
 
 
 class ScoreTests(unittest.TestCase):

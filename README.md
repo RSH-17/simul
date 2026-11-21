@@ -1,5 +1,7 @@
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
+시험장 생성기는 벽 몰딩 뒤에 숨은 마커를 다시 배치합니다. 별도의 무작위 장면 192개에서 575장 모두에 실제 시뮬 도형의 가림을 통과한 관찰 위치가 있었습니다. [배치 검사 결과](experiments/2026-11-22_random_exam/fixture-visibility.json)
+
 R5 비교의 독립 배치 다섯 곳에서 근거리 확인은 Balanced 14/15장, R5 11/15장이었다. 전체 마커를 확인한 배치는 각각 4/5, 1/5였다. [시험장 비교 결과와 영상](experiments/2026-11-22_random_exam/results/surface-r5/RESULTS.md)
 
 [Balanced · 스친 마커 재관찰](policy_candidates/2026-11-22_v151_balanced_print_relook/README.md) · [책상까지 전부 재배치한 5개 독립 시험](experiments/2026-11-22_random_exam/balanced_print/enrollment.json)

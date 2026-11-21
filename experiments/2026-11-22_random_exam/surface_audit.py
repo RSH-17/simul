@@ -46,6 +46,17 @@ def camera_poses(track, exposure_times, calibration):
     return times, origins, axes
 
 
+def aim_at(xy, center, calibration):
+    mount = Rotation.from_quat(calibration['quaternion'])
+    forward = mount.apply([0., 0., 1.])
+    azimuth = math.atan2(center[1] - xy[1], center[0] - xy[0])
+    yaw = azimuth - math.atan2(forward[1], forward[0])
+    # Explicit batch and axis dimensions also return a batch for one pose in SciPy 1.17.
+    base = Rotation.from_euler('z', [[yaw]])
+    origin = np.array([*xy, 0.]) + base.apply(calibration['translation'])
+    return origin, (base * mount).as_matrix()
+
+
 def mountable(center, tangent, size, normal, solids):
     # Test the print width just outside the support, including an L's internal seam.
     edge = .65 * size * tangent

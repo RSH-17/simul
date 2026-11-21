@@ -1,0 +1,164 @@
+{
+  "description": "Fixture generation only. Each print must have a grid-connected, calibrated pose with five clear rays to the black square at 18 native pixels. No navigation or registration success is inferred.",
+  "parent_branch_revision": "c86b04d",
+  "sampling": "First four big-endian SHA-256 bytes of <namespace>/<index>, index 0 to 191. Count sampled separately in [1, 5]. All 14 desks are shuffled in all layouts.",
+  "before": {
+    "seed_namespace": "turtlebot4-8780-fixture-smoke-v1",
+    "layouts": 192,
+    "markers": 585,
+    "visible_and_grid_connected": 576,
+    "object_counts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "print_counts": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "distinct_original_ids": 458,
+    "all_wall_layouts": 57,
+    "all_object_layouts": 21,
+    "shared_mount_layouts": 56,
+    "incomplete": [
+      {
+        "seed": 1582237335,
+        "id": 449,
+        "mount": "wall_structure_column_sc_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_west/visual"
+      },
+      {
+        "seed": 1642271619,
+        "id": 302,
+        "mount": "wall_structure_column_sw_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_west/visual"
+      },
+      {
+        "seed": 1106032942,
+        "id": 1015,
+        "mount": "wall_structure_column_sw_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_west/visual"
+      },
+      {
+        "seed": 3150249367,
+        "id": 952,
+        "mount": "wall_structure_column_sw_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_west/visual"
+      },
+      {
+        "seed": 646229918,
+        "id": 362,
+        "mount": "wall_structure_column_se_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_east/visual"
+      },
+      {
+        "seed": 107165726,
+        "id": 244,
+        "mount": "wall_structure_column_se_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_east/visual"
+      },
+      {
+        "seed": 3375814326,
+        "id": 866,
+        "mount": "wall_structure_column_sw_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_west/visual"
+      },
+      {
+        "seed": 2155369698,
+        "id": 266,
+        "mount": "wall_structure_column_se_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_east/visual"
+      },
+      {
+        "seed": 3342927540,
+        "id": 269,
+        "mount": "wall_structure_column_sc_0",
+        "reason": "line_of_sight_blocked",
+        "visual_blocking_print_center": "wood_skirt_south_west/visual"
+      }
+    ],
+    "full_ledger_sha256": "2e96bd7e2ae61ba64724dc2e2832cc45e8060370e2387c226be5026364802a4a"
+  },
+  "after_same_world_draws": {
+    "seed_namespace": "turtlebot4-8780-fixture-smoke-v1",
+    "layouts": 192,
+    "markers": 585,
+    "visible_and_grid_connected": 585,
+    "object_counts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "print_counts": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "distinct_original_ids": 458,
+    "all_wall_layouts": 57,
+    "all_object_layouts": 21,
+    "shared_mount_layouts": 57,
+    "incomplete": [],
+    "full_ledger_sha256": "843df2349cfa7812b33369d389791e72c8a7695b01dfaffcb147b742e73c007e"
+  },
+  "after_new_draws": {
+    "seed_namespace": "turtlebot4-8780-fixture-followup-v1",
+    "layouts": 192,
+    "markers": 575,
+    "visible_and_grid_connected": 575,
+    "object_counts": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "print_counts": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "distinct_original_ids": 452,
+    "all_wall_layouts": 51,
+    "all_object_layouts": 36,
+    "shared_mount_layouts": 61,
+    "incomplete": [],
+    "full_ledger_sha256": "117a076a02698be144fb9745930df75bd027e71124626d2f5a0aa11e4b8cbd91"
+  },
+  "previously_enrolled_native_layouts": 12,
+  "earlier_native_world_comparison": "Same Jazzy host, five fixture files per world. Only the relocatable floor path was normalized for the original native generator."
+}
