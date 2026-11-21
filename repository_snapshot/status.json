@@ -1708,7 +1708,7 @@
     "max_saved_map_error_m": 0.08937375214903985
   },
   "mixed_v151_track5": {
-    "state": "five_track_trials_in_progress",
+    "state": "superseded_by_user_request_five_boxes",
     "planned": 5,
     "completed_verified_at_snapshot": 1,
     "physical_drive": false,
@@ -1720,6 +1720,23 @@
       112505
     ],
     "version": "1.5.1-balanced",
-    "report": "experiments/2026-11-21_v151_track5/README.md"
+    "report": "experiments/2026-11-21_v151_track5/README.md",
+    "interrupted_trial": 2,
+    "interruption_is_policy_failure": false
+  },
+  "mixed_v151_track5_boxes5": {
+    "state": "in_progress",
+    "planned": 5,
+    "boxes": 5,
+    "version": "1.5.1-balanced",
+    "initial_seeds": [
+      112601,
+      112602,
+      112603,
+      112604,
+      112605
+    ],
+    "physical_drive": false,
+    "report": "experiments/2026-11-21_v151_track5_boxes5/README.md"
   }
 }
