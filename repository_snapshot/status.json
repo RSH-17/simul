@@ -28,7 +28,8 @@
     "registration": "experiments/2026-11-22_random_exam/box-only/enrollment.json",
     "obstacles_per_world": 5,
     "obstacle_geometry": "original exam rectangular boxes",
-    "prior_mixed_geometry": "archived separately after seven recorded episodes"
+    "prior_mixed_geometry": "archived separately after seven recorded episodes",
+    "completed_old_diagnostic_pair": true
   },
   "mixed_v151_rescue360": {
     "version": "1.5.1-rescue360",
@@ -2316,7 +2317,7 @@
     "shuffled_reference": "experiments/2026-11-22_random_exam/results/shuffled-prefix/RESULTS.md"
   },
   "spread_three_focus_exam": {
-    "phase": "three_worlds_enrolled",
+    "phase": "complete",
     "worlds": 3,
     "known_count": 3,
     "boxes": 3,
@@ -2326,7 +2327,28 @@
     "source_sha256": "dfd33c79d93498337a7f4257900f724894e7b5048f2dfee67a39ab395b3691bd",
     "native_simulation": true,
     "production_promoted": false,
-    "registration": "experiments/2026-11-22_random_exam/spread-three/enrollment.json"
+    "registration": "experiments/2026-11-22_random_exam/spread-three/enrollment.json",
+    "actual_runs": 3,
+    "valid": 3,
+    "summary": {
+      "runs": 3,
+      "strict": 2,
+      "registered": 8,
+      "all_markers": 9,
+      "verified": 8,
+      "wall_verified": 2,
+      "walls": 3,
+      "obstacle_verified": 6,
+      "obstacles": 6,
+      "bumps": 0,
+      "false_registered_instances": 0,
+      "mean_time_with_failures_at_limit_s": 414.5173333333333,
+      "mean_actual_mission_s": 414.8333333333333,
+      "mean_travel_m": 64.87636744708796
+    },
+    "release_clips_verified": 3,
+    "remaining_runs": 0,
+    "results": "experiments/2026-11-22_random_exam/spread-three/RESULTS.md"
   },
   "grouped_8780_experiments": {
     "group_by": "recorded policy source identity or legacy revision",

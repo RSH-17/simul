@@ -1,0 +1,289 @@
+{
+  "policy": "Mixed v1.5.2.1 Focus Continuity",
+  "source_sha256": "dfd33c79d93498337a7f4257900f724894e7b5048f2dfee67a39ab395b3691bd",
+  "registration_sha256": "fff102d0fbe9cc5ca289050e92e09c84bbf9d9eb9f3d067f9426bc538a9cb34b",
+  "known_marker_count": 3,
+  "max_sim_s": 600,
+  "summary": {
+    "runs": 3,
+    "strict": 2,
+    "registered": 8,
+    "all_markers": 9,
+    "verified": 8,
+    "wall_verified": 2,
+    "walls": 3,
+    "obstacle_verified": 6,
+    "obstacles": 6,
+    "bumps": 0,
+    "false_registered_instances": 0,
+    "mean_time_with_failures_at_limit_s": 414.5173333333333,
+    "mean_actual_mission_s": 414.8333333333333,
+    "mean_travel_m": 64.87636744708796
+  },
+  "trials": [
+    {
+      "run": 1,
+      "seed": 1398584497,
+      "recording": "v151-survey-focus-track-m1398584497-23239317248697326",
+      "score": {
+        "strict": true,
+        "goal_complete_by_s": 302.496,
+        "elapsed_s": 302.97999999999996,
+        "travel_m": 46.7719931496891,
+        "stop_reason": "all_targets_found",
+        "expected": 3,
+        "registered": 3,
+        "verified": 3,
+        "records": {
+          "818": {
+            "host": "movable_1",
+            "mounted": "obstacle",
+            "registered_s": 298.984,
+            "after_registration_near_s": 298.996,
+            "onboard_near_proof_s": 302.496,
+            "verified_s": 302.496
+          },
+          "667": {
+            "host": "movable_2",
+            "mounted": "obstacle",
+            "registered_s": 72.99199999999999,
+            "after_registration_near_s": 72.996,
+            "onboard_near_proof_s": 73.996,
+            "verified_s": 73.996
+          },
+          "679": {
+            "host": "wall_south_recess",
+            "mounted": "wall",
+            "registered_s": 239.488,
+            "after_registration_near_s": 249.876,
+            "onboard_near_proof_s": 251.49200000000002,
+            "verified_s": 251.49200000000002
+          }
+        },
+        "wall": 1,
+        "wall_near": 1,
+        "obstacle": 2,
+        "obstacle_near": 2,
+        "false_ids": [],
+        "bumps": 0,
+        "max_saved_error_m": 0.07602630936705848,
+        "valid": true
+      },
+      "spacing": {
+        "min_box_centers_m": 6.2716846401703155,
+        "min_marker_centers_m": 5.44786363858144,
+        "outer_wall": "wall_south_recess"
+      },
+      "measured_start_m_rad": [
+        7.4997369906679525,
+        -4.350845436260177,
+        -2.0845917706069326
+      ],
+      "elapsed_wall_s": 586.4782328539877,
+      "independent_ranges_and_map_error": {
+        "818": {
+          "min_path_m": 0.8267718115975992,
+          "min_after_registration_m": 0.9969359041384588,
+          "first_near_after_registration_s": 298.996,
+          "map_error_m": 0.06439435739564263
+        },
+        "667": {
+          "min_path_m": 0.6122139266969148,
+          "min_after_registration_m": 1.0038753542119065,
+          "first_near_after_registration_s": 72.996,
+          "map_error_m": 0.04116698432643474
+        },
+        "679": {
+          "min_path_m": 1.0404110656221186,
+          "min_after_registration_m": 1.0404110656221186,
+          "first_near_after_registration_s": 249.876,
+          "map_error_m": 0.07602630936705848
+        }
+      },
+      "min_marker_range_during_mission_m": {
+        "818": 0.8267718115975992,
+        "667": 0.6122139266969148,
+        "679": 1.0404110656221186
+      },
+      "world_sha256": "b46dfc3cbfe38aaa323a913b51f0408c38719eca4ff675e31f9ac29b8efc1bf8",
+      "clip_sha256": "cc5df78f7c00651088c3c254730b339a0b5fc83ea1da710541f41178d8b92a03",
+      "video": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m1398584497-23239317248697326.mp4"
+    },
+    {
+      "run": 2,
+      "seed": 550866253,
+      "recording": "v151-survey-focus-track-m550866253-188862315828381463",
+      "score": {
+        "strict": true,
+        "goal_complete_by_s": 341.056,
+        "elapsed_s": 341.52,
+        "travel_m": 50.75216829686713,
+        "stop_reason": "all_targets_found",
+        "expected": 3,
+        "registered": 3,
+        "verified": 3,
+        "records": {
+          "418": {
+            "host": "wall_north",
+            "mounted": "wall",
+            "registered_s": 238.028,
+            "after_registration_near_s": 247.696,
+            "onboard_near_proof_s": 249.556,
+            "verified_s": 249.556
+          },
+          "282": {
+            "host": "movable_3",
+            "mounted": "obstacle",
+            "registered_s": 29.544,
+            "after_registration_near_s": 39.356,
+            "onboard_near_proof_s": 41.056000000000004,
+            "verified_s": 41.056000000000004
+          },
+          "347": {
+            "host": "movable_1",
+            "mounted": "obstacle",
+            "registered_s": 335.552,
+            "after_registration_near_s": 339.216,
+            "onboard_near_proof_s": 341.056,
+            "verified_s": 341.056
+          }
+        },
+        "wall": 1,
+        "wall_near": 1,
+        "obstacle": 2,
+        "obstacle_near": 2,
+        "false_ids": [],
+        "bumps": 0,
+        "max_saved_error_m": 0.0423197389752188,
+        "valid": true
+      },
+      "spacing": {
+        "min_box_centers_m": 6.8056396438434446,
+        "min_marker_centers_m": 7.6883262648039,
+        "outer_wall": "wall_north"
+      },
+      "measured_start_m_rad": [
+        8.249052085747515,
+        1.5000354068492647,
+        2.85330665663029
+      ],
+      "elapsed_wall_s": 634.459959439002,
+      "independent_ranges_and_map_error": {
+        "418": {
+          "min_path_m": 0.7620359651341325,
+          "min_after_registration_m": 0.7620359651341325,
+          "first_near_after_registration_s": 247.696,
+          "map_error_m": 0.027182705151169672
+        },
+        "282": {
+          "min_path_m": 0.6877377537572301,
+          "min_after_registration_m": 0.6877377537572301,
+          "first_near_after_registration_s": 39.356,
+          "map_error_m": 0.023754108440325675
+        },
+        "347": {
+          "min_path_m": 1.1089406456658462,
+          "min_after_registration_m": 1.1089406456658462,
+          "first_near_after_registration_s": 339.216,
+          "map_error_m": 0.0423197389752188
+        }
+      },
+      "min_marker_range_during_mission_m": {
+        "418": 0.7620359651341325,
+        "282": 0.6877377537572301,
+        "347": 1.1089406456658462
+      },
+      "world_sha256": "dfcb215f592872824bc2900dcaeccd64ebf67bfd196c099eb20e792d52eceb79",
+      "clip_sha256": "a1bfcb704f0b92d4cb101b000091a43f0cd3c5b843e8288b1228fc01214d1d4f",
+      "video": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m550866253-188862315828381463.mp4"
+    },
+    {
+      "run": 3,
+      "seed": 417608489,
+      "recording": "v151-survey-focus-track-m417608489-197242287164937263",
+      "score": {
+        "strict": false,
+        "goal_complete_by_s": null,
+        "elapsed_s": 600.0,
+        "travel_m": 97.10494089470765,
+        "stop_reason": "common_time_limit",
+        "expected": 3,
+        "registered": 2,
+        "verified": 2,
+        "records": {
+          "768": {
+            "host": "wall_west",
+            "mounted": "wall",
+            "registered_s": null,
+            "after_registration_near_s": null,
+            "onboard_near_proof_s": null,
+            "verified_s": null
+          },
+          "476": {
+            "host": "movable_2",
+            "mounted": "obstacle",
+            "registered_s": 165.06400000000002,
+            "after_registration_near_s": 165.076,
+            "onboard_near_proof_s": 165.57600000000002,
+            "verified_s": 165.57600000000002
+          },
+          "350": {
+            "host": "movable_1",
+            "mounted": "obstacle",
+            "registered_s": 1.5720000000000005,
+            "after_registration_near_s": 17.636,
+            "onboard_near_proof_s": 19.076,
+            "verified_s": 19.076
+          }
+        },
+        "wall": 1,
+        "wall_near": 0,
+        "obstacle": 2,
+        "obstacle_near": 2,
+        "false_ids": [],
+        "bumps": 0,
+        "max_saved_error_m": 0.11312272662452763,
+        "valid": true
+      },
+      "spacing": {
+        "min_box_centers_m": 7.33550882632267,
+        "min_marker_centers_m": 7.650083441367037,
+        "outer_wall": "wall_west"
+      },
+      "measured_start_m_rad": [
+        6.098866183644255,
+        2.249407016872287,
+        -2.4940734678304595
+      ],
+      "elapsed_wall_s": 1179.8959196270152,
+      "independent_ranges_and_map_error": {
+        "768": {
+          "min_path_m": 7.416664007763628,
+          "min_after_registration_m": null,
+          "first_near_after_registration_s": null,
+          "map_error_m": null
+        },
+        "476": {
+          "min_path_m": 0.9284258629313309,
+          "min_after_registration_m": 0.9284258629313309,
+          "first_near_after_registration_s": 165.076,
+          "map_error_m": 0.11312272662452763
+        },
+        "350": {
+          "min_path_m": 0.6865483709475377,
+          "min_after_registration_m": 0.6865483709475377,
+          "first_near_after_registration_s": 17.636,
+          "map_error_m": 0.019724811324420104
+        }
+      },
+      "min_marker_range_during_mission_m": {
+        "768": 7.416664007763628,
+        "476": 0.9284258629313309,
+        "350": 0.6865483709475377
+      },
+      "world_sha256": "5f0b56a7b166f3e811732aa9d2c0c62fd15034ace9fddff17654b9629051c411",
+      "clip_sha256": "6530790b9ab7ca75f900eed3ba5dea8abc4d5849d9214355679a78b5d5f6c7ef",
+      "video": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m417608489-197242287164937263.mp4"
+    }
+  ]
+}

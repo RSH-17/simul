@@ -1,6 +1,6 @@
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
-Mixed v1.5.2.1 분산 배치 시험은 추가 주행을 세 회차로 제한했다. 회차마다 파란 상자 세 개, 서로 다른 상자에 마커 두 장, 외곽 벽에 한 장이 있다. [배치와 시드](experiments/2026-11-22_random_exam/spread-three/enrollment.json)
+Mixed v1.5.2.1 분산 시험을 세 회차에서 마쳤습니다. 상자 마커 6/6장, 외곽 벽 마커 2/3장에 등록 후 1.5m 이내로 접근했습니다. 세 장을 모두 확인한 엄격 완주는 2/3회, 범퍼 접촉은 0회였습니다. [회차별 경로·영상·판정](experiments/2026-11-22_random_exam/spread-three/RESULTS.md)
 
 8780 실험 보드는 정책 버전별로 주행 기록을 모은다. 상단에서 현재 주행을 확인하고, 버전을 펼쳐 맵·영상·마커별 접근 기록을 볼 수 있다. `보관함`에서 예전 실험을 복원할 수 있다. [실험 보드](http://192.168.252.2:8780/)
 
@@ -506,7 +506,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 462개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 469개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -514,6 +514,13 @@ python3 scripts/publish_simulation_videos.py --upload
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [v152-final-spread-three-1122__v151-survey-focus-track-m1398584497-23239317248697326.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m1398584497-23239317248697326.mp4) | 성공 | 확인 | 302.97999999999996 |
+| [v152-final-spread-three-1122__v151-survey-focus-track-m417608489-197242287164937263.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m417608489-197242287164937263.mp4) | 실패 | 미달 | 600.0 |
+| [v152-final-spread-three-1122__v151-survey-focus-track-m550866253-188862315828381463.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m550866253-188862315828381463.mp4) | 성공 | 확인 | 341.52 |
+| [v152-box-only-five-1122__v151-survey-baseline-track-m2712767296-310707902702518823.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-box-only-five-1122__v151-survey-baseline-track-m2712767296-310707902702518823.mp4) | 실패 | 미달 | 600.0 |
+| [v152-box-only-five-1122__v151-survey-candidate-track-m2712767296-310707902702518823.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-box-only-five-1122__v151-survey-candidate-track-m2712767296-310707902702518823.mp4) | 실패 | 미달 | 600.02 |
+| [v152-real-box-overlap-1122__v151-survey-baseline-track-m2526510905-830680071594266066.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-real-box-overlap-1122__v151-survey-baseline-track-m2526510905-830680071594266066.mp4) | 실패 | 미달 | 600.02 |
+| [v152-real-box-overlap-1122__v151-survey-candidate-track-m2526510905-830680071594266066.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-real-box-overlap-1122__v151-survey-candidate-track-m2526510905-830680071594266066.mp4) | 실패 | 미달 | 600.0 |
 | [v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4) | 실패 | 미달 | 600.0 |
 | [v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4) | 실패 | 미달 | 600.0 |
 | [v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4) | 성공 | 확인 | 392.104 |

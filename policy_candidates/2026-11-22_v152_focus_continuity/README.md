@@ -11,4 +11,6 @@
 ./team-sim.sh run ~/mixed_focus_sim_ws --random-layout --tables fixed --markers three
 ```
 
-카메라는 480×480, 5fps이고 주행은 최대 600초다. 첫 지도를 개발 사례로 구분하고, 수정 시점에 주행 결과를 보지 않은 다른 네 지도에서 같은 출발 자세의 Balanced와 Visual Survey 기록을 대조한다. 기록된 마커 수, 등록 후 1.5m 접근, 벽·상자의 관찰 면적, 반복 이동, 충돌을 각각 측정한다. [등록한 비교 조건](../../experiments/2026-11-22_random_exam/focus-enrollment.json)
+카메라는 480×480, 5fps이고 주행은 최대 600초다. 첫 지도를 개발 사례로 구분하고 다른 네 지도에서 비교하도록 등록했다. 이후 분산 상자 세 회차로 실험을 전환했다. 기록된 마커 수, 등록 후 1.5m 접근, 벽·상자의 관찰 면적, 반복 이동, 충돌을 각각 측정한다. [등록한 비교 조건](../../experiments/2026-11-22_random_exam/focus-enrollment.json)
+
+분산 배치 세 회차에서 상자 접근은 6/6장, 벽 접근은 2/3장이었다. [세 주행의 지도·영상과 미검출 프레임 분석](../../experiments/2026-11-22_random_exam/spread-three/RESULTS.md)
