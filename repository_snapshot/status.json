@@ -2270,6 +2270,9 @@
       "stress_furniture_option": "--tables shuffle"
     },
     "undisclosed_runtime_state": "superseded_before_start",
-    "shuffled_comparison_scope": "stress only; official desks remain fixed"
+    "shuffled_comparison_scope": "supplementary, original desks moved",
+    "shuffled_phase": "closed_at_rule_clarification",
+    "shuffled_pairs_completed": 4,
+    "shuffled_reference": "experiments/2026-11-22_random_exam/results/shuffled-prefix/RESULTS.md"
   }
 }

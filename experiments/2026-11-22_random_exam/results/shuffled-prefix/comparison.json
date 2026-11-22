@@ -1,0 +1,629 @@
+{
+  "planned_pairs": 6,
+  "finalized_episodes": 8,
+  "paired": 4,
+  "valid_pairs": 4,
+  "distinct_scored_layouts": 4,
+  "first_runs": {
+    "baseline": {
+      "runs": 4,
+      "strict": 3,
+      "registered": 11,
+      "all_markers": 12,
+      "verified": 11,
+      "wall_verified": 4,
+      "walls": 5,
+      "obstacle_verified": 7,
+      "obstacles": 7,
+      "bumps": 0,
+      "false_registered_instances": 0,
+      "mean_time_with_failures_at_limit_s": 349.885,
+      "mean_actual_mission_s": 350.25800000000004,
+      "mean_travel_m": 45.19629644021541
+    },
+    "candidate": {
+      "runs": 4,
+      "strict": 4,
+      "registered": 12,
+      "all_markers": 12,
+      "verified": 12,
+      "wall_verified": 5,
+      "walls": 5,
+      "obstacle_verified": 7,
+      "obstacles": 7,
+      "bumps": 0,
+      "false_registered_instances": 0,
+      "mean_time_with_failures_at_limit_s": 256.071,
+      "mean_actual_mission_s": 256.56,
+      "mean_travel_m": 38.5827991343549
+    }
+  },
+  "including_repeat": {
+    "baseline": {
+      "runs": 4,
+      "strict": 3,
+      "registered": 11,
+      "all_markers": 12,
+      "verified": 11,
+      "wall_verified": 4,
+      "walls": 5,
+      "obstacle_verified": 7,
+      "obstacles": 7,
+      "bumps": 0,
+      "false_registered_instances": 0,
+      "mean_time_with_failures_at_limit_s": 349.885,
+      "mean_actual_mission_s": 350.25800000000004,
+      "mean_travel_m": 45.19629644021541
+    },
+    "candidate": {
+      "runs": 4,
+      "strict": 4,
+      "registered": 12,
+      "all_markers": 12,
+      "verified": 12,
+      "wall_verified": 5,
+      "walls": 5,
+      "obstacle_verified": 7,
+      "obstacles": 7,
+      "bumps": 0,
+      "false_registered_instances": 0,
+      "mean_time_with_failures_at_limit_s": 256.071,
+      "mean_actual_mission_s": 256.56,
+      "mean_travel_m": 38.5827991343549
+    }
+  },
+  "pairs": [
+    {
+      "pair": 1,
+      "seed": 3818821658,
+      "repeat": 0,
+      "valid": true,
+      "baseline": {
+        "pair": 1,
+        "role": "baseline",
+        "seed": 3818821658,
+        "name": "v151-survey-baseline-track-m3818821658-1021171615408980175",
+        "start": [
+          4.449963093460674,
+          4.3009329294756045,
+          1.845049907358995
+        ],
+        "world_sha256": "de79f894b6e5bfd303a57ca1777ccddfc60c63233e9c363df5862bfb02eb40e7",
+        "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+        "evidence": {
+          "policy_manifest.json": "a28985fc74f13acef4ebe315a7455c1948e76bf51a7b069bcf0cef096b22f6d0",
+          "metrics.json": "60332c4bbe891cdf0a1669613fac6caced34ed17afbf4873b4b0b3e404371930",
+          "audit.json": "5938fb9f6fb3ca343bed4861b53524b80ed8d8b122473bac0a9feb0addef966a",
+          "events.jsonl": "00dfbdf301a6348e0030aa92984541d7b7a5f5c2cd5af1414ca1addc13ea9e1d",
+          "trajectory.csv": "e152a4ec017e4ad6d14a6a9127819e3be455f9616c3e92e520029563109b9b2d",
+          "headings.csv": "19dce9da023f0a501c0e3c7d241912a2daab6e85ab90133a7e3ae40a43b12a26",
+          "mission.mp4": "6979b21a02110f055c29b65211c76fdbe4f2fdcf8e0dd735150ab9d340fa170c"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 434.34,
+          "elapsed_s": 434.82,
+          "travel_m": 57.41758138660227,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "402": {
+              "host": "movable_3",
+              "mounted": "obstacle",
+              "registered_s": 30.856,
+              "after_registration_near_s": 30.936,
+              "onboard_near_proof_s": 31.844,
+              "verified_s": 31.844
+            },
+            "75": {
+              "host": "wall_north",
+              "mounted": "wall",
+              "registered_s": 421.844,
+              "after_registration_near_s": 432.856,
+              "onboard_near_proof_s": 434.34,
+              "verified_s": 434.34
+            },
+            "159": {
+              "host": "wall_south_recess",
+              "mounted": "wall",
+              "registered_s": 75.836,
+              "after_registration_near_s": 87.916,
+              "onboard_near_proof_s": 89.33999999999999,
+              "verified_s": 89.33999999999999
+            }
+          },
+          "wall": 2,
+          "wall_near": 2,
+          "obstacle": 1,
+          "obstacle_near": 1,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.03585983482132751,
+          "valid": true
+        }
+      },
+      "candidate": {
+        "pair": 1,
+        "role": "candidate",
+        "seed": 3818821658,
+        "name": "v151-survey-candidate-track-m3818821658-1021171615408980175",
+        "start": [
+          4.449963093460674,
+          4.3009329294756045,
+          1.845049907358995
+        ],
+        "world_sha256": "de79f894b6e5bfd303a57ca1777ccddfc60c63233e9c363df5862bfb02eb40e7",
+        "source_sha256": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb",
+        "evidence": {
+          "policy_manifest.json": "aea0f9c1f369e877798698a767592a78edf8511926840f7bfe1ceadd15def608",
+          "metrics.json": "270ebe5c33cb3f70b29672b51f04949829e69dff0484346653bb8d8f7a1631eb",
+          "audit.json": "11bfc1d2977c017b3084576e7228759eceef92e330c9ec57c03f6f8a80b7d412",
+          "events.jsonl": "5e02f0c61d4158af84c49fd9a48c9706530914001f85515fb0d6f57973cf8ad5",
+          "trajectory.csv": "2e30961f3aa047af3be52f00f25fcf055dddba13e44ecd60fb0d564e3673c2ef",
+          "headings.csv": "a0b692e99ed7ec7a014f452500ec8cf84ce129704648dc55e8b49b363883fea5",
+          "mission.mp4": "4853a24d431adfcc3fa1f9b59fb0ae9b88c27e9a1b0e040337251ce7d75cb723"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 431.31600000000003,
+          "elapsed_s": 431.8,
+          "travel_m": 64.75293487477495,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "402": {
+              "host": "movable_3",
+              "mounted": "obstacle",
+              "registered_s": 242.304,
+              "after_registration_near_s": 242.308,
+              "onboard_near_proof_s": 243.316,
+              "verified_s": 243.316
+            },
+            "75": {
+              "host": "wall_north",
+              "mounted": "wall",
+              "registered_s": 420.80400000000003,
+              "after_registration_near_s": 429.808,
+              "onboard_near_proof_s": 431.31600000000003,
+              "verified_s": 431.31600000000003
+            },
+            "159": {
+              "host": "wall_south_recess",
+              "mounted": "wall",
+              "registered_s": 52.8,
+              "after_registration_near_s": 66.708,
+              "onboard_near_proof_s": 68.316,
+              "verified_s": 68.316
+            }
+          },
+          "wall": 2,
+          "wall_near": 2,
+          "obstacle": 1,
+          "obstacle_near": 1,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.027825253729337612,
+          "valid": true
+        }
+      }
+    },
+    {
+      "pair": 2,
+      "seed": 2164651793,
+      "repeat": 0,
+      "valid": true,
+      "baseline": {
+        "pair": 2,
+        "role": "baseline",
+        "seed": 2164651793,
+        "name": "v151-survey-baseline-track-m2164651793-904460405419145261",
+        "start": [
+          -6.700017844971883,
+          1.599046314933127,
+          -1.7404644425505704
+        ],
+        "world_sha256": "29026c60f9266ae7004b1afe51010a1a288c499d9c7cc9de67f77d5fd6cfdc3e",
+        "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+        "evidence": {
+          "policy_manifest.json": "a28985fc74f13acef4ebe315a7455c1948e76bf51a7b069bcf0cef096b22f6d0",
+          "metrics.json": "e1f788003dcb1bd5998376733c250a99a83922837ae7e9d44c601f4075896451",
+          "audit.json": "b7fc7741bcc94e171314a0ebe927b13c22ecdb9fadeda29ea4de5ebd18b14582",
+          "events.jsonl": "46b6273ac71404f8e45a2901e44808352ca16403fc0048415aa239693637e1c0",
+          "trajectory.csv": "1665feb1bd0d110e54ce374f9d299604455cff57df47c9a68558542cfd8083dd",
+          "headings.csv": "7424750cf29001b066946fd3599fc35c30ab0cda7ff804a4e4cca8916ba80e6d",
+          "mission.mp4": "4cf3c1c0c14d8179c81b480b10685dcba45d80b91226146c9280b0126c07c88b"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 197.112,
+          "elapsed_s": 197.608,
+          "travel_m": 27.45869967981859,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "67": {
+              "host": "movable_1_b",
+              "mounted": "obstacle",
+              "registered_s": 89.604,
+              "after_registration_near_s": 89.62,
+              "onboard_near_proof_s": 91.10799999999999,
+              "verified_s": 91.10799999999999
+            },
+            "447": {
+              "host": "movable_2",
+              "mounted": "obstacle",
+              "registered_s": 196.108,
+              "after_registration_near_s": 196.12,
+              "onboard_near_proof_s": 197.112,
+              "verified_s": 197.112
+            },
+            "128": {
+              "host": "movable_1_b",
+              "mounted": "obstacle",
+              "registered_s": 36.588,
+              "after_registration_near_s": 48.02,
+              "onboard_near_proof_s": 49.612,
+              "verified_s": 49.612
+            }
+          },
+          "wall": 0,
+          "wall_near": 0,
+          "obstacle": 3,
+          "obstacle_near": 3,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.018316297709542084,
+          "valid": true
+        }
+      },
+      "candidate": {
+        "pair": 2,
+        "role": "candidate",
+        "seed": 2164651793,
+        "name": "v151-survey-candidate-track-m2164651793-904460405419145261",
+        "start": [
+          -6.700017844971883,
+          1.599046314933127,
+          -1.7404644425505704
+        ],
+        "world_sha256": "29026c60f9266ae7004b1afe51010a1a288c499d9c7cc9de67f77d5fd6cfdc3e",
+        "source_sha256": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb",
+        "evidence": {
+          "policy_manifest.json": "aea0f9c1f369e877798698a767592a78edf8511926840f7bfe1ceadd15def608",
+          "metrics.json": "2bf05793cf782fa0cbe3bd8f131d2b68bca336e17f37c3e6ba213731135f9afa",
+          "audit.json": "68652580e317d9ff54271ed9b238894f5c582301dc77ec564aa4d6ce020184a8",
+          "events.jsonl": "ebee3e945f9f56e0be7126cc8bd04584d6394710777f76667730da2a21b08899",
+          "trajectory.csv": "1131f343d91630108761f2713d9066eb36c6fc971c3bbff88f825e3d0aa0962a",
+          "headings.csv": "8a63d97ecc08117a4395141580e2e1a4bae20cdd948f9347e8ec8e99608a8e10",
+          "mission.mp4": "09b3d359ff88f0f574960da095c49e860ced5a1e1bea7dd7a67ef43a8454231c"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 276.0,
+          "elapsed_s": 276.5,
+          "travel_m": 37.81826322587135,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "67": {
+              "host": "movable_1_b",
+              "mounted": "obstacle",
+              "registered_s": 237.49599999999998,
+              "after_registration_near_s": 237.496,
+              "onboard_near_proof_s": 276.0,
+              "verified_s": 276.0
+            },
+            "447": {
+              "host": "movable_2",
+              "mounted": "obstacle",
+              "registered_s": 156.5,
+              "after_registration_near_s": 156.596,
+              "onboard_near_proof_s": 157.5,
+              "verified_s": 157.5
+            },
+            "128": {
+              "host": "movable_1_b",
+              "mounted": "obstacle",
+              "registered_s": 13.432,
+              "after_registration_near_s": 24.276,
+              "onboard_near_proof_s": 26.0,
+              "verified_s": 26.0
+            }
+          },
+          "wall": 0,
+          "wall_near": 0,
+          "obstacle": 3,
+          "obstacle_near": 3,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.05155870468169092,
+          "valid": true
+        }
+      }
+    },
+    {
+      "pair": 3,
+      "seed": 1506996263,
+      "repeat": 0,
+      "valid": true,
+      "baseline": {
+        "pair": 3,
+        "role": "baseline",
+        "seed": 1506996263,
+        "name": "v151-survey-baseline-track-m1506996263-758615926508713792",
+        "start": [
+          -1.8013554350823757,
+          -0.9494664998276858,
+          2.563328724840332
+        ],
+        "world_sha256": "96d17586e6a05ea3fe76850bce96f21c6e80731a490a4bf75d56029373152680",
+        "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+        "evidence": {
+          "policy_manifest.json": "a28985fc74f13acef4ebe315a7455c1948e76bf51a7b069bcf0cef096b22f6d0",
+          "metrics.json": "0066e0255ef68a6737062694d88cf4b0d078203cd2a93db81ca10b96fc715265",
+          "audit.json": "63762cba399682652c0f06d282eded57652e5140587b607bf75b35a6278f0c4a",
+          "events.jsonl": "1592e874c6f4bb3b33d20ce16d4a01175bc5aa614ebe79efd8eeeef4468e180d",
+          "trajectory.csv": "981accf30d27aad8c1f8f7e708fde53a7e4b9c2783be4004c1b157995cd65859",
+          "headings.csv": "672f96a35ed3d2078ac253f97b972f1dc15d10a014bd7629b2269744269d9bab",
+          "mission.mp4": "d393a150156ba41189d808d036642ae5deac904c683e92f461b87a9a816550f5"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 168.08800000000002,
+          "elapsed_s": 168.584,
+          "travel_m": 25.62579273358964,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "153": {
+              "host": "movable_1",
+              "mounted": "obstacle",
+              "registered_s": 39.564,
+              "after_registration_near_s": 39.916,
+              "onboard_near_proof_s": 62.087999999999994,
+              "verified_s": 62.087999999999994
+            },
+            "684": {
+              "host": "wall_south_recess",
+              "mounted": "wall",
+              "registered_s": 40.552,
+              "after_registration_near_s": 78.976,
+              "onboard_near_proof_s": 80.592,
+              "verified_s": 80.592
+            },
+            "877": {
+              "host": "wall_structure_east_wall_step_3",
+              "mounted": "wall",
+              "registered_s": 152.084,
+              "after_registration_near_s": 166.416,
+              "onboard_near_proof_s": 168.08800000000002,
+              "verified_s": 168.08800000000002
+            }
+          },
+          "wall": 2,
+          "wall_near": 2,
+          "obstacle": 1,
+          "obstacle_near": 1,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.06799433369393916,
+          "valid": true
+        }
+      },
+      "candidate": {
+        "pair": 3,
+        "role": "candidate",
+        "seed": 1506996263,
+        "name": "v151-survey-candidate-track-m1506996263-758615926508713792",
+        "start": [
+          -1.8013554350823757,
+          -0.9494664998276858,
+          2.563328724840332
+        ],
+        "world_sha256": "96d17586e6a05ea3fe76850bce96f21c6e80731a490a4bf75d56029373152680",
+        "source_sha256": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb",
+        "evidence": {
+          "policy_manifest.json": "aea0f9c1f369e877798698a767592a78edf8511926840f7bfe1ceadd15def608",
+          "metrics.json": "4068796615e380b85c34f0bc5614c8a77a8ee6ea3dee7e63f685ae57e9cc91b1",
+          "audit.json": "33cb901ddd92ac3a660d4396803ddb641dde32772fb73b653444d7a9211995d3",
+          "events.jsonl": "0f6d3f6f6fa3dc14f3b98fdd6e3385cc8aaa83e0907c1040d14f0d2818225317",
+          "trajectory.csv": "a67223b829ff06edf91061339f1622f16e1e5b378b4436d146aaacffd967e694",
+          "headings.csv": "ddfa62981ac666fa528b6c853c0ce247c35ba406970cf7df6fdcec40646dd94f",
+          "mission.mp4": "cebd2c108ca84caca43281f664a0c0e279f675db4c6afa2c9dd000a55ba2307f"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 190.1,
+          "elapsed_s": 190.596,
+          "travel_m": 30.49711476041952,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "153": {
+              "host": "movable_1",
+              "mounted": "obstacle",
+              "registered_s": 24.088,
+              "after_registration_near_s": 30.588,
+              "onboard_near_proof_s": 32.128,
+              "verified_s": 32.128
+            },
+            "684": {
+              "host": "wall_south_recess",
+              "mounted": "wall",
+              "registered_s": 35.596000000000004,
+              "after_registration_near_s": 47.868,
+              "onboard_near_proof_s": 49.1,
+              "verified_s": 49.1
+            },
+            "877": {
+              "host": "wall_structure_east_wall_step_3",
+              "mounted": "wall",
+              "registered_s": 183.584,
+              "after_registration_near_s": 188.688,
+              "onboard_near_proof_s": 190.1,
+              "verified_s": 190.1
+            }
+          },
+          "wall": 2,
+          "wall_near": 2,
+          "obstacle": 1,
+          "obstacle_near": 1,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.028021786541097476,
+          "valid": true
+        }
+      }
+    },
+    {
+      "pair": 4,
+      "seed": 1565135385,
+      "repeat": 0,
+      "valid": true,
+      "baseline": {
+        "pair": 4,
+        "role": "baseline",
+        "seed": 1565135385,
+        "name": "v151-survey-baseline-track-m1565135385-716985422643685146",
+        "start": [
+          -6.999975413710229,
+          -1.3509488420196054,
+          -1.3212277185430812
+        ],
+        "world_sha256": "4946b628b29f1228020d2ee82279202fcaee32b18f13c75a48c360e84514a3f8",
+        "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+        "evidence": {
+          "policy_manifest.json": "a28985fc74f13acef4ebe315a7455c1948e76bf51a7b069bcf0cef096b22f6d0",
+          "metrics.json": "29a3f4c1759cabffd0d9b878918c7ebb1149bd093422044f94050403a96e89d4",
+          "audit.json": "0be16406ed8e6b6f427005cb33bc6f9ba48684302b39735df61a74b0027633c5",
+          "events.jsonl": "846d611bf51b872ab8fece260e7cc0c5a1ef622adfaf892559d70dd998fb67dc",
+          "trajectory.csv": "1c7decb8697df864f4ec01b822c0c88d32ab78d68e8a45cb59f2d10b174b9f8e",
+          "headings.csv": "25c373f2800197558a65ec9310de79fe5f727c35be6601fcd838a23cc5b75ff1",
+          "mission.mp4": "bd84f834f8c5d5236fb8de1b3f9c2f39ad896493a391efbc23875cf258db533e"
+        },
+        "score": {
+          "strict": false,
+          "goal_complete_by_s": null,
+          "elapsed_s": 600.0200000000001,
+          "travel_m": 70.28311196085116,
+          "stop_reason": "common_time_limit",
+          "expected": 3,
+          "registered": 2,
+          "verified": 2,
+          "records": {
+            "804": {
+              "host": "movable_1",
+              "mounted": "obstacle",
+              "registered_s": 85.37599999999999,
+              "after_registration_near_s": 92.912,
+              "onboard_near_proof_s": 94.37599999999999,
+              "verified_s": 94.37599999999999
+            },
+            "730": {
+              "host": "wall_south_west",
+              "mounted": "wall",
+              "registered_s": null,
+              "after_registration_near_s": null,
+              "onboard_near_proof_s": null,
+              "verified_s": null
+            },
+            "156": {
+              "host": "movable_1",
+              "mounted": "obstacle",
+              "registered_s": 84.872,
+              "after_registration_near_s": 92.872,
+              "onboard_near_proof_s": 94.37599999999999,
+              "verified_s": 94.37599999999999
+            }
+          },
+          "wall": 1,
+          "wall_near": 0,
+          "obstacle": 2,
+          "obstacle_near": 2,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.04261122396770232,
+          "valid": true
+        }
+      },
+      "candidate": {
+        "pair": 4,
+        "role": "candidate",
+        "seed": 1565135385,
+        "name": "v151-survey-candidate-track-m1565135385-716985422643685146",
+        "start": [
+          -6.999975413710229,
+          -1.3509488420196054,
+          -1.3212277185430812
+        ],
+        "world_sha256": "4946b628b29f1228020d2ee82279202fcaee32b18f13c75a48c360e84514a3f8",
+        "source_sha256": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb",
+        "evidence": {
+          "policy_manifest.json": "aea0f9c1f369e877798698a767592a78edf8511926840f7bfe1ceadd15def608",
+          "metrics.json": "d38d246b737d4abd1d13b63a5a018d2ab6112442d0a798dfc3b68adb669d5c56",
+          "audit.json": "0fee6cb2076725116d6cbae91fdb0c0beae76f6c29853ac422eeb37f8282ba40",
+          "events.jsonl": "7a9068a03b9e684ea442a453fbec8ea28de7d5e74c38a0e28064feacdc7ee776",
+          "trajectory.csv": "ea1f067ae161cf884b150a359c5e69d94f2a08e0ec738b806f6d48fe0a9e9e20",
+          "headings.csv": "a26bd41b90928166d01406117508b2601eea8b548af97ba5b96530c9a93f60b0",
+          "mission.mp4": "ef85d11c8c5cf2ffca30337d46ab1bacaf77a0b6bad41a1d389ce3db8a0e1d69"
+        },
+        "score": {
+          "strict": true,
+          "goal_complete_by_s": 126.868,
+          "elapsed_s": 127.344,
+          "travel_m": 21.262883676353773,
+          "stop_reason": "all_targets_found",
+          "expected": 3,
+          "registered": 3,
+          "verified": 3,
+          "records": {
+            "804": {
+              "host": "movable_1",
+              "mounted": "obstacle",
+              "registered_s": 111.868,
+              "after_registration_near_s": 122.356,
+              "onboard_near_proof_s": 126.868,
+              "verified_s": 126.868
+            },
+            "730": {
+              "host": "wall_south_west",
+              "mounted": "wall",
+              "registered_s": 30.859999999999996,
+              "after_registration_near_s": 39.376,
+              "onboard_near_proof_s": 41.364000000000004,
+              "verified_s": 41.364000000000004
+            },
+            "156": {
+              "host": "movable_1",
+              "mounted": "obstacle",
+              "registered_s": 116.86399999999999,
+              "after_registration_near_s": 123.256,
+              "onboard_near_proof_s": 124.864,
+              "verified_s": 124.864
+            }
+          },
+          "wall": 1,
+          "wall_near": 1,
+          "obstacle": 2,
+          "obstacle_near": 2,
+          "false_ids": [],
+          "bumps": 0,
+          "max_saved_error_m": 0.0357761079834609,
+          "valid": true
+        }
+      }
+    }
+  ]
+}

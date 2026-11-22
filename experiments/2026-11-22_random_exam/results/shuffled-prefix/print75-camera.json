@@ -1,0 +1,66 @@
+{
+  "seed": 3818821658,
+  "run": "v151-survey-candidate-track-m3818821658-1021171615408980175",
+  "source": "Recorded native RGB and mission events. OpenCV Original 75 decoded in both retained JPEGs.",
+  "frames": [
+    {
+      "file": "print75-edge.jpg",
+      "native_frame": 2009,
+      "exposure_s": 401.624,
+      "corners_px": [
+        [
+          449,
+          226
+        ],
+        [
+          461,
+          226
+        ],
+        [
+          461,
+          238
+        ],
+        [
+          449,
+          238
+        ]
+      ],
+      "shortest_edge_px": 12.0,
+      "sha256": "6e6a5bcdefa7805e03c03912abf5309d9e55eb38adce4024162a65a4ffdce6a9"
+    },
+    {
+      "file": "print75-near.jpg",
+      "native_frame": 2157,
+      "exposure_s": 431.224,
+      "corners_px": [
+        [
+          118,
+          176
+        ],
+        [
+          165,
+          171
+        ],
+        [
+          165,
+          230
+        ],
+        [
+          118,
+          231
+        ]
+      ],
+      "shortest_edge_px": 47.01063709417264,
+      "sha256": "eea4739f1f0efbe117f1f76765e2a927f52738f67d5ee6f63b4433adab86fd56"
+    }
+  ],
+  "first_edge_sensor_stamp_s": 401.624,
+  "request_s": 401.824,
+  "nav2_turn_rad": -0.5909038265337418,
+  "inspection_finished_s": 404.824,
+  "inspection_outcome": "processed_frame_dwell",
+  "previous_navigation_queued": true,
+  "id_registered_s": 420.804,
+  "approach_verified_s": 431.316,
+  "baseline_verified_s": 434.34
+}

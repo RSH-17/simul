@@ -1,0 +1,231 @@
+{
+  "scope": "Geometric optical opportunity at the enrolled witness, aiming at the actual print. Five static SDF sightlines, incidence ≤60 degrees, calibrated 480px camera. Grid connectivity uses 0.40m clearance. No Nav2 plan or actual image is inferred.",
+  "calibration_sha256": "a53ad4f4c3d39222071727fd6d7cb9d885aa0c30a527502ed9325e1efc2dc423",
+  "worlds": [
+    {
+      "seed": 2946727794,
+      "tables": "fixed",
+      "targets": [
+        {
+          "id": 246,
+          "host": "wall_south_recess",
+          "witness_xy_m": [
+            1.9316281875857189,
+            -5.249999999999999
+          ],
+          "base_distance_m": 0.9500000000000011,
+          "grid_clearance_m": 1.0,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 374,
+          "host": "movable_2",
+          "witness_xy_m": [
+            8.00938441518045,
+            4.801399459457048
+          ],
+          "base_distance_m": 0.9500000000000052,
+          "grid_clearance_m": 0.8500000000000001,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 876,
+          "host": "movable_1",
+          "witness_xy_m": [
+            6.474574084553727,
+            1.9122073386883924
+          ],
+          "base_distance_m": 0.9499999999999946,
+          "grid_clearance_m": 0.6184658438426491,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "seed": 1817236217,
+      "tables": "fixed",
+      "targets": [
+        {
+          "id": 630,
+          "host": "wall_west",
+          "witness_xy_m": [
+            -9.05,
+            -3.0726061680692487
+          ],
+          "base_distance_m": 0.9499999999999993,
+          "grid_clearance_m": 1.0,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 60,
+          "host": "movable_1",
+          "witness_xy_m": [
+            6.6449657003663924,
+            -2.4196184830371816
+          ],
+          "base_distance_m": 0.9499999999999984,
+          "grid_clearance_m": 0.9055385138137417,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 798,
+          "host": "wall_structure_column_se_3",
+          "witness_xy_m": [
+            4.753,
+            -5.7002115857768025
+          ],
+          "base_distance_m": 1.00244700608062,
+          "grid_clearance_m": 0.55,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "seed": 3477870352,
+      "tables": "fixed",
+      "targets": [
+        {
+          "id": 115,
+          "host": "movable_7",
+          "witness_xy_m": [
+            7.580255917288066,
+            -0.12636324794273568
+          ],
+          "base_distance_m": 0.9500000000000011,
+          "grid_clearance_m": 0.9178779875342911,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 672,
+          "host": "movable_2",
+          "witness_xy_m": [
+            -3.1516064256470226,
+            0.9548273669053339
+          ],
+          "base_distance_m": 0.95,
+          "grid_clearance_m": 0.49244289008980524,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 855,
+          "host": "wall_structure_east_wall_step_3",
+          "witness_xy_m": [
+            8.723,
+            3.4106314361717742
+          ],
+          "base_distance_m": 0.9499999999999993,
+          "grid_clearance_m": 0.9500000000000001,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "seed": 2293287138,
+      "tables": "fixed",
+      "targets": [
+        {
+          "id": 5,
+          "host": "movable_8_b",
+          "witness_xy_m": [
+            -7.986001074346774,
+            0.47680699576401064
+          ],
+          "base_distance_m": 0.9499999999999946,
+          "grid_clearance_m": 0.42720018726587655,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 69,
+          "host": "movable_8_a",
+          "witness_xy_m": [
+            -9.263772323252896,
+            1.6883707112492337
+          ],
+          "base_distance_m": 0.9500000000000004,
+          "grid_clearance_m": 0.8,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 587,
+          "host": "movable_7",
+          "witness_xy_m": [
+            7.684228336144851,
+            -1.112327716485061
+          ],
+          "base_distance_m": 0.9500000000000004,
+          "grid_clearance_m": 0.9178779875342911,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "seed": 4138722517,
+      "tables": "fixed",
+      "targets": [
+        {
+          "id": 313,
+          "host": "wall_north",
+          "witness_xy_m": [
+            -7.234431815265637,
+            4.6499999999999995
+          ],
+          "base_distance_m": 0.9500000000000002,
+          "grid_clearance_m": 1.0,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 953,
+          "host": "wall_north",
+          "witness_xy_m": [
+            7.282777886736096,
+            4.6499999999999995
+          ],
+          "base_distance_m": 0.9500000000000002,
+          "grid_clearance_m": 1.0,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        },
+        {
+          "id": 222,
+          "host": "wall_west",
+          "witness_xy_m": [
+            -9.05,
+            -1.5429187229545844
+          ],
+          "base_distance_m": 0.9499999999999993,
+          "grid_clearance_m": 1.0,
+          "same_connected_grid_region": true,
+          "optical_witness_18px": true,
+          "reason": null
+        }
+      ]
+    }
+  ]
+}
