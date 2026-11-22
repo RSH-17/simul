@@ -1,0 +1,484 @@
+{
+  "labels": [
+    "Balanced",
+    "Balanced Print"
+  ],
+  "runs": [
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "seed": 2946727794,
+      "id": 374,
+      "host": "movable_2",
+      "printed_outward_xy": [
+        0.9919462187448378,
+        0.12665977703208853
+      ],
+      "elapsed_sim_s": 600.0,
+      "registered_s": null,
+      "body_near_front_s": 0.0,
+      "body_near_back_s": 53.04,
+      "decisions": 46,
+      "options_close_front": 300,
+      "selected_close_front": 0,
+      "options_readable_at_goal_heading": 29,
+      "decisions_with_readable_option": 29,
+      "selected_readable_at_goal_heading": 0,
+      "evidence": [
+        {
+          "elapsed_s": 73.3,
+          "proposed_xy": [
+            [
+              8.276,
+              4.696
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 157.3,
+          "proposed_xy": [
+            [
+              8.246,
+              4.383
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "flow_or_marker",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 182.8,
+          "proposed_xy": [
+            [
+              8.179,
+              4.859
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 191.8,
+          "proposed_xy": [
+            [
+              8.179,
+              4.859
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 208.3,
+          "proposed_xy": [
+            [
+              8.184,
+              4.927
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 218.3,
+          "proposed_xy": [
+            [
+              8.184,
+              4.927
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 238.3,
+          "proposed_xy": [
+            [
+              8.209,
+              4.997
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "flow_or_marker",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 265.3,
+          "proposed_xy": [
+            [
+              8.21,
+              4.999
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 297.8,
+          "proposed_xy": [
+            [
+              8.213,
+              4.993
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 306.3,
+          "proposed_xy": [
+            [
+              8.182,
+              5.042
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 316.8,
+          "proposed_xy": [
+            [
+              8.182,
+              5.042
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 337.3,
+          "proposed_xy": [
+            [
+              8.212,
+              4.999
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 345.8,
+          "proposed_xy": [
+            [
+              8.213,
+              4.999
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 361.3,
+          "proposed_xy": [
+            [
+              8.214,
+              5.0
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 369.3,
+          "proposed_xy": [
+            [
+              8.214,
+              5.0
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 386.3,
+          "proposed_xy": [
+            [
+              8.215,
+              5.0
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 396.3,
+          "proposed_xy": [
+            [
+              8.188,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 416.8,
+          "proposed_xy": [
+            [
+              8.216,
+              5.001
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 428.3,
+          "proposed_xy": [
+            [
+              8.216,
+              5.001
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 447.3,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 454.3,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 466.8,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 477.8,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 491.8,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 506.8,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 516.3,
+          "proposed_xy": [
+            [
+              8.162,
+              5.085
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "remaining_time_for_mapped_walls"
+        },
+        {
+          "elapsed_s": 522.8,
+          "proposed_xy": [
+            [
+              8.162,
+              5.085
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "remaining_time_for_mapped_walls"
+        },
+        {
+          "elapsed_s": 533.8,
+          "proposed_xy": [
+            [
+              8.162,
+              5.085
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "remaining_time_for_mapped_walls"
+        },
+        {
+          "elapsed_s": 543.3,
+          "proposed_xy": [
+            [
+              8.189,
+              5.043
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "remaining_time_for_mapped_walls"
+        }
+      ]
+    },
+    {
+      "run": "v151-survey-candidate-track-m2946727794-532698735965463242",
+      "seed": 2946727794,
+      "id": 374,
+      "host": "movable_2",
+      "printed_outward_xy": [
+        0.9919462187448378,
+        0.12665977703208853
+      ],
+      "elapsed_sim_s": 600.024,
+      "registered_s": null,
+      "body_near_front_s": 0.0,
+      "body_near_back_s": 68.88,
+      "decisions": 43,
+      "options_close_front": 313,
+      "selected_close_front": 0,
+      "options_readable_at_goal_heading": 4,
+      "decisions_with_readable_option": 4,
+      "selected_readable_at_goal_heading": 0,
+      "evidence": [
+        {
+          "elapsed_s": 185.776,
+          "proposed_xy": [
+            [
+              8.199,
+              4.707
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "wall_surface",
+          "selection_reason": "persistent_small_wall_candidate"
+        },
+        {
+          "elapsed_s": 300.276,
+          "proposed_xy": [
+            [
+              8.192,
+              4.997
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 310.276,
+          "proposed_xy": [
+            [
+              8.192,
+              4.997
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        },
+        {
+          "elapsed_s": 318.776,
+          "proposed_xy": [
+            [
+              8.191,
+              4.998
+            ]
+          ],
+          "selected_readable": false,
+          "selected_front": false,
+          "selected_kind": "interior_surface",
+          "selection_reason": "unseen_reachable_object"
+        }
+      ]
+    }
+  ],
+  "minimum_px": 18,
+  "max_incidence_deg": 60,
+  "scope": "Arrival yaw only, initial map-to-world alignment. Saved alternatives include the base planning pool and the selected hybrid goal. Five SDF rays are geometric opportunities, not completed motion or successful Nav2 plans. In-place sweeps and subsequent turns are not counted."
+}
