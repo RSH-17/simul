@@ -1,0 +1,86 @@
+{
+  "state": "registered_before_native_start",
+  "registration_sha256": "6263984507e4114a4ffa16858e875399e29bc3720331de177b9c7f03b16f04be",
+  "protocol_sha256": "e7bc136986b77bd28426fdf551a825e2aaacb81cf9829bb436fab039defbf42f",
+  "expected_episodes": 2,
+  "independent_geometry_count": 1,
+  "order": [
+    "candidate",
+    "baseline"
+  ],
+  "parent_protocol_sha256": "197ebe026f4656c58302da6b8958ddab9c13381533baaf100c0e9abb48c2c715",
+  "geometry_seed": 3477870352,
+  "selection": "middle enrolled map; uniform cell among connected starts with 0.40 <= clearance < 0.80 m; uniform yaw",
+  "pose_seed": 17601234793122662815,
+  "qualifying_cells": 28065,
+  "grid_clearance_m": 0.7000000000000001,
+  "original_start": [
+    3.400000000000002,
+    -1.7499999999999991,
+    0.979854904034184
+  ],
+  "new_start": [
+    8.950000000000003,
+    -2.5499999999999994,
+    2.4394069884068994
+  ],
+  "generator_sha256": "0af0cbaebff4beb796a589b81b89ad3890353fec4e20fd82b13e17c3878b01f9",
+  "identical_sdf_sha256": "69288f080ade477e4be83d7451421f7848c167ac70b35e3af7492a6b2c77ff4b",
+  "original_start_sampling": [
+    {
+      "geometry_seed": 2946727794,
+      "start": [
+        8.700000000000003,
+        -3.9499999999999993,
+        2.1400570088607402
+      ],
+      "start_grid_clearance_m": 1.2103718436910205,
+      "open_cells": 30014,
+      "cells_in_40_to_80_cm_band": 28181
+    },
+    {
+      "geometry_seed": 1817236217,
+      "start": [
+        -0.3999999999999986,
+        -1.049999999999999,
+        1.938338528253655
+      ],
+      "start_grid_clearance_m": 0.9486832980505139,
+      "open_cells": 28794,
+      "cells_in_40_to_80_cm_band": 28493
+    },
+    {
+      "geometry_seed": 3477870352,
+      "start": [
+        3.400000000000002,
+        -1.7499999999999991,
+        0.979854904034184
+      ],
+      "start_grid_clearance_m": 0.8062257748298549,
+      "open_cells": 25198,
+      "cells_in_40_to_80_cm_band": 28065
+    },
+    {
+      "geometry_seed": 2293287138,
+      "start": [
+        7.0,
+        -1.799999999999999,
+        -2.888967946465957
+      ],
+      "start_grid_clearance_m": 1.8560711193270585,
+      "open_cells": 24304,
+      "cells_in_40_to_80_cm_band": 28423
+    },
+    {
+      "geometry_seed": 4138722517,
+      "start": [
+        -2.3499999999999988,
+        2.750000000000001,
+        2.390333759081485
+      ],
+      "start_grid_clearance_m": 0.9500000000000001,
+      "open_cells": 32544,
+      "cells_in_40_to_80_cm_band": 27656
+    }
+  ]
+}

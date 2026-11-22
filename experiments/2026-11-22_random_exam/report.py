@@ -2,6 +2,7 @@
 import argparse
 from collections import Counter
 import json
+import math
 from pathlib import Path
 from statistics import mean
 
@@ -74,6 +75,30 @@ def paired_consistency(pairs, candidate):
         lines.extend(['', f"시드 {pair['seed']}에서 실행 순서를 바꾼 반복의 근거리 확인은 "
                       + ', '.join(changes) + '이었다. 이 반복은 독립 배치 집계에서 제외했다.'])
     return lines
+
+
+def start_poses(pairs, worlds):
+    rows = []
+    for pair in pairs:
+        expected = worlds[pair['seed']].get('start')
+        actual = [pair[role].get('start') for role in ('baseline', 'candidate')]
+        if expected is None or any(p is None for p in actual):
+            continue
+        def difference(a, b):
+            yaw_deg = abs(math.degrees(math.remainder(a[2] - b[2], 2 * math.pi)))
+            return math.dist(a[:2], b[:2]), yaw_deg
+        offsets = [difference(p, expected) for p in actual]
+        gap, angle = difference(*actual)
+        rows.append(f"| {pair['seed']}{' (반복)' if pair['repeat'] else ''} | "
+                    f"({expected[0]:.2f}, {expected[1]:.2f}) | {math.degrees(expected[2]):.1f}° | "
+                    f"{100*max(d[0] for d in offsets):.2f} cm / {max(d[1] for d in offsets):.2f}° | "
+                    f"{100*gap:.2f} cm / {angle:.2f}° |")
+    if not rows:
+        return []
+    return ['', '### 추첨한 출발 자세와 Gazebo 실측', '',
+            '시작 후 0.5초 이내에 기록한 첫 유효 월드 자세를 사용했다. 목표 대비 오차는 두 정책 중 큰 값이다.',
+            '', '| 시드 | 추첨 좌표 (x, y) m | 추첨 방향 | 목표 대비 위치 / 방향 오차 | 두 정책 사이 위치 / 방향 차이 |',
+            '|---|---:|---:|---:|---:|', *rows]
 
 
 def missed_markers(root, pairs, candidate='R5'):
@@ -198,6 +223,7 @@ def report(root):
         lines+=['',f'양쪽 모두 엄격 완주한 신규 배치 {len(both)}개에서 마지막 확인까지 평균은 Balanced {b:.1f}초, {candidate} {c:.1f}초였다.']
     lines.extend(layout_results(data['pairs'], worlds, candidate))
     lines.extend(paired_consistency(data['pairs'], candidate))
+    lines.extend(start_poses(data['pairs'], worlds))
     lines.extend(missed_markers(root, data['pairs'], candidate))
     lines.extend(supplemental(root, data['pairs'], candidate))
     if (root/'routes.png').is_file():

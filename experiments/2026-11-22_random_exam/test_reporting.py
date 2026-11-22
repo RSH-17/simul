@@ -1,14 +1,22 @@
 import json
+import math
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
 from board_results import apply
 from opportunities import print_relooks
-from report import layout_results, missed_markers, paired_consistency, report, supplemental
+from report import layout_results, missed_markers, paired_consistency, report, start_poses, supplemental
 
 
 class ReportingTests(unittest.TestCase):
+    def test_initial_pose_uses_the_world_sample_and_wraps_gazebo_yaw(self):
+        pair = dict(seed=8, repeat=False, baseline=dict(start=[1., 2., math.radians(-179.)]),
+                    candidate=dict(start=[1.03, 2.04, math.radians(179.)]))
+        worlds = {8: {'start': [1., 2., math.pi]}}
+        self.assertIn('5.00 cm / 1.00° | 5.00 cm / 2.00°', '\n'.join(start_poses([pair], worlds)))
+        self.assertEqual(start_poses([pair], {8: {}}), [])
+
     def test_each_layout_counts_once_when_checking_if_the_advantage_depends_on_one_draw(self):
         def pair(seed, baseline, candidate, **updates):
             def result(n):

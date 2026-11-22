@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 
 import numpy as np
 
+from alternate_start import choose_start
 from fixture import architecture,build, original_dictionary, read, verify_prints
 from geometry import sample
 from scoring import score
@@ -50,6 +51,16 @@ class RandomExamTests(unittest.TestCase):
         for host in ('wall','object'):
             a=self.draw(18,3,stress=host)
             self.assertTrue(all(t['attached_to'].startswith('wall_')==(host=='wall') for t in a[0]['targets']))
+
+    def test_secondary_start_preserves_scene_and_does_not_choose_by_marker_locations(self):
+        scene, tables, _ = self.draw(703)
+        original = scene['robot_spawn'].copy()
+        sampled = choose_start(scene, tables, 391)
+        self.assertEqual(sampled, choose_start(dict(scene, targets=[]), tables, 391))
+        self.assertNotEqual(sampled[0], choose_start(scene, tables, 602)[0])
+        self.assertTrue(.40 <= sampled[1] < .80)
+        self.assertNotEqual(original, sampled[0])
+        self.assertEqual(scene['robot_spawn'], original)
 
     def test_sdf_uses_real_room_and_actual_black_cells(self):
         with TemporaryDirectory() as d:
