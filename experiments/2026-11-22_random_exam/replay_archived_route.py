@@ -15,24 +15,26 @@ from route_repeat import counts,resample
 def analyze(folder):
     read=lambda p:json.loads(p.read_text())
     metrics=read(folder/'metrics.json')
-    aln=read(folder/'audit.json').get('world_from_map_initial_alignment')
-    if aln is None:
-        return dict(name=folder.name,unavailable='No measured world/map alignment')
-    rot=np.asarray(aln['rotation']);shift=np.asarray(aln['translation'])
     heads=np.loadtxt(folder/'headings.csv',delimiter=',',skiprows=1,ndmin=2)
     seq=[(x,np.zeros(len(x),dtype=bool)) for x in resample(heads)]
     geo=counts(seq,85.,[])
+    actual=dict(name=folder.name,recorded_variant=metrics.get('variant'),elapsed_s=metrics['elapsed_sim_s'],
+        registered=metrics.get('registered_s'),actual_geometric_repeat_m=geo['repeated_m'],
+        actual_geometric_longest_m=geo['longest_continuous_repeat_m'])
+    aln=read(folder/'audit.json').get('world_from_map_initial_alignment')
+    if aln is None:return dict(actual,replay_unavailable='No measured world/map alignment')
+    rot=np.asarray(aln['rotation']);shift=np.asarray(aln['translation'])
     oldfile=folder/'native/center_wall.jsonl'
     previous=[json.loads(l) for l in oldfile.read_text().splitlines() if l] if oldfile.exists() else []
-    actual=folder/'native/hybrid_goals.jsonl'
-    dispatch=[json.loads(l) for l in actual.read_text().splitlines() if l] if actual.is_file() else []
+    goals=folder/'native/hybrid_goals.jsonl'
+    dispatch=[json.loads(l) for l in goals.read_text().splitlines() if l] if goals.is_file() else []
     begins=[json.loads(l) for l in (folder/'events.jsonl').read_text().splitlines() if l]
     start=next(e['sim'] for e in begins if e['event']=='start_ack')
     srcs=sorted((folder/'native/policy_decisions').glob('*.npz'))
     s=CenterWall()
     cam=metrics.get('camera',{}).get('camera_info') or {}
     fx=(cam.get('k') or [None])[0];width=cam.get('width',0)
-    if not fx or not width:return dict(name=folder.name,unavailable='No measured live camera calibration')
+    if not fx or not width:return dict(actual,replay_unavailable='No measured live camera calibration')
     s.survey.camera=fx,2*math.atan(width/(2*fx))
     high=-.01
     chosen=[]
@@ -63,9 +65,7 @@ def analyze(folder):
             s.survey.last_progress if np.isfinite(s.survey.last_progress) else None),old=orig.get('reason'),
             actual_goal_xy=before,replay_goal_xy=after,goal_separation_m=math.dist(before,after) if before and after else None))
         high=t
-    return dict(name=folder.name,recorded_variant=metrics.get('variant'),elapsed_s=metrics['elapsed_sim_s'],
-        registered=metrics.get('registered_s'),actual_geometric_repeat_m=geo['repeated_m'],
-        actual_geometric_longest_m=geo['longest_continuous_repeat_m'],scored_snapshots=len(chosen),
+    return dict(actual,scored_snapshots=len(chosen),
         selected_wall=sum(r['requested']=='wall_surface' for r in chosen),selected_escape=sum(r['escape'] for r in chosen),
         actual_previous_reasons=dict(Counter(e.get('reason') for e in previous)),replay=chosen)
 

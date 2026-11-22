@@ -7,9 +7,20 @@ from unittest.mock import patch
 
 from board import detail
 from random_exam import fixture_for, selection
+from run import survey_hint_setting
 
 
 class RandomTeamExamTest(unittest.TestCase):
+    def test_visual_survey_records_default_and_explicit_distant_cue_options(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            self.assertIsNone(survey_hint_setting(root,{}))
+            (root/'visual_survey_manifest.json').write_text('{}')
+            reg=Path(__file__).resolve().parents[2]/'experiments/2026-11-22_random_exam/visual_survey/enrollment.json'
+            expected=str(json.loads(reg.read_text())['board_distant_hints']).lower()
+            self.assertEqual(survey_hint_setting(root,{}),expected)
+            self.assertEqual(survey_hint_setting(root,{'OSP_SURVEY_DISTANT_HINTS':'True'}),'true')
+            with self.assertRaises(ValueError):survey_hint_setting(root,{'OSP_SURVEY_DISTANT_HINTS':'maybe'})
     def test_legacy_seed_fresh_draw_and_public_roster(self):
         legacy=range(112601,112606)
         self.assertEqual(selection(112601,False,None,legacy),(112601,False,3))

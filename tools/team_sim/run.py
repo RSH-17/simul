@@ -15,6 +15,16 @@ from setup import fixtures,home,digest
 HERE=Path(__file__).resolve().parent
 REPO=HERE.parents[1]
 
+def survey_hint_setting(workspace, environment):
+    if not (workspace/'visual_survey_manifest.json').is_file():
+        return None
+    enrollment=REPO/'experiments/2026-11-22_random_exam/visual_survey/enrollment.json'
+    enabled=json.loads(enrollment.read_text())['board_distant_hints']
+    selected=environment.get('OSP_SURVEY_DISTANT_HINTS',str(enabled)).strip().lower()
+    if selected not in ('true','false'):
+        raise ValueError('OSP_SURVEY_DISTANT_HINTS must be true or false for Visual Survey')
+    return selected
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,required=True)
     parser.add_argument('seed',type=int,nargs='?',help='Omit for a fresh random exam. A printed seed reproduces the draw.')
@@ -44,6 +54,8 @@ def main():
     config=dict(workspace=str(ws),module_file=osp_mission.__file__,seed=a.seed,domain=a.domain,camera=[480,480,5],
         duration_sim_s=a.duration,physical_drive=False,fixture_sha256=digest(fixture/'world/osp_studio.sdf'),
         fixture_mode='randomized_exam' if randomized else 'legacy_five',public_marker_count=public_count,furniture=furniture)
+    survey_hints=survey_hint_setting(ws,os.environ)
+    if survey_hints is not None:config['survey_distant_hints']=survey_hints=='true'
     if a.check:
         print(json.dumps(dict(config,check='dependencies, fixture integrity, selected runtime resolved; no nodes started'),indent=2));return
     import psutil
@@ -91,6 +103,7 @@ def main():
             CAMERA_BENCH_WIDTH='480',CAMERA_BENCH_HEIGHT='480',CAMERA_BENCH_FPS='5',
             BENCH_ROOT=str(run),BENCH_RUN=str(run),BENCH_POLICY='mixed',CAMERA_VARIANT='team',CAMERA_PROFILE='balanced',
             ROS_HOME=str(run/'ros_home'),ROS_LOG_DIR=str(run/'ros_logs'),OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1')
+        if survey_hints is not None:env['OSP_SURVEY_DISTANT_HINTS']=survey_hints
         env.update(TEAM_RANDOM_EXAM='1' if randomized else '0',OSP_PUBLIC_MARKER_COUNT=str(public_count),
                    SURVEY_EXPERIMENTS=str(REPO/'experiments'))
         for name in ('FASTRTPS_DEFAULT_PROFILES_FILE','FASTDDS_DEFAULT_PROFILES_FILE','ROS_STATIC_PEERS','ROS_DISCOVERY_SERVER'):env.pop(name,None)

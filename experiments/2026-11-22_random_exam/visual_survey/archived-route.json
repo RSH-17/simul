@@ -651,11 +651,27 @@
     },
     {
       "name": "mixed-track-wevIgT2q",
-      "unavailable": "No measured world/map alignment"
+      "recorded_variant": null,
+      "elapsed_s": 600.0,
+      "registered": {
+        "7": 180.84
+      },
+      "actual_geometric_repeat_m": 0.0,
+      "actual_geometric_longest_m": 0.0,
+      "replay_unavailable": "No measured world/map alignment"
     },
     {
       "name": "wall-cues-track-spjbfI5O",
-      "unavailable": "No measured world/map alignment"
+      "recorded_variant": null,
+      "elapsed_s": 455.49600000000004,
+      "registered": {
+        "103": 183.16,
+        "32": 244.66,
+        "7": 439.66
+      },
+      "actual_geometric_repeat_m": 3.0,
+      "actual_geometric_longest_m": 2.0,
+      "replay_unavailable": "No measured world/map alignment"
     }
   ]
 }
