@@ -43,7 +43,8 @@ class SharedRandomBoardTests(unittest.TestCase):
         text='트랙 정책 <select><option value="pair">Pair</option></select></label> <button type="submit">새 랜덤 트랙 주행</button>'
         result=frontend(text)
         self.assertEqual(frontend(result),result)
-        self.assertLess(result.index('exam-balanced'),result.index('value="pair"'))
+        self.assertLess(result.index('exam-official-balanced'),result.index('value="exam-balanced"'))
+        self.assertLess(result.index('value="exam-balanced"'),result.index('value="pair"'))
         self.assertEqual(set(MODES),set(RUNTIME_MODES))
         for opt,_ in OPTIONS:self.assertEqual(result.count('value="'+opt+'"'),1)
 
@@ -53,15 +54,35 @@ class SharedRandomBoardTests(unittest.TestCase):
             base=Path(tmp);track=base/'track';(track/'.layouts').mkdir(parents=True)
             (track/'.layouts/uFjtqfyJ').symlink_to(Path(os.environ['EXAM_SOURCE']).resolve(),target_is_directory=True)
             first=base/'first';first.mkdir()
-            a=prepare(first,track,2,0,'')
+            a=prepare(first,track,2,0,'','shuffle')
             self.assertEqual(a['marker_count'],5)
             ref=track/'test-track-prior';ref.symlink_to(first/'fixtures/map-2',target_is_directory=True)
             second=base/'second';second.mkdir()
-            b=prepare(second,track,None,0,str(ref))
+            b=prepare(second,track,None,0,str(ref),'shuffle')
             self.assertEqual(b['files'],a['files'])
             self.assertEqual(set(b['files']),set(FILES))
             third=base/'third';third.mkdir()
             with self.assertRaisesRegex(ValueError,'undisclosed-count'):prepare(third,track,None,3,str(ref))
+
+    @unittest.skipUnless(os.environ.get('EXAM_SOURCE'),'requires the original desks and legs')
+    def test_official_default_keeps_furniture_on_new_draw_and_replay(self):
+        with TemporaryDirectory() as tmp:
+            base=Path(tmp)
+            track=base/'track'
+            (track/'.layouts').mkdir(parents=True)
+            anchor=Path(os.environ['EXAM_SOURCE']).resolve()
+            (track/'.layouts/uFjtqfyJ').symlink_to(anchor,target_is_directory=True)
+            first=base/'a';first.mkdir()
+            a=prepare(first,track,9,3,'')
+            fixture=first/'fixtures/map-9'
+            self.assertEqual((a['tables'],a['marker_count']),('fixed',3))
+            self.assertEqual((fixture/FILES[3]).read_bytes(),(anchor/FILES[3]).read_bytes())
+            ref=track/'example-track-fixed';ref.symlink_to(fixture,target_is_directory=True)
+            second=base/'b';second.mkdir()
+            self.assertEqual(prepare(second,track,None,3,str(ref))['files'],a['files'])
+            third=base/'c';third.mkdir()
+            with self.assertRaisesRegex(ValueError,'desk layout mode'):
+                prepare(third,track,None,3,str(ref),'shuffle')
 
     def test_existing_older_record_cannot_be_called_a_new_random_exam(self):
         with TemporaryDirectory() as tmp:

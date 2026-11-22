@@ -1,0 +1,84 @@
+{
+  "state": "registered_before_native_start",
+  "registration_sha256": "a9b2ad43ac67f7ecdfe5b4556dee70aab089e167df77cbf6fbb6405af45cb6df",
+  "protocol_sha256": "197ebe026f4656c58302da6b8958ddab9c13381533baaf100c0e9abb48c2c715",
+  "scope": "fixed original 14 desks and all 56 legs; 3 publicly known, arbitrary IDs, mounts and obstacle draw; 480x480 / 5 fps, 600 seconds",
+  "draws": [
+    {
+      "seed": 2946727794,
+      "objects": 3,
+      "ids": [
+        246,
+        374,
+        876
+      ],
+      "hosts": [
+        "wall_south_recess",
+        "movable_2",
+        "movable_1"
+      ],
+      "tables_fixed": true
+    },
+    {
+      "seed": 1817236217,
+      "objects": 3,
+      "ids": [
+        630,
+        60,
+        798
+      ],
+      "hosts": [
+        "wall_west",
+        "movable_1",
+        "wall_structure_column_se_3"
+      ],
+      "tables_fixed": true
+    },
+    {
+      "seed": 3477870352,
+      "objects": 9,
+      "ids": [
+        115,
+        672,
+        855
+      ],
+      "hosts": [
+        "movable_7",
+        "movable_2",
+        "wall_structure_east_wall_step_3"
+      ],
+      "tables_fixed": true
+    },
+    {
+      "seed": 2293287138,
+      "objects": 8,
+      "ids": [
+        5,
+        69,
+        587
+      ],
+      "hosts": [
+        "movable_8_b",
+        "movable_8_a",
+        "movable_7"
+      ],
+      "tables_fixed": true
+    },
+    {
+      "seed": 4138722517,
+      "objects": 0,
+      "ids": [
+        313,
+        953,
+        222
+      ],
+      "hosts": [
+        "wall_north",
+        "wall_north",
+        "wall_west"
+      ],
+      "tables_fixed": true
+    }
+  ],
+  "canonical_furniture_sha256": "3bfd0874226a744bc9fa2036cb7ea26eeca1e5f11d6eb3f04847f11be05bde2b"
+}

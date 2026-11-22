@@ -1,6 +1,6 @@
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
-공유 보드 상단의 **시험장 · 장애물과 마커 전체 무작위**에서 새 배치를 실행할 수 있습니다. 같은 시험장 안에서 책상과 장애물, 마커와 출발 자세를 새로 뽑습니다. [공유 보드](http://192.168.252.2:8780/) · [정책과 마커 수 선택](docs/team-policy-lab/README.md#공유-시험장에서-새-배치-실행)
+공유 보드 기본값은 **실제 시험 · 책상 고정 · 마커 3개**입니다. 책상 14개와 다리 56개는 원래 자리에 있고, 추가 장애물과 마커의 번호·위치·부착면을 새로 뽑습니다. 로봇은 출발 전에 총 3개라는 사실만 압니다. [공유 보드](http://192.168.252.2:8780/) · [팀 실행 방법](docs/team-policy-lab/README.md#공유-시험장에서-새-배치-실행)
 
 시험장 생성기는 벽 몰딩 뒤에 숨은 마커를 다시 배치합니다. 별도의 무작위 장면 192개에서 575장 모두에 실제 시뮬 도형의 가림을 통과한 관찰 위치가 있었습니다. [배치 검사 결과](experiments/2026-11-22_random_exam/fixture-visibility.json)
 
@@ -8,7 +8,7 @@ R5 비교의 독립 배치 다섯 곳에서 근거리 확인은 Balanced 14/15�
 
 [Balanced · 스친 마커 재관찰](policy_candidates/2026-11-22_v151_balanced_print_relook/README.md) · [책상까지 전부 재배치한 5개 독립 시험](experiments/2026-11-22_random_exam/balanced_print/enrollment.json)
 
-팀 실행기에서 시드를 생략하면 같은 시험장에 책상·장애물·마커를 새로 배치합니다. 출력한 시드로 동일한 장면을 다시 실행할 수 있습니다. [팀 대시보드 실행법](docs/team-policy-lab/README.md)
+팀 실행기에서 시드를 생략하면 고정 책상 시험장의 새로운 배치를 받습니다. 첫 주행이 출력한 시드를 두 번째 정책에 넣으면 같은 마커와 장애물을 재현합니다. [팀 대시보드 실행법](docs/team-policy-lab/README.md)
 
 [최신 원본 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md)를 마쳤습니다. 세 마커 등록은 R32 4/5, balanced·rescue360 각각 3/5였습니다. 등록 후 실제 1.5m 접근까지 포함한 R32 완주는 2회 확인했고, 2회는 종료 순간의 위치 기록이 부족해 판정이 보류됐습니다.
 

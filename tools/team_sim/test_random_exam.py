@@ -13,11 +13,11 @@ class RandomTeamExamTest(unittest.TestCase):
     def test_legacy_seed_fresh_draw_and_public_roster(self):
         legacy=range(112601,112606)
         self.assertEqual(selection(112601,False,None,legacy),(112601,False,3))
-        self.assertEqual(selection(112601,True,None,legacy),(112601,True,0))
+        self.assertEqual(selection(112601,True,None,legacy),(112601,True,3))
         self.assertEqual(selection(0,False,'three',legacy),(0,True,3))
         self.assertEqual(selection(112601,False,'unknown',legacy),(112601,True,0))
         with patch('random_exam.secrets.randbits',return_value=112601):
-            self.assertEqual(selection(None,False,None,legacy),(112601,True,0))
+            self.assertEqual(selection(None,False,None,legacy),(112601,True,3))
         with self.assertRaises(ValueError):
             selection(2**32,False,None,legacy)
 
@@ -28,12 +28,17 @@ class RandomTeamExamTest(unittest.TestCase):
             cache=Path(tmp)
             a=fixture_for(cache,assets,2,0)
             manifest=json.loads((a/'fixture.json').read_text())
-            self.assertEqual((manifest['marker_count'],manifest['tables']),(5,'shuffle'))
+            self.assertEqual((manifest['marker_count'],manifest['tables']),(5,'fixed'))
             self.assertIn('@TEAM_MAP_ROOT@',(a/'world/osp_studio.sdf').read_text())
             self.assertEqual(fixture_for(cache,assets,2,0),a)
             b=fixture_for(cache,assets,2,3)
             self.assertEqual(json.loads((b/'fixture.json').read_text())['marker_count'],3)
             self.assertNotEqual(a,b)
+            tables='run/simulation/demo_layout.json'
+            self.assertEqual((b/tables).read_bytes(),(assets/'maps/map-112601'/tables).read_bytes())
+            shuffled=fixture_for(cache,assets,2,3,'shuffle')
+            self.assertNotEqual((b/tables).read_bytes(),(shuffled/tables).read_bytes())
+            self.assertNotEqual(b,shuffled)
             (a/'scene.json').write_text('{}')
             with self.assertRaises(ValueError):
                 fixture_for(cache,assets,2,0)

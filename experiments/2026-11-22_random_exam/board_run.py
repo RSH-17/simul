@@ -15,9 +15,11 @@ HERE=Path(__file__).resolve().parent
 HOME=Path.home()
 TRACK=HOME/'track-recordings'
 MODES={
-    'exam-balanced':('baseline','Balanced',3,'flow_v151_exposure_sync_r2_ws'),
-    'exam-print':('candidate','Balanced Print',3,'v151_balanced_print_r1_1122_ws'),
-    'exam-print-unknown':('candidate','Balanced Print · 개수 미공개',0,'v151_balanced_print_r1_1122_ws'),
+    'exam-official-balanced':('baseline','Balanced · 실제 시험 조건',3,'fixed','flow_v151_exposure_sync_r2_ws'),
+    'exam-official-print':('candidate','Balanced Print · 실제 시험 조건',3,'fixed','v151_balanced_print_r1_1122_ws'),
+    'exam-balanced':('baseline','Balanced · 책상 재배치',3,'shuffle','flow_v151_exposure_sync_r2_ws'),
+    'exam-print':('candidate','Balanced Print · 책상 재배치',3,'shuffle','v151_balanced_print_r1_1122_ws'),
+    'exam-print-unknown':('candidate','Balanced Print · 책상 재배치·개수 미공개',0,'shuffle','v151_balanced_print_r1_1122_ws'),
 }
 
 
@@ -27,9 +29,10 @@ def reserve(slots, track):
         fcntl.flock(handle,fcntl.LOCK_EX|fcntl.LOCK_NB)
 
 
-def prepare(stage, track, seed, count, reference):
+def prepare(stage, track, seed, count, reference, furniture='fixed'):
     import numpy as np
-    from fixture import FILES, build, digest, read
+    from fixture import FILES, FIXED_TABLE_ROOM, architecture, build, digest, read
+    import xml.etree.ElementTree as ET
     fixtures=stage/'fixtures'
     fixtures.mkdir()
     if reference:
@@ -43,14 +46,21 @@ def prepare(stage, track, seed, count, reference):
         targets=scene['targets']
         if count and len(targets)!=count:
             raise ValueError('Choose the undisclosed-count policy to replay this recording.')
+        if scene['randomization'].get('furniture')!=furniture:
+            raise ValueError('Choose a recording with the same desk layout mode.')
+        if furniture=='fixed':
+            anchor=track/'.layouts/uFjtqfyJ'
+            if (digest(ref/FILES[3])!=digest(anchor/FILES[3]) or
+                architecture(ET.parse(ref/FILES[0]).getroot(),scene,True)!=FIXED_TABLE_ROOM):
+                raise ValueError('The recorded furniture differs from the original exam room.')
         (fixtures/f'map-{seed}').symlink_to(ref.resolve(),target_is_directory=True)
-        return dict(seed=seed,marker_count=len(targets),start=[scene['robot_spawn'][k] for k in ('x','y','yaw')],
+        return dict(seed=seed,tables=furniture,marker_count=len(targets),start=[scene['robot_spawn'][k] for k in ('x','y','yaw')],
                     files={name:digest(ref/name) for name in FILES},replayed_recording=ref.name)
     seed=seed if seed is not None else secrets.randbits(32)
     if not 0<=seed<2**32:
         raise ValueError('Expected an unsigned 32-bit seed.')
     total=count or int(np.random.default_rng([seed,0x544234]).integers(1,6))
-    return build(track/'.layouts/uFjtqfyJ',fixtures/f'map-{seed}',seed,total,'shuffle')
+    return build(track/'.layouts/uFjtqfyJ',fixtures/f'map-{seed}',seed,total,furniture)
 
 
 def finish_card(run, cards, url, score, title, timeout=55):
@@ -83,7 +93,7 @@ def execute(stage, args):
     import paired
     from validate import identity, measure
     import run as runner
-    role,title,count,workspace=MODES[args.mode]
+    role,title,count,furniture,workspace=MODES[args.mode]
     ws=HOME/workspace
     profile=identity(ws)
     approved=read(HERE/'balanced_print/enrollment.json')['policies'][role]
@@ -91,10 +101,10 @@ def execute(stage, args):
         raise ValueError('The installed simulation policy differs from the tested version.')
     if not args.check:runner.guard()
     reference=os.environ.get('TRACK_REPLAY_DIR','')
-    world=prepare(stage,TRACK,args.seed,count,reference)
+    world=prepare(stage,TRACK,args.seed,count,reference,furniture)
     fixture=stage/'fixtures'/f"map-{world['seed']}"
     paired.checked_files(fixture,world)
-    print(json.dumps(dict(policy=title,seed=world['seed'],public_marker_count=count,
+    print(json.dumps(dict(policy=title,seed=world['seed'],public_marker_count=count,furniture=furniture,
                           check_only=args.check,physical_drive=False,
                           source_sha256=approved,world_sha256=world['files']['world/osp_studio.sdf'])),flush=True)
     if args.check:return

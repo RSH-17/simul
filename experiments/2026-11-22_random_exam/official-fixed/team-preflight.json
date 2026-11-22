@@ -1,0 +1,22 @@
+{
+  "seed": 2946727794,
+  "physical_drive": false,
+  "nodes_started": false,
+  "known_marker_count": 3,
+  "furniture": "fixed",
+  "targets": [
+    246,
+    374,
+    876
+  ],
+  "identical_furniture_obstacle_and_print_models": [
+    "demo_furniture",
+    "movable_1",
+    "movable_2",
+    "movable_3",
+    "target_246",
+    "target_374",
+    "target_876"
+  ],
+  "team_tests": 3
+}

@@ -19,18 +19,20 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,required=True)
     parser.add_argument('seed',type=int,nargs='?',help='Omit for a fresh random exam. A printed seed reproduces the draw.')
     parser.add_argument('--random-layout',action='store_true',help='Draw a new layout even for legacy seeds 112601–112605')
-    parser.add_argument('--markers',choices=('unknown','three'),help='Random exams default to an undisclosed count (1–5)')
+    parser.add_argument('--markers',choices=('three','unknown'),help='The exam announces three markers. Unknown count is a separate stress test.')
+    parser.add_argument('--tables',choices=('fixed','shuffle'),help='Keep the original desks and legs in the exam. Shuffle only for a furniture stress test.')
     parser.add_argument('--duration',type=float,default=600.)
     parser.add_argument('--domain',type=int,choices=(173,174,175),default=174);parser.add_argument('--check',action='store_true')
     a=parser.parse_args();ws=a.workspace.resolve()
     if not 0<a.duration<=600:parser.error('Duration must be in (0,600]')
     from random_exam import fixture_for,selection
     legacy=json.loads((HERE/'fixtures.json').read_text())['seeds']
-    a.seed,randomized,public_count=selection(a.seed,a.random_layout,a.markers,legacy)
+    a.seed,randomized,public_count=selection(a.seed,a.random_layout or a.tables is not None,a.markers,legacy)
+    furniture=a.tables or 'fixed'
     if randomized:
-        print(f"Random exam seed {a.seed}, public marker count {public_count or 'undisclosed'}",flush=True)
+        print(f"Random exam seed {a.seed}, desks {furniture}, public marker count {public_count or 'undisclosed'}",flush=True)
     assets=fixtures()
-    fixture=fixture_for(home(),assets,a.seed,public_count) if randomized else assets/'maps'/f'map-{a.seed}'
+    fixture=fixture_for(home(),assets,a.seed,public_count,furniture) if randomized else assets/'maps'/f'map-{a.seed}'
     from ament_index_python.packages import get_package_share_directory
     import osp_mission
     package=Path(get_package_share_directory('osp_mission')).resolve()
@@ -41,7 +43,7 @@ def main():
         get_package_share_directory(package_name)
     config=dict(workspace=str(ws),module_file=osp_mission.__file__,seed=a.seed,domain=a.domain,camera=[480,480,5],
         duration_sim_s=a.duration,physical_drive=False,fixture_sha256=digest(fixture/'world/osp_studio.sdf'),
-        fixture_mode='randomized_exam' if randomized else 'legacy_five',public_marker_count=public_count)
+        fixture_mode='randomized_exam' if randomized else 'legacy_five',public_marker_count=public_count,furniture=furniture)
     if a.check:
         print(json.dumps(dict(config,check='dependencies, fixture integrity, selected runtime resolved; no nodes started'),indent=2));return
     import psutil

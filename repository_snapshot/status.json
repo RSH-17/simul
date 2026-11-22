@@ -2201,14 +2201,33 @@
     "shared_board_controls": {
       "url": "http://192.168.252.2:8780/",
       "modes": {
+        "exam-official-balanced": 3,
+        "exam-official-print": 3,
         "exam-balanced": 3,
         "exam-print": 3,
         "exam-print-unknown": 0
       },
-      "furniture": "shuffle",
+      "furniture": "fixed",
       "legacy_tracks_available": true,
       "busy_http_status": 409,
-      "source": "experiments/2026-11-22_random_exam/board_run.py"
+      "source": "experiments/2026-11-22_random_exam/board_run.py",
+      "default_mode": "exam-official-balanced",
+      "official_public_marker_count": 3,
+      "official_desks": 14,
+      "official_legs": 56,
+      "shuffled_modes": [
+        "exam-balanced",
+        "exam-print",
+        "exam-print-unknown"
+      ]
+    },
+    "official_fixed_exam": {
+      "status": "registered",
+      "registration": "experiments/2026-11-22_random_exam/official-fixed/enrollment.json",
+      "public_marker_count": 3,
+      "original_furniture": true,
+      "independent_layouts": 5,
+      "repeat_pairs": 1
     }
   },
   "mixed_v151_balanced_print_relook": {
@@ -2234,7 +2253,7 @@
     "enrollment": "experiments/2026-11-22_random_exam/balanced_print/enrollment.json",
     "portable_random_exam": {
       "venue": "8780 original SDF shell",
-      "furniture": "shuffle",
+      "furniture": "fixed",
       "marker_count_modes": {
         "unknown": [
           1,
@@ -2246,7 +2265,11 @@
       "native_worlds_reproduced": 2,
       "completed_native_scores_replayed": 4,
       "unknown_count_stress_enrollment": "experiments/2026-11-22_random_exam/balanced_print/undisclosed_enrollment.json",
-      "enrollment_sha256": "0564b657073bf7046765bcec1cb2a60e718b9b57ed21dfc603df06813ce09c3d"
-    }
+      "enrollment_sha256": "0564b657073bf7046765bcec1cb2a60e718b9b57ed21dfc603df06813ce09c3d",
+      "default_public_marker_count": 3,
+      "stress_furniture_option": "--tables shuffle"
+    },
+    "undisclosed_runtime_state": "superseded_before_start",
+    "shuffled_comparison_scope": "stress only; official desks remain fixed"
   }
 }

@@ -18,14 +18,19 @@ def selection(seed, random_layout, markers, legacy):
         raise ValueError('A seed must be a 32-bit unsigned integer')
     randomized = random_layout or seed not in legacy or markers == 'unknown'
     seed = secrets.randbits(32) if seed is None else seed
-    public_count = 0 if markers == 'unknown' or (randomized and markers is None) else 3
+    public_count = 0 if markers == 'unknown' else 3
     return seed, randomized, public_count
 
 
-def fixture_for(cache, assets, seed, public_count):
+def fixture_for(cache, assets, seed, public_count, furniture='fixed'):
+    if furniture not in ('fixed','shuffle') or public_count not in (0,3):
+        raise ValueError('Unknown furniture or marker-count mode')
     inputs = [EXAM/'geometry.py',EXAM/'fixture.py',*VIEW_SOURCES]
     generator = hashlib.sha256(''.join(digest(p) for p in inputs).encode()).hexdigest()[:24]
-    group = cache/'random-exam'/generator/('count-unknown' if public_count==0 else 'count-three')
+    group = cache/'random-exam'/generator
+    if furniture=='fixed':
+        group=group/'fixed-desks'
+    group=group/('count-unknown' if public_count==0 else 'count-three')
     group.mkdir(parents=True,exist_ok=True)
     dest = group/f'map-{seed}'
     with (group/f'{seed}.lock').open('a') as lock:
@@ -36,11 +41,11 @@ def fixture_for(cache, assets, seed, public_count):
             # cannot leave a half-written fixture for another policy to consume.
             with tempfile.TemporaryDirectory(dir=group) as tmp:
                 stage = Path(tmp)/'fixture'
-                metadata = build(assets/'maps/map-112601',stage,seed,number,'shuffle')
+                metadata = build(assets/'maps/map-112601',stage,seed,number,furniture)
                 save(stage/'fixture.json',metadata)
                 stage.rename(dest)
         manifest = read(dest/'fixture.json')
-        if (manifest['seed']!=seed or manifest['tables']!='shuffle' or
+        if (manifest['seed']!=seed or manifest['tables']!=furniture or (public_count and manifest['marker_count']!=public_count) or
                 any(digest(dest/key)!=value for key,value in manifest['files'].items())):
             raise ValueError('The cached randomized fixture changed: '+str(dest))
     return dest
