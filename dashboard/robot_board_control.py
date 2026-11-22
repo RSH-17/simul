@@ -115,6 +115,7 @@ class BoardControl:
 
     def command(self, action):
         workspace = self.workspace
+        share_camera = action == "start-focus"
         forward_045 = action == "start-marker-relook-045"
         recover_stall = action in ("start-stall-recovery", "start-crowded")
         native = action == "start-upstream-r32"
@@ -126,6 +127,8 @@ class BoardControl:
                    "--repo", str(self.repo), "--workspace", str(workspace),
                    "--domain", str(self.domain), "--ntp-server", self.ntp_server,
                    "--duration", str(self.duration)]
+        if share_camera:
+            command.append("--share-camera")
         if forward_045:
             command.append("--forward-045")
         if recover_stall:

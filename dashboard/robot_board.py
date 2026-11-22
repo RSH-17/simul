@@ -96,7 +96,7 @@ def run(args):
     from rclpy.signals import SignalHandlerOptions
     from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, qos_profile_sensor_data
     from rclpy.time import Time
-    from sensor_msgs.msg import Image, LaserScan
+    from sensor_msgs.msg import CompressedImage, Image, LaserScan
     from std_msgs.msg import String
     from tf2_ros import Buffer, TransformListener
     from visualization_msgs.msg import MarkerArray
@@ -145,7 +145,11 @@ def run(args):
             self.create_subscription(LaserScan, topic(base, args.filtered_scan), self.on_filtered, qos_profile_sensor_data)
             self.create_subscription(String, topic(base, 'mission/status'), self.on_status, 10)
             self.create_subscription(CollisionMonitorState, topic(base, 'collision_monitor_state'), self.on_collision, 10)
-            self.create_subscription(Image, topic(base, args.rgb), self.on_camera, qos_profile_sensor_data)
+            if not args.sim and args.enable_control:
+                self.create_subscription(CompressedImage, topic(base, args.rgb + '/compressed'),
+                                         self.on_preview, qos_profile_sensor_data)
+            else:
+                self.create_subscription(Image, topic(base, args.rgb), self.on_camera, qos_profile_sensor_data)
             self.create_subscription(MarkerArray, topic(base, 'targets'), self.on_targets, 10)
             self.create_subscription(NavPath, topic(base, 'plan'), lambda m: self.on_plan(m, 'global'), 10)
             self.create_subscription(NavPath, topic(base, 'local_plan'), lambda m: self.on_plan(m, 'local'), 10)
@@ -244,6 +248,15 @@ def run(args):
                 self.plan_counts[kind] += 1
                 self.plans[kind] = {'sequence': self.plan_counts[kind], 'points': points}
                 self.mark(kind + '_plan')
+
+        def on_preview(self, message):
+            if time.time() - self.timestamps.get('camera', 0) < .25:
+                return
+            jpeg = bytes(message.data)
+            if 'jpeg' in message.format.lower() and jpeg.startswith(b'\xff\xd8'):
+                with self.lock:
+                    self.camera_jpeg = jpeg
+                    self.mark('camera')
 
         def on_camera(self, message):
             if time.time() - self.timestamps.get('camera', 0) < .25:

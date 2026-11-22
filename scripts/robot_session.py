@@ -18,6 +18,9 @@ import subprocess
 import time
 
 
+SESSION_RGB = "/osp_vm/oakd/rgb/session_image"
+
+
 CONFLICTS = {"mission", "aruco_detector", "slam_toolbox", "controller_server",
              "planner_server", "behavior_server", "bt_navigator",
              "collision_monitor", "velocity_smoother", "body_scan_filter"}
@@ -148,7 +151,7 @@ class StartGate:
 
 
 class RobotIO:
-    def __init__(self, domain, runtime="flow"):
+    def __init__(self, domain, runtime="flow", share_camera=False):
         import rclpy
         from action_msgs.srv import CancelGoal
         from geometry_msgs.msg import TwistStamped
@@ -178,9 +181,16 @@ class RobotIO:
         def stamped(name, msg, value=None):
             stamp = msg.header.stamp
             self.sensors.update(name, time.monotonic(), stamp.sec + stamp.nanosec / 1e9, value)
+        rgb_relay = self.node.create_publisher(Image, SESSION_RGB, qos_profile_sensor_data) if share_camera else None
+
+        def camera(msg):
+            stamped("camera", msg)
+            if rgb_relay is not None and rgb_relay.get_subscription_count():
+                rgb_relay.publish(msg)
+
         self.subscriptions = [
             self.node.create_subscription(LaserScan, "/scan", lambda m: stamped("scan", m), qos_profile_sensor_data),
-            self.node.create_subscription(Image, "/oakd/rgb/preview/image_raw", lambda m: stamped("camera", m), qos_profile_sensor_data),
+            self.node.create_subscription(Image, "/oakd/rgb/preview/image_raw", camera, qos_profile_sensor_data),
             self.node.create_subscription(CameraInfo, "/oakd/rgb/preview/camera_info", lambda m: stamped("camera_info", m), qos_profile_sensor_data),
             self.node.create_subscription(Odometry, "/odom", lambda m: stamped("odom", m, (m.twist.twist.linear.x, m.twist.twist.angular.z)), qos_profile_sensor_data),
             self.node.create_subscription(HazardDetectionVector, "/hazard_detection", lambda m: self.sensors.update("hazards", time.monotonic(), value=[v.type for v in m.detections]), qos_profile_sensor_data),
@@ -273,6 +283,8 @@ def launch_command(args, output):
             "nav2_params:=" + str(args.repo / "robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml"),
             "policy_file:=" + str(args.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"),
             "output_dir:=" + str(output)]
+    if getattr(args, "share_camera", False):
+        command.append("rgb_topic:=" + SESSION_RGB)
     if getattr(args, "forward_045", False):
         command.append("forward_045:=true")
     if getattr(args, "recover_stall", False):
@@ -589,6 +601,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("start", "stop", "check", "status", "dry-run"))
     parser.add_argument("--runtime", choices=("flow", "upstream-r32"), default="flow")
+    parser.add_argument("--share-camera", action="store_true", help="Forward the supervisor RGB input unchanged to the Flow detector")
     parser.add_argument("--side-inspection", action="store_true")
     parser.add_argument("--recover-stall", action="store_true", help="Pause and verify a cleared motor stall in the v1.3 runtime")
     parser.add_argument("--forward-045", action="store_true", help="Use the 0.45 m/s Mixed forward profile")
@@ -625,7 +638,7 @@ def main():
     try:
         if args.action == "stop":
             args.runtime = read_state(state_path).get("runtime", "flow")
-        io = RobotIO(args.domain, args.runtime)
+        io = RobotIO(args.domain, args.runtime, share_camera=args.share_camera and args.action == "start")
         if args.action == "start":
             return start(args, io, flag, state_path)
         if args.action == "stop":

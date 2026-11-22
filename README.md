@@ -1,3 +1,5 @@
+실물 OAK-D 480×480·5fps에서 Focus 탐지기가 실제 주행 중 24초 동안 원본 120장을 처리했다. 보드는 JPEG 미리보기를 표시하고 구동 감독 노드는 수신한 원본을 탐지기에 전달한다. 이 구간의 촬영부터 처리 알림까지 지연은 95백분위 211ms였다.
+
 실물 주행은 8767 보드에서 **Mixed v1.5.2.1 · Focus Continuity** 또는 **Mixed v1.5.1-balanced**를 선택한 뒤 구동합니다. [실물 보드](http://192.168.252.2:8767/) · [실물 구동 절차](dashboard/ROBOT_BOARD.md)
 
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)

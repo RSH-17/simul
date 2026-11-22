@@ -67,6 +67,13 @@ class StartSafetyTest(unittest.TestCase):
             self.assertEqual(result['phase'], 'stopped')
             self.assertTrue(result['stationary_verified'])
 
+    def test_shared_camera_only_changes_the_detector_image_input(self):
+        args = SimpleNamespace(workspace=Path('/ws'), repo=Path('/repo'), duration=600., runtime='flow')
+        original = session.launch_command(args, Path('/trial'))
+        args.share_camera = True
+        changed = session.launch_command(args, Path('/trial'))
+        self.assertEqual(changed, original + ['rgb_topic:=' + session.SESSION_RGB])
+
     def test_zero_velocity_wait_returns_after_a_fresh_stable_second(self):
         io = Mock()
         io.cancel_clients = {}
