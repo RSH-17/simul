@@ -15,6 +15,8 @@ from urllib.parse import urlsplit
 
 # The first two actions remain available to existing clients.
 START_WORKSPACES = {
+    "prepare-focus": "v152_focus_continuity_box1122_ws",
+    "prepare-balanced": "flow_v151_exposure_sync_r2_ws",
     "start": None,
     "start-r32": "r32_drive_original18_ws",
     "start-v3-mppi": "face_intent_v3_sweep_ws",
@@ -32,9 +34,11 @@ START_WORKSPACES = {
     "start-crowded": "flow_v3_r32_crowded_ws",
     "start-balanced": "flow_v151_exposure_sync_r2_ws",
     "start-focus": "v152_focus_continuity_box1122_ws",
-    "start-upstream-r32": "r32_upstream_b1ed300_ws",
+    "start-upstream-r32": "r32_upstream_5e95333_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
+          "prepare-focus": "Mixed v1.5.2.1 · Focus Continuity",
+          "prepare-balanced": "Mixed v1.5.1-balanced",
           "start-v3-mppi": "기존 · Flow v3", "start-mixed": "Mixed · 상자 전면 관찰",
           "start-thorough": "Mixed · 꼼꼼 탐색",
           "start-corner": "Mixed · 각진 구조 우선",
@@ -49,7 +53,7 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-crowded": "Mixed · 밀집 장애물 판단 (v1.4 실험 · 0.30 m/s)",
           "start-balanced": "Mixed v1.5.1-balanced",
           "start-focus": "Mixed v1.5.2.1 · Focus Continuity",
-          "start-upstream-r32": "원본 · R32"}
+          "start-upstream-r32": "R32 Resume · 5e95333"}
 
 
 def valid_request(headers, token):
@@ -100,7 +104,7 @@ class BoardControl:
         self.started_at = 0.
         self.selected = None
         # Keep legacy API-only actions out of the operator menu.
-        hidden = {"start", "start-r32", "start-marker-relook-045"}
+        hidden = {"start", "start-r32", "start-marker-relook-045", "prepare-focus", "prepare-balanced"}
         order = ["start-focus", "start-balanced"] + [
             key for key in START_WORKSPACES if key not in hidden | {"start-focus", "start-balanced"}
         ]
@@ -115,14 +119,15 @@ class BoardControl:
 
     def command(self, action):
         workspace = self.workspace
-        share_camera = action == "start-focus"
+        preparing = action.startswith("prepare-")
+        share_camera = action in ("start-focus", "prepare-focus")
         forward_045 = action == "start-marker-relook-045"
         recover_stall = action in ("start-stall-recovery", "start-crowded")
         native = action == "start-upstream-r32"
         side_inspection = action in ("start-side", "start-general")
         if START_WORKSPACES.get(action):
             workspace = self.workspace.parent / START_WORKSPACES[action]
-            action = "start"
+            action = "prepare" if preparing else "start"
         command = [sys.executable, "-u", str(self.repo / "scripts/robot_session.py"), action,
                    "--repo", str(self.repo), "--workspace", str(workspace),
                    "--domain", str(self.domain), "--ntp-server", self.ntp_server,
@@ -138,7 +143,7 @@ class BoardControl:
         if native:
             return ["bash", "-c", 'source /opt/ros/jazzy/setup.bash && source "$1/install/setup.bash" && shift && exec "$@"',
                     "r32-board", str(workspace), *command, "--runtime", "upstream-r32"]
-        if action == "start":
+        if action in ("start", "prepare"):
             command = ["bash", str(self.repo / "run_policy.sh"), "--mode", "robot",
                        "--workspace", str(workspace), "--policy",
                        str(self.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"),
@@ -152,8 +157,10 @@ class BoardControl:
                    RMW_IMPLEMENTATION="rmw_fastrtps_cpp",
                    FASTRTPS_DEFAULT_PROFILES_FILE=str(profile),
                    OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1")
-        if action == "start-focus":
+        if action in ("start-focus", "prepare-focus"):
             env.update(OSP_PUBLIC_MARKER_COUNT="3", OSP_SURVEY_DISTANT_HINTS="false")
+        if action in ("start-focus", "start-balanced", "prepare-focus", "prepare-balanced"):
+            env["OSP_SHARE_CAMERA"] = "1"
         with path.open("wb") as output:
             process = subprocess.Popen(self.command(action), cwd=self.repo, env=env,
                                        stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
@@ -172,6 +179,7 @@ class BoardControl:
             elif alive:
                 phase = state.get("phase", "starting")
                 detail = {"preflight": "시간·센서 상태 확인 중", "starting": "지도·카메라·주행 준비 중",
+                          "prepared": "준비 완료 · 출발 버튼을 기다리는 중",
                           "running": "주행 중", "stopping": "주행 종료 중"}.get(phase, phase)
             elif self.stop_process is not None and self.stop_process.poll() is not None:
                 if self.stop_process.returncode == 0:
@@ -199,7 +207,7 @@ class BoardControl:
                                 "active_hazard_types": "범퍼·낭떠러지·바퀴 상태를 확인하세요.",
                                 "clock": "시간 동기화를 확인하지 못해 출발하지 않았습니다."}
                 detail = next((text for key, text in translations.items() if key in error), error)
-            busy = phase in ("queued", "preflight", "starting", "running", "stopping")
+            busy = phase in ("queued", "preflight", "starting", "prepared", "running", "stopping")
             events = []
             if state.get("output") and (alive or belongs):
                 for line in tail(Path(state["output"]) / "startup.jsonl").splitlines():
@@ -214,10 +222,17 @@ class BoardControl:
                 if selected == "start-marker-relook" and state.get("forward_045"):
                     selected = "start-marker-relook-045"
             return dict(policy=LABELS.get(selected), enabled=True, token=self.token, phase=phase, detail=detail,
-                        can_start=not busy, can_stop=True, policies=self.policies, events=events[-8:])
+                        can_start=not busy, can_go=phase == "prepared" and alive,
+                        can_stop=True, policies=self.policies, events=events[-8:])
 
     def request(self, action):
         with self.lock:
+            if action == "go":
+                state = self.read_state()
+                if self.snapshot()["phase"] != "prepared" or not state.get("output"):
+                    raise RuntimeError("준비가 완료된 실물 세션이 없습니다.")
+                (Path(state["output"]) / "go.request").touch(exist_ok=False)
+                return self.snapshot()
             if action in START_WORKSPACES:
                 if not self.snapshot()["can_start"]:
                     raise RuntimeError("이미 구동 준비 또는 주행 중입니다.")

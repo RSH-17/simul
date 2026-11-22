@@ -157,7 +157,7 @@ def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(
     assert cmd[cmd.index('--workspace')+1] == str(tmp_path/workspace)
     assert cmd[cmd.index('--')+1:].count('start') == 1
     assert '2026-11-13_face_intent_v2/policy.json' in cmd[cmd.index('--policy')+1]
-    assert ('--share-camera' in cmd) == (action == 'start-focus')
+    assert ('--share-camera' in cmd) == (action in ('start-focus', 'start-balanced'))
     assert ('--forward-045' in cmd) == (action == 'start-marker-relook-045')
     assert ('--recover-stall' in cmd) == (action in ('start-stall-recovery','start-crowded'))
     if action in ('start-side', 'start-general'):

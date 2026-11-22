@@ -65,7 +65,9 @@ def bag_command(directory,mode,namespace=''):
         prefix='/'+re.escape(namespace.strip('/'))
         args+=['--regex','^('+prefix+'(/|$)|/(tf|tf_static|clock|rosout|parameter_events)$)']
     else:args+=['--all']
-    if mode=='robot':args+=['--exclude-regex',r'^(/[^/]+)*/oakd/(?!rgb/preview/(image_raw|camera_info)$).*']
+    if mode=='robot':
+        camera_topics = 'rgb/preview/(image_raw/compressed|camera_info)' if os.environ.get('OSP_SHARE_CAMERA') == '1' else 'rgb/preview/(image_raw|camera_info)'
+        args+=['--exclude-regex',r'^(/[^/]+)*/oakd/(?!'+camera_topics+r'$).*']
     if mode=='simulation':args+=['--use-sim-time']
     return args
 

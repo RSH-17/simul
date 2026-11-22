@@ -21,7 +21,7 @@ def topic(namespace, name):
 
 def make_handler(monitor, control=None):
     from robot_board_control import START_WORKSPACES, valid_request
-    routes = {"/api/control/" + action for action in (*START_WORKSPACES, "stop")}
+    routes = {"/api/control/" + action for action in (*START_WORKSPACES, "go", "stop")}
     class Handler(BaseHTTPRequestHandler):
         def send_json(self, status, value):
             content = json.dumps(value).encode()

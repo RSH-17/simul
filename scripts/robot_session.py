@@ -189,6 +189,7 @@ class RobotIO:
                 rgb_relay.publish(msg)
 
         self.subscriptions = [
+            self.node.create_subscription(CameraInfo, "/mission/processed_camera", lambda m: stamped("processed_camera", m), qos_profile_sensor_data),
             self.node.create_subscription(LaserScan, "/scan", lambda m: stamped("scan", m), qos_profile_sensor_data),
             self.node.create_subscription(Image, "/oakd/rgb/preview/image_raw", camera, qos_profile_sensor_data),
             self.node.create_subscription(CameraInfo, "/oakd/rgb/preview/camera_info", lambda m: stamped("camera_info", m), qos_profile_sensor_data),
@@ -488,6 +489,42 @@ def start(args, io, flag, state_path):
         state.update(phase="starting", launch_pid=process.pid, launch_start=identity(process.pid))
         save(state_path, state)
         report("launch_started")
+        if args.action == "prepare":
+            deadline = time.monotonic() + args.timeout
+            stable_since = None
+            while not flag.stopped and time.monotonic() < deadline:
+                if process.poll() is not None:
+                    raise RuntimeError("ROS launch exited during preparation")
+                io.spin()
+                processed = io.sensors.samples.get("processed_camera")
+                processed_fresh = bool(processed and time.monotonic() - processed[0] <= .65
+                                       and abs(time.time() - processed[1]) <= .65)
+                ready = (not io.safety_reason() and processed_fresh and io.status.get("state") == "idle"
+                         and not io.status.get("readiness_reason")
+                         and time.monotonic() - io.status_at < 2)
+                stable_since = stable_since or time.monotonic() if ready else None
+                if stable_since and time.monotonic() - stable_since >= 2:
+                    break
+            if not stable_since or flag.stopped:
+                raise RuntimeError("Preparation did not reach stable mission readiness")
+            state["phase"] = "prepared"
+            save(state_path, state)
+            report("prepared")
+            go = output / "go.request"
+            while not flag.stopped:
+                io.spin()
+                if process.poll() is not None:
+                    raise RuntimeError("Prepared ROS launch exited")
+                if io.safety_reason() or time.monotonic() - io.status_at >= 2:
+                    raise RuntimeError("Prepared sensor readiness lost")
+                if go.exists():
+                    go.unlink()
+                    state["phase"] = "starting"
+                    save(state_path, state)
+                    report("go_requested")
+                    break
+            if flag.stopped:
+                raise InterruptedError("operator_stop")
         wait_for_start(io, flag, process, args.timeout, report)
         state["phase"] = "running"
         save(state_path, state)
@@ -599,7 +636,7 @@ def stop(args, io, state_path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("start", "stop", "check", "status", "dry-run"))
+    parser.add_argument("action", choices=("start", "prepare", "stop", "check", "status", "dry-run"))
     parser.add_argument("--runtime", choices=("flow", "upstream-r32"), default="flow")
     parser.add_argument("--share-camera", action="store_true", help="Forward the supervisor RGB input unchanged to the Flow detector")
     parser.add_argument("--side-inspection", action="store_true")
@@ -624,7 +661,7 @@ def main():
     state_path = state_dir / "session.json"
     flag = StopFlag()
     lock = None
-    if args.action == "start":
+    if args.action in ("start", "prepare"):
         lock = (state_dir / "session.lock").open("w")
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -639,7 +676,7 @@ def main():
         if args.action == "stop":
             args.runtime = read_state(state_path).get("runtime", "flow")
         io = RobotIO(args.domain, args.runtime, share_camera=args.share_camera and args.action == "start")
-        if args.action == "start":
+        if args.action in ("start", "prepare"):
             return start(args, io, flag, state_path)
         if args.action == "stop":
             return stop(args, io, state_path)
