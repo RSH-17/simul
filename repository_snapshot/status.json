@@ -2228,6 +2228,15 @@
       "original_furniture": true,
       "independent_layouts": 5,
       "repeat_pairs": 1
+    },
+    "distant_hint_screen": {
+      "state": "heldout_replay",
+      "development_marker": 798,
+      "development_real_registration_s": 598.296,
+      "first_offline_hint_s": 40.324,
+      "first_hint_error_m": 0.029466034493241765,
+      "independent_layouts_planned": 3,
+      "validated_closed_loop": false
     }
   },
   "mixed_v151_balanced_print_relook": {

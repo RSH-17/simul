@@ -1,0 +1,89 @@
+{
+  "run": "v151-survey-candidate-track-m1817236217-363576232554625330",
+  "id": 798,
+  "pixel_gate": {
+    "10.0": [
+      {
+        "first_s": 21.723999999999997,
+        "last_s": 65.724,
+        "counts": {
+          "decoded": 137,
+          "three_recent": 113,
+          "another_position": 102,
+          "parallax": 102,
+          "within_sensor_depth": 0
+        },
+        "gazebo_camera_distance_m": [
+          4.019564607876187,
+          7.380980805134122
+        ]
+      },
+      {
+        "first_s": 136.324,
+        "last_s": 143.324,
+        "counts": {
+          "decoded": 34,
+          "three_recent": 28,
+          "another_position": 0,
+          "parallax": 0,
+          "within_sensor_depth": 0
+        },
+        "gazebo_camera_distance_m": [
+          5.482034354433883,
+          5.5358947504230605
+        ]
+      },
+      {
+        "first_s": 574.524,
+        "last_s": 599.924,
+        "counts": {
+          "decoded": 57,
+          "three_recent": 37,
+          "another_position": 36,
+          "parallax": 10,
+          "within_sensor_depth": 10,
+          "valid_intersection": 10
+        },
+        "first_valid_s": 598.1239999999999,
+        "gazebo_camera_distance_m": [
+          2.9043708052743287,
+          6.724607735180761
+        ]
+      }
+    ],
+    "18.0": [
+      {
+        "first_s": 39.524,
+        "last_s": 65.724,
+        "counts": {
+          "decoded": 14,
+          "three_recent": 6,
+          "another_position": 4,
+          "parallax": 0,
+          "within_sensor_depth": 0
+        },
+        "gazebo_camera_distance_m": [
+          4.019564607876187,
+          4.938431941411448
+        ]
+      },
+      {
+        "first_s": 584.924,
+        "last_s": 599.924,
+        "counts": {
+          "decoded": 24,
+          "three_recent": 16,
+          "another_position": 10,
+          "parallax": 10,
+          "within_sensor_depth": 10,
+          "valid_intersection": 10
+        },
+        "first_valid_s": 598.1239999999999,
+        "gazebo_camera_distance_m": [
+          2.9043708052743287,
+          4.088858634634949
+        ]
+      }
+    ]
+  }
+}
