@@ -18,7 +18,8 @@ def marker_ids(row):
 def candidate_name(root):
     source = root/'registration.json'
     label = read(source)['candidate_label'] if source.is_file() else 'surface-followthrough-r5'
-    return {'surface-followthrough-r5': 'R5', 'balanced-print-relook': 'Balanced Print'}.get(label, label)
+    return {'surface-followthrough-r5': 'R5', 'balanced-print-relook': 'Balanced Print',
+            'visual-survey-boxes': 'Mixed v1.5.2 Visual Survey · 상자 5개'}.get(label, label)
 
 
 def layout_results(pairs, worlds, candidate='R5'):

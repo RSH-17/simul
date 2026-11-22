@@ -45,7 +45,8 @@ def configure(root,candidate,label,known_count,tables):
     if subject['source_manifest_sha256']==base['source_manifest_sha256']:raise ValueError('Policies are identical')
     common=dict(baseline=base,candidate=subject,candidate_label=label,known_marker_count=known_count,
                 furniture=tables,checksums=file_identity(),camera=[480,480,5],duration_s=600,
-                limits=dict(obstacles=[0,9],unknown_marker_count=[1,5],print_sizes_m=[.2,.25,.3]),
+                limits=dict(obstacles=[5,5],obstacle_geometry='original_exam_boxes',unknown_marker_count=[1,5],print_sizes_m=[.2,.25,.3]),
+                survey_distant_hints=False,
                 fixed_room='uFjtqfyJ',physical_drive=False,domain=174)
     enr=root/'registration.json'
     if enr.exists():
@@ -83,7 +84,7 @@ def configure(root,candidate,label,known_count,tables):
         worlds.append(w)
     indices=[0,1,2,3,4,0]
     tasks=[dict(pair=i+1,world=index,repeat=int(i==5),
-                order=['baseline','candidate'] if i%2==0 else ['candidate','baseline'])
+                order=['candidate','baseline'] if i%2==0 else ['baseline','candidate'])
            for i,index in enumerate(indices)]
     result=dict(registration_sha256=digest(enr),worlds=worlds,plan=tasks)
     save(proto_file,result)
@@ -130,6 +131,7 @@ def summary(root):
 def run_all(root):
     reg=read(root/'registration.json');proto=read(root/'protocol.json')
     os.environ['OSP_PUBLIC_MARKER_COUNT']=str(reg['known_marker_count'])
+    os.environ['OSP_SURVEY_DISTANT_HINTS']='true' if reg.get('survey_distant_hints') else 'false'
     ledger=root/'episodes.json'; status=root/'status.json'
     episodes=read(ledger) if ledger.exists() else []
     native=runner.HOME/'corridor-board-73bbb05/recordings'

@@ -1,6 +1,14 @@
 # 8780 시험장 무작위 주행 비교
 
-벽과 장애물 군집을 함께 다루는 후보로 Mixed v1.5.2 Visual Survey를 등록했다. 독립 다섯 배치와 같은 맵의 대체 출발 자세를 기준판 및 Balanced Print와 비교한다. 별도 진단에서는 실제 간격 34.5cm인 두 물체가 겹쳐 보이는 출발 자세를 고정하고, 최근 20초간 새 표면 노출이나 새 ID가 없었던 반복 주행거리를 센다. [정책 등록](visual_survey/enrollment.json) · [겹침 조건](visual_survey/cluster-start.json) · [기록 지도에서 두 정책의 41회 결정](visual_survey/snapshot-replay.json)
+## 사각 상자 5개를 둔 시험
+
+추가 장애물은 원래 트랙에서 쓰던 파란 상자로 통일했다. 바닥 크기는 60×65cm이며 높이는 55cm 또는 60cm다. 새 배치마다 상자 다섯 개를 독립된 충돌·시각 모델로 만들고 원본 치수와 대조한다. 책상 14개와 다리 56개는 고정한다.
+
+같은 다섯 맵과 같은 출발 자세로 Mixed v1.5.1-balanced와 Mixed v1.5.2 Visual Survey를 비교한다. 첫 맵 반복은 따로 집계한다. 다섯째 맵에서 43.0cm 떨어진 두 상자는 별도의 진단 출발 자세에서 카메라 중앙 행 39픽셀이 겹치며 양쪽 모두 일부가 보인다. 이 조건은 주행 전 실제 Gazebo 도형과 카메라 보정값으로 정했다. [다섯 배치 그림](box-only/five-box-worlds.png) · [시드·출발 자세·겹침 측정](box-only/enrollment.json) · [추가 48개 배치의 생성 검사](box-only/fixture-checks.json)
+
+## 이전 혼합 장애물 실험 기록
+
+벽과 장애물 군집을 함께 다루는 후보로 Mixed v1.5.2 Visual Survey를 등록했다. 독립 다섯 배치와 같은 맵의 대체 출발 자세를 기준판 및 Balanced Print와 비교하도록 등록했으며, 상자 조건으로 바꾸기 전 일곱 회차를 기록했다. 별도 진단에서는 실제 간격 34.5cm인 두 물체가 겹쳐 보이는 출발 자세를 고정하고, 최근 20초간 새 표면 노출이나 새 ID가 없었던 반복 주행거리를 센다. [정책 등록](visual_survey/enrollment.json) · [겹침 조건](visual_survey/cluster-start.json) · [기록 지도에서 두 정책의 41회 결정](visual_survey/snapshot-replay.json)
 
 책상 재배치 참고 실험은 네 배치, 여덟 주행을 저장했다. 공식 시험과 분리해 집계했다. [참고 실험의 결과와 영상](results/shuffled-prefix/RESULTS.md)
 

@@ -7,8 +7,8 @@ import xml.etree.ElementTree as ET
 import numpy as np
 
 from alternate_start import choose_start
-from fixture import architecture,build, original_dictionary, read, verify_prints
-from geometry import sample
+from fixture import architecture,build, original_dictionary, read, verify_boxes, verify_prints
+from geometry import intersects, polygon, sample
 from scoring import score
 from witness_audit import inspect
 
@@ -23,8 +23,8 @@ class RandomExamTests(unittest.TestCase):
         cls.tables=read(cls.anchor/'run/simulation/demo_layout.json')['tables']
         cls.dictionary=original_dictionary()
 
-    def draw(self,seed,markers=3,furniture='fixed',stress=None):
-        return sample(self.original,self.tables,seed,len(self.dictionary.bytesList),markers,furniture,stress)
+    def draw(self,seed,markers=3,furniture='fixed',stress=None,obstacle_set='boxes'):
+        return sample(self.original,self.tables,seed,len(self.dictionary.bytesList),markers,furniture,stress,obstacle_set=obstacle_set)
 
     def test_independent_ids_counts_host_mix_and_same_host(self):
         counts=set();mix=set();shared=False;ids=set();yaws=set();shapes=set()
@@ -35,14 +35,20 @@ class RandomExamTests(unittest.TestCase):
             self.assertEqual(len(ts),len(set(t['id'] for t in ts)))
             self.assertEqual(len(w),len(ts))
             n=len({b['object_id'] for b in scene['obstacles']})
-            self.assertLessEqual(n,9);counts.add(n)
+            counts.add(n)
+            dimensions={(b['sx'],b['sy'],b['height']) for b in self.original['obstacles']}
+            occupied=[polygon(b) for b in [*tables,*scene['partitions']]]
+            for b in scene['obstacles']:
+                self.assertIn((b['sx'],b['sy'],b['height']),dimensions)
+                self.assertFalse(any(intersects(polygon(b),q) for q in occupied))
+                occupied.append(polygon(b))
             shapes.update(b['shape'] for b in scene['obstacles'])
             mix.add(sum(t['attached_to'].startswith('wall_') for t in ts))
             ids.update(t['id'] for t in ts);shared|=len(set(t['attached_to'] for t in ts))<len(ts)
             yaws.update(round(b['yaw'],2) for b in scene['obstacles'])
-        self.assertGreater(len(counts),5);self.assertEqual(mix,{0,1,2,3})
+        self.assertEqual(counts,{5});self.assertEqual(mix,{0,1,2,3})
         self.assertTrue(shared);self.assertGreater(len(ids),75);self.assertGreater(len(yaws),50)
-        self.assertEqual(shapes,{'box','screen','elbow'})
+        self.assertEqual(shapes,{'box'})
 
     def test_repeatable_and_variable_roster(self):
         for n in (1,3,5):
@@ -72,6 +78,11 @@ class RandomExamTests(unittest.TestCase):
                 self.assertEqual(meta['fixed_shell_sha256'],architecture(base,self.original,False))
                 self.assertEqual(architecture(actual,scene,False),architecture(base,self.original,False))
                 self.assertEqual(architecture(actual,scene,True)==architecture(base,self.original,True),mode=='fixed')
+                verify_boxes(scene,actual,self.original)
+                box=actual.find("world/model[@name='movable_1']/link/collision/geometry/box/size")
+                box.text='0.12 1.9 0.6'
+                with self.assertRaisesRegex(ValueError,'collision geometry'):
+                    verify_boxes(scene,actual,self.original)
                 base_fac=base.find("world/model[@name='demo_furniture']/link")
                 actual_fac=actual.find("world/model[@name='demo_furniture']/link")
                 self.assertEqual(len(base_fac.findall('collision')),len(actual_fac.findall('collision')))
@@ -96,12 +107,12 @@ class RandomExamTests(unittest.TestCase):
         calibration=read(Path(__file__).resolve().parents[1]/'2026-11-21_v151_track5_boxes5/camera_geometry.json')
         seed=1582237335
         count=int(np.random.default_rng([seed,0x544234]).integers(1,6))
-        raw,_,_=self.draw(seed,count,'shuffle')
+        raw,_,_=self.draw(seed,count,'shuffle',obstacle_set='legacy_mixed')
         occluded=next(t for t in raw['targets'] if t['id']==449)
         self.assertEqual(occluded['attached_to'],'wall_structure_column_sc_0')
         with TemporaryDirectory() as temp:
             world=Path(temp)/'fixture'
-            manifest=build(self.anchor,world,seed,count,'shuffle')
+            manifest=build(self.anchor,world,seed,count,'shuffle',obstacle_set='legacy_mixed')
             self.assertEqual(manifest['ids'],[t['id'] for t in raw['targets']])
             rows=inspect(world,manifest,calibration)['targets']
             self.assertTrue(all(r['same_connected_grid_region'] and r['optical_witness_18px'] for r in rows))

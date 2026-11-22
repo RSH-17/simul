@@ -19,4 +19,4 @@
 OSP_SURVEY_DISTANT_HINTS=false ./team-sim.sh run ~/mixed_visual_survey_ws --random-layout --tables fixed --markers three
 ```
 
-멀리서 번호가 일치한 단서를 이용해 이동하는 기능은 별도 실험이다. 서로 다른 두 카메라 위치에서 같은 Original 무늬가 반복 판독되고, 각도와 투영 오차 및 세 번의 위치 일치 검사를 통과해야 한다. 단서만으로 마커 등록이나 접근 점수를 주지 않는다. 정식 비교에서는 사전 등록한 세 미사용 맵의 카메라 재생 성적에 따라 켤지 정한다. [주행 배치와 평가 기준](../../experiments/2026-11-22_random_exam/visual_survey/enrollment.json) · [원거리 단서의 검증 기준](../../experiments/2026-11-22_random_exam/balanced_print/distant_hint_screen.json)
+멀리서 번호가 일치한 단서를 이용해 이동하는 기능은 별도 실험이다. 서로 다른 두 카메라 위치에서 같은 Original 무늬가 반복 판독되고, 각도와 투영 오차 및 세 번의 위치 일치 검사를 통과해야 한다. 단서만으로 마커 등록이나 접근 점수를 주지 않는다. 사각 상자 다섯 개를 둔 정식 비교와 8780 보드에서는 이 기능을 끈다. 별도 재생 실험에만 적용할 수 있다. [주행 배치와 평가 기준](../../experiments/2026-11-22_random_exam/visual_survey/enrollment.json) · [원거리 단서의 검증 기준](../../experiments/2026-11-22_random_exam/balanced_print/distant_hint_screen.json)

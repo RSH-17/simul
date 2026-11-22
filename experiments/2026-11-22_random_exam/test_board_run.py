@@ -55,9 +55,12 @@ class SharedRandomBoardTests(unittest.TestCase):
         self.assertEqual(frontend(current.replace(option,'')),current)
         previous=tuple(k for k in MODES if k!='exam-official-survey')
         server=f"# board_run.sh\nif policy not in ('pair',) + {previous!r}:\n    subprocess.Popen(command, env={{}})\n"
+        server+="if replay:\n                        compatible = compatible and layout['randomization'].get('furniture') == ('fixed' if policy.startswith('exam-official-') else 'shuffle')\n"
         patched=backend(server)
         self.assertEqual(backend(patched),patched)
         self.assertIn(repr(MODES),patched)
+        self.assertIn("'exam_boxes'",patched)
+        self.assertEqual(frontend(current.replace('고정 책상 · 상자 5개','책상 고정')),current)
 
     @unittest.skipUnless(os.environ.get('EXAM_SOURCE'),'requires the actual exam room')
     def test_existing_random_run_replays_the_same_files_and_public_count(self):
@@ -94,6 +97,12 @@ class SharedRandomBoardTests(unittest.TestCase):
             third=base/'c';third.mkdir()
             with self.assertRaisesRegex(ValueError,'desk layout mode'):
                 prepare(third,track,None,3,str(ref),'shuffle')
+            d=base/'d';d.mkdir()
+            scene=json.loads((fixture/'scene.json').read_text())
+            scene['obstacles'][0]['shape']='screen'
+            (fixture/'scene.json').write_text(json.dumps(scene))
+            with self.assertRaisesRegex(ValueError,'original exam boxes'):
+                prepare(d,track,None,3,str(ref))
 
     def test_existing_older_record_cannot_be_called_a_new_random_exam(self):
         with TemporaryDirectory() as tmp:

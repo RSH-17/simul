@@ -4,7 +4,8 @@ from pathlib import Path
 import tempfile
 
 PREVIOUS_MODES=('exam-balanced','exam-print','exam-print-unknown')
-NEW_GROUP='<optgroup label="실제 시험 · 책상 고정 · 마커 3개">'
+FIXED_DESK_GROUP='<optgroup label="실제 시험 · 책상 고정 · 마커 3개">'
+NEW_GROUP='<optgroup label="실제 시험 · 고정 책상 · 상자 5개 · 마커 3개">'
 STRESS_GROUP='<optgroup label="참고 실험 · 책상 재배치">'
 LEGACY_GROUP='<optgroup label="기존 트랙 · 번호 7, 32, 103">'
 OLD_GROUP='<optgroup label="시험장 · 장애물과 마커 전체 무작위">'
@@ -27,6 +28,8 @@ def once(source, old, new):
 def frontend(source):
     def options(items):
         return ''.join(f'<option value="{mode}">{label}</option>' for mode,label in items)
+    if FIXED_DESK_GROUP in source:
+        source=once(source,FIXED_DESK_GROUP,NEW_GROUP)
     if NEW_GROUP in source:
         if 'value="exam-official-survey"' not in source:
             old=NEW_GROUP+options(OFFICIAL[:-1])+'</optgroup>'
@@ -43,6 +46,11 @@ def frontend(source):
 
 
 def backend(source):
+    anchor_furniture="                        compatible = compatible and layout['randomization'].get('furniture') == ('fixed' if policy.startswith('exam-official-') else 'shuffle')"
+    box_filter="""                        bodies = layout.get('obstacles', [])
+                        compatible = compatible and layout['randomization'].get('obstacles') == 'exam_boxes'
+                        compatible = compatible and len(bodies) == len({b['object_id'] for b in bodies}) == 5
+                        compatible = compatible and all(b['name'] == b['object_id'] and b['shape'] == 'box' for b in bodies)"""
     if 'board_run.sh' in source:
         if 'exam-print-unknown' not in source or 'subprocess.Popen(command,' not in source:
             raise ValueError('Incomplete shared board integration')
@@ -53,6 +61,8 @@ def backend(source):
         elif 'exam-official-survey' not in source:
             previous=tuple(mode for mode in MODES if mode!='exam-official-survey')
             source=once(source,' + '+repr(previous)+':',' + '+repr(MODES)+':')
+        if "'exam_boxes'" not in source:
+            source=once(source,anchor_furniture,anchor_furniture+'\n'+box_filter)
         compile(source,'compare_board.py','exec')
         return source
     legacy="('flow','mixed','center','adaptive','shared','r32','pair')"
@@ -84,6 +94,7 @@ def backend(source):
                     return self.send(409, {'error': '시뮬레이터에서 다른 주행을 진행 중입니다.'})
                 command = ['bash', str(entry), policy]
 """
+    dispatch=once(dispatch,anchor_furniture,anchor_furniture+'\n'+box_filter)
     source=once(source,anchor,dispatch+anchor)
     source=once(source,'subprocess.Popen([str(args.track_runner),policy],','subprocess.Popen(command,')
     compile(source,'compare_board.py','exec')

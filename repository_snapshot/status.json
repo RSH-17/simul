@@ -1,15 +1,18 @@
 {
   "mixed_v152_visual_survey": {
-    "phase": "enrolled_native_validation",
+    "phase": "native_five_original_boxes_under_comparison",
     "production_promoted": false,
     "camera": [
       "480x480",
       5
     ],
     "independent_worlds": 5,
-    "additional_poses": 2,
+    "additional_poses": 1,
     "policy": "policy_candidates/2026-11-22_v151_visual_survey/README.md",
-    "registration": "experiments/2026-11-22_random_exam/visual_survey/enrollment.json"
+    "registration": "experiments/2026-11-22_random_exam/box-only/enrollment.json",
+    "obstacles_per_world": 5,
+    "obstacle_geometry": "original exam rectangular boxes",
+    "prior_mixed_geometry": "archived separately after seven recorded episodes"
   },
   "mixed_v151_rescue360": {
     "version": "1.5.1-rescue360",

@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 import cv2
 import numpy as np
 
-from geometry import sample
+from geometry import EXAM_BOX_COUNT, sample
 from surface_audit import aim_at, blockers, readable_indices
 
 
@@ -37,6 +37,30 @@ def save(path, value):
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify_boxes(scene, world, template):
+    bodies=scene['obstacles']
+    dimensions={(b['sx'],b['sy'],b['height']) for b in template['obstacles']}
+    if (scene.get('randomization',{}).get('obstacles')!='exam_boxes' or len(bodies)!=EXAM_BOX_COUNT or
+            len({b['object_id'] for b in bodies})!=EXAM_BOX_COUNT):
+        raise ValueError('Expected five independent exam boxes')
+    models={m.get('name'):m for m in world.findall('world/model') if m.get('name','').startswith('movable_')}
+    if set(models)!={b['name'] for b in bodies}:
+        raise ValueError('Missing or additional movable Gazebo models')
+    for b in bodies:
+        expected=(b['sx'],b['sy'],b['height'])
+        if b['shape']!='box' or b['name']!=b['object_id'] or expected not in dimensions:
+            raise ValueError('The movable obstacle differs from the original exam boxes')
+        model=models[b['name']]
+        pose=[float(x) for x in model.findtext('pose').split()]
+        if not np.allclose(pose,[b['x'],b['y'],b['height']/2,0,0,b['yaw']],rtol=0,atol=1e-8):
+            raise ValueError('Gazebo box pose differs from the recorded scene')
+        for tag in ('collision','visual'):
+            pieces=model.findall('.//'+tag)
+            size=pieces[0].findtext('geometry/box/size','') if len(pieces)==1 else ''
+            if not size or tuple(map(float,size.split()))!=expected:
+                raise ValueError('Gazebo box '+tag+' geometry differs from the original dimensions')
 
 
 def architecture(world, scene, include_tables):
@@ -141,7 +165,7 @@ def rendered_view_check(world):
     return visible
 
 
-def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=None):
+def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=None, obstacle_set='boxes'):
     original=original.resolve();out=out.resolve()
     source_sdf=original/FILES[0]
     source_digest=digest(source_sdf)
@@ -172,7 +196,7 @@ def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=No
         return rendered_view_check(w)
 
     scene,tables,witnesses=sample(raw,layout['tables'],seed,len(dictionary.bytesList),marker_count,
-                                  furniture,host_stress,prepare_room)
+                                  furniture,host_stress,prepare_room,obstacle_set)
     for t in scene['targets']:w.append(marker_model(marker_template,t,dictionary))
     sim=out/'run/simulation';sim.mkdir(parents=True)
     floor=sim/'demo_floor.png'
@@ -190,6 +214,7 @@ def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=No
     save(out/'scene.yaml',dict(start=[pose[k] for k in ('x','y','yaw')],duration=600,targets=scene['targets']))
     actual=ET.parse(out/FILES[0]).getroot()
     verify_prints(scene,actual,dictionary)
+    if obstacle_set=='boxes':verify_boxes(scene,actual,raw)
     if shell!=architecture(actual,scene,False) or (furniture=='fixed' and fixed!=architecture(actual,scene,True)):
         raise ValueError('Architectural shell, original camera-room appearance or physics changed')
     files={n:digest(out/n) for n in FILES}

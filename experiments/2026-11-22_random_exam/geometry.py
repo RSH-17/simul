@@ -7,6 +7,7 @@ from scipy import ndimage
 
 
 RESOLUTION = .05
+EXAM_BOX_COUNT = 5
 
 
 def polygon(body, margin=0.):
@@ -180,8 +181,9 @@ def mount(rng, scene, size, kind):
 
 
 def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='fixed', host_stress=None,
-           prepare_room=None):
-    if not 1<=marker_count<=dictionary_size or furniture not in ('fixed','shuffle') or host_stress not in (None,'wall','object'):
+           prepare_room=None, obstacle_set='boxes'):
+    if (not 1<=marker_count<=dictionary_size or furniture not in ('fixed','shuffle') or
+            host_stress not in (None,'wall','object') or obstacle_set not in ('boxes','legacy_mixed')):
         raise ValueError('Invalid exam sampling parameters')
     rng=np.random.default_rng(seed)
     scene=deepcopy(template)
@@ -193,10 +195,16 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
             tables[i]=draw_pose(old,rng,scene,static)
             static.append(polygon(tables[i]))
     else:static.extend(polygon(t) for t in tables)
-    # This range describes the experiment; the competition distribution is unknown.
-    count=int(rng.integers(1 if host_stress=='object' else 0,10))
+    count=EXAM_BOX_COUNT if obstacle_set=='boxes' else int(rng.integers(1 if host_stress=='object' else 0,10))
+    box_dimensions=sorted({(b['sx'],b['sy'],b['height']) for b in template['obstacles']})
     for i in range(count):
-        bodies=draw_obstacle(i,rng,scene,static)
+        if obstacle_set=='boxes':
+            sx,sy,height=box_dimensions[rng.integers(len(box_dimensions))]
+            name=f'movable_{i+1}'
+            box=dict(name=name,object_id=name,shape='box',sx=sx,sy=sy,height=height)
+            bodies=[draw_pose(box,rng,scene,static)]
+        else:
+            bodies=draw_obstacle(i,rng,scene,static)
         scene['obstacles'].extend(bodies)
         static.extend(polygon(b) for b in bodies)
     access=Access(scene,tables,rng); scene['robot_spawn']=access.start;scene['robot_start_expected']=access.start
@@ -228,5 +236,7 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
                                      yaw=yaw,attached_to=host,mount_object=object_id))
         witnesses[str(ident)]=view
     scene['randomization']=dict(enabled=False,seed=int(seed),generator='exam-random-layout',furniture=furniture)
+    if obstacle_set=='boxes':
+        scene['randomization']['obstacles']='exam_boxes'
     scene['description']='Original Gazebo exam room with independently sampled movable obstacles, spawn and printed markers.'
     return scene,tables,witnesses

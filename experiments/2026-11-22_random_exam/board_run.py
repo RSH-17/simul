@@ -32,7 +32,7 @@ def reserve(slots, track):
 
 def prepare(stage, track, seed, count, reference, furniture='fixed'):
     import numpy as np
-    from fixture import FILES, FIXED_TABLE_ROOM, architecture, build, digest, read
+    from fixture import FILES, FIXED_TABLE_ROOM, architecture, build, digest, read, verify_boxes
     import xml.etree.ElementTree as ET
     fixtures=stage/'fixtures'
     fixtures.mkdir()
@@ -49,10 +49,12 @@ def prepare(stage, track, seed, count, reference, furniture='fixed'):
             raise ValueError('Choose the undisclosed-count policy to replay this recording.')
         if scene['randomization'].get('furniture')!=furniture:
             raise ValueError('Choose a recording with the same desk layout mode.')
+        anchor=track/'.layouts/uFjtqfyJ'
+        world=ET.parse(ref/FILES[0]).getroot()
+        verify_boxes(scene,world,read(anchor/'scene.json'))
         if furniture=='fixed':
-            anchor=track/'.layouts/uFjtqfyJ'
             if (digest(ref/FILES[3])!=digest(anchor/FILES[3]) or
-                architecture(ET.parse(ref/FILES[0]).getroot(),scene,True)!=FIXED_TABLE_ROOM):
+                architecture(world,scene,True)!=FIXED_TABLE_ROOM):
                 raise ValueError('The recorded furniture differs from the original exam room.')
         (fixtures/f'map-{seed}').symlink_to(ref.resolve(),target_is_directory=True)
         return dict(seed=seed,tables=furniture,marker_count=len(targets),start=[scene['robot_spawn'][k] for k in ('x','y','yaw')],

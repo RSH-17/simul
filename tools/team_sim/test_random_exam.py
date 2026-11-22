@@ -40,6 +40,8 @@ class RandomTeamExamTest(unittest.TestCase):
             a=fixture_for(cache,assets,2,0)
             manifest=json.loads((a/'fixture.json').read_text())
             self.assertEqual((manifest['marker_count'],manifest['tables']),(5,'fixed'))
+            self.assertEqual(manifest['movable_objects'],5)
+            self.assertEqual(set(manifest['object_shapes'].values()),{'box'})
             self.assertIn('@TEAM_MAP_ROOT@',(a/'world/osp_studio.sdf').read_text())
             self.assertEqual(fixture_for(cache,assets,2,0),a)
             b=fixture_for(cache,assets,2,3)

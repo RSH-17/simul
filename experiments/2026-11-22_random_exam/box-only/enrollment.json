@@ -1,0 +1,269 @@
+{
+  "candidate": "Mixed v1.5.2 Visual Survey",
+  "baseline": "Mixed v1.5.1-balanced",
+  "candidate_source": "46a6dd68c5070172a22b6680f2945cf22aa8b4f3866797316c820e9fb82e135a",
+  "baseline_source": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "duration_s": 600,
+  "known_marker_count": 3,
+  "survey_distant_hints": false,
+  "additional_boxes": 5,
+  "box_sizes_m": [
+    [
+      0.65,
+      0.6,
+      0.55
+    ],
+    [
+      0.6,
+      0.65,
+      0.6
+    ]
+  ],
+  "fixed_desks": 14,
+  "decision": "No recorded outcomes used to draw any of the five worlds.",
+  "registration_sha256": "ca7ce0446ab3c323b32c7e12b5d054b5eee6e8da52c40e03305a6aa223d63043",
+  "native_protocol_sha256": "a21d009220704fe755c6246c0b39563950e57dc105ef629263f533e2d848493f",
+  "cases": [
+    {
+      "seed": 2712767296,
+      "start": [
+        2.900000000000002,
+        3.3500000000000005,
+        -2.261387925541021
+      ],
+      "printed_ids": [
+        402,
+        700,
+        43
+      ],
+      "hosts": [
+        "wall_north",
+        "wall_south_recess",
+        "wall_structure_column_nw_1"
+      ],
+      "world_sha256": "2bae6cca874c4d9503beec57cf86b48dcf5af5023412289c9e0c342b6ae8ec87"
+    },
+    {
+      "seed": 507119222,
+      "start": [
+        6.450000000000003,
+        -3.5499999999999994,
+        0.28473962975503486
+      ],
+      "printed_ids": [
+        291,
+        323,
+        818
+      ],
+      "hosts": [
+        "wall_south_east",
+        "wall_west",
+        "wall_west"
+      ],
+      "world_sha256": "f278cb790d33d88c49c3f8a9895b8ece5b3cd362900a79b5294cd90a35e43ca8"
+    },
+    {
+      "seed": 3512830537,
+      "start": [
+        0.45000000000000107,
+        -4.749999999999999,
+        -1.5535023614882524
+      ],
+      "printed_ids": [
+        370,
+        72,
+        26
+      ],
+      "hosts": [
+        "movable_2",
+        "movable_5",
+        "movable_1"
+      ],
+      "world_sha256": "76fd6ade5e06f37492bd3cee508cedd100b2dbf1d551ba1849b12e34ece534e1"
+    },
+    {
+      "seed": 3828083878,
+      "start": [
+        6.950000000000003,
+        -0.14999999999999947,
+        1.3748188550206129
+      ],
+      "printed_ids": [
+        888,
+        932,
+        229
+      ],
+      "hosts": [
+        "wall_north",
+        "wall_south_east",
+        "movable_4"
+      ],
+      "world_sha256": "6d9750f1e3a8fba1d5003f3e47573cae4c73ae6a44ee965eb4e9cfbe633be9f1"
+    },
+    {
+      "seed": 2526510905,
+      "start": [
+        -2.0999999999999988,
+        -3.3999999999999995,
+        1.6794306624712538
+      ],
+      "printed_ids": [
+        941,
+        97,
+        445
+      ],
+      "hosts": [
+        "movable_3",
+        "movable_3",
+        "wall_structure_column_ne_2"
+      ],
+      "world_sha256": "b4c90f3a871be798c0aeeea724b909049ff4b7f23c0ede70660129bdda35e2a7"
+    }
+  ],
+  "order": [
+    {
+      "pair": 1,
+      "world": 0,
+      "repeat": 0,
+      "order": [
+        "candidate",
+        "baseline"
+      ]
+    },
+    {
+      "pair": 2,
+      "world": 1,
+      "repeat": 0,
+      "order": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    {
+      "pair": 3,
+      "world": 2,
+      "repeat": 0,
+      "order": [
+        "candidate",
+        "baseline"
+      ]
+    },
+    {
+      "pair": 4,
+      "world": 3,
+      "repeat": 0,
+      "order": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    {
+      "pair": 5,
+      "world": 4,
+      "repeat": 0,
+      "order": [
+        "candidate",
+        "baseline"
+      ]
+    },
+    {
+      "pair": 6,
+      "world": 0,
+      "repeat": 1,
+      "order": [
+        "baseline",
+        "candidate"
+      ]
+    }
+  ],
+  "occlusion_probe": {
+    "seed": 2526510905,
+    "original_start": [
+      -2.0999999999999988,
+      -3.3999999999999995,
+      1.6794306624712538
+    ],
+    "start": [
+      -2.999999999999999,
+      5.150000000000001,
+      -1.405122352970899
+    ],
+    "original_protocol_sha256": "a21d009220704fe755c6246c0b39563950e57dc105ef629263f533e2d848493f",
+    "generator_sha256": "920f0bdb152b57e8c0488de00977f6cf1038b37345ae11ff951ba11d483fcfba",
+    "fixture_role": "diagnostic: closest physically separate obstacles; both partly visible at spawn",
+    "hypothesis": "less repeated travel without a new readable surface near the pair, without sacrificing verified marks",
+    "far_hints": false,
+    "calibrated_center_row": {
+      "camera_origin_world": [
+        -3.0098290599816515,
+        5.208783922801028,
+        0.24353
+      ],
+      "center_row_px": 240.0,
+      "width_px": 480,
+      "objects": [
+        "movable_2",
+        "movable_4"
+      ],
+      "projected_columns": {
+        "movable_2": [
+          [
+            120,
+            262
+          ]
+        ],
+        "movable_4": [
+          [
+            224,
+            479
+          ]
+        ]
+      },
+      "first_visible_columns": {
+        "movable_2": [
+          [
+            120,
+            223
+          ]
+        ],
+        "movable_4": [
+          [
+            224,
+            479
+          ]
+        ]
+      },
+      "overlapping_columns": [
+        [
+          224,
+          262
+        ]
+      ],
+      "overlapping_count": 39
+    },
+    "pair": [
+      "movable_2",
+      "movable_4"
+    ],
+    "grid_clearance_m": 0.5,
+    "gap_m": 0.4301189510400078,
+    "same_direction_rays": 13,
+    "rays_total": 121,
+    "unique_first_hits": [
+      30,
+      66
+    ],
+    "ray_height_m": 0.32,
+    "ray_spacing_rad": 0.01,
+    "distance_to_bodies_m": [
+      1.5890619112210576,
+      0.602061836029848
+    ]
+  },
+  "diagnostic_registration_sha256": "42e2a0a6c660b1ba18ce13db44caa118c28383cbe4d9cacc1b80056997966f76"
+}
