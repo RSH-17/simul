@@ -500,7 +500,7 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 455개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 462개
 
 성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
@@ -508,6 +508,13 @@ python3 scripts/publish_simulation_videos.py --upload
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4) | 실패 | 미달 | 600.0 |
+| [v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4) | 실패 | 미달 | 600.0 |
+| [v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4) | 성공 | 확인 | 392.104 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m1817236217-363576232554625330.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m1817236217-363576232554625330.mp4) | 실패 | 미달 | 600.0079999999999 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m2293287138-103833294022221927.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m2293287138-103833294022221927.mp4) | 성공 | 확인 | 533.7800000000001 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m2946727794-532698735965463242.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m2946727794-532698735965463242.mp4) | 실패 | 미달 | 600.024 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m3477870352-512600683753105860.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m3477870352-512600683753105860.mp4) | 성공 | 확인 | 391.98 |
 | [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1506996263-758615926508713792.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1506996263-758615926508713792.mp4) | 성공 | 확인 | 168.584 |
 | [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1565135385-716985422643685146.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1565135385-716985422643685146.mp4) | 실패 | 미달 | 600.0200000000001 |
 | [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m2164651793-904460405419145261.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m2164651793-904460405419145261.mp4) | 성공 | 확인 | 197.608 |

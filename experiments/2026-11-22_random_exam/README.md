@@ -8,6 +8,19 @@
 
 ## 이전 혼합 장애물 실험 기록
 
+기존 혼합 장애물 조건을 종료할 때 일곱 회차의 영상과 점수를 보관했다. 양쪽 모두 주행한 세 배치에서 근거리 검증은 Balanced 6/9장, Balanced Print 7/9장이었다. 네 번째 배치는 Balanced Print만 주행했다. 사각 상자 전용 비교는 별도의 다섯 배치에서 집계한다.
+
+| 배치 | 시드 | 정책 | 접근 검증 | 카메라 |
+|---:|---:|---|---:|---|
+| 1 | 2946727794 | Balanced | 2/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4) |
+| 1 | 2946727794 | Balanced Print | 2/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m2946727794-532698735965463242.mp4) |
+| 2 | 1817236217 | Balanced Print | 2/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m1817236217-363576232554625330.mp4) |
+| 2 | 1817236217 | Balanced | 1/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4) |
+| 3 | 3477870352 | Balanced | 3/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4) |
+| 3 | 3477870352 | Balanced Print | 3/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m3477870352-512600683753105860.mp4) |
+| 4 | 2293287138 | Balanced Print | 3/3 | [영상](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m2293287138-103833294022221927.mp4) |
+
+
 벽과 장애물 군집을 함께 다루는 후보로 Mixed v1.5.2 Visual Survey를 등록했다. 독립 다섯 배치와 같은 맵의 대체 출발 자세를 기준판 및 Balanced Print와 비교하도록 등록했으며, 상자 조건으로 바꾸기 전 일곱 회차를 기록했다. 별도 진단에서는 실제 간격 34.5cm인 두 물체가 겹쳐 보이는 출발 자세를 고정하고, 최근 20초간 새 표면 노출이나 새 ID가 없었던 반복 주행거리를 센다. [정책 등록](visual_survey/enrollment.json) · [겹침 조건](visual_survey/cluster-start.json) · [기록 지도에서 두 정책의 41회 결정](visual_survey/snapshot-replay.json)
 
 책상 재배치 참고 실험은 네 배치, 여덟 주행을 저장했다. 공식 시험과 분리해 집계했다. [참고 실험의 결과와 영상](results/shuffled-prefix/RESULTS.md)
