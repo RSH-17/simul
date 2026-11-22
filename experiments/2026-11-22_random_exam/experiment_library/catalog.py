@@ -155,7 +155,7 @@ class Library:
         approached = score.get('verified',len(card['approached']))
         item = {k:v for k,v in meta.items() if k!='source'}
         item.update(id=run.id,label=run.label,phase=phase,live=live,confirmed=confirmed,approached=approached,
-                    sim_time=card['sim_time'],bumps=card['bumper_events'],strict=score.get('strict'))
+                    sim_time=score.get('elapsed_s',card['sim_time']),bumps=card['bumper_events'],strict=score.get('strict'))
         if stamp and phase=='finished':
             self.finished[run.id]=(sealed,item)
         if live:

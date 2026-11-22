@@ -45,6 +45,8 @@ def assets(web):
     js=replace(js,"  $('detailTitle').textContent = d.label;", "  $('detailTitle').textContent = descriptions.get(d.id)?.version || d.label;")
     js=replace(js,"  $('detailWhere').textContent = `${d.where} · ${PHASE[d.phase] || d.phase}`;",
                "  $('detailWhere').textContent = d.label+' · '+(displayPhases[descriptions.get(d.id)?.phase || d.phase] || d.phase);")
+    js=replace(js,"['시뮬 시간', `${clock(d.sim_time)} / ${clock(d.duration)}`]",
+               "['시뮬 시간', `${clock(d.phase==='finished' ? descriptions.get(d.id)?.sim_time ?? d.sim_time : d.sim_time)} / ${clock(d.duration)}`]")
     js=replace(js,"$('showAll').addEventListener('change', poll);","")
     js=replace(js,'setInterval(poll, 1000);','setInterval(poll, 2100);')
     css=(web/'style.css').read_text()+'\n'+(HERE/'library.css').read_text()

@@ -36,7 +36,7 @@ class LibraryTests(unittest.TestCase):
         os.utime(trajectory,(when,when))
         os.utime(raw/'policy_revision.txt',(when,when))
         if phase=='finished':
-            (card/'simulation_evaluation.json').write_text('{"exam_score":{"verified":2,"registered":3,"strict":false}}')
+            (card/'simulation_evaluation.json').write_text('{"exam_score":{"verified":2,"registered":3,"elapsed_s":72.65,"strict":false}}')
         def summary(now):
             return dict(id=ident,phase=phase,sim_time=72,confirmed=[],approached=[],bumper_events=0)
         self.board.runs[ident]=SimpleNamespace(id=ident,label=name,path=card,summary=summary)
@@ -63,6 +63,7 @@ class LibraryTests(unittest.TestCase):
                          dict(stale='stalled',empty='unstarted',legacy='finished'))
         row=next(r for r in current['runs'] if r['id']=='new')
         self.assertEqual((row['version'],row['boxes'],row['confirmed'],row['approached']),(FOCUS,3,3,2))
+        self.assertEqual(row['sim_time'],72.65)
         with self.assertRaisesRegex(ValueError,'진행 중'):lib.set_archived('active',True)
         with self.assertRaises(KeyError):lib.set_archived('unknown',True)
         lib.set_archived('new',True)
