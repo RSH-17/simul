@@ -1,0 +1,21 @@
+{
+  "live_menu": "exam-official-survey",
+  "default": "exam-official-balanced",
+  "http_busystate": 409,
+  "physical_drive": false,
+  "source_sha256": "46a6dd68c5070172a22b6680f2945cf22aa8b4f3866797316c820e9fb82e135a",
+  "checks": {
+    "exam-official-balanced": {
+      "check_only": true,
+      "furniture": "fixed",
+      "public_marker_count": 3,
+      "physical_drive": false
+    },
+    "exam-official-survey": {
+      "check_only": true,
+      "furniture": "fixed",
+      "public_marker_count": 3,
+      "physical_drive": false
+    }
+  }
+}

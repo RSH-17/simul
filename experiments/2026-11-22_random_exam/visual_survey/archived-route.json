@@ -1,0 +1,661 @@
+{
+  "scope": "archived geometry; actual route; counterfactual choices with estimated costmap and no frozen object tracks",
+  "runs": [
+    {
+      "name": "v151-balance-track-m112602-1795262675522665474",
+      "recorded_variant": "region_wall",
+      "elapsed_s": 600.0,
+      "registered": {
+        "7": 168.09199999999998
+      },
+      "actual_geometric_repeat_m": 21.25,
+      "actual_geometric_longest_m": 7.25,
+      "scored_snapshots": 33,
+      "selected_wall": 9,
+      "selected_escape": 1,
+      "actual_previous_reasons": {
+        "explore_open_frontier": 1,
+        "unseen_reachable_object": 18,
+        "camera_unseen_wall_section_due": 13,
+        "discover_beyond_inspected_boxes": 1
+      },
+      "replay": [
+        {
+          "t": 2.1,
+          "snapshot": "0000.npz",
+          "sha256": "d9b14d2540629d8a06e450dd58ce95433b8e268ee55d0de2fea286ffad0abebf",
+          "requested": "interior_frontier",
+          "reason": "explore_open_frontier",
+          "escape": false,
+          "last_camera_gain_s": null,
+          "old": "explore_open_frontier",
+          "actual_goal_xy": [
+            -1.0598803953824714,
+            -1.531720069367803
+          ],
+          "replay_goal_xy": [
+            -1.0598803953824714,
+            -1.531720069367803
+          ],
+          "goal_separation_m": 0.0
+        },
+        {
+          "t": 14.6,
+          "snapshot": "0001.npz",
+          "sha256": "16a110bd33562b2e09028824b5c48cb80db901846e3b345d8b152b5a9361f682",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 14.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -0.7772644310273371,
+            0.5281590230059997
+          ],
+          "replay_goal_xy": [
+            -0.7772644310273371,
+            0.5281590230059997
+          ],
+          "goal_separation_m": 0.0
+        },
+        {
+          "t": 27.6,
+          "snapshot": "0002.npz",
+          "sha256": "429565f77167e38120b6cb2613c2e7350e74abda7b6f4a4373cb51b77ce9a193",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 27.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            0.39773557307048224,
+            1.2534531386227181
+          ],
+          "replay_goal_xy": [
+            -1.1772644369878016,
+            0.5784531270743183
+          ],
+          "goal_separation_m": 1.7135489626135385
+        },
+        {
+          "t": 40.6,
+          "snapshot": "0003.npz",
+          "sha256": "ea2e5b35726f8f0fbb9c6e7b9515f5742e9bed95330f753576d11082799536c2",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 40.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -1.8658823296258484,
+            1.1745172315630215
+          ],
+          "replay_goal_xy": [
+            0.2977355715803661,
+            1.5034531423480084
+          ],
+          "goal_separation_m": 2.188479210736061
+        },
+        {
+          "t": 55.6,
+          "snapshot": "0004.npz",
+          "sha256": "c52cbe9385b81038a928c78f35d5033951d9caf91fe24a8b6e21645a0970fa0e",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 55.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -1.6017515370131121,
+            2.628170558187504
+          ],
+          "replay_goal_xy": [
+            -2.0400506694159275,
+            1.7034531304270795
+          ],
+          "goal_separation_m": 1.0233320334421847
+        },
+        {
+          "t": 67.6,
+          "snapshot": "0005.npz",
+          "sha256": "c236db45f9f72f9405d4e446504b932425a7c96c8099e184ce55a1606ac354cc",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 67.6,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -0.8586071309700691,
+            2.6734531565041113
+          ],
+          "replay_goal_xy": [
+            -2.0938246525552717,
+            2.8422473074667707
+          ],
+          "goal_separation_m": 1.246697152892512
+        },
+        {
+          "t": 74.1,
+          "snapshot": "0006.npz",
+          "sha256": "3760e7f7341fac5003099088100a80bc6faff89f37f4e5ca5cd2fcb698a77271",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 74.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -0.858607154066869,
+            3.8534531773657372
+          ],
+          "replay_goal_xy": [
+            -0.7836071544393981,
+            2.978453150916176
+          ],
+          "goal_separation_m": 0.8782084298336321
+        },
+        {
+          "t": 83.1,
+          "snapshot": "0007.npz",
+          "sha256": "6b040d66eea4f68ade87d8db72a1bf2ad6410ab8c45aa0f72e47fcf33f80f554",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 83.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -1.5336071507141078,
+            3.528453171032744
+          ],
+          "replay_goal_xy": [
+            -1.5336071507141078,
+            3.528453171032744
+          ],
+          "goal_separation_m": 0.0
+        },
+        {
+          "t": 93.1,
+          "snapshot": "0008.npz",
+          "sha256": "ccf39d4b9d99e48b0069fbcac88e71b8dacd7772c384d9f1164f92d86e8de208",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 93.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -2.0836071589097465,
+            3.4284531695426277
+          ],
+          "replay_goal_xy": [
+            -2.0836071589097465,
+            3.4284531695426277
+          ],
+          "goal_separation_m": 0.0
+        },
+        {
+          "t": 104.6,
+          "snapshot": "0009.npz",
+          "sha256": "713f8f32e361f8f98162c457ea4f35b91f497a50507f0576c398c8c28a0ac42e",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 104.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -3.1086071756735527,
+            4.653453174385505
+          ],
+          "replay_goal_xy": [
+            -1.708607154811927,
+            2.4034531408578923
+          ],
+          "goal_separation_m": 2.650000039488077
+        },
+        {
+          "t": 117.6,
+          "snapshot": "0010.npz",
+          "sha256": "eb0aa269276cb24110ea6e2586bcc71dfe18f6882f4a0c1e104210180434dcdd",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 117.6,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -0.41174873833381476,
+            3.6584531769932083
+          ],
+          "replay_goal_xy": [
+            -3.0367487834098275,
+            4.9034531930119565
+          ],
+          "goal_separation_m": 2.9052797243184263
+        },
+        {
+          "t": 136.1,
+          "snapshot": "0011.npz",
+          "sha256": "030e7191b55b981c3a3fd1f604d918d773f62f7ca1812a1c6b368bf259e13621",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 136.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -2.890315639947135,
+            5.203453197482305
+          ],
+          "replay_goal_xy": [
+            0.09322243431804567,
+            1.0397208202802806
+          ],
+          "goal_separation_m": 5.122320445808755
+        },
+        {
+          "t": 155.6,
+          "snapshot": "0012.npz",
+          "sha256": "0ac7988607e3530bd1d78cec0372d273005663c87367f8054b660deb6c82cf9d",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 136.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -4.981053658930759,
+            4.923558637757369
+          ],
+          "replay_goal_xy": [
+            -2.8937437075117516,
+            5.7534532056779435
+          ],
+          "goal_separation_m": 2.2462385953315147
+        },
+        {
+          "t": 169.1,
+          "snapshot": "0013.npz",
+          "sha256": "520b4c3995d252f51aa8066e88438c809e32c067f03a2edf7a307f4ac01ef943",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 169.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -5.093283487318856,
+            7.473453228029685
+          ],
+          "replay_goal_xy": [
+            -5.123283468692405,
+            5.353453184816318
+          ],
+          "goal_separation_m": 2.1202122964710615
+        },
+        {
+          "t": 184.1,
+          "snapshot": "0014.npz",
+          "sha256": "6bbf58735a8aa90b8d27b9685f9d2918066bec22e07c658b0f4281c2c8e1c97a",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 184.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -6.946388639485633,
+            6.918030598407237
+          ],
+          "replay_goal_xy": [
+            -4.246388599252498,
+            6.668030594681947
+          ],
+          "goal_separation_m": 2.711549412996484
+        },
+        {
+          "t": 197.6,
+          "snapshot": "0015.npz",
+          "sha256": "a4f24de9a0fa53f17d5759a7b33b7f80b320f1b49354ca399aadf52e34d00e2b",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 197.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -8.45195544432386,
+            5.366523592362608
+          ],
+          "replay_goal_xy": [
+            -4.5343894394117665,
+            7.403657496247406
+          ],
+          "goal_separation_m": 4.415567680966946
+        },
+        {
+          "t": 214.6,
+          "snapshot": "0016.npz",
+          "sha256": "e03b21de07999b71dd1fea50a1e8b29794a5866c91625528a8c36dc5f3e24567",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 214.6,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -7.767145702504657,
+            -4.383202871554607
+          ],
+          "replay_goal_xy": [
+            -8.522145703622245,
+            5.741797289005405
+          ],
+          "goal_separation_m": 10.153110521068303
+        },
+        {
+          "t": 259.1,
+          "snapshot": "0017.npz",
+          "sha256": "d578a5f3ae768465a83d98ad26226196cf498e41ee8a040f44a65a3b242e8684",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 214.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -7.6032586430727775,
+            4.701734152159418
+          ],
+          "replay_goal_xy": [
+            -7.683504622739201,
+            -4.2190765794319915
+          ],
+          "goal_separation_m": 8.921171645368622
+        },
+        {
+          "t": 302.6,
+          "snapshot": "0018.npz",
+          "sha256": "18667774f52fafb81bc2d3fefc122c9ea70f4978fa23a4524543654d14a70d24",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 214.6,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -2.7290356004372973,
+            6.269548278162465
+          ],
+          "replay_goal_xy": [
+            -7.654035683511271,
+            4.774548257673368
+          ],
+          "goal_separation_m": 5.146906923535828
+        },
+        {
+          "t": 332.6,
+          "snapshot": "0019.npz",
+          "sha256": "080dbfb5b781ebf78690b59ea5b1742e479254e8532afe501f3315e0fc581974",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 214.6,
+          "old": "discover_beyond_inspected_boxes",
+          "actual_goal_xy": [
+            -17.797541359157222,
+            -1.854854036613082
+          ],
+          "replay_goal_xy": [
+            -2.891668910102185,
+            6.509850116320385
+          ],
+          "goal_separation_m": 17.092492768276966
+        },
+        {
+          "t": 359.6,
+          "snapshot": "0020.npz",
+          "sha256": "e476424d76b392c2520f353440af0fa14d7a5b03fd92dad23669da475b897042",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": true,
+          "last_camera_gain_s": 214.6,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -5.996327870051289,
+            6.267762559607489
+          ],
+          "replay_goal_xy": [
+            -7.9329763993434,
+            5.2123909339385
+          ],
+          "goal_separation_m": 2.2055422902942716
+        },
+        {
+          "t": 375.1,
+          "snapshot": "0021.npz",
+          "sha256": "855c406093700e36a7db31631b11c8d8933dde1e72ded4e78abd24110f20e372",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 375.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -6.270713198842978,
+            5.790709043225952
+          ],
+          "replay_goal_xy": [
+            -6.320713199588036,
+            6.090709047696301
+          ],
+          "goal_separation_m": 0.3041381310469222
+        },
+        {
+          "t": 386.6,
+          "snapshot": "0022.npz",
+          "sha256": "07c09c41f226a425303ecaba57194e90b5ef13c2b74e63a04ef50ff48b0e03eb",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 386.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -3.120713139983392,
+            4.640709011188456
+          ],
+          "replay_goal_xy": [
+            -6.270713198842978,
+            5.790709043225952
+          ],
+          "goal_separation_m": 3.3533565936985648
+        },
+        {
+          "t": 407.6,
+          "snapshot": "0023.npz",
+          "sha256": "96528baa1c5c38c262ba886d83a2dd770d697d237c3b8f411da1b71576be18a9",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 386.6,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -3.120713163080192,
+            8.710709083459088
+          ],
+          "replay_goal_xy": [
+            -3.120713139983392,
+            4.740709012678572
+          ],
+          "goal_separation_m": 3.9700000707805163
+        },
+        {
+          "t": 430.1,
+          "snapshot": "0024.npz",
+          "sha256": "c4a02cf9af6263bd31f27c19509646b3edba02c96102d404e653fd8f5b81633a",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 430.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -2.9700104152589346,
+            5.139978226119839
+          ],
+          "replay_goal_xy": [
+            -3.3466213983532995,
+            6.331418639805117
+          ],
+          "goal_separation_m": 1.2495463544622307
+        },
+        {
+          "t": 449.1,
+          "snapshot": "0025.npz",
+          "sha256": "2af1bf559e57d6644dddbe9c80043c013fd2ad978f23116b08ab78c212eaf699",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 449.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -6.4696062798199545,
+            6.339220132429103
+          ],
+          "replay_goal_xy": [
+            -2.0446062153724327,
+            5.664220108959775
+          ],
+          "goal_separation_m": 4.476187060662698
+        },
+        {
+          "t": 471.1,
+          "snapshot": "0026.npz",
+          "sha256": "a54f2fcee9e046a0a344751f1c143ecbbaee3828834f95d6f55d50877b39e25c",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 449.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -5.044211049880435,
+            -3.5366349857336705
+          ],
+          "replay_goal_xy": [
+            -6.8942110848981635,
+            6.863365180414277
+          ],
+          "goal_separation_m": 10.56326197656022
+        },
+        {
+          "t": 514.1,
+          "snapshot": "0027.npz",
+          "sha256": "78d30f7f4b64bf496a319d66031e8dc3158e6317a8c06ae55455f1fbc97cffb3",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 514.1,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -1.9688115585430963,
+            2.0380844250597274
+          ],
+          "replay_goal_xy": [
+            -4.993944501705539,
+            -2.7855952297374675
+          ],
+          "goal_separation_m": 5.6937961621321715
+        },
+        {
+          "t": 547.1,
+          "snapshot": "0028.npz",
+          "sha256": "125f9e82abddd213500c5141e9a0d8148b31c1b2b8a8951340eef672a503f0d0",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 514.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            -0.8185568100125677,
+            2.607989215415542
+          ],
+          "replay_goal_xy": [
+            -0.9685568353445418,
+            3.837989237022226
+          ],
+          "goal_separation_m": 1.2391126101981353
+        },
+        {
+          "t": 555.6,
+          "snapshot": "0029.npz",
+          "sha256": "e8721f017901eb29ce134f2417fabbf549bc4430aca8e8b214c216d8dc4a4eee",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 514.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            0.026443189614903106,
+            2.2429892157880715
+          ],
+          "replay_goal_xy": [
+            -0.9185568345994838,
+            4.287989243727749
+          ],
+          "goal_separation_m": 2.2527871981255734
+        },
+        {
+          "t": 567.1,
+          "snapshot": "0030.npz",
+          "sha256": "08008c9bcb5790fda76a5dd7ab654d8a962923cd3f719e047872c60ff789ea28",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 567.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            0.3314432071237676,
+            1.6679891930638007
+          ],
+          "replay_goal_xy": [
+            -3.743556863284219,
+            4.412989244100277
+          ],
+          "goal_separation_m": 4.9133136327752736
+        },
+        {
+          "t": 578.6,
+          "snapshot": "0031.npz",
+          "sha256": "c17afe84fde6765880c24928cc5455debe2d06943d5d7d82dc8d1a8251c8ea68",
+          "requested": "wall_surface",
+          "reason": "unobserved_wall_reserved",
+          "escape": false,
+          "last_camera_gain_s": 567.1,
+          "old": "camera_unseen_wall_section_due",
+          "actual_goal_xy": [
+            1.2264432074962965,
+            0.6929891926912716
+          ],
+          "replay_goal_xy": [
+            0.2823603538615407,
+            1.1987957630555313
+          ],
+          "goal_separation_m": 1.0710428194758594
+        },
+        {
+          "t": 591.6,
+          "snapshot": "0032.npz",
+          "sha256": "c0621e1babefbcc0b5c2b6f1d96f2f042d284d992aec3daf66a1508fd365e14e",
+          "requested": "interior_surface",
+          "reason": "unseen_reachable_object",
+          "escape": false,
+          "last_camera_gain_s": 591.6,
+          "old": "unseen_reachable_object",
+          "actual_goal_xy": [
+            -7.693433406328413,
+            4.763517311955038
+          ],
+          "replay_goal_xy": [
+            -3.3934333571545814,
+            6.463517325366084
+          ],
+          "goal_separation_m": 4.623851259339179
+        }
+      ]
+    },
+    {
+      "name": "mixed-track-wevIgT2q",
+      "unavailable": "No measured world/map alignment"
+    },
+    {
+      "name": "wall-cues-track-spjbfI5O",
+      "unavailable": "No measured world/map alignment"
+    }
+  ]
+}

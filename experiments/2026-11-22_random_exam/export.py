@@ -20,8 +20,38 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def export(root,recordings,destination):
+def export_video(row, panel_name, recordings, stage):
     import cv2
+    name=row['name'];run=recordings/name
+    scene=read(run/'scene.json');audit=read(run/'audit.json');metrics=read(run/'metrics.json')
+    score=row['score'];clip=run/'mission.mp4'
+    if (scene['seed']!=row['seed'] or audit['run']!=name or
+        sha(clip)!=row['evidence']['mission.mp4'] or sha(run/'metrics.json')!=row['evidence']['metrics.json']):
+        raise ValueError('Changed recording '+name)
+    cap=cv2.VideoCapture(str(clip))
+    try:
+        frames=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        if frames!=audit['video']['frames'] or not cap.read()[0]:raise ValueError('Video start '+name)
+        cap.set(cv2.CAP_PROP_POS_FRAMES,frames-1)
+        if not cap.read()[0]:raise ValueError('Video end '+name)
+    finally:cap.release()
+    relative=Path('training_robust/native90')/panel_name/name/'video/mission.mp4'
+    dest=stage/relative;dest.parent.mkdir(parents=True)
+    try:os.link(clip,dest)
+    except OSError:shutil.copy2(clip,dest)
+    write(dest.parent/'recording.json',dict(frames=frames,duration_seconds=audit['video']['duration_s']))
+    expected=sorted(int(i) for i in score['records'])
+    verified=sorted(int(i) for i,r in score['records'].items() if r['verified_s'] is not None)
+    write(dest.parents[1]/'evaluation.json',dict(success=score['strict'],elapsed_seconds=score['elapsed_s'],
+          targets=score['registered'],collisions=score['bumps'],reason=score['stop_reason'],
+          policy_training_sample_valid=score['valid'],
+          ground_truth_audit=dict(closest_approach_m=metrics['min_ground_truth_m'],
+                                  expected_ids=expected,verified_after_registration_ids=verified)))
+    return dict(name=name,seed=row['seed'],role=row['role'],asset=panel_name+'__'+name+'.mp4',
+                      relative=str(relative),sha256=row['evidence']['mission.mp4'],bytes=dest.stat().st_size)
+
+
+def export(root,recordings,destination):
     registration=root/'registration.json';protocol=root/'protocol.json'
     result=read(root/'comparison.json');plan=read(protocol);state=read(root/'status.json')
     if state['state'] not in ('complete','invalid_pair') or sha(registration)!=plan['registration_sha256']:
@@ -39,35 +69,7 @@ def export(root,recordings,destination):
         for folder in ('camera-opportunities', 'sensor-audit'):
             if (root/folder).is_dir():
                 shutil.copytree(root/folder,stage/folder)
-        media=[]
-        for row in rows:
-            name=row['name'];run=recordings/name
-            scene=read(run/'scene.json');audit=read(run/'audit.json');metrics=read(run/'metrics.json')
-            score=row['score'];clip=run/'mission.mp4'
-            if (scene['seed']!=row['seed'] or audit['run']!=name or
-                sha(clip)!=row['evidence']['mission.mp4'] or sha(run/'metrics.json')!=row['evidence']['metrics.json']):
-                raise ValueError('Changed recording '+name)
-            cap=cv2.VideoCapture(str(clip))
-            try:
-                frames=int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-                if frames!=audit['video']['frames'] or not cap.read()[0]:raise ValueError('Video start '+name)
-                cap.set(cv2.CAP_PROP_POS_FRAMES,frames-1)
-                if not cap.read()[0]:raise ValueError('Video end '+name)
-            finally:cap.release()
-            relative=Path('training_robust/native90')/root.name/name/'video/mission.mp4'
-            dest=stage/relative;dest.parent.mkdir(parents=True)
-            try:os.link(clip,dest)
-            except OSError:shutil.copy2(clip,dest)
-            write(dest.parent/'recording.json',dict(frames=frames,duration_seconds=audit['video']['duration_s']))
-            expected=sorted(int(i) for i in score['records'])
-            verified=sorted(int(i) for i,r in score['records'].items() if r['verified_s'] is not None)
-            write(dest.parents[1]/'evaluation.json',dict(success=score['strict'],elapsed_seconds=score['elapsed_s'],
-                  targets=score['registered'],collisions=score['bumps'],reason=score['stop_reason'],
-                  policy_training_sample_valid=score['valid'],
-                  ground_truth_audit=dict(closest_approach_m=metrics['min_ground_truth_m'],
-                                          expected_ids=expected,verified_after_registration_ids=verified)))
-            media.append(dict(name=name,seed=row['seed'],role=row['role'],asset=root.name+'__'+name+'.mp4',
-                              relative=str(relative),sha256=row['evidence']['mission.mp4'],bytes=dest.stat().st_size))
+        media=[export_video(row,root.name,recordings,stage) for row in rows]
         write(stage/'media.json',media)
         stage.rename(destination)
     return dict(episodes=len(rows),valid_pairs=result['valid_pairs'],bundle=str(destination))
