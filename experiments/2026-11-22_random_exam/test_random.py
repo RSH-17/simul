@@ -10,6 +10,7 @@ from alternate_start import choose_start
 from fixture import architecture,build, original_dictionary, read, verify_boxes, verify_prints
 from geometry import intersects, polygon, sample
 from scoring import score
+from spread_three_trial import spacing
 from witness_audit import inspect
 
 
@@ -57,6 +58,27 @@ class RandomExamTests(unittest.TestCase):
         for host in ('wall','object'):
             a=self.draw(18,3,stress=host)
             self.assertTrue(all(t['attached_to'].startswith('wall_')==(host=='wall') for t in a[0]['targets']))
+
+    def test_spread_boxes_have_two_separate_printed_boxes_and_one_outer_wall(self):
+        wall_hosts=set()
+        for seed in range(26,58):
+            scene,tables,witnesses=self.draw(seed,obstacle_set='spread_three')
+            self.assertEqual(tables,self.tables)
+            gaps=spacing(scene)
+            self.assertGreaterEqual(gaps['min_box_centers_m'],.48*min(scene['room_size']))
+            self.assertGreaterEqual(gaps['min_marker_centers_m'],.38*min(scene['room_size']))
+            self.assertEqual(len(witnesses),3)
+            wall_hosts.add(gaps['outer_wall'])
+        self.assertGreater(len(wall_hosts),3)
+        with self.assertRaises(ValueError):self.draw(45,markers=2,obstacle_set='spread_three')
+        with TemporaryDirectory() as temp:
+            world=Path(temp)/'world'
+            build(self.anchor,world,45,obstacle_set='spread_three')
+            geometry=ET.parse(world/'world/osp_studio.sdf').getroot()
+            generated=read(world/'scene.json')
+            verify_boxes(generated,geometry,self.original,3)
+            with self.assertRaises(ValueError):verify_boxes(generated,geometry,self.original)
+            verify_prints(generated,geometry,self.dictionary)
 
     def test_secondary_start_preserves_scene_and_does_not_choose_by_marker_locations(self):
         scene, tables, _ = self.draw(703)

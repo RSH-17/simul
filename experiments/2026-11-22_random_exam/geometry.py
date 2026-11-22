@@ -64,6 +64,18 @@ def draw_pose(body, rng, scene, footprints):
     raise ValueError('No nonintersecting pose for a movable body')
 
 
+def spread_box(template, rng, scene, footprints, sector):
+    previous = [(b['x'],b['y']) for b in scene['obstacles']]
+    minimum = .48*min(scene['room_size'])
+    for _ in range(600):
+        box = draw_pose(template,rng,scene,footprints)
+        here = (box['x'],box['y'])
+        quadrant = int(here[0]>=0)+2*int(here[1]>=0)
+        if quadrant==sector and all(math.dist(here,xy)>=minimum for xy in previous):
+            return box
+    raise ValueError('No separated exam box in the assigned sector')
+
+
 def draw_obstacle(index, rng, scene, footprints):
     host=f'movable_{index+1}'
     kind=str(rng.choice(('box','box','box','screen','elbow')))
@@ -183,8 +195,11 @@ def mount(rng, scene, size, kind):
 def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='fixed', host_stress=None,
            prepare_room=None, obstacle_set='boxes'):
     if (not 1<=marker_count<=dictionary_size or furniture not in ('fixed','shuffle') or
-            host_stress not in (None,'wall','object') or obstacle_set not in ('boxes','legacy_mixed')):
+            host_stress not in (None,'wall','object') or obstacle_set not in ('boxes','legacy_mixed','spread_three')):
         raise ValueError('Invalid exam sampling parameters')
+    spread=obstacle_set=='spread_three'
+    if spread and (furniture!='fixed' or marker_count!=3 or host_stress is not None):
+        raise ValueError('The spread exam requires fixed desks, two box prints and one outer-wall print')
     rng=np.random.default_rng(seed)
     scene=deepcopy(template)
     scene['seed']=int(seed); scene['targets']=[];scene['obstacles']=[]
@@ -195,14 +210,15 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
             tables[i]=draw_pose(old,rng,scene,static)
             static.append(polygon(tables[i]))
     else:static.extend(polygon(t) for t in tables)
-    count=EXAM_BOX_COUNT if obstacle_set=='boxes' else int(rng.integers(1 if host_stress=='object' else 0,10))
+    count=3 if spread else EXAM_BOX_COUNT if obstacle_set=='boxes' else int(rng.integers(1 if host_stress=='object' else 0,10))
+    sectors=rng.choice(4,3,replace=False) if spread else ()
     box_dimensions=sorted({(b['sx'],b['sy'],b['height']) for b in template['obstacles']})
     for i in range(count):
-        if obstacle_set=='boxes':
+        if obstacle_set!='legacy_mixed':
             sx,sy,height=box_dimensions[rng.integers(len(box_dimensions))]
             name=f'movable_{i+1}'
             box=dict(name=name,object_id=name,shape='box',sx=sx,sy=sy,height=height)
-            bodies=[draw_pose(box,rng,scene,static)]
+            bodies=[spread_box(box,rng,scene,static,sectors[i]) if spread else draw_pose(box,rng,scene,static)]
         else:
             bodies=draw_obstacle(i,rng,scene,static)
         scene['obstacles'].extend(bodies)
@@ -212,13 +228,18 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
     sizes=[t['size'] for t in template['targets']]
     ids=rng.choice(dictionary_size,size=marker_count,replace=False)
     witnesses={}
-    for ident in ids:
+    hosts=rng.permutation(['wall','object','object']) if spread else ()
+    for index,ident in enumerate(ids):
         size=float(rng.choice(sizes))
-        kind=host_stress or ('wall' if count==0 or rng.integers(2)==0 else 'object')
+        kind=hosts[index] if spread else host_stress or ('wall' if count==0 or rng.integers(2)==0 else 'object')
         for _ in range(800):
             placement=mount(rng,scene,size,kind)
             if placement is None:continue
             point,inward,host,height=placement
+            if spread and (host.startswith('wall_structure_') or
+                    any(t['attached_to']==host or math.dist(point,(t['x'],t['y']))<.38*min(scene['room_size'])
+                        for t in scene['targets'])):
+                continue
             low=max(.25,size*.65+.02);high=min(.40,height-size*.65-.02) if height else .40
             if high<low:continue
             z=float(rng.uniform(low,high));yaw=math.atan2(inward[1],inward[0])
@@ -238,5 +259,8 @@ def sample(template, tables, seed, dictionary_size, marker_count=3, furniture='f
     scene['randomization']=dict(enabled=False,seed=int(seed),generator='exam-random-layout',furniture=furniture)
     if obstacle_set=='boxes':
         scene['randomization']['obstacles']='exam_boxes'
+    elif spread:
+        scene['randomization'].update(obstacles='spread_exam_boxes',box_count=3,
+                                      box_marker_count=2,outer_wall_marker_count=1)
     scene['description']='Original Gazebo exam room with independently sampled movable obstacles, spawn and printed markers.'
     return scene,tables,witnesses

@@ -1,8 +1,12 @@
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
+Mixed v1.5.2.1 분산 배치 시험은 추가 주행을 세 회차로 제한했다. 회차마다 파란 상자 세 개, 서로 다른 상자에 마커 두 장, 외곽 벽에 한 장이 있다. [배치와 시드](experiments/2026-11-22_random_exam/spread-three/enrollment.json)
+
+8780 실험 보드는 정책 버전별로 주행 기록을 모은다. 상단에서 현재 주행을 확인하고, 버전을 펼쳐 맵·영상·마커별 접근 기록을 볼 수 있다. `보관함`에서 예전 실험을 복원할 수 있다. [실험 보드](http://192.168.252.2:8780/)
+
 8780 시뮬 보드에서 **Mixed v1.5.2.1 · 마커 재관찰 유지**를 별도로 선택할 수 있습니다. 이미 접근 중인 마커가 다시 보이면 그 관측을 반영하면서 접근을 이어갑니다. 기존 Balanced와 Visual Survey도 같은 상자 배치로 비교할 수 있습니다. [재현 로그와 정책](policy_candidates/2026-11-22_v152_focus_continuity/README.md)
 
-8780 시험장은 고정 책상 사이에 원래 시험장과 같은 파란 사각 상자 5개를 놓습니다. 상자의 위치와 방향, 마커 3개의 번호와 부착면, 로봇의 출발 자세를 매번 추첨합니다. Mixed v1.5.1-balanced와 벽·군집 탐색 후보인 Mixed v1.5.2 Visual Survey를 같은 다섯 배치에서 비교합니다. [시험 배치](experiments/2026-11-22_random_exam/box-only/five-box-worlds.png) · [정책](policy_candidates/2026-11-22_v151_visual_survey/README.md)
+8780 시험장은 고정 책상 사이에 원래 시험장과 같은 파란 사각 상자 5개를 놓습니다. 상자의 위치와 방향, 마커 3개의 번호와 부착면, 로봇의 출발 자세를 매번 추첨합니다. Mixed v1.5.1-balanced와 벽·군집 탐색 후보인 Mixed v1.5.2 Visual Survey를 비교할 다섯 배치를 등록했고 첫 배치를 주행한 뒤 분산 시험으로 전환했습니다. [시험 배치](experiments/2026-11-22_random_exam/box-only/five-box-worlds.png) · [정책](policy_candidates/2026-11-22_v151_visual_survey/README.md)
 
 공유 보드 기본값은 **실제 시험 · 고정 책상 · 상자 5개 · 마커 3개**입니다. 책상 14개와 다리 56개는 원래 자리에 있고, 상자 배치, 마커의 번호·위치·부착면, 로봇을 놓는 위치와 방향을 매번 새로 뽑습니다. 로봇은 출발 전에 마커가 총 3개라는 사실만 압니다. [공유 보드](http://192.168.252.2:8780/) · [팀 실행 방법](docs/team-policy-lab/README.md#공유-시험장에서-새-배치-실행)
 

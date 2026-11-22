@@ -39,12 +39,13 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def verify_boxes(scene, world, template):
+def verify_boxes(scene, world, template, expected_count=EXAM_BOX_COUNT):
     bodies=scene['obstacles']
     dimensions={(b['sx'],b['sy'],b['height']) for b in template['obstacles']}
-    if (scene.get('randomization',{}).get('obstacles')!='exam_boxes' or len(bodies)!=EXAM_BOX_COUNT or
-            len({b['object_id'] for b in bodies})!=EXAM_BOX_COUNT):
-        raise ValueError('Expected five independent exam boxes')
+    layout='spread_exam_boxes' if expected_count==3 else 'exam_boxes'
+    if (scene.get('randomization',{}).get('obstacles')!=layout or len(bodies)!=expected_count or
+            len({b['object_id'] for b in bodies})!=expected_count):
+        raise ValueError(f'Expected {expected_count} independent original exam boxes')
     models={m.get('name'):m for m in world.findall('world/model') if m.get('name','').startswith('movable_')}
     if set(models)!={b['name'] for b in bodies}:
         raise ValueError('Missing or additional movable Gazebo models')
@@ -215,6 +216,7 @@ def build(original, out, seed, marker_count=3, furniture='fixed', host_stress=No
     actual=ET.parse(out/FILES[0]).getroot()
     verify_prints(scene,actual,dictionary)
     if obstacle_set=='boxes':verify_boxes(scene,actual,raw)
+    if obstacle_set=='spread_three':verify_boxes(scene,actual,raw,3)
     if shell!=architecture(actual,scene,False) or (furniture=='fixed' and fixed!=architecture(actual,scene,True)):
         raise ValueError('Architectural shell, original camera-room appearance or physics changed')
     files={n:digest(out/n) for n in FILES}
