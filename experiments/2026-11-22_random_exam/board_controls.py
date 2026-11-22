@@ -11,7 +11,8 @@ LEGACY_GROUP='<optgroup label="기존 트랙 · 번호 7, 32, 103">'
 OLD_GROUP='<optgroup label="시험장 · 장애물과 마커 전체 무작위">'
 OFFICIAL=(('exam-official-balanced','Mixed v1.5.1-balanced · 실제 시험'),
           ('exam-official-print','Balanced Print · 실제 시험'),
-          ('exam-official-survey','Mixed v1.5.2 Visual Survey · 벽·군집 탐색'))
+          ('exam-official-survey','Mixed v1.5.2 Visual Survey · 벽·군집 탐색'),
+          ('exam-official-focus','Mixed v1.5.2.1 · 마커 재관찰 유지'))
 STRESS=(('exam-balanced','Mixed v1.5.1-balanced · 마커 3개'),
         ('exam-print','Balanced Print · 마커 3개'),
         ('exam-print-unknown','Balanced Print · 마커 1~5개, 수량 미공개'))
@@ -31,9 +32,10 @@ def frontend(source):
     if FIXED_DESK_GROUP in source:
         source=once(source,FIXED_DESK_GROUP,NEW_GROUP)
     if NEW_GROUP in source:
-        if 'value="exam-official-survey"' not in source:
-            old=NEW_GROUP+options(OFFICIAL[:-1])+'</optgroup>'
-            source=once(source,old,NEW_GROUP+options(OFFICIAL)+'</optgroup>')
+        installed=tuple(item for item in OFFICIAL if f'value="{item[0]}"' in source)
+        if installed!=OFFICIAL:
+            source=once(source,NEW_GROUP+options(installed)+'</optgroup>',
+                        NEW_GROUP+options(OFFICIAL)+'</optgroup>')
         if any(source.count('value="'+mode+'"')!=1 for mode in MODES):
             raise ValueError('Incomplete random exam menu')
         return source
@@ -58,9 +60,10 @@ def backend(source):
             source=once(source,' + '+repr(PREVIOUS_MODES)+':',' + '+repr(MODES)+':')
             anchor="                        compatible = compatible and (policy == 'exam-print-unknown' or len(layout['targets']) == 3)"
             source=once(source,anchor,anchor+"\n                        compatible = compatible and layout['randomization'].get('furniture') == ('fixed' if policy.startswith('exam-official-') else 'shuffle')")
-        elif 'exam-official-survey' not in source:
-            previous=tuple(mode for mode in MODES if mode!='exam-official-survey')
-            source=once(source,' + '+repr(previous)+':',' + '+repr(MODES)+':')
+        else:
+            installed=tuple(mode for mode in MODES if repr(mode) in source)
+            if installed!=MODES:
+                source=once(source,' + '+repr(installed)+':',' + '+repr(MODES)+':')
         if "'exam_boxes'" not in source:
             source=once(source,anchor_furniture,anchor_furniture+'\n'+box_filter)
         compile(source,'compare_board.py','exec')

@@ -1,0 +1,86 @@
+{
+  "run": "v151-survey-candidate-track-m2712767296-310707902702518823",
+  "ground_truth_host": "wall_structure_column_nw_1",
+  "true_min_distance_m": 1.102377871045793,
+  "camera": {
+    "host": "wall_structure_column_nw_1",
+    "stage": "decoded_without_registration",
+    "geometric_18px_frames": 6,
+    "geometric_18px_near_frames": 0,
+    "geometric_6_to_lt18px_frames": 88,
+    "geometric_first_18px_s": 556.956,
+    "online_decodes": 46,
+    "offline_jpeg_decodes": 58,
+    "near_s": 13.2,
+    "near_center_frames": 0,
+    "near_incidence_s": {
+      "front_to_60_deg": 13.2,
+      "front_oblique": 0.0,
+      "behind": 0.0
+    },
+    "near_min_off_axis_deg": 42.898301131933366,
+    "near_median_off_axis_deg": 148.0675876584866,
+    "detector_breakdown": {
+      "small": 40,
+      "no_range": 23,
+      "accepted": 2
+    }
+  },
+  "policy": {
+    "marker_followups": [
+      {
+        "stamp": 564.0,
+        "id": 43,
+        "point": [
+          6.229018739255115,
+          -10.788042336878464
+        ],
+        "observer": [
+          6.7983141742944815,
+          -7.8052111856463675
+        ],
+        "goal": [
+          6.397744842127883,
+          -9.90399963304037,
+          -1.7593856812570408
+        ],
+        "stationary": false,
+        "attempt": 1,
+        "observed_min_edge_pixels": 13.0,
+        "predicted_min_edge_pixels": 43.863045074255744,
+        "view_resolution_penalty_s": 0.0
+      }
+    ],
+    "marker_directed_looks": [
+      {
+        "event": "selected",
+        "stamp": 564.0,
+        "id": 43,
+        "kind": "focus",
+        "point_odom": [
+          6.328885312273037,
+          -10.558892667831431
+        ],
+        "selected_scan_angle_rad": 0.0
+      },
+      {
+        "event": "cleared",
+        "stamp": 565.1,
+        "reason": "new_marker_hint",
+        "id": 43
+      }
+    ]
+  },
+  "launch_messages": [
+    "Pausing navigation to verify accepted marker 43"
+  ],
+  "evidence": {
+    "native/marker_followups.jsonl": "03e0a359ff3f294c3c1ae35d0f646d15fc8a5fe4d92896536deda92208b84b65",
+    "native/marker_directed_looks.jsonl": "ed2e1321f4ab710ee52bb1ec4c633136167061324b5a19f8c95a2ea2504434bc",
+    "launch.log": "47e914a30c155c926934ab129fd5fdd29baf88e2d33e3ee9fe8d702154310c99",
+    "camera_opportunity_result": "ab6e7a8ff6eb45048dff1fca9035087a80dc1be21b15a0f549c42de698397d33"
+  },
+  "patch_sha256": "2a0cec9e24b59e3c7c34a8249950cc8533bcc405a897101b053d3cda302fc917",
+  "native_test_summary": "65 passed in 1.18s",
+  "parent_control": "2 failed, 2 passed in 0.84s"
+}

@@ -1,4 +1,20 @@
 {
+  "mixed_v1521_focus_continuity": {
+    "phase": "preregistered_native_box_camera_comparison",
+    "production_promoted": false,
+    "hardware_drive": false,
+    "source_sha256": "dfd33c79d93498337a7f4257900f724894e7b5048f2dfee67a39ab395b3691bd",
+    "distinct_worlds": 5,
+    "development": 1,
+    "untuned": 4,
+    "known_count": 3,
+    "box_count": 5,
+    "jazzy_callback_and_safety_tests_passed": 65,
+    "parent_regressions_reproduced": 2,
+    "policy": "policy_candidates/2026-11-22_v152_focus_continuity/README.md",
+    "registration": "experiments/2026-11-22_random_exam/focus-enrollment.json",
+    "board": "experiments/2026-11-22_random_exam/box-only/focus-board.json"
+  },
   "mixed_v152_visual_survey": {
     "phase": "native_five_original_boxes_under_comparison",
     "production_promoted": false,

@@ -53,6 +53,9 @@ class SharedRandomBoardTests(unittest.TestCase):
         current=frontend(control)
         option=next(f'<option value="{key}">{label}</option>' for key,label in OPTIONS if key=='exam-official-survey')
         self.assertEqual(frontend(current.replace(option,'')),current)
+        focus=next(f'<option value="{key}">{label}</option>' for key,label in OPTIONS if key=='exam-official-focus')
+        self.assertEqual(frontend(current.replace(focus,'')),current)
+        self.assertEqual(frontend(current.replace(focus,'').replace(option,'')),current)
         previous=tuple(k for k in MODES if k!='exam-official-survey')
         server=f"# board_run.sh\nif policy not in ('pair',) + {previous!r}:\n    subprocess.Popen(command, env={{}})\n"
         server+="if replay:\n                        compatible = compatible and layout['randomization'].get('furniture') == ('fixed' if policy.startswith('exam-official-') else 'shuffle')\n"

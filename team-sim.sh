@@ -7,7 +7,7 @@ if [[ "$team_action" == board ]]; then
   exec python3 "$team_repo/tools/team_sim/board.py" "$@"
 fi
 if [[ "$team_action" == help ]]; then
-  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook|visual-survey] [--archive PATH]'
+  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook|visual-survey|visual-survey-focus] [--archive PATH]'
   echo 'run WORKSPACE [SEED] [--random-layout] [--markers three|unknown] [--tables fixed|shuffle] [--duration SECONDS] [--check]'
   echo 'board [--port 8780]'
   exit 0
