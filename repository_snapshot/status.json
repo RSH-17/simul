@@ -2197,6 +2197,18 @@
       "additional_total": 575,
       "existing_jazzy_worlds_reproduced": 12,
       "policy_performance_measurement": false
+    },
+    "shared_board_controls": {
+      "url": "http://192.168.252.2:8780/",
+      "modes": {
+        "exam-balanced": 3,
+        "exam-print": 3,
+        "exam-print-unknown": 0
+      },
+      "furniture": "shuffle",
+      "legacy_tracks_available": true,
+      "busy_http_status": 409,
+      "source": "experiments/2026-11-22_random_exam/board_run.py"
     }
   },
   "mixed_v151_balanced_print_relook": {
