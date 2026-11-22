@@ -4,13 +4,24 @@ const oldest=(...values)=>{const known=values.filter(v=>v!==undefined&&v!==null)
 const number=(value,digits=2)=>value===null||value===undefined?'—':Number(value).toFixed(digits);
 let controlToken='',commandSequence=0;
 const pendingCommands=new Set();
-const startButtons = document.querySelectorAll('.control-buttons .start-button');
-function disableStarts(disabled){for(const button of startButtons)button.disabled=disabled}
+const policySelect=$('robot-policy');
+let policySignature='';
+function disableStarts(disabled){$('robot-start').disabled=disabled||!policySelect.value}
+function showPolicies(policies){
+  const signature=JSON.stringify(policies);
+  if(signature===policySignature)return;
+  const selected=policySelect.value;
+  policySelect.replaceChildren(...policies.map(p=>new Option(p.label,p.action)));
+  if(policies.some(p=>p.action===selected))policySelect.value=selected;
+  policySelect.disabled=!policies.length;
+  policySignature=signature;
+}
 function renderControl(control){
   const enabled=Boolean(control?.enabled);
   $('robot-controls').hidden=!enabled;
   if(!enabled){controlToken='';return}
   controlToken=control.token||'';
+  showPolicies(control.policies||[]);
   const labels={idle:'구동 대기',docked:'도크에 있음 · 출발 대기',queued:'구동 요청 접수',preflight:'시간·센서 확인 중',starting:'주행 준비 중',running:'주행 중',stopping:'정지 중',stopped:'정지 완료',failed:'마지막 구동 요청 실패',stop_unverified:'정지 확인 필요'};
   $('control-state').textContent=labels[control.phase]||control.phase;
   $('control-state').className=['failed','stop_unverified'].includes(control.phase)?'bad':control.phase==='running'?'good':'';
@@ -119,7 +130,7 @@ function render(data){
   const pose=data.robot_pose;
   rows('nav-details',[
     ['현재 동작',status.active_action||'없음'],
-    ...(status.drive_policy ? [['R32 주행 판단',({detour:'짧은 우회',frontier:'미지 경계로 이동',inspect:'관측 위치로 이동',no_route:'안전한 경로 대기',waiting_for_global_costmap:'비용 지도 대기'})[status.drive_policy.kind||status.drive_policy.reason]||status.drive_policy.kind||'대기']] : []),
+    ...(Number.isInteger(status.rgb_resumptions) ? [['RGB 마커 접근 재개',status.rgb_resumptions+'회']] : []),
     ...(status.navigation_flow?.candidates?.proposed!==undefined ? [['기존 정책 후보',`${status.navigation_flow.candidates.proposed}개 중 ${status.navigation_flow.candidates.selected_from}개${status.navigation_flow.candidates.shared_exit?' · 같은 출구의 다른 목표 허용':''}`]] : []),
     ['종료 사유',outcome.detail||'진행 중 / 대기'],
     ['미션 경과',status.elapsed_seconds===undefined?'—':`${number(status.elapsed_seconds,1)} s`],
@@ -163,6 +174,6 @@ async function poll(){
   }
 }
 $('map-fullscreen').addEventListener('click',()=>$('map-frame').requestFullscreen?.());
-for(const button of startButtons)button.addEventListener('click',()=>controlCommand(button.dataset.action));
+$('robot-start').addEventListener('click',()=>{if(policySelect.value)controlCommand(policySelect.value)});
 $('robot-stop').addEventListener('click',()=>controlCommand('stop'));
 poll();setInterval(poll,1000);

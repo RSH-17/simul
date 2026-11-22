@@ -1,3 +1,5 @@
+실물 주행은 8767 보드에서 **Mixed v1.5.2.1 · Focus Continuity** 또는 **Mixed v1.5.1-balanced**를 선택한 뒤 구동합니다. [실물 보드](http://192.168.252.2:8767/) · [실물 구동 절차](dashboard/ROBOT_BOARD.md)
+
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
 Mixed v1.5.2.1 분산 시험을 세 회차에서 마쳤습니다. 상자 마커 6/6장, 외곽 벽 마커 2/3장에 등록 후 1.5m 이내로 접근했습니다. 세 장을 모두 확인한 엄격 완주는 2/3회, 범퍼 접촉은 0회였습니다. [회차별 경로·영상·판정](experiments/2026-11-22_random_exam/spread-three/RESULTS.md)

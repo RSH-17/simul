@@ -1,4 +1,5 @@
 {
+  "physical_policy_selector": {"port": 8767, "mode": "hardware", "policies_added": ["Mixed v1.5.2.1 Focus Continuity", "Mixed v1.5.1-balanced"], "hardware_board_ui_verified": true, "motion_command_sent": false},
   "mixed_v1521_focus_continuity": {
     "phase": "previous_five_world_comparison_superseded_by_spread_three",
     "production_promoted": false,

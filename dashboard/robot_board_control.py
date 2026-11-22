@@ -30,6 +30,8 @@ START_WORKSPACES = {
     "start-marker-relook-045": "flow_v3_r32_marker_relook_ws",
     "start-stall-recovery": "flow_v3_r32_smooth030_ws",
     "start-crowded": "flow_v3_r32_crowded_ws",
+    "start-balanced": "flow_v151_exposure_sync_r2_ws",
+    "start-focus": "v152_focus_continuity_box1122_ws",
     "start-upstream-r32": "r32_upstream_b1ed300_ws",
 }
 LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
@@ -45,6 +47,8 @@ LABELS = {"start": "Flow v4", "start-r32": "R32 주행 혼합 (이전)",
           "start-marker-relook-045": "Mixed · 판독 마커 재관찰 (v1.2 · 0.45 m/s)",
           "start-stall-recovery": "Mixed · 부드러운 주행·복구 (v1.3.1 · 0.30 m/s)",
           "start-crowded": "Mixed · 밀집 장애물 판단 (v1.4 실험 · 0.30 m/s)",
+          "start-balanced": "Mixed v1.5.1-balanced",
+          "start-focus": "Mixed v1.5.2.1 · Focus Continuity",
           "start-upstream-r32": "원본 · R32"}
 
 
@@ -95,6 +99,13 @@ class BoardControl:
         self.start_log = self.stop_log = None
         self.started_at = 0.
         self.selected = None
+        # Keep legacy API-only actions out of the operator menu.
+        hidden = {"start", "start-r32", "start-marker-relook-045"}
+        order = ["start-focus", "start-balanced"] + [
+            key for key in START_WORKSPACES if key not in hidden | {"start-focus", "start-balanced"}
+        ]
+        self.policies = [{"action": key, "label": LABELS[key]} for key in order
+                         if (self.workspace.parent / START_WORKSPACES[key] / "install/setup.bash").is_file()]
 
     def read_state(self):
         try:
@@ -138,6 +149,8 @@ class BoardControl:
                    RMW_IMPLEMENTATION="rmw_fastrtps_cpp",
                    FASTRTPS_DEFAULT_PROFILES_FILE=str(profile),
                    OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1")
+        if action == "start-focus":
+            env.update(OSP_PUBLIC_MARKER_COUNT="3", OSP_SURVEY_DISTANT_HINTS="false")
         with path.open("wb") as output:
             process = subprocess.Popen(self.command(action), cwd=self.repo, env=env,
                                        stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
@@ -198,7 +211,7 @@ class BoardControl:
                 if selected == "start-marker-relook" and state.get("forward_045"):
                     selected = "start-marker-relook-045"
             return dict(policy=LABELS.get(selected), enabled=True, token=self.token, phase=phase, detail=detail,
-                        can_start=not busy, can_stop=True, events=events[-8:])
+                        can_start=not busy, can_stop=True, policies=self.policies, events=events[-8:])
 
     def request(self, action):
         with self.lock:
