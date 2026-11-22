@@ -1,4 +1,16 @@
 {
+  "mixed_v152_visual_survey": {
+    "phase": "enrolled_native_validation",
+    "production_promoted": false,
+    "camera": [
+      "480x480",
+      5
+    ],
+    "independent_worlds": 5,
+    "additional_poses": 2,
+    "policy": "policy_candidates/2026-11-22_v151_visual_survey/README.md",
+    "registration": "experiments/2026-11-22_random_exam/visual_survey/enrollment.json"
+  },
   "mixed_v151_rescue360": {
     "version": "1.5.1-rescue360",
     "baseline": "1.5.1-balanced",

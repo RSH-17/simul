@@ -1,5 +1,7 @@
 [8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
 
+시험장 시뮬레이션용 **Mixed v1.5.2 Visual Survey**는 벽의 미관찰 구간과 장애물 군집의 반복 경로를 함께 추적한다. 고정 책상 시험장의 다섯 배치, 대체 출발 자세, 서로 가리는 장애물 앞에서 시작하는 별도 비교를 등록했다. [정책과 실행 방법](policy_candidates/2026-11-22_v151_visual_survey/README.md) · [실험 등록](experiments/2026-11-22_random_exam/visual_survey/enrollment.json)
+
 공유 보드 기본값은 **실제 시험 · 책상 고정 · 마커 3개**입니다. 책상 14개와 다리 56개는 원래 자리에 있고, 추가 장애물, 마커의 번호·위치·부착면, 로봇을 놓는 위치와 방향을 매번 새로 뽑습니다. 로봇은 출발 전에 마커가 총 3개라는 사실만 압니다. [공유 보드](http://192.168.252.2:8780/) · [팀 실행 방법](docs/team-policy-lab/README.md#공유-시험장에서-새-배치-실행)
 
 시험장 생성기는 벽 몰딩 뒤에 숨은 마커를 다시 배치합니다. 별도의 무작위 장면 192개에서 575장 모두에 실제 시뮬 도형의 가림을 통과한 관찰 위치가 있었습니다. [배치 검사 결과](experiments/2026-11-22_random_exam/fixture-visibility.json)

@@ -1,0 +1,36 @@
+{
+  "seed": 3477870352,
+  "original_start": [
+    3.400000000000002,
+    -1.7499999999999991,
+    0.979854904034184
+  ],
+  "start": [
+    -4.999999999999999,
+    -4.749999999999999,
+    2.8931794360702665
+  ],
+  "original_protocol_sha256": "197ebe026f4656c58302da6b8958ddab9c13381533baaf100c0e9abb48c2c715",
+  "generator_sha256": "1764b7603a92aa7b79acd14e51c4e39353afaca4b8f78fdcdeb14ae894f851cf",
+  "fixture_role": "diagnostic: closest physically separate obstacles; both partly visible at spawn",
+  "hypothesis": "less repeated travel without a new readable surface near the pair, without sacrificing verified marks",
+  "far_hints": false,
+  "pair": [
+    "movable_1_a",
+    "movable_6"
+  ],
+  "grid_clearance_m": 0.5147815070493501,
+  "gap_m": 0.3447862758976728,
+  "same_direction_rays": 17,
+  "rays_total": 121,
+  "unique_first_hits": [
+    88,
+    16
+  ],
+  "ray_height_m": 0.32,
+  "ray_spacing_rad": 0.01,
+  "distance_to_bodies_m": [
+    0.5235597619101814,
+    1.179310473458301
+  ]
+}

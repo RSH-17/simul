@@ -9,7 +9,8 @@ STRESS_GROUP='<optgroup label="참고 실험 · 책상 재배치">'
 LEGACY_GROUP='<optgroup label="기존 트랙 · 번호 7, 32, 103">'
 OLD_GROUP='<optgroup label="시험장 · 장애물과 마커 전체 무작위">'
 OFFICIAL=(('exam-official-balanced','Mixed v1.5.1-balanced · 실제 시험'),
-          ('exam-official-print','Balanced Print · 실제 시험'))
+          ('exam-official-print','Balanced Print · 실제 시험'),
+          ('exam-official-survey','Mixed v1.5.2 Visual Survey · 벽·군집 탐색'))
 STRESS=(('exam-balanced','Mixed v1.5.1-balanced · 마커 3개'),
         ('exam-print','Balanced Print · 마커 3개'),
         ('exam-print-unknown','Balanced Print · 마커 1~5개, 수량 미공개'))
@@ -24,12 +25,15 @@ def once(source, old, new):
 
 
 def frontend(source):
+    def options(items):
+        return ''.join(f'<option value="{mode}">{label}</option>' for mode,label in items)
     if NEW_GROUP in source:
+        if 'value="exam-official-survey"' not in source:
+            old=NEW_GROUP+options(OFFICIAL[:-1])+'</optgroup>'
+            source=once(source,old,NEW_GROUP+options(OFFICIAL)+'</optgroup>')
         if any(source.count('value="'+mode+'"')!=1 for mode in MODES):
             raise ValueError('Incomplete random exam menu')
         return source
-    def options(items):
-        return ''.join(f'<option value="{mode}">{label}</option>' for mode,label in items)
     controls=NEW_GROUP+options(OFFICIAL)+'</optgroup>'+STRESS_GROUP+options(STRESS)+'</optgroup>'+LEGACY_GROUP
     if OLD_GROUP in source:
         return once(source,OLD_GROUP+options(STRESS)+'</optgroup>'+LEGACY_GROUP,controls)
@@ -46,7 +50,10 @@ def backend(source):
             source=once(source,' + '+repr(PREVIOUS_MODES)+':',' + '+repr(MODES)+':')
             anchor="                        compatible = compatible and (policy == 'exam-print-unknown' or len(layout['targets']) == 3)"
             source=once(source,anchor,anchor+"\n                        compatible = compatible and layout['randomization'].get('furniture') == ('fixed' if policy.startswith('exam-official-') else 'shuffle')")
-            compile(source,'compare_board.py','exec')
+        elif 'exam-official-survey' not in source:
+            previous=tuple(mode for mode in MODES if mode!='exam-official-survey')
+            source=once(source,' + '+repr(previous)+':',' + '+repr(MODES)+':')
+        compile(source,'compare_board.py','exec')
         return source
     legacy="('flow','mixed','center','adaptive','shared','r32','pair')"
     source=once(source,'if policy not in '+legacy+':','if policy not in '+legacy+' + '+repr(MODES)+':')

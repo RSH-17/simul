@@ -17,6 +17,7 @@ TRACK=HOME/'track-recordings'
 MODES={
     'exam-official-balanced':('baseline','Balanced · 실제 시험 조건',3,'fixed','flow_v151_exposure_sync_r2_ws'),
     'exam-official-print':('candidate','Balanced Print · 실제 시험 조건',3,'fixed','v151_balanced_print_r1_1122_ws'),
+    'exam-official-survey':('visualsurvey','Mixed v1.5.2 Visual Survey · 벽·군집 탐색',3,'fixed','v152_visual_survey_r3_1122_ws'),
     'exam-balanced':('baseline','Balanced · 책상 재배치',3,'shuffle','flow_v151_exposure_sync_r2_ws'),
     'exam-print':('candidate','Balanced Print · 책상 재배치',3,'shuffle','v151_balanced_print_r1_1122_ws'),
     'exam-print-unknown':('candidate','Balanced Print · 책상 재배치·개수 미공개',0,'shuffle','v151_balanced_print_r1_1122_ws'),
@@ -96,7 +97,12 @@ def execute(stage, args):
     role,title,count,furniture,workspace=MODES[args.mode]
     ws=HOME/workspace
     profile=identity(ws)
-    approved=read(HERE/'balanced_print/enrollment.json')['policies'][role]
+    if role=='visualsurvey':
+        survey=read(HERE/'visual_survey/enrollment.json')
+        approved=survey['source_manifest_sha256']
+        os.environ['OSP_SURVEY_DISTANT_HINTS']='true' if survey['board_distant_hints'] else 'false'
+    else:
+        approved=read(HERE/'balanced_print/enrollment.json')['policies'][role]
     if profile['source_manifest_sha256']!=approved:
         raise ValueError('The installed simulation policy differs from the tested version.')
     if not args.check:runner.guard()

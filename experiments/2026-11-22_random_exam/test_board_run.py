@@ -6,7 +6,7 @@ from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import Mock, patch
 
-from board_controls import MODES, OPTIONS, frontend
+from board_controls import MODES, OPTIONS, backend, frontend
 from board_run import MODES as RUNTIME_MODES, finish_card, prepare, reserve
 from fixture import FILES
 
@@ -47,6 +47,17 @@ class SharedRandomBoardTests(unittest.TestCase):
         self.assertLess(result.index('value="exam-balanced"'),result.index('value="pair"'))
         self.assertEqual(set(MODES),set(RUNTIME_MODES))
         for opt,_ in OPTIONS:self.assertEqual(result.count('value="'+opt+'"'),1)
+
+    def test_existing_fixed_desk_menu_and_server_gain_one_simulation_candidate(self):
+        control='트랙 정책 <select><option value="pair">Pair</option></select></label> <button type="submit">새 랜덤 트랙 주행</button>'
+        current=frontend(control)
+        option=next(f'<option value="{key}">{label}</option>' for key,label in OPTIONS if key=='exam-official-survey')
+        self.assertEqual(frontend(current.replace(option,'')),current)
+        previous=tuple(k for k in MODES if k!='exam-official-survey')
+        server=f"# board_run.sh\nif policy not in ('pair',) + {previous!r}:\n    subprocess.Popen(command, env={{}})\n"
+        patched=backend(server)
+        self.assertEqual(backend(patched),patched)
+        self.assertIn(repr(MODES),patched)
 
     @unittest.skipUnless(os.environ.get('EXAM_SOURCE'),'requires the actual exam room')
     def test_existing_random_run_replays_the_same_files_and_public_count(self):

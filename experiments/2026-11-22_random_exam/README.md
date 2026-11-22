@@ -1,5 +1,7 @@
 # 8780 시험장 무작위 주행 비교
 
+벽과 장애물 군집을 함께 다루는 후보로 Mixed v1.5.2 Visual Survey를 등록했다. 독립 다섯 배치와 같은 맵의 대체 출발 자세를 기준판 및 Balanced Print와 비교한다. 별도 진단에서는 실제 간격 34.5cm인 두 물체가 겹쳐 보이는 출발 자세를 고정하고, 최근 20초간 새 표면 노출이나 새 ID가 없었던 반복 주행거리를 센다. [정책 등록](visual_survey/enrollment.json) · [겹침 조건](visual_survey/cluster-start.json) · [기록 지도에서 두 정책의 41회 결정](visual_survey/snapshot-replay.json)
+
 책상 재배치 참고 실험은 네 배치, 여덟 주행을 저장했다. 공식 시험과 분리해 집계했다. [참고 실험의 결과와 영상](results/shuffled-prefix/RESULTS.md)
 
 공식 시험은 마커가 총 3개임을 알려 주고 책상 14개와 다리 56개를 원래 위치에 둔다. 새로 추첨한 다섯 시험 배치의 추가 장애물은 각각 3·3·9·8·0개였다. 순서 반전 반복은 독립 표본에 넣지 않는다. 모든 월드의 실제 가구 충돌·시각 모델을 원본과 대조했다. [공식 시험의 사전 등록](official-fixed/enrollment.json) · [팀 실행기와 8780의 실제 모델 대조](official-fixed/team-preflight.json)
