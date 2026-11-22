@@ -38,6 +38,44 @@ def layout_results(pairs, worlds, candidate='R5'):
             '|---|---|---:|---:|---:|', *rows]
 
 
+def paired_consistency(pairs, candidate):
+    first = [pair for pair in pairs if pair['valid'] and not pair['repeat']]
+    if not first:
+        return []
+    outcomes = Counter()
+    differences = []
+    for pair in first:
+        baseline = pair['baseline']['score']
+        subject = pair['candidate']['score']
+        outcomes[bool(baseline['strict']), bool(subject['strict'])] += 1
+        differences.append(subject['verified'] - baseline['verified'])
+    wins = sum(d > 0 for d in differences)
+    losses = sum(d < 0 for d in differences)
+    lines = ['', '### 배치에 따라 결과가 달라졌는가', '',
+             f"독립 배치 {len(first)}개에서 두 정책 모두 엄격 완주한 배치는 {outcomes[True, True]}개, "
+             f"Balanced만 완주한 배치는 {outcomes[True, False]}개, {candidate}만 완주한 배치는 "
+             f"{outcomes[False, True]}개, 두 정책 모두 미완주한 배치는 {outcomes[False, False]}개였다.",
+             '', f"근거리까지 확인한 마커 수는 {candidate}가 더 많은 배치 {wins}개, 같은 배치 "
+             f"{len(first) - wins - losses}개, 더 적은 배치 {losses}개였다."]
+    if len(first) > 1:
+        total = sum(differences)
+        leave_one_out = [(total - d) / (len(first) - 1) for d in differences]
+        lines.append(f"각 배치를 하나씩 빼고 다시 계산한 평균 접근 수 차이({candidate} − Balanced)는 "
+                     f"맵당 {min(leave_one_out):+.2f}~{max(leave_one_out):+.2f}장이었다.")
+    originals = {pair['seed']: pair for pair in first}
+    for pair in pairs:
+        if not pair['valid'] or not pair['repeat'] or pair['seed'] not in originals:
+            continue
+        first_pair = originals[pair['seed']]
+        changes = []
+        for role, label in (('baseline', 'Balanced'), ('candidate', candidate)):
+            scores = [row[role]['score'] for row in (first_pair, pair)]
+            changes.append(f"{label} {scores[0]['verified']}→{scores[1]['verified']}장")
+        lines.extend(['', f"시드 {pair['seed']}에서 실행 순서를 바꾼 반복의 근거리 확인은 "
+                      + ', '.join(changes) + '이었다. 이 반복은 독립 배치 집계에서 제외했다.'])
+    return lines
+
+
 def missed_markers(root, pairs, candidate='R5'):
     counts = {'baseline': Counter(), 'candidate': Counter()}
     activity = {'baseline': [], 'candidate': []}
@@ -159,6 +197,7 @@ def report(root):
         b,c=[mean(p[k]['score']['goal_complete_by_s'] for p in both) for k in ('baseline','candidate')]
         lines+=['',f'양쪽 모두 엄격 완주한 신규 배치 {len(both)}개에서 마지막 확인까지 평균은 Balanced {b:.1f}초, {candidate} {c:.1f}초였다.']
     lines.extend(layout_results(data['pairs'], worlds, candidate))
+    lines.extend(paired_consistency(data['pairs'], candidate))
     lines.extend(missed_markers(root, data['pairs'], candidate))
     lines.extend(supplemental(root, data['pairs'], candidate))
     if (root/'routes.png').is_file():

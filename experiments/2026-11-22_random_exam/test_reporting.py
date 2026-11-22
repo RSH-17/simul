@@ -5,10 +5,25 @@ import unittest
 
 from board_results import apply
 from opportunities import print_relooks
-from report import layout_results, missed_markers, report, supplemental
+from report import layout_results, missed_markers, paired_consistency, report, supplemental
 
 
 class ReportingTests(unittest.TestCase):
+    def test_each_layout_counts_once_when_checking_if_the_advantage_depends_on_one_draw(self):
+        def pair(seed, baseline, candidate, **updates):
+            def result(n):
+                return dict(score=dict(strict=n == 3, verified=n))
+            row = dict(seed=seed, valid=True, repeat=False, baseline=result(baseline), candidate=result(candidate))
+            return dict(row, **updates)
+        rows = [pair(10, 1, 3), pair(11, 3, 2), pair(12, 3, 3),
+                pair(10, 3, 2, repeat=True), pair(13, 0, 3, valid=False)]
+        output = '\n'.join(paired_consistency(rows, 'Balanced Print'))
+        self.assertIn('독립 배치 3개', output)
+        self.assertIn('더 많은 배치 1개, 같은 배치 1개, 더 적은 배치 1개', output)
+        self.assertIn('맵당 -0.50~+1.00장', output)
+        self.assertIn('Balanced 1→3장, Balanced Print 3→2장', output)
+        self.assertEqual(paired_consistency([], 'Balanced Print'), [])
+
     def test_new_relook_log_distinguishes_request_turn_and_restoring_a_navigation_goal(self):
         def event(kind, stamp, **extra):
             return dict(event=kind, stamp=stamp, **extra)
