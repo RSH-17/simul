@@ -1,0 +1,25 @@
+{
+  "baseline": [],
+  "candidate": [
+    {
+      "run": "v153-region-track-m112602-1795256846066447941",
+      "critical_events": [
+        "SERVER collision_monitor IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes."
+      ],
+      "cancel_nav2_unavailable_count": 1,
+      "lifecycle_reactivation_logged": true,
+      "last_goal_selection_s": 128.1,
+      "last_pose_outside_final_2cm_3deg_s": 127.88,
+      "final_pose_dwell_sim_s": 472.1,
+      "end_s": 599.98,
+      "in_run_status_after_lifecycle_reactivation": {
+        "state": "running",
+        "targets": 0,
+        "elapsed_seconds": 217.6,
+        "active_action": "nav",
+        "readiness_reason": "",
+        "sensor_interruptions": 0
+      }
+    }
+  ]
+}

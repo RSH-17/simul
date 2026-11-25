@@ -1,0 +1,46 @@
+{
+  "pid": 3308402,
+  "live_menu": "exam-official-focus",
+  "default": "exam-official-balanced",
+  "native_check": {
+    "exam-official-balanced": {
+      "policy": "Balanced · 실제 시험 조건",
+      "seed": 992211,
+      "public_marker_count": 3,
+      "furniture": "fixed",
+      "check_only": true,
+      "physical_drive": false,
+      "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+      "world_sha256": "52d1ea82e99aeb6951f06d4e5869861f38d81beea4225d31299e1fd1b87d9a2e"
+    },
+    "exam-official-survey": {
+      "policy": "Mixed v1.5.2 Visual Survey · 벽·군집 탐색",
+      "seed": 992211,
+      "public_marker_count": 3,
+      "furniture": "fixed",
+      "check_only": true,
+      "physical_drive": false,
+      "source_sha256": "46a6dd68c5070172a22b6680f2945cf22aa8b4f3866797316c820e9fb82e135a",
+      "world_sha256": "0d87cc0c744301f89a5d7a7d27fb700ae9cdf66820612a1d18e3dd74d5d59bc4"
+    },
+    "exam-official-focus": {
+      "policy": "Mixed v1.5.2.1 · 마커 재관찰 유지",
+      "seed": 992211,
+      "public_marker_count": 3,
+      "furniture": "fixed",
+      "check_only": true,
+      "physical_drive": false,
+      "source_sha256": "dfd33c79d93498337a7f4257900f724894e7b5048f2dfee67a39ab395b3691bd",
+      "world_sha256": "f574af8026ebe6f0d520a2a502d686ecf886955be59ca7d17aba4bf745b17f7a"
+    }
+  },
+  "http_busystate": 409,
+  "rejected_old_geometry_http": 400,
+  "boxes": 5,
+  "physical_drive": false,
+  "launcher": "/home/ubuntu/random-exam-board/versions/five-exam-boxes-focus-1122",
+  "display": [
+    "7e27a88cbb933502dab74be90557bef6ba834deca9e811c44e3e6341507e01be",
+    "a18376454a4b69ae5528de3052790606c1857702a742c5db5825bcf6af1e3cb9"
+  ]
+}

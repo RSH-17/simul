@@ -1,0 +1,115 @@
+{
+  "policy": "Mixed v1.5.2.1 Focus Continuity",
+  "source_sha256": "dfd33c79d93498337a7f4257900f724894e7b5048f2dfee67a39ab395b3691bd",
+  "protocol": "fff102d0fbe9cc5ca289050e92e09c84bbf9d9eb9f3d067f9426bc538a9cb34b",
+  "runs": 3,
+  "time_limit_sim_s": 600,
+  "known_marker_count": 3,
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "fixed_table_count": 14,
+  "fixed_legs": 56,
+  "boxes": 3,
+  "box_markers": 2,
+  "perimeter_wall_markers": 1,
+  "production_promoted": false,
+  "physical_drive": false,
+  "worlds": [
+    {
+      "seed": 1398584497,
+      "ids": [
+        818,
+        667,
+        679
+      ],
+      "hosts": [
+        "movable_1",
+        "movable_2",
+        "wall_south_recess"
+      ],
+      "spacing": {
+        "min_box_centers_m": 6.2716846401703155,
+        "min_marker_centers_m": 5.44786363858144,
+        "outer_wall": "wall_south_recess"
+      },
+      "start": [
+        7.5,
+        -4.35,
+        -2.0842659273395174
+      ],
+      "files": {
+        "world/osp_studio.sdf": "b46dfc3cbfe38aaa323a913b51f0408c38719eca4ff675e31f9ac29b8efc1bf8",
+        "scene.json": "b73bb0d5292aead20a7af3175b69053dddabcfd8e480b424100721fc3199415c",
+        "scene.yaml": "a9e3ca04872280f97f41fdf561fc7b0158fda4fbbc88364a64c26734f62a9e4d",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_shell_sha256": "8f4a4d592addbb191c7ea4df4777972f4a5200565da094c66cc5317591d0a8be"
+    },
+    {
+      "seed": 550866253,
+      "ids": [
+        418,
+        282,
+        347
+      ],
+      "hosts": [
+        "wall_north",
+        "movable_3",
+        "movable_1"
+      ],
+      "spacing": {
+        "min_box_centers_m": 6.8056396438434446,
+        "min_marker_centers_m": 7.6883262648039,
+        "outer_wall": "wall_north"
+      },
+      "start": [
+        8.25,
+        1.5000000000000009,
+        2.855113079303126
+      ],
+      "files": {
+        "world/osp_studio.sdf": "dfcb215f592872824bc2900dcaeccd64ebf67bfd196c099eb20e792d52eceb79",
+        "scene.json": "3a8ff507f6bb088e316b24075f45a79e8611ca058318e53818f4ed853c95fb80",
+        "scene.yaml": "2aa4c0d33a62e313696a3844aef7f173f1599833b90e8aafad269e1aa1450350",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_shell_sha256": "8f4a4d592addbb191c7ea4df4777972f4a5200565da094c66cc5317591d0a8be"
+    },
+    {
+      "seed": 417608489,
+      "ids": [
+        768,
+        476,
+        350
+      ],
+      "hosts": [
+        "wall_west",
+        "movable_2",
+        "movable_1"
+      ],
+      "spacing": {
+        "min_box_centers_m": 7.33550882632267,
+        "min_marker_centers_m": 7.650083441367037,
+        "outer_wall": "wall_west"
+      },
+      "start": [
+        6.100000000000001,
+        2.250000000000001,
+        -2.494170729651567
+      ],
+      "files": {
+        "world/osp_studio.sdf": "5f0b56a7b166f3e811732aa9d2c0c62fd15034ace9fddff17654b9629051c411",
+        "scene.json": "6deeca2f8199f28d5a23fb0061399e07419d929d474cb09e8f49dc0715fd0e13",
+        "scene.yaml": "554d95e083eb60346b42cd2800e3643ff70b71f3b8df2715b37c82e2400c1475",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_shell_sha256": "8f4a4d592addbb191c7ea4df4777972f4a5200565da094c66cc5317591d0a8be"
+    }
+  ]
+}

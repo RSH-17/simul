@@ -1,0 +1,40 @@
+[
+  {
+    "seed": 112801,
+    "topology": "offset baffles",
+    "connected_free_cells": 3005,
+    "all_free_cells": 3005,
+    "camera_view_cells_per_target": {
+      "32": 68,
+      "103": 68,
+      "7": 68
+    },
+    "grid_m": 0.1,
+    "minimum_center_clearance_m": 0.42,
+    "view_range_m": [
+      0.75,
+      1.3
+    ],
+    "maximum_incidence_deg": 35,
+    "scope": "idealized connected floor and unobstructed bearing; no runtime Nav2 path or RGB certification"
+  },
+  {
+    "seed": 112802,
+    "topology": "recessed alcove",
+    "connected_free_cells": 2790,
+    "all_free_cells": 2790,
+    "camera_view_cells_per_target": {
+      "7": 70,
+      "32": 49,
+      "103": 71
+    },
+    "grid_m": 0.1,
+    "minimum_center_clearance_m": 0.42,
+    "view_range_m": [
+      0.75,
+      1.3
+    ],
+    "maximum_incidence_deg": 35,
+    "scope": "idealized connected floor and unobstructed bearing; no runtime Nav2 path or RGB certification"
+  }
+]

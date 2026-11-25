@@ -1,0 +1,84 @@
+{
+  "original_protocol": "197ebe026f4656c58302da6b8958ddab9c13381533baaf100c0e9abb48c2c715",
+  "alternate_protocol": "e7bc136986b77bd28426fdf551a825e2aaacb81cf9829bb436fab039defbf42f",
+  "runner_sha256": "f8a550104b1be7b85382ee983bf5cbdb287cc1f6c37b698f794b6a5a3e74e5bd",
+  "known_count": 3,
+  "duration_s": 600,
+  "pixels": [
+    480,
+    480
+  ],
+  "fps": 5,
+  "parents": [
+    "original Balanced",
+    "Balanced Print from the same world and verified initial pose"
+  ],
+  "gate": "Enable distant hints for the scored Visual Survey panel only if the preregistered three-layout exposure screen passes. Otherwise run that feature separately on development world 2.",
+  "candidate_failures_retried": false,
+  "version": "Mixed v1.5.2 Visual Survey",
+  "source_manifest_sha256": "46a6dd68c5070172a22b6680f2945cf22aa8b4f3866797316c820e9fb82e135a",
+  "native_enrollment_sha256": "2e30adb1dd2f61d67d15e7dd0045de035a52a01bc8e90860c92fb47dceff46d4",
+  "board_distant_hints": false,
+  "cases": [
+    {
+      "purpose": "development",
+      "seed": 1817236217,
+      "start": [
+        -0.3999999999999986,
+        -1.049999999999999,
+        1.938338528253655
+      ],
+      "world_sha256": "cd1526e23cf7df164c2d48c03ab68a3b55831c1df5aa139befcfb66a875655b6"
+    },
+    {
+      "purpose": "untuned",
+      "seed": 3477870352,
+      "start": [
+        3.400000000000002,
+        -1.7499999999999991,
+        0.979854904034184
+      ],
+      "world_sha256": "69288f080ade477e4be83d7451421f7848c167ac70b35e3af7492a6b2c77ff4b"
+    },
+    {
+      "purpose": "untuned",
+      "seed": 2293287138,
+      "start": [
+        7.0,
+        -1.799999999999999,
+        -2.888967946465957
+      ],
+      "world_sha256": "dd4239e774a59e233614f02f70d0a23ea9a12875da21e068b24cc7924428a43b"
+    },
+    {
+      "purpose": "untuned",
+      "seed": 4138722517,
+      "start": [
+        -2.3499999999999988,
+        2.750000000000001,
+        2.390333759081485
+      ],
+      "world_sha256": "b32625fbdb10a71d61f0c608046a90c5913569ab67cd685f66f1d677017980b6"
+    },
+    {
+      "purpose": "development",
+      "seed": 2946727794,
+      "start": [
+        8.700000000000003,
+        -3.9499999999999993,
+        2.1400570088607402
+      ],
+      "world_sha256": "935c1bfc829acdef48f15874a81f63b2fa85987f09daf938c82762854a55b7a7"
+    },
+    {
+      "purpose": "alternate_pose",
+      "seed": 3477870352,
+      "start": [
+        8.950000000000003,
+        -2.5499999999999994,
+        2.4394069884068994
+      ],
+      "world_sha256": "69288f080ade477e4be83d7451421f7848c167ac70b35e3af7492a6b2c77ff4b"
+    }
+  ]
+}

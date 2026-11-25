@@ -1,0 +1,48 @@
+{
+  "run": "v151-boxes5-track-m112601-trial1",
+  "opencv": "4.6.0",
+  "frames": [
+    {
+      "frame": 25,
+      "decoded_ids": [],
+      "small_candidates": [],
+      "native_rejected_quads": []
+    },
+    {
+      "frame": 997,
+      "decoded_ids": [],
+      "small_candidates": [],
+      "native_rejected_quads": [
+        {
+          "center": [
+            198.75,
+            264.5
+          ],
+          "minimum_edge_px": 3.605551242828369
+        },
+        {
+          "center": [
+            396.25,
+            247.75
+          ],
+          "minimum_edge_px": 5.0
+        },
+        {
+          "center": [
+            396.25,
+            236.25
+          ],
+          "minimum_edge_px": 5.0
+        },
+        {
+          "center": [
+            58.75,
+            234.5
+          ],
+          "minimum_edge_px": 58.0
+        }
+      ]
+    }
+  ],
+  "limitations": "Saved JPEG replay only; compression and conversion differ from raw RGB. No ROS timestamps, TF, range association, temporal tracking or scheduling were replayed."
+}

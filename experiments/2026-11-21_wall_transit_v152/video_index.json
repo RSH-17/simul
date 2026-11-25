@@ -1,0 +1,26 @@
+{
+  "updated_utc": "2026-11-21T10:09:21.658402+00:00",
+  "release_url": "https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11",
+  "uploaded_verified": 1,
+  "videos": [
+    {
+      "asset": "v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4",
+      "local_path": "training_robust/native90/v152-wall-transit-r2-1121/v152-wall-r2-track-m112601-1795254354085795341/video/mission.mp4",
+      "bytes": 8521088,
+      "sha256": "4ec7926f69e1cf00dba2756d5de3a0fca0d46c3cebd50ced50cf7e47e2c5c903",
+      "url": "https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4",
+      "original_evaluator_success": false,
+      "reason": "common_time_limit",
+      "elapsed_sim_seconds": 600.0,
+      "targets": 2,
+      "collisions": 0,
+      "actual_approach_1_5m": false,
+      "recording_frames": 3000,
+      "recording_seconds": 600.0,
+      "uploaded_verified": true
+    }
+  ],
+  "skipped": [],
+  "repository_private": false,
+  "note": "Original evaluator success may use an older protocol; actual 1.5m approach is listed separately. Public release downloads; uploads authorized by the repository owner."
+}

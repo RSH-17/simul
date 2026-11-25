@@ -1,0 +1,47 @@
+{
+  "protocol": "Identical stored SLAM and RGB boundary flags. One-pass segmentation only; map-to-odom set to identity for both. Not new navigation or marker detection.",
+  "rows": [
+    {
+      "elapsed_s": 40.8,
+      "snapshot": "0006.npz",
+      "r2_grid_axes": {
+        "sections": 127,
+        "observed": 0,
+        "maximum_fraction": 0.3333333383003871
+      },
+      "r3_measured_normals": {
+        "sections": 38,
+        "observed": 0,
+        "maximum_fraction": 0.5276094327296292
+      }
+    },
+    {
+      "elapsed_s": 97.3,
+      "snapshot": "0011.npz",
+      "r2_grid_axes": {
+        "sections": 142,
+        "observed": 0,
+        "maximum_fraction": 0.4000000059604645
+      },
+      "r3_measured_normals": {
+        "sections": 48,
+        "observed": 1,
+        "maximum_fraction": 0.9989333236693964
+      }
+    },
+    {
+      "elapsed_s": 141.8,
+      "snapshot": "0015.npz",
+      "r2_grid_axes": {
+        "sections": 170,
+        "observed": 0,
+        "maximum_fraction": 0.4000000059604645
+      },
+      "r3_measured_normals": {
+        "sections": 62,
+        "observed": 5,
+        "maximum_fraction": 1.0
+      }
+    }
+  ]
+}

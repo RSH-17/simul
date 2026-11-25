@@ -1,0 +1,93 @@
+{
+  "stage": "screen not complete when suite was sealed; no blind performance outcome",
+  "sha256_sorted_json_manifest": "f7e497a913c92d65962922abe0d4ec8ad15943bcd1733b15956435fecc91418b",
+  "previous_persisted_sha256": "03db74faaf6a83cc3944c44ce66f7c7734024b0afff6ddee18ca6071d8ed32e2",
+  "nonmotion_amendment": "Select heldout recording name for compatible video postprocessing. Identical world, policy, starts, order, metrics and budget.",
+  "candidate_identity_sha256": "ef4fa250976927630188bcd816b007e4489366439104c30c4eda72be077a1365",
+  "baseline_identity_sha256": "82410a7721c0b6dca32e95e5e9d43c30537360dd29a8f579ecbc0d53bd31317a",
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "max_mission_sim_s": 600,
+  "geometry_and_order_commitment": "b5349b0d25fdf9c68c5923310b47bec4c085557a42799db0cd2839e11b46cbd3",
+  "suite_nonce_commitment": "245b26b3620ffd0b84db3366d31c0b0eda0fc7673561f1ac948c7fc91398d1ca",
+  "fixtures": [
+    {
+      "family": "wall_l_room",
+      "seed_and_start_sha256": "2276870e1539d6cea9b588c084a623e6a5002b2c602b35eea27a4ac671bff884",
+      "sdf_sha256": "29fb2fd4db8dce3f5b4af90924ed7b2723d36f9032a7a0b20f4b411a905831dd",
+      "floor_sha256": "7dc1f0830ed4726b23d9f1814a7e7ad2efd64a69c31bbcb312731577ad046745",
+      "source_yaml_sha256": "c14c2a9cf0f1b6675163ea42d07bb89bd22fb3ddd07638938d3ee2004d80795a",
+      "placement_geometry_draw": 1,
+      "minimum_visible_cells": 2
+    },
+    {
+      "family": "boxes_trapezoid",
+      "seed_and_start_sha256": "1ab157d801eb70b587991095aa45a9817e589a0e0cf5d334bee56b8efddd94b7",
+      "sdf_sha256": "7e3a7f5574a3522b2f9e4dcd3b259d58afba58e38eb154efd4a644501aadf3f8",
+      "floor_sha256": "f1efe49673b3976ff9e43cdcf33f266deeb4ba6c5abaed2ca9b124870fb18bcc",
+      "source_yaml_sha256": "cff1790ae0172752b8e76b677c1fc3f181cecc96dd391288405a1cb7e59f96ae",
+      "placement_geometry_draw": 2,
+      "minimum_visible_cells": 203
+    },
+    {
+      "family": "mixed_occluded_u",
+      "seed_and_start_sha256": "adab6af646ce2333ec213b615deab9e95445fee1923eb9ae2fcfe9d99abaf4e2",
+      "sdf_sha256": "f33fefdb2f580747b925a93ac5353e6ca2ae06fce1ab10bc003a88f0739ccbf1",
+      "floor_sha256": "912796814aa41523de3e7e2929090c1435f122f2f0f03ee17c23cffd71913972",
+      "source_yaml_sha256": "2b0952115586d0446defa81d6eeb4372b18b45f15328f8a4ff41e835ff415e35",
+      "placement_geometry_draw": 12,
+      "minimum_visible_cells": 1
+    },
+    {
+      "family": "narrow_door",
+      "seed_and_start_sha256": "4eac95c527b43654c9af7631d5ee9785908753c2ef46c031701e64271f7db751",
+      "sdf_sha256": "15bbcd62de456c39024b1b417425ab1edef4d268a04e9d8ad8312bf41f3867a0",
+      "floor_sha256": "625bd9878d40fac830a22f3edb97af5b78fa1e44ec86db185c97e2a6374cb7e5",
+      "source_yaml_sha256": "e70df6d02acb5d1ce484f0e08516f29230d626363472ec6b53b46fc6591e2c02",
+      "placement_geometry_draw": 2,
+      "minimum_visible_cells": 233
+    },
+    {
+      "family": "same_box_two_prints",
+      "seed_and_start_sha256": "6c35d362c6ff0e1a09c7d570d4f8ce6d69e78c06bd14eebb05f512c2bdd4feb8",
+      "sdf_sha256": "3133abe8cab9d431b02ec0e01975edb40a2ef0142434214b846609509e7a97ed",
+      "floor_sha256": "52d5c42b70d126c6280d1f81f0a45984411d144af3a33d8771569a28ee903f90",
+      "source_yaml_sha256": "a0879deb4330a611eea61948ef01175a01433abc0a2594c5e3319c4786ab60cb",
+      "placement_geometry_draw": 1,
+      "minimum_visible_cells": 156
+    },
+    {
+      "family": "curved_perimeter",
+      "seed_and_start_sha256": "4a76cba63117e839ab8cceed30dae98886d3f08ac8e3362f37c52c17f3036f55",
+      "sdf_sha256": "3374df7e2bd181a370e2d9ce451ff9d685073693a135067ccb2a120eaf1098fd",
+      "floor_sha256": "0e1002a9cb230421b6b252959b2aa27ed3c75deeaeabfe61766700144e6768c3",
+      "source_yaml_sha256": "0b39b8880b2d95cc61c755c8a89536be7ae9d4d8a8f84abd33539587209436db",
+      "placement_geometry_draw": 1,
+      "minimum_visible_cells": 235
+    }
+  ],
+  "preflight": {
+    "decisions_and_supervisor_unit_tests_passed": 10,
+    "actual_worlds_generated_on_jazzy": 6,
+    "aruco_front_bits_for_all_targets_verified": 18,
+    "sample_replayed": "v151-survey-baseline-heldout-m112801-1122",
+    "replayed_strict": true,
+    "replayed_near_ids": [
+      7,
+      32,
+      103
+    ],
+    "observed_camera": [
+      480,
+      480
+    ],
+    "disabled_branch_did_not_enter_native_guard": true,
+    "initial_blind_launches": 0,
+    "service": "v151-independent-validation-1122.service",
+    "service_initial_state": "enabled/active; waiting_for_r2_export_and_gate",
+    "storage_measured_max_prior_mib": 96.52734375
+  }
+}

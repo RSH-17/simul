@@ -1,0 +1,36 @@
+{
+  "pid": 3264511,
+  "live_menu": "exam-official-survey",
+  "default": "exam-official-balanced",
+  "native_check": {
+    "exam-official-balanced": {
+      "policy": "Balanced · 실제 시험 조건",
+      "seed": 992211,
+      "public_marker_count": 3,
+      "furniture": "fixed",
+      "check_only": true,
+      "physical_drive": false,
+      "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+      "world_sha256": "0c345e9178b9dbd72f3188188cfb43e160fd6b6d08f5113feda381b575bdac06"
+    },
+    "exam-official-survey": {
+      "policy": "Mixed v1.5.2 Visual Survey · 벽·군집 탐색",
+      "seed": 992211,
+      "public_marker_count": 3,
+      "furniture": "fixed",
+      "check_only": true,
+      "physical_drive": false,
+      "source_sha256": "46a6dd68c5070172a22b6680f2945cf22aa8b4f3866797316c820e9fb82e135a",
+      "world_sha256": "69a14f0015c8079ea2ed26a87f2bf88ffea6eb7bd88a7479f90c22616e5024cd"
+    }
+  },
+  "http_busystate": 409,
+  "rejected_old_geometry_http": 400,
+  "boxes": 5,
+  "physical_drive": false,
+  "launcher": "/home/ubuntu/random-exam-board/versions/five-exam-boxes-1122",
+  "display": [
+    "125027b39e11dc15a316efa531d5265b718b01b1ef525479ec8d4f14fcaf91c9",
+    "a5b5daf9a14f695658a1051b5c50256d9841f20fc0afb9fe18688e03cde5aa06"
+  ]
+}

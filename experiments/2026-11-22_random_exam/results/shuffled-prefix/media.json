@@ -1,0 +1,74 @@
+[
+  {
+    "name": "v151-survey-baseline-track-m3818821658-1021171615408980175",
+    "seed": 3818821658,
+    "role": "baseline",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m3818821658-1021171615408980175.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-baseline-track-m3818821658-1021171615408980175/video/mission.mp4",
+    "sha256": "6979b21a02110f055c29b65211c76fdbe4f2fdcf8e0dd735150ab9d340fa170c",
+    "bytes": 7196092
+  },
+  {
+    "name": "v151-survey-candidate-track-m3818821658-1021171615408980175",
+    "seed": 3818821658,
+    "role": "candidate",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m3818821658-1021171615408980175.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-candidate-track-m3818821658-1021171615408980175/video/mission.mp4",
+    "sha256": "4853a24d431adfcc3fa1f9b59fb0ae9b88c27e9a1b0e040337251ce7d75cb723",
+    "bytes": 7534386
+  },
+  {
+    "name": "v151-survey-candidate-track-m2164651793-904460405419145261",
+    "seed": 2164651793,
+    "role": "candidate",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m2164651793-904460405419145261.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-candidate-track-m2164651793-904460405419145261/video/mission.mp4",
+    "sha256": "09b3d359ff88f0f574960da095c49e860ced5a1e1bea7dd7a67ef43a8454231c",
+    "bytes": 3446788
+  },
+  {
+    "name": "v151-survey-baseline-track-m2164651793-904460405419145261",
+    "seed": 2164651793,
+    "role": "baseline",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m2164651793-904460405419145261.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-baseline-track-m2164651793-904460405419145261/video/mission.mp4",
+    "sha256": "4cf3c1c0c14d8179c81b480b10685dcba45d80b91226146c9280b0126c07c88b",
+    "bytes": 2424139
+  },
+  {
+    "name": "v151-survey-baseline-track-m1506996263-758615926508713792",
+    "seed": 1506996263,
+    "role": "baseline",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1506996263-758615926508713792.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-baseline-track-m1506996263-758615926508713792/video/mission.mp4",
+    "sha256": "d393a150156ba41189d808d036642ae5deac904c683e92f461b87a9a816550f5",
+    "bytes": 2631646
+  },
+  {
+    "name": "v151-survey-candidate-track-m1506996263-758615926508713792",
+    "seed": 1506996263,
+    "role": "candidate",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m1506996263-758615926508713792.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-candidate-track-m1506996263-758615926508713792/video/mission.mp4",
+    "sha256": "cebd2c108ca84caca43281f664a0c0e279f675db4c6afa2c9dd000a55ba2307f",
+    "bytes": 2855586
+  },
+  {
+    "name": "v151-survey-candidate-track-m1565135385-716985422643685146",
+    "seed": 1565135385,
+    "role": "candidate",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m1565135385-716985422643685146.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-candidate-track-m1565135385-716985422643685146/video/mission.mp4",
+    "sha256": "ef85d11c8c5cf2ffca30337d46ab1bacaf77a0b6bad41a1d389ce3db8a0e1d69",
+    "bytes": 2096863
+  },
+  {
+    "name": "v151-survey-baseline-track-m1565135385-716985422643685146",
+    "seed": 1565135385,
+    "role": "baseline",
+    "asset": "v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1565135385-716985422643685146.mp4",
+    "relative": "training_robust/native90/v151-random-shuffled-balanced-print-1122/v151-survey-baseline-track-m1565135385-716985422643685146/video/mission.mp4",
+    "sha256": "bd84f834f8c5d5236fb8de1b3f9c2f39ad896493a391efbc23875cf258db533e",
+    "bytes": 6618992
+  }
+]

@@ -1,0 +1,824 @@
+{
+  "complete": true,
+  "common_protocol": "3 exact IDs, independent post-registration approach <=1.5m, saved fixed-frame errors <=0.25m, zero bumps",
+  "groups": {
+    "balanced": {
+      "n": 5,
+      "successes": 3,
+      "registered": 12,
+      "approached": 12,
+      "wall_registered": 3,
+      "wall_approached": 3,
+      "box_registered": 9,
+      "box_approached": 9,
+      "mean_sim_s": 489.6336,
+      "mean_path_m": 83.77781194727584,
+      "bumps": 0
+    },
+    "rescue360": {
+      "n": 5,
+      "successes": 3,
+      "registered": 13,
+      "approached": 13,
+      "wall_registered": 3,
+      "wall_approached": 3,
+      "box_registered": 10,
+      "box_approached": 10,
+      "mean_sim_s": 458.0232,
+      "mean_path_m": 73.27769273663438,
+      "bumps": 0
+    },
+    "latest_r32": {
+      "n": 5,
+      "successes": 0,
+      "registered": 12,
+      "approached": 8,
+      "wall_registered": 4,
+      "wall_approached": 4,
+      "box_registered": 8,
+      "box_approached": 4,
+      "mean_sim_s": 353.1648,
+      "mean_path_m": 58.93146554759733,
+      "bumps": 0
+    }
+  },
+  "pairs": [
+    {
+      "seed": 112601,
+      "balanced": {
+        "run": "v151-boxes5-track-m112601-trial1",
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "initial_world_xy": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "registered": [
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 7,
+        "wall_registered": false,
+        "wall_approached": false,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": false,
+        "saved_map_error_m": {
+          "32": 0.1775067872570211,
+          "103": 0.04646768879664783
+        },
+        "elapsed_sim_s": 600.004,
+        "elapsed_wall_s": 1356.7458824269997,
+        "all_approached_s": null,
+        "path_m": 112.5010060741611,
+        "bumps": 0,
+        "reason": "common_time_limit",
+        "policy_specific_strict": false,
+        "policy_specific_approached": [
+          32,
+          103
+        ],
+        "video": {
+          "frames": 3000,
+          "duration_s": 600.0,
+          "recorded_frames": 2999,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "3cc32cf24769cbab7acc3a063a86748b86c66914e9c27387ea66ee80ce0a3a1e"
+        }
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112601-1795270786287973756",
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "initial_world_xy": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 7,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": true,
+        "saved_map_error_m": {
+          "32": 0.08815304852725227,
+          "103": 0.059859799708397034,
+          "7": 0.03514655257864589
+        },
+        "elapsed_sim_s": 334.652,
+        "elapsed_wall_s": 661.7673421869986,
+        "all_approached_s": 333.636,
+        "path_m": 55.48631560334855,
+        "bumps": 0,
+        "reason": "all_registered_and_within_1.5m",
+        "policy_specific_strict": true,
+        "policy_specific_approached": [
+          7,
+          32,
+          103
+        ],
+        "video": {
+          "frames": 1673,
+          "duration_s": 334.6,
+          "recorded_frames": 1673,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "51e942203f8bf89cb3915896634bcb74a06a7693b9d0aa8194f890fa3fe5ff75"
+        }
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112601-1795277159207082213",
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "initial_world_xy": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 7,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 1,
+        "common_success": false,
+        "saved_map_error_m": {
+          "32": 0.06081279847285434,
+          "103": 0.039943616586831474,
+          "7": 0.03749202805479657
+        },
+        "elapsed_sim_s": 371.952,
+        "elapsed_wall_s": 701.8880712750106,
+        "all_approached_s": null,
+        "path_m": 60.6032726138843,
+        "bumps": 0,
+        "reason": "targets_complete",
+        "policy_specific_strict": false,
+        "policy_specific_approached": null,
+        "video": {
+          "frames": 1860,
+          "duration_s": 372.0,
+          "recorded_frames": 1859,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "26289806afe04def73553108f2c5614d35af1336e478a06e021db354c93e1081"
+        }
+      }
+    },
+    {
+      "seed": 112602,
+      "balanced": {
+        "run": "v151-boxes5-track-m112602-trial2",
+        "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+        "initial_world_xy": [
+          8.050899908331369,
+          -4.350223730004102
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 32,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": true,
+        "saved_map_error_m": {
+          "7": 0.011224836444065585,
+          "103": 0.05524834619812077,
+          "32": 0.05041194051210485
+        },
+        "elapsed_sim_s": 558.604,
+        "elapsed_wall_s": 1228.939811973003,
+        "all_approached_s": 557.04,
+        "path_m": 94.53470891854161,
+        "bumps": 0,
+        "reason": "all_registered_and_within_1.5m",
+        "policy_specific_strict": true,
+        "policy_specific_approached": [
+          7,
+          32,
+          103
+        ],
+        "video": {
+          "frames": 2793,
+          "duration_s": 558.6,
+          "recorded_frames": 2793,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "ac07116769484368db2ac0758180ded6d41ac8d38e4be9d907c5ae666270a26a"
+        }
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112602-1795270786287973756",
+        "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+        "initial_world_xy": [
+          8.050899908331369,
+          -4.350223730004102
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 32,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": true,
+        "saved_map_error_m": {
+          "7": 0.0037603804754984416,
+          "103": 0.00850404914763752,
+          "32": 0.030386613950741246
+        },
+        "elapsed_sim_s": 457.836,
+        "elapsed_wall_s": 894.5660442939989,
+        "all_approached_s": 456.3,
+        "path_m": 71.61328223039884,
+        "bumps": 0,
+        "reason": "all_registered_and_within_1.5m",
+        "policy_specific_strict": true,
+        "policy_specific_approached": [
+          7,
+          32,
+          103
+        ],
+        "video": {
+          "frames": 2289,
+          "duration_s": 457.8,
+          "recorded_frames": 2289,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "95cdbe3a6ee8096330b551b4713f8e4924b0ebdf5b57f2dc6f294c083abdfdc9"
+        }
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112602-1795277159207082213",
+        "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+        "initial_world_xy": [
+          8.050899917417729,
+          -4.35022372299328
+        ],
+        "registered": [],
+        "unexpected_ids": [],
+        "approached": [],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 32,
+        "wall_registered": false,
+        "wall_approached": false,
+        "box_registered": 0,
+        "box_approached": 0,
+        "common_success": false,
+        "saved_map_error_m": {},
+        "elapsed_sim_s": 113.268,
+        "elapsed_wall_s": 239.36298410499876,
+        "all_approached_s": null,
+        "path_m": 16.249908770854574,
+        "bumps": 0,
+        "reason": "navigation_retry_exhausted",
+        "policy_specific_strict": false,
+        "policy_specific_approached": null,
+        "video": {
+          "frames": 566,
+          "duration_s": 113.2,
+          "recorded_frames": 567,
+          "max_frame_gap_s": 0.20000000000000284,
+          "sha256": "0ecb922433b453e7880f2fc9f06d84186ce7b13680dd0a283f6546f1c14e3c21"
+        }
+      }
+    },
+    {
+      "seed": 112603,
+      "balanced": {
+        "run": "v151-boxes5-track-m112603-trial3",
+        "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+        "initial_world_xy": [
+          -7.750254705096283,
+          -2.4007471224201833
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 32,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": true,
+        "saved_map_error_m": {
+          "103": 0.0054494780553154855,
+          "7": 0.021588712731377222,
+          "32": 0.0226233549228453
+        },
+        "elapsed_sim_s": 321.1,
+        "elapsed_wall_s": 725.9847226860002,
+        "all_approached_s": 320.528,
+        "path_m": 52.08980654797787,
+        "bumps": 0,
+        "reason": "all_registered_and_within_1.5m",
+        "policy_specific_strict": true,
+        "policy_specific_approached": [
+          7,
+          32,
+          103
+        ],
+        "video": {
+          "frames": 1606,
+          "duration_s": 321.2,
+          "recorded_frames": 1605,
+          "max_frame_gap_s": 0.2000000000000739,
+          "sha256": "88029e6907af412e76519bb96b5e235adf5ca37f44a97573be9c19ba7fa4930a"
+        }
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112603-1795270786287973756",
+        "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+        "initial_world_xy": [
+          -7.750254705096283,
+          -2.4007471224201833
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 32,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": true,
+        "saved_map_error_m": {
+          "103": 0.0322558825979161,
+          "7": 0.03057622845068715,
+          "32": 0.006419889719047543
+        },
+        "elapsed_sim_s": 306.056,
+        "elapsed_wall_s": 572.2403292990057,
+        "all_approached_s": 305.044,
+        "path_m": 49.8927689115107,
+        "bumps": 0,
+        "reason": "all_registered_and_within_1.5m",
+        "policy_specific_strict": true,
+        "policy_specific_approached": [
+          7,
+          32,
+          103
+        ],
+        "video": {
+          "frames": 1530,
+          "duration_s": 306.0,
+          "recorded_frames": 1530,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "1c89d762036d9e39b10dda9370d439145941e9610042a2b48d2979e7fc807fe8"
+        }
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112603-1795277159207082213",
+        "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+        "initial_world_xy": [
+          -7.750254693298088,
+          -2.4007470740925836
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 32,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 1,
+        "common_success": false,
+        "saved_map_error_m": {
+          "103": 0.03549250987827863,
+          "7": 0.030194863122267396,
+          "32": 0.01730464073615238
+        },
+        "elapsed_sim_s": 488.828,
+        "elapsed_wall_s": 951.7858791229955,
+        "all_approached_s": null,
+        "path_m": 82.5309671271643,
+        "bumps": 0,
+        "reason": "targets_complete",
+        "policy_specific_strict": false,
+        "policy_specific_approached": null,
+        "video": {
+          "frames": 2444,
+          "duration_s": 488.8,
+          "recorded_frames": 2444,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "6657b8cdd34f8c73fcbb7ba71c7c21340ed3304a08090c01cf8f8a3a541fd230"
+        }
+      }
+    },
+    {
+      "seed": 112604,
+      "balanced": {
+        "run": "v151-boxes5-track-m112604-trial4",
+        "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+        "initial_world_xy": [
+          -6.299316343239879,
+          -4.848948368069747
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 103,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": true,
+        "saved_map_error_m": {
+          "32": 0.033914082414778314,
+          "7": 0.04305664271304177,
+          "103": 0.04953592656468706
+        },
+        "elapsed_sim_s": 368.46,
+        "elapsed_wall_s": 763.0529132079973,
+        "all_approached_s": 364.144,
+        "path_m": 58.92896001195839,
+        "bumps": 0,
+        "reason": "all_registered_and_within_1.5m",
+        "policy_specific_strict": true,
+        "policy_specific_approached": [
+          7,
+          32,
+          103
+        ],
+        "video": {
+          "frames": 1842,
+          "duration_s": 368.4,
+          "recorded_frames": 1842,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "406217b7ae575d687e2dea41c498426ceeb17a0c50e2d604f584fa619e092333"
+        }
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112604-1795270786287973756",
+        "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+        "initial_world_xy": [
+          -6.299316343239879,
+          -4.848948368069747
+        ],
+        "registered": [
+          7,
+          32
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 103,
+        "wall_registered": false,
+        "wall_approached": false,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": false,
+        "saved_map_error_m": {
+          "32": 0.01879580833897046,
+          "7": 0.05779606019076789
+        },
+        "elapsed_sim_s": 597.5799999999999,
+        "elapsed_wall_s": 1141.8497087020078,
+        "all_approached_s": null,
+        "path_m": 96.34956697693872,
+        "bumps": 0,
+        "reason": "rescue_budget_exhausted",
+        "policy_specific_strict": false,
+        "policy_specific_approached": [
+          7,
+          32
+        ],
+        "video": {
+          "frames": 2988,
+          "duration_s": 597.6,
+          "recorded_frames": 2988,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "2bfd07ac89ce51a422c428b075ff0b7d0663d96671326e68e8df88f40d9de6f4"
+        }
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112604-1795277159207082213",
+        "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+        "initial_world_xy": [
+          -6.299316343239879,
+          -4.848948368069747
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 103,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 1,
+        "common_success": false,
+        "saved_map_error_m": {
+          "32": 0.016165192845779712,
+          "7": 0.025676671541593168,
+          "103": 0.02693376766234306
+        },
+        "elapsed_sim_s": 398.976,
+        "elapsed_wall_s": 781.0388546089962,
+        "all_approached_s": null,
+        "path_m": 68.14077625863223,
+        "bumps": 0,
+        "reason": "targets_complete",
+        "policy_specific_strict": false,
+        "policy_specific_approached": null,
+        "video": {
+          "frames": 1995,
+          "duration_s": 399.0,
+          "recorded_frames": 1995,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "376428769a4720839e1b1814a31dc48bf5626e8599f0b44c367b682fb294fb38"
+        }
+      }
+    },
+    {
+      "seed": 112605,
+      "balanced": {
+        "run": "v151-boxes5-track-m112605-trial5",
+        "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "initial_world_xy": [
+          -8.650917193435967,
+          -4.7000692002953715
+        ],
+        "registered": [
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 7,
+        "wall_registered": false,
+        "wall_approached": false,
+        "box_registered": 1,
+        "box_approached": 1,
+        "common_success": false,
+        "saved_map_error_m": {
+          "103": 0.031129682533325605
+        },
+        "elapsed_sim_s": 600.0,
+        "elapsed_wall_s": 1337.166897093004,
+        "all_approached_s": null,
+        "path_m": 100.83457818374022,
+        "bumps": 0,
+        "reason": "common_time_limit",
+        "policy_specific_strict": false,
+        "policy_specific_approached": [
+          103
+        ],
+        "video": {
+          "frames": 3000,
+          "duration_s": 600.0,
+          "recorded_frames": 2999,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "1a63f952469ddcf1644e400f7139dcc55b84a4ae3a607630478123312c477f40"
+        }
+      },
+      "rescue360": {
+        "run": "v151-rescue360-track-m112605-1795270786287973756",
+        "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "initial_world_xy": [
+          -8.650917193435967,
+          -4.7000692002953715
+        ],
+        "registered": [
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          32,
+          103
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 7,
+        "wall_registered": false,
+        "wall_approached": false,
+        "box_registered": 2,
+        "box_approached": 2,
+        "common_success": false,
+        "saved_map_error_m": {
+          "32": 0.03911571291148697,
+          "103": 0.017716898021503995
+        },
+        "elapsed_sim_s": 593.992,
+        "elapsed_wall_s": 1151.9888454600004,
+        "all_approached_s": null,
+        "path_m": 93.04652996097506,
+        "bumps": 0,
+        "reason": "rescue_budget_exhausted",
+        "policy_specific_strict": false,
+        "policy_specific_approached": [
+          32,
+          103
+        ],
+        "video": {
+          "frames": 2970,
+          "duration_s": 594.0,
+          "recorded_frames": 2970,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "b8d60a4fb6963da75fb821a502d0c9d00b96fea8ae8606ab0bd59f5001fd530a"
+        }
+      },
+      "latest_r32": {
+        "run": "r32-latest-d8704f6-track-m112605-1795277159207082213",
+        "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "initial_world_xy": [
+          -8.650917202624546,
+          -4.70006919951043
+        ],
+        "registered": [
+          7,
+          32,
+          103
+        ],
+        "unexpected_ids": [],
+        "approached": [
+          7,
+          32
+        ],
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_id": 7,
+        "wall_registered": true,
+        "wall_approached": true,
+        "box_registered": 2,
+        "box_approached": 1,
+        "common_success": false,
+        "saved_map_error_m": {
+          "32": 0.017016039486544236,
+          "103": 0.0035550144288503784,
+          "7": 0.04905124249403501
+        },
+        "elapsed_sim_s": 392.8,
+        "elapsed_wall_s": 854.5158181329898,
+        "all_approached_s": null,
+        "path_m": 67.13240296745124,
+        "bumps": 0,
+        "reason": "targets_complete",
+        "policy_specific_strict": false,
+        "policy_specific_approached": null,
+        "video": {
+          "frames": 1964,
+          "duration_s": 392.8,
+          "recorded_frames": 1964,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "eaa89bb68951b0558baa18902369e5465f6769b1de55f4b2b51b0d2e345e7c4e"
+        }
+      }
+    }
+  ],
+  "held_out": false,
+  "upstream_commit": "d8704f64d7b9098c79a9c42dfec81e29d6d789a8",
+  "limitations": [
+    "End-to-end original Nav2 profiles differ; not a speed-normalized algorithm ablation.",
+    "One run per policy per development map; stochastic sensor and control trajectories differ.",
+    "Balanced/rescue recordings waited for their additional sensor witness; report all_approached_s separately.",
+    "Raw video is the same source resolution and rate; real hardware not driven."
+  ]
+}

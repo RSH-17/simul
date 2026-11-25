@@ -1,0 +1,29 @@
+# 흑백 벽 마커 단서 기억 · 실험판
+
+입력은 `flow_v3_r32_box_batch_ws`이고 검증용 설치 경로는 `flow_v3_r32_wall_cues_final_ws`이다. 5개 맵에서 비교한 상자 묶음판과 구분되는 선택형 정책이다.
+
+## 영상에서 이동 목표까지
+
+1. 기존 OpenCV ArUco 검출기의 원본 해상도 사각형 목록을 재사용한다. ID가 판독된 사각형과 거절된 사각형 모두에서 짧은 변 6px 이상 10px 미만을 검사한다. 12×12 정규화 패치의 흰 여백·검은 테두리 대비, 내부 밝기 변화, 가로세로 비율을 확인한다. 한 프레임의 약한 단서에는 ID나 완료 점수를 주지 않는다. 영상 확대는 새로운 검출 해상도로 계산하지 않는다.
+2. 카메라 노출 시점의 오도메트리와 방위를 저장한다. 3개 이상의 서로 다른 프레임에서 0.25초 이상 일치하면 후보 이력을 남긴다. 8px 이상으로 최소 두 프레임 잡힌 이력은 재관찰 우선순위를 높인다. 6~7px만 보인 경우에는 서로 0.5m 이상 떨어진 시점에서 독립적으로 생성된 두 이력이 같은 벽 관찰점을 지지해야 한다.
+3. 확정 마커에 대한 접근과 현재 확인한 상자의 미시도 안전 관찰면에 우선권을 준다. 그 뒤에는 저장한 단서가 미관찰 일반 면보다 먼저 벽 관찰점을 제안할 수 있다. 후보 픽셀 위치에서 임의의 거리를 정해 장애물에 직접 접근하지 않는다. 이미 생성된 안전한 벽 관찰점에 과거 방위가 모이고, 관측자 쪽 시야가 지도상 열려 있는지 검사한다. 깊이가 서로 다른 두 벽이 모호하면 보류한다.
+4. 가까운 확정 마커, 재시도 구간, 남은 시간으로 갈 수 없는 관찰점은 제외한다. 약한 단서로 보낼 수 있는 목표는 한 미션에 최대 2개다. 등록·근거리 검증·안전 여유는 상자 묶음판의 기존 절차를 사용한다.
+
+## 검증
+
+[다섯 맵 Gazebo 비교](../../experiments/2026-11-20_five_wall_cues/README.md)에서 정책이 기억한 후보를 실제 주행 목표로 선택했는지와 등록 후 1.5m 접근 여부를 확인할 수 있다. 크기는 원본 카메라 영상에서 윤곽의 가장 짧은 변을 기준으로 한다. 6px 이상 10px 미만에서 약한 단서를 수집하고, 8px를 추가 증거로 사용한다.
+
+## 설치 및 실물 보드
+
+이 브랜치의 루트에서 ROS 2 Jazzy VM으로 소스를 준비한다. 아래 명령은 실물 주행을 시작하지 않는다.
+
+```sh
+source /opt/ros/jazzy/setup.bash
+python3 policy_candidates/2026-11-20_mixed_wall_cues_6px/prepare.py ~/flow_v3_r32_wall_cues_final_ws
+cd ~/flow_v3_r32_wall_cues_final_ws
+pkg=src/osp_mission
+g++ -std=c++17 -O1 -I/opt/ros/jazzy/include -I/usr/include/eigen3 "$pkg/tools/export_slam_graph_poses.cpp" -L/opt/ros/jazzy/lib -Wl,-rpath,/opt/ros/jazzy/lib -lkartoSlamToolbox -lboost_serialization -lboost_thread -lpthread -o "$pkg/tools/export_slam_graph_poses"
+colcon build --packages-select osp_mission --symlink-install
+```
+
+실물 보드에서 **Mixed · 작은 벽 후보 기억**을 선택하면 유선 DDS, 로봇 시간, 센서 준비, 정지 처리를 기존 실물 세션과 공유한다. 보드의 시작 버튼은 실제 로봇을 구동한다. `manifest.json`으로 시뮬에 사용한 소스와 설정을 파일별로 검증한다. 별도 관측기가 정답과 주행 궤적을 대조한다.

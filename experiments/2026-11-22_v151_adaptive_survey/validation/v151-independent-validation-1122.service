@@ -1,0 +1,19 @@
+[Unit]
+Description=Finite Jazzy marker-policy validation on simulation domain 174
+After=local-fs.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+Environment=HOME=/home/ubuntu
+WorkingDirectory=/home/ubuntu/camera-aware-tools/experiments/2026-11-22_v151_adaptive_survey/validation
+ExecStart=/usr/bin/python3 -u /home/ubuntu/camera-aware-tools/experiments/2026-11-22_v151_adaptive_survey/validation/supervise.py
+NoNewPrivileges=true
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=45
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

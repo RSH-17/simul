@@ -1,0 +1,1236 @@
+{
+  "complete": true,
+  "runs": [
+    {
+      "run": "v152-wall-r2-track-m112601-1795254354085795341",
+      "variant": "wall_transit",
+      "profile": "balanced",
+      "reason": "common_time_limit",
+      "mission_start_clock_s": 4.1,
+      "start_world_pose": [
+        7.599286988882613,
+        -4.848980438435453
+      ],
+      "split": "development_regression",
+      "seed": 112601,
+      "strict_live_success": false,
+      "strict_saved_map_success": false,
+      "independent_approach_complete": false,
+      "policy_sensor_proof_complete": false,
+      "registered_ids": [
+        32,
+        103
+      ],
+      "sensor_verified_ids": [
+        32,
+        103
+      ],
+      "elapsed_sim_s": 600.0,
+      "elapsed_wall_s": 1295.1976828080078,
+      "path_length_m": 95.95509892824434,
+      "motion": {
+        "translation_s": 414.98,
+        "rotation_only_s": 121.58000000000001,
+        "stopped_s": 63.41999999999993,
+        "integrated_abs_turn_rad": 121.42492838212183
+      },
+      "bumper_events": 0,
+      "minimum_valid_scan_range_m": 0.3371511995792389,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "requested_fps": 5.0,
+        "camera_info": {
+          "width": 480,
+          "height": 480,
+          "k": [
+            332.6475061199908,
+            0.0,
+            240.0,
+            0.0,
+            332.6475061199908,
+            240.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "input_frames": 3000,
+        "input_fps_sim": 5.0,
+        "processed_frames": 3000,
+        "processed_fps_sim": 5.0,
+        "processed_age_sim_p50_s": 0.06800000000009732,
+        "processed_age_sim_p95_s": 0.08799999999999386,
+        "input_max_gap_sim_s": 0.20000000000004547,
+        "real_time_factor": 0.4632497478679788,
+        "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+      },
+      "cpu": {
+        "detector": {
+          "median_percent_one_core": 23.02962602284315,
+          "p95_percent_one_core": 26.737294622653845,
+          "max_sampled_rss_mib": 207.75
+        },
+        "nav2": {
+          "median_percent_one_core": 24.67777854373634,
+          "p95_percent_one_core": 29.017128927941105,
+          "max_sampled_rss_mib": 57.7734375
+        },
+        "slam": {
+          "median_percent_one_core": 26.170157948552873,
+          "p95_percent_one_core": 74.95991620002741,
+          "max_sampled_rss_mib": 127.18359375
+        },
+        "gazebo": {
+          "median_percent_one_core": 117.67712437353455,
+          "p95_percent_one_core": 131.21511540164445,
+          "max_sampled_rss_mib": 1398.45703125
+        }
+      },
+      "sensor_interruptions": 0,
+      "navigation_flow": {
+        "mid_route_wall_inspection": true,
+        "skipped_zero_turn_waits": 1,
+        "stalls_cancelled": 0,
+        "failed_goals_filtered": 0,
+        "failed_goal_cooldown_s": 60.0,
+        "stall_timeout_s": 8.0,
+        "minimum_progress_m": 0.06,
+        "observation_settle_min_s": 0.5,
+        "observation_settle_max_s": 1.5,
+        "observation_fresh_frames": 3,
+        "controller": "MPPI",
+        "turning_stall_timeout_s": 16.0
+      },
+      "map_errors_live_m": {
+        "103": 0.04704709065334503,
+        "32": 0.23891836027677493
+      },
+      "map_errors_saved_m": {
+        "32": 0.23891836027677493,
+        "103": 0.04704709065334503
+      },
+      "initial_registered_ids": [],
+      "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+      "selected_goal_counts": {
+        "interior_frontier": 1,
+        "interior_surface": 23,
+        "approach": 2,
+        "wall_surface": 7
+      },
+      "consecutive_same_selected_goal_count": 0,
+      "cancellations": {
+        "near_pass_inspection": 6,
+        "readable_marker": 1,
+        "marker_hint": 1,
+        "registered_marker": 1
+      },
+      "nav2_control_rate_warnings": 292,
+      "detector": {
+        "frames": 3015,
+        "decoded": {
+          "103": 73,
+          "32": 27
+        },
+        "small": 14,
+        "border": 0,
+        "no_range": 45,
+        "horizontal": 0,
+        "inconsistent": 0,
+        "accepted": 55,
+        "errors": 0,
+        "last_error": "",
+        "identity_conflicts": [],
+        "resolved_ids": [
+          32,
+          103
+        ],
+        "by_id": {
+          "103": {
+            "last_min_edge_pixels": 39.31920623779297,
+            "last_stamp": 75.4,
+            "small": 14,
+            "no_range": 45,
+            "accepted": 28
+          },
+          "32": {
+            "last_min_edge_pixels": 99.00505065917969,
+            "last_stamp": 263.8,
+            "accepted": 27
+          }
+        },
+        "exposure_queue": {
+          "received": 3018,
+          "replaced": 1,
+          "expired": 1,
+          "future": 1,
+          "duplicate": 0,
+          "tf_waits": 17,
+          "dispatched": 3015,
+          "clock_resets": 0,
+          "pending": 0
+        },
+        "pipeline": {
+          "samples": 256,
+          "capture_age_p95_s": 0.08000000000004093,
+          "callback_wall_p95_s": 0.044950199997401796,
+          "dispatched_fps_ros": 5.0
+        },
+        "sensor_history": {
+          "scans_buffered": 64,
+          "depths_buffered": 0,
+          "latest_scan_skew_s": 0.09999999999990905,
+          "latest_depth_skew_s": null
+        },
+        "confirmations": {
+          "103": 28,
+          "32": 27
+        }
+      },
+      "video": {
+        "frames": 3000,
+        "duration_s": 600.0,
+        "recorded_frames": 3000,
+        "max_frame_gap_s": 0.20000000000004547,
+        "sha256": "4ec7926f69e1cf00dba2756d5de3a0fca0d46c3cebd50ced50cf7e47e2c5c903"
+      },
+      "rendered_seed": 112601,
+      "wall_marker_ids": [
+        7
+      ],
+      "box_marker_ids": [
+        32,
+        103
+      ],
+      "independent_closest_m": {
+        "32": 0.7453555686302219,
+        "103": 0.9025456974040967,
+        "7": 3.3347482964727053
+      },
+      "registered_s": {
+        "103": 66.376,
+        "32": 255.364
+      },
+      "registered_and_within_s": {
+        "103": 66.372,
+        "32": 255.37199999999999
+      },
+      "wall_looks": {
+        "requests": 6,
+        "completed_fresh_frame_dwells": 6,
+        "requested_navigation_resumptions": 6,
+        "actual_observation_s": 21.5,
+        "budget_charged_s": 31.634609527920613,
+        "mission_navigation_resume_log_count": 6,
+        "event_counts": {
+          "requested": 6,
+          "turn_started": 6,
+          "wall_view_frames": 6,
+          "finished": 6
+        },
+        "history": [
+          {
+            "started_clock_s": 26.0,
+            "elapsed_mission_s": 21.9,
+            "choice": {
+              "turn_rad": -1.3089969389957472,
+              "gain_surface_m": 1.600000023841858,
+              "angular_gain_rad": 0.7887456613605588,
+              "estimated_sim_s": 7.017764173314432,
+              "odom_camera": [
+                1.1838997333023267,
+                -1.9327679877808412,
+                -0.18191528863223475
+              ],
+              "odom_yaw": -1.490912227627982,
+              "wall_anchor_odom": [
+                1.3489093674155148,
+                -3.76866141756744
+              ],
+              "map_surface": [
+                1.3715418318473733,
+                -3.8074570965859618
+              ],
+              "face_count": 32,
+              "range_min_m": 1.3467172124995888,
+              "range_max_m": 2.5849213779124556,
+              "source": "observed_unviewed_wall"
+            },
+            "finished": true,
+            "processed_frames": 6,
+            "fresh_frame_minimum_met": true,
+            "dwell_s": 1.1999999999999993,
+            "reason": "processed_frame_dwell",
+            "resume_requested": true,
+            "finished_clock_s": 30.5,
+            "actual_observation_s": 4.5,
+            "independent_motion_next_10_sim_s_m": 2.1182314491795244
+          },
+          {
+            "started_clock_s": 92.0,
+            "elapsed_mission_s": 87.9,
+            "choice": {
+              "turn_rad": -0.7853981633974483,
+              "gain_surface_m": 1.750000026077032,
+              "angular_gain_rad": 0.49458136458504975,
+              "estimated_sim_s": 4.690658503988659,
+              "odom_camera": [
+                5.635390042100871,
+                -4.008416098183329,
+                0.1825730843550369
+              ],
+              "odom_yaw": -0.6028250790424114,
+              "wall_anchor_odom": [
+                8.390675411617625,
+                -5.980848682019286
+              ],
+              "map_surface": [
+                8.485631912259926,
+                -6.096246710359296
+              ],
+              "face_count": 35,
+              "range_min_m": 3.383989782063745,
+              "range_max_m": 3.4969584931537425,
+              "source": "observed_unviewed_wall"
+            },
+            "finished": true,
+            "processed_frames": 4,
+            "fresh_frame_minimum_met": true,
+            "dwell_s": 0.804000000000002,
+            "reason": "processed_frame_dwell",
+            "resume_requested": true,
+            "finished_clock_s": 95.0,
+            "actual_observation_s": 3.0,
+            "independent_motion_next_10_sim_s_m": 1.0708777917951626
+          },
+          {
+            "started_clock_s": 213.5,
+            "elapsed_mission_s": 209.4,
+            "choice": {
+              "turn_rad": -1.0471975511965976,
+              "gain_surface_m": 2.400000035762787,
+              "angular_gain_rad": 0.7020440775426394,
+              "estimated_sim_s": 5.854211338651545,
+              "odom_camera": [
+                12.071729549072979,
+                8.158991203938655,
+                1.9034454695896044
+              ],
+              "odom_yaw": 0.8562479183930067,
+              "wall_anchor_odom": [
+                14.205783591570398,
+                10.6073457605111
+              ],
+              "map_surface": [
+                14.535768594876991,
+                10.751121878885659
+              ],
+              "face_count": 48,
+              "range_min_m": 3.2412335115948845,
+              "range_max_m": 3.4890607973292056,
+              "source": "observed_unviewed_wall"
+            },
+            "finished": true,
+            "processed_frames": 6,
+            "fresh_frame_minimum_met": true,
+            "dwell_s": 1.2280000000000086,
+            "reason": "processed_frame_dwell",
+            "resume_requested": true,
+            "finished_clock_s": 217.5,
+            "actual_observation_s": 4.0,
+            "independent_motion_next_10_sim_s_m": 0.670022828098939
+          },
+          {
+            "started_clock_s": 248.0,
+            "elapsed_mission_s": 243.9,
+            "choice": {
+              "turn_rad": -0.7853981633974483,
+              "gain_surface_m": 1.4500000216066837,
+              "angular_gain_rad": 0.6056669251261974,
+              "estimated_sim_s": 4.690658503988659,
+              "odom_camera": [
+                13.577441489223734,
+                9.125421127337631,
+                2.4881137135249984
+              ],
+              "odom_yaw": 1.7027155501275502,
+              "wall_anchor_odom": [
+                13.27786054325677,
+                11.387558726371308
+              ],
+              "map_surface": [
+                13.610768581093417,
+                11.576121891179117
+              ],
+              "face_count": 29,
+              "range_min_m": 1.5872251857494972,
+              "range_max_m": 2.396244192914979,
+              "source": "observed_unviewed_wall"
+            },
+            "finished": true,
+            "processed_frames": 4,
+            "fresh_frame_minimum_met": true,
+            "dwell_s": 0.9000000000000057,
+            "reason": "processed_frame_dwell",
+            "resume_requested": true,
+            "finished_clock_s": 251.0,
+            "actual_observation_s": 3.0,
+            "independent_motion_next_10_sim_s_m": 1.1506579285178782
+          },
+          {
+            "started_clock_s": 311.0,
+            "elapsed_mission_s": 306.9,
+            "choice": {
+              "turn_rad": 0.7853981633974483,
+              "gain_surface_m": 2.450000036507845,
+              "angular_gain_rad": 0.8216551348501624,
+              "estimated_sim_s": 4.690658503988659,
+              "odom_camera": [
+                15.823013673189202,
+                6.7915303844687225,
+                -1.8144182473265118
+              ],
+              "odom_yaw": -1.0290200839290637,
+              "wall_anchor_odom": [
+                17.363538040802137,
+                4.205066108627874
+              ],
+              "map_surface": [
+                17.810765388942052,
+                4.376173599596443
+              ],
+              "face_count": 49,
+              "range_min_m": 2.853742030914398,
+              "range_max_m": 3.0669252104895173,
+              "source": "observed_unviewed_wall"
+            },
+            "finished": true,
+            "processed_frames": 7,
+            "fresh_frame_minimum_met": true,
+            "dwell_s": 1.2679999999999723,
+            "reason": "processed_frame_dwell",
+            "resume_requested": true,
+            "finished_clock_s": 314.5,
+            "actual_observation_s": 3.5,
+            "independent_motion_next_10_sim_s_m": 2.3174763784448085
+          },
+          {
+            "started_clock_s": 384.0,
+            "elapsed_mission_s": 379.9,
+            "choice": {
+              "turn_rad": 0.7853981633974483,
+              "gain_surface_m": 2.450000036507845,
+              "angular_gain_rad": 0.7139013001307903,
+              "estimated_sim_s": 4.690658503988659,
+              "odom_camera": [
+                5.245448875946985,
+                -2.9065819194985605,
+                3.1379267192199314
+              ],
+              "odom_yaw": -2.359860424562207,
+              "wall_anchor_odom": [
+                2.909550512132189,
+                -5.220273817095643
+              ],
+              "map_surface": [
+                3.140562805055326,
+                -5.36031379101555
+              ],
+              "face_count": 49,
+              "range_min_m": 3.255545359948522,
+              "range_max_m": 3.4966931413355247,
+              "source": "observed_unviewed_wall"
+            },
+            "finished": true,
+            "processed_frames": 6,
+            "fresh_frame_minimum_met": true,
+            "dwell_s": 1.23599999999999,
+            "reason": "processed_frame_dwell",
+            "resume_requested": true,
+            "finished_clock_s": 387.5,
+            "actual_observation_s": 3.5,
+            "independent_motion_next_10_sim_s_m": 2.2908178985862664
+          }
+        ],
+        "limitations": "A resume_requested flag is intent; resume log count and subsequent independent motion are separate evidence. Planned surface gain is not credited camera coverage. Final native result.json is not required by the legacy collector; these counts use the saved runtime event journal."
+      },
+      "wall_look_preview": {
+        "file": "v152-wall-r2-track-m112601-1795254354085795341-wall-look.jpg",
+        "frame": 130,
+        "elapsed_sim_s": 25.9,
+        "saved_jpeg": true
+      },
+      "scheduler_phases": {
+        "interior": 26,
+        "wall": 7
+      },
+      "scheduler_reasons": {
+        "explore_open_frontier": 1,
+        "unseen_reachable_object": 25,
+        "remaining_time_for_mapped_walls": 7
+      },
+      "first_wall_surface_selection_s": 532.9,
+      "first_reserved_wall_selection_s": 532.9,
+      "late_fresh_interior_wall_budget_bypass": []
+    }
+  ],
+  "groups": [
+    {
+      "split": "development_regression",
+      "variant": "wall_transit",
+      "profile": "balanced",
+      "n": 1,
+      "strict_saved_map_successes": 0,
+      "strict_live_successes": 0,
+      "mean_sim_s": 600.0,
+      "mean_wall_s": 1295.1976828080078,
+      "mean_path_m": 95.95509892824434,
+      "mean_stopped_s": 63.41999999999993,
+      "bumper_events": 0,
+      "sensor_interruptions": 0,
+      "worst_saved_map_error_m": 0.23891836027677493
+    }
+  ],
+  "selection": null,
+  "notes": [
+    "Development regression on previously analyzed baseline worlds; not a held-out success-rate estimate.",
+    "Initial prestart registrations are recorded and can differ; camera processing runs during startup.",
+    "Strict live criterion and final saved-map audit are listed separately.",
+    "Stopped time excludes in-place rotation using independent simulator pose and heading.",
+    "Heartbeat publication moved to the end of processing in v1.5; raw heartbeat ages differ in semantics.",
+    "Selected goals are not an exact action dispatch count or proof of unnecessary replanning.",
+    "Minimum scan range is not footprint-adjusted clearance.",
+    "VM software-rendered camera does not validate RPi/Create3 load or physical reliability."
+  ],
+  "comparisons": [
+    {
+      "seed": 112601,
+      "same_world_sha256": true,
+      "baseline": {
+        "run": "v151-boxes5-track-m112601-trial1",
+        "variant": "sync",
+        "profile": "balanced",
+        "reason": "common_time_limit",
+        "mission_start_clock_s": 3.832,
+        "start_world_pose": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "split": "large_track_validation",
+        "seed": 112601,
+        "strict_live_success": false,
+        "strict_saved_map_success": false,
+        "independent_approach_complete": false,
+        "policy_sensor_proof_complete": false,
+        "registered_ids": [
+          32,
+          103
+        ],
+        "sensor_verified_ids": [
+          32,
+          103
+        ],
+        "elapsed_sim_s": 600.004,
+        "elapsed_wall_s": 1356.7458824269997,
+        "path_length_m": 112.5010060741611,
+        "motion": {
+          "translation_s": 469.8600000000001,
+          "rotation_only_s": 92.9999999999997,
+          "stopped_s": 37.06000000000014,
+          "integrated_abs_turn_rad": 97.17178481031952
+        },
+        "bumper_events": 0,
+        "minimum_valid_scan_range_m": 0.38995426893234253,
+        "camera": {
+          "width": 480,
+          "height": 480,
+          "requested_fps": 5.0,
+          "camera_info": {
+            "width": 480,
+            "height": 480,
+            "k": [
+              332.6475061199908,
+              0.0,
+              240.0,
+              0.0,
+              332.6475061199908,
+              240.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "input_frames": 3000,
+          "input_fps_sim": 4.999999999999999,
+          "processed_frames": 3000,
+          "processed_fps_sim": 4.999999999999999,
+          "processed_age_sim_p50_s": 0.06799999999998363,
+          "processed_age_sim_p95_s": 0.08799999999999422,
+          "input_max_gap_sim_s": 0.20000000000004547,
+          "real_time_factor": 0.4422375684138356,
+          "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+        },
+        "cpu": {
+          "gazebo": {
+            "median_percent_one_core": 116.42890911547106,
+            "p95_percent_one_core": 129.51460512076198,
+            "max_sampled_rss_mib": 1398.328125
+          },
+          "slam": {
+            "median_percent_one_core": 34.235206860567054,
+            "p95_percent_one_core": 75.97069138587165,
+            "max_sampled_rss_mib": 130.3515625
+          },
+          "nav2": {
+            "median_percent_one_core": 25.87626796680645,
+            "p95_percent_one_core": 30.22627923410049,
+            "max_sampled_rss_mib": 56.9609375
+          },
+          "detector": {
+            "median_percent_one_core": 22.991916846698796,
+            "p95_percent_one_core": 26.430894953352343,
+            "max_sampled_rss_mib": 208.45703125
+          }
+        },
+        "sensor_interruptions": 0,
+        "navigation_flow": {
+          "mid_route_wall_inspection": false,
+          "skipped_zero_turn_waits": 1,
+          "stalls_cancelled": 0,
+          "failed_goals_filtered": 5,
+          "failed_goal_cooldown_s": 60.0,
+          "stall_timeout_s": 8.0,
+          "minimum_progress_m": 0.06,
+          "observation_settle_min_s": 0.5,
+          "observation_settle_max_s": 1.5,
+          "observation_fresh_frames": 3,
+          "controller": "MPPI",
+          "turning_stall_timeout_s": 16.0
+        },
+        "map_errors_live_m": {
+          "103": 0.04646768879664919,
+          "32": 0.17750678725702068
+        },
+        "map_errors_saved_m": {
+          "32": 0.17750678725702068,
+          "103": 0.04646768879664919
+        },
+        "initial_registered_ids": [],
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "selected_goal_counts": {
+          "interior_frontier": 2,
+          "interior_surface": 22,
+          "approach": 1
+        },
+        "consecutive_same_selected_goal_count": 1,
+        "cancellations": {
+          "readable_marker": 1,
+          "marker_hint": 1,
+          "inspection_due": 1,
+          "action_timeout": 2
+        },
+        "nav2_control_rate_warnings": 497,
+        "detector": {
+          "frames": 3013,
+          "decoded": {
+            "103": 97,
+            "32": 29
+          },
+          "small": 15,
+          "border": 1,
+          "no_range": 35,
+          "horizontal": 0,
+          "inconsistent": 0,
+          "accepted": 90,
+          "errors": 0,
+          "last_error": "",
+          "identity_conflicts": [],
+          "resolved_ids": [
+            32,
+            103
+          ],
+          "by_id": {
+            "103": {
+              "last_min_edge_pixels": 150.0,
+              "last_stamp": 90.0,
+              "small": 12,
+              "no_range": 32,
+              "accepted": 65
+            },
+            "32": {
+              "last_min_edge_pixels": 65.53052520751953,
+              "last_stamp": 363.4,
+              "small": 3,
+              "no_range": 3,
+              "accepted": 25,
+              "border": 1
+            }
+          },
+          "exposure_queue": {
+            "received": 3016,
+            "replaced": 1,
+            "expired": 1,
+            "future": 1,
+            "duplicate": 0,
+            "tf_waits": 21,
+            "dispatched": 3013,
+            "clock_resets": 0,
+            "pending": 0
+          },
+          "pipeline": {
+            "samples": 256,
+            "capture_age_p95_s": 0.07999999999992724,
+            "callback_wall_p95_s": 0.07558671300648712,
+            "dispatched_fps_ros": 5.0
+          },
+          "sensor_history": {
+            "scans_buffered": 64,
+            "depths_buffered": 0,
+            "latest_scan_skew_s": 0.10000000000002274,
+            "latest_depth_skew_s": null
+          },
+          "confirmations": {
+            "103": 30,
+            "32": 25
+          }
+        },
+        "video": {
+          "frames": 3000,
+          "duration_s": 600.0,
+          "recorded_frames": 2999,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "3cc32cf24769cbab7acc3a063a86748b86c66914e9c27387ea66ee80ce0a3a1e"
+        },
+        "rendered_seed": 112601,
+        "wall_marker_ids": [
+          7
+        ],
+        "box_marker_ids": [
+          32,
+          103
+        ],
+        "marker_sizes_m": {
+          "32": 0.25,
+          "103": 0.3,
+          "7": 0.2
+        },
+        "independent_closest_m": {
+          "32": 0.9126525503636198,
+          "103": 0.618271013830396,
+          "7": 3.3347482947502463
+        },
+        "registered_s": {
+          "103": 68.152,
+          "32": 355.128
+        },
+        "registered_and_within_s": {
+          "103": 68.144,
+          "32": 355.144
+        },
+        "geometry_sha256": "9980d94befacb7def6e18d6cbce20499f335e58c9ea6b1e3599f634e9cb49e67",
+        "scheduler_phases": {
+          "interior": 25
+        },
+        "scheduler_last_available": {
+          "interior": 37,
+          "wall": 190
+        },
+        "scheduler_reasons": {
+          "explore_open_frontier": 2,
+          "unseen_reachable_object": 22,
+          "inspect_other_surface": 1
+        },
+        "weak_wall_goal_selections": 0,
+        "first_wall_surface_selection_s": null,
+        "late_interior_before_wall_budget": [
+          {
+            "elapsed": 556.176,
+            "available": {
+              "interior": 37,
+              "wall": 190
+            }
+          }
+        ]
+      },
+      "candidate": {
+        "run": "v152-wall-r2-track-m112601-1795254354085795341",
+        "variant": "wall_transit",
+        "profile": "balanced",
+        "reason": "common_time_limit",
+        "mission_start_clock_s": 4.1,
+        "start_world_pose": [
+          7.599286988882613,
+          -4.848980438435453
+        ],
+        "split": "development_regression",
+        "seed": 112601,
+        "strict_live_success": false,
+        "strict_saved_map_success": false,
+        "independent_approach_complete": false,
+        "policy_sensor_proof_complete": false,
+        "registered_ids": [
+          32,
+          103
+        ],
+        "sensor_verified_ids": [
+          32,
+          103
+        ],
+        "elapsed_sim_s": 600.0,
+        "elapsed_wall_s": 1295.1976828080078,
+        "path_length_m": 95.95509892824434,
+        "motion": {
+          "translation_s": 414.98,
+          "rotation_only_s": 121.58000000000001,
+          "stopped_s": 63.41999999999993,
+          "integrated_abs_turn_rad": 121.42492838212183
+        },
+        "bumper_events": 0,
+        "minimum_valid_scan_range_m": 0.3371511995792389,
+        "camera": {
+          "width": 480,
+          "height": 480,
+          "requested_fps": 5.0,
+          "camera_info": {
+            "width": 480,
+            "height": 480,
+            "k": [
+              332.6475061199908,
+              0.0,
+              240.0,
+              0.0,
+              332.6475061199908,
+              240.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "input_frames": 3000,
+          "input_fps_sim": 5.0,
+          "processed_frames": 3000,
+          "processed_fps_sim": 5.0,
+          "processed_age_sim_p50_s": 0.06800000000009732,
+          "processed_age_sim_p95_s": 0.08799999999999386,
+          "input_max_gap_sim_s": 0.20000000000004547,
+          "real_time_factor": 0.4632497478679788,
+          "limitations": "Gazebo render/VM test only; excludes real camera exposure, USB and Create3 DDS overload"
+        },
+        "cpu": {
+          "detector": {
+            "median_percent_one_core": 23.02962602284315,
+            "p95_percent_one_core": 26.737294622653845,
+            "max_sampled_rss_mib": 207.75
+          },
+          "nav2": {
+            "median_percent_one_core": 24.67777854373634,
+            "p95_percent_one_core": 29.017128927941105,
+            "max_sampled_rss_mib": 57.7734375
+          },
+          "slam": {
+            "median_percent_one_core": 26.170157948552873,
+            "p95_percent_one_core": 74.95991620002741,
+            "max_sampled_rss_mib": 127.18359375
+          },
+          "gazebo": {
+            "median_percent_one_core": 117.67712437353455,
+            "p95_percent_one_core": 131.21511540164445,
+            "max_sampled_rss_mib": 1398.45703125
+          }
+        },
+        "sensor_interruptions": 0,
+        "navigation_flow": {
+          "mid_route_wall_inspection": true,
+          "skipped_zero_turn_waits": 1,
+          "stalls_cancelled": 0,
+          "failed_goals_filtered": 0,
+          "failed_goal_cooldown_s": 60.0,
+          "stall_timeout_s": 8.0,
+          "minimum_progress_m": 0.06,
+          "observation_settle_min_s": 0.5,
+          "observation_settle_max_s": 1.5,
+          "observation_fresh_frames": 3,
+          "controller": "MPPI",
+          "turning_stall_timeout_s": 16.0
+        },
+        "map_errors_live_m": {
+          "103": 0.04704709065334503,
+          "32": 0.23891836027677493
+        },
+        "map_errors_saved_m": {
+          "32": 0.23891836027677493,
+          "103": 0.04704709065334503
+        },
+        "initial_registered_ids": [],
+        "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "selected_goal_counts": {
+          "interior_frontier": 1,
+          "interior_surface": 23,
+          "approach": 2,
+          "wall_surface": 7
+        },
+        "consecutive_same_selected_goal_count": 0,
+        "cancellations": {
+          "near_pass_inspection": 6,
+          "readable_marker": 1,
+          "marker_hint": 1,
+          "registered_marker": 1
+        },
+        "nav2_control_rate_warnings": 292,
+        "detector": {
+          "frames": 3015,
+          "decoded": {
+            "103": 73,
+            "32": 27
+          },
+          "small": 14,
+          "border": 0,
+          "no_range": 45,
+          "horizontal": 0,
+          "inconsistent": 0,
+          "accepted": 55,
+          "errors": 0,
+          "last_error": "",
+          "identity_conflicts": [],
+          "resolved_ids": [
+            32,
+            103
+          ],
+          "by_id": {
+            "103": {
+              "last_min_edge_pixels": 39.31920623779297,
+              "last_stamp": 75.4,
+              "small": 14,
+              "no_range": 45,
+              "accepted": 28
+            },
+            "32": {
+              "last_min_edge_pixels": 99.00505065917969,
+              "last_stamp": 263.8,
+              "accepted": 27
+            }
+          },
+          "exposure_queue": {
+            "received": 3018,
+            "replaced": 1,
+            "expired": 1,
+            "future": 1,
+            "duplicate": 0,
+            "tf_waits": 17,
+            "dispatched": 3015,
+            "clock_resets": 0,
+            "pending": 0
+          },
+          "pipeline": {
+            "samples": 256,
+            "capture_age_p95_s": 0.08000000000004093,
+            "callback_wall_p95_s": 0.044950199997401796,
+            "dispatched_fps_ros": 5.0
+          },
+          "sensor_history": {
+            "scans_buffered": 64,
+            "depths_buffered": 0,
+            "latest_scan_skew_s": 0.09999999999990905,
+            "latest_depth_skew_s": null
+          },
+          "confirmations": {
+            "103": 28,
+            "32": 27
+          }
+        },
+        "video": {
+          "frames": 3000,
+          "duration_s": 600.0,
+          "recorded_frames": 3000,
+          "max_frame_gap_s": 0.20000000000004547,
+          "sha256": "4ec7926f69e1cf00dba2756d5de3a0fca0d46c3cebd50ced50cf7e47e2c5c903"
+        },
+        "rendered_seed": 112601,
+        "wall_marker_ids": [
+          7
+        ],
+        "box_marker_ids": [
+          32,
+          103
+        ],
+        "independent_closest_m": {
+          "32": 0.7453555686302219,
+          "103": 0.9025456974040967,
+          "7": 3.3347482964727053
+        },
+        "registered_s": {
+          "103": 66.376,
+          "32": 255.364
+        },
+        "registered_and_within_s": {
+          "103": 66.372,
+          "32": 255.37199999999999
+        },
+        "wall_looks": {
+          "requests": 6,
+          "completed_fresh_frame_dwells": 6,
+          "requested_navigation_resumptions": 6,
+          "actual_observation_s": 21.5,
+          "budget_charged_s": 31.634609527920613,
+          "mission_navigation_resume_log_count": 6,
+          "event_counts": {
+            "requested": 6,
+            "turn_started": 6,
+            "wall_view_frames": 6,
+            "finished": 6
+          },
+          "history": [
+            {
+              "started_clock_s": 26.0,
+              "elapsed_mission_s": 21.9,
+              "choice": {
+                "turn_rad": -1.3089969389957472,
+                "gain_surface_m": 1.600000023841858,
+                "angular_gain_rad": 0.7887456613605588,
+                "estimated_sim_s": 7.017764173314432,
+                "odom_camera": [
+                  1.1838997333023267,
+                  -1.9327679877808412,
+                  -0.18191528863223475
+                ],
+                "odom_yaw": -1.490912227627982,
+                "wall_anchor_odom": [
+                  1.3489093674155148,
+                  -3.76866141756744
+                ],
+                "map_surface": [
+                  1.3715418318473733,
+                  -3.8074570965859618
+                ],
+                "face_count": 32,
+                "range_min_m": 1.3467172124995888,
+                "range_max_m": 2.5849213779124556,
+                "source": "observed_unviewed_wall"
+              },
+              "finished": true,
+              "processed_frames": 6,
+              "fresh_frame_minimum_met": true,
+              "dwell_s": 1.1999999999999993,
+              "reason": "processed_frame_dwell",
+              "resume_requested": true,
+              "finished_clock_s": 30.5,
+              "actual_observation_s": 4.5,
+              "independent_motion_next_10_sim_s_m": 2.1182314491795244
+            },
+            {
+              "started_clock_s": 92.0,
+              "elapsed_mission_s": 87.9,
+              "choice": {
+                "turn_rad": -0.7853981633974483,
+                "gain_surface_m": 1.750000026077032,
+                "angular_gain_rad": 0.49458136458504975,
+                "estimated_sim_s": 4.690658503988659,
+                "odom_camera": [
+                  5.635390042100871,
+                  -4.008416098183329,
+                  0.1825730843550369
+                ],
+                "odom_yaw": -0.6028250790424114,
+                "wall_anchor_odom": [
+                  8.390675411617625,
+                  -5.980848682019286
+                ],
+                "map_surface": [
+                  8.485631912259926,
+                  -6.096246710359296
+                ],
+                "face_count": 35,
+                "range_min_m": 3.383989782063745,
+                "range_max_m": 3.4969584931537425,
+                "source": "observed_unviewed_wall"
+              },
+              "finished": true,
+              "processed_frames": 4,
+              "fresh_frame_minimum_met": true,
+              "dwell_s": 0.804000000000002,
+              "reason": "processed_frame_dwell",
+              "resume_requested": true,
+              "finished_clock_s": 95.0,
+              "actual_observation_s": 3.0,
+              "independent_motion_next_10_sim_s_m": 1.0708777917951626
+            },
+            {
+              "started_clock_s": 213.5,
+              "elapsed_mission_s": 209.4,
+              "choice": {
+                "turn_rad": -1.0471975511965976,
+                "gain_surface_m": 2.400000035762787,
+                "angular_gain_rad": 0.7020440775426394,
+                "estimated_sim_s": 5.854211338651545,
+                "odom_camera": [
+                  12.071729549072979,
+                  8.158991203938655,
+                  1.9034454695896044
+                ],
+                "odom_yaw": 0.8562479183930067,
+                "wall_anchor_odom": [
+                  14.205783591570398,
+                  10.6073457605111
+                ],
+                "map_surface": [
+                  14.535768594876991,
+                  10.751121878885659
+                ],
+                "face_count": 48,
+                "range_min_m": 3.2412335115948845,
+                "range_max_m": 3.4890607973292056,
+                "source": "observed_unviewed_wall"
+              },
+              "finished": true,
+              "processed_frames": 6,
+              "fresh_frame_minimum_met": true,
+              "dwell_s": 1.2280000000000086,
+              "reason": "processed_frame_dwell",
+              "resume_requested": true,
+              "finished_clock_s": 217.5,
+              "actual_observation_s": 4.0,
+              "independent_motion_next_10_sim_s_m": 0.670022828098939
+            },
+            {
+              "started_clock_s": 248.0,
+              "elapsed_mission_s": 243.9,
+              "choice": {
+                "turn_rad": -0.7853981633974483,
+                "gain_surface_m": 1.4500000216066837,
+                "angular_gain_rad": 0.6056669251261974,
+                "estimated_sim_s": 4.690658503988659,
+                "odom_camera": [
+                  13.577441489223734,
+                  9.125421127337631,
+                  2.4881137135249984
+                ],
+                "odom_yaw": 1.7027155501275502,
+                "wall_anchor_odom": [
+                  13.27786054325677,
+                  11.387558726371308
+                ],
+                "map_surface": [
+                  13.610768581093417,
+                  11.576121891179117
+                ],
+                "face_count": 29,
+                "range_min_m": 1.5872251857494972,
+                "range_max_m": 2.396244192914979,
+                "source": "observed_unviewed_wall"
+              },
+              "finished": true,
+              "processed_frames": 4,
+              "fresh_frame_minimum_met": true,
+              "dwell_s": 0.9000000000000057,
+              "reason": "processed_frame_dwell",
+              "resume_requested": true,
+              "finished_clock_s": 251.0,
+              "actual_observation_s": 3.0,
+              "independent_motion_next_10_sim_s_m": 1.1506579285178782
+            },
+            {
+              "started_clock_s": 311.0,
+              "elapsed_mission_s": 306.9,
+              "choice": {
+                "turn_rad": 0.7853981633974483,
+                "gain_surface_m": 2.450000036507845,
+                "angular_gain_rad": 0.8216551348501624,
+                "estimated_sim_s": 4.690658503988659,
+                "odom_camera": [
+                  15.823013673189202,
+                  6.7915303844687225,
+                  -1.8144182473265118
+                ],
+                "odom_yaw": -1.0290200839290637,
+                "wall_anchor_odom": [
+                  17.363538040802137,
+                  4.205066108627874
+                ],
+                "map_surface": [
+                  17.810765388942052,
+                  4.376173599596443
+                ],
+                "face_count": 49,
+                "range_min_m": 2.853742030914398,
+                "range_max_m": 3.0669252104895173,
+                "source": "observed_unviewed_wall"
+              },
+              "finished": true,
+              "processed_frames": 7,
+              "fresh_frame_minimum_met": true,
+              "dwell_s": 1.2679999999999723,
+              "reason": "processed_frame_dwell",
+              "resume_requested": true,
+              "finished_clock_s": 314.5,
+              "actual_observation_s": 3.5,
+              "independent_motion_next_10_sim_s_m": 2.3174763784448085
+            },
+            {
+              "started_clock_s": 384.0,
+              "elapsed_mission_s": 379.9,
+              "choice": {
+                "turn_rad": 0.7853981633974483,
+                "gain_surface_m": 2.450000036507845,
+                "angular_gain_rad": 0.7139013001307903,
+                "estimated_sim_s": 4.690658503988659,
+                "odom_camera": [
+                  5.245448875946985,
+                  -2.9065819194985605,
+                  3.1379267192199314
+                ],
+                "odom_yaw": -2.359860424562207,
+                "wall_anchor_odom": [
+                  2.909550512132189,
+                  -5.220273817095643
+                ],
+                "map_surface": [
+                  3.140562805055326,
+                  -5.36031379101555
+                ],
+                "face_count": 49,
+                "range_min_m": 3.255545359948522,
+                "range_max_m": 3.4966931413355247,
+                "source": "observed_unviewed_wall"
+              },
+              "finished": true,
+              "processed_frames": 6,
+              "fresh_frame_minimum_met": true,
+              "dwell_s": 1.23599999999999,
+              "reason": "processed_frame_dwell",
+              "resume_requested": true,
+              "finished_clock_s": 387.5,
+              "actual_observation_s": 3.5,
+              "independent_motion_next_10_sim_s_m": 2.2908178985862664
+            }
+          ],
+          "limitations": "A resume_requested flag is intent; resume log count and subsequent independent motion are separate evidence. Planned surface gain is not credited camera coverage. Final native result.json is not required by the legacy collector; these counts use the saved runtime event journal."
+        },
+        "wall_look_preview": {
+          "file": "v152-wall-r2-track-m112601-1795254354085795341-wall-look.jpg",
+          "frame": 130,
+          "elapsed_sim_s": 25.9,
+          "saved_jpeg": true
+        },
+        "scheduler_phases": {
+          "interior": 26,
+          "wall": 7
+        },
+        "scheduler_reasons": {
+          "explore_open_frontier": 1,
+          "unseen_reachable_object": 25,
+          "remaining_time_for_mapped_walls": 7
+        },
+        "first_wall_surface_selection_s": 532.9,
+        "first_reserved_wall_selection_s": 532.9,
+        "late_fresh_interior_wall_budget_bypass": []
+      }
+    }
+  ],
+  "runtime_parameters_unchanged_vs_baseline": [
+    "/controller_server",
+    "/velocity_smoother",
+    "/local_costmap/local_costmap",
+    "/global_costmap/global_costmap",
+    "/aruco_detector"
+  ]
+}

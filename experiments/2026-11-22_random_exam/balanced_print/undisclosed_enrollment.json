@@ -1,0 +1,90 @@
+{
+  "phase": "before_first_episode",
+  "nonce": "974ab0ed1d04cb224c544fc179e975ae9ffb13ad06d2ddba6531827e58465b32",
+  "public_count": 0,
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "budget_sim_s": 600,
+  "source_sha256": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb",
+  "configs": {
+    "policy.json": "ca67b32c20a17e74e0bc8292b117240e19d80f24137cbf092d473a743be5eb36",
+    "nav2_hardware_profile.yaml": "937d1448aa1d511c2c3eb34ca0b6656ee610e068285cd88d94a03179ae56cf06"
+  },
+  "team_code_sha256": "e73d497ea4fa068fec45a360c6f2f45adb5736465be6f3178a657b65e71ac0b8",
+  "selection": "First never-run seed per stratum using nonce SHA-256; no outcomes used. Two standalone stress runs, no paired ranking.",
+  "worlds": [
+    {
+      "stratum": "below_three",
+      "draw_index": 0,
+      "seed": 2951400630,
+      "private_count": 1,
+      "file_sha256": {
+        "world/osp_studio.sdf": "28283ea641cf7bcad45cdfe9356d44cfb7ce4319fb593c7e8cfcd26f459e6931",
+        "scene.json": "267965212c8630a8dd2fd87551a6ae7e238d65f6f291f239bc1f5bf41af60151",
+        "scene.yaml": "ff2934f5b21feb2bf46774776091e6de3ac6cb00f683039bb44661a03f043052",
+        "run/simulation/demo_layout.json": "423ee3758f63604b06788edfc2986c20697baaee44e500509692c0f2d62678cc",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "start": [
+        -6.1,
+        2.500000000000001,
+        2.075463926550884
+      ],
+      "ids": [
+        533
+      ],
+      "hosts": [
+        "wall_south_recess"
+      ],
+      "objects": {
+        "movable_1": "screen",
+        "movable_2": "box",
+        "movable_3": "box",
+        "movable_4": "box",
+        "movable_5": "screen",
+        "movable_6": "box",
+        "movable_7": "box"
+      }
+    },
+    {
+      "stratum": "above_three",
+      "draw_index": 1,
+      "seed": 335660562,
+      "private_count": 4,
+      "file_sha256": {
+        "world/osp_studio.sdf": "3a1d5144db97c6399251d2d2f3690a65b17d8ddbfe11af1df63af662e69c330a",
+        "scene.json": "3423695afc1fd14862f6dee0e20bd82fbe59d20f852ab7a3360953f2a7800690",
+        "scene.yaml": "b946ac28965c8faa765328d094806b9c5cc10f50ac252ede21b4fb2c634edc33",
+        "run/simulation/demo_layout.json": "a3b7ace8b67d4a795f45714749cfbae1bb31a63f0aaa815144adc990bb8b90be",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "start": [
+        1.5500000000000007,
+        -4.85,
+        1.6554520746087302
+      ],
+      "ids": [
+        526,
+        525,
+        498,
+        346
+      ],
+      "hosts": [
+        "movable_2",
+        "movable_3",
+        "movable_3",
+        "wall_north"
+      ],
+      "objects": {
+        "movable_1": "box",
+        "movable_2": "box",
+        "movable_3": "box",
+        "movable_4": "box",
+        "movable_5": "box"
+      }
+    }
+  ]
+}

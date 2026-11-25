@@ -13,6 +13,18 @@ import robot_session as session
 
 
 class StartSafetyTest(unittest.TestCase):
+    def test_stall_recovery_launch_is_explicit(self):
+        args = SimpleNamespace(repo=Path('/repo'), duration=600., recover_stall=False)
+        original = session.launch_command(args, Path('/trial'))
+        args.recover_stall = True
+        self.assertEqual(session.launch_command(args, Path('/trial')), original + ['stall_recovery_enabled:=true'])
+
+    def test_forward_045_reaches_only_the_selected_launch(self):
+        args = SimpleNamespace(repo=Path('/repo'), duration=600, forward_045=False)
+        baseline = session.launch_command(args, Path('/trial'))
+        args.forward_045 = True
+        self.assertEqual(session.launch_command(args, Path('/trial')), baseline + ['forward_045:=true'])
+
     def test_upstream_status_separates_discovery_approach_and_stop(self):
         targets = [dict(id=i, x=.1, y=.5, confirmed=i != 8, approached=i in (7, 8)) for i in (7, 8, 103)]
         packet = dict(state='FINISHED', reason='operator_stop', targets=targets, stop_confirmed=True)
@@ -54,6 +66,13 @@ class StartSafetyTest(unittest.TestCase):
             result = json.loads(path.read_text())
             self.assertEqual(result['phase'], 'stopped')
             self.assertTrue(result['stationary_verified'])
+
+    def test_shared_camera_only_changes_the_detector_image_input(self):
+        args = SimpleNamespace(workspace=Path('/ws'), repo=Path('/repo'), duration=600., runtime='flow')
+        original = session.launch_command(args, Path('/trial'))
+        args.share_camera = True
+        changed = session.launch_command(args, Path('/trial'))
+        self.assertEqual(changed, original + ['rgb_topic:=' + session.SESSION_RGB])
 
     def test_zero_velocity_wait_returns_after_a_fresh_stable_second(self):
         io = Mock()

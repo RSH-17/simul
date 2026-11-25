@@ -1,0 +1,15 @@
+{
+  "seed": 3818821658,
+  "pair": 1,
+  "role": "candidate",
+  "name": "v151-survey-candidate-track-m3818821658-1021171615408980175",
+  "start_acknowledged": false,
+  "elapsed_mission_frames": 0,
+  "mission_pose_samples": 0,
+  "events": 0,
+  "registered_markers": 0,
+  "root_cause": "Failed to change state for node: planner_server. Exception: planner_server/get_state service client: async_send_request failed.",
+  "observation_error": "Start was not acknowledged",
+  "public_protocol_sha256": "8a129e478a7989589c91ff5d5d94aeccafa996e97cb85f90664320ec982e5453",
+  "archived_native_files": 79
+}

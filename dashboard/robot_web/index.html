@@ -16,21 +16,18 @@
     <section id="robot-controls" class="card robot-controls" aria-label="실물 로봇 제어" hidden>
       <div class="control-copy"><span class="label">로봇 제어</span><h2 id="control-state">대기</h2><p id="control-detail" role="status" aria-live="polite">구동 버튼을 누르면 준비 상태를 확인하고 출발합니다.</p><small id="control-timing"></small></div>
       <div class="control-buttons">
-        <button data-action="start-v3-mppi" class="start-button" type="button" disabled>기존 · Flow v3</button>
-        <button data-action="start-mixed" class="start-button" type="button" disabled>Mixed · 상자 전면 관찰</button>
-        <button data-action="start-thorough" class="start-button" type="button" disabled>Mixed · 꼼꼼 탐색</button>
-        <button data-action="start-corner" class="start-button" type="button" disabled>Mixed · 각진 구조 우선</button>
-        <button data-action="start-side" class="start-button" type="button" disabled>Mixed · 이동 중 옆면 관찰</button>
-        <button data-action="start-general" class="start-button" type="button" disabled>Mixed · 일반 장애물 집중 탐색</button>
-        <button data-action="start-center" class="start-button" type="button" disabled>Mixed · 가운데 장애물 → 벽</button>
-        <button data-action="start-upstream-r32" class="start-button" type="button" disabled>원본 · R32</button>
+        <label for="robot-policy">실물 주행 정책</label>
+        <select id="robot-policy" disabled></select>
+        <button id="robot-start" class="start-button" type="button" disabled>1. 주행 준비</button>
+        <button id="robot-go" class="start-button" type="button" disabled>2. 출발</button>
         <button id="robot-stop" class="stop-button" type="button">정지</button></div>
     </section>
     <section class="summary" aria-label="핵심 상태">
       <article class="card hero"><span class="label">미션</span><strong id="mission-state">대기</strong><small id="mission-detail">상태 수신 전</small></article>
       <article class="card"><span class="label">출발 지도 셀</span><strong id="start-cell">—</strong><small id="start-cell-detail">지도·TF 수신 전</small></article>
       <article class="card"><span class="label">충돌 감시</span><strong id="collision">—</strong><small id="collision-detail">상태 수신 전</small></article>
-      <article class="card"><span class="label">발견한 마커</span><strong id="detected-markers">—</strong><small id="detected-detail">탐지 결과 수신 전</small></article>
+      <article class="card" id="visual-card" hidden><span class="label">카메라에서 읽은 ID</span><strong id="visual-ids">—</strong></article>
+      <article class="card"><span class="label">지도 등록</span><strong id="detected-markers">—</strong><small id="detected-detail">탐지 결과 수신 전</small></article>
       <article class="card"><span class="label">접근 완료</span><strong id="markers">—</strong><small id="marker-detail">미션 상태 수신 전</small></article>
     </section>
     <div id="marker-alert" class="marker-alert" role="status" aria-live="polite" hidden></div>

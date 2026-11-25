@@ -1,0 +1,27 @@
+{
+  "policy": "1.5.1-rescue360",
+  "baseline": "1.5.1-balanced",
+  "pairs": 5,
+  "held_out": false,
+  "production_promoted": false,
+  "stats": {
+    "baseline": {
+      "wall_registered": 3,
+      "wall_approached": 3,
+      "box_approached": 9,
+      "strict": 3,
+      "bumps": 0,
+      "mean_elapsed_s": 489.6336,
+      "mean_path_m": 83.77781194727584
+    },
+    "candidate": {
+      "wall_registered": 3,
+      "wall_approached": 3,
+      "box_approached": 10,
+      "strict": 3,
+      "bumps": 0,
+      "mean_elapsed_s": 458.0232,
+      "mean_path_m": 73.27769273663438
+    }
+  }
+}

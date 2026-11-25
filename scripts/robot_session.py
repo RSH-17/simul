@@ -18,6 +18,9 @@ import subprocess
 import time
 
 
+SESSION_RGB = "/osp_vm/oakd/rgb/session_image"
+
+
 CONFLICTS = {"mission", "aruco_detector", "slam_toolbox", "controller_server",
              "planner_server", "behavior_server", "bt_navigator",
              "collision_monitor", "velocity_smoother", "body_scan_filter"}
@@ -72,15 +75,20 @@ class Sensors:
 
 class BumpRecoveryGuard:
     """Let the mission retreat after any number of contacts; bound held contact."""
-    def __init__(self):
+    def __init__(self, motor_stall=None):
+        self.motor_stall = motor_stall
         self.last_contact = None
         self.active_since = None
         self.previous = False
         self.total = 0
 
     def check(self, now, types):
-        if set(types) & {2, 3, 4}:
+        if set(types) & {2, 4} or (3 in types and self.motor_stall is None):
             return "Hardware cliff/stall/wheel-drop hazard"
+        if self.motor_stall is not None:
+            self.motor_stall.update(types, now)
+            if self.motor_stall.fatal(now):
+                return "Hardware motor stall persisted for 2 seconds"
         bump = 1 in types
         if bump:
             if not self.previous:
@@ -143,7 +151,7 @@ class StartGate:
 
 
 class RobotIO:
-    def __init__(self, domain, runtime="flow"):
+    def __init__(self, domain, runtime="flow", share_camera=False):
         import rclpy
         from action_msgs.srv import CancelGoal
         from geometry_msgs.msg import TwistStamped
@@ -173,9 +181,17 @@ class RobotIO:
         def stamped(name, msg, value=None):
             stamp = msg.header.stamp
             self.sensors.update(name, time.monotonic(), stamp.sec + stamp.nanosec / 1e9, value)
+        rgb_relay = self.node.create_publisher(Image, SESSION_RGB, qos_profile_sensor_data) if share_camera else None
+
+        def camera(msg):
+            stamped("camera", msg)
+            if rgb_relay is not None and rgb_relay.get_subscription_count():
+                rgb_relay.publish(msg)
+
         self.subscriptions = [
+            self.node.create_subscription(CameraInfo, "/mission/processed_camera", lambda m: stamped("processed_camera", m), qos_profile_sensor_data),
             self.node.create_subscription(LaserScan, "/scan", lambda m: stamped("scan", m), qos_profile_sensor_data),
-            self.node.create_subscription(Image, "/oakd/rgb/preview/image_raw", lambda m: stamped("camera", m), qos_profile_sensor_data),
+            self.node.create_subscription(Image, "/oakd/rgb/preview/image_raw", camera, qos_profile_sensor_data),
             self.node.create_subscription(CameraInfo, "/oakd/rgb/preview/camera_info", lambda m: stamped("camera_info", m), qos_profile_sensor_data),
             self.node.create_subscription(Odometry, "/odom", lambda m: stamped("odom", m, (m.twist.twist.linear.x, m.twist.twist.angular.z)), qos_profile_sensor_data),
             self.node.create_subscription(HazardDetectionVector, "/hazard_detection", lambda m: self.sensors.update("hazards", time.monotonic(), value=[v.type for v in m.detections]), qos_profile_sensor_data),
@@ -243,6 +259,11 @@ def runtime_check(args):
     for path in [args.workspace / "install/setup.bash", *files]:
         if not path.is_file():
             raise FileNotFoundError("Prepare this file before start: " + str(path))
+    if getattr(args, "recover_stall", False):
+        try:
+            from osp_mission.stall_recovery import StallPause
+        except ImportError as exc:
+            raise RuntimeError("Prepared v1.3 motor-stall recovery workspace is missing") from exc
     profile = os.environ.get("FASTRTPS_DEFAULT_PROFILES_FILE", "")
     if not profile or not Path(profile).is_file():
         raise RuntimeError("Wired Fast DDS profile missing")
@@ -255,7 +276,7 @@ def launch_command(args, output):
         return ["ros2", "launch", "osp_project", "mission.launch.py",
                 "config:=" + str(upstream_config(args.workspace)), "output_directory:=" + str(output / "upstream"),
                 "use_sim_time:=false", "bringup:=true", "rviz:=false"]
-    return ["ros2", "launch", "osp_mission", "robot.launch.py", "use_sim_time:=false",
+    command = ["ros2", "launch", "osp_mission", "robot.launch.py", "use_sim_time:=false",
             "rviz:=false", "planner:=edge", "planner_start_ignore_radius_m:=0.30",
             "navigation_flow_enabled:=true", "allow_mid_route_wall_inspection:=" +
             ("true" if getattr(args, "side_inspection", False) else "false"),
@@ -263,6 +284,13 @@ def launch_command(args, output):
             "nav2_params:=" + str(args.repo / "robot_profiles/wired_flow_v3/nav2_hardware_profile.yaml"),
             "policy_file:=" + str(args.repo / "policy_releases/2026-11-13_face_intent_v2/policy.json"),
             "output_dir:=" + str(output)]
+    if getattr(args, "share_camera", False):
+        command.append("rgb_topic:=" + SESSION_RGB)
+    if getattr(args, "forward_045", False):
+        command.append("forward_045:=true")
+    if getattr(args, "recover_stall", False):
+        command.append("stall_recovery_enabled:=true")
+    return command
 
 
 def identity(pid):
@@ -439,6 +467,8 @@ def start(args, io, flag, state_path):
     state = dict(supervisor_pid=os.getpid(), supervisor_start=identity(os.getpid()),
                  boot_id=Path("/proc/sys/kernel/random/boot_id").read_text().strip(),
                  phase="preflight", workspace=str(args.workspace), runtime=getattr(args, "runtime", "flow"),
+                 forward_045=getattr(args, "forward_045", False),
+                 recover_stall=getattr(args, "recover_stall", False),
                  output=str(output), domain=args.domain, requested_wall_epoch_s=time.time())
     save(state_path, state)
     try:
@@ -459,18 +489,60 @@ def start(args, io, flag, state_path):
         state.update(phase="starting", launch_pid=process.pid, launch_start=identity(process.pid))
         save(state_path, state)
         report("launch_started")
+        if args.action == "prepare":
+            deadline = time.monotonic() + args.timeout
+            stable_since = None
+            while not flag.stopped and time.monotonic() < deadline:
+                if process.poll() is not None:
+                    raise RuntimeError("ROS launch exited during preparation")
+                io.spin()
+                processed = io.sensors.samples.get("processed_camera")
+                processed_fresh = bool(processed and time.monotonic() - processed[0] <= .65
+                                       and abs(time.time() - processed[1]) <= .65)
+                ready = (not io.safety_reason() and processed_fresh and io.status.get("state") == "idle"
+                         and not io.status.get("readiness_reason")
+                         and time.monotonic() - io.status_at < 2)
+                stable_since = stable_since or time.monotonic() if ready else None
+                if stable_since and time.monotonic() - stable_since >= 2:
+                    break
+            if not stable_since or flag.stopped:
+                raise RuntimeError("Preparation did not reach stable mission readiness")
+            state["phase"] = "prepared"
+            save(state_path, state)
+            report("prepared")
+            go = output / "go.request"
+            while not flag.stopped:
+                io.spin()
+                if process.poll() is not None:
+                    raise RuntimeError("Prepared ROS launch exited")
+                if io.safety_reason() or time.monotonic() - io.status_at >= 2:
+                    raise RuntimeError("Prepared sensor readiness lost")
+                if go.exists():
+                    go.unlink()
+                    state["phase"] = "starting"
+                    save(state_path, state)
+                    report("go_requested")
+                    break
+            if flag.stopped:
+                raise InterruptedError("operator_stop")
         wait_for_start(io, flag, process, args.timeout, report)
         state["phase"] = "running"
         save(state_path, state)
         first_motion = first_nav = first_forward = False
         running_since = time.monotonic()
-        bump_guard = BumpRecoveryGuard()
+        motor_stall = None
+        if getattr(args, "recover_stall", False):
+            from osp_mission.stall_recovery import StallPause
+            motor_stall = StallPause()
+        bump_guard = BumpRecoveryGuard(motor_stall)
         while not flag.stopped:
             io.spin()
             if process.poll() is not None:
                 raise RuntimeError("ROS launch exited during mission")
             hazards = io.sensors.samples.get("hazards")
             if hazards:
+                if motor_stall is not None and 3 in hazards[2]:
+                    io.zero()
                 before = bump_guard.total
                 reason = bump_guard.check(time.monotonic(), hazards[2])
                 if reason:
@@ -564,9 +636,12 @@ def stop(args, io, state_path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("start", "stop", "check", "status", "dry-run"))
+    parser.add_argument("action", choices=("start", "prepare", "stop", "check", "status", "dry-run"))
     parser.add_argument("--runtime", choices=("flow", "upstream-r32"), default="flow")
+    parser.add_argument("--share-camera", action="store_true", help="Forward the supervisor RGB input unchanged to the Flow detector")
     parser.add_argument("--side-inspection", action="store_true")
+    parser.add_argument("--recover-stall", action="store_true", help="Pause and verify a cleared motor stall in the v1.3 runtime")
+    parser.add_argument("--forward-045", action="store_true", help="Use the 0.45 m/s Mixed forward profile")
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--workspace", type=Path, default=Path.home() / "face_intent_flow_v4r2_ws")
     parser.add_argument("--domain", type=int, default=int(os.environ.get("ROS_DOMAIN_ID", "4")))
@@ -574,6 +649,8 @@ def main():
     parser.add_argument("--duration", type=float, default=600.0)
     parser.add_argument("--timeout", type=float, default=60.0)
     args = parser.parse_args()
+    if (args.forward_045 or args.recover_stall) and args.runtime != "flow":
+        parser.error("Forward speed and motor-stall recovery options require the Flow runtime")
     if not 0 <= args.domain <= 232 or not all(math.isfinite(v) and v > 0 for v in (args.duration, args.timeout)):
         parser.error("Valid ROS domain and positive finite duration/timeout required")
     if args.action == "dry-run":
@@ -584,7 +661,7 @@ def main():
     state_path = state_dir / "session.json"
     flag = StopFlag()
     lock = None
-    if args.action == "start":
+    if args.action in ("start", "prepare"):
         lock = (state_dir / "session.lock").open("w")
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -598,8 +675,8 @@ def main():
     try:
         if args.action == "stop":
             args.runtime = read_state(state_path).get("runtime", "flow")
-        io = RobotIO(args.domain, args.runtime)
-        if args.action == "start":
+        io = RobotIO(args.domain, args.runtime, share_camera=args.share_camera and args.action == "start")
+        if args.action in ("start", "prepare"):
             return start(args, io, flag, state_path)
         if args.action == "stop":
             return stop(args, io, state_path)

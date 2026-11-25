@@ -1,0 +1,18 @@
+{
+  "native_runs": 5,
+  "boxes": 5,
+  "successes": 3,
+  "bumps": 0,
+  "sensor_interruptions": 1,
+  "mean_sim_s": 489.6336,
+  "mean_wall_s": 1082.378045477401,
+  "mean_path_m": 83.77781194727584,
+  "policy_changed": false,
+  "physical_drive": false,
+  "box_marker_registered": 9,
+  "box_marker_rgb_verified": 9,
+  "box_marker_total": 10,
+  "wall_marker_registered": 3,
+  "wall_marker_rgb_verified": 3,
+  "wall_marker_total": 5
+}

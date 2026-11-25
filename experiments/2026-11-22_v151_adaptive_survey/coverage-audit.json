@@ -1,0 +1,762 @@
+[
+  {
+    "run": "v151-boxes5-track-m112601-trial1",
+    "snapshots": [
+      {
+        "elapsed_s": 4.676,
+        "seen_face_cells": 12,
+        "shape": [
+          351,
+          273
+        ],
+        "origin_xy": [
+          -2.139935668627469,
+          -8.390379130687446
+        ]
+      },
+      {
+        "elapsed_s": 15.676,
+        "seen_face_cells": 2,
+        "shape": [
+          355,
+          285
+        ],
+        "origin_xy": [
+          -2.1487648222888738,
+          -8.421483362125857
+        ]
+      },
+      {
+        "elapsed_s": 31.176,
+        "seen_face_cells": 9,
+        "shape": [
+          355,
+          319
+        ],
+        "origin_xy": [
+          -2.1501905914916115,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 43.676,
+        "seen_face_cells": 10,
+        "shape": [
+          355,
+          322
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 58.676,
+        "seen_face_cells": 23,
+        "shape": [
+          355,
+          322
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 65.676,
+        "seen_face_cells": 21,
+        "shape": [
+          355,
+          322
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 68.676,
+        "seen_face_cells": 25,
+        "shape": [
+          355,
+          322
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 75.176,
+        "seen_face_cells": 33,
+        "shape": [
+          355,
+          322
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 84.676,
+        "seen_face_cells": 44,
+        "shape": [
+          355,
+          322
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 99.676,
+        "seen_face_cells": 54,
+        "shape": [
+          355,
+          356
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 109.176,
+        "seen_face_cells": 60,
+        "shape": [
+          355,
+          367
+        ],
+        "origin_xy": [
+          -2.1557826457202167,
+          -8.433292600478973
+        ]
+      },
+      {
+        "elapsed_s": 128.676,
+        "seen_face_cells": 62,
+        "shape": [
+          355,
+          390
+        ],
+        "origin_xy": [
+          -2.155943805088574,
+          -8.434126892233449
+        ]
+      },
+      {
+        "elapsed_s": 139.676,
+        "seen_face_cells": 87,
+        "shape": [
+          355,
+          393
+        ],
+        "origin_xy": [
+          -2.155943805088574,
+          -8.434126892233449
+        ]
+      },
+      {
+        "elapsed_s": 167.676,
+        "seen_face_cells": 112,
+        "shape": [
+          379,
+          426
+        ],
+        "origin_xy": [
+          -2.155943805088574,
+          -8.434126892233449
+        ]
+      },
+      {
+        "elapsed_s": 192.176,
+        "seen_face_cells": 108,
+        "shape": [
+          379,
+          426
+        ],
+        "origin_xy": [
+          -2.155943805088574,
+          -8.434126892233449
+        ]
+      },
+      {
+        "elapsed_s": 223.176,
+        "seen_face_cells": 88,
+        "shape": [
+          379,
+          426
+        ],
+        "origin_xy": [
+          -2.154496132189025,
+          -8.437374758452318
+        ]
+      },
+      {
+        "elapsed_s": 293.176,
+        "seen_face_cells": 38,
+        "shape": [
+          444,
+          426
+        ],
+        "origin_xy": [
+          -2.1570406589712725,
+          -8.457030853681994
+        ]
+      },
+      {
+        "elapsed_s": 305.676,
+        "seen_face_cells": 40,
+        "shape": [
+          444,
+          426
+        ],
+        "origin_xy": [
+          -2.1570406589712725,
+          -8.457030853681994
+        ]
+      },
+      {
+        "elapsed_s": 321.676,
+        "seen_face_cells": 52,
+        "shape": [
+          445,
+          426
+        ],
+        "origin_xy": [
+          -2.1570406589712725,
+          -8.457030853681994
+        ]
+      },
+      {
+        "elapsed_s": 333.176,
+        "seen_face_cells": 89,
+        "shape": [
+          445,
+          426
+        ],
+        "origin_xy": [
+          -2.1570406589712725,
+          -8.457030853681994
+        ]
+      },
+      {
+        "elapsed_s": 346.176,
+        "seen_face_cells": 99,
+        "shape": [
+          445,
+          426
+        ],
+        "origin_xy": [
+          -2.1570406589712725,
+          -8.457030853681994
+        ]
+      },
+      {
+        "elapsed_s": 357.176,
+        "seen_face_cells": 124,
+        "shape": [
+          445,
+          426
+        ],
+        "origin_xy": [
+          -2.1570406589712725,
+          -8.457030853681994
+        ]
+      },
+      {
+        "elapsed_s": 421.176,
+        "seen_face_cells": 45,
+        "shape": [
+          444,
+          425
+        ],
+        "origin_xy": [
+          -2.1543041766232727,
+          -8.446070726724832
+        ]
+      },
+      {
+        "elapsed_s": 485.176,
+        "seen_face_cells": 76,
+        "shape": [
+          444,
+          425
+        ],
+        "origin_xy": [
+          -2.153509644030021,
+          -8.446615222807344
+        ]
+      },
+      {
+        "elapsed_s": 556.176,
+        "seen_face_cells": 66,
+        "shape": [
+          444,
+          426
+        ],
+        "origin_xy": [
+          -2.1538391987620167,
+          -8.450984081878689
+        ]
+      }
+    ],
+    "net_decreases": [
+      {
+        "from_s": 4.676,
+        "to_s": 15.676,
+        "net_loss_cells": 10,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 58.676,
+        "to_s": 65.676,
+        "net_loss_cells": 2,
+        "geometry_changed": false
+      },
+      {
+        "from_s": 167.676,
+        "to_s": 192.176,
+        "net_loss_cells": 4,
+        "geometry_changed": false
+      },
+      {
+        "from_s": 192.176,
+        "to_s": 223.176,
+        "net_loss_cells": 20,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 223.176,
+        "to_s": 293.176,
+        "net_loss_cells": 50,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 357.176,
+        "to_s": 421.176,
+        "net_loss_cells": 79,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 485.176,
+        "to_s": 556.176,
+        "net_loss_cells": 10,
+        "geometry_changed": true
+      }
+    ],
+    "caveat": "Occupancy evidence, camera credit, SLAM origin and geometry all evolve between snapshots. A net drop is observed; identity of an unchanged physical face is not independently known."
+  },
+  {
+    "run": "v151-boxes5-track-m112605-trial5",
+    "snapshots": [
+      {
+        "elapsed_s": 3.976,
+        "seen_face_cells": 17,
+        "shape": [
+          265,
+          267
+        ],
+        "origin_xy": [
+          -11.762805383352179,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 14.976,
+        "seen_face_cells": 2,
+        "shape": [
+          310,
+          275
+        ],
+        "origin_xy": [
+          -12.129259153118213,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 27.476,
+        "seen_face_cells": 4,
+        "shape": [
+          310,
+          285
+        ],
+        "origin_xy": [
+          -12.666868878681875,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 39.476,
+        "seen_face_cells": 3,
+        "shape": [
+          310,
+          294
+        ],
+        "origin_xy": [
+          -13.091989260442409,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 53.476,
+        "seen_face_cells": 3,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.673779709010356,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 76.476,
+        "seen_face_cells": 34,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.673779709010356,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 88.476,
+        "seen_face_cells": 37,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.67426395610316,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 103.476,
+        "seen_face_cells": 40,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.67426395610316,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 113.976,
+        "seen_face_cells": 44,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.67426395610316,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 125.476,
+        "seen_face_cells": 75,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.67426395610316,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 142.476,
+        "seen_face_cells": 24,
+        "shape": [
+          316,
+          326
+        ],
+        "origin_xy": [
+          -14.684589173530403,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 153.476,
+        "seen_face_cells": 27,
+        "shape": [
+          316,
+          338
+        ],
+        "origin_xy": [
+          -15.299450916892086,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 175.476,
+        "seen_face_cells": 12,
+        "shape": [
+          316,
+          374
+        ],
+        "origin_xy": [
+          -17.06441379510369,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 184.976,
+        "seen_face_cells": 16,
+        "shape": [
+          316,
+          379
+        ],
+        "origin_xy": [
+          -17.29513659677629,
+          -9.936770367034166
+        ]
+      },
+      {
+        "elapsed_s": 206.976,
+        "seen_face_cells": 5,
+        "shape": [
+          317,
+          379
+        ],
+        "origin_xy": [
+          -17.32195001850289,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 223.976,
+        "seen_face_cells": 17,
+        "shape": [
+          321,
+          434
+        ],
+        "origin_xy": [
+          -20.063736759701925,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 260.476,
+        "seen_face_cells": 10,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.626040445437066,
+          -9.945178949245621
+        ]
+      },
+      {
+        "elapsed_s": 273.976,
+        "seen_face_cells": 18,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.626040445437066,
+          -9.945178949245621
+        ]
+      },
+      {
+        "elapsed_s": 288.476,
+        "seen_face_cells": 58,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.626040445437066,
+          -9.945178949245621
+        ]
+      },
+      {
+        "elapsed_s": 302.976,
+        "seen_face_cells": 61,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.626040445437066,
+          -9.945178949245621
+        ]
+      },
+      {
+        "elapsed_s": 313.976,
+        "seen_face_cells": 90,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.626040445437066,
+          -9.945178949245621
+        ]
+      },
+      {
+        "elapsed_s": 354.476,
+        "seen_face_cells": 37,
+        "shape": [
+          343,
+          445
+        ],
+        "origin_xy": [
+          -20.6268931590183,
+          -9.93649527703686
+        ]
+      },
+      {
+        "elapsed_s": 395.976,
+        "seen_face_cells": 47,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.6219240784982,
+          -9.942328114269829
+        ]
+      },
+      {
+        "elapsed_s": 425.476,
+        "seen_face_cells": 54,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.6219240784982,
+          -9.942328114269829
+        ]
+      },
+      {
+        "elapsed_s": 461.976,
+        "seen_face_cells": 60,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.6219240784982,
+          -9.942328114269829
+        ]
+      },
+      {
+        "elapsed_s": 503.976,
+        "seen_face_cells": 75,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.6219240784982,
+          -9.942328114269829
+        ]
+      },
+      {
+        "elapsed_s": 550.976,
+        "seen_face_cells": 53,
+        "shape": [
+          344,
+          445
+        ],
+        "origin_xy": [
+          -20.620813456579025,
+          -9.949607248799328
+        ]
+      },
+      {
+        "elapsed_s": 587.476,
+        "seen_face_cells": 3,
+        "shape": [
+          344,
+          448
+        ],
+        "origin_xy": [
+          -20.74831355153037,
+          -9.949607248799328
+        ]
+      },
+      {
+        "elapsed_s": 599.976,
+        "seen_face_cells": 5,
+        "shape": [
+          344,
+          448
+        ],
+        "origin_xy": [
+          -20.74831355153037,
+          -9.949607248799328
+        ]
+      }
+    ],
+    "net_decreases": [
+      {
+        "from_s": 3.976,
+        "to_s": 14.976,
+        "net_loss_cells": 15,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 27.476,
+        "to_s": 39.476,
+        "net_loss_cells": 1,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 125.476,
+        "to_s": 142.476,
+        "net_loss_cells": 51,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 153.476,
+        "to_s": 175.476,
+        "net_loss_cells": 15,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 184.976,
+        "to_s": 206.976,
+        "net_loss_cells": 11,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 223.976,
+        "to_s": 260.476,
+        "net_loss_cells": 7,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 313.976,
+        "to_s": 354.476,
+        "net_loss_cells": 53,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 503.976,
+        "to_s": 550.976,
+        "net_loss_cells": 22,
+        "geometry_changed": true
+      },
+      {
+        "from_s": 550.976,
+        "to_s": 587.476,
+        "net_loss_cells": 50,
+        "geometry_changed": true
+      }
+    ],
+    "caveat": "Occupancy evidence, camera credit, SLAM origin and geometry all evolve between snapshots. A net drop is observed; identity of an unchanged physical face is not independently known."
+  }
+]

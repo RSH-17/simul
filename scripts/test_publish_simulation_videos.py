@@ -13,6 +13,17 @@ import publish_simulation_videos as publisher
 
 
 class SelectivePublishingTest(unittest.TestCase):
+    def test_random_roster_uses_post_registration_evidence(self):
+        self.assertIsNone(publisher.verified_approach({}))
+        distances={str(i):1. for i in (0,21,741)}
+        self.assertTrue(publisher.verified_approach({'closest_approach_m':distances}))
+        record=dict(expected_ids=[0,21,741],verified_after_registration_ids=[0,21],
+                    closest_approach_m=distances)
+        self.assertFalse(publisher.verified_approach(record))
+        self.assertTrue(publisher.verified_approach(dict(expected_ids=[0],verified_after_registration_ids=[0])))
+        with self.assertRaises(ValueError):
+            publisher.verified_approach(dict(expected_ids=[7,8],verified_after_registration_ids=[7,99]))
+
     def test_only_requested_video_uploads_and_complete_index_is_retained(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'repository_snapshot').mkdir();(root/'scripts').mkdir()

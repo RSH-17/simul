@@ -1,0 +1,89 @@
+{
+  "run": "v151-survey-baseline-track-m647911238-1066999508311362768",
+  "evidence": {
+    "scene.json": "59125b475eceae239890367c7fcd7014dba2d7a8fe2fe15ff8dda0eb3fc3c63a",
+    "headings.csv": "4f9812f3f6b96b67ee37f1a895e5706aa423bf1711966f91f0c702b14487ae85",
+    "frames.csv": "38182bf0f302077497d52a7b6852951f835d598ff753a886d6abfebddb3bf9f6",
+    "world/osp_studio.sdf": "d7ada477918486f39b969f01ca4046de39bc8ec9b442a87aa329f1075cc168a8",
+    "metrics.json": "e9067fa9b13fb3848cc8f0c516de9516f70dcdcda7139e3d0474171a322e52c0"
+  },
+  "targets": {
+    "173": {
+      "host": "movable_4",
+      "stage": "verified",
+      "geometric_18px_frames": 137,
+      "geometric_18px_near_frames": 60,
+      "geometric_6_to_lt18px_frames": 40,
+      "geometric_first_18px_s": 67.916,
+      "online_decodes": 166,
+      "offline_jpeg_decodes": 166,
+      "near_s": 22.8,
+      "near_center_frames": 64,
+      "near_incidence_s": {
+        "front_to_60_deg": 22.8,
+        "front_oblique": 0.0,
+        "behind": 0.0
+      },
+      "near_min_off_axis_deg": 0.8512090743005766,
+      "near_median_off_axis_deg": 24.622023253441,
+      "detector_breakdown": {
+        "small": 39,
+        "no_range": 41,
+        "accepted": 121
+      }
+    },
+    "149": {
+      "host": "wall_north",
+      "stage": "verified",
+      "geometric_18px_frames": 40,
+      "geometric_18px_near_frames": 11,
+      "geometric_6_to_lt18px_frames": 108,
+      "geometric_first_18px_s": 250.916,
+      "online_decodes": 73,
+      "offline_jpeg_decodes": 86,
+      "near_s": 2.2,
+      "near_center_frames": 11,
+      "near_incidence_s": {
+        "front_to_60_deg": 2.2,
+        "front_oblique": 0.0,
+        "behind": 0.0
+      },
+      "near_min_off_axis_deg": 0.1673428879427151,
+      "near_median_off_axis_deg": 1.91652186070941,
+      "detector_breakdown": {
+        "small": 35,
+        "accepted": 38
+      }
+    },
+    "518": {
+      "host": "movable_1",
+      "stage": "verified",
+      "geometric_18px_frames": 89,
+      "geometric_18px_near_frames": 72,
+      "geometric_6_to_lt18px_frames": 38,
+      "geometric_first_18px_s": 70.116,
+      "online_decodes": 112,
+      "offline_jpeg_decodes": 111,
+      "near_s": 80.0,
+      "near_center_frames": 188,
+      "near_incidence_s": {
+        "front_to_60_deg": 25.8,
+        "front_oblique": 10.4,
+        "behind": 43.8
+      },
+      "near_min_off_axis_deg": 0.024458656087164698,
+      "near_median_off_axis_deg": 41.572699761024566,
+      "detector_breakdown": {
+        "accepted": 87,
+        "small": 25
+      }
+    }
+  },
+  "audit_version": 3,
+  "logged_print_relooks": [],
+  "selected_hybrid_goals": 18,
+  "repeated_same_kind_within_35cm": 1,
+  "stationary_s_below_2cm_per_s": 94.19999999999992,
+  "note": "Camera exposure projection uses the measured optical transform and five rays. The saved JPEG and online decoder counts measure different things. Repeated goal locations can include purposeful returns with a different heading.",
+  "calibration_sha256": "a53ad4f4c3d39222071727fd6d7cb9d885aa0c30a527502ed9325e1efc2dc423"
+}

@@ -1,0 +1,408 @@
+{
+  "allow_independent_dispatch": false,
+  "complete": false,
+  "conservative_gate": {
+    "eligible": false,
+    "reasons": [
+      "regression: incomplete paired results",
+      "heldout: incomplete paired results",
+      "seven-pair report incomplete",
+      "no strict or independently verified approach gain"
+    ]
+  },
+  "gate_reversal": false,
+  "integrity_issues": [],
+  "limits": [
+    "Archived five have contemporaneous release evidence but no per-run executable digest.",
+    "Geometry based on recorded world SHA, paired launch metadata and start XY. No raw world/SDF/mesh inspection.",
+    "Same native observer and truth input. Re-adjudication is independent of its cached distance decision."
+  ],
+  "original_gate": {
+    "eligible": false,
+    "reasons": [
+      "regression: incomplete paired results",
+      "heldout: incomplete paired results",
+      "seven-pair report incomplete",
+      "no strict or independently verified approach gain"
+    ]
+  },
+  "revision": "R2",
+  "rows": [
+    {
+      "box_near": 2,
+      "box_reg": 2,
+      "bumps": 0,
+      "conservative_strict": false,
+      "early_witness": [
+        {
+          "id": 103,
+          "later_valid_s": 68.224,
+          "old_s": 68.144,
+          "registered_s": 68.152
+        }
+      ],
+      "group": "archive",
+      "original_near_ids": [
+        32,
+        103
+      ],
+      "original_strict": false,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        32,
+        103
+      ],
+      "raw_strict": false,
+      "raw_unexpected": [],
+      "registered": [
+        32,
+        103
+      ],
+      "run": "v151-boxes5-track-m112601-trial1",
+      "seed": 112601,
+      "settled_xy": [
+        7.599286988882613,
+        -4.848980438435453
+      ],
+      "source_sha256": null,
+      "valid": true,
+      "wall_near": 0,
+      "wall_reg": 0,
+      "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4"
+    },
+    {
+      "box_near": 2,
+      "box_reg": 2,
+      "bumps": 0,
+      "conservative_strict": true,
+      "early_witness": [],
+      "group": "archive",
+      "original_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "original_strict": true,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "raw_strict": true,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        32,
+        103
+      ],
+      "run": "v151-boxes5-track-m112602-trial2",
+      "seed": 112602,
+      "settled_xy": [
+        8.050899908331369,
+        -4.350223730004102
+      ],
+      "source_sha256": null,
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589"
+    },
+    {
+      "box_near": 2,
+      "box_reg": 2,
+      "bumps": 0,
+      "conservative_strict": true,
+      "early_witness": [
+        {
+          "id": 7,
+          "later_valid_s": 320.568,
+          "old_s": 320.528,
+          "registered_s": 320.544
+        }
+      ],
+      "group": "archive",
+      "original_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "original_strict": true,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "raw_strict": true,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        32,
+        103
+      ],
+      "run": "v151-boxes5-track-m112603-trial3",
+      "seed": 112603,
+      "settled_xy": [
+        -7.750254705096283,
+        -2.4007471224201833
+      ],
+      "source_sha256": null,
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c"
+    },
+    {
+      "box_near": 2,
+      "box_reg": 2,
+      "bumps": 0,
+      "conservative_strict": true,
+      "early_witness": [],
+      "group": "archive",
+      "original_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "original_strict": true,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "raw_strict": true,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        32,
+        103
+      ],
+      "run": "v151-boxes5-track-m112604-trial4",
+      "seed": 112604,
+      "settled_xy": [
+        -6.299316343239879,
+        -4.848948368069747
+      ],
+      "source_sha256": null,
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47"
+    },
+    {
+      "box_near": 1,
+      "box_reg": 1,
+      "bumps": 0,
+      "conservative_strict": false,
+      "early_witness": [],
+      "group": "archive",
+      "original_near_ids": [
+        103
+      ],
+      "original_strict": false,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        103
+      ],
+      "raw_strict": false,
+      "raw_unexpected": [],
+      "registered": [
+        103
+      ],
+      "run": "v151-boxes5-track-m112605-trial5",
+      "seed": 112605,
+      "settled_xy": [
+        -8.650917193435967,
+        -4.7000692002953715
+      ],
+      "source_sha256": null,
+      "valid": true,
+      "wall_near": 0,
+      "wall_reg": 0,
+      "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f"
+    },
+    {
+      "box_near": 2,
+      "box_reg": 2,
+      "bumps": 0,
+      "conservative_strict": true,
+      "early_witness": [],
+      "group": "baseline",
+      "original_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "original_strict": true,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "raw_strict": true,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        32,
+        103
+      ],
+      "run": "v151-survey-baseline-heldout-m112801-1122",
+      "seed": 112801,
+      "settled_xy": [
+        -3.2984159584897146,
+        -2.2968624718269366e-06
+      ],
+      "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "87d978efa4140237c5d99b00174191767559d4bf1867cc233fe0dab0c829a4ba"
+    },
+    {
+      "box_near": 2,
+      "box_reg": 2,
+      "bumps": 0,
+      "conservative_strict": true,
+      "early_witness": [],
+      "group": "baseline",
+      "original_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "original_strict": true,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        32,
+        103
+      ],
+      "raw_strict": true,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        32,
+        103
+      ],
+      "run": "v151-survey-baseline-heldout-m112802-1122",
+      "seed": 112802,
+      "settled_xy": [
+        -3.2990556626574583,
+        -1.7499811919742647
+      ],
+      "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "8631368ab11cb5437ee6cb3b0e4e8eeb940491d4379340250fc20bdebfdd7b9b"
+    },
+    {
+      "box_near": 1,
+      "box_reg": 1,
+      "bumps": 0,
+      "conservative_strict": false,
+      "early_witness": [],
+      "group": "candidate",
+      "original_near_ids": [
+        7,
+        103
+      ],
+      "original_strict": false,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        103
+      ],
+      "raw_strict": false,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        103
+      ],
+      "run": "v151-survey-candidate-track-m112601-1122",
+      "seed": 112601,
+      "settled_xy": [
+        7.599286988882613,
+        -4.848980438435453
+      ],
+      "source_sha256": "c8366100c1a3dd3955ccbea4b17f7d010fd9c915e0d7c0083c2d2acb84922444",
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4"
+    },
+    {
+      "box_near": 1,
+      "box_reg": 1,
+      "bumps": 0,
+      "conservative_strict": false,
+      "early_witness": [
+        {
+          "id": 7,
+          "later_valid_s": 358.348,
+          "old_s": 358.328,
+          "registered_s": 358.332
+        }
+      ],
+      "group": "candidate",
+      "original_near_ids": [
+        7,
+        103
+      ],
+      "original_strict": false,
+      "originally_unexpected": [],
+      "raw_near_ids": [
+        7,
+        103
+      ],
+      "raw_strict": false,
+      "raw_unexpected": [],
+      "registered": [
+        7,
+        103
+      ],
+      "run": "v151-survey-candidate-track-m112605-1122",
+      "seed": 112605,
+      "settled_xy": [
+        -8.650917202624546,
+        -4.70006919951043
+      ],
+      "source_sha256": "c8366100c1a3dd3955ccbea4b17f7d010fd9c915e0d7c0083c2d2acb84922444",
+      "valid": true,
+      "wall_near": 1,
+      "wall_reg": 1,
+      "world_sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f"
+    }
+  ],
+  "scope": "completed engineering development recordings only",
+  "source": {
+    "R2": {
+      "reference_match": true,
+      "runtime_sha256": "ef4fa250976927630188bcd816b007e4489366439104c30c4eda72be077a1365",
+      "source_sha256": "c8366100c1a3dd3955ccbea4b17f7d010fd9c915e0d7c0083c2d2acb84922444"
+    },
+    "baseline": {
+      "reference_match": true,
+      "runtime_sha256": "82410a7721c0b6dca32e95e5e9d43c30537360dd29a8f579ecbc0d53bd31317a",
+      "source_sha256": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595"
+    }
+  },
+  "summary": {
+    "approach_set_changes": 0,
+    "archived_without_per_run_source": 5,
+    "early_witnesses": 3,
+    "near_after": 22,
+    "near_before": 22,
+    "raw_valid": 9,
+    "runs": 9,
+    "strict_before": 5,
+    "strict_changes": 0,
+    "strict_conservative": 5,
+    "strict_raw": 5,
+    "unexpected_after": 0,
+    "unexpected_before": 0
+  }
+}

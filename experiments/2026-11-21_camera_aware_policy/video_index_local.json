@@ -1,0 +1,595 @@
+{
+  "videos": [
+    {
+      "run": "v15-baseline-balanced-m112021-dev",
+      "bytes": 388376,
+      "sha256": "ef81fca6fa610e5e222501a237fe383c3e9e5cd65957db460c44370bd9fa2f68",
+      "frames": 470,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-balanced-m112021-dev.mp4"
+    },
+    {
+      "run": "v15-candidate-balanced-m112021-dev",
+      "bytes": 367309,
+      "sha256": "f565bc82a504a9380df56da0f9d4ae397a5d1281d9c426d2fe0d1ba039f5e61e",
+      "frames": 429,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-balanced-m112021-dev.mp4"
+    },
+    {
+      "run": "v15-baseline-glance-m112021-dev",
+      "bytes": 529642,
+      "sha256": "fcc6effc0b2edb355d856c22299e9cf9996fac3ca9a54767796e90531fee3427",
+      "frames": 517,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-glance-m112021-dev.mp4"
+    },
+    {
+      "run": "v15-candidate-glance-m112021-dev",
+      "bytes": 378854,
+      "sha256": "bf0fbaa2f4a5d49837ec8d96147b5eb1637748f26338a00e3344ae82e95eb322",
+      "frames": 453,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-glance-m112021-dev.mp4"
+    },
+    {
+      "run": "v15-baseline-detail-m112021-dev",
+      "bytes": 528874,
+      "sha256": "a8439e40a4e6f43266baf33a474871ca6d4d4885c8e4ddd67c4a09d13612f3bd",
+      "frames": 520,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-detail-m112021-dev.mp4"
+    },
+    {
+      "run": "v15-candidate-detail-m112021-dev",
+      "bytes": 654257,
+      "sha256": "07b88619c2fa91b310ae4907c0899656888f27319ace2b4335cac351e97c24d9",
+      "frames": 379,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-detail-m112021-dev.mp4"
+    },
+    {
+      "run": "v15-candidate-balanced-m112022-dev",
+      "bytes": 268425,
+      "sha256": "15b7df086962ee5a89089c560d685a84798914cdad4b3d109b2b5881b0269924",
+      "frames": 259,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-balanced-m112022-dev.mp4"
+    },
+    {
+      "run": "v15-baseline-balanced-m112022-dev",
+      "bytes": 379893,
+      "sha256": "1a614f20da8072f04f3ef1d1c6de6c0b602017d68360760ed1eb0d23e5429da1",
+      "frames": 344,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-balanced-m112022-dev.mp4"
+    },
+    {
+      "run": "v15-candidate-glance-m112022-dev",
+      "bytes": 283998,
+      "sha256": "2eaaf0ca339a4f0a8e5222091f87aeafe5b8bcd1ee7c8055b35a9e3fa4d202cd",
+      "frames": 258,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-glance-m112022-dev.mp4"
+    },
+    {
+      "run": "v15-baseline-glance-m112022-dev",
+      "bytes": 318593,
+      "sha256": "64c2da1f62dcb28d4cd2b8a095bd81144bc94b056ac053131a47fc4ae30ba3ce",
+      "frames": 283,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-glance-m112022-dev.mp4"
+    },
+    {
+      "run": "v15-candidate-detail-m112022-dev",
+      "bytes": 369172,
+      "sha256": "1df234a5e3c057fb6b21aeacdaf39011fd6d0335c3a56bc97cce85257931b52f",
+      "frames": 249,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-detail-m112022-dev.mp4"
+    },
+    {
+      "run": "v15-baseline-detail-m112022-dev",
+      "bytes": 526146,
+      "sha256": "78f930654617b5e43cd733c212d66b5a872915bb2d526ea8f027b60ebb4e2218",
+      "frames": 347,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-detail-m112022-dev.mp4"
+    },
+    {
+      "run": "v15-baseline-glance-m112101-heldout",
+      "bytes": 357126,
+      "sha256": "e1a1800d29942c018cfef341e7f2323ece687cffc7d74fc8214119d2db832ada",
+      "frames": 472,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-glance-m112101-heldout.mp4"
+    },
+    {
+      "run": "v15-candidate-detail-m112101-heldout",
+      "bytes": 494791,
+      "sha256": "d49124a65c01dc0e0d3801e2ff5e4e67db1c8ab0dd9ff9f5e42c6a850145b55e",
+      "frames": 577,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-detail-m112101-heldout.mp4"
+    },
+    {
+      "run": "v15-candidate-detail-m112102-heldout",
+      "bytes": 396187,
+      "sha256": "bd06bd9cd424bc9ad5e5159e2047f0ebe2ffa71eaa076c8ee015b7cc0ea21465",
+      "frames": 522,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-detail-m112102-heldout.mp4"
+    },
+    {
+      "run": "v15-baseline-glance-m112102-heldout",
+      "bytes": 331447,
+      "sha256": "2959068a9eca1d8dacc050ac2bd13cbc174b06899c26648427e3043d6bf98c24",
+      "frames": 584,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-glance-m112102-heldout.mp4"
+    },
+    {
+      "run": "v15-baseline-glance-m112103-heldout",
+      "bytes": 590722,
+      "sha256": "f15ba34f9a99ec8a6f520f346fad181ac59eef9653c47aebcca63d68db8f8ae7",
+      "frames": 1102,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-baseline-glance-m112103-heldout.mp4"
+    },
+    {
+      "run": "v15-candidate-detail-m112103-heldout",
+      "bytes": 286062,
+      "sha256": "4fdc51f467702120375a24859cd417f471daaf115f7889bb9c5e1e901057621d",
+      "frames": 354,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-candidate-detail-m112103-heldout.mp4"
+    },
+    {
+      "run": "v15-camera-detail-m112021-dev2",
+      "bytes": 475176,
+      "sha256": "047c452056f8a128fd2603a50279ace3e925dd5ab7ee32b2e0f13da2a7a99fac",
+      "frames": 430,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-detail-m112021-dev2.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112021-dev2",
+      "bytes": 500752,
+      "sha256": "384ef7df29e9c68d96cee5db0558e8bda5dfee221cfab77ccac527ee88546a78",
+      "frames": 310,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112021-dev2.mp4"
+    },
+    {
+      "run": "v15-committed-detail-m112021-dev2",
+      "bytes": 433891,
+      "sha256": "644b2f207ab8fcb5103e8ac0d26ab63a0cc97edab55b16175cb05574f795a8cf",
+      "frames": 412,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-committed-detail-m112021-dev2.mp4"
+    },
+    {
+      "run": "v15-committed-detail-m112101-dev2",
+      "bytes": 452038,
+      "sha256": "b11d41a76d44fc833af5cfc21b81bae63914df347e406536250ab54cf9d62e2b",
+      "frames": 521,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-committed-detail-m112101-dev2.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112101-dev2",
+      "bytes": 402624,
+      "sha256": "bce78eccf663a3ff60c2be7d1f2ae11b158833df15e901793447afdcf4486c42",
+      "frames": 529,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112101-dev2.mp4"
+    },
+    {
+      "run": "v15-camera-detail-m112101-dev2",
+      "bytes": 634620,
+      "sha256": "d6031e2d1e13ca3a989704a41961ba9bf6ebca2346f0eefa34907393643bd040",
+      "frames": 900,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": false,
+      "local_path": "videos/v15-camera-detail-m112101-dev2.mp4"
+    },
+    {
+      "run": "v15-camera-detail-m112201-heldout2",
+      "bytes": 627526,
+      "sha256": "054d69ac0ebe86255e845113cd75c975132a2d837488f42123de832acf3229b9",
+      "frames": 774,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-detail-m112201-heldout2.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112201-heldout2",
+      "bytes": 584874,
+      "sha256": "eb8491629d591c16dfc28cba1316015a3e395c1938d3576ed5ee89d1f0534899",
+      "frames": 681,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112201-heldout2.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112202-heldout2",
+      "bytes": 504737,
+      "sha256": "1034a4adb5e10e45ce25afef8bce50cb25eb7bf7cb9972d7e12e488da0fd3dc9",
+      "frames": 615,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112202-heldout2.mp4"
+    },
+    {
+      "run": "v15-camera-detail-m112202-heldout2",
+      "bytes": 497513,
+      "sha256": "dc5d06478dc5fa833b29f28438672d4d3132461e2952b9b101e7de1c4cdee1d4",
+      "frames": 619,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-detail-m112202-heldout2.mp4"
+    },
+    {
+      "run": "v15-camera-detail-m112203-heldout2",
+      "bytes": 404386,
+      "sha256": "682eb10644d3f17cf0e881606258d4997db2997a17defec6e84712a604ac4ec8",
+      "frames": 457,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-detail-m112203-heldout2.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112203-heldout2",
+      "bytes": 427678,
+      "sha256": "f5ee09741bf6e59972e12acddb6a61f9b8ad858f3afd6f735804e6adc157d7f4",
+      "frames": 474,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112203-heldout2.mp4"
+    },
+    {
+      "run": "v15-sync-balanced-m112201-matrix-dev",
+      "bytes": 430618,
+      "sha256": "731692214da00ce54b087d4494133dcc5d33f4f1d824792e58027aeb79109c4f",
+      "frames": 653,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-balanced-m112201-matrix-dev.mp4"
+    },
+    {
+      "run": "v15-sync-glance-m112201-matrix-dev",
+      "bytes": 391602,
+      "sha256": "cd887fd91108d849d42c2e43f0fbef388712ebeca5219a26a23ceaaff9b5ed0c",
+      "frames": 648,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-glance-m112201-matrix-dev.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112201-matrix-dev",
+      "bytes": 577953,
+      "sha256": "ab6f0fdb6fc3750eda734bf0f984bf843daab1b2c9ee18272d9651f770b6a6bd",
+      "frames": 620,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112201-matrix-dev.mp4"
+    },
+    {
+      "run": "v15-sync-detail-m112202-matrix-dev",
+      "bytes": 493512,
+      "sha256": "6ad31d882c7f2b7184f35e0132ed7df03c8e8d4e64613371bd2a1650307d4467",
+      "frames": 600,
+      "input_camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-detail-m112202-matrix-dev.mp4"
+    },
+    {
+      "run": "v15-sync-glance-m112202-matrix-dev",
+      "bytes": 357583,
+      "sha256": "6dd0e24a1deeac7b437e5f55808895b081835039f4d8457604effca79e3b81d3",
+      "frames": 603,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-glance-m112202-matrix-dev.mp4"
+    },
+    {
+      "run": "v15-sync-balanced-m112202-matrix-dev",
+      "bytes": 345680,
+      "sha256": "ce717ca4b376a96d51ab03167b83cbec4f9253b0a0eebf98fd5d09dcd0c092d9",
+      "frames": 595,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-balanced-m112202-matrix-dev.mp4"
+    },
+    {
+      "run": "v15-camera-balanced-m112301-heldout-final",
+      "bytes": 372185,
+      "sha256": "007f0936c506a56d20e65ca1fceebffd8bae50f552c928fd251e69e7a1826c68",
+      "frames": 568,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-balanced-m112301-heldout-final.mp4"
+    },
+    {
+      "run": "v15-sync-balanced-m112301-heldout-final",
+      "bytes": 282235,
+      "sha256": "2a3f4ab3088f29f1362799f498fc3f008ee2d44c66be11a65813ae1c0039fdec",
+      "frames": 410,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-balanced-m112301-heldout-final.mp4"
+    },
+    {
+      "run": "v15-sync-balanced-m112302-heldout-final",
+      "bytes": 349639,
+      "sha256": "0fda898e7d55463cf6e1046dbdbff78c4bd2fd440960b24a03b0fb5adbc96669",
+      "frames": 548,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-balanced-m112302-heldout-final.mp4"
+    },
+    {
+      "run": "v15-camera-balanced-m112302-heldout-final",
+      "bytes": 368140,
+      "sha256": "976804752ff80cc34ca0d52333d71dd87b3e7863540d0afd472efbfc4780a8eb",
+      "frames": 543,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-balanced-m112302-heldout-final.mp4"
+    },
+    {
+      "run": "v15-camera-balanced-m112303-heldout-final",
+      "bytes": 612452,
+      "sha256": "d34145856cd735e426eb0015b3cdf637e5318f4c41183a6977edea3ea8abbc19",
+      "frames": 1033,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-camera-balanced-m112303-heldout-final.mp4"
+    },
+    {
+      "run": "v15-sync-balanced-m112303-heldout-final",
+      "bytes": 245771,
+      "sha256": "5c30978588a60fa7b77ba4abf784135c0330adb562a269e04dd5e20ed8ea11f9",
+      "frames": 368,
+      "input_camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "viewing_video_fps": 5,
+      "strict_success": true,
+      "local_path": "videos/v15-sync-balanced-m112303-heldout-final.mp4"
+    }
+  ],
+  "verified": 42,
+  "total_bytes": 18223059,
+  "physical_images": false
+}

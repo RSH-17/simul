@@ -1,0 +1,70 @@
+{
+  "complete": true,
+  "native_runs": 42,
+  "distinct_worlds": 11,
+  "version_results": {
+    "v1.2-balanced": {
+      "n": 2,
+      "strict_successes": 2,
+      "bumps": 0
+    },
+    "v1.5.0-balanced": {
+      "n": 5,
+      "strict_successes": 5,
+      "bumps": 0
+    },
+    "v1.2-glance": {
+      "n": 5,
+      "strict_successes": 5,
+      "bumps": 0
+    },
+    "v1.5.0-glance": {
+      "n": 2,
+      "strict_successes": 2,
+      "bumps": 0
+    },
+    "v1.2-detail": {
+      "n": 2,
+      "strict_successes": 2,
+      "bumps": 0
+    },
+    "v1.5.0-detail": {
+      "n": 10,
+      "strict_successes": 9,
+      "bumps": 0
+    },
+    "v1.5.1-detail": {
+      "n": 7,
+      "strict_successes": 7,
+      "bumps": 0
+    },
+    "v1.6.0-detail": {
+      "n": 2,
+      "strict_successes": 2,
+      "bumps": 0
+    },
+    "v1.5.1-balanced": {
+      "n": 5,
+      "strict_successes": 5,
+      "bumps": 0
+    },
+    "v1.5.1-glance": {
+      "n": 2,
+      "strict_successes": 2,
+      "bumps": 0
+    }
+  },
+  "physical_validated": false,
+  "physical_defaults_changed": false,
+  "original_v12_preserved": true,
+  "tests_passed": 44,
+  "display_checks_passed": 2,
+  "strict_successes": 41,
+  "bumper_events": 0,
+  "final_selected": "v1.5.1-balanced",
+  "final_selected_successes": 3,
+  "final_selected_trials": 3,
+  "final_selected_mean_sim_s": 88.33733333333333,
+  "final_reference_mean_sim_s": 142.84133333333332,
+  "final_saved_map_max_error_m": 0.046571975451013464
+}

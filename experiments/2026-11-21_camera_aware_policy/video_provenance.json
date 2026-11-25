@@ -1,0 +1,554 @@
+{
+  "source": "Native Gazebo simulation, generated rooms and markers",
+  "physical_robot_used": false,
+  "domain": 174,
+  "localhost_only": true,
+  "videos": [
+    {
+      "run": "v15-baseline-balanced-m112021-dev",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-balanced-m112021-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "ef81fca6fa610e5e222501a237fe383c3e9e5cd65957db460c44370bd9fa2f68"
+    },
+    {
+      "run": "v15-candidate-balanced-m112021-dev",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-balanced-m112021-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "f565bc82a504a9380df56da0f9d4ae397a5d1281d9c426d2fe0d1ba039f5e61e"
+    },
+    {
+      "run": "v15-baseline-glance-m112021-dev",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-glance-m112021-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "fcc6effc0b2edb355d856c22299e9cf9996fac3ca9a54767796e90531fee3427"
+    },
+    {
+      "run": "v15-candidate-glance-m112021-dev",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-glance-m112021-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "bf0fbaa2f4a5d49837ec8d96147b5eb1637748f26338a00e3344ae82e95eb322"
+    },
+    {
+      "run": "v15-baseline-detail-m112021-dev",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-detail-m112021-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "a8439e40a4e6f43266baf33a474871ca6d4d4885c8e4ddd67c4a09d13612f3bd"
+    },
+    {
+      "run": "v15-candidate-detail-m112021-dev",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-detail-m112021-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "07b88619c2fa91b310ae4907c0899656888f27319ace2b4335cac351e97c24d9"
+    },
+    {
+      "run": "v15-candidate-balanced-m112022-dev",
+      "world_sha256": "2de915541fc4c6d628ba21d6dc3b82a421f64feb480c60647e77428e0408c419",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-balanced-m112022-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "15b7df086962ee5a89089c560d685a84798914cdad4b3d109b2b5881b0269924"
+    },
+    {
+      "run": "v15-baseline-balanced-m112022-dev",
+      "world_sha256": "2de915541fc4c6d628ba21d6dc3b82a421f64feb480c60647e77428e0408c419",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-balanced-m112022-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "1a614f20da8072f04f3ef1d1c6de6c0b602017d68360760ed1eb0d23e5429da1"
+    },
+    {
+      "run": "v15-candidate-glance-m112022-dev",
+      "world_sha256": "2de915541fc4c6d628ba21d6dc3b82a421f64feb480c60647e77428e0408c419",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-glance-m112022-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "2eaaf0ca339a4f0a8e5222091f87aeafe5b8bcd1ee7c8055b35a9e3fa4d202cd"
+    },
+    {
+      "run": "v15-baseline-glance-m112022-dev",
+      "world_sha256": "2de915541fc4c6d628ba21d6dc3b82a421f64feb480c60647e77428e0408c419",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-glance-m112022-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "64c2da1f62dcb28d4cd2b8a095bd81144bc94b056ac053131a47fc4ae30ba3ce"
+    },
+    {
+      "run": "v15-candidate-detail-m112022-dev",
+      "world_sha256": "2de915541fc4c6d628ba21d6dc3b82a421f64feb480c60647e77428e0408c419",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-detail-m112022-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "1df234a5e3c057fb6b21aeacdaf39011fd6d0335c3a56bc97cce85257931b52f"
+    },
+    {
+      "run": "v15-baseline-detail-m112022-dev",
+      "world_sha256": "2de915541fc4c6d628ba21d6dc3b82a421f64feb480c60647e77428e0408c419",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-detail-m112022-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "78f930654617b5e43cd733c212d66b5a872915bb2d526ea8f027b60ebb4e2218"
+    },
+    {
+      "run": "v15-baseline-glance-m112101-heldout",
+      "world_sha256": "e5928fc4c802b704f56d9f08976616fd937a2119df3c17974ade1cc3bc19a850",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-glance-m112101-heldout/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "e1a1800d29942c018cfef341e7f2323ece687cffc7d74fc8214119d2db832ada"
+    },
+    {
+      "run": "v15-candidate-detail-m112101-heldout",
+      "world_sha256": "e5928fc4c802b704f56d9f08976616fd937a2119df3c17974ade1cc3bc19a850",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-detail-m112101-heldout/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "d49124a65c01dc0e0d3801e2ff5e4e67db1c8ab0dd9ff9f5e42c6a850145b55e"
+    },
+    {
+      "run": "v15-candidate-detail-m112102-heldout",
+      "world_sha256": "12d389150ecdfd959749a3e9b150f8a478f14eeaee937c4eba8e1b2e748c03c0",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-detail-m112102-heldout/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "bd06bd9cd424bc9ad5e5159e2047f0ebe2ffa71eaa076c8ee015b7cc0ea21465"
+    },
+    {
+      "run": "v15-baseline-glance-m112102-heldout",
+      "world_sha256": "12d389150ecdfd959749a3e9b150f8a478f14eeaee937c4eba8e1b2e748c03c0",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-glance-m112102-heldout/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "2959068a9eca1d8dacc050ac2bd13cbc174b06899c26648427e3043d6bf98c24"
+    },
+    {
+      "run": "v15-baseline-glance-m112103-heldout",
+      "world_sha256": "151e2613a1cd2a4089f496570822c4c419b6781ceb6abb53d5948c272c405943",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-baseline-glance-m112103-heldout/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "f15ba34f9a99ec8a6f520f346fad181ac59eef9653c47aebcca63d68db8f8ae7"
+    },
+    {
+      "run": "v15-candidate-detail-m112103-heldout",
+      "world_sha256": "151e2613a1cd2a4089f496570822c4c419b6781ceb6abb53d5948c272c405943",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-candidate-detail-m112103-heldout/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "4fdc51f467702120375a24859cd417f471daaf115f7889bb9c5e1e901057621d"
+    },
+    {
+      "run": "v15-camera-detail-m112021-dev2",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-detail-m112021-dev2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "047c452056f8a128fd2603a50279ace3e925dd5ab7ee32b2e0f13da2a7a99fac"
+    },
+    {
+      "run": "v15-sync-detail-m112021-dev2",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112021-dev2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "384ef7df29e9c68d96cee5db0558e8bda5dfee221cfab77ccac527ee88546a78"
+    },
+    {
+      "run": "v15-committed-detail-m112021-dev2",
+      "world_sha256": "9f9d10d6d2040e20281f4b6a8893c50ad323c0cca97208cc3186057a44787cf1",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-committed-detail-m112021-dev2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "644b2f207ab8fcb5103e8ac0d26ab63a0cc97edab55b16175cb05574f795a8cf"
+    },
+    {
+      "run": "v15-committed-detail-m112101-dev2",
+      "world_sha256": "e5928fc4c802b704f56d9f08976616fd937a2119df3c17974ade1cc3bc19a850",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-committed-detail-m112101-dev2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "b11d41a76d44fc833af5cfc21b81bae63914df347e406536250ab54cf9d62e2b"
+    },
+    {
+      "run": "v15-sync-detail-m112101-dev2",
+      "world_sha256": "e5928fc4c802b704f56d9f08976616fd937a2119df3c17974ade1cc3bc19a850",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112101-dev2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "bce78eccf663a3ff60c2be7d1f2ae11b158833df15e901793447afdcf4486c42"
+    },
+    {
+      "run": "v15-camera-detail-m112101-dev2",
+      "world_sha256": "e5928fc4c802b704f56d9f08976616fd937a2119df3c17974ade1cc3bc19a850",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-detail-m112101-dev2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": false,
+      "video_sha256": "d6031e2d1e13ca3a989704a41961ba9bf6ebca2346f0eefa34907393643bd040"
+    },
+    {
+      "run": "v15-camera-detail-m112201-heldout2",
+      "world_sha256": "4596d07d1f036bed47bf1d9d2cf3bfa76c1b1172bda50d88df676a841976d57c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-detail-m112201-heldout2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "054d69ac0ebe86255e845113cd75c975132a2d837488f42123de832acf3229b9"
+    },
+    {
+      "run": "v15-sync-detail-m112201-heldout2",
+      "world_sha256": "4596d07d1f036bed47bf1d9d2cf3bfa76c1b1172bda50d88df676a841976d57c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112201-heldout2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "eb8491629d591c16dfc28cba1316015a3e395c1938d3576ed5ee89d1f0534899"
+    },
+    {
+      "run": "v15-sync-detail-m112202-heldout2",
+      "world_sha256": "d278d9612d633b92feeff00c8764e3cd5331930ea96662bb3a3a0898d40ff2c2",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112202-heldout2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "1034a4adb5e10e45ce25afef8bce50cb25eb7bf7cb9972d7e12e488da0fd3dc9"
+    },
+    {
+      "run": "v15-camera-detail-m112202-heldout2",
+      "world_sha256": "d278d9612d633b92feeff00c8764e3cd5331930ea96662bb3a3a0898d40ff2c2",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-detail-m112202-heldout2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "dc5d06478dc5fa833b29f28438672d4d3132461e2952b9b101e7de1c4cdee1d4"
+    },
+    {
+      "run": "v15-camera-detail-m112203-heldout2",
+      "world_sha256": "13459cc6a4f651da0b25f9bee9511209e185229a0a3d0543f66779ca2261fd72",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-detail-m112203-heldout2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "682eb10644d3f17cf0e881606258d4997db2997a17defec6e84712a604ac4ec8"
+    },
+    {
+      "run": "v15-sync-detail-m112203-heldout2",
+      "world_sha256": "13459cc6a4f651da0b25f9bee9511209e185229a0a3d0543f66779ca2261fd72",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112203-heldout2/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "f5ee09741bf6e59972e12acddb6a61f9b8ad858f3afd6f735804e6adc157d7f4"
+    },
+    {
+      "run": "v15-sync-balanced-m112201-matrix-dev",
+      "world_sha256": "4596d07d1f036bed47bf1d9d2cf3bfa76c1b1172bda50d88df676a841976d57c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-balanced-m112201-matrix-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "731692214da00ce54b087d4494133dcc5d33f4f1d824792e58027aeb79109c4f"
+    },
+    {
+      "run": "v15-sync-glance-m112201-matrix-dev",
+      "world_sha256": "4596d07d1f036bed47bf1d9d2cf3bfa76c1b1172bda50d88df676a841976d57c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-glance-m112201-matrix-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "cd887fd91108d849d42c2e43f0fbef388712ebeca5219a26a23ceaaff9b5ed0c"
+    },
+    {
+      "run": "v15-sync-detail-m112201-matrix-dev",
+      "world_sha256": "4596d07d1f036bed47bf1d9d2cf3bfa76c1b1172bda50d88df676a841976d57c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112201-matrix-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "ab6f0fdb6fc3750eda734bf0f984bf843daab1b2c9ee18272d9651f770b6a6bd"
+    },
+    {
+      "run": "v15-sync-detail-m112202-matrix-dev",
+      "world_sha256": "d278d9612d633b92feeff00c8764e3cd5331930ea96662bb3a3a0898d40ff2c2",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-detail-m112202-matrix-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 640,
+        "height": 640,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "6ad31d882c7f2b7184f35e0132ed7df03c8e8d4e64613371bd2a1650307d4467"
+    },
+    {
+      "run": "v15-sync-glance-m112202-matrix-dev",
+      "world_sha256": "d278d9612d633b92feeff00c8764e3cd5331930ea96662bb3a3a0898d40ff2c2",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-glance-m112202-matrix-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 10.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "6dd0e24a1deeac7b437e5f55808895b081835039f4d8457604effca79e3b81d3"
+    },
+    {
+      "run": "v15-sync-balanced-m112202-matrix-dev",
+      "world_sha256": "d278d9612d633b92feeff00c8764e3cd5331930ea96662bb3a3a0898d40ff2c2",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-balanced-m112202-matrix-dev/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "ce717ca4b376a96d51ab03167b83cbec4f9253b0a0eebf98fd5d09dcd0c092d9"
+    },
+    {
+      "run": "v15-camera-balanced-m112301-heldout-final",
+      "world_sha256": "7fa987d5b29ce4032a39393173350cfb94b5956580575799ea95f68852896c3f",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-balanced-m112301-heldout-final/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "007f0936c506a56d20e65ca1fceebffd8bae50f552c928fd251e69e7a1826c68"
+    },
+    {
+      "run": "v15-sync-balanced-m112301-heldout-final",
+      "world_sha256": "7fa987d5b29ce4032a39393173350cfb94b5956580575799ea95f68852896c3f",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-balanced-m112301-heldout-final/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "2a3f4ab3088f29f1362799f498fc3f008ee2d44c66be11a65813ae1c0039fdec"
+    },
+    {
+      "run": "v15-sync-balanced-m112302-heldout-final",
+      "world_sha256": "43f2bb94f3e64e5226c8ea587a64cb4613674da0f9e502b6082b4236118399b6",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-balanced-m112302-heldout-final/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "0fda898e7d55463cf6e1046dbdbff78c4bd2fd440960b24a03b0fb5adbc96669"
+    },
+    {
+      "run": "v15-camera-balanced-m112302-heldout-final",
+      "world_sha256": "43f2bb94f3e64e5226c8ea587a64cb4613674da0f9e502b6082b4236118399b6",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-balanced-m112302-heldout-final/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "976804752ff80cc34ca0d52333d71dd87b3e7863540d0afd472efbfc4780a8eb"
+    },
+    {
+      "run": "v15-camera-balanced-m112303-heldout-final",
+      "world_sha256": "eb91a7bf7ba5f40719acce9270538178b9a8d40bca96035ea301f76b531a682c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-camera-balanced-m112303-heldout-final/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "d34145856cd735e426eb0015b3cdf637e5318f4c41183a6977edea3ea8abbc19"
+    },
+    {
+      "run": "v15-sync-balanced-m112303-heldout-final",
+      "world_sha256": "eb91a7bf7ba5f40719acce9270538178b9a8d40bca96035ea301f76b531a682c",
+      "generated_world": "/home/ubuntu/corridor-board-73bbb05/recordings/v15-sync-balanced-m112303-heldout-final/world/osp_studio.sdf",
+      "physical_images": false,
+      "camera": {
+        "width": 480,
+        "height": 480,
+        "fps": 5.0
+      },
+      "strict_saved_map_success": true,
+      "video_sha256": "5c30978588a60fa7b77ba4abf784135c0330adb562a269e04dd5e20ed8ea11f9"
+    }
+  ]
+}

@@ -1,3 +1,63 @@
+실물 보드는 **1. 주행 준비**에서 ROS·카메라 처리·LiDAR·Nav2를 실제로 확인하고 **2. 출발**에서 미션을 시작한다. 2026-11-22 Balanced 첫 2단계 확인에서 준비 완료 12.1초, 출발 후 첫 전진 약 0.6초였다. [실물 보드](http://192.168.252.2:8767/)
+
+실물 OAK-D 480×480·5fps에서 Focus 탐지기가 실제 주행 중 24초 동안 원본 120장을 처리했다. 보드는 JPEG 미리보기를 표시하고 구동 감독 노드는 수신한 원본을 탐지기에 전달한다. 이 구간의 촬영부터 처리 알림까지 지연은 95백분위 211ms였다.
+
+실물 주행은 8767 보드에서 **Mixed v1.5.2.1 · Focus Continuity** 또는 **Mixed v1.5.1-balanced**를 선택한 뒤 구동합니다. [실물 보드](http://192.168.252.2:8767/) · [실물 구동 절차](dashboard/ROBOT_BOARD.md)
+
+[8780 실제 시험장 · 장애물과 마커 무작위 배치 비교](experiments/2026-11-22_random_exam/README.md) · [새 탐색 후보 R5](policy_candidates/2026-11-22_v151_surface_followthrough/README.md) · [이전 고정 배치 7쌍 결과·주행 영상](experiments/2026-11-22_v151_adaptive_survey/README.md)
+
+Mixed v1.5.2.1 분산 시험을 세 회차에서 마쳤습니다. 상자 마커 6/6장, 외곽 벽 마커 2/3장에 등록 후 1.5m 이내로 접근했습니다. 세 장을 모두 확인한 엄격 완주는 2/3회, 범퍼 접촉은 0회였습니다. [회차별 경로·영상·판정](experiments/2026-11-22_random_exam/spread-three/RESULTS.md)
+
+8780 실험 보드는 정책 버전별로 주행 기록을 모은다. 상단에서 현재 주행을 확인하고, 버전을 펼쳐 맵·영상·마커별 접근 기록을 볼 수 있다. `보관함`에서 예전 실험을 복원할 수 있다. [실험 보드](http://192.168.252.2:8780/)
+
+8780 시뮬 보드에서 **Mixed v1.5.2.1 · 마커 재관찰 유지**를 별도로 선택할 수 있습니다. 이미 접근 중인 마커가 다시 보이면 그 관측을 반영하면서 접근을 이어갑니다. 기존 Balanced와 Visual Survey도 같은 상자 배치로 비교할 수 있습니다. [재현 로그와 정책](policy_candidates/2026-11-22_v152_focus_continuity/README.md)
+
+8780 시험장은 고정 책상 사이에 원래 시험장과 같은 파란 사각 상자 5개를 놓습니다. 상자의 위치와 방향, 마커 3개의 번호와 부착면, 로봇의 출발 자세를 매번 추첨합니다. Mixed v1.5.1-balanced와 벽·군집 탐색 후보인 Mixed v1.5.2 Visual Survey를 비교할 다섯 배치를 등록했고 첫 배치를 주행한 뒤 분산 시험으로 전환했습니다. [시험 배치](experiments/2026-11-22_random_exam/box-only/five-box-worlds.png) · [정책](policy_candidates/2026-11-22_v151_visual_survey/README.md)
+
+공유 보드 기본값은 **실제 시험 · 고정 책상 · 상자 5개 · 마커 3개**입니다. 책상 14개와 다리 56개는 원래 자리에 있고, 상자 배치, 마커의 번호·위치·부착면, 로봇을 놓는 위치와 방향을 매번 새로 뽑습니다. 로봇은 출발 전에 마커가 총 3개라는 사실만 압니다. [공유 보드](http://192.168.252.2:8780/) · [팀 실행 방법](docs/team-policy-lab/README.md#공유-시험장에서-새-배치-실행)
+
+시험장 생성기는 벽 몰딩 뒤에 숨은 마커를 다시 배치합니다. 별도의 무작위 장면 192개에서 575장 모두에 실제 시뮬 도형의 가림을 통과한 관찰 위치가 있었습니다. [배치 검사 결과](experiments/2026-11-22_random_exam/fixture-visibility.json)
+
+R5 비교의 독립 배치 다섯 곳에서 근거리 확인은 Balanced 14/15장, R5 11/15장이었다. 전체 마커를 확인한 배치는 각각 4/5, 1/5였다. [시험장 비교 결과와 영상](experiments/2026-11-22_random_exam/results/surface-r5/RESULTS.md)
+
+[Balanced · 스친 마커 재관찰](policy_candidates/2026-11-22_v151_balanced_print_relook/README.md) · [책상까지 전부 재배치한 5개 독립 시험](experiments/2026-11-22_random_exam/balanced_print/enrollment.json)
+
+팀 실행기에서 시드를 생략하면 고정 책상 시험장의 새로운 배치를 받습니다. 첫 주행이 출력한 시드를 두 번째 정책에 넣으면 같은 마커와 장애물을 재현합니다. [팀 대시보드 실행법](docs/team-policy-lab/README.md)
+
+[최신 원본 R32와 같은 5맵 비교](experiments/2026-11-22_latest_r32_compare/README.md)를 마쳤습니다. 세 마커 등록은 R32 4/5, balanced·rescue360 각각 3/5였습니다. 등록 후 실제 1.5m 접근까지 포함한 R32 완주는 2회 확인했고, 2회는 종료 순간의 위치 기록이 부족해 판정이 보류됐습니다.
+
+[팀원 각자의 Jazzy 설치·대시보드·정책 개선 방법](docs/team-policy-lab/README.md) · [팀 공유 메시지](docs/team-policy-lab/TEAM_MESSAGE.md)
+
+**Mixed v1.5.1-rescue360** 동일 5맵 비교는 엄격 완주 3/5·벽 접근 3/5로 기준판과 같았습니다. 상자 접근은 9/10→10/10이며 기본판을 대체하지 않습니다. 이 후보는 6분 이후 전 방향의 카메라 미관찰 표면과 미지 공간 정보량으로 이동·360도 관찰 목표를 고르는 별도 시뮬레이션 후보입니다. [구조와 검증](experiments/2026-11-21_v151_rescue360/README.md)
+
+**Mixed v1.5.1-perimeter-survey**는 외곽의 미관찰 벽을 이어서 보고 가까운 상자 관찰 후 돌아오는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_perimeter_survey/README.md)
+
+**Mixed v1.5.1-object-survey**는 상자의 네 면을 확인하면 일반 탐색에서 제외하고 미방문 구역으로 이동하는 별도 시뮬레이션 후보입니다. [동일 5맵 검증](experiments/2026-11-21_v151_object_survey/README.md)
+
+**v1.5.3 구역 전환**을 같은 5개 대형 트랙 배치에서 비교했습니다. 후보판의 벽 접근은 4/5, 상자 접근은 4/10, 엄격 완주는 0/5였습니다. [기준판 비교와 경로·영상](experiments/2026-11-21_region_wall_v153/README.md)
+
+**Mixed v1.5.1-wall-balance**는 방향별 미관찰 벽과 대기시간을 함께 반영하는 별도 시뮬레이션 후보입니다. [동일 5맵 비교](experiments/2026-11-21_v151_wall_balance/README.md)
+
+**Mixed v1.5.1-wall-sections**는 지도 정보량이 낮은 미관찰 벽의 대기시간을 따로 셉니다. 저장한 두 주행의 선택 재생과 112602 동쪽 벽 촬영 기회를 확인했습니다. [분석과 검증 범위](experiments/2026-11-21_v151_wall_sections/README.md)
+
+별도 후보 **Mixed v1.5.2 r2 · 이동 중 벽 관찰**의 동일 대형 트랙 개발 회귀1회를 완료했습니다. 벽 관찰6회·새 처리 영상33장·복귀6회를 확인했지만 벽7 미발견으로 완주는 미달이었습니다. 기존 v1.5.1과 실물 기본값은 보존합니다. [변경·실제 결과·영상](experiments/2026-11-21_wall_transit_v152/README.md)
+
+사진의 **20.15×11.35m 책상·트랙·상자 총 5개에서 v1.5.1 다섯 회차를 완료**했습니다. 엄격 완주3/5, 상자 마커9/10·벽 마커3/5, 범퍼0회입니다. 실패도 보존했으며 벽 관찰 예산을 우회하는 순서 문제와 작은 후보 생성 실패를 확인했습니다. [결과·다섯 영상·경로](experiments/2026-11-21_v151_track5_boxes5/README.md)
+
+v1.5.1에 **장애물 5개를 추가한 총 8개 장면**의 새 시뮬을 완료했습니다. 세 마커 등록·접근·저장 지도 검사 통과, 308.6초·35.7m·범퍼 0회입니다. [실행 조건·기록](experiments/2026-11-21_v151_clutter/README.md)
+
+**Mixed v1.5.1-balanced 시뮬 선정판**: 11개 world에서 42회 native 주행을 완료했습니다. 세 마커 등록·실제 1.5m 접근·근거리 영상 증거·저장 지도 정확도를 함께 평가했으며 전체 41/42회, 선정판은 14/14회 통과했습니다. 카메라는 480×480·5FPS입니다. 마지막 미사용 3맵에서 같은 카메라의 v1.5.0 대비 평균 142.8→88.3초, 거리 19.9→12.2m, 범퍼 0회였습니다. `./sim-camera.sh`로 선정 조합을 실행하며 총 10개 선택 버전을 제공하며 기존판도 보존합니다. 실물 기본값은 그대로입니다. [비교·반례·영상](experiments/2026-11-21_camera_aware_policy/README.md) · [독립 소스 스냅샷](policy_releases/2026-11-21_mixed_camera_sync_v151/README.md)
+
+Frozen Mixed v1.2 카메라 실험: **15조합·90개 파생 재생 조건, 새 Gazebo 16회(주행 검증 14회)**를 완료했습니다. 실물 첫 시험 후보는 480×480·5FPS, 스침용 480×480·10FPS, 먼 마커용 640×640·5FPS입니다. 실물 안정성·다운 방지는 미검증이며 기본 설정은 유지합니다. [결과와 한계](experiments/2026-11-20_v12_camera_rate/README.md)
+
+밀집 구간에서 후보 소진·반복 실패를 줄이는 **별도 실험판 Mixed v1.4.0**을 추가했습니다. v1.2·v1.3.1은 보존합니다. [변경 근거와 검증 범위](policy_candidates/2026-11-20_mixed_crowded_navigation/README.md)
+
+실물 보드의 **Mixed v1.3.1 부드러운 주행·회전**은 전진 상한 0.30 m/s와 일치시킨 가속·감속 설정을 사용합니다. [설정과 검증 범위](policy_candidates/2026-11-20_mixed_smooth_030/README.md)
+
+실물 보드에 **Mixed v1.3 막힘·스톨 복구**를 별도 추가했습니다. 정체 시 안전 후진 검토와 짧은 모터 스톨의 정지·해제 확인을 연결합니다. [변경·검증·실물 미검증 범위](policy_candidates/2026-11-20_mixed_stall_recovery/README.md)
+
+실물 대시보드의 **Mixed v1.2 판독 마커 재관찰**은 기본판과 전진 상한 0.45 m/s판 중 선택할 수 있습니다. 놓쳤던 실물 녹화에서 등록 ID가 0개에서 5번 한 개로 바뀌었습니다. [재생 결과와 실험 범위](policy_candidates/2026-11-20_mixed_marker_relook/README.md)
+
 [Mixed · 가운데 장애물 → 벽](policy_candidates/2026-11-19_mixed_center_first/README.md)은 가운데 물체의 접근 가능한 면을 먼저 조사한 뒤 외곽 벽으로 넘어가는 실험 정책입니다.
 
 **2026-11-19 Mixed 일반 장애물 집중 탐색 후보:** 상자 형태가 아니어도 미관찰 표면을 한 번 보고 짧게 멈추거나 회전합니다. 관찰 후 남은 면은 안전한 위치가 있을 때만 제한적으로 다시 봅니다. 마지막 실물 기록의 저장 지도 40장에 대한 정적 비교는 기존 2장·새 후보 29장입니다. 실제 주행 결과는 아닙니다. [구현·검증 범위](policy_candidates/2026-11-19_mixed_general_surface/README.md).
@@ -452,14 +512,69 @@ python3 scripts/publish_simulation_videos.py --upload
 
 ## 저장된 Gazebo 영상
 
-[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 342개
+[GitHub Release에서 다운로드](https://github.com/peter010905/simul/releases/tag/simulation-videos-2026-11) · 검증된 영상 469개
 
-아래 성공 여부는 당시 평가 결과이며, 현재 기준의 독립 완주율을 뜻하지 않습니다. 환경 오류로 종료한 영상은 정책 학습 표본에서 제외합니다.
+성공 여부는 당시 평가 기준입니다. 새 카메라 정책 42회는 별도의 엄격한 저장 지도 검사를 포함합니다.
 
 <details><summary>전체 영상과 평가 결과 펼치기</summary>
 
 | 영상 | 당시 평가 | 실제 1.5m 접근 | 시간(시뮬레이션 초) |
 |---|---|---|---:|
+| [v152-final-spread-three-1122__v151-survey-focus-track-m1398584497-23239317248697326.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m1398584497-23239317248697326.mp4) | 성공 | 확인 | 302.97999999999996 |
+| [v152-final-spread-three-1122__v151-survey-focus-track-m417608489-197242287164937263.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m417608489-197242287164937263.mp4) | 실패 | 미달 | 600.0 |
+| [v152-final-spread-three-1122__v151-survey-focus-track-m550866253-188862315828381463.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-final-spread-three-1122__v151-survey-focus-track-m550866253-188862315828381463.mp4) | 성공 | 확인 | 341.52 |
+| [v152-box-only-five-1122__v151-survey-baseline-track-m2712767296-310707902702518823.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-box-only-five-1122__v151-survey-baseline-track-m2712767296-310707902702518823.mp4) | 실패 | 미달 | 600.0 |
+| [v152-box-only-five-1122__v151-survey-candidate-track-m2712767296-310707902702518823.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-box-only-five-1122__v151-survey-candidate-track-m2712767296-310707902702518823.mp4) | 실패 | 미달 | 600.02 |
+| [v152-real-box-overlap-1122__v151-survey-baseline-track-m2526510905-830680071594266066.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-real-box-overlap-1122__v151-survey-baseline-track-m2526510905-830680071594266066.mp4) | 실패 | 미달 | 600.02 |
+| [v152-real-box-overlap-1122__v151-survey-candidate-track-m2526510905-830680071594266066.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-real-box-overlap-1122__v151-survey-candidate-track-m2526510905-830680071594266066.mp4) | 실패 | 미달 | 600.0 |
+| [v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m1817236217-363576232554625330.mp4) | 실패 | 미달 | 600.0 |
+| [v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m2946727794-532698735965463242.mp4) | 실패 | 미달 | 600.0 |
+| [v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-baseline-track-m3477870352-512600683753105860.mp4) | 성공 | 확인 | 392.104 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m1817236217-363576232554625330.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m1817236217-363576232554625330.mp4) | 실패 | 미달 | 600.0079999999999 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m2293287138-103833294022221927.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m2293287138-103833294022221927.mp4) | 성공 | 확인 | 533.7800000000001 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m2946727794-532698735965463242.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m2946727794-532698735965463242.mp4) | 실패 | 미달 | 600.024 |
+| [v151-official-fixed-three-1122__v151-survey-candidate-track-m3477870352-512600683753105860.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-official-fixed-three-1122__v151-survey-candidate-track-m3477870352-512600683753105860.mp4) | 성공 | 확인 | 391.98 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1506996263-758615926508713792.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1506996263-758615926508713792.mp4) | 성공 | 확인 | 168.584 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1565135385-716985422643685146.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m1565135385-716985422643685146.mp4) | 실패 | 미달 | 600.0200000000001 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m2164651793-904460405419145261.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m2164651793-904460405419145261.mp4) | 성공 | 확인 | 197.608 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m3818821658-1021171615408980175.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-baseline-track-m3818821658-1021171615408980175.mp4) | 성공 | 확인 | 434.82 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m1506996263-758615926508713792.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m1506996263-758615926508713792.mp4) | 성공 | 확인 | 190.596 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m1565135385-716985422643685146.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m1565135385-716985422643685146.mp4) | 성공 | 확인 | 127.344 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m2164651793-904460405419145261.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m2164651793-904460405419145261.mp4) | 성공 | 확인 | 276.5 |
+| [v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m3818821658-1021171615408980175.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-shuffled-balanced-print-1122__v151-survey-candidate-track-m3818821658-1021171615408980175.mp4) | 성공 | 확인 | 431.8 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m178349315-106374630088071414.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m178349315-106374630088071414.mp4) | 성공 | 확인 | 306.55600000000004 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m2437656298-526684097893377877.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m2437656298-526684097893377877.mp4) | 실패 | 미달 | 600.0 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m3280183581-269900596522503902.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m3280183581-269900596522503902.mp4) | 성공 | 확인 | 129.07600000000002 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m545514539-663389709141213120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m545514539-663389709141213120.mp4) | 성공 | 확인 | 530.192 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m647911238-1066999508311362768.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m647911238-1066999508311362768.mp4) | 성공 | 확인 | 258.864 |
+| [v151-random-exam-112209__v151-survey-baseline-track-m647911238-328852813392071914.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-baseline-track-m647911238-328852813392071914.mp4) | 성공 | 확인 | 262.88399999999996 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m178349315-106374630088071414.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m178349315-106374630088071414.mp4) | 실패 | 미달 | 600.0 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m2437656298-526684097893377877.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m2437656298-526684097893377877.mp4) | 실패 | 미달 | 600.016 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m3280183581-269900596522503902.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m3280183581-269900596522503902.mp4) | 성공 | 확인 | 238.804 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m545514539-663389709141213120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m545514539-663389709141213120.mp4) | 실패 | 미달 | 600.0 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m647911238-1066999508311362768.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m647911238-1066999508311362768.mp4) | 실패 | 미달 | 600.0160000000001 |
+| [v151-random-exam-112209__v151-survey-candidate-track-m647911238-328852813392071914.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-random-exam-112209__v151-survey-candidate-track-m647911238-328852813392071914.mp4) | 성공 | 확인 | 293.308 |
+| [v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112801-1122.mp4) | 성공 | 확인 | 84.224 |
+| [v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-baseline-heldout-m112802-1122.mp4) | 성공 | 확인 | 223.812 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112801-1122.mp4) | 성공 | 확인 | 137.99599999999998 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112802-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-heldout-m112802-1122.mp4) | 실패 | 미달 | 600.004 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112601-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112601-1122.mp4) | 실패 | 미달 | 600.0 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112602-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112602-1122.mp4) | 성공 | 확인 | 331.916 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112603-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112603-1122.mp4) | 실패 | 미달 | 600.028 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112604-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112604-1122.mp4) | 실패 | 미달 | 600.012 |
+| [v151-adaptive-survey-1122__v151-survey-candidate-track-m112605-1122.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-adaptive-survey-1122__v151-survey-candidate-track-m112605-1122.mp4) | 실패 | 미달 | 600.012 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112601-1795277159207082213.mp4) | 원본 궤적 재채점 통과 | 확인(등록 순서 무관) | 371.952 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112602-1795277159207082213.mp4) | 실패 | 미달 | 113.268 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112603-1795277159207082213.mp4) | 등록 직후 위치 표본 누락 | 확인(등록 순서 무관) | 488.828 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112604-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112604-1795277159207082213.mp4) | 원본 궤적 재채점 통과 | 확인(등록 순서 무관) | 398.976 |
+| [r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112605-1795277159207082213.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/r32-latest-d8704f6-1122__r32-latest-d8704f6-track-m112605-1795277159207082213.mp4) | 등록 직후 위치 표본 누락 | 확인(등록 순서 무관) | 392.8 |
+| [team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795276801220550538.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795276801220550538.mp4) | 설치 검사·과제 미완주 | 미달 | 60 |
+| [team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795277031081303114.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/team-jazzy-installation-check-1122__team-team-portable-balanced1122-track-m112601-1795277031081303114.mp4) | 설치 검사·과제 미완주 | 미달 | 60 |
+| [v151-rescue360-1121__v151-rescue360-track-m112605-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112605-1795270786287973756.mp4) | 실패 | 미달 | 593.992 |
+| [v151-rescue360-1121__v151-rescue360-track-m112604-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112604-1795270786287973756.mp4) | 실패 | 미달 | 597.58 |
+| [v151-rescue360-1121__v151-rescue360-track-m112603-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112603-1795270786287973756.mp4) | 성공 | 확인 | 306.056 |
+| [v151-rescue360-1121__v151-rescue360-track-m112602-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112602-1795270786287973756.mp4) | 성공 | 확인 | 457.836 |
+| [v151-rescue360-1121__v151-rescue360-track-m112601-1795270786287973756.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-rescue360-1121__v151-rescue360-track-m112601-1795270786287973756.mp4) | 성공 | 확인 | 334.652 |
 | [fix_v10_escape_regression3__9802005.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fix_v10_escape_regression3__9802005.mp4) | 성공 | 확인 | 335.45 |
 | [fix_v10_escape_regression3__9802009.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fix_v10_escape_regression3__9802009.mp4) | 성공 | 확인 | 345.245 |
 | [fix_v10_escape_regression3__9802018.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/fix_v10_escape_regression3__9802018.mp4) | 실패 | 확인 | 600.477 |
@@ -802,6 +917,80 @@ python3 scripts/publish_simulation_videos.py --upload
 | [tf_restamp_v1__regression__case_1__1121200101.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/tf_restamp_v1__regression__case_1__1121200101.mp4) | 성공 | 확인 | 229.859 |
 | [velocity_calibration_regression_v1__case_0__1163000000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/velocity_calibration_regression_v1__case_0__1163000000.mp4) | 성공 | 확인 | 204.2 |
 | [windowed_witness_regression_v2__case_0__1171300000.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/windowed_witness_regression_v2__case_0__1171300000.mp4) | 성공 | 확인 | 236.793 |
+| [camera-v12__v12-high-fps-480px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-high-fps-480px-15fps-m112022-expanded1120.mp4) | 성공 | 확인 | 47.516 |
+| [camera-v12__v12-intermediate-400px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-intermediate-400px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 72.684 |
+| [camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112021-expanded1120-retry2.mp4) | 실패 | 미달 | 45.0 |
+| [camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-reference-640px-15fps-m112022-expanded1120.mp4) | 실패 | 미달 | 45.0 |
+| [camera-v12__v12-repeat-a-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-a-480px-10fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.408 |
+| [camera-v12__v12-repeat-a-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-a-480px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 70.22 |
+| [camera-v12__v12-repeat-b-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-10fps-m112021-expanded1120.mp4) | 성공 | 확인 | 50.792 |
+| [camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-repeat-b-480px-5fps-m112021-expanded1120.mp4) | 실패 | 미달 | 90.0 |
+| [camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112021-expanded1120.mp4) | 실패 | 미달 | 90.0 |
+| [camera-v12__v12-validation-250px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-250px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 78.088 |
+| [camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112021-expanded1120.mp4) | 실패 | 미달 | 90.0 |
+| [camera-v12__v12-validation-480px-10fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-10fps-m112022-expanded1120.mp4) | 성공 | 확인 | 50.856 |
+| [camera-v12__v12-validation-480px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.279999999999994 |
+| [camera-v12__v12-validation-480px-5fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-480px-5fps-m112022-expanded1120.mp4) | 성공 | 확인 | 51.84 |
+| [camera-v12__v12-validation-640px-5fps-m112021-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-640px-5fps-m112021-expanded1120.mp4) | 성공 | 확인 | 53.144 |
+| [camera-v12__v12-validation-640px-5fps-m112022-expanded1120.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-v12__v12-validation-640px-5fps-m112022-expanded1120.mp4) | 성공 | 확인 | 73.512 |
+| [camera-policy-1121__v15-baseline-balanced-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-balanced-m112021-dev.mp4) | 성공 | 확인 | 93.93599999999999 |
+| [camera-policy-1121__v15-baseline-balanced-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-balanced-m112022-dev.mp4) | 성공 | 확인 | 68.7 |
+| [camera-policy-1121__v15-baseline-detail-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-detail-m112021-dev.mp4) | 성공 | 확인 | 104.1 |
+| [camera-policy-1121__v15-baseline-detail-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-detail-m112022-dev.mp4) | 성공 | 확인 | 69.452 |
+| [camera-policy-1121__v15-baseline-glance-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112021-dev.mp4) | 성공 | 확인 | 103.32 |
+| [camera-policy-1121__v15-baseline-glance-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112022-dev.mp4) | 성공 | 확인 | 56.692 |
+| [camera-policy-1121__v15-baseline-glance-m112101-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112101-heldout.mp4) | 성공 | 확인 | 94.364 |
+| [camera-policy-1121__v15-baseline-glance-m112102-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112102-heldout.mp4) | 성공 | 확인 | 116.824 |
+| [camera-policy-1121__v15-baseline-glance-m112103-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-baseline-glance-m112103-heldout.mp4) | 성공 | 확인 | 220.34799999999998 |
+| [camera-policy-1121__v15-camera-balanced-m112301-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-balanced-m112301-heldout-final.mp4) | 성공 | 확인 | 113.508 |
+| [camera-policy-1121__v15-camera-balanced-m112302-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-balanced-m112302-heldout-final.mp4) | 성공 | 확인 | 108.504 |
+| [camera-policy-1121__v15-camera-balanced-m112303-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-balanced-m112303-heldout-final.mp4) | 성공 | 확인 | 206.512 |
+| [camera-policy-1121__v15-camera-detail-m112021-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112021-dev2.mp4) | 성공 | 확인 | 86.004 |
+| [camera-policy-1121__v15-camera-detail-m112101-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112101-dev2.mp4) | 실패 | 확인 | 180.0 |
+| [camera-policy-1121__v15-camera-detail-m112201-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112201-heldout2.mp4) | 성공 | 확인 | 154.872 |
+| [camera-policy-1121__v15-camera-detail-m112202-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112202-heldout2.mp4) | 성공 | 확인 | 123.74 |
+| [camera-policy-1121__v15-camera-detail-m112203-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-camera-detail-m112203-heldout2.mp4) | 성공 | 확인 | 91.344 |
+| [camera-policy-1121__v15-candidate-balanced-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-balanced-m112021-dev.mp4) | 성공 | 확인 | 85.876 |
+| [camera-policy-1121__v15-candidate-balanced-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-balanced-m112022-dev.mp4) | 성공 | 확인 | 51.82 |
+| [camera-policy-1121__v15-candidate-detail-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112021-dev.mp4) | 성공 | 확인 | 75.78 |
+| [camera-policy-1121__v15-candidate-detail-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112022-dev.mp4) | 성공 | 확인 | 49.72 |
+| [camera-policy-1121__v15-candidate-detail-m112101-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112101-heldout.mp4) | 성공 | 확인 | 115.332 |
+| [camera-policy-1121__v15-candidate-detail-m112102-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112102-heldout.mp4) | 성공 | 확인 | 104.356 |
+| [camera-policy-1121__v15-candidate-detail-m112103-heldout.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-detail-m112103-heldout.mp4) | 성공 | 확인 | 70.83600000000001 |
+| [camera-policy-1121__v15-candidate-glance-m112021-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-glance-m112021-dev.mp4) | 성공 | 확인 | 90.52000000000001 |
+| [camera-policy-1121__v15-candidate-glance-m112022-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-candidate-glance-m112022-dev.mp4) | 성공 | 확인 | 51.568000000000005 |
+| [camera-policy-1121__v15-committed-detail-m112021-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-committed-detail-m112021-dev2.mp4) | 성공 | 확인 | 82.324 |
+| [camera-policy-1121__v15-committed-detail-m112101-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-committed-detail-m112101-dev2.mp4) | 성공 | 확인 | 104.188 |
+| [camera-policy-1121__v15-sync-balanced-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112201-matrix-dev.mp4) | 성공 | 확인 | 130.508 |
+| [camera-policy-1121__v15-sync-balanced-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112202-matrix-dev.mp4) | 성공 | 확인 | 119.012 |
+| [camera-policy-1121__v15-sync-balanced-m112301-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112301-heldout-final.mp4) | 성공 | 확인 | 82.004 |
+| [camera-policy-1121__v15-sync-balanced-m112302-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112302-heldout-final.mp4) | 성공 | 확인 | 109.508 |
+| [camera-policy-1121__v15-sync-balanced-m112303-heldout-final.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-balanced-m112303-heldout-final.mp4) | 성공 | 확인 | 73.5 |
+| [camera-policy-1121__v15-sync-detail-m112021-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112021-dev2.mp4) | 성공 | 확인 | 61.964 |
+| [camera-policy-1121__v15-sync-detail-m112101-dev2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112101-dev2.mp4) | 성공 | 확인 | 105.74000000000001 |
+| [camera-policy-1121__v15-sync-detail-m112201-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112201-heldout2.mp4) | 성공 | 확인 | 136.29999999999998 |
+| [camera-policy-1121__v15-sync-detail-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112201-matrix-dev.mp4) | 성공 | 확인 | 124.012 |
+| [camera-policy-1121__v15-sync-detail-m112202-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112202-heldout2.mp4) | 성공 | 확인 | 122.96399999999998 |
+| [camera-policy-1121__v15-sync-detail-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112202-matrix-dev.mp4) | 성공 | 확인 | 120.00399999999999 |
+| [camera-policy-1121__v15-sync-detail-m112203-heldout2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-detail-m112203-heldout2.mp4) | 성공 | 확인 | 94.74 |
+| [camera-policy-1121__v15-sync-glance-m112201-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112201-matrix-dev.mp4) | 성공 | 확인 | 129.508 |
+| [camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/camera-policy-1121__v15-sync-glance-m112202-matrix-dev.mp4) | 성공 | 확인 | 120.56800000000001 |
+
+| [v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-clutter1121__v15-sync-balanced-m112401-clutter-extra5-1795242071643397184.mp4) | 성공 | 확인 | 308.61600000000004 |
+
+| [v151-fourbox-archive1121__v151-track-m112501-trial1.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-fourbox-archive1121__v151-track-m112501-trial1.mp4) | 성공 | 확인 | 336.38399999999996 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112601-trial1.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112601-trial1.mp4) | 실패 | 미달 | 600.004 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112602-trial2.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112602-trial2.mp4) | 성공 | 확인 | 558.604 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112603-trial3.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112603-trial3.mp4) | 성공 | 확인 | 321.1 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112604-trial4.mp4) | 성공 | 확인 | 368.46 |
+| [v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v151-track-five-boxes5-1121__v151-boxes5-track-m112605-trial5.mp4) | 실패 | 미달 | 600.0 |
+| [v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v152-wall-transit-r2-1121__v152-wall-r2-track-m112601-1795254354085795341.mp4) | 실패 | 미달 | 600.0 |
+| [v153-region-wall-1121__v153-region-track-m112601-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112601-1795256846066447941.mp4) | 실패 | 미달 | 600.004 |
+| [v153-region-wall-1121__v153-region-track-m112602-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112602-1795256846066447941.mp4) | 실패 | 미달 | 600.0 |
+| [v153-region-wall-1121__v153-region-track-m112603-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112603-1795256846066447941.mp4) | 실패 | 미달 | 600.0200000000001 |
+| [v153-region-wall-1121__v153-region-track-m112604-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112604-1795256846066447941.mp4) | 실패 | 미달 | 600.012 |
+| [v153-region-wall-1121__v153-region-track-m112605-1795256846066447941.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/v153-region-wall-1121__v153-region-track-m112605-1795256846066447941.mp4) | 실패 | 확인 | 600.04 |
+| [rescue360-integration-pilot1121__v15-rescue360-balanced-m112601-pilot1121.mp4](https://github.com/peter010905/simul/releases/download/simulation-videos-2026-11/rescue360-integration-pilot1121__v15-rescue360-balanced-m112601-pilot1121.mp4) | 실패 | 미달 | 132.988 |
 
 </details>
 
@@ -1238,3 +1427,9 @@ Mac 시계를 보정하고 VM은 로봇의 유선 NTP 서버를 참조하도록 
 별도 ROS 도메인 184에서 전체 383개 테스트와 대시보드 8개 테스트가 통과했습니다. 새 후보의
 실물/새 Gazebo 주행은 하지 않았으므로 정지 빈도 감소와 마커 과제 성능 향상을 입증한 결과는
 아닙니다. [원인·변경·검증 범위](repository_snapshot/motion_flow_v3_20261117.json)에 구분했습니다.
+
+### 작은 벽 후보를 기억하는 Mixed 실험판
+
+상자 관찰 중 여러 영상에서 잡힌 작은 흑백 단서를 기억하고, 관찰할 상자 면이 없을 때 벽 관찰점을 선택한다. 실물 보드의 **Mixed · 작은 벽 후보 기억** 버튼이 이 버전을 구동한다. [설치와 후보 판정 기준](policy_candidates/2026-11-20_mixed_wall_cues_6px/README.md)
+
+[상자 재방문 줄이기 실험판과 동일 맵 비교](experiments/2026-11-20_cluster_exit/README.md)

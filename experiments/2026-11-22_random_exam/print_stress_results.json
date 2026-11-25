@@ -1,0 +1,257 @@
+{
+  "scope": "offline printed-pattern stress, one synthetic 480x480 still at a time; no robot motion, registration, or ground-truth approach credit",
+  "images_per_policy": 864,
+  "method": "same 128 Original IDs per size with random print roll, slant, brightness, subpixel offset and blur; 16 checker decoys per size; 4x supersampling; frame-relative anonymous location uses the projected print center",
+  "policies": {
+    "balanced": {
+      "seed": 341775,
+      "distinct_ids": 128,
+      "cv2": "4.6.0",
+      "size_definition": "ideal shortest native side in pixels",
+      "source_sha256": {
+        "marker_pair": "dada5a0824f8a7bb52908ff9cbd535829a7d32c707f4c565eb5830c065b0d949",
+        "small_wall_cues": "ff07dfc826b4972d01505057003a4d38c6995a06541a54801eb7c51c74c2c10f",
+        "warped_marker": "187dddd852f1b6cb0a29752ff81498182884974e0992f347d41252963f917b8e"
+      },
+      "results": {
+        "original": {
+          "7": {
+            "frames": 128,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 31,
+            "any_local_hint": 31,
+            "wrong_named_frames": 0
+          },
+          "9": {
+            "frames": 128,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 80,
+            "any_local_hint": 80,
+            "wrong_named_frames": 0
+          },
+          "12": {
+            "frames": 128,
+            "decoded": 108,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 108,
+            "wrong_named_frames": 0
+          },
+          "16": {
+            "frames": 128,
+            "decoded": 128,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 128,
+            "wrong_named_frames": 0
+          },
+          "22": {
+            "frames": 128,
+            "decoded": 128,
+            "passes_18px_image_gate": 128,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 128,
+            "wrong_named_frames": 0
+          },
+          "32": {
+            "frames": 128,
+            "decoded": 128,
+            "passes_18px_image_gate": 128,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 128,
+            "wrong_named_frames": 0
+          }
+        },
+        "nonmarker": {
+          "7": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 2,
+            "any_local_hint": 2,
+            "wrong_named_frames": 0
+          },
+          "9": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 10,
+            "any_local_hint": 10,
+            "wrong_named_frames": 0
+          },
+          "12": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 0
+          },
+          "16": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 0
+          },
+          "22": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 1
+          },
+          "32": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 0
+          }
+        }
+      }
+    },
+    "r5": {
+      "seed": 341775,
+      "distinct_ids": 128,
+      "cv2": "4.6.0",
+      "size_definition": "ideal shortest native side in pixels",
+      "source_sha256": {
+        "marker_pair": "46566109ad87f5464d0d68e0d50048388466add68325de7d7521a12629c02bab",
+        "small_wall_cues": "55323975898f2226360bbab17fa4c6d57ef35671d2760fa9ebcbff192652cac6",
+        "warped_marker": "187dddd852f1b6cb0a29752ff81498182884974e0992f347d41252963f917b8e"
+      },
+      "results": {
+        "original": {
+          "7": {
+            "frames": 128,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 58,
+            "any_local_hint": 58,
+            "wrong_named_frames": 0
+          },
+          "9": {
+            "frames": 128,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 6,
+            "anonymous_center": 102,
+            "any_local_hint": 103,
+            "wrong_named_frames": 0
+          },
+          "12": {
+            "frames": 128,
+            "decoded": 108,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 1,
+            "any_local_hint": 109,
+            "wrong_named_frames": 0
+          },
+          "16": {
+            "frames": 128,
+            "decoded": 128,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 128,
+            "wrong_named_frames": 0
+          },
+          "22": {
+            "frames": 128,
+            "decoded": 128,
+            "passes_18px_image_gate": 128,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 128,
+            "wrong_named_frames": 0
+          },
+          "32": {
+            "frames": 128,
+            "decoded": 128,
+            "passes_18px_image_gate": 128,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 128,
+            "wrong_named_frames": 0
+          }
+        },
+        "nonmarker": {
+          "7": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 4,
+            "any_local_hint": 4,
+            "wrong_named_frames": 0
+          },
+          "9": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 12,
+            "any_local_hint": 12,
+            "wrong_named_frames": 0
+          },
+          "12": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 0
+          },
+          "16": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 0
+          },
+          "22": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 1
+          },
+          "32": {
+            "frames": 16,
+            "decoded": 0,
+            "passes_18px_image_gate": 0,
+            "tiny_id_cue": 0,
+            "anonymous_center": 0,
+            "any_local_hint": 0,
+            "wrong_named_frames": 0
+          }
+        }
+      }
+    }
+  }
+}

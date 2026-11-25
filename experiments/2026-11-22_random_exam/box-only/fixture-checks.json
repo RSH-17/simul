@@ -1,0 +1,27 @@
+{
+  "namespace": "exam-original-box-five-preflight-20261122",
+  "layouts": 48,
+  "tables": "fixed",
+  "count_distribution": {
+    "3": 48
+  },
+  "layouts_by_attachment": {
+    "3_wall_0_object": 7,
+    "2_wall_1_object": 18,
+    "1_wall_2_object": 14,
+    "0_wall_3_object": 9
+  },
+  "layouts_by_added_objects": {
+    "5": 48
+  },
+  "distinct_ids": 132,
+  "movable_object_range": [
+    5,
+    5
+  ],
+  "visibility": {
+    "checked": 144,
+    "visible_and_grid_connected": 144
+  },
+  "failures": []
+}

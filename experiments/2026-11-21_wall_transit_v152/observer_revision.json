@@ -1,0 +1,7 @@
+{
+  "change": "Unique temporary files for observer and final board refresh; no policy change",
+  "observer_put_source_sha256": "4a8fdb5d74fdc23a715f70a6b6cc76e02eced02a3a598a3d928495794db0013b",
+  "shared_helper_before_sha256": "3a3f7df5a811589b92aed3e04035af39ea46addf3cc1adcf93a57741bb480e87",
+  "shared_helper_after_sha256": "dd99fd52047207bf415ad97d2b95c041215a148c9fb8e955cbc891d95387453d",
+  "same_policy_as_incomplete_previous_attempt": true
+}

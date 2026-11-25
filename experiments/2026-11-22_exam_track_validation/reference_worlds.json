@@ -1,0 +1,115 @@
+{
+  "original_layout": "uFjtqfyJ",
+  "all_same_fixed_world": true,
+  "world_count": 6,
+  "worlds": [
+    {
+      "seed": 2983619014,
+      "label": "pictured",
+      "boxes": 4,
+      "start": [
+        7.350000000000001,
+        4.700000000000002,
+        -1.3794802119789613
+      ],
+      "files": {
+        "world/osp_studio.sdf": "589d152dcfef420f6fda37fccdc30c3d73e9f90ebbdab8359d04bf94a5538b1a",
+        "scene.json": "26dc53bf49a4c1cba760794c6e0c9946cf4ac8e181fac3568c0bbbecddef46eb",
+        "scene.yaml": "cd7e4f4877b9c31ad48357faa4878068457563a362bfbb9f7db86d54b396dc6c",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f"
+    },
+    {
+      "seed": 112601,
+      "label": "large_regression",
+      "boxes": 5,
+      "start": [
+        7.600000000000001,
+        -4.85,
+        2.280278257700096
+      ],
+      "files": {
+        "world/osp_studio.sdf": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "scene.json": "99e740f800a276e7c718bbf037f9f87645cce5261cacae08e243d9a97ecf9662",
+        "scene.yaml": "2d8fdc1da75ec3dc3f7f62ec889a40cae7243b5fdb3fba434358f983efe848ac",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f"
+    },
+    {
+      "seed": 4144184517,
+      "label": "large_regression",
+      "boxes": 5,
+      "start": [
+        8.05,
+        -4.35,
+        -0.4740882129646158
+      ],
+      "files": {
+        "world/osp_studio.sdf": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+        "scene.json": "0597fb13814ce0ac48dc9c47e08b0b113a7699de9202faea503bc0cdb1f3a15d",
+        "scene.yaml": "4b22af4ef1c56580de7348254872178f2efafbcc9cccfca0caa16f4edfe1fd44",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f"
+    },
+    {
+      "seed": 112603,
+      "label": "large_regression",
+      "boxes": 5,
+      "start": [
+        -7.749999999999999,
+        -2.3999999999999995,
+        -2.1038546894514134
+      ],
+      "files": {
+        "world/osp_studio.sdf": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+        "scene.json": "abb2ff81bfe74e14034c99e369ec3505980991ff10aed6e0bf38b22d87e19fa2",
+        "scene.yaml": "a6adb66667a55a75bc8f40a073f18b33a133bd76c04e7b47846f389601eb85d1",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f"
+    },
+    {
+      "seed": 1223309082,
+      "label": "large_regression",
+      "boxes": 5,
+      "start": [
+        -6.299999999999999,
+        -4.85,
+        0.8823777907424963
+      ],
+      "files": {
+        "world/osp_studio.sdf": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+        "scene.json": "5bd685fc7568bd5b0acae5ad0698e34076de892664802b3f7b064fe03c4b0c57",
+        "scene.yaml": "5688584f57e6393de1ca24f923f1e060287a3707e45e83c44a0f3e3d8d6d9319",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f"
+    },
+    {
+      "seed": 112605,
+      "label": "large_regression",
+      "boxes": 5,
+      "start": [
+        -8.649999999999999,
+        -4.699999999999999,
+        -2.790642470286264
+      ],
+      "files": {
+        "world/osp_studio.sdf": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "scene.json": "b54218462391ce7dae3c7046d796058f7633dad744d4fb242ab48a2502c26716",
+        "scene.yaml": "a3f89009d1b477cbf75df6a2120d24f68dff09f54318c41854d444f172ee9fff",
+        "run/simulation/demo_layout.json": "55146394e454573274347edf6f38d01d4c52ff14fd12d009233855e176d6b557",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      },
+      "fixed_room_sha256": "beff18e9879eaa96cc036e4967575987282c1d951f6d9488b145e4d59f080c6f"
+    }
+  ]
+}

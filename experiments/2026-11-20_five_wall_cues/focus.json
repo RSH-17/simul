@@ -1,0 +1,83 @@
+{
+  "batch-track-7MgfZqWs": [
+    {
+      "goal": 14,
+      "marker": 7,
+      "elapsed": 239.404,
+      "duration": 10.0,
+      "error": 0.012807141324477949,
+      "world": [
+        10.004542379893934,
+        -4.797662295433502
+      ]
+    }
+  ],
+  "batch-track-VDiWOjnw": [],
+  "batch-track-fuAePeEx": [
+    {
+      "goal": 17,
+      "marker": 103,
+      "elapsed": 297.392,
+      "duration": 2.0,
+      "error": 0.02296499774023844,
+      "world": [
+        -8.67471764094964,
+        1.678118029411451
+      ]
+    }
+  ],
+  "batch-track-spjbfI5O": [],
+  "batch-track-wK13S60d": [
+    {
+      "goal": 11,
+      "marker": 103,
+      "elapsed": 131.808,
+      "duration": 4.5,
+      "error": 0.2579745789745012,
+      "world": [
+        3.2332436478289313,
+        -4.686762886326596
+      ]
+    },
+    {
+      "goal": 19,
+      "marker": 7,
+      "elapsed": 295.308,
+      "duration": 2.0,
+      "error": 0.006921389915774753,
+      "world": [
+        -0.03182622819957792,
+        4.414249544663102
+      ]
+    }
+  ],
+  "wall-cues-track-spjbfI5O": [
+    {
+      "goal": 25,
+      "marker": 7,
+      "elapsed": 438.16,
+      "duration": 2.5,
+      "error": 0.1448282067436737,
+      "world": [
+        -10.123378209039117,
+        0.21429501689190467
+      ]
+    }
+  ],
+  "wall-cues-track-7MgfZqWs": [
+    {
+      "goal": 3,
+      "marker": 7,
+      "elapsed": 34.324,
+      "duration": 6.5,
+      "error": 0.02429662169176607,
+      "world": [
+        10.024275267280963,
+        -4.7867061955116785
+      ]
+    }
+  ],
+  "wall-cues-track-VDiWOjnw": [],
+  "wall-cues-track-wK13S60d": [],
+  "wall-cues-track-fuAePeEx": []
+}

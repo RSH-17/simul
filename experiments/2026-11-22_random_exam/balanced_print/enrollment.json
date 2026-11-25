@@ -1,0 +1,262 @@
+{
+  "phase": "before_first_episode",
+  "registration_sha256": "d59b3f98f7050938be366b7158f44b8ef346b1c200d968f189d12f100cd57e66",
+  "protocol_sha256": "8a129e478a7989589c91ff5d5d94aeccafa996e97cb85f90664320ec982e5453",
+  "original_exam_room": "uFjtqfyJ",
+  "fixed_shell_sha256": "8f4a4d592addbb191c7ea4df4777972f4a5200565da094c66cc5317591d0a8be",
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "budget_sim_s": 600,
+  "public_marker_count": 3,
+  "policies": {
+    "baseline": "afbaaaaf882c32b41579e8614997c70d0fe6721626df9518370ffe156ad85595",
+    "candidate": "5152baac3122da4e09fd15e982509df78bfee74891827d8374a11d201d12a0bb"
+  },
+  "nonce": "b835aca4de0c96cae8341ea41f24d6ad4df3ec0292170e7c5571d3e8ad18a753",
+  "generator_and_scoring": {
+    "2026-11-22_random_exam/geometry.py": "f10e68a4bda0518cebe0911785f08048fd577bb914c9e09bf0987d4ad256af22",
+    "2026-11-22_random_exam/fixture.py": "942e6e5d6be9d1854b87175688672a5b7f4e1f058206ca985846fa1f4923e54b",
+    "2026-11-22_random_exam/scoring.py": "6577af01e63abb5f02e8d0f919072408c7c83443a7422dabd0b95a3caf05f6fe",
+    "2026-11-22_random_exam/campaign.py": "d2c6098f2e4d2b0f7d7225de6bde4a3a3c0ba050fd3363da1a52fe9576c2c935",
+    "2026-11-22_random_exam/trial.py": "298e91c8d2b78785a3c7a3bb3e55d71836a7c881fd245b302fa0880de3f03167",
+    "2026-11-22_random_exam/exam_camera.launch.py": "db403ee271b5259e670248f341ab5ec7a9407f54e15fe8bb869e3d4727d3ead8",
+    "2026-11-22_random_exam/run.sh": "f4b5fcab8003d279b2417d8c2af089873ae4b5457d95c21731bb7122eb2c7d06",
+    "2026-11-22_exam_track_validation/paired.py": "b1b97a9ac19df9ca4a697e1bd15251396e77761260feab63fcd25662b77f09d6",
+    "2026-11-22_v151_adaptive_survey/run.py": "0bd9a9886c7b17c0796f4948c9c85166fe267f1c9eaeca6fa91019269f41b3d2",
+    "2026-11-22_v151_adaptive_survey/validation/validate.py": "33ab428c928a4ad7ba47dec30d7c95964aff0ebeba44100da2d22922f8792d57",
+    "2026-11-21_camera_aware_policy/strict_trial.py": "a2120f0d301e3b39abf62d0bd3b57b9f16032d284d3958e269a6f42fd0690408",
+    "2026-11-20_v12_camera_rate/trial.py": "b808778562e07e546a9e59facce0310769757545ab069b849f54cfb1592c5560",
+    "native_helpers/2026-11-19_corridor_box/finish_trial.py": "5a120b601be589446a5a7900b9b1f8c31411903c423c7cdf7b972f8d9d892f2c"
+  },
+  "draws": [
+    3818821658,
+    2164651793,
+    1506996263,
+    1565135385,
+    2542046
+  ],
+  "plan": [
+    {
+      "pair": 1,
+      "world": 0,
+      "repeat": 0,
+      "order": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    {
+      "pair": 2,
+      "world": 1,
+      "repeat": 0,
+      "order": [
+        "candidate",
+        "baseline"
+      ]
+    },
+    {
+      "pair": 3,
+      "world": 2,
+      "repeat": 0,
+      "order": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    {
+      "pair": 4,
+      "world": 3,
+      "repeat": 0,
+      "order": [
+        "candidate",
+        "baseline"
+      ]
+    },
+    {
+      "pair": 5,
+      "world": 4,
+      "repeat": 0,
+      "order": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    {
+      "pair": 6,
+      "world": 0,
+      "repeat": 1,
+      "order": [
+        "candidate",
+        "baseline"
+      ]
+    }
+  ],
+  "worlds": [
+    {
+      "seed": 3818821658,
+      "tables": "shuffle",
+      "movable_objects": 6,
+      "object_shapes": {
+        "movable_1": "screen",
+        "movable_2": "box",
+        "movable_3": "box",
+        "movable_4": "box",
+        "movable_5": "screen",
+        "movable_6": "box"
+      },
+      "ids": [
+        402,
+        75,
+        159
+      ],
+      "hosts": [
+        "movable_3",
+        "wall_north",
+        "wall_south_recess"
+      ],
+      "start": [
+        4.450000000000001,
+        4.300000000000002,
+        1.844314100326634
+      ],
+      "files": {
+        "world/osp_studio.sdf": "de79f894b6e5bfd303a57ca1777ccddfc60c63233e9c363df5862bfb02eb40e7",
+        "scene.json": "899bf5af020ea1a3109eca45130969c3714df6788e5abe586a4047e27b566c19",
+        "scene.yaml": "57d32eaf6c14d4c130474e1f4767224295db548cf9521ea0c300afe04de219e7",
+        "run/simulation/demo_layout.json": "269103c17fb2915743a7c482420eb919a37c57ad65e12f710e893e0bee29e136",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      }
+    },
+    {
+      "seed": 2164651793,
+      "tables": "shuffle",
+      "movable_objects": 2,
+      "object_shapes": {
+        "movable_1": "elbow",
+        "movable_2": "screen"
+      },
+      "ids": [
+        67,
+        447,
+        128
+      ],
+      "hosts": [
+        "movable_1_b",
+        "movable_2",
+        "movable_1_b"
+      ],
+      "start": [
+        -6.699999999999999,
+        1.6000000000000005,
+        -1.7397069993264838
+      ],
+      "files": {
+        "world/osp_studio.sdf": "29026c60f9266ae7004b1afe51010a1a288c499d9c7cc9de67f77d5fd6cfdc3e",
+        "scene.json": "5dd8a89161d853503c86165af87ca9e8853ee8cc8db05085c9ac609e7bd2ab26",
+        "scene.yaml": "77eec16a3a03baacfd9f838517d9d8ccd9b8ec8c515f661bdf25e2bc44cfb7d1",
+        "run/simulation/demo_layout.json": "d75dd7c17f5d4c85855ae0ba336c3d2e8b3ef68479cbc57db729196985a455e9",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      }
+    },
+    {
+      "seed": 1506996263,
+      "tables": "shuffle",
+      "movable_objects": 1,
+      "object_shapes": {
+        "movable_1": "box"
+      },
+      "ids": [
+        153,
+        684,
+        877
+      ],
+      "hosts": [
+        "movable_1",
+        "wall_south_recess",
+        "wall_structure_east_wall_step_3"
+      ],
+      "start": [
+        -1.799999999999999,
+        -0.9499999999999993,
+        2.5637411267362156
+      ],
+      "files": {
+        "world/osp_studio.sdf": "96d17586e6a05ea3fe76850bce96f21c6e80731a490a4bf75d56029373152680",
+        "scene.json": "24c2e887bcf975685073bebf9cf3c352c228a3ae6776a1703f531ad783c39314",
+        "scene.yaml": "84d646ecb41f6e757f1698aa964d16de8a96af2f0e71fd8b6481ea677fad7050",
+        "run/simulation/demo_layout.json": "2a1514b011c1ebf2a8934d16a6bebe1bd005e6cb126a413f216adca211793a01",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      }
+    },
+    {
+      "seed": 1565135385,
+      "tables": "shuffle",
+      "movable_objects": 1,
+      "object_shapes": {
+        "movable_1": "box"
+      },
+      "ids": [
+        804,
+        730,
+        156
+      ],
+      "hosts": [
+        "movable_1",
+        "wall_south_west",
+        "movable_1"
+      ],
+      "start": [
+        -6.999999999999999,
+        -1.3499999999999988,
+        -1.3219209705961503
+      ],
+      "files": {
+        "world/osp_studio.sdf": "4946b628b29f1228020d2ee82279202fcaee32b18f13c75a48c360e84514a3f8",
+        "scene.json": "0c1f616fd4804df401f2c1bdcd58489f3b8bf6923dd52b0eac2800d4febd3ed3",
+        "scene.yaml": "bba335e7304d6594489596999dc77b3a4c2cf16672ae43ff39aa8cc4c424f0b7",
+        "run/simulation/demo_layout.json": "80d0a0ae179d60e3036f5d27d8f1beae6c328c416c2dfb1404da23dea14b3f22",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      }
+    },
+    {
+      "seed": 2542046,
+      "tables": "shuffle",
+      "movable_objects": 5,
+      "object_shapes": {
+        "movable_1": "elbow",
+        "movable_2": "elbow",
+        "movable_3": "elbow",
+        "movable_4": "box",
+        "movable_5": "box"
+      },
+      "ids": [
+        635,
+        797,
+        976
+      ],
+      "hosts": [
+        "wall_south_west",
+        "wall_north",
+        "wall_north"
+      ],
+      "start": [
+        7.350000000000001,
+        4.8500000000000005,
+        2.7640327104379603
+      ],
+      "files": {
+        "world/osp_studio.sdf": "b3e9fd3d2dd564c4c08fcddf36314b2bdbf498f855c284ac501b23c86369b671",
+        "scene.json": "0940e66aa58d41928e0f89463e5f5bff4058d9eaab7ac657421c66bdbcd684ff",
+        "scene.yaml": "f7f12e898cf727671bb9ec248f80dfb0a72dc6663efd46ebdc1bc0972fcd3b6d",
+        "run/simulation/demo_layout.json": "2db9ee92d74a86c98f673770a7a288bbb88aeaf203c9cfc560989cdb38297c6e",
+        "run/simulation/demo_floor.png": "3fd7531e7558cba98a9a8ba1075ecb45310212745a506591c0d8aeda8ec9a228"
+      }
+    }
+  ],
+  "comparisons": "Five independent layouts and one repeated pair. No ground truth reaches the planner.",
+  "native_motion_episodes_at_enrollment": 0,
+  "candidate_label": "balanced-print-relook"
+}

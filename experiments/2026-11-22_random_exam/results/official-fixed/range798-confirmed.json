@@ -1,0 +1,166 @@
+{
+  "run": "v151-survey-candidate-track-m1817236217-363576232554625330",
+  "recorded_frames": 3000,
+  "processed_with_tf": 3000,
+  "registered_s": {
+    "60": 158.80800000000002,
+    "630": 407.296,
+    "798": 598.2959999999999
+  },
+  "live_counts": {
+    "630": {
+      "last_min_edge_pixels": 89.005615234375,
+      "last_stamp": 435.2,
+      "small": 41,
+      "no_range": 27,
+      "accepted": 105
+    },
+    "798": {
+      "last_min_edge_pixels": 29.0,
+      "last_stamp": 604.2,
+      "small": 191,
+      "no_range": 217,
+      "border": 1,
+      "accepted": 10
+    },
+    "60": {
+      "last_min_edge_pixels": 17.029386520385742,
+      "last_stamp": 374.2,
+      "small": 34,
+      "no_range": 36,
+      "accepted": 149,
+      "border": 8
+    }
+  },
+  "first_live_observation_s": {
+    "60": 158.12400000000002,
+    "630": 399.124,
+    "798": 597.7239999999999
+  },
+  "first_live_candidate_s": {
+    "630": 407.524
+  },
+  "matched_live_tf": 266,
+  "max_reprojection_to_live_odom_m": 1.3069721184605048e-08,
+  "cv2": "4.6.0",
+  "all_border_valid_10px_decodes": {
+    "630": 146,
+    "798": 228,
+    "60": 186
+  },
+  "same_18px_gate": {
+    "798": {
+      "frames": 38,
+      "first_decoded_s": 39.524,
+      "current_triplets": 22,
+      "ranges": 10,
+      "before_registration": 1,
+      "first_range_s": 598.1239999999999,
+      "third_range_s": 598.524,
+      "first_xy_error_m": 0.04049776927444038,
+      "largest_xy_error_m": 0.051066124599770474,
+      "wrong_over_025m": 0
+    },
+    "60": {
+      "frames": 152,
+      "first_decoded_s": 157.524,
+      "current_triplets": 140,
+      "ranges": 93,
+      "before_registration": 0,
+      "first_range_s": 164.72400000000002,
+      "third_range_s": 165.12400000000002,
+      "first_xy_error_m": 0.04519688186524649,
+      "largest_xy_error_m": 0.06473520352413134,
+      "wrong_over_025m": 0
+    },
+    "630": {
+      "frames": 105,
+      "first_decoded_s": 399.124,
+      "current_triplets": 95,
+      "ranges": 0,
+      "before_registration": 0,
+      "first_range_s": null,
+      "third_range_s": null,
+      "first_xy_error_m": null,
+      "largest_xy_error_m": null,
+      "wrong_over_025m": 0
+    }
+  },
+  "exploratory_10px_geometry_only": {
+    "630": {
+      "frames": 146,
+      "first_decoded_s": 10.324,
+      "current_triplets": 128,
+      "ranges": 0,
+      "before_registration": 0,
+      "first_range_s": null,
+      "third_range_s": null,
+      "first_xy_error_m": null,
+      "largest_xy_error_m": null,
+      "wrong_over_025m": 0
+    },
+    "798": {
+      "frames": 228,
+      "first_decoded_s": 21.723999999999997,
+      "current_triplets": 178,
+      "ranges": 10,
+      "before_registration": 1,
+      "first_range_s": 598.1239999999999,
+      "third_range_s": 598.524,
+      "first_xy_error_m": 0.04049776927444038,
+      "largest_xy_error_m": 0.051066124599770474,
+      "wrong_over_025m": 0
+    },
+    "60": {
+      "frames": 186,
+      "first_decoded_s": 56.724,
+      "current_triplets": 170,
+      "ranges": 96,
+      "before_registration": 0,
+      "first_range_s": 164.12400000000002,
+      "third_range_s": 164.524,
+      "first_xy_error_m": 0.043149711252239216,
+      "largest_xy_error_m": 0.06473520352413134,
+      "wrong_over_025m": 0
+    }
+  },
+  "distant_hint_native_only": {
+    "630": {
+      "frames": 143,
+      "first_decoded_s": 10.324,
+      "current_triplets": 122,
+      "ranges": 0,
+      "before_registration": 0,
+      "first_range_s": null,
+      "third_range_s": null,
+      "first_xy_error_m": null,
+      "largest_xy_error_m": null,
+      "wrong_over_025m": 0
+    },
+    "798": {
+      "frames": 220,
+      "first_decoded_s": 24.323999999999998,
+      "current_triplets": 166,
+      "ranges": 93,
+      "before_registration": 85,
+      "first_range_s": 40.324,
+      "third_range_s": 40.724,
+      "first_xy_error_m": 0.029466034493241765,
+      "largest_xy_error_m": 0.08412761859933816,
+      "wrong_over_025m": 0
+    },
+    "60": {
+      "frames": 185,
+      "first_decoded_s": 56.724,
+      "current_triplets": 167,
+      "ranges": 68,
+      "before_registration": 0,
+      "first_range_s": 165.524,
+      "third_range_s": 165.924,
+      "first_xy_error_m": 0.055114682521453066,
+      "largest_xy_error_m": 0.10145352535705002,
+      "wrong_over_025m": 0
+    }
+  },
+  "method": "Frozen JPEG path and processed-camera stamps. Recorded odom-camera TF rays; the deployed CameraVisualRange uses all eligible prior triplets and applies all native parallax, depth, residual and pixel-scale gates. The 10px replay is diagnostic only. Simulator truth measures XY error after estimation. No closed-loop approach or registration credit."
+}

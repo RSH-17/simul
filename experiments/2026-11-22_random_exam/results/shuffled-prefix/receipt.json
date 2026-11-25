@@ -1,0 +1,9 @@
+{
+  "complete_native_runs": 8,
+  "paired_worlds": 4,
+  "original_plan_pairs": 6,
+  "independent_worlds_completed": 4,
+  "reason": "Official evaluation preserves all desks and announces three markers. No scored attempt retried or discarded.",
+  "registration_sha256": "d59b3f98f7050938be366b7158f44b8ef346b1c200d968f189d12f100cd57e66",
+  "protocol_sha256": "8a129e478a7989589c91ff5d5d94aeccafa996e97cb85f90664320ec982e5453"
+}

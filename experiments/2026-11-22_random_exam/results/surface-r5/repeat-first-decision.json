@@ -1,0 +1,68 @@
+[
+  {
+    "pair": 1,
+    "name": "v151-survey-candidate-track-m647911238-1066999508311362768",
+    "world_sha256": "d7ada477918486f39b969f01ca4046de39bc8ec9b442a87aa329f1075cc168a8",
+    "spawn_xy_yaw": [
+      -1.0994339975482144,
+      4.401171399831676,
+      0.9461680181614505
+    ],
+    "time_limit_s": 600,
+    "first_decision_s": 2.8840000000000003,
+    "first_grid_dimensions": [
+      388,
+      358
+    ],
+    "first_grid_resolution_m": 0.05000000074505806,
+    "initial_free_cells": 3209,
+    "initial_occupied_cells": 122,
+    "initial_viewed_directional_cells": 7,
+    "initial_grid_origin_xy": [
+      -11.758367634897185,
+      -11.807803741455961
+    ],
+    "raw_candidate_count": 28,
+    "first_goal_reason": "unseen_gain_per_travel",
+    "first_goal_kind": "interior_frontier",
+    "initial_decision_sha256": "28aed5442f45a7be102b378c5330f35cae525af2f1ba2120ead0e91a570b38db",
+    "verified_markers": 2,
+    "all_verified": false,
+    "elapsed_s": 600.0160000000001,
+    "travel_m": 97.17600640439329,
+    "first_goal_fields": {}
+  },
+  {
+    "pair": 6,
+    "name": "v151-survey-candidate-track-m647911238-328852813392071914",
+    "world_sha256": "d7ada477918486f39b969f01ca4046de39bc8ec9b442a87aa329f1075cc168a8",
+    "spawn_xy_yaw": [
+      -1.0994339975482144,
+      4.401171399831676,
+      0.9461680181614505
+    ],
+    "time_limit_s": 600,
+    "first_decision_s": 2.8600000000000003,
+    "first_grid_dimensions": [
+      343,
+      187
+    ],
+    "first_grid_resolution_m": 0.05000000074505806,
+    "initial_free_cells": 3550,
+    "initial_occupied_cells": 152,
+    "initial_viewed_directional_cells": 5,
+    "initial_grid_origin_xy": [
+      -3.1229979627607047,
+      -11.146239413850825
+    ],
+    "raw_candidate_count": 28,
+    "first_goal_reason": "explore_open_frontier",
+    "first_goal_kind": "interior_frontier",
+    "initial_decision_sha256": "cf7abf7ce7c50007032baa7c466c50c044d83a40f15ac3c867919237e909bdba",
+    "verified_markers": 3,
+    "all_verified": true,
+    "elapsed_s": 293.308,
+    "travel_m": 47.42206254100266,
+    "first_goal_fields": {}
+  }
+]

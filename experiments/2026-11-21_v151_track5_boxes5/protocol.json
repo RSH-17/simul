@@ -1,0 +1,26 @@
+{
+  "seeds": [
+    112601,
+    112602,
+    112603,
+    112604,
+    112605
+  ],
+  "version": "v1.5.1-balanced",
+  "room_m": [
+    20.15,
+    11.35
+  ],
+  "maximum_mission_s": 600,
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "boxes_per_layout": 5,
+  "wall_markers": 1,
+  "box_markers": 2,
+  "domain": 174,
+  "physical_drive": false,
+  "selection": "five predetermined seeds, no retry of policy failure"
+}

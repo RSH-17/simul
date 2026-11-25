@@ -1,0 +1,32 @@
+{
+  "version": "Mixed v1.5.2.1 Focus Continuity",
+  "source_manifest_sha256": "dfd33c79d93498337a7f4257900f724894e7b5048f2dfee67a39ab395b3691bd",
+  "parent_source_manifest_sha256": "46a6dd68c5070172a22b6680f2945cf22aa8b4f3866797316c820e9fb82e135a",
+  "board_distant_hints": false,
+  "reference_protocol_sha256": "a21d009220704fe755c6246c0b39563950e57dc105ef629263f533e2d848493f",
+  "candidate_registration_sha256": "ebdf1a6b5d9ad7ca6e7f4ea53f6ee39c951b92e2e810da0d56dfbf7a46bb17d1",
+  "native_protocol_sha256": "4bbc0f153caabe29106aec45b4f59463c4c2e5217425cf407f9955c789caabe9",
+  "frozen_prior_results": [
+    {
+      "seed": 2712767296,
+      "name": "v151-survey-candidate-track-m2712767296-310707902702518823",
+      "pair": 1
+    }
+  ],
+  "diagnostic_seeds": [
+    2712767296
+  ],
+  "untuned_seeds": [
+    507119222,
+    3512830537,
+    3828083878,
+    2526510905
+  ],
+  "camera": [
+    480,
+    480,
+    5
+  ],
+  "duration_s": 600,
+  "physical_drive": false
+}

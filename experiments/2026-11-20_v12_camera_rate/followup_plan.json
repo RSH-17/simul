@@ -1,0 +1,41 @@
+{
+  "reason": "Repeat non-monotonic 480/5 versus 480/10 closed-loop outcome; add middle and high-FPS settings",
+  "conditions": [
+    [
+      112021,
+      480,
+      10,
+      "repeat-a"
+    ],
+    [
+      112021,
+      480,
+      5,
+      "repeat-a"
+    ],
+    [
+      112021,
+      480,
+      5,
+      "repeat-b"
+    ],
+    [
+      112021,
+      480,
+      10,
+      "repeat-b"
+    ],
+    [
+      112022,
+      400,
+      10,
+      "intermediate"
+    ],
+    [
+      112022,
+      480,
+      15,
+      "high-fps"
+    ]
+  ]
+}

@@ -1,0 +1,437 @@
+{
+  "run": "v151-survey-candidate-track-m545514539-663389709141213120",
+  "valid": true,
+  "reasons": [],
+  "processed_stamps": 2999,
+  "observer_processed_frames": 2999,
+  "navigate": {
+    "succeeded": 26,
+    "canceled": 12,
+    "aborted": 0
+  },
+  "spin": {
+    "succeeded": 33,
+    "canceled": 0,
+    "aborted": 0
+  },
+  "surface_coverage": {
+    "exposures": 2999,
+    "wall": {
+      "fraction": 0.5784160793005717,
+      "mountable_center_span_m": 65.71968571428572,
+      "observed_span_m": 38.01332294372293
+    },
+    "obstacle": {
+      "fraction": 0.7263881984482313,
+      "mountable_center_span_m": 9.301735473454906,
+      "observed_span_m": 6.756670873004915
+    },
+    "boxes": 2,
+    "boxes_all_four": 0,
+    "groups": {
+      "wall": {
+        "shape": "wall",
+        "faces": {
+          "south_west": {
+            "fraction": 1.0,
+            "sampled_centers": 21,
+            "counts": {
+              "observed": 21
+            }
+          },
+          "south_recess_west": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "south_recess": {
+            "fraction": 0.4444444444444444,
+            "sampled_centers": 18,
+            "counts": {
+              "observed": 8,
+              "outside_readable_view": 10
+            }
+          },
+          "south_recess_east": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "south_east": {
+            "fraction": 0.0,
+            "sampled_centers": 11,
+            "counts": {
+              "outside_readable_view": 11
+            }
+          },
+          "east": {
+            "fraction": 0.0,
+            "sampled_centers": 6,
+            "counts": {
+              "outside_readable_view": 6,
+              "solid_at_mount": 22
+            }
+          },
+          "north": {
+            "fraction": 0.7441860465116279,
+            "sampled_centers": 43,
+            "counts": {
+              "solid_at_mount": 7,
+              "outside_readable_view": 3,
+              "insufficient_repeated_exposures": 2,
+              "line_of_sight_blocked": 6,
+              "observed": 32
+            }
+          },
+          "west": {
+            "fraction": 0.8461538461538461,
+            "sampled_centers": 26,
+            "counts": {
+              "solid_at_mount": 2,
+              "outside_readable_view": 1,
+              "insufficient_repeated_exposures": 2,
+              "observed": 22,
+              "line_of_sight_blocked": 1
+            }
+          },
+          "structure_column_nw_0": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {
+              "solid_at_mount": 1
+            }
+          },
+          "structure_column_nw_1": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_nw_2": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_nw_3": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {
+              "solid_at_mount": 1
+            }
+          },
+          "structure_column_nc_0": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {
+              "solid_at_mount": 1
+            }
+          },
+          "structure_column_nc_1": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "structure_column_nc_2": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "structure_column_nc_3": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_ne_0": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {
+              "solid_at_mount": 1
+            }
+          },
+          "structure_column_ne_1": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_ne_2": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "structure_column_ne_3": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "structure_column_sw_0": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "line_of_sight_blocked": 1
+            }
+          },
+          "structure_column_sw_1": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "line_of_sight_blocked": 1
+            }
+          },
+          "structure_column_sw_2": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_sw_3": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_sc_0": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "line_of_sight_blocked": 1
+            }
+          },
+          "structure_column_sc_1": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "structure_column_sc_2": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_sc_3": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "line_of_sight_blocked": 1
+            }
+          },
+          "structure_column_se_0": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_se_1": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_se_2": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_column_se_3": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_east_wall_step_0": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {
+              "solid_at_mount": 1
+            }
+          },
+          "structure_east_wall_step_1": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {
+              "solid_at_mount": 22
+            }
+          },
+          "structure_east_wall_step_2": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "structure_east_wall_step_3": {
+            "fraction": 0.36363636363636365,
+            "sampled_centers": 22,
+            "counts": {
+              "outside_readable_view": 12,
+              "insufficient_repeated_exposures": 2,
+              "observed": 8
+            }
+          }
+        }
+      },
+      "movable_1": {
+        "shape": "box",
+        "faces": {
+          "movable_1/0": {
+            "fraction": 0.0,
+            "sampled_centers": 3,
+            "counts": {
+              "outside_readable_view": 3
+            }
+          },
+          "movable_1/1": {
+            "fraction": 1.0,
+            "sampled_centers": 2,
+            "counts": {
+              "observed": 2
+            }
+          },
+          "movable_1/2": {
+            "fraction": 1.0,
+            "sampled_centers": 3,
+            "counts": {
+              "observed": 3
+            }
+          },
+          "movable_1/3": {
+            "fraction": 1.0,
+            "sampled_centers": 2,
+            "counts": {
+              "observed": 2
+            }
+          }
+        }
+      },
+      "movable_2": {
+        "shape": "screen",
+        "faces": {
+          "movable_2/0": {
+            "fraction": 1.0,
+            "sampled_centers": 3,
+            "counts": {
+              "observed": 3
+            }
+          },
+          "movable_2/1": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {}
+          },
+          "movable_2/2": {
+            "fraction": 0.0,
+            "sampled_centers": 3,
+            "counts": {
+              "outside_readable_view": 3
+            }
+          },
+          "movable_2/3": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {}
+          }
+        }
+      },
+      "movable_3": {
+        "shape": "box",
+        "faces": {
+          "movable_3/0": {
+            "fraction": 1.0,
+            "sampled_centers": 1,
+            "counts": {
+              "observed": 1
+            }
+          },
+          "movable_3/1": {
+            "fraction": 1.0,
+            "sampled_centers": 2,
+            "counts": {
+              "observed": 2
+            }
+          },
+          "movable_3/2": {
+            "fraction": 0.0,
+            "sampled_centers": 1,
+            "counts": {
+              "outside_readable_view": 1
+            }
+          },
+          "movable_3/3": {
+            "fraction": 0.0,
+            "sampled_centers": 2,
+            "counts": {
+              "outside_readable_view": 2
+            }
+          }
+        }
+      },
+      "movable_4": {
+        "shape": "screen",
+        "faces": {
+          "movable_4/0": {
+            "fraction": 1.0,
+            "sampled_centers": 5,
+            "counts": {
+              "observed": 5
+            }
+          },
+          "movable_4/1": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {}
+          },
+          "movable_4/2": {
+            "fraction": 1.0,
+            "sampled_centers": 5,
+            "counts": {
+              "observed": 5
+            }
+          },
+          "movable_4/3": {
+            "fraction": null,
+            "sampled_centers": 0,
+            "counts": {}
+          }
+        }
+      }
+    },
+    "parameters": {
+      "print_m": 0.2,
+      "height_m": 0.32,
+      "minimum_pixels": 18.0,
+      "sample_interval_max_m": 0.4,
+      "maximum_incidence_deg": 60,
+      "minimum_views": 3,
+      "window_s": 1.0,
+      "face_completion_fraction": 0.7
+    }
+  }
+}

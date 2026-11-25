@@ -1,0 +1,1734 @@
+{
+  "regression": {
+    "pairs": [
+      {
+        "seed": 112601,
+        "baseline": {
+          "seed": 112601,
+          "run": "v151-boxes5-track-m112601-trial1",
+          "sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            7.600000000000001,
+            -4.85,
+            2.280278257700096
+          ],
+          "final_ids": [
+            32,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            32,
+            103
+          ],
+          "wall_reg": 0,
+          "box_reg": 2,
+          "wall_near": 0,
+          "box_near": 2,
+          "strict": false,
+          "map_errors_m": {
+            "32": 0.17750678725702068,
+            "103": 0.04646768879664919
+          },
+          "elapsed_s": 600.004,
+          "distance_m": 112.5010060741611,
+          "bumps": 0,
+          "stopped_s": 37.06000000000014,
+          "selected_goal_counts": {
+            "interior_frontier": 2,
+            "interior_surface": 22,
+            "approach": 1
+          },
+          "cancellations": {
+            "readable_marker": 1,
+            "marker_hint": 1,
+            "inspection_due": 1,
+            "action_timeout": 2
+          },
+          "duplicate_selections": 1,
+          "settled_start_world_xy": [
+            7.599286988882613,
+            -4.848980438435453
+          ],
+          "cpu": {
+            "median_percent_one_core": 22.991916846698796,
+            "p95_percent_one_core": 26.430894953352343,
+            "max_sampled_rss_mib": 208.45703125
+          },
+          "camera_p95_age_s": 0.08799999999999422,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids"
+            ],
+            "missing_ids": [
+              7
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "32": 0.9126525503636198,
+              "103": 0.618271013830396,
+              "7": 3.3347482947502463
+            },
+            "registered_sim_s": {
+              "103": 68.152,
+              "32": 355.128
+            },
+            "registered_and_within_sim_s": {
+              "103": 68.144,
+              "32": 355.144
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 0,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 25,
+              "succeeded": 19,
+              "canceled": 6,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 63,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 16,
+            "camera_coverage_updates": 2951,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 112601,
+          "run": "v151-survey-candidate-track-m112601-1122",
+          "sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            7.600000000000001,
+            -4.85,
+            2.280278257700096
+          ],
+          "final_ids": [
+            7,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 1,
+          "wall_near": 1,
+          "box_near": 1,
+          "strict": false,
+          "map_errors_m": {
+            "7": 0.023693629806024956,
+            "103": 0.027086539511658972
+          },
+          "elapsed_s": 600.0,
+          "distance_m": 97.22653012329553,
+          "bumps": 0,
+          "stopped_s": 58.90000000000012,
+          "selected_goal_counts": {
+            "interior_frontier": 10,
+            "wall_surface": 15,
+            "interior_surface": 7,
+            "approach": 2,
+            "focus": 1
+          },
+          "cancellations": {
+            "inspection_due": 5,
+            "readable_marker": 1,
+            "marker_hint": 2,
+            "registered_marker": 1,
+            "navigation_stalled": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            7.599286988882613,
+            -4.848980438435453
+          ],
+          "cpu": {
+            "median_percent_one_core": 18.936902688184812,
+            "p95_percent_one_core": 22.75456436126127,
+            "max_sampled_rss_mib": 205.62109375
+          },
+          "camera_p95_age_s": 0.09199999999998454,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids"
+            ],
+            "missing_ids": [
+              32
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [
+              32
+            ],
+            "min_actual_distance_m": {
+              "32": 1.1981049145685347,
+              "103": 0.7985837860079955,
+              "7": 0.912465422894842
+            },
+            "registered_sim_s": {
+              "103": 98.184,
+              "7": 134.19199999999998
+            },
+            "registered_and_within_sim_s": {
+              "103": 98.188,
+              "7": 144.588
+            },
+            "adaptive_dispatch_counts": {
+              "wall": 15,
+              "interior": 6,
+              "frontier": 10
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 26,
+              "persistent_small_wall_candidate": 2,
+              "overdue_camera_or_frontier": 3
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 2,
+            "tiny_edge_glance_accepted": 1,
+            "nav2_goal_log": {
+              "started": 35,
+              "succeeded": 24,
+              "canceled": 11,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 1,
+            "latest_confirmed_surface_cells": 65,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 4,
+            "camera_observed_box_face_bins": 8,
+            "camera_coverage_updates": 2945,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 0.0
+      },
+      {
+        "seed": 112605,
+        "baseline": {
+          "seed": 112605,
+          "run": "v151-boxes5-track-m112605-trial5",
+          "sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -8.649999999999999,
+            -4.699999999999999,
+            -2.790642470286264
+          ],
+          "final_ids": [
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            103
+          ],
+          "wall_reg": 0,
+          "box_reg": 1,
+          "wall_near": 0,
+          "box_near": 1,
+          "strict": false,
+          "map_errors_m": {
+            "103": 0.031129682533326236
+          },
+          "elapsed_s": 600.0,
+          "distance_m": 100.8345781837402,
+          "bumps": 0,
+          "stopped_s": 43.07999999999974,
+          "selected_goal_counts": {
+            "interior_frontier": 1,
+            "interior_surface": 28
+          },
+          "cancellations": {
+            "registered_marker": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -8.650917193435967,
+            -4.7000692002953715
+          ],
+          "cpu": {
+            "median_percent_one_core": 23.195692336995712,
+            "p95_percent_one_core": 26.423899575775938,
+            "max_sampled_rss_mib": 211.18359375
+          },
+          "camera_p95_age_s": 0.08799999999999386,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids"
+            ],
+            "missing_ids": [
+              7,
+              32
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [
+              32
+            ],
+            "min_actual_distance_m": {
+              "32": 1.2846721496231572,
+              "103": 0.7782304255182638,
+              "7": 6.742422981950127
+            },
+            "registered_sim_s": {
+              "103": 152.46
+            },
+            "registered_and_within_sim_s": {
+              "103": 152.46
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 0,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 29,
+              "succeeded": 28,
+              "canceled": 1,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 5,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 17,
+            "camera_coverage_updates": 2948,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 112605,
+          "run": "v151-survey-candidate-track-m112605-1122",
+          "sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -8.649999999999999,
+            -4.699999999999999,
+            -2.790642470286264
+          ],
+          "final_ids": [
+            7,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 1,
+          "wall_near": 1,
+          "box_near": 1,
+          "strict": false,
+          "map_errors_m": {
+            "7": 0.10698053744218858,
+            "103": 0.07045014042644852
+          },
+          "elapsed_s": 600.012,
+          "distance_m": 101.58113138525448,
+          "bumps": 0,
+          "stopped_s": 66.69999999999979,
+          "selected_goal_counts": {
+            "interior_frontier": 9,
+            "wall_surface": 12,
+            "interior_surface": 8,
+            "focus": 1,
+            "approach": 1
+          },
+          "cancellations": {
+            "navigation_stalled": 3,
+            "action_timeout": 1,
+            "marker_hint": 1,
+            "registered_marker": 1,
+            "readable_marker": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -8.650917202624546,
+            -4.70006919951043
+          ],
+          "cpu": {
+            "median_percent_one_core": 18.812162762012893,
+            "p95_percent_one_core": 22.248404403855076,
+            "max_sampled_rss_mib": 210.90234375
+          },
+          "camera_p95_age_s": 0.08800000000002228,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids"
+            ],
+            "missing_ids": [
+              32
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [
+              32
+            ],
+            "min_actual_distance_m": {
+              "32": 0.6257434652165867,
+              "103": 0.5305518580702197,
+              "7": 1.1827461485122934
+            },
+            "registered_sim_s": {
+              "7": 358.332,
+              "103": 597.828
+            },
+            "registered_and_within_sim_s": {
+              "7": 358.328,
+              "103": 597.828
+            },
+            "adaptive_dispatch_counts": {
+              "wall": 12,
+              "interior": 6,
+              "frontier": 9
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 24,
+              "persistent_small_wall_candidate": 1,
+              "overdue_camera_or_frontier": 2
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 1,
+            "tiny_edge_glance_accepted": 0,
+            "nav2_goal_log": {
+              "started": 30,
+              "succeeded": 22,
+              "canceled": 8,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 3,
+            "latest_confirmed_surface_cells": 131,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 6,
+            "camera_coverage_updates": 2959,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 9.222044994985753e-09
+      },
+      {
+        "seed": 112602,
+        "baseline": {
+          "seed": 4144184517,
+          "run": "v151-boxes5-track-m112602-trial2",
+          "sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            8.05,
+            -4.35,
+            -0.4740882129646158
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            32
+          ],
+          "box_ids": [
+            7,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.011224836444065585,
+            "32": 0.05041194051210485,
+            "103": 0.05524834619812077
+          },
+          "elapsed_s": 558.604,
+          "distance_m": 94.53470891854161,
+          "bumps": 0,
+          "stopped_s": 51.38000000000011,
+          "selected_goal_counts": {
+            "interior_frontier": 1,
+            "interior_surface": 22,
+            "approach": 4,
+            "wall_surface": 2,
+            "focus": 1
+          },
+          "cancellations": {
+            "navigation_stalled": 2,
+            "marker_hint": 3,
+            "registered_marker": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            8.050899908331369,
+            -4.350223730004102
+          ],
+          "cpu": {
+            "median_percent_one_core": 22.990732433404787,
+            "p95_percent_one_core": 26.584745444044522,
+            "max_sampled_rss_mib": 208.28125
+          },
+          "camera_p95_age_s": 0.08400000000006003,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "7": 0.75877121933419,
+              "103": 0.5952251013697049,
+              "32": 1.106778806947953
+            },
+            "registered_sim_s": {
+              "7": 159.068,
+              "32": 526.644,
+              "103": 532.092
+            },
+            "registered_and_within_sim_s": {
+              "7": 159.08,
+              "103": 532.1,
+              "32": 557.04
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 2,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 29,
+              "succeeded": 22,
+              "canceled": 7,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 2,
+            "latest_confirmed_surface_cells": 11,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 15,
+            "camera_coverage_updates": 2738,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 4144184517,
+          "run": "v151-survey-candidate-track-m112602-1122",
+          "sha256": "f342d8c1d4e37e3b70a51cf096fcaa1206aee8bf29c8260efade476754204589",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            8.05,
+            -4.35,
+            -0.4740882129646158
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            32
+          ],
+          "box_ids": [
+            7,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.014962234496781609,
+            "32": 0.10056255375177486,
+            "103": 0.10612709205052323
+          },
+          "elapsed_s": 331.916,
+          "distance_m": 50.21241507100268,
+          "bumps": 0,
+          "stopped_s": 29.800000000000097,
+          "selected_goal_counts": {
+            "interior_frontier": 8,
+            "wall_surface": 6,
+            "interior_surface": 3,
+            "focus": 2,
+            "approach": 4
+          },
+          "cancellations": {
+            "inspection_due": 5,
+            "marker_hint": 3,
+            "registered_marker": 2
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            8.050899908331369,
+            -4.350223730004102
+          ],
+          "cpu": {
+            "median_percent_one_core": 19.99072729031,
+            "p95_percent_one_core": 23.43983121193674,
+            "max_sampled_rss_mib": 210.77734375
+          },
+          "camera_p95_age_s": 0.08800000000002228,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "7": 0.7661956568826331,
+              "103": 0.6169998192714059,
+              "32": 1.1462321361165004
+            },
+            "registered_sim_s": {
+              "7": 171.892,
+              "32": 302.9,
+              "103": 308.908
+            },
+            "registered_and_within_sim_s": {
+              "7": 173.37199999999999,
+              "103": 308.952,
+              "32": 330.532
+            },
+            "adaptive_dispatch_counts": {
+              "wall": 6,
+              "interior": 3,
+              "frontier": 7
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 14,
+              "overdue_camera_or_frontier": 1,
+              "persistent_small_wall_candidate": 1
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 1,
+            "tiny_edge_glance_accepted": 1,
+            "nav2_goal_log": {
+              "started": 23,
+              "succeeded": 12,
+              "canceled": 11,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 36,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 12,
+            "camera_coverage_updates": 1634,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 0.0
+      },
+      {
+        "seed": 112603,
+        "baseline": {
+          "seed": 112603,
+          "run": "v151-boxes5-track-m112603-trial3",
+          "sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -7.749999999999999,
+            -2.3999999999999995,
+            -2.1038546894514134
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            32
+          ],
+          "box_ids": [
+            7,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.021588712731377222,
+            "32": 0.0226233549228453,
+            "103": 0.0054494780553154855
+          },
+          "elapsed_s": 321.1,
+          "distance_m": 52.08980654797787,
+          "bumps": 0,
+          "stopped_s": 29.560000000000095,
+          "selected_goal_counts": {
+            "interior_frontier": 1,
+            "interior_surface": 16,
+            "focus": 1,
+            "approach": 1
+          },
+          "cancellations": {
+            "marker_hint": 3,
+            "readable_marker": 1,
+            "nav": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -7.750254705096283,
+            -2.4007471224201833
+          ],
+          "cpu": {
+            "median_percent_one_core": 23.34580477849778,
+            "p95_percent_one_core": 26.801698410394422,
+            "max_sampled_rss_mib": 211.09765625
+          },
+          "camera_p95_age_s": 0.08400000000000318,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "103": 0.5794372098367723,
+              "7": 0.8908364980306825,
+              "32": 1.0144352783578876
+            },
+            "registered_sim_s": {
+              "103": 139.548,
+              "32": 234.04,
+              "7": 320.54400000000004
+            },
+            "registered_and_within_sim_s": {
+              "103": 139.548,
+              "32": 248.628,
+              "7": 320.528
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 0,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 20,
+              "succeeded": 15,
+              "canceled": 5,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 7,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 4,
+            "camera_observed_box_face_bins": 11,
+            "camera_coverage_updates": 1572,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 112603,
+          "run": "v151-survey-candidate-track-m112603-1122",
+          "sha256": "4376f4cae81bc02700ecc42f0fcc22b302a4c602ea13a7bbb509c2ed756d618c",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -7.749999999999999,
+            -2.3999999999999995,
+            -2.1038546894514134
+          ],
+          "final_ids": [
+            32
+          ],
+          "wall_ids": [
+            32
+          ],
+          "box_ids": [
+            7,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            32
+          ],
+          "wall_reg": 1,
+          "box_reg": 0,
+          "wall_near": 1,
+          "box_near": 0,
+          "strict": false,
+          "map_errors_m": {
+            "32": 0.02270258506905967
+          },
+          "elapsed_s": 600.028,
+          "distance_m": 106.77977703336884,
+          "bumps": 0,
+          "stopped_s": 42.36000000000026,
+          "selected_goal_counts": {
+            "interior_frontier": 10,
+            "wall_surface": 13,
+            "interior_surface": 7
+          },
+          "cancellations": {
+            "inspection_due": 7,
+            "readable_marker": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -7.750254705096283,
+            -2.4007471224201833
+          ],
+          "cpu": {
+            "median_percent_one_core": 19.27432485822251,
+            "p95_percent_one_core": 22.76044975283916,
+            "max_sampled_rss_mib": 212.84765625
+          },
+          "camera_p95_age_s": 0.09199999999998454,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids"
+            ],
+            "missing_ids": [
+              7,
+              103
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [
+              103
+            ],
+            "min_actual_distance_m": {
+              "103": 1.3024161175523257,
+              "7": 1.6371420080400942,
+              "32": 0.8216675972407896
+            },
+            "registered_sim_s": {
+              "32": 106.33999999999999
+            },
+            "registered_and_within_sim_s": {
+              "32": 106.32
+            },
+            "adaptive_dispatch_counts": {
+              "wall": 13,
+              "interior": 6,
+              "frontier": 10
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 26,
+              "overdue_camera_or_frontier": 2,
+              "persistent_small_wall_candidate": 1
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 1,
+            "tiny_edge_glance_accepted": 0,
+            "nav2_goal_log": {
+              "started": 30,
+              "succeeded": 21,
+              "canceled": 9,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 80,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 7,
+            "camera_coverage_updates": 2939,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 0.0
+      },
+      {
+        "seed": 112604,
+        "baseline": {
+          "seed": 1223309082,
+          "run": "v151-boxes5-track-m112604-trial4",
+          "sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -6.299999999999999,
+            -4.85,
+            0.8823777907424963
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            103
+          ],
+          "box_ids": [
+            7,
+            32
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.04305664271304177,
+            "32": 0.03391408241478005,
+            "103": 0.04953592656468706
+          },
+          "elapsed_s": 368.46,
+          "distance_m": 58.928960011958395,
+          "bumps": 0,
+          "stopped_s": 31.860000000000106,
+          "selected_goal_counts": {
+            "interior_frontier": 1,
+            "interior_surface": 17,
+            "approach": 3,
+            "wall_surface": 1
+          },
+          "cancellations": {
+            "marker_hint": 2,
+            "registered_marker": 1,
+            "readable_marker": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -6.299316343239879,
+            -4.848948368069747
+          ],
+          "cpu": {
+            "median_percent_one_core": 23.208563828522955,
+            "p95_percent_one_core": 26.776066517399382,
+            "max_sampled_rss_mib": 205.4765625
+          },
+          "camera_p95_age_s": 0.08400000000000318,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "32": 0.6383814559962643,
+              "7": 0.6068624358574092,
+              "103": 0.8358903455887727
+            },
+            "registered_sim_s": {
+              "32": 42.44,
+              "103": 151.396,
+              "7": 238.452
+            },
+            "registered_and_within_sim_s": {
+              "32": 42.504,
+              "7": 238.464,
+              "103": 364.144
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 1,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 20,
+              "succeeded": 18,
+              "canceled": 2,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 47,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 16,
+            "camera_coverage_updates": 1798,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 1223309082,
+          "run": "v151-survey-candidate-track-m112604-1122",
+          "sha256": "110107f785287d41a85bc3cccd4b4f091826b727b175ecc0b14c926ac84b2f47",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -6.299999999999999,
+            -4.85,
+            0.8823777907424963
+          ],
+          "final_ids": [],
+          "wall_ids": [
+            103
+          ],
+          "box_ids": [
+            7,
+            32
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [],
+          "wall_reg": 0,
+          "box_reg": 0,
+          "wall_near": 0,
+          "box_near": 0,
+          "strict": false,
+          "map_errors_m": {},
+          "elapsed_s": 600.012,
+          "distance_m": 101.50819880416483,
+          "bumps": 0,
+          "stopped_s": 49.70000000000008,
+          "selected_goal_counts": {
+            "interior_frontier": 8,
+            "wall_surface": 12,
+            "interior_surface": 9
+          },
+          "cancellations": {
+            "inspection_due": 3,
+            "navigation_stalled": 1,
+            "readable_marker": 2
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -6.299316343239879,
+            -4.848948368069747
+          ],
+          "cpu": {
+            "median_percent_one_core": 19.70126065489906,
+            "p95_percent_one_core": 23.14246802033588,
+            "max_sampled_rss_mib": 208.046875
+          },
+          "camera_p95_age_s": 0.09199999999998454,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids"
+            ],
+            "missing_ids": [
+              7,
+              32,
+              103
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [
+              32
+            ],
+            "min_actual_distance_m": {
+              "32": 1.1258582858445891,
+              "7": 1.6197798216317947,
+              "103": 2.550145917827331
+            },
+            "registered_sim_s": {},
+            "registered_and_within_sim_s": {},
+            "adaptive_dispatch_counts": {
+              "wall": 12,
+              "interior": 8,
+              "frontier": 7
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 22,
+              "persistent_small_wall_candidate": 2,
+              "overdue_camera_or_frontier": 3
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 2,
+            "tiny_edge_glance_accepted": 0,
+            "nav2_goal_log": {
+              "started": 29,
+              "succeeded": 22,
+              "canceled": 7,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 1,
+            "latest_confirmed_surface_cells": 67,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 5,
+            "camera_observed_box_face_bins": 11,
+            "camera_coverage_updates": 2936,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 0.0
+      }
+    ],
+    "summary": {
+      "baseline": {
+        "wall_reg": 3,
+        "box_reg": 9,
+        "wall_near": 3,
+        "box_near": 9,
+        "strict": 3,
+        "bumps": 0,
+        "duplicate_selections": 1,
+        "mean_elapsed_s": 489.6336,
+        "mean_distance_m": 83.77781194727584,
+        "mean_stopped_s": 38.58800000000004,
+        "n": 5
+      },
+      "candidate": {
+        "wall_reg": 4,
+        "box_reg": 4,
+        "wall_near": 4,
+        "box_near": 4,
+        "strict": 1,
+        "bumps": 0,
+        "duplicate_selections": 0,
+        "mean_elapsed_s": 546.3936,
+        "mean_distance_m": 91.46161048341727,
+        "mean_stopped_s": 49.49200000000007,
+        "n": 5
+      }
+    },
+    "planned": [
+      112601,
+      112605,
+      112602,
+      112603,
+      112604
+    ]
+  },
+  "heldout": {
+    "pairs": [
+      {
+        "seed": 112801,
+        "baseline": {
+          "seed": 112801,
+          "run": "v151-survey-baseline-heldout-m112801-1122",
+          "sha256": "87d978efa4140237c5d99b00174191767559d4bf1867cc233fe0dab0c829a4ba",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -3.3,
+            0.0,
+            0.0
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.009046534556138585,
+            "32": 0.013370679369444052,
+            "103": 0.026707516248117413
+          },
+          "elapsed_s": 84.224,
+          "distance_m": 13.677902648264329,
+          "bumps": 0,
+          "stopped_s": 8.179999999999966,
+          "selected_goal_counts": {
+            "interior_frontier": 2,
+            "wall_surface": 1,
+            "focus": 2,
+            "approach": 2,
+            "interior_surface": 1
+          },
+          "cancellations": {
+            "registered_marker": 3,
+            "inspection_due": 1,
+            "marker_hint": 2
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -3.2984159584897146,
+            -2.2968624718269366e-06
+          ],
+          "cpu": {
+            "median_percent_one_core": 27.75884342369012,
+            "p95_percent_one_core": 31.500137143719616,
+            "max_sampled_rss_mib": 204.4609375
+          },
+          "camera_p95_age_s": 0.0920000000000023,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "32": 0.7796766710354002,
+              "103": 1.1001249856794444,
+              "7": 1.0223083116542153
+            },
+            "registered_sim_s": {
+              "32": 2.1960000000000006,
+              "7": 66.22,
+              "103": 78.22
+            },
+            "registered_and_within_sim_s": {
+              "32": 2.2039999999999997,
+              "7": 66.684,
+              "103": 82.664
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 1,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 8,
+              "succeeded": 3,
+              "canceled": 5,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 0,
+            "latest_confirmed_surface_cells": 16,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 1,
+            "camera_observed_box_face_bins": 1,
+            "camera_coverage_updates": 445,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 112801,
+          "run": "v151-survey-candidate-heldout-m112801-1122",
+          "sha256": "87d978efa4140237c5d99b00174191767559d4bf1867cc233fe0dab0c829a4ba",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -3.3,
+            0.0,
+            0.0
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.009420930838900778,
+            "32": 0.012573860525596984,
+            "103": 0.016387419824821937
+          },
+          "elapsed_s": 137.99599999999998,
+          "distance_m": 17.2705346204327,
+          "bumps": 0,
+          "stopped_s": 15.579999999999941,
+          "selected_goal_counts": {
+            "interior_frontier": 4,
+            "wall_surface": 2,
+            "focus": 2,
+            "approach": 2,
+            "interior_surface": 1
+          },
+          "cancellations": {
+            "registered_marker": 3,
+            "navigation_stalled": 1,
+            "marker_hint": 2
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -3.2984159584897146,
+            -2.2968624718269366e-06
+          ],
+          "cpu": {
+            "median_percent_one_core": 24.003139489430282,
+            "p95_percent_one_core": 27.969145264942888,
+            "max_sampled_rss_mib": 205.98046875
+          },
+          "camera_p95_age_s": 0.10000000000000142,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "32": 0.7439734142278349,
+              "103": 1.1526212859317995,
+              "7": 0.7852873320516409
+            },
+            "registered_sim_s": {
+              "32": 2.444000000000001,
+              "7": 111.968,
+              "103": 131.952
+            },
+            "registered_and_within_sim_s": {
+              "32": 2.452,
+              "7": 112.272,
+              "103": 136.612
+            },
+            "adaptive_dispatch_counts": {
+              "wall": 2,
+              "interior": 1,
+              "frontier": 4
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 6,
+              "overdue_camera_or_frontier": 1
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 0,
+            "tiny_edge_glance_accepted": 0,
+            "nav2_goal_log": {
+              "started": 11,
+              "succeeded": 5,
+              "canceled": 6,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 1,
+            "latest_confirmed_surface_cells": 21,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 1,
+            "camera_observed_box_face_bins": 1,
+            "camera_coverage_updates": 711,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 0.0
+      },
+      {
+        "seed": 112802,
+        "baseline": {
+          "seed": 112802,
+          "run": "v151-survey-baseline-heldout-m112802-1122",
+          "sha256": "8631368ab11cb5437ee6cb3b0e4e8eeb940491d4379340250fc20bdebfdd7b9b",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -3.3,
+            -1.75,
+            0.2
+          ],
+          "final_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            32,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 2,
+          "wall_near": 1,
+          "box_near": 2,
+          "strict": true,
+          "map_errors_m": {
+            "7": 0.02866830175402366,
+            "32": 0.008783869558204736,
+            "103": 0.03842508035755648
+          },
+          "elapsed_s": 223.812,
+          "distance_m": 27.920697677038135,
+          "bumps": 0,
+          "stopped_s": 25.739999999999966,
+          "selected_goal_counts": {
+            "interior_frontier": 1,
+            "interior_surface": 10,
+            "approach": 3,
+            "print": 1,
+            "focus": 1
+          },
+          "cancellations": {
+            "navigation_stalled": 1,
+            "marker_hint": 2,
+            "readable_marker": 1,
+            "registered_marker": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -3.2990556626574583,
+            -1.7499811919742647
+          ],
+          "cpu": {
+            "median_percent_one_core": 21.974224059766925,
+            "p95_percent_one_core": 28.0512959904845,
+            "max_sampled_rss_mib": 201.44140625
+          },
+          "camera_p95_age_s": 0.10000000000000142,
+          "mission": {
+            "policy_outcome": "all_registered_and_within_1.5m",
+            "failed_criteria": [],
+            "missing_ids": [],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [],
+            "min_actual_distance_m": {
+              "7": 0.9145248479693541,
+              "32": 0.5946757732426119,
+              "103": 0.6158083693311341
+            },
+            "registered_sim_s": {
+              "7": 104.3,
+              "103": 150.32,
+              "32": 216.816
+            },
+            "registered_and_within_sim_s": {
+              "7": 110.26,
+              "103": 158.2,
+              "32": 222.22
+            },
+            "adaptive_dispatch_counts": null,
+            "adaptive_reason_counts": null,
+            "reopened_face_dispatches": null,
+            "weak_wall_dispatches": 0,
+            "tiny_edge_glance_accepted": null,
+            "nav2_goal_log": {
+              "started": 16,
+              "succeeded": 12,
+              "canceled": 4,
+              "failed": 0,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 1,
+            "latest_confirmed_surface_cells": 38,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 3,
+            "camera_observed_box_face_bins": 8,
+            "camera_coverage_updates": 1124,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "candidate": {
+          "seed": 112802,
+          "run": "v151-survey-candidate-heldout-m112802-1122",
+          "sha256": "8631368ab11cb5437ee6cb3b0e4e8eeb940491d4379340250fc20bdebfdd7b9b",
+          "expected_ids": [
+            7,
+            32,
+            103
+          ],
+          "configured_start": [
+            -3.3,
+            -1.75,
+            0.2
+          ],
+          "final_ids": [
+            7,
+            103
+          ],
+          "wall_ids": [
+            7
+          ],
+          "box_ids": [
+            32,
+            103
+          ],
+          "unexpected_ids": [],
+          "verified_near_ids": [
+            7,
+            103
+          ],
+          "wall_reg": 1,
+          "box_reg": 1,
+          "wall_near": 1,
+          "box_near": 1,
+          "strict": false,
+          "map_errors_m": {
+            "7": 0.3443038351489941,
+            "103": 0.014885015973693034
+          },
+          "elapsed_s": 600.004,
+          "distance_m": 75.60410228010036,
+          "bumps": 0,
+          "stopped_s": 102.80000000000027,
+          "selected_goal_counts": {
+            "interior_frontier": 5,
+            "approach": 2,
+            "wall_surface": 21,
+            "interior_surface": 9,
+            "flow": 20
+          },
+          "cancellations": {
+            "marker_hint": 2,
+            "registered_marker": 1,
+            "navigation_stalled": 1,
+            "inspection_due": 1
+          },
+          "duplicate_selections": 0,
+          "settled_start_world_xy": [
+            -3.2990556626574583,
+            -1.7499811919742647
+          ],
+          "cpu": {
+            "median_percent_one_core": 22.0791673934733,
+            "p95_percent_one_core": 27.04913875632741,
+            "max_sampled_rss_mib": 203.94921875
+          },
+          "camera_p95_age_s": 0.103999999999985,
+          "mission": {
+            "policy_outcome": "common_time_limit",
+            "failed_criteria": [
+              "some_expected_ids_missing",
+              "incomplete_original_sensor_proof",
+              "missing_saved_map_ids",
+              "saved_map_error_above_0_25m"
+            ],
+            "missing_ids": [
+              32
+            ],
+            "unexpected_ids": [],
+            "missing_after_registration_near_ids": [],
+            "physically_within_1_5m_without_registration": [
+              32
+            ],
+            "min_actual_distance_m": {
+              "7": 0.6062965760909825,
+              "32": 0.7342546265029781,
+              "103": 0.6261232792778344
+            },
+            "registered_sim_s": {
+              "7": 45.732,
+              "103": 141.228
+            },
+            "registered_and_within_sim_s": {
+              "7": 51.208,
+              "103": 143.788
+            },
+            "adaptive_dispatch_counts": {
+              "wall": 21,
+              "interior": 9,
+              "frontier": 5
+            },
+            "adaptive_reason_counts": {
+              "unseen_gain_per_travel": 34,
+              "overdue_camera_or_frontier": 1
+            },
+            "reopened_face_dispatches": 0,
+            "weak_wall_dispatches": 0,
+            "tiny_edge_glance_accepted": 0,
+            "nav2_goal_log": {
+              "started": 57,
+              "succeeded": 32,
+              "canceled": 4,
+              "failed": 21,
+              "terminal_not_matched": 0
+            },
+            "stall_cancellations": 1,
+            "latest_confirmed_surface_cells": 2,
+            "latest_confirmed_face_anchors": 0,
+            "confirmed_box_tracks": 3,
+            "camera_observed_box_face_bins": 4,
+            "camera_coverage_updates": 2937,
+            "verified_four_face_objects": null,
+            "instrumentation": "Class counts reflect policy dispatch callbacks. Nav2 lines cover full launch without per-goal identity join. Last status exposes global face evidence, omits a per-object four-face ledger. Null indicates unavailable."
+          }
+        },
+        "settled_start_distance_m": 0.0
+      }
+    ],
+    "summary": {
+      "baseline": {
+        "wall_reg": 2,
+        "box_reg": 4,
+        "wall_near": 2,
+        "box_near": 4,
+        "strict": 2,
+        "bumps": 0,
+        "duplicate_selections": 0,
+        "mean_elapsed_s": 154.018,
+        "mean_distance_m": 20.79930016265123,
+        "mean_stopped_s": 16.959999999999965,
+        "n": 2
+      },
+      "candidate": {
+        "wall_reg": 2,
+        "box_reg": 3,
+        "wall_near": 2,
+        "box_near": 3,
+        "strict": 1,
+        "bumps": 0,
+        "duplicate_selections": 0,
+        "mean_elapsed_s": 369.0,
+        "mean_distance_m": 46.43731845026653,
+        "mean_stopped_s": 59.190000000000104,
+        "n": 2
+      }
+    },
+    "planned": [
+      112801,
+      112802
+    ]
+  },
+  "complete": true
+}

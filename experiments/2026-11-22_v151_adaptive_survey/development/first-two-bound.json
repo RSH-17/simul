@@ -1,0 +1,141 @@
+{
+  "role": "recorded engineering screen, first two prespecified seeds only",
+  "paired_worlds": [
+    {
+      "seed": 112601,
+      "settled_start_distance_m": 0.0,
+      "baseline": {
+        "run": "v151-boxes5-track-m112601-trial1",
+        "sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_ids": [
+          7
+        ],
+        "box_ids": [
+          32,
+          103
+        ],
+        "final_ids": [
+          32,
+          103
+        ],
+        "verified_near_ids": [
+          32,
+          103
+        ],
+        "strict": false,
+        "elapsed_s": 600.004,
+        "distance_m": 112.5010060741611,
+        "bumps": 0
+      },
+      "candidate": {
+        "run": "v151-survey-candidate-track-m112601-1122",
+        "sha256": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_ids": [
+          7
+        ],
+        "box_ids": [
+          32,
+          103
+        ],
+        "final_ids": [
+          7,
+          103
+        ],
+        "verified_near_ids": [
+          7,
+          103
+        ],
+        "strict": false,
+        "elapsed_s": 600.0,
+        "distance_m": 97.22653012329553,
+        "bumps": 0
+      }
+    },
+    {
+      "seed": 112605,
+      "settled_start_distance_m": 9.222044994985753e-09,
+      "baseline": {
+        "run": "v151-boxes5-track-m112605-trial5",
+        "sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_ids": [
+          7
+        ],
+        "box_ids": [
+          32,
+          103
+        ],
+        "final_ids": [
+          103
+        ],
+        "verified_near_ids": [
+          103
+        ],
+        "strict": false,
+        "elapsed_s": 600.0,
+        "distance_m": 100.8345781837402,
+        "bumps": 0
+      },
+      "candidate": {
+        "run": "v151-survey-candidate-track-m112605-1122",
+        "sha256": "e89be1f30115abd148b134467e3c77e1ea5dff05dd71465270330125cf611a5f",
+        "expected_ids": [
+          7,
+          32,
+          103
+        ],
+        "wall_ids": [
+          7
+        ],
+        "box_ids": [
+          32,
+          103
+        ],
+        "final_ids": [
+          7,
+          103
+        ],
+        "verified_near_ids": [
+          7,
+          103
+        ],
+        "strict": false,
+        "elapsed_s": 600.012,
+        "distance_m": 101.58113138525448,
+        "bumps": 0
+      }
+    }
+  ],
+  "observed": {
+    "baseline": {
+      "strict": 0,
+      "bumps": 0,
+      "wall_near": 0,
+      "box_near": 3
+    },
+    "candidate": {
+      "strict": 0,
+      "bumps": 0,
+      "wall_near": 2,
+      "box_near": 2
+    }
+  },
+  "original_five_box_near": 9,
+  "remaining_possible_box_near": 6,
+  "best_possible_five_box_near": 8,
+  "r2_eligibility_ruled_out": true
+}

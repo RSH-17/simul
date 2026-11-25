@@ -1,0 +1,33 @@
+{
+  "policy": "Mixed v1.2",
+  "physical_deployed": false,
+  "physical_validated": false,
+  "units": "square RGB dimensions, not 640x480 480p",
+  "profiles": [
+    {
+      "name": "low_transport_first_test",
+      "width": 480,
+      "height": 480,
+      "fps": 5
+    },
+    {
+      "name": "passing_glance_test",
+      "width": 480,
+      "height": 480,
+      "fps": 10
+    },
+    {
+      "name": "distant_detail_test",
+      "width": 640,
+      "height": 640,
+      "fps": 5
+    }
+  ],
+  "fallback": {
+    "width": 250,
+    "height": 250,
+    "fps": 10,
+    "source": "last recorded physical bag, not a fresh live measurement"
+  },
+  "warning": "Simulation shortlist only. Validate OAK-D support, real transport and robot health before deployment."
+}

@@ -1,0 +1,141 @@
+{
+  "environment": "offline Mac CPU, four alternating calls per saved input",
+  "saved_run": "center-track-1XdW3igN",
+  "exact_equal": true,
+  "rows": [
+    {
+      "file": "0000.npz",
+      "sha256": "12ead0a00e530f5c0faa9ed7e4045f2126d0a1772c92f4cdad32b4519f11bb52",
+      "shape": [
+        268,
+        262
+      ],
+      "reachable": 759,
+      "baseline_ms": 5.610562511719763,
+      "candidate_ms": 4.016936989501119
+    },
+    {
+      "file": "0004.npz",
+      "sha256": "c6776bd6e638bc42cd361c5ba0c7112fcaa25d838c9d05908653bf097177942a",
+      "shape": [
+        316,
+        270
+      ],
+      "reachable": 26798,
+      "baseline_ms": 109.25510450033471,
+      "candidate_ms": 9.317708085291088
+    },
+    {
+      "file": "0009.npz",
+      "sha256": "b082cc7414c00f2432ae7c127137a59001a717fadba3780fce492658dca30e29",
+      "shape": [
+        404,
+        275
+      ],
+      "reachable": 54222,
+      "baseline_ms": 199.38549998914823,
+      "candidate_ms": 13.21839599404484
+    },
+    {
+      "file": "0013.npz",
+      "sha256": "d6b3e93b5a69a812b0cd3c88ebcd3c54000d102f57d4a1e4103abe5384e4efe4",
+      "shape": [
+        405,
+        276
+      ],
+      "reachable": 58335,
+      "baseline_ms": 203.05666705826297,
+      "candidate_ms": 13.862417021300644
+    },
+    {
+      "file": "0018.npz",
+      "sha256": "bca3839a0489b4f9cc3523303f9ea897fdde188dd02e6b4eb2e348c1d5008b11",
+      "shape": [
+        405,
+        276
+      ],
+      "reachable": 58292,
+      "baseline_ms": 179.9267499591224,
+      "candidate_ms": 13.971999986097217
+    },
+    {
+      "file": "0022.npz",
+      "sha256": "b14570e45b159f49da563874996520dc237fc8c7b20c3f78eb04e3383cb90088",
+      "shape": [
+        405,
+        275
+      ],
+      "reachable": 58343,
+      "baseline_ms": 162.62160398764536,
+      "candidate_ms": 11.020500038284808
+    },
+    {
+      "file": "0027.npz",
+      "sha256": "480d7b16fc97c93bb69b4dd83d65807b35d9e46a982ddda058c7e225c8cddb3e",
+      "shape": [
+        405,
+        275
+      ],
+      "reachable": 58327,
+      "baseline_ms": 177.64308355981484,
+      "candidate_ms": 12.681208492722362
+    },
+    {
+      "file": "0031.npz",
+      "sha256": "da55dca86b716c64294876dff9197401800ed024097236ef91fdf9ae22fcecf7",
+      "shape": [
+        405,
+        275
+      ],
+      "reachable": 58445,
+      "baseline_ms": 168.15695847617462,
+      "candidate_ms": 11.064771038945764
+    },
+    {
+      "file": "0036.npz",
+      "sha256": "47db057f240a0f503848bfc334fe7fb21f47dbee4a38f0cd74839bfe5526831a",
+      "shape": [
+        421,
+        277
+      ],
+      "reachable": 64817,
+      "baseline_ms": 194.31322952732444,
+      "candidate_ms": 12.5467085163109
+    },
+    {
+      "file": "0040.npz",
+      "sha256": "604e1ec666ca9b4f8e9566eaa9e3d401dbde6695d0884177d4275cb351f88a53",
+      "shape": [
+        422,
+        277
+      ],
+      "reachable": 69719,
+      "baseline_ms": 224.84422894194722,
+      "candidate_ms": 15.878208447247744
+    },
+    {
+      "file": "0045.npz",
+      "sha256": "b03366fe4289c8f031f1c29096e34ebdbe1e7fc1e7a635471cfc96c95ada9b50",
+      "shape": [
+        422,
+        277
+      ],
+      "reachable": 70245,
+      "baseline_ms": 252.82041647005826,
+      "candidate_ms": 16.352208447642624
+    },
+    {
+      "file": "0050.npz",
+      "sha256": "ea9ae95151468f9f0e05d049a3868a83191acbc8583a3cb322f676dc62a06ee4",
+      "shape": [
+        422,
+        277
+      ],
+      "reachable": 70405,
+      "baseline_ms": 249.92183345602825,
+      "candidate_ms": 16.371125064324588
+    }
+  ],
+  "median_baseline_ms": 187.1199897432234,
+  "median_candidate_ms": 12.949802243383601
+}

@@ -1,0 +1,78 @@
+{
+  "episodes": [
+    {
+      "name": "v151-survey-baseline-track-m647911238-1066999508311362768",
+      "original_display_m": 99.93930735712203,
+      "corrected_display_m": 37.12561468050636,
+      "world_m": 37.13249640272645,
+      "final_state": "FINISHED",
+      "sim_s": 258.816,
+      "absolute_error_m": 0.0068817222200934225
+    },
+    {
+      "name": "v151-survey-candidate-track-m647911238-1066999508311362768",
+      "original_display_m": 256.9959758877687,
+      "corrected_display_m": 97.16357326654087,
+      "world_m": 97.17600640439329,
+      "final_state": "FINISHED",
+      "sim_s": 599.976,
+      "absolute_error_m": 0.012433137852426057
+    },
+    {
+      "name": "v151-survey-candidate-track-m545514539-663389709141213120",
+      "original_display_m": 261.896892360579,
+      "corrected_display_m": 99.26353498909974,
+      "world_m": 99.27625434698017,
+      "final_state": "FINISHED",
+      "sim_s": 599.856,
+      "absolute_error_m": 0.012719357880428106
+    },
+    {
+      "name": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "original_display_m": 220.2668936634676,
+      "corrected_display_m": 82.66080312496476,
+      "world_m": 82.67279495763925,
+      "final_state": "FINISHED",
+      "sim_s": 530.12,
+      "absolute_error_m": 0.01199183267449655
+    },
+    {
+      "name": "v151-survey-baseline-track-m3280183581-269900596522503902",
+      "original_display_m": 61.88317615350875,
+      "corrected_display_m": 22.57667442493561,
+      "world_m": 22.579304746066814,
+      "final_state": "FINISHED",
+      "sim_s": 129.016,
+      "absolute_error_m": 0.002630321131203317
+    },
+    {
+      "name": "v151-survey-candidate-track-m3280183581-269900596522503902",
+      "original_display_m": 118.21752193809763,
+      "corrected_display_m": 42.72898650914639,
+      "world_m": 42.73347493790372,
+      "final_state": "FINISHED",
+      "sim_s": 238.788,
+      "absolute_error_m": 0.0044884287573339066
+    },
+    {
+      "name": "v151-survey-candidate-track-m2437656298-526684097893377877",
+      "original_display_m": 260.45586497929025,
+      "corrected_display_m": 97.21116684115769,
+      "world_m": 97.22307787218325,
+      "final_state": "FINISHED",
+      "sim_s": 599.988,
+      "absolute_error_m": 0.011911031025562124
+    },
+    {
+      "name": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "original_display_m": 203.54499617929565,
+      "corrected_display_m": 75.74562332293706,
+      "world_m": 75.76649772758327,
+      "final_state": "FINISHED",
+      "sim_s": 599.956,
+      "absolute_error_m": 0.020874404646207267
+    }
+  ],
+  "reader_original_sha256": "17ef2c90e487eb8699ca4b2597e01ebb2bb6e9fd01b025323c22460785dddf1a",
+  "reader_corrected_sha256": "c9d030aec14c4615414abc95b5e24821a110a836e46a534e720ca25956ce0b46"
+}

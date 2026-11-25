@@ -1,0 +1,24 @@
+{
+  "settings": 15,
+  "replay_clips": 2,
+  "sampling_phases": 3,
+  "derived_replay_cases": 90,
+  "selection_clip": "v12-reference-640px-15fps-m112021-expanded1120-retry2",
+  "held_out_replay_clip": "v12-reference-640px-15fps-m112022-expanded1120",
+  "native_candidates": [
+    [
+      480,
+      5
+    ],
+    [
+      640,
+      5
+    ],
+    [
+      480,
+      10
+    ]
+  ],
+  "selection_rule": "Preserve 480/5; choose two distinct alternatives under 60 Mbps and decode headroom, using only map 112021",
+  "no_physical_safety_certification": true
+}

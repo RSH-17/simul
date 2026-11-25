@@ -53,7 +53,7 @@ def test_get_and_cross_origin_requests_never_start(board_server):
     control.request.assert_not_called()
 
 
-@pytest.mark.parametrize('action', ['start', 'start-v3-mppi', 'start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-upstream-r32', 'stop'])
+@pytest.mark.parametrize('action', ['start', 'start-v3-mppi', 'start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-cluster-exit', 'start-marker-relook', 'start-marker-relook-045', 'start-stall-recovery', 'start-crowded', 'start-balanced', 'start-focus', 'start-upstream-r32', 'stop'])
 def test_authorized_post_dispatches_exactly_one_action(board_server, action):
     url, control = board_server
     request = Request(url + '/api/control/' + action, data=b'{}', headers={
@@ -142,14 +142,28 @@ def test_board_start_supplies_wired_dds_even_without_launcher_environment(tmp_pa
                                                 ('start-corner','flow_v3_r32_corner_ws'),
                                                 ('start-side','flow_v3_r32_side_ws'),
                                                 ('start-general','flow_v3_r32_general_ws'),
-                                                ('start-center','flow_v3_r32_center_ws')])
+                                                ('start-center','flow_v3_r32_center_ws'),
+                                                ('start-wall-cues','flow_v3_r32_wall_cues_final_ws'),
+                                                ('start-cluster-exit','flow_v3_r32_cluster_exit_ws'),
+                                                ('start-marker-relook','flow_v3_r32_marker_relook_ws'),
+                                                ('start-marker-relook-045','flow_v3_r32_marker_relook_ws'),
+                                                ('start-stall-recovery','flow_v3_r32_smooth030_ws'),
+                                                ('start-crowded','flow_v3_r32_crowded_ws'),
+                                                ('start-balanced','flow_v151_exposure_sync_r2_ws'),
+                                                ('start-focus','v152_focus_continuity_box1122_ws')])
 def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(tmp_path, action, workspace):
     board = BoardControl(tmp_path, tmp_path/'baseline', 184, state_dir=tmp_path)
     cmd = board.command(action)
     assert cmd[cmd.index('--workspace')+1] == str(tmp_path/workspace)
     assert cmd[cmd.index('--')+1:].count('start') == 1
     assert '2026-11-13_face_intent_v2/policy.json' in cmd[cmd.index('--policy')+1]
-    assert ('--side-inspection' in cmd) == (action in ('start-side', 'start-general'))
+    assert ('--share-camera' in cmd) == (action in ('start-focus', 'start-balanced'))
+    assert ('--forward-045' in cmd) == (action == 'start-marker-relook-045')
+    assert ('--recover-stall' in cmd) == (action in ('start-stall-recovery','start-crowded'))
+    if action in ('start-side', 'start-general'):
+        assert '--side-inspection' in cmd
+    else:
+        assert '--side-inspection' not in cmd
     with patch.object(board, 'spawn', return_value=(process(1), tmp_path/'start.log')):
         board.request(action)
         with pytest.raises(RuntimeError):
@@ -164,8 +178,29 @@ def test_upstream_separate_detector_common_stop_and_interlock(tmp_path):
     assert '--policy' not in cmd and 'run_policy.sh' not in ' '.join(cmd)
     with patch.object(board, 'spawn', return_value=(process(123), tmp_path/'cmd.log')):
         assert board.request('start-upstream-r32')['policy'] == '원본 · R32'
-        for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-v3-mppi'):
+        for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-cluster-exit', 'start-marker-relook', 'start-marker-relook-045', 'start-stall-recovery', 'start-crowded', 'start-v3-mppi'):
             with pytest.raises(RuntimeError):
                 board.request(action)
         with patch('robot_board_control.os.killpg'):
             assert board.request('stop')['phase'] == 'stopping'
+
+def test_operator_menu_lists_prepared_workspaces_without_starting(tmp_path):
+    installed = tmp_path / "v152_focus_continuity_box1122_ws/install/setup.bash"
+    installed.parent.mkdir(parents=True)
+    installed.touch()
+    board = BoardControl(tmp_path, tmp_path/"baseline", 4, state_dir=tmp_path)
+    with patch.object(board, "spawn") as spawn:
+        menu = board.snapshot()["policies"]
+        assert [item["action"] for item in menu] == ["start-focus"]
+        spawn.assert_not_called()
+
+
+def test_focus_uses_enrolled_settings_and_wired_transport(tmp_path):
+    board = BoardControl(tmp_path, tmp_path/"baseline", 4, state_dir=tmp_path)
+    with patch("robot_board_control.subprocess.Popen") as launch:
+        board.spawn("start-focus")
+    env = launch.call_args.kwargs["env"]
+    assert env["OSP_PUBLIC_MARKER_COUNT"] == "3"
+    assert env["OSP_SURVEY_DISTANT_HINTS"] == "false"
+    assert env["ROS_DOMAIN_ID"] == "4"
+    assert env["FASTRTPS_DEFAULT_PROFILES_FILE"].endswith("wired_flow_v3/fastdds_vm.xml")

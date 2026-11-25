@@ -1,0 +1,332 @@
+{
+  "scope": "Only development map 112601. Interpolate Gazebo planar body truth at actual recorded camera exposure timestamps. Compose recorded simulator camera-to-base transform; no body pitch/roll. Draw ideal black square using native camera K, printed-side SDF sign, scene size and actual black cell plane. Require all projected corners at least 4 native pixels inside, shortest projected side >=18 px. Ray test the four corners and center against static SDF visual boxes at task height. Five clear samples do not prove an unoccluded interior, sufficient contrast, raw input or decodability. Ignore static floor plane and marker cell geometry as occluders. Near means body <=1.5m from tag. Exposure duration weighted by next frame interval capped at 0.3 s, stationary means <0.03 m/s and |yaw rate|<0.09 rad/s. Geographical directions are camera position from tag. Online read/registration/physical approach metrics come from the saved run, separately.",
+  "runs": {
+    "balanced": {
+      "run": "v151-boxes5-track-m112601-trial1",
+      "source_sha256": {
+        "scene.json": "99e740f800a276e7c718bbf037f9f87645cce5261cacae08e243d9a97ecf9662",
+        "headings.csv": "1aec2ed0834fffc529e54664ac1478c970ed7fe7e84eb4bc180972453d539a84",
+        "frames.csv": "7a152ca9915cd414e819f293a2fef410abcc41680ec3ab285d8bd7bdf48df40e",
+        "world/osp_studio.sdf": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "metrics.json": "ddf7590a6a8ba2190e7603df77dbbc0b9fa82df58b2bb08405fa0c017fbb44a9"
+      },
+      "static_blockers_at_task_height": 88,
+      "targets": {
+        "32": {
+          "printed_normal_xy": [
+            -1.0,
+            -0.0
+          ],
+          "printed_side_sdf_x_sign": -1.0,
+          "physical_near_frames": 107,
+          "physical_near_s": 21.4,
+          "physical_near_spans": [
+            [
+              343.368,
+              364.568,
+              107
+            ]
+          ],
+          "near_quasistationary_s": 3.8,
+          "near_direction_s": {
+            "east": 0.0,
+            "north": 21.4,
+            "west": 0.0,
+            "south": 0.0
+          },
+          "near_incidence_s": {
+            "front_to_60_deg": 8.2,
+            "front_oblique": 11.4,
+            "behind": 1.8
+          },
+          "front_in_fov_18px_frames": 25,
+          "center_ray_clear_18px_frames": 25,
+          "five_rays_clear_18px_frames": 25,
+          "five_rays_clear_18px_within_1p5m_frames": 25,
+          "first_5ray_18px_s": 354.568,
+          "five_rays_clear_18px_frames_before_registration": 3,
+          "near_5ray_18px_spans": [
+            [
+              354.568,
+              359.368,
+              25
+            ]
+          ],
+          "small_6_to_lt18_px": {
+            "clear_all": 51,
+            "partial_1_to_4_rays_clear": 0,
+            "all_five_blocked": 0
+          },
+          "online_decoded_count": 29,
+          "registered_s": 355.128,
+          "registered_then_actual_near_s": 355.144
+        },
+        "103": {
+          "printed_normal_xy": [
+            1.0,
+            -1.2246467991473532e-16
+          ],
+          "printed_side_sdf_x_sign": -1.0,
+          "physical_near_frames": 172,
+          "physical_near_s": 34.4,
+          "physical_near_spans": [
+            [
+              67.368,
+              101.568,
+              172
+            ]
+          ],
+          "near_quasistationary_s": 4.8,
+          "near_direction_s": {
+            "east": 10.4,
+            "north": 0.0,
+            "west": 6.6,
+            "south": 17.4
+          },
+          "near_incidence_s": {
+            "front_to_60_deg": 11.8,
+            "front_oblique": 12.8,
+            "behind": 9.8
+          },
+          "front_in_fov_18px_frames": 93,
+          "center_ray_clear_18px_frames": 93,
+          "five_rays_clear_18px_frames": 93,
+          "five_rays_clear_18px_within_1p5m_frames": 66,
+          "first_5ray_18px_s": 55.768,
+          "five_rays_clear_18px_frames_before_registration": 31,
+          "near_5ray_18px_spans": [
+            [
+              67.368,
+              76.968,
+              49
+            ],
+            [
+              82.968,
+              86.168,
+              17
+            ]
+          ],
+          "small_6_to_lt18_px": {
+            "clear_all": 37,
+            "partial_1_to_4_rays_clear": 0,
+            "all_five_blocked": 0
+          },
+          "online_decoded_count": 97,
+          "registered_s": 68.152,
+          "registered_then_actual_near_s": 68.144
+        },
+        "7": {
+          "printed_normal_xy": [
+            -6.123233995736766e-17,
+            1.0
+          ],
+          "printed_side_sdf_x_sign": -1.0,
+          "physical_near_frames": 0,
+          "physical_near_s": 0.0,
+          "physical_near_spans": [],
+          "near_quasistationary_s": 0.0,
+          "near_direction_s": {
+            "east": 0.0,
+            "north": 0.0,
+            "west": 0.0,
+            "south": 0.0
+          },
+          "near_incidence_s": {
+            "front_to_60_deg": 0.0,
+            "front_oblique": 0.0,
+            "behind": 0.0
+          },
+          "front_in_fov_18px_frames": 0,
+          "center_ray_clear_18px_frames": 0,
+          "five_rays_clear_18px_frames": 0,
+          "five_rays_clear_18px_within_1p5m_frames": 0,
+          "first_5ray_18px_s": null,
+          "five_rays_clear_18px_frames_before_registration": 0,
+          "near_5ray_18px_spans": [],
+          "small_6_to_lt18_px": {
+            "clear_all": 2,
+            "partial_1_to_4_rays_clear": 52,
+            "all_five_blocked": 58
+          },
+          "online_decoded_count": 0,
+          "registered_s": null,
+          "registered_then_actual_near_s": null
+        }
+      }
+    },
+    "r2": {
+      "run": "v151-survey-candidate-track-m112601-1122",
+      "source_sha256": {
+        "scene.json": "99e740f800a276e7c718bbf037f9f87645cce5261cacae08e243d9a97ecf9662",
+        "headings.csv": "f8f13fd274d4f565053d0cfd7a1ffc9543bf8a27636817dd10a1a98cee20b57a",
+        "frames.csv": "69bb801661bffa39989cdd186cd12042dc816fbf87ff1da6b75339ccabba008e",
+        "world/osp_studio.sdf": "bd0b0a03d5666a084f667c8de9d834fafe5bc105ca609c188b4cabedf7b25ae4",
+        "metrics.json": "04e025d7f0544bfa3f3a5eb0555534296ef1666d78bae48d102a3b8e5fada7ea"
+      },
+      "static_blockers_at_task_height": 88,
+      "targets": {
+        "32": {
+          "printed_normal_xy": [
+            -1.0,
+            -0.0
+          ],
+          "printed_side_sdf_x_sign": -1.0,
+          "physical_near_frames": 55,
+          "physical_near_s": 11.0,
+          "physical_near_spans": [
+            [
+              219.512,
+              230.312,
+              55
+            ]
+          ],
+          "near_quasistationary_s": 1.4,
+          "near_direction_s": {
+            "east": 1.2,
+            "north": 0.0,
+            "west": 0.0,
+            "south": 9.8
+          },
+          "near_incidence_s": {
+            "front_to_60_deg": 0.0,
+            "front_oblique": 0.0,
+            "behind": 11.0
+          },
+          "front_in_fov_18px_frames": 0,
+          "center_ray_clear_18px_frames": 0,
+          "five_rays_clear_18px_frames": 0,
+          "five_rays_clear_18px_within_1p5m_frames": 0,
+          "first_5ray_18px_s": null,
+          "five_rays_clear_18px_frames_before_registration": 0,
+          "near_5ray_18px_spans": [],
+          "small_6_to_lt18_px": {
+            "clear_all": 0,
+            "partial_1_to_4_rays_clear": 0,
+            "all_five_blocked": 0
+          },
+          "online_decoded_count": 0,
+          "registered_s": null,
+          "registered_then_actual_near_s": null
+        },
+        "103": {
+          "printed_normal_xy": [
+            1.0,
+            -1.2246467991473532e-16
+          ],
+          "printed_side_sdf_x_sign": -1.0,
+          "physical_near_frames": 255,
+          "physical_near_s": 51.0,
+          "physical_near_spans": [
+            [
+              97.512,
+              113.512,
+              81
+            ],
+            [
+              479.912,
+              490.912,
+              56
+            ],
+            [
+              513.912,
+              537.312,
+              118
+            ]
+          ],
+          "near_quasistationary_s": 4.2,
+          "near_direction_s": {
+            "east": 0.0,
+            "north": 4.2,
+            "west": 18.4,
+            "south": 28.4
+          },
+          "near_incidence_s": {
+            "front_to_60_deg": 2.6,
+            "front_oblique": 16.0,
+            "behind": 32.4
+          },
+          "front_in_fov_18px_frames": 97,
+          "center_ray_clear_18px_frames": 97,
+          "five_rays_clear_18px_frames": 97,
+          "five_rays_clear_18px_within_1p5m_frames": 50,
+          "first_5ray_18px_s": 83.912,
+          "five_rays_clear_18px_frames_before_registration": 41,
+          "near_5ray_18px_spans": [
+            [
+              97.512,
+              102.512,
+              26
+            ],
+            [
+              103.512,
+              107.512,
+              21
+            ],
+            [
+              513.912,
+              514.312,
+              3
+            ]
+          ],
+          "small_6_to_lt18_px": {
+            "clear_all": 40,
+            "partial_1_to_4_rays_clear": 0,
+            "all_five_blocked": 0
+          },
+          "online_decoded_count": 104,
+          "registered_s": 98.184,
+          "registered_then_actual_near_s": 98.188
+        },
+        "7": {
+          "printed_normal_xy": [
+            -6.123233995736766e-17,
+            1.0
+          ],
+          "printed_side_sdf_x_sign": -1.0,
+          "physical_near_frames": 53,
+          "physical_near_s": 10.6,
+          "physical_near_spans": [
+            [
+              144.712,
+              155.112,
+              53
+            ]
+          ],
+          "near_quasistationary_s": 1.4,
+          "near_direction_s": {
+            "east": 0.0,
+            "north": 10.6,
+            "west": 0.0,
+            "south": 0.0
+          },
+          "near_incidence_s": {
+            "front_to_60_deg": 10.6,
+            "front_oblique": 0.0,
+            "behind": 0.0
+          },
+          "front_in_fov_18px_frames": 96,
+          "center_ray_clear_18px_frames": 96,
+          "five_rays_clear_18px_frames": 96,
+          "five_rays_clear_18px_within_1p5m_frames": 27,
+          "first_5ray_18px_s": 133.312,
+          "five_rays_clear_18px_frames_before_registration": 5,
+          "near_5ray_18px_spans": [
+            [
+              144.712,
+              149.912,
+              27
+            ]
+          ],
+          "small_6_to_lt18_px": {
+            "clear_all": 260,
+            "partial_1_to_4_rays_clear": 45,
+            "all_five_blocked": 34
+          },
+          "online_decoded_count": 174,
+          "registered_s": 134.19199999999998,
+          "registered_then_actual_near_s": 144.588
+        }
+      }
+    }
+  }
+}

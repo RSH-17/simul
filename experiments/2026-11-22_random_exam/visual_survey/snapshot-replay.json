@@ -1,0 +1,661 @@
+{
+  "scope": "Every third saved planner state from three Balanced drives. Original RGB coverage and SLAM map, approximated costmap, no fitted box tracks. Goal selection only.",
+  "decisions": [
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 4.316,
+      "balanced": {
+        "reason": "explore_open_frontier",
+        "goal": "interior_frontier",
+        "cpu_s": 0.014030499965883791
+      },
+      "visual_survey": {
+        "reason": "explore_open_frontier",
+        "goal": "interior_frontier",
+        "wide": null,
+        "span": null,
+        "cpu_s": 0.02255245903506875
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 44.816,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.13849679101258516
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.1554286249447614
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 76.316,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.11374833399895579
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.199169583333333,
+        "span": 4,
+        "cpu_s": 0.19561875006183982
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 119.316,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.14014045801013708
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.2044960840139538
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 160.316,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.18111462506931275
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.1835962149314265,
+        "span": 2,
+        "cpu_s": 0.30488974996842444
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 209.816,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.1937056250171736
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.7000000044703484,
+        "span": null,
+        "cpu_s": 0.3065872919978574
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 261.816,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.1995876249857247
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.2352509604647315,
+        "span": 3,
+        "cpu_s": 0.3421023749979213
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 307.816,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.20477137493435293
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.2993645410751924
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 350.816,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.20296429202426225
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.2352509604647315,
+        "span": 4,
+        "cpu_s": 0.32228125003166497
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 414.316,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.305507457931526
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.47196174995042384
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 461.816,
+      "balanced": {
+        "reason": "no_untried_reachable_interior_view",
+        "goal": "wall_surface",
+        "cpu_s": 0.2984228749992326
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.199169583333333,
+        "span": 4,
+        "cpu_s": 0.4964356670388952
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 501.316,
+      "balanced": {
+        "reason": "no_untried_reachable_interior_view",
+        "goal": "wall_surface",
+        "cpu_s": 0.2938289169687778
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.45233050000388175
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 540.316,
+      "balanced": {
+        "reason": "no_untried_reachable_interior_view",
+        "goal": "wall_surface",
+        "cpu_s": 0.2918493750039488
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.1991695833333336,
+        "span": 3,
+        "cpu_s": 0.4710130419116467
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2437656298-526684097893377877",
+      "t": 571.316,
+      "balanced": {
+        "reason": "no_untried_reachable_interior_view",
+        "goal": "wall_surface",
+        "cpu_s": 0.29886187496595085
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8000000059604645,
+        "span": null,
+        "cpu_s": 0.45584545901510864
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 4.3,
+      "balanced": {
+        "reason": "explore_open_frontier",
+        "goal": "interior_frontier",
+        "cpu_s": 0.011690292041748762
+      },
+      "visual_survey": {
+        "reason": "explore_open_frontier",
+        "goal": "interior_frontier",
+        "wide": null,
+        "span": null,
+        "cpu_s": 0.013984666089527309
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 50.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.1652971669100225
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.31314929109066725
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 81.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.18308366707060486
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6729749270821155,
+        "span": 3,
+        "cpu_s": 0.32616916694678366
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 109.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.1756086250534281
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.216922834980619,
+        "span": 4,
+        "cpu_s": 0.33910929202102125
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 142.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.18409674998838454
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.3073708330048248
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 182.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.21199358301237226
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6971874105841727,
+        "span": 3,
+        "cpu_s": 0.38278841704595834
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 218.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.20708425005432218
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.5500000022351742,
+        "span": null,
+        "cpu_s": 0.3421709160320461
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 297.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.27916929102502763
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.2352509604647324,
+        "span": 4,
+        "cpu_s": 0.45262941694818437
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 337.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2691537089413032
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.4097769169602543
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 369.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.27159454103093594
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.1991695833333336,
+        "span": 3,
+        "cpu_s": 0.44767079199664295
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 416.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2740489999996498
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 1.350000014156103,
+        "span": null,
+        "cpu_s": 0.42726704094093293
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 454.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.26943195797502995
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.199169583333333,
+        "span": 4,
+        "cpu_s": 0.4840329170692712
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 491.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.25624545803293586
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.40604066592641175
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 522.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2552910419180989
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6971874105841724,
+        "span": 3,
+        "cpu_s": 0.41725183406379074
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 554.8,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.24562237493228167
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.4115559170022607
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m2946727794-532698735965463242",
+      "t": 593.3,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2438576250569895
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.7500000052154064,
+        "span": null,
+        "cpu_s": 0.41886299999896437
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 2.708,
+      "balanced": {
+        "reason": "explore_open_frontier",
+        "goal": "interior_frontier",
+        "cpu_s": 0.011755666928365827
+      },
+      "visual_survey": {
+        "reason": "explore_open_frontier",
+        "goal": "interior_frontier",
+        "wide": null,
+        "span": null,
+        "cpu_s": 0.016589874983765185
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 41.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.20471933390945196
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.286437000031583
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 85.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.20619158307090402
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6971874105841727,
+        "span": 3,
+        "cpu_s": 0.32744904106948525
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 123.208,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2043646250385791
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.30801362497732043
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 166.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2440047919517383
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6971874105841729,
+        "span": 4,
+        "cpu_s": 0.3899372910382226
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 254.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.23965458292514086
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8000000059604645,
+        "span": null,
+        "cpu_s": 0.3708565420238301
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 339.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2542515000095591
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6971874105841727,
+        "span": 4,
+        "cpu_s": 0.39472124993335456
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 378.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.24866087501868606
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.34207766607869416
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 446.708,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.30453233304433525
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 2.2169228349806196,
+        "span": 4,
+        "cpu_s": 0.4424872089875862
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 491.208,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2812181250192225
+      },
+      "visual_survey": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "wide": 0.8500000067055226,
+        "span": null,
+        "cpu_s": 0.41432024992536753
+      }
+    },
+    {
+      "run": "v151-survey-baseline-track-m545514539-663389709141213120",
+      "t": 529.208,
+      "balanced": {
+        "reason": "unseen_reachable_object",
+        "goal": "interior_surface",
+        "cpu_s": 0.2992074170615524
+      },
+      "visual_survey": {
+        "reason": "unobserved_wall_reserved",
+        "goal": "wall_surface",
+        "wide": 1.6971874105841713,
+        "span": 3,
+        "cpu_s": 0.4575324170291424
+      }
+    }
+  ]
+}

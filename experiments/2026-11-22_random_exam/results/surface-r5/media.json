@@ -1,0 +1,110 @@
+[
+  {
+    "name": "v151-survey-baseline-track-m647911238-1066999508311362768",
+    "seed": 647911238,
+    "role": "baseline",
+    "asset": "v151-random-exam-112209__v151-survey-baseline-track-m647911238-1066999508311362768.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-baseline-track-m647911238-1066999508311362768/video/mission.mp4",
+    "sha256": "23b14472e4b7704a553253f9cfa0ac5ee6a6517092828a1a9c874a9030609b81",
+    "bytes": 3906991
+  },
+  {
+    "name": "v151-survey-candidate-track-m647911238-1066999508311362768",
+    "seed": 647911238,
+    "role": "candidate",
+    "asset": "v151-random-exam-112209__v151-survey-candidate-track-m647911238-1066999508311362768.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-candidate-track-m647911238-1066999508311362768/video/mission.mp4",
+    "sha256": "e6e3048535af7f6317bda168d720516c6923ada618aa5313813f271339cd2475",
+    "bytes": 8203017
+  },
+  {
+    "name": "v151-survey-candidate-track-m545514539-663389709141213120",
+    "seed": 545514539,
+    "role": "candidate",
+    "asset": "v151-random-exam-112209__v151-survey-candidate-track-m545514539-663389709141213120.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-candidate-track-m545514539-663389709141213120/video/mission.mp4",
+    "sha256": "9272174db497eb3f8ef26acaced4034d318627603b989a532a8ffe30d2325b69",
+    "bytes": 8832791
+  },
+  {
+    "name": "v151-survey-baseline-track-m545514539-663389709141213120",
+    "seed": 545514539,
+    "role": "baseline",
+    "asset": "v151-random-exam-112209__v151-survey-baseline-track-m545514539-663389709141213120.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-baseline-track-m545514539-663389709141213120/video/mission.mp4",
+    "sha256": "e23340df3948ce5858175a2d2fa4df109f0dc0007629722402bf242737caed50",
+    "bytes": 8109673
+  },
+  {
+    "name": "v151-survey-baseline-track-m3280183581-269900596522503902",
+    "seed": 3280183581,
+    "role": "baseline",
+    "asset": "v151-random-exam-112209__v151-survey-baseline-track-m3280183581-269900596522503902.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-baseline-track-m3280183581-269900596522503902/video/mission.mp4",
+    "sha256": "9f8f36640b7696baee82607c8c7f45bf444558e4ef812835c877bb965dd52b1e",
+    "bytes": 1794846
+  },
+  {
+    "name": "v151-survey-candidate-track-m3280183581-269900596522503902",
+    "seed": 3280183581,
+    "role": "candidate",
+    "asset": "v151-random-exam-112209__v151-survey-candidate-track-m3280183581-269900596522503902.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-candidate-track-m3280183581-269900596522503902/video/mission.mp4",
+    "sha256": "36409bf37ce61f6597299ed3b77b738061dbc969b20e19fc4bc5e24acf5df6fe",
+    "bytes": 2991035
+  },
+  {
+    "name": "v151-survey-candidate-track-m2437656298-526684097893377877",
+    "seed": 2437656298,
+    "role": "candidate",
+    "asset": "v151-random-exam-112209__v151-survey-candidate-track-m2437656298-526684097893377877.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-candidate-track-m2437656298-526684097893377877/video/mission.mp4",
+    "sha256": "acbf6f85adc04518d317d8617a6d599421151eb691b600b9de2afcd592eade29",
+    "bytes": 7994296
+  },
+  {
+    "name": "v151-survey-baseline-track-m2437656298-526684097893377877",
+    "seed": 2437656298,
+    "role": "baseline",
+    "asset": "v151-random-exam-112209__v151-survey-baseline-track-m2437656298-526684097893377877.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-baseline-track-m2437656298-526684097893377877/video/mission.mp4",
+    "sha256": "fd205516b71474c09c699080d226d0a93258a5661b00bdc857bfda8292ccb4dc",
+    "bytes": 7865409
+  },
+  {
+    "name": "v151-survey-baseline-track-m178349315-106374630088071414",
+    "seed": 178349315,
+    "role": "baseline",
+    "asset": "v151-random-exam-112209__v151-survey-baseline-track-m178349315-106374630088071414.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-baseline-track-m178349315-106374630088071414/video/mission.mp4",
+    "sha256": "52fc04b0df116cc4be491b5f3fc7f3c4a307cab39b0b8fc3a6f3f8ed7b27bbf1",
+    "bytes": 4475132
+  },
+  {
+    "name": "v151-survey-candidate-track-m178349315-106374630088071414",
+    "seed": 178349315,
+    "role": "candidate",
+    "asset": "v151-random-exam-112209__v151-survey-candidate-track-m178349315-106374630088071414.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-candidate-track-m178349315-106374630088071414/video/mission.mp4",
+    "sha256": "b1de88df57010ee0d7a4319604ad8cb002d6599947942e9988b8f402cc1e3450",
+    "bytes": 8384146
+  },
+  {
+    "name": "v151-survey-candidate-track-m647911238-328852813392071914",
+    "seed": 647911238,
+    "role": "candidate",
+    "asset": "v151-random-exam-112209__v151-survey-candidate-track-m647911238-328852813392071914.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-candidate-track-m647911238-328852813392071914/video/mission.mp4",
+    "sha256": "e2b7d2fc5c64a2aee4c4741133914b8cda76cc0f5fe9e8aa72531fbc8588e51b",
+    "bytes": 4077421
+  },
+  {
+    "name": "v151-survey-baseline-track-m647911238-328852813392071914",
+    "seed": 647911238,
+    "role": "baseline",
+    "asset": "v151-random-exam-112209__v151-survey-baseline-track-m647911238-328852813392071914.mp4",
+    "relative": "training_robust/native90/v151-random-exam-112209/v151-survey-baseline-track-m647911238-328852813392071914/video/mission.mp4",
+    "sha256": "c7e80d8a259daec0baf1132b95008c30fa0c9ca270d61e7b61d80da441c54f8b",
+    "bytes": 3728382
+  }
+]

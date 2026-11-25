@@ -1,0 +1,9 @@
+{
+  "pid": 151682,
+  "adopted_observer_pid": 147676,
+  "original_observer_continues": true,
+  "mission_limit_sim_s": 600,
+  "outer_limit_wall_s": 2400,
+  "reason": "Slow VM could exceed old 1200-wall-second guard",
+  "policy_changed": false
+}
