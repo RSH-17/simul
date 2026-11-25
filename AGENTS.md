@@ -11,9 +11,12 @@
   driving or presses the board's start button. Never start for a UI/code test.
 
 - The user authorized ongoing maintenance of the private GitHub repository
-  `peter010905/simul`. After completing a project change, run relevant checks,
-  review the intended diff, commit it, and push to `main`. No repeated upload
-  approval is needed. Do not claim that unattended code review or scheduled
+  `RSH-17/simul` (git remote `mine`). After completing a project change, run
+  relevant checks, review the intended diff, commit it, and push to `main` on
+  `mine`. No repeated upload approval is needed. Unless the user explicitly
+  says otherwise, push only to `mine`; never push to `origin`
+  (`peter010905/simul`, the teammate's upstream), which stays fetch-only for
+  pulling in its updates. Do not claim that unattended code review or scheduled
   maintenance exists unless it has actually been configured.
 - Update the README and `repository_snapshot/status.json` when reporting a new
   experiment milestone. Distinguish original benchmark results, offline replay,
