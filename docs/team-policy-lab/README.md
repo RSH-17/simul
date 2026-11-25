@@ -203,6 +203,24 @@ done
 
 실패한 회차를 지우고 성공할 때까지 다시 돌리지 않는다. 여러 가설을 한꺼번에 바꾸기보다 “카메라가 안 본 서쪽 벽이 왜 선택에서 빠지는가”처럼 한 질문부터 검증한다. 이 다섯 장면은 이미 본 개발 배치다. 여기에서 튜닝한 뒤에는 사용하지 않은 장면에서 추가 검증해야 한다.
 
+### 반복 실행과 요약
+
+같은 맵을 같은 정책으로 돌려도 결과가 달라진다. 비교할 때는 맵당 3회 이상 돌린다.
+
+```sh
+TEAM_SIM_RENDER=system python3 tools/team_sim/campaign.py ~/simul-ws/events-baseline \
+    --repeats 3 --random 5 --name baseline-repeat          # 5맵×3회 + 새 무작위 배치 5개, 순서대로 실행
+python3 tools/team_sim/summarize.py ~/.local/share/simul-team/campaigns/<manifest>.json
+```
+
+- `campaign.py`는 실패하거나 중단된 회차도 모두 manifest에 남긴다. 실패한 회차를 다시 돌려 덮어쓰지 않는다.
+- `summarize.py`는 다음을 표로 정리한다.
+  - 엄격 성공률과 95% 신뢰구간
+  - 세 ID 모두 등록한 횟수
+  - 벽·상자 마커별 등록과 실제 접근 수
+  - 성공 회차의 평균 완료 시각
+- 소스·렌더링·카메라 잡음·시간 조건이 다른 회차를 섞으면 거부한다.
+
 ## 6. 결과와 팀 공유
 
 기본 저장 위치는 `~/.local/share/simul-team/results/`다. 실행할 때 `RUN`으로 정확한 새 경로를 출력한다. 다른 디스크를 쓰려면 보드·setup·run 세 터미널 모두 같은 `TEAM_SIM_HOME` 값을 지정한다.
