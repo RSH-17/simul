@@ -13,6 +13,17 @@ def include(path,**kwargs):
     return IncludeLaunchDescription(PythonLaunchDescriptionSource(str(path)),launch_arguments=kwargs.items())
 
 
+def render_backend(environment=os.environ):
+    """`software` (default) forces Mesa llvmpipe as in the original campaigns.
+
+    `system` uses the host GPU driver. Use it only where software rendering
+    fails (e.g. NVIDIA hosts whose headless EGL device crashes Mesa), and
+    compare runs only with others recorded under the same backend."""
+    value=environment.get('TEAM_SIM_RENDER','software').strip().lower()
+    if value not in ('software','system'):raise ValueError('TEAM_SIM_RENDER must be software or system')
+    return value
+
+
 def generate_launch_description():
     root=Path(os.environ['BENCH_ROOT']);run=Path(os.environ['BENCH_RUN']);flow=Path(share('osp_mission'))
     expected=os.environ['CAMERA_POLICY_WORKSPACE']
@@ -32,7 +43,8 @@ def generate_launch_description():
         policy_file=str(Path(expected)/'frozen-config/policy.json'),
         nav2_params=str(Path(expected)/'frozen-config/nav2_hardware_profile.yaml'),output_dir=str(run/'native'),**detector)
     return LaunchDescription([DeclareLaunchArgument('namespace',default_value=''),
-        DeclareLaunchArgument('use_sim_time',default_value='true'),SetEnvironmentVariable('LIBGL_ALWAYS_SOFTWARE','1'),
+        DeclareLaunchArgument('use_sim_time',default_value='true'),
+        *([SetEnvironmentVariable('LIBGL_ALWAYS_SOFTWARE','1')] if render_backend()=='software' else []),
         SetEnvironmentVariable('GZ_SIM_RESOURCE_PATH',resources),SetEnvironmentVariable('GZ_PARTITION','camera_aware_'+str(os.getpid())),
         simulation,Node(package='ros_gz_bridge',executable='parameter_bridge',arguments=['/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock']),
         Node(package='ros_gz_bridge',executable='parameter_bridge',
