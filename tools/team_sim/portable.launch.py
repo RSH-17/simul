@@ -24,6 +24,14 @@ def render_backend(environment=os.environ):
     return value
 
 
+def rviz_viewer(environment=os.environ):
+    """TEAM_SIM_RVIZ=1 opens the package RViz view (SLAM /map, scan, targets).
+
+    It runs inside this launch so it shares the simulation's DDS settings;
+    an external viewer cannot reliably join the localhost-only graph."""
+    return 'true' if environment.get('TEAM_SIM_RVIZ','0').strip()=='1' else 'false'
+
+
 def generate_launch_description():
     root=Path(os.environ['BENCH_ROOT']);run=Path(os.environ['BENCH_RUN']);flow=Path(share('osp_mission'))
     expected=os.environ['CAMERA_POLICY_WORKSPACE']
@@ -37,7 +45,7 @@ def generate_launch_description():
     random_exam=os.environ.get('TEAM_RANDOM_EXAM')=='1'
     detector={'rgb_topic':'/exam/detector_rgb'} if random_exam else {}
     mission=include(flow/'launch/robot.launch.py',startup_guard='true',use_sim_time='true',
-        require_drive_controller='true',undock='false',rviz='false',planner='edge',
+        require_drive_controller='true',undock='false',rviz=rviz_viewer(),planner='edge',
         duration=str(cfg['duration']),navigation_flow_enabled='true',allow_mid_route_wall_inspection='false' if random_exam else 'true',
         planner_start_ignore_radius_m='0.30',depth_topic='unused_depth',
         policy_file=str(Path(expected)/'frozen-config/policy.json'),

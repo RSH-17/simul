@@ -54,7 +54,8 @@ def main():
     config=dict(workspace=str(ws),module_file=osp_mission.__file__,seed=a.seed,domain=a.domain,camera=[480,480,5],
         duration_sim_s=a.duration,physical_drive=False,fixture_sha256=digest(fixture/'world/osp_studio.sdf'),
         fixture_mode='randomized_exam' if randomized else 'legacy_five',public_marker_count=public_count,furniture=furniture,
-        render_backend=os.environ.get('TEAM_SIM_RENDER','software').strip().lower())
+        render_backend=os.environ.get('TEAM_SIM_RENDER','software').strip().lower(),
+        rviz_viewer=os.environ.get('TEAM_SIM_RVIZ','0').strip()=='1')
     if config['render_backend'] not in ('software','system'):raise ValueError('TEAM_SIM_RENDER must be software or system')
     survey_hints=survey_hint_setting(ws,os.environ)
     if survey_hints is not None:config['survey_distant_hints']=survey_hints=='true'
