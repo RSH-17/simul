@@ -170,6 +170,30 @@ class Trial:
         return report
 
 
+def wait_for_saved_results(trial, timeout_s=45.):
+    """Let the mission finish writing map.pgm/yaml, the pose graph and result.json.
+
+    The mission saves for up to 25 s after a stop; terminating the launch
+    earlier killed map_saver during start-up. A separate node that only reads
+    the status is spun, so no trajectory or video rows are added after the
+    scored run ended. Returns the final state, or None on timeout.
+    """
+    if trial.native or (trial.status or {}).get('state') == 'done':
+        return (trial.status or {}).get('state')
+    seen = {}
+    node = rclpy.create_node('pair_benchmark_save_wait')
+    node.create_subscription(String, '/mission/status', lambda m: seen.update(json.loads(m.data)), 10)
+    deadline = time.monotonic() + timeout_s
+    try:
+        while time.monotonic() < deadline:
+            rclpy.spin_once(node, timeout_sec=.2)
+            if seen.get('state') == 'done':
+                return 'done'
+        return None
+    finally:
+        node.destroy_node()
+
+
 def main(trial_type=Trial, launch_path=None):
     root,folder = map(Path,(os.environ['BENCH_ROOT'],os.environ['BENCH_RUN']))
     if os.environ['ROS_DOMAIN_ID'] not in ('173','174','175') or os.environ.get('ROS_LOCALHOST_ONLY') != '1':
@@ -184,11 +208,15 @@ def main(trial_type=Trial, launch_path=None):
             (folder/'metrics.json').write_text(json.dumps(report,indent=2))
             print({k:v for k,v in report.items() if k!='last_policy_status'},flush=True)
         finally:
+            stopped=False
             if trial.start_sim is not None and trial.stop_client.service_is_ready():
                 fut=trial.stop_client.call_async(Trigger.Request())
                 rclpy.spin_until_future_complete(trial.node,fut,timeout_sec=3.)
+                stopped=True
             trial.file.close()
             trial.events.close()
+            if stopped:
+                wait_for_saved_results(trial)
             try:
                 os.killpg(child.pid,signal.SIGINT)
                 child.wait(timeout=15)

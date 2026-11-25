@@ -133,7 +133,18 @@ bash team-sim.sh run ~/simul-ws/my-policy 112601
 
 각 실행의 출력 경로는 다르다. 같은 설치에서는 한 번에 한 회차를 실행한다. 현재 호스트의 다른 native 벤치도 검사해 동시 부하로 비교 조건이 달라지는 일을 막는다. 공유 호스트에서 진행 중인 다른 실험을 종료하거나 동결 스테이지를 수정하지 않는다. 기본 제한은 시뮬600초다. `--duration 60`은 연결·기록 확인용 짧은 검사이며 정식 600초 비교와 합산하지 않는다. 중간에 멈추면 `Ctrl-C`를 사용하고 중단 기록을 보존한다.
 
-보드에서는 실행 선택, 평가용 장면 위 실제 이동 궤적, 실제 Gazebo RGB, 등록 ID와 완료 후 실제 1.5m 접근, 엄격 판정·범퍼 횟수를 확인한다. 배경은 평가용 정답 배치이며 SLAM 지도 커버리지 화면은 아니다. SLAM 지도를 직접 보고 싶으면 별도 터미널에서 같은 작업공간과 `ROS_DOMAIN_ID=174`를 source한 뒤 RViz에서 `/map`을 구독한다.
+보드에서는 실행 선택, 평가용 장면 위 실제 이동 궤적, 실제 Gazebo RGB, 등록 ID와 완료 후 실제 1.5m 접근, 엄격 판정·범퍼 횟수를 확인한다. 배경은 평가용 정답 배치이며 SLAM 지도 커버리지 화면은 아니다. SLAM 지도를 직접 보려면 실행할 때 `TEAM_SIM_RVIZ=1`을 붙인다. RViz가 시뮬 launch 안에서 함께 뜨고 `/map`·`/scan`·`/targets`를 표시한다. 별도 터미널에서 RViz나 `ros2 topic echo`를 쓸 때는 domain만 맞추면 토픽 이름만 보이고 데이터는 오지 않는다. 실행기와 같은 DDS 설정을 지정해야 한다.
+
+```sh
+source /opt/ros/jazzy/setup.bash && source ~/simul-ws/baseline/install/setup.bash
+export ROS_DOMAIN_ID=174 ROS_LOCALHOST_ONLY=1 RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export CYCLONEDDS_URI=file://$PWD/experiments/2026-11-19_pair_7_103/cyclone.xml   # 저장소 루트에서
+rviz2 -d ~/simul-ws/baseline/install/osp_mission/share/osp_mission/rviz/mission.rviz --ros-args -p use_sim_time:=true
+```
+
+종료 후 SLAM 지도는 회차 폴더의 `native/<시각>/map.pgm`, `map.yaml`에 저장된다.
+
+소프트웨어 렌더링에서 Gazebo가 비정상 종료하는 PC(예: NVIDIA headless EGL)에서는 `TEAM_SIM_RENDER=system`으로 GPU 렌더링을 쓴다. 기본은 원래 비교와 같은 software이며, 렌더링 방식이 다른 회차끼리는 비교하지 않는다.
 
 
 새 무작위 배치는 벽 몰딩·기둥·책상까지 포함한 실제 시뮬 도형에서 마커를 볼 수 있는 자리가 있어야 사용합니다. 같은 Jazzy 환경에서 비교할 때는 정책 두 개에 같은 시드와 마커 수 모드를 주세요. [새 배치의 마커 가림 검사](../../experiments/2026-11-22_random_exam/fixture-visibility.json)
