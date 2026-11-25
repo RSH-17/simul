@@ -1,3 +1,29 @@
+# 현재 상태 요약 (2026-11-26)
+
+<!-- CURRENT_SUMMARY:START -->
+| 항목 | 내용 |
+|---|---|
+| 목표 | TurtleBot4가 처음 보는 공간을 SLAM으로 탐색해 ArUco 마커 3개를 찾는다. 각 마커에 1.5m 이내로 접근하고, 지도 좌표를 정확히 기록하고, 충돌 없이 빨리 끝낸다 |
+| 기준 정책 | Mixed v1.5.1-balanced (`policy_releases/2026-11-21_mixed_camera_sync_v151`). 최적 정책은 아직 확정하지 않았다 |
+| 계측판 | `--policy marker-events`: 판단은 같고, 확정 이벤트 토픽과 실물 LED·소리 알림만 더했다 ([설명](policy_candidates/2026-11-26_v151_marker_events/README.md)) |
+| 남은 핵심 문제 | 벽 마커 누락, 같은 상자 반복 탐색, 스친 마커 놓침, 막힌 목표 복구 |
+| 실물 | 완주 검증 기록이 없다. [실물 검증 계획](docs/team-policy-lab/PHYSICAL_VALIDATION.md) |
+
+**시작하기**: [팀 실험 안내](docs/team-policy-lab/README.md)
+
+```sh
+bash team-sim.sh setup ~/simul-ws/events-baseline --policy marker-events
+TEAM_SIM_RENDER=system bash team-sim.sh run ~/simul-ws/events-baseline 112601 --check   # 렌더링 시험 포함
+TEAM_SIM_RENDER=system bash team-sim.sh run ~/simul-ws/events-baseline 112601
+bash team-sim.sh gui     # 실행 중 Gazebo 화면 / bash team-sim.sh rviz 로 SLAM 지도
+```
+
+**결과를 볼 때 주의할 점**
+- 같은 맵·같은 정책으로 돌려도 결과가 달라진다. 60초 시험 8회에서 103번 최근접 거리가 1.31~2.59m로 달랐다. 그래서 맵당 1회 결과로 정책의 우열을 정하지 않는다.
+- 렌더링 방식(`software`·`system`)과 PC가 다른 회차는 섞어서 비교하지 않는다.
+- 아래 기록은 날짜순 진행 기록이다(최신이 위).
+<!-- CURRENT_SUMMARY:END -->
+
 실물 보드는 **1. 주행 준비**에서 ROS·카메라 처리·LiDAR·Nav2를 실제로 확인하고 **2. 출발**에서 미션을 시작한다. 2026-11-22 Balanced 첫 2단계 확인에서 준비 완료 12.1초, 출발 후 첫 전진 약 0.6초였다. [실물 보드](http://192.168.252.2:8767/)
 
 실물 OAK-D 480×480·5fps에서 Focus 탐지기가 실제 주행 중 24초 동안 원본 120장을 처리했다. 보드는 JPEG 미리보기를 표시하고 구동 감독 노드는 수신한 원본을 탐지기에 전달한다. 이 구간의 촬영부터 처리 알림까지 지연은 95백분위 211ms였다.

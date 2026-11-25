@@ -157,7 +157,8 @@ def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(
     assert cmd[cmd.index('--workspace')+1] == str(tmp_path/workspace)
     assert cmd[cmd.index('--')+1:].count('start') == 1
     assert '2026-11-13_face_intent_v2/policy.json' in cmd[cmd.index('--policy')+1]
-    assert ('--share-camera' in cmd) == (action in ('start-focus', 'start-balanced'))
+    # Only Focus reads the supervisor's shared RGB (README; robot_board_control.share_camera).
+    assert ('--share-camera' in cmd) == (action in ('start-focus', 'prepare-focus'))
     assert ('--forward-045' in cmd) == (action == 'start-marker-relook-045')
     assert ('--recover-stall' in cmd) == (action in ('start-stall-recovery','start-crowded'))
     if action in ('start-side', 'start-general'):
@@ -173,11 +174,11 @@ def test_alternate_start_uses_its_own_overlay_and_shares_the_original_stop_lock(
 def test_upstream_separate_detector_common_stop_and_interlock(tmp_path):
     board = BoardControl(tmp_path, tmp_path/'default', 184, state_dir=tmp_path)
     cmd = board.command('start-upstream-r32')
-    assert cmd[cmd.index('--workspace') + 1] == str(tmp_path/'r32_upstream_b1ed300_ws')
+    assert cmd[cmd.index('--workspace') + 1] == str(tmp_path/'r32_upstream_5e95333_ws')
     assert cmd[cmd.index('--runtime') + 1] == 'upstream-r32'
     assert '--policy' not in cmd and 'run_policy.sh' not in ' '.join(cmd)
     with patch.object(board, 'spawn', return_value=(process(123), tmp_path/'cmd.log')):
-        assert board.request('start-upstream-r32')['policy'] == '원본 · R32'
+        assert board.request('start-upstream-r32')['policy'] == 'R32 Resume · 5e95333'
         for action in ('start-mixed', 'start-thorough', 'start-corner', 'start-side', 'start-general', 'start-center', 'start-wall-cues', 'start-cluster-exit', 'start-marker-relook', 'start-marker-relook-045', 'start-stall-recovery', 'start-crowded', 'start-v3-mppi'):
             with pytest.raises(RuntimeError):
                 board.request(action)

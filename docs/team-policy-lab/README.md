@@ -149,6 +149,17 @@ rviz2 -d ~/simul-ws/baseline/install/osp_mission/share/osp_mission/rviz/mission.
 
 새 무작위 배치는 벽 몰딩·기둥·책상까지 포함한 실제 시뮬 도형에서 마커를 볼 수 있는 자리가 있어야 사용합니다. 같은 Jazzy 환경에서 비교할 때는 정책 두 개에 같은 시드와 마커 수 모드를 주세요. [새 배치의 마커 가림 검사](../../experiments/2026-11-22_random_exam/fixture-visibility.json)
 
+### 실행 옵션
+
+| 옵션 | 효과 |
+|---|---|
+| `TEAM_SIM_RENDER=system` | GPU 렌더링. 기본 `software`가 비정상 종료하는 PC용. `--check`가 15초 렌더링 시험으로 미리 알려 준다. 렌더링 방식이 다른 회차끼리 비교하지 않는다 |
+| `TEAM_SIM_RVIZ=1` | 시뮬과 함께 RViz 실행 |
+| `bash team-sim.sh gui` / `rviz [작업공간]` | 실행 중인 시뮬에 Gazebo 화면이나 RViz를 붙인다. 주행에는 관여하지 않는다 |
+| `TEAM_SIM_CAMERA_NOISE="sigma=8,blur=1,drop=0.05,seed=7"` | 검출기에 가는 RGB에 잡음(σ, 0–255)·흐림(픽셀)·프레임 손실 비율을 넣는다. 실물 카메라 조건의 민감도 시험용이며, 같은 설정의 회차끼리만 비교한다 |
+
+`--policy marker-events`는 v1.5.1-balanced와 판단이 같고, 확정 이벤트 토픽과 실물 LED·소리 알림만 더한 작업공간이다. [설명](../../policy_candidates/2026-11-26_v151_marker_events/README.md)
+
 ## 4. 어디를 고치면 되는가
 
 수정할 실제 소스는 저장소 루트의 `src`가 아니라 선택한 작업공간의 아래 경로다.
@@ -200,10 +211,12 @@ done
 |---|---|
 | `protocol.json`, `policy.patch` | 실제 작업공간·소스/설정 해시·장면 지문·카메라·시간 제한과 기준판 대비 수정 내용 |
 | `metrics.json`, `audit.json` | ID 등록, 등록 후 독립 실제1.5m 접근, 근거리 촬영 증거, 지도 오차·엄격 성공 |
-| `headings.csv`, `trajectory.csv` | 독립 실제 이동 궤적·시각·그때 등록된 ID |
+| `headings.csv`, `trajectory.csv` | 독립 실제 이동 궤적·시각·그때 등록된 ID. 시각은 **미션 시작 기준**이며, Gazebo 시각 = 이 값 + `metrics.json`의 `start_sim_gazebo_s` |
 | `camera/`, `frames.csv`, `mission.mp4` | 실제 RGB와 시각, 완료 후 영상 |
-| `native/` | 정책 결정·관찰 메모리·SLAM 지도·마커 저장 결과 |
+| `native/` | 정책 결정·관찰 메모리·마커 저장 결과. `native/<시각>/map.pgm`·`map.yaml`·`map.posegraph`에 SLAM 지도 |
 | `launch.log`, `observer.log`, `interruption.json` | 실행 실패·준비 지연·중단 원인 |
+
+등록 시각은 두 가지다. `registered_s`는 0.5초 주기 상태 메시지 기준이라 최대 0.5초 늦다. `marker-events` 작업공간에서는 검출기가 확정 순간 `/mission/marker_events`를 보내므로 `registered_event_s`(확정 프레임의 촬영 시각)가 함께 기록된다. 종료 시각을 고정한 뒤 0.25초 동안 실제 위치를 더 받아(`terminal_truth_samples`), 마지막 등록과 종료가 겹쳐도 1.5m 접근을 판정할 수 있다. 이 구간의 새 등록·범퍼는 집계하지 않는다.
 
 엄격 성공은 정확한 세 ID, 등록 후 각각 실제1.5m 접근, 기존 세 장1.3m 근거리 촬영 증거, 지도 오차0.25m 이내, 범퍼0을 함께 요구한다. 등록만 했거나 목표 근처를 지나간 것을 완주로 세지 않는다. 미완주도 평균 시간에 포함하고 시뮬 시간과 실제 시간을 나눠 보고한다. 기본 실행은 Nav2 안전 설정·footprint·inflation을 보존한다.
 
