@@ -69,7 +69,7 @@ def finish(root, folder):
              offline_rgb={k:dict(frames=len(v),first=v[0] if v else None,last=v[-1] if v else None) for k,v in decodes.items()})
     if (folder/'scene.json').is_file() and '-track-' in folder.name:
         from importlib.util import module_from_spec, spec_from_file_location
-        path = Path(__file__).resolve().parent.parent/'2026-11-19_random_track/diagnostics.py'
+        path = Path(__file__).resolve().with_name('diagnostics.py')
         spec = spec_from_file_location('track_diagnostics', path)
         module = module_from_spec(spec)
         spec.loader.exec_module(module)

@@ -7,6 +7,9 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription,SetEnvironmentVariable,TimerAction,DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from judge.team import GATED_TOPIC, detector_topic_gated  # noqa: E402
 
 
 def include(path,**kwargs):
@@ -43,7 +46,8 @@ def generate_launch_description():
     spawn=include(flow/'launch/spawn.launch.py',world='osp_studio',model='standard',namespace='',
                   x=x,y=y,yaw=yaw,camera_width='640',start_docked='false',rviz='false')
     random_exam=os.environ.get('TEAM_RANDOM_EXAM')=='1'
-    detector={'rgb_topic':'/exam/detector_rgb'} if random_exam else {}
+    # Random exams and camera-noise runs feed the detector through the judge's gate.
+    detector={'rgb_topic':GATED_TOPIC} if detector_topic_gated(os.environ,random_exam) else {}
     mission=include(flow/'launch/robot.launch.py',startup_guard='true',use_sim_time='true',
         require_drive_controller='true',undock='false',rviz=rviz_viewer(),planner='edge',
         duration=str(cfg['duration']),navigation_flow_enabled='true',allow_mid_route_wall_inspection='false' if random_exam else 'true',

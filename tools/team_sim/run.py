@@ -12,6 +12,7 @@ import time
 import xml.etree.ElementTree as ET
 
 from setup import fixtures,home,digest
+from judge.camera_noise import parse as parse_camera_noise
 HERE=Path(__file__).resolve().parent
 REPO=HERE.parents[1]
 
@@ -24,6 +25,30 @@ def survey_hint_setting(workspace, environment):
     if selected not in ('true','false'):
         raise ValueError('OSP_SURVEY_DISTANT_HINTS must be true or false for Visual Survey')
     return selected
+
+def render_probe(backend, seconds=15):
+    """Start a headless Gazebo camera world briefly with the chosen backend.
+
+    Returns (ok, detail). Software rendering crashes on some NVIDIA hosts
+    (headless EGL selects the GPU device); this catches it before a trial.
+    """
+    import glob,uuid
+    worlds=[w for prefix in os.environ.get('AMENT_PREFIX_PATH','').split(':') if prefix
+            for w in glob.glob(prefix+'/opt/gz_sim_vendor/share/gz/gz-sim*/worlds/camera_sensor.sdf')]
+    if not worlds:return None,'stock camera_sensor.sdf not found; render probe skipped'
+    env=dict(os.environ,GZ_PARTITION='team_render_probe_'+uuid.uuid4().hex[:8])
+    env.pop('LIBGL_ALWAYS_SOFTWARE',None)
+    if backend=='software':env['LIBGL_ALWAYS_SOFTWARE']='1'
+    try:
+        done=subprocess.run(['gz','sim','-s','-r','--headless-rendering',worlds[0]],env=env,
+                            stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,text=True,timeout=seconds)
+        code=done.returncode
+    except subprocess.TimeoutExpired:
+        return True,f'{backend} rendering ran {seconds}s without crashing'
+    hint=' Try TEAM_SIM_RENDER=system.' if backend=='software' else ''
+    crash=' (segmentation fault)' if code in (-11,139) else ''
+    return False,f'{backend} rendering exited with code {code}{crash}.{hint}'
+
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--workspace',type=Path,required=True)
@@ -55,12 +80,17 @@ def main():
         duration_sim_s=a.duration,physical_drive=False,fixture_sha256=digest(fixture/'world/osp_studio.sdf'),
         fixture_mode='randomized_exam' if randomized else 'legacy_five',public_marker_count=public_count,furniture=furniture,
         render_backend=os.environ.get('TEAM_SIM_RENDER','software').strip().lower(),
-        rviz_viewer=os.environ.get('TEAM_SIM_RVIZ','0').strip()=='1')
+        rviz_viewer=os.environ.get('TEAM_SIM_RVIZ','0').strip()=='1',
+        camera_noise=parse_camera_noise(os.environ.get('TEAM_SIM_CAMERA_NOISE','')))
     if config['render_backend'] not in ('software','system'):raise ValueError('TEAM_SIM_RENDER must be software or system')
     survey_hints=survey_hint_setting(ws,os.environ)
     if survey_hints is not None:config['survey_distant_hints']=survey_hints=='true'
     if a.check:
-        print(json.dumps(dict(config,check='dependencies, fixture integrity, selected runtime resolved; no nodes started'),indent=2));return
+        ok,detail=render_probe(config['render_backend'])
+        print(json.dumps(dict(config,render_probe=dict(ok=ok,detail=detail),
+            check='dependencies, fixture integrity, selected runtime resolved, short headless render probe; no ROS nodes started'),indent=2))
+        if ok is False:raise SystemExit('Render probe failed: '+detail)
+        return
     import psutil
     for process in psutil.process_iter():
         try:
@@ -101,7 +131,7 @@ def main():
         (run/'protocol.json').write_text(json.dumps(config,indent=2)+'\n')
         (run/'policy_revision.txt').write_text(ws.name+'\n')
         env=dict(os.environ,ROS_DOMAIN_ID=str(a.domain),ROS_LOCALHOST_ONLY='1',ROS_AUTOMATIC_DISCOVERY_RANGE='LOCALHOST',
-            RMW_IMPLEMENTATION='rmw_cyclonedds_cpp',CAMERA_BENCH_HELPERS=str(HERE/'helpers'),
+            RMW_IMPLEMENTATION='rmw_cyclonedds_cpp',
             CAMERA_BENCH_CARDS=str(home()/'cards'),CAMERA_POLICY_WORKSPACE=str(ws),
             CAMERA_BENCH_WIDTH='480',CAMERA_BENCH_HEIGHT='480',CAMERA_BENCH_FPS='5',
             BENCH_ROOT=str(run),BENCH_RUN=str(run),BENCH_POLICY='mixed',CAMERA_VARIANT='team',CAMERA_PROFILE='balanced',
@@ -110,7 +140,7 @@ def main():
         env.update(TEAM_RANDOM_EXAM='1' if randomized else '0',OSP_PUBLIC_MARKER_COUNT=str(public_count),
                    SURVEY_EXPERIMENTS=str(REPO/'experiments'))
         for name in ('FASTRTPS_DEFAULT_PROFILES_FILE','FASTDDS_DEFAULT_PROFILES_FILE','ROS_STATIC_PEERS','ROS_DISCOVERY_SERVER'):env.pop(name,None)
-        env['CYCLONEDDS_URI']='file://'+str(REPO/'experiments/2026-11-19_pair_7_103/cyclone.xml')
+        env['CYCLONEDDS_URI']='file://'+str(HERE/'cyclone.xml')
         (home()/'cards').mkdir(exist_ok=True)
         print('RUN',run,flush=True)
         try:
@@ -123,11 +153,11 @@ def main():
                     except subprocess.TimeoutExpired:os.killpg(child.pid,signal.SIGKILL)
                     raise
                 if code:raise RuntimeError('Observer failed; inspect '+str(run/'observer.log'))
-                subprocess.run([sys.executable,str(HERE/'helpers/2026-11-19_corridor_box/finish_trial.py'),str(run),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+                subprocess.run([sys.executable,str(HERE/'judge/finish_trial.py'),str(run),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
                 if randomized:
                     subprocess.run([sys.executable,str(HERE/'random_exam.py'),str(run)],
                                    env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
-                subprocess.run([sys.executable,str(REPO/'experiments/2026-11-20_v12_camera_rate/refresh_final.py'),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+                subprocess.run([sys.executable,str(HERE/'judge/refresh_final.py'),str(run)],env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
             print('COMPLETED',run,flush=True)
         except BaseException as exc:
             (run/'interruption.json').write_text(json.dumps(dict(reason=str(exc),complete=False))+'\n');raise

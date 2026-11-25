@@ -26,6 +26,9 @@ def seconds(stamp):
     return stamp.sec + stamp.nanosec * 1e-9
 
 
+TERMINAL_WINDOW_S = .25
+
+
 class Trial:
     def __init__(self, folder, scene, native):
         self.path, self.native = folder, native
@@ -42,6 +45,10 @@ class Trial:
         self.bumps = self.hazard_packets = self.poses = 0
         self.pair_at = None
         self.snapshot = False
+        # Set when the scored run ends; ground-truth samples are then accepted
+        # only within TERMINAL_WINDOW_S of it (see terminal_sample()).
+        self.closed_at = None
+        self.terminal_samples = 0
         self.node = rclpy.create_node('pair_benchmark_observer')
         prefix = '/osp' if native else '/mission'
         status_qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL) if native else 10
@@ -73,6 +80,8 @@ class Trial:
         self.set_ids(set(json.loads(msg.data).get('resolved_ids', [])))
 
     def set_ids(self, ids):
+        if self.closed_at is not None:
+            return  # registrations after the scored end are not counted
         if self.current != ids:
             self.event('ids', ids=sorted(ids))
         self.current = ids
@@ -85,7 +94,7 @@ class Trial:
 
     def hazards(self, msg):
         active = any(v.type == HazardDetection.BUMP for v in msg.detections)
-        if self.start_sim is not None:
+        if self.start_sim is not None and self.closed_at is None:
             self.hazard_packets += 1
             if active and not self.bump:
                 self.bumps += 1
@@ -103,6 +112,10 @@ class Trial:
             dt = seconds(tf.header.stamp)-self.start_sim
             if dt < 0:
                 return
+            if self.closed_at is not None:
+                if dt > self.closed_at+TERMINAL_WINDOW_S:
+                    return
+                self.terminal_samples += 1
             self.poses += 1
             self.csv.writerow([round(dt,4),p.x,p.y,' '.join(map(str, sorted(self.current))),self.bump])
             for i, point in self.targets.items():
@@ -114,6 +127,18 @@ class Trial:
                         self.witness.setdefault(i,dt)
             if self.targets.keys() <= self.current and self.targets.keys() <= self.witness.keys() and self.pair_at is None:
                 self.pair_at = dt
+
+    def terminal_sample(self, timeout_s=1.):
+        """Fix the end time, then take ground-truth poses for TERMINAL_WINDOW_S more.
+
+        A final registration and the end can arrive in the same status message,
+        before any pose stamped after the registration. Without this window
+        the last ID's 1.5 m approach could not be checked (left pending).
+        """
+        self.closed_at = self.sim-self.start_sim
+        deadline = time.monotonic()+timeout_s
+        while time.monotonic() < deadline and self.sim-self.start_sim < self.closed_at+TERMINAL_WINDOW_S:
+            rclpy.spin_once(self.node, timeout_sec=.05)
 
     def prepare_start(self):
         return True
@@ -159,11 +184,14 @@ class Trial:
                 break
         else:
             raise RuntimeError('Simulation stopped advancing')
-        report = dict(policy=os.environ['BENCH_POLICY'], reason=reason, elapsed_sim_s=self.sim-self.start_sim,
+        self.terminal_sample()
+        report = dict(policy=os.environ['BENCH_POLICY'], reason=reason, elapsed_sim_s=self.closed_at,
                       elapsed_wall_s=time.monotonic()-self.start_wall, pair_time_s=self.pair_at,
                       registered_s=self.registered, final_ids=sorted(self.current), first_within_s=self.crossed,
                       registered_and_within_s=self.witness, min_ground_truth_m=self.nearest, bumper_events=self.bumps,
                       hazard_packets=self.hazard_packets, truth_samples=self.poses,
+                      terminal_truth_samples=self.terminal_samples, terminal_window_s=TERMINAL_WINDOW_S,
+                      start_sim_gazebo_s=self.start_sim,
                       last_policy_status=self.status)
         if not self.poses or not self.hazard_packets:
             raise RuntimeError('Missing ground truth or bumper observations')

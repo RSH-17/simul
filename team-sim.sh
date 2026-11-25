@@ -6,10 +6,16 @@ if [[ "$team_action" == board ]]; then
   shift
   exec python3 "$team_repo/tools/team_sim/board.py" "$@"
 fi
+if [[ "$team_action" == gui || "$team_action" == rviz ]]; then
+  exec bash "$team_repo/tools/team_sim/viewer.sh" "$@"
+fi
 if [[ "$team_action" == help ]]; then
-  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook|visual-survey|visual-survey-focus] [--archive PATH]'
+  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook|visual-survey|visual-survey-focus|marker-events] [--archive PATH]'
   echo 'run WORKSPACE [SEED] [--random-layout] [--markers three|unknown] [--tables fixed|shuffle] [--duration SECONDS] [--check]'
   echo 'board [--port 8780]'
+  echo 'gui                    attach the Gazebo GUI to the running simulation'
+  echo 'rviz [WORKSPACE]       attach RViz (/map, /scan, /targets) to the running simulation'
+  echo 'env: TEAM_SIM_RENDER=software|system  TEAM_SIM_RVIZ=1  TEAM_SIM_CAMERA_NOISE="sigma=6,blur=1,drop=0.05,seed=1"'
   exit 0
 fi
 if [[ ! -f /opt/ros/jazzy/setup.bash ]]; then

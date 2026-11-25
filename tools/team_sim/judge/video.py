@@ -10,9 +10,7 @@ from cv_bridge import CvBridge
 from rcl_interfaces.srv import SetParametersAtomically
 from rclpy.parameter import Parameter
 
-BASE = Path(__file__).resolve().parent.parent / '2026-11-19_pair_7_103'
-sys.path.insert(0, str(BASE))
-from measure import Trial, main, seconds
+from judge.base import Trial, main, seconds
 
 
 class CameraTrial(Trial):

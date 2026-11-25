@@ -8,6 +8,8 @@ from pathlib import Path
 import subprocess
 import sys
 import tarfile
+import tempfile
+import urllib.error
 import urllib.request
 
 HERE=Path(__file__).resolve().parent
@@ -16,6 +18,23 @@ REPO=HERE.parents[1]
 def home():return Path(os.environ.get('TEAM_SIM_HOME',str(Path.home()/'.local/share/simul-team'))).resolve()
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
+def fetch(url, target):
+    """Download a release asset; fall back to an authenticated `gh` for private repositories."""
+    try:
+        urllib.request.urlretrieve(url,target);return
+    except urllib.error.HTTPError as exc:
+        if exc.code not in (401,403,404):raise
+    import re,shutil
+    match=re.fullmatch(r'https://github\.com/([^/]+/[^/]+)/releases/download/([^/]+)/([^/]+)',url)
+    gh=shutil.which('gh')
+    if not match or not gh:
+        raise SystemExit('Fixture download needs repository access: run `gh auth login`, or pass --archive PATH')
+    repo,tag,name=match.groups()
+    with tempfile.TemporaryDirectory(dir=target.parent) as tmp:
+        subprocess.run([gh,'release','download',tag,'-R',repo,'-p',name,'-D',tmp],check=True)
+        Path(tmp,name).replace(target)
+
+
 def fixtures(archive=None):
     cfg=json.loads((HERE/'fixtures.json').read_text());cache=home();cache.mkdir(parents=True,exist_ok=True)
     destination=cache/cfg['root']
@@ -23,7 +42,7 @@ def fixtures(archive=None):
         download=Path(archive).resolve() if archive else cache/'fixtures-download.tar.gz'
         if not download.exists():
             temporary=download.with_suffix('.download')
-            urllib.request.urlretrieve(cfg['url'],temporary);temporary.replace(download)
+            fetch(cfg['url'],temporary);temporary.replace(download)
         if digest(download)!=cfg['sha256']:raise ValueError('Fixture archive SHA-256 mismatch')
         with tarfile.open(download) as tar:
             for item in tar.getmembers():
@@ -36,7 +55,7 @@ def fixtures(archive=None):
     return destination
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus'],default='balanced');p.add_argument('--archive',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events'],default='balanced');p.add_argument('--archive',type=Path)
     a=p.parse_args();workspace=a.workspace.expanduser().resolve()
     if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
     workspace.parent.mkdir(parents=True,exist_ok=True)
@@ -52,7 +71,8 @@ def main():
                      'surface-followthrough':'2026-11-22_v151_surface_followthrough',
                      'balanced-print-relook':'2026-11-22_v151_balanced_print_relook',
                      'visual-survey':'2026-11-22_v151_visual_survey',
-                     'visual-survey-focus':'2026-11-22_v152_focus_continuity'}[a.policy]
+                     'visual-survey-focus':'2026-11-22_v152_focus_continuity',
+                     'marker-events':'2026-11-26_v151_marker_events'}[a.policy]
         subprocess.run([sys.executable, str(REPO/'policy_candidates'/candidate/'install.py'),
                         str(release), str(workspace)], check=True)
         pkg=workspace/'src/osp_mission'
