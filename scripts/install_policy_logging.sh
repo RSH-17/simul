@@ -5,7 +5,7 @@ osp_repo_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 osp_gh="$(command -v gh || true)"
 [[ -n "$osp_gh" ]] || osp_gh="$HOME/.local/bin/gh"
 "$osp_gh" auth status >/dev/null 2>&1 || { echo 'Run gh auth login on this computer first.' >&2; exit 1; }
-"$osp_gh" api repos/peter010905/simul --jq '.permissions.push' | rg -q '^true$' || { echo 'GitHub repository write permission is required.' >&2; exit 1; }
+"$osp_gh" api repos/RSH-17/simul --jq '.permissions.push' | rg -q '^true$' || { echo 'GitHub repository write permission is required.' >&2; exit 1; }
 mkdir -p "$HOME/.config/systemd/user" "$osp_repo_dir/run_logs"
 /usr/bin/python3 - "$osp_repo_dir" "$HOME/.config/systemd/user" <<'PY'
 import json

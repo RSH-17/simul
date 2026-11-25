@@ -15,6 +15,20 @@ import subprocess
 import tempfile
 import cv2
 
+# The user's own repository (git remote `mine`); see AGENTS.md.
+DEFAULT_REPO='RSH-17/simul'
+
+
+def json_pages(text):
+    """Parse `gh api --paginate` output: one JSON value per page, concatenated.
+
+    Avoids `--slurp`, which older gh releases (e.g. Ubuntu 24.04's 2.45) lack."""
+    decoder=json.JSONDecoder();pages=[];index=0
+    while True:
+        while index<len(text) and text[index].isspace():index+=1
+        if index>=len(text):return pages
+        page,index=decoder.raw_decode(text,index);pages.append(page)
+
 
 def command(args):
     return subprocess.check_output(args,text=True)
@@ -46,9 +60,22 @@ def verified_approach(audit):
     return len(distances)==3 and all(v is not None and v<=1.5 for v in distances.values())
 
 
+def preserved_external_entries(path, repo, produced):
+    """Keep verified entries hosted in another repository's release.
+
+    The index is rebuilt from the target release, so without this, switching
+    the target repository would drop every video uploaded elsewhere earlier.
+    Entries re-produced for the target repository take precedence."""
+    if not path.exists():return []
+    prefix=f'https://github.com/{repo}/'
+    return [e for e in json.loads(path.read_text()).get('videos',[])
+            if e.get('uploaded_verified') and not e.get('url','').startswith(prefix)
+            and e.get('asset') not in produced]
+
+
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('--repo',default='peter010905/simul')
+    parser.add_argument('--repo',default=DEFAULT_REPO)
     parser.add_argument('--tag',default='simulation-videos-2026-11')
     parser.add_argument('--upload',action='store_true')
     parser.add_argument('--data-root',type=Path,
@@ -65,7 +92,7 @@ def main():
     private=repository['private']
     release=json.loads(command([gh,'api',f'repos/{args.repo}/releases/tags/{args.tag}']))
     def assets():
-        pages=json.loads(command([gh,'api','--paginate','--slurp',f'repos/{args.repo}/releases/{release["id"]}/assets?per_page=100']))
+        pages=json_pages(command([gh,'api','--paginate',f'repos/{args.repo}/releases/{release["id"]}/assets?per_page=100']))
         return {a['name']:a for page in pages for a in page}
     remote=assets();entries=[];skipped=[]
     videos=sorted(base.rglob('video/mission.mp4'),key=lambda p:('fix_v' not in str(p),str(p)))
@@ -122,10 +149,15 @@ def main():
     for item in entries:
         a=remote.get(item['asset'])
         item['uploaded_verified']=bool(a and a['size']==item['bytes'] and a.get('digest')=='sha256:'+item['sha256'])
+    path=root/'repository_snapshot/videos.json'
+    own={e['asset'] for e in entries if e['uploaded_verified']}
+    external=preserved_external_entries(path,args.repo,own)
+    produced=entries
+    entries=[e for e in entries if e['uploaded_verified'] or e['asset'] not in {x['asset'] for x in external}]+external
     report=dict(updated_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),release_url=release['html_url'],
         uploaded_verified=sum(e['uploaded_verified'] for e in entries),videos=entries,skipped=skipped,
         repository_private=private,note='Original evaluator success may use an older protocol; actual 1.5m approach is listed separately. '+('Login required for private release downloads.' if private else 'Public release downloads; uploads authorized by the repository owner.'))
-    path=root/'repository_snapshot/videos.json';path.write_text(json.dumps(report,indent=2)+'\n')
+    path.write_text(json.dumps(report,indent=2)+'\n')
     lines=['<!doctype html><html lang="ko"><meta charset="utf-8"><title>Gazebo videos</title>',
            '<style>body{font:15px sans-serif;max-width:1200px;margin:32px auto}td,th{padding:8px;border-bottom:1px solid #ddd;text-align:left}a{color:#1763ad}</style>',
            '<h1>Gazebo 영상 목록</h1><p>'+('비공개 저장소 권한이 있는 GitHub 계정으로 로그인해야 다운로드할 수 있습니다. ' if private else '소유자가 공개 업로드를 허용한 영상입니다. ')+ '성공 여부는 당시 평가 기준입니다. 실제 1.5m 접근 여부를 별도로 확인하세요.</p>',
@@ -154,7 +186,7 @@ def main():
     else:content+='\n'+block+'\n'
     readme.write_text(content)
     print(json.dumps(dict(uploaded_verified=report['uploaded_verified'],eligible=len(entries),skipped=len(skipped))),flush=True)
-    requested=[e for e in entries if not selected or (data_root/e['local_path']).resolve() in selected]
+    requested=[e for e in produced if not selected or (data_root/e['local_path']).resolve() in selected]
     if args.upload and (any(not e['uploaded_verified'] for e in requested) or
                         selected-{(data_root/e['local_path']).resolve() for e in requested}):
         raise RuntimeError('Not all requested videos were finalized and verified remotely')

@@ -23,7 +23,7 @@ import time
 import uuid
 
 ROOT=Path(__file__).resolve().parents[1]
-REPO='peter010905/simul'
+REPO='RSH-17/simul'  # the user's own repository (git remote `mine`)
 MODES=('simulation','robot')
 GH=shutil.which('gh') or str(Path.home()/'.local/bin/gh')
 SKIP={'.git','build','install','src','source_snapshot','__pycache__','.pytest_cache'}
@@ -223,7 +223,21 @@ def package(run,manifest,limit=256*1024*1024):
     save(inventory,result);return result
 
 
-def gh_json(args):return json.loads(command([GH,*args]))
+def json_pages(text):
+    """Parse `gh api --paginate` output: one JSON value per page, concatenated.
+
+    Avoids `--slurp`, which older gh releases (e.g. Ubuntu 24.04's 2.45) lack."""
+    decoder=json.JSONDecoder();pages=[];index=0
+    while True:
+        while index<len(text) and text[index].isspace():index+=1
+        if index>=len(text):return pages
+        page,index=decoder.raw_decode(text,index);pages.append(page)
+
+
+def gh_json(args):
+    output=command([GH,*args])
+    # A paginated call returns the list of pages (what `--slurp` used to give).
+    return json_pages(output) if '--paginate' in args else json.loads(output)
 
 
 def publish(run,repo=REPO):
@@ -242,7 +256,7 @@ def publish(run,repo=REPO):
                 '--title',manifest['mode']+' policy logs '+month,'--notes','Automatic policy execution logs. Raw data may include sensor observations. Runs are separated by simulation/robot; uploads do not establish task success.'],capture_output=True,text=True,timeout=120)
             release=gh_json(['api',f'repos/{repo}/releases/tags/{tag}'])
         archive=package(run,manifest)
-        def assets():return {item['name']:item for page in gh_json(['api',f'repos/{repo}/releases/{release["id"]}/assets?per_page=100','--paginate','--slurp']) for item in page}
+        def assets():return {item['name']:item for page in gh_json(['api',f'repos/{repo}/releases/{release["id"]}/assets?per_page=100','--paginate']) for item in page}
         remote=assets()
         for item in archive['assets']:
             found=remote.get(item['name'])

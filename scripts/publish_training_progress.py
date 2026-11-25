@@ -149,11 +149,21 @@ def snapshot(source, checkout, campaign, follow_campaigns=()):
     return summary
 
 
+def publication_remote(source):
+    """Push to the user's own repository (remote `mine`); see AGENTS.md."""
+    for name in ('mine','origin'):
+        try:return run(['git','remote','get-url',name],source).strip()
+        except subprocess.CalledProcessError:continue
+    raise RuntimeError('No publication remote in the source checkout')
+
+
 def publish(source, checkout, campaign, videos, follow_campaigns=()):
     checkout.parent.mkdir(parents=True,exist_ok=True)
+    remote=publication_remote(source)
     if not (checkout/'.git').exists():
-        remote=run(['git','remote','get-url','origin'],source).strip()
         run(['git','clone','--quiet','--branch','main','--single-branch',remote,str(checkout)],timeout=180)
+    # An older publication checkout may still point at the upstream repository.
+    run(['git','remote','set-url','origin',remote],checkout)
     # Only our fixed generated-file list may be dirty from an interrupted run.
     changed=run(['git','diff','--name-only','HEAD'],checkout).splitlines()
     if set(changed)-set(FILES):raise RuntimeError('Unexpected edits in publication checkout')

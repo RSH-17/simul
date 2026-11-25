@@ -46,7 +46,7 @@ class SelectivePublishingTest(unittest.TestCase):
                 endpoint=args[-1]
                 if endpoint.endswith('/releases/tags/simulation-videos-2026-11'):
                     return json.dumps({'id':1,'html_url':'https://github.com/owner/repo/releases/tag/test'})
-                if 'assets?' in endpoint:return json.dumps([assets])
+                if 'assets?' in endpoint:return json.dumps(assets)
                 return json.dumps({'private':False})
             def upload(args,**kwargs):
                 path=Path(args[4]);uploaded.append(path.name)
@@ -82,6 +82,30 @@ class SelectivePublishingTest(unittest.TestCase):
             self.assertEqual(len(isolated_report['videos']),2)
             self.assertEqual(isolated_report['uploaded_verified'],1)
             self.assertEqual(uploaded,['requested__episode.mp4'])
+
+    def test_verified_entries_in_another_repository_are_kept(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'repository_snapshot').mkdir();(root/'scripts').mkdir()
+            (root/'README.md').write_text('Simulation recordings\n')
+            old=dict(asset='upstream__episode.mp4',local_path='training_robust/native90/upstream/episode/video/mission.mp4',
+                     bytes=1,sha256='0'*64,url='https://github.com/upstream/simul/releases/download/t/upstream__episode.mp4',
+                     original_evaluator_success=True,elapsed_sim_seconds=300.0,actual_approach_1_5m=True,uploaded_verified=True)
+            pending=dict(old,asset='unverified__episode.mp4',uploaded_verified=False)
+            (root/'repository_snapshot/videos.json').write_text(json.dumps({'videos':[old,pending]}))
+            def command(args):
+                endpoint=args[-1]
+                if endpoint.endswith('/releases/tags/simulation-videos-2026-11'):
+                    return json.dumps({'id':1,'html_url':'https://github.com/RSH-17/simul/releases/tag/test'})
+                if 'assets?' in endpoint:return '[]'
+                return json.dumps({'private':True})
+            with patch.object(publisher,'__file__',str(root/'scripts/publish_simulation_videos.py')), \
+                 patch.object(publisher,'command',side_effect=command), \
+                 patch('sys.argv',['publish']), contextlib.redirect_stdout(io.StringIO()):
+                publisher.main()
+            report=json.loads((root/'repository_snapshot/videos.json').read_text())
+            self.assertEqual([v['asset'] for v in report['videos']],['upstream__episode.mp4'])
+            self.assertEqual(report['uploaded_verified'],1)
+            self.assertIn(old['url'],(root/'README.md').read_text())
 
 
 if __name__=='__main__':unittest.main()
