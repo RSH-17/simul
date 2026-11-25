@@ -1,0 +1,567 @@
+[
+  {
+    "index": 1,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-events-baseline-track-m112601-1795632047816236970",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 390.66400000000004,
+    "registered_event_s": {
+      "103": 69.36,
+      "7": 115.75999999999999,
+      "32": 389.16
+    },
+    "registered_and_within_s": {
+      "103": 69.664,
+      "7": 126.82399999999998,
+      "32": 389.66400000000004
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      89.7
+    ],
+    "path_length_m": 62.7,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 2,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-events-baseline-track-m112602-1795632460725788962",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 449.644,
+    "registered_event_s": {
+      "7": 143.736,
+      "32": 418.93600000000004,
+      "103": 420.73600000000005
+    },
+    "registered_and_within_s": {
+      "7": 144.152,
+      "103": 421.15200000000004,
+      "32": 447.85200000000003
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      338.1
+    ],
+    "path_length_m": 70.3,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 3,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-events-baseline-track-m112603-1795632933840295251",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 447.692,
+    "registered_event_s": {
+      "103": 140.988,
+      "32": 232.588,
+      "7": 446.188
+    },
+    "registered_and_within_s": {
+      "103": 141.19199999999998,
+      "32": 247.112,
+      "7": 446.712
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      317.7
+    ],
+    "path_length_m": 78.1,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 4,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-events-baseline-track-m112604-1795633405244917321",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 446.704,
+    "registered_event_s": {
+      "32": 62.188,
+      "103": 276.788,
+      "7": 445.388
+    },
+    "registered_and_within_s": {
+      "32": 62.70400000000001,
+      "103": 282.864,
+      "7": 445.704
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      116.7,
+      253.7
+    ],
+    "path_length_m": 79.4,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 5,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-events-baseline-track-m112605-1795633875571879339",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "103": 236.168,
+      "32": 424.568
+    },
+    "registered_and_within_s": {
+      "103": 236.672,
+      "32": 424.672
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 8.15
+      }
+    ],
+    "wall_phase_starts_s": [],
+    "path_length_m": 104.3,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 6,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-events-baseline-track-m112601-1795634502511161443",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 518.6479999999999,
+    "registered_event_s": {
+      "103": 57.936,
+      "7": 165.33599999999998,
+      "32": 517.336
+    },
+    "registered_and_within_s": {
+      "103": 58.148,
+      "7": 176.34799999999998,
+      "32": 517.6479999999999
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      141.6
+    ],
+    "path_length_m": 90.1,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 7,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-events-baseline-track-m112602-1795635045497322527",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "7": 134.356
+    },
+    "registered_and_within_s": {
+      "7": 134.66400000000002
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "box",
+        "closest_m": 1.24
+      },
+      {
+        "id": 32,
+        "kind": "wall",
+        "closest_m": 3.08
+      }
+    ],
+    "wall_phase_starts_s": [],
+    "path_length_m": 103.6,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 8,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-events-baseline-track-m112603-1795635669447043428",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "103": 131.54,
+      "7": 297.14
+    },
+    "registered_and_within_s": {
+      "103": 131.66,
+      "7": 297.65999999999997
+    },
+    "missed": [
+      {
+        "id": 32,
+        "kind": "wall",
+        "closest_m": 4.44
+      }
+    ],
+    "wall_phase_starts_s": [],
+    "path_length_m": 105.0,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 9,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-events-baseline-track-m112604-1795636296077167947",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "32": 43.14
+    },
+    "registered_and_within_s": {
+      "32": 43.660000000000004
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "box",
+        "closest_m": 10.22
+      },
+      {
+        "id": 103,
+        "kind": "wall",
+        "closest_m": 4.92
+      }
+    ],
+    "wall_phase_starts_s": [
+      97.6,
+      171.6
+    ],
+    "path_length_m": 33.2,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 10,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-events-baseline-track-m112605-1795636921669956001",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "103": 163.76399999999998,
+      "32": 557.364
+    },
+    "registered_and_within_s": {
+      "103": 164.172,
+      "32": 557.672
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 6.74
+      }
+    ],
+    "wall_phase_starts_s": [],
+    "path_length_m": 100.4,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 11,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-events-baseline-track-m112601-1795637545845519135",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 442.648,
+    "registered_event_s": {
+      "103": 68.548,
+      "7": 265.348,
+      "32": 441.348
+    },
+    "registered_and_within_s": {
+      "103": 68.66799999999999,
+      "7": 275.708,
+      "32": 441.668
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      244.1
+    ],
+    "path_length_m": 74.8,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 12,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-events-baseline-track-m112602-1795638012001911633",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "7": 156.164
+    },
+    "registered_and_within_s": {
+      "7": 156.66799999999998
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "box",
+        "closest_m": 10.28
+      },
+      {
+        "id": 32,
+        "kind": "wall",
+        "closest_m": 12.15
+      }
+    ],
+    "wall_phase_starts_s": [
+      529.2
+    ],
+    "path_length_m": 92.8,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 13,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-events-baseline-track-m112603-1795638635946494205",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 399.152,
+    "registered_event_s": {
+      "103": 137.744,
+      "7": 290.144,
+      "32": 385.744
+    },
+    "registered_and_within_s": {
+      "103": 138.15200000000002,
+      "7": 290.652,
+      "32": 397.432
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      177.1
+    ],
+    "path_length_m": 64.5,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 14,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-events-baseline-track-m112604-1795639058242658712",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "32": 60.955999999999996,
+      "7": 288.956
+    },
+    "registered_and_within_s": {
+      "32": 61.156,
+      "7": 289.176
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "wall",
+        "closest_m": 4.67
+      }
+    ],
+    "wall_phase_starts_s": [
+      105.7
+    ],
+    "path_length_m": 99.8,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 15,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-events-baseline-track-m112605-1795639683589002765",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "103": 158.76399999999998
+    },
+    "registered_and_within_s": {
+      "103": 159.164
+    },
+    "missed": [
+      {
+        "id": 32,
+        "kind": "box",
+        "closest_m": 6.62
+      },
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 8.73
+      }
+    ],
+    "wall_phase_starts_s": [],
+    "path_length_m": 75.5,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 16,
+    "mode": "random",
+    "seed": 808361371,
+    "run": "team-events-baseline-track-m808361371-1795640307606187810",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "134": 14.992,
+      "9": 347.392
+    },
+    "registered_and_within_s": {
+      "134": 23.62,
+      "9": 347.68
+    },
+    "missed": [
+      {
+        "id": 357,
+        "kind": "wall",
+        "closest_m": 4.99
+      }
+    ],
+    "wall_phase_starts_s": [
+      436.7,
+      572.7
+    ],
+    "path_length_m": 86.9,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 17,
+    "mode": "random",
+    "seed": 3880005807,
+    "run": "team-events-baseline-track-m3880005807-1795640932949915369",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 313.636,
+    "registered_event_s": {
+      "43": 52.936,
+      "199": 263.93600000000004,
+      "663": 301.73600000000005
+    },
+    "registered_and_within_s": {
+      "43": 63.4,
+      "199": 268.68,
+      "663": 311.62
+    },
+    "missed": [],
+    "wall_phase_starts_s": [],
+    "path_length_m": 41.9,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 18,
+    "mode": "random",
+    "seed": 4231469807,
+    "run": "team-events-baseline-track-m4231469807-1795641268887169924",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 418.18399999999997,
+    "registered_event_s": {
+      "532": 133.38799999999998,
+      "39": 222.988,
+      "215": 416.788
+    },
+    "registered_and_within_s": {
+      "532": 139.86399999999998,
+      "39": 231.884,
+      "215": 417.204
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      123.7
+    ],
+    "path_length_m": 66.5,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 19,
+    "mode": "random",
+    "seed": 745871323,
+    "run": "team-events-baseline-track-m745871323-1795641709332363453",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_event_s": {
+      "661": 354.0
+    },
+    "registered_and_within_s": {
+      "661": 370.99199999999996
+    },
+    "missed": [
+      {
+        "id": 502,
+        "kind": "wall",
+        "closest_m": 4.75
+      },
+      {
+        "id": 939,
+        "kind": "wall",
+        "closest_m": 2.56
+      }
+    ],
+    "wall_phase_starts_s": [],
+    "path_length_m": 85.8,
+    "bumper_events": 0,
+    "map_saved": true
+  },
+  {
+    "index": 20,
+    "mode": "random",
+    "seed": 2517251125,
+    "run": "team-events-baseline-track-m2517251125-1795642335296424964",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 351.136,
+    "registered_event_s": {
+      "36": 34.336000000000006,
+      "825": 123.536,
+      "438": 349.136
+    },
+    "registered_and_within_s": {
+      "36": 50.808,
+      "825": 128.828,
+      "438": 349.648
+    },
+    "missed": [],
+    "wall_phase_starts_s": [
+      17.1,
+      242.6
+    ],
+    "path_length_m": 57.6,
+    "bumper_events": 0,
+    "map_saved": true
+  }
+]

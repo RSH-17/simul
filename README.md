@@ -6,7 +6,8 @@
 | 목표 | TurtleBot4가 처음 보는 공간을 SLAM으로 탐색해 ArUco 마커 3개를 찾는다. 각 마커에 1.5m 이내로 접근하고, 지도 좌표를 정확히 기록하고, 충돌 없이 빨리 끝낸다 |
 | 기준 정책 | Mixed v1.5.1-balanced (`policy_releases/2026-11-21_mixed_camera_sync_v151`). 최적 정책은 아직 확정하지 않았다 |
 | 계측판 | `--policy marker-events`: 판단은 같고, 확정 이벤트 토픽과 실물 LED·소리 알림만 더했다 ([설명](policy_candidates/2026-11-26_v151_marker_events/README.md)) |
-| 남은 핵심 문제 | 벽 마커 누락, 같은 상자 반복 탐색, 스친 마커 놓침, 막힌 목표 복구 |
+| 최신 반복 결과 | 개발 맵 5개×3회 엄격 성공 **7/15**(95% CI 25–70%), 새 무작위 배치 **3/5**, 범퍼 0. 벽 마커 7/15 대 상자 마커 26/30. 실패는 벽 마커 근처에 가지 못한 경우였다(최근접 2.6–12.2m) ([기록](experiments/2026-11-26_baseline_repeat/README.md), GPU 렌더링 PC라 이전 기록과 직접 비교하지 않음) |
+| 남은 핵심 문제 | **벽 마커 누락이 가장 크다**(실패 10회 중 6회는 벽 단계가 시작되지 않음). 같은 상자 반복 탐색, 스친 마커 놓침, 막힌 목표 복구 |
 | 실물 | 완주 검증 기록이 없다. [실물 검증 계획](docs/team-policy-lab/PHYSICAL_VALIDATION.md) |
 
 **시작하기**: [팀 실험 안내](docs/team-policy-lab/README.md)

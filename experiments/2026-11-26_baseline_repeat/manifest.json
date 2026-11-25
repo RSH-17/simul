@@ -1,0 +1,193 @@
+{
+  "name": "baseline-repeat",
+  "workspace": "/home/ryu/simul-ws/events-baseline",
+  "started": "20261126T034047",
+  "duration_s": 600.0,
+  "conditions": {
+    "TEAM_SIM_RENDER": "system"
+  },
+  "planned": 20,
+  "attempts": [
+    {
+      "index": 1,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112601-1795632047816236970",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 412.9
+    },
+    {
+      "index": 2,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112602-1795632460725788962",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 473.1
+    },
+    {
+      "index": 3,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112603-1795632933840295251",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 471.4
+    },
+    {
+      "index": 4,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112604-1795633405244917321",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 470.3
+    },
+    {
+      "index": 5,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112605-1795633875571879339",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 626.9
+    },
+    {
+      "index": 6,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112601-1795634502511161443",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 543.0
+    },
+    {
+      "index": 7,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112602-1795635045497322527",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.0
+    },
+    {
+      "index": 8,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112603-1795635669447043428",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 626.6
+    },
+    {
+      "index": 9,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112604-1795636296077167947",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.6
+    },
+    {
+      "index": 10,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112605-1795636921669956001",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.2
+    },
+    {
+      "index": 11,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112601-1795637545845519135",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 466.2
+    },
+    {
+      "index": 12,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112602-1795638012001911633",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.0
+    },
+    {
+      "index": 13,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112603-1795638635946494205",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 422.3
+    },
+    {
+      "index": 14,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112604-1795639058242658712",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.3
+    },
+    {
+      "index": 15,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112605-1795639683589002765",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 623.9
+    },
+    {
+      "index": 16,
+      "mode": "random",
+      "seed": 808361371,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m808361371-1795640307606187810",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.3
+    },
+    {
+      "index": 17,
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m3880005807-1795640932949915369",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 335.9
+    },
+    {
+      "index": 18,
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m4231469807-1795641268887169924",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 440.5
+    },
+    {
+      "index": 19,
+      "mode": "random",
+      "seed": 745871323,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m745871323-1795641709332363453",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 626.0
+    },
+    {
+      "index": 20,
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m2517251125-1795642335296424964",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 374.0
+    }
+  ],
+  "finished": "20261126T063828"
+}

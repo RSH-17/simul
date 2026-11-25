@@ -1,0 +1,803 @@
+{
+  "conditions": [
+    {
+      "camera_noise": "off",
+      "duration_s": 600.0,
+      "render": "system",
+      "source": "f5b9f6d3a531"
+    }
+  ],
+  "summary": {
+    "development_maps": {
+      "trials": 15,
+      "strict": [
+        7,
+        15,
+        [
+          0.24809225259746442,
+          0.6988336984894921
+        ]
+      ],
+      "all_three_registered": 7,
+      "wall_registered": 7,
+      "wall_approached": 7,
+      "wall_markers": 15,
+      "box_registered": 26,
+      "box_approached": 26,
+      "box_markers": 30,
+      "mean_finish_s_of_successes": 440.9542857142857,
+      "bumps": 0,
+      "invalid": 0
+    },
+    "per_seed": {
+      "112601": {
+        "trials": 3,
+        "strict": [
+          3,
+          3,
+          [
+            0.43849391955098227,
+            1.0
+          ]
+        ],
+        "all_three_registered": 3,
+        "wall_registered": 3,
+        "wall_approached": 3,
+        "wall_markers": 3,
+        "box_registered": 6,
+        "box_approached": 6,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 449.66,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112602": {
+        "trials": 3,
+        "strict": [
+          1,
+          3,
+          [
+            0.0614903152761605,
+            0.7923450448735121
+          ]
+        ],
+        "all_three_registered": 1,
+        "wall_registered": 1,
+        "wall_approached": 1,
+        "wall_markers": 3,
+        "box_registered": 4,
+        "box_approached": 4,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 447.85200000000003,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112603": {
+        "trials": 3,
+        "strict": [
+          2,
+          3,
+          [
+            0.2076549551264879,
+            0.9385096847238394
+          ]
+        ],
+        "all_three_registered": 2,
+        "wall_registered": 2,
+        "wall_approached": 2,
+        "wall_markers": 3,
+        "box_registered": 6,
+        "box_approached": 6,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 422.072,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112604": {
+        "trials": 3,
+        "strict": [
+          1,
+          3,
+          [
+            0.0614903152761605,
+            0.7923450448735121
+          ]
+        ],
+        "all_three_registered": 1,
+        "wall_registered": 1,
+        "wall_approached": 1,
+        "wall_markers": 3,
+        "box_registered": 5,
+        "box_approached": 5,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 445.704,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112605": {
+        "trials": 3,
+        "strict": [
+          0,
+          3,
+          [
+            0.0,
+            0.5615060804490177
+          ]
+        ],
+        "all_three_registered": 0,
+        "wall_registered": 0,
+        "wall_approached": 0,
+        "wall_markers": 3,
+        "box_registered": 5,
+        "box_approached": 5,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": null,
+        "bumps": 0,
+        "invalid": 0
+      }
+    },
+    "unseen_random": {
+      "trials": 5,
+      "strict": [
+        3,
+        5,
+        [
+          0.23071993220883708,
+          0.8823817688407467
+        ]
+      ],
+      "all_three_registered": 3,
+      "wall_registered": 7,
+      "wall_approached": 7,
+      "wall_markers": 10,
+      "box_registered": 5,
+      "box_approached": 5,
+      "box_markers": 5,
+      "mean_finish_s_of_successes": 359.49066666666664,
+      "bumps": 0,
+      "invalid": 0
+    }
+  },
+  "attempts": [
+    {
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112601-1795632047816236970",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 389.66400000000004,
+      "elapsed_s": 390.66400000000004,
+      "path_m": 62.66254916060892,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112602-1795632460725788962",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 447.85200000000003,
+      "elapsed_s": 449.644,
+      "path_m": 70.32508929224977,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112603-1795632933840295251",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 446.712,
+      "elapsed_s": 447.692,
+      "path_m": 78.1450876742062,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112604-1795633405244917321",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 445.704,
+      "elapsed_s": 446.704,
+      "path_m": 79.35863125601666,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112605-1795633875571879339",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 104.3040867914329,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112601-1795634502511161443",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 517.6479999999999,
+      "elapsed_s": 518.6479999999999,
+      "path_m": 90.11180644818116,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112602-1795635045497322527",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 103.62928952825858,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112603-1795635669447043428",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 104.95861775006256,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112604-1795636296077167947",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 33.223120179178736,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112605-1795636921669956001",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 100.39634421119047,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112601-1795637545845519135",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 441.668,
+      "elapsed_s": 442.648,
+      "path_m": 74.82207823704665,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112602-1795638012001911633",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 92.81711352450883,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112603-1795638635946494205",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 397.432,
+      "elapsed_s": 399.152,
+      "path_m": 64.54750890267017,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112604-1795639058242658712",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 99.82029595647376,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m112605-1795639683589002765",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 75.45640975462662,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 808361371,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m808361371-1795640307606187810",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        2,
+        1,
+        1
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 86.90558549744517,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m3880005807-1795640932949915369",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 311.62,
+      "elapsed_s": 313.636,
+      "path_m": 41.89048668936414,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m4231469807-1795641268887169924",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 417.204,
+      "elapsed_s": 418.18399999999997,
+      "path_m": 66.48111520887498,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 745871323,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m745871323-1795641709332363453",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        2,
+        0,
+        0
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 85.77150508302789,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "/home/ryu/.local/share/simul-team/results/team-events-baseline-track-m2517251125-1795642335296424964",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 349.648,
+      "elapsed_s": 351.136,
+      "path_m": 57.644342066459686,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "f5b9f6d3a531",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    }
+  ]
+}
