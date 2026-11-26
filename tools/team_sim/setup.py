@@ -55,7 +55,7 @@ def fixtures(archive=None):
     return destination
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events','wall-slot-escape','far-wall-slot'],default='balanced');p.add_argument('--archive',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events','wall-slot-escape','far-wall-slot','v15257-short-lap'],default='balanced');p.add_argument('--archive',type=Path)
     a=p.parse_args();workspace=a.workspace.expanduser().resolve()
     if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
     workspace.parent.mkdir(parents=True,exist_ok=True)
@@ -74,14 +74,15 @@ def main():
                      'visual-survey-focus':'2026-11-22_v152_focus_continuity',
                      'marker-events':'2026-11-26_v151_marker_events',
                      'wall-slot-escape':'2026-11-26_v154_wall_slot_escape',
-                     'far-wall-slot':'2026-11-26_v155_far_wall_slot'}[a.policy]
+                     'far-wall-slot':'2026-11-26_v155_far_wall_slot',
+                     'v15257-short-lap':'2026-11-27_v15257_short_lap_import'}[a.policy]
         subprocess.run([sys.executable, str(REPO/'policy_candidates'/candidate/'install.py'),
                         str(release), str(workspace)], check=True)
         pkg=workspace/'src/osp_mission'
         subprocess.run(['c++','-std=c++17','-O3','-ffp-contract=off','-fno-fast-math','-shared','-fPIC',str(pkg/'osp_mission/raycast.cpp'),'-o',str(pkg/'osp_mission/_raycast.so')],check=True)
         subprocess.run(['g++','-std=c++17','-O1','-I/opt/ros/jazzy/include','-I/usr/include/eigen3',str(pkg/'tools/export_slam_graph_poses.cpp'),'-L/opt/ros/jazzy/lib','-Wl,-rpath,/opt/ros/jazzy/lib','-lkartoSlamToolbox','-lboost_serialization','-lboost_thread','-lpthread','-o',str(pkg/'tools/export_slam_graph_poses')],check=True)
         subprocess.run(['colcon','build','--symlink-install','--packages-select','osp_mission'],cwd=workspace,check=True)
-    (workspace/'team_policy.json').write_text(json.dumps(dict(policy=a.policy,fixtures=str(fixture),source='frozen-v1.5.1',editable_source=str(workspace/'src/osp_mission/osp_mission')),indent=2)+'\n')
+    (workspace/'team_policy.json').write_text(json.dumps(dict(policy=a.policy,fixtures=str(fixture),source='frozen-v1.5.1' if a.policy!='v15257-short-lap' else 'release-policy-v1.5.2.57',editable_source=str(workspace/'src/osp_mission/osp_mission')),indent=2)+'\n')
     print('Prepared',workspace,'with',fixture)
 
 if __name__=='__main__':main()
