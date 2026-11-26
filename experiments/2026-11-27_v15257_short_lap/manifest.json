@@ -1,0 +1,193 @@
+{
+  "name": "v15257-short-lap-repeat",
+  "workspace": "~/simul-ws/v15257-short-lap",
+  "started": "20261127T032604",
+  "duration_s": 600.0,
+  "conditions": {
+    "TEAM_SIM_RENDER": "system"
+  },
+  "planned": 20,
+  "attempts": [
+    {
+      "index": 1,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112601-1795717564700612169",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 488.5
+    },
+    {
+      "index": 2,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112602-1795718053166290369",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 618.7
+    },
+    {
+      "index": 3,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112603-1795718671882712518",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 425.8
+    },
+    {
+      "index": 4,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112604-1795719097686302266",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.1
+    },
+    {
+      "index": 5,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112605-1795719722786940813",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.1
+    },
+    {
+      "index": 6,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112601-1795720346857890028",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.1
+    },
+    {
+      "index": 7,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112602-1795720971932552589",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.9
+    },
+    {
+      "index": 8,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112603-1795721596790460813",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 403.0
+    },
+    {
+      "index": 9,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112604-1795721999792559174",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 604.8
+    },
+    {
+      "index": 10,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112605-1795722604552833200",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 498.4
+    },
+    {
+      "index": 11,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112601-1795723103001133693",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 590.1
+    },
+    {
+      "index": 12,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112602-1795723693098830275",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 322.9
+    },
+    {
+      "index": 13,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112603-1795724016001375267",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 369.7
+    },
+    {
+      "index": 14,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112604-1795724385676063701",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 623.9
+    },
+    {
+      "index": 15,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m112605-1795725009549863733",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.0
+    },
+    {
+      "index": 16,
+      "mode": "random",
+      "seed": 808361371,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m808361371-1795725633580371854",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 303.3
+    },
+    {
+      "index": 17,
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m3880005807-1795725936855812195",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 303.3
+    },
+    {
+      "index": 18,
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m4231469807-1795726240158023739",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.3
+    },
+    {
+      "index": 19,
+      "mode": "random",
+      "seed": 745871323,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m745871323-1795726865477621345",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 324.1
+    },
+    {
+      "index": 20,
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "~/.local/share/simul-team/results/team-v15257-short-lap-track-m2517251125-1795727189536700623",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 414.9
+    }
+  ],
+  "finished": "20261127T061324"
+}
