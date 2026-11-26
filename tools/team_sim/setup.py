@@ -55,7 +55,7 @@ def fixtures(archive=None):
     return destination
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events','wall-slot-escape'],default='balanced');p.add_argument('--archive',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events','wall-slot-escape','far-wall-slot'],default='balanced');p.add_argument('--archive',type=Path)
     a=p.parse_args();workspace=a.workspace.expanduser().resolve()
     if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
     workspace.parent.mkdir(parents=True,exist_ok=True)
@@ -73,7 +73,8 @@ def main():
                      'visual-survey':'2026-11-22_v151_visual_survey',
                      'visual-survey-focus':'2026-11-22_v152_focus_continuity',
                      'marker-events':'2026-11-26_v151_marker_events',
-                     'wall-slot-escape':'2026-11-26_v154_wall_slot_escape'}[a.policy]
+                     'wall-slot-escape':'2026-11-26_v154_wall_slot_escape',
+                     'far-wall-slot':'2026-11-26_v155_far_wall_slot'}[a.policy]
         subprocess.run([sys.executable, str(REPO/'policy_candidates'/candidate/'install.py'),
                         str(release), str(workspace)], check=True)
         pkg=workspace/'src/osp_mission'

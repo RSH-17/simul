@@ -1,0 +1,803 @@
+{
+  "conditions": [
+    {
+      "camera_noise": "off",
+      "duration_s": 600.0,
+      "render": "system",
+      "source": "3863093ec823"
+    }
+  ],
+  "summary": {
+    "development_maps": {
+      "trials": 15,
+      "strict": [
+        10,
+        15,
+        [
+          0.41713125151212976,
+          0.8482389930530876
+        ]
+      ],
+      "all_three_registered": 10,
+      "wall_registered": 10,
+      "wall_approached": 10,
+      "wall_markers": 15,
+      "box_registered": 27,
+      "box_approached": 27,
+      "box_markers": 30,
+      "mean_finish_s_of_successes": 409.52000000000004,
+      "bumps": 0,
+      "invalid": 0
+    },
+    "per_seed": {
+      "112601": {
+        "trials": 3,
+        "strict": [
+          3,
+          3,
+          [
+            0.43849391955098227,
+            1.0
+          ]
+        ],
+        "all_three_registered": 3,
+        "wall_registered": 3,
+        "wall_approached": 3,
+        "wall_markers": 3,
+        "box_registered": 6,
+        "box_approached": 6,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 407.32933333333335,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112602": {
+        "trials": 3,
+        "strict": [
+          3,
+          3,
+          [
+            0.43849391955098227,
+            1.0
+          ]
+        ],
+        "all_three_registered": 3,
+        "wall_registered": 3,
+        "wall_approached": 3,
+        "wall_markers": 3,
+        "box_registered": 6,
+        "box_approached": 6,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 398.3546666666667,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112603": {
+        "trials": 3,
+        "strict": [
+          3,
+          3,
+          [
+            0.43849391955098227,
+            1.0
+          ]
+        ],
+        "all_three_registered": 3,
+        "wall_registered": 3,
+        "wall_approached": 3,
+        "wall_markers": 3,
+        "box_registered": 6,
+        "box_approached": 6,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 423.1693333333333,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112604": {
+        "trials": 3,
+        "strict": [
+          1,
+          3,
+          [
+            0.0614903152761605,
+            0.7923450448735121
+          ]
+        ],
+        "all_three_registered": 1,
+        "wall_registered": 1,
+        "wall_approached": 1,
+        "wall_markers": 3,
+        "box_registered": 5,
+        "box_approached": 5,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": 408.64,
+        "bumps": 0,
+        "invalid": 0
+      },
+      "112605": {
+        "trials": 3,
+        "strict": [
+          0,
+          3,
+          [
+            0.0,
+            0.5615060804490177
+          ]
+        ],
+        "all_three_registered": 0,
+        "wall_registered": 0,
+        "wall_approached": 0,
+        "wall_markers": 3,
+        "box_registered": 4,
+        "box_approached": 4,
+        "box_markers": 6,
+        "mean_finish_s_of_successes": null,
+        "bumps": 0,
+        "invalid": 0
+      }
+    },
+    "unseen_random": {
+      "trials": 5,
+      "strict": [
+        4,
+        5,
+        [
+          0.3755282641185388,
+          0.9637768390302125
+        ]
+      ],
+      "all_three_registered": 4,
+      "wall_registered": 9,
+      "wall_approached": 9,
+      "wall_markers": 10,
+      "box_registered": 5,
+      "box_approached": 5,
+      "box_markers": 5,
+      "mean_finish_s_of_successes": 401.61,
+      "bumps": 0,
+      "invalid": 0
+    }
+  },
+  "attempts": [
+    {
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795678761572859563",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 389.68,
+      "elapsed_s": 390.68,
+      "path_m": 61.80935145680314,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795679174134098202",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 387.672,
+      "elapsed_s": 388.672,
+      "path_m": 51.31632830219335,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795679584464740244",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 495.62,
+      "elapsed_s": 497.18,
+      "path_m": 73.51620229184799,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795680104437758623",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 77.50509550550332,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795680729565568261",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 98.3671397749863,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795681354625157467",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 402.66,
+      "elapsed_s": 403.66,
+      "path_m": 67.3454413359578,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795681781312974687",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 397.204,
+      "elapsed_s": 397.704,
+      "path_m": 55.89491739999583,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795682201848065305",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 385.18,
+      "elapsed_s": 386.2,
+      "path_m": 66.88826749003084,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795682611068982004",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 90.40749265636785,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795683235109018655",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 1,
+      "approached": 1,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 95.07409232904597,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795683859067902426",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 429.648,
+      "elapsed_s": 430.644,
+      "path_m": 69.49679503158744,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795684312204682037",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 410.18800000000005,
+      "elapsed_s": 410.73600000000005,
+      "path_m": 52.71995025531085,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795684744891144210",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 388.708,
+      "elapsed_s": 389.668,
+      "path_m": 66.2823580493819,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795685157738758827",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        1,
+        1,
+        1
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": 408.64,
+      "elapsed_s": 409.64,
+      "path_m": 59.510580038022084,
+      "bumps": 0,
+      "reason": "all_registered_and_within_1.5m",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795685590519671799",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        1,
+        0,
+        0
+      ],
+      "box": [
+        2,
+        2,
+        2
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 98.56464485568495,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 808361371,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m808361371-1795686215481275333",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 317.22,
+      "elapsed_s": 319.12,
+      "path_m": 47.91060406190118,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m3880005807-1795686555709193909",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 461.3,
+      "elapsed_s": 463.172,
+      "path_m": 71.81540595718975,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m4231469807-1795687042336100202",
+      "completed": true,
+      "valid": true,
+      "strict": false,
+      "registered": 2,
+      "approached": 2,
+      "markers": 3,
+      "wall": [
+        2,
+        1,
+        1
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": null,
+      "elapsed_s": 600.0,
+      "path_m": 94.15269775888191,
+      "bumps": 0,
+      "reason": "common_time_limit",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 745871323,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m745871323-1795687666839292449",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 463.728,
+      "elapsed_s": 468.18399999999997,
+      "path_m": 65.17708931552727,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    },
+    {
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m2517251125-1795688157673469722",
+      "completed": true,
+      "valid": true,
+      "strict": true,
+      "registered": 3,
+      "approached": 3,
+      "markers": 3,
+      "wall": [
+        2,
+        2,
+        2
+      ],
+      "box": [
+        1,
+        1,
+        1
+      ],
+      "end_s": 364.192,
+      "elapsed_s": 365.168,
+      "path_m": 53.13964205096045,
+      "bumps": 0,
+      "reason": "all_targets_found",
+      "condition": {
+        "source": "3863093ec823",
+        "render": "system",
+        "camera_noise": "off",
+        "duration_s": 600.0
+      }
+    }
+  ]
+}

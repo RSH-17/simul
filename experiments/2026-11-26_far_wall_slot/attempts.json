@@ -1,0 +1,930 @@
+[
+  {
+    "index": 1,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-far-wall-slot-track-m112601-1795678761572859563",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 390.68,
+    "registered_and_within_s": {
+      "103": 67.18,
+      "7": 138.72,
+      "32": 389.68
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.018,
+      "7": 0.018,
+      "32": 0.011
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      99.2
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.5,
+      9.1
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 61.8,
+    "bumper_events": 0
+  },
+  {
+    "index": 2,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-far-wall-slot-track-m112602-1795679174134098202",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 388.672,
+    "registered_and_within_s": {
+      "7": 151.672,
+      "32": 363.752,
+      "103": 387.672
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "7": 0.04,
+      "32": 0.16,
+      "103": 0.154
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      187.7
+    ],
+    "wall_slot": {
+      "started": 187.66,
+      "done": true,
+      "ended": "time_limit",
+      "views": 6,
+      "target": [
+        -8.89060864045401,
+        -6.060788547377549
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 187.7,
+      "novelty_m": 10.08
+    },
+    "robot_world_x_range": [
+      -9.4,
+      9.3
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 51.3,
+    "bumper_events": 0
+  },
+  {
+    "index": 3,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-far-wall-slot-track-m112603-1795679584464740244",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 497.18,
+    "registered_and_within_s": {
+      "103": 85.68,
+      "7": 356.68,
+      "32": 495.62
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.025,
+      "7": 0.03,
+      "32": 0.05
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      183.7
+    ],
+    "wall_slot": {
+      "started": 183.668,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -5.999229594475692,
+        16.52760394549117
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 183.7,
+      "novelty_m": 11.36
+    },
+    "robot_world_x_range": [
+      -9.2,
+      9.5
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 73.5,
+    "bumper_events": 0
+  },
+  {
+    "index": 4,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-far-wall-slot-track-m112604-1795680104437758623",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "32": 97.20400000000001
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "box",
+        "closest_m": 6.92,
+        "world": [
+          7.4,
+          -0.1
+        ]
+      },
+      {
+        "id": 103,
+        "kind": "wall",
+        "closest_m": 3.92,
+        "world": [
+          -1.2,
+          -6.2
+        ]
+      }
+    ],
+    "marker_position_errors_m": {
+      "32": 0.031
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      139.7
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.3,
+      0.9
+    ],
+    "stuck_escape_triggers": 3,
+    "path_length_m": 77.5,
+    "bumper_events": 0
+  },
+  {
+    "index": 5,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-far-wall-slot-track-m112605-1795680729565568261",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 132.212
+    },
+    "missed": [
+      {
+        "id": 32,
+        "kind": "box",
+        "closest_m": 5.14,
+        "world": [
+          6.3,
+          2.4
+        ]
+      },
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 5.02,
+        "world": [
+          9.3,
+          -5.6
+        ]
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.037
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      187.7
+    ],
+    "wall_slot": {
+      "started": 187.7,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -11.406565857411245,
+        6.066341907884167
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 187.7,
+      "novelty_m": 11.92
+    },
+    "robot_world_x_range": [
+      -9.4,
+      4.2
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 98.4,
+    "bumper_events": 0
+  },
+  {
+    "index": 6,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-far-wall-slot-track-m112601-1795681354625157467",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 403.66,
+    "registered_and_within_s": {
+      "103": 60.8,
+      "7": 168.02,
+      "32": 402.66
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.056,
+      "7": 0.034,
+      "32": 0.018
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      118.7
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.3,
+      9.2
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 67.3,
+    "bumper_events": 0
+  },
+  {
+    "index": 7,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-far-wall-slot-track-m112602-1795681781312974687",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 397.704,
+    "registered_and_within_s": {
+      "7": 122.704,
+      "32": 370.464,
+      "103": 397.204
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "7": 0.004,
+      "32": 0.062,
+      "103": 0.077
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      204.2
+    ],
+    "wall_slot": {
+      "started": 204.208,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -9.743973123694058,
+        -6.572015501607183
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 204.2,
+      "novelty_m": 11.13
+    },
+    "robot_world_x_range": [
+      -9.4,
+      9.6
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 55.9,
+    "bumper_events": 0
+  },
+  {
+    "index": 8,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-far-wall-slot-track-m112603-1795682201848065305",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 386.2,
+    "registered_and_within_s": {
+      "103": 128.68,
+      "32": 205.6,
+      "7": 385.18
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.049,
+      "32": 0.002,
+      "7": 0.025
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      158.7
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.2,
+      7.5
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 66.9,
+    "bumper_events": 0
+  },
+  {
+    "index": 9,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-far-wall-slot-track-m112604-1795682611068982004",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "32": 41.16,
+      "7": 389.16
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "wall",
+        "closest_m": 5.27,
+        "world": [
+          -1.2,
+          -6.2
+        ]
+      }
+    ],
+    "marker_position_errors_m": {
+      "32": 0.053,
+      "7": 0.033
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      183.2
+    ],
+    "wall_slot": {
+      "started": 183.156,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        17.955876796307358,
+        -5.720810824648812
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 183.2,
+      "novelty_m": 9.92
+    },
+    "robot_world_x_range": [
+      -9.2,
+      9.2
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 90.4,
+    "bumper_events": 0
+  },
+  {
+    "index": 10,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-far-wall-slot-track-m112605-1795683235109018655",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 444.192
+    },
+    "missed": [
+      {
+        "id": 32,
+        "kind": "box",
+        "closest_m": 7.8,
+        "world": [
+          6.3,
+          2.4
+        ]
+      },
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 6.39,
+        "world": [
+          9.3,
+          -5.6
+        ]
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.055
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      190.7
+    ],
+    "wall_slot": {
+      "started": 190.684,
+      "done": true,
+      "ended": "time_limit",
+      "views": 6,
+      "target": [
+        -10.779672155767607,
+        5.730059411184289
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 190.7,
+      "novelty_m": 11.28
+    },
+    "robot_world_x_range": [
+      -9.6,
+      2.9
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 95.1,
+    "bumper_events": 0
+  },
+  {
+    "index": 11,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-far-wall-slot-track-m112601-1795683859067902426",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 430.644,
+    "registered_and_within_s": {
+      "103": 66.14800000000001,
+      "7": 207.96800000000002,
+      "32": 429.648
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.028,
+      "7": 0.01,
+      "32": 0.026
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      174.1
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.3,
+      9.1
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 69.5,
+    "bumper_events": 0
+  },
+  {
+    "index": 12,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-far-wall-slot-track-m112602-1795684312204682037",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 410.73600000000005,
+    "registered_and_within_s": {
+      "7": 144.188,
+      "32": 385.708,
+      "103": 410.18800000000005
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "7": 0.003,
+      "32": 0.108,
+      "103": 0.103
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      186.7
+    ],
+    "wall_slot": {
+      "started": 186.672,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -8.28345817237571,
+        -5.800530881374067
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 186.7,
+      "novelty_m": 9.53
+    },
+    "robot_world_x_range": [
+      -9.3,
+      9.3
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 52.7,
+    "bumper_events": 0
+  },
+  {
+    "index": 13,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-far-wall-slot-track-m112603-1795684744891144210",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 389.668,
+    "registered_and_within_s": {
+      "103": 129.668,
+      "32": 187.048,
+      "7": 388.708
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.038,
+      "32": 0.019,
+      "7": 0.017
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      130.6
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.2,
+      8.3
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 66.3,
+    "bumper_events": 0
+  },
+  {
+    "index": 14,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-far-wall-slot-track-m112604-1795685157738758827",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 409.64,
+    "registered_and_within_s": {
+      "32": 43.14,
+      "103": 252.0,
+      "7": 408.64
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "32": 0.013,
+      "103": 0.108,
+      "7": 0.092
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      183.6
+    ],
+    "wall_slot": {
+      "started": 183.628,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        3.9519710441785003,
+        -7.077397897829102
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 183.6,
+      "novelty_m": 8.04
+    },
+    "robot_world_x_range": [
+      -9.2,
+      7.8
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 59.5,
+    "bumper_events": 0
+  },
+  {
+    "index": 15,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-far-wall-slot-track-m112605-1795685590519671799",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 450.596,
+      "32": 571.136
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 7.42,
+        "world": [
+          9.3,
+          -5.6
+        ]
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.018,
+      "32": 0.068
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      182.1
+    ],
+    "wall_slot": {
+      "started": 182.132,
+      "done": true,
+      "ended": "time_limit",
+      "views": 6,
+      "target": [
+        -8.216402036250674,
+        4.893108867919146
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 182.1,
+      "novelty_m": 9.48
+    },
+    "robot_world_x_range": [
+      -9.4,
+      5.3
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 98.6,
+    "bumper_events": 0
+  },
+  {
+    "index": 16,
+    "mode": "random",
+    "seed": 808361371,
+    "run": "team-far-wall-slot-track-m808361371-1795686215481275333",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 319.12,
+    "registered_and_within_s": {
+      "134": 9.220000000000002,
+      "357": 281.92,
+      "9": 317.22
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "134": 0.013,
+      "357": 0.111,
+      "9": 0.115
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      195.6
+    ],
+    "wall_slot": {
+      "started": 195.62,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -3.673331823104229,
+        -8.556015802202122
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 195.6,
+      "novelty_m": 6.7
+    },
+    "robot_world_x_range": [
+      -9.0,
+      8.5
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 47.9,
+    "bumper_events": 0
+  },
+  {
+    "index": 17,
+    "mode": "random",
+    "seed": 3880005807,
+    "run": "team-far-wall-slot-track-m3880005807-1795686555709193909",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 463.172,
+    "registered_and_within_s": {
+      "43": 62.28,
+      "663": 225.57999999999998,
+      "199": 461.3
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "43": 0.009,
+      "663": 0.029,
+      "199": 0.04
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      201.2
+    ],
+    "wall_slot": {
+      "started": 201.176,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -1.1765422364271327,
+        -18.66799039438331
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 201.2,
+      "novelty_m": 12.13
+    },
+    "robot_world_x_range": [
+      -9.3,
+      9.3
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 71.8,
+    "bumper_events": 0
+  },
+  {
+    "index": 18,
+    "mode": "random",
+    "seed": 4231469807,
+    "run": "team-far-wall-slot-track-m4231469807-1795687042336100202",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "532": 159.376,
+      "215": 296.156
+    },
+    "missed": [
+      {
+        "id": 39,
+        "kind": "wall",
+        "closest_m": 4.6,
+        "world": [
+          -6.0,
+          5.6
+        ]
+      }
+    ],
+    "marker_position_errors_m": {
+      "532": 0.044,
+      "215": 0.035
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      197.2
+    ],
+    "wall_slot": {
+      "started": 197.156,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6,
+      "target": [
+        -11.403802643045506,
+        -0.3676434615755021
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 197.2,
+      "novelty_m": 10.12
+    },
+    "robot_world_x_range": [
+      -9.6,
+      8.7
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 94.2,
+    "bumper_events": 0
+  },
+  {
+    "index": 19,
+    "mode": "random",
+    "seed": 745871323,
+    "run": "team-far-wall-slot-track-m745871323-1795687666839292449",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 468.18399999999997,
+    "registered_and_within_s": {
+      "939": 16.168,
+      "661": 304.828,
+      "502": 463.728
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "939": 0.051,
+      "661": 0.031,
+      "502": 0.016
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      180.2,
+      431.2
+    ],
+    "wall_slot": {
+      "started": 180.188,
+      "done": true,
+      "ended": "time_limit",
+      "views": 6,
+      "target": [
+        -10.797770562194374,
+        -10.694490841312762
+      ]
+    },
+    "far_wall_choice": {
+      "elapsed_s": 180.2,
+      "novelty_m": 11.59
+    },
+    "robot_world_x_range": [
+      -9.5,
+      4.7
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 65.2,
+    "bumper_events": 0
+  },
+  {
+    "index": 20,
+    "mode": "random",
+    "seed": 2517251125,
+    "run": "team-far-wall-slot-track-m2517251125-1795688157673469722",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 365.168,
+    "registered_and_within_s": {
+      "36": 50.652,
+      "825": 136.832,
+      "438": 364.192
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "36": 0.063,
+      "825": 0.081,
+      "438": 0.095
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      17.2
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0,
+      "target": null
+    },
+    "far_wall_choice": null,
+    "robot_world_x_range": [
+      -9.0,
+      7.4
+    ],
+    "stuck_escape_triggers": 0,
+    "path_length_m": 53.1,
+    "bumper_events": 0
+  }
+]

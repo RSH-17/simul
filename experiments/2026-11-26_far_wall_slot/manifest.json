@@ -1,0 +1,193 @@
+{
+  "name": "far-wall-slot-repeat",
+  "workspace": "~/simul-ws/far-wall-slot",
+  "started": "20261126T163921",
+  "duration_s": 600.0,
+  "conditions": {
+    "TEAM_SIM_RENDER": "system"
+  },
+  "planned": 20,
+  "attempts": [
+    {
+      "index": 1,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795678761572859563",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 412.6
+    },
+    {
+      "index": 2,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795679174134098202",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 410.3
+    },
+    {
+      "index": 3,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795679584464740244",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 520.0
+    },
+    {
+      "index": 4,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795680104437758623",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.1
+    },
+    {
+      "index": 5,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795680729565568261",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.1
+    },
+    {
+      "index": 6,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795681354625157467",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 426.7
+    },
+    {
+      "index": 7,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795681781312974687",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 420.5
+    },
+    {
+      "index": 8,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795682201848065305",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 409.2
+    },
+    {
+      "index": 9,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795682611068982004",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.0
+    },
+    {
+      "index": 10,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795683235109018655",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.0
+    },
+    {
+      "index": 11,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795683859067902426",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 453.1
+    },
+    {
+      "index": 12,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795684312204682037",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 432.7
+    },
+    {
+      "index": 13,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795684744891144210",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 412.8
+    },
+    {
+      "index": 14,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795685157738758827",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 432.8
+    },
+    {
+      "index": 15,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795685590519671799",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.0
+    },
+    {
+      "index": 16,
+      "mode": "random",
+      "seed": 808361371,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m808361371-1795686215481275333",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 340.2
+    },
+    {
+      "index": 17,
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m3880005807-1795686555709193909",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 486.6
+    },
+    {
+      "index": 18,
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m4231469807-1795687042336100202",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.5
+    },
+    {
+      "index": 19,
+      "mode": "random",
+      "seed": 745871323,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m745871323-1795687666839292449",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 490.8
+    },
+    {
+      "index": 20,
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m2517251125-1795688157673469722",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 386.9
+    }
+  ],
+  "finished": "20261126T192224"
+}
