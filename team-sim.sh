@@ -10,7 +10,7 @@ if [[ "$team_action" == gui || "$team_action" == rviz ]]; then
   exec bash "$team_repo/tools/team_sim/viewer.sh" "$@"
 fi
 if [[ "$team_action" == help ]]; then
-  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook|visual-survey|visual-survey-focus|marker-events|wall-slot-escape|far-wall-slot|v15257-short-lap] [--archive PATH]'
+  echo 'setup WORKSPACE [--policy balanced|rescue360|adaptive-survey|object-followthrough|tiny-named-relook|surface-followthrough|balanced-print-relook|visual-survey|visual-survey-focus|marker-events|wall-slot-escape|far-wall-slot|v15257-short-lap|wall-tour] [--archive PATH]'
   echo 'run WORKSPACE [SEED] [--random-layout] [--markers three|unknown] [--tables fixed|shuffle] [--duration SECONDS] [--check]'
   echo 'board [--port 8780]'
   echo 'gui                    attach the Gazebo GUI to the running simulation'
