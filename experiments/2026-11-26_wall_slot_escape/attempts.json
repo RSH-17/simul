@@ -1,0 +1,725 @@
+[
+  {
+    "index": 1,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-wall-slot-escape-track-m112601-1795658703875623766",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 360.656,
+    "registered_and_within_s": {
+      "103": 71.15599999999999,
+      "7": 140.896,
+      "32": 359.656
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.026,
+      "7": 0.016,
+      "32": 0.085
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      101.6
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 58.2,
+    "bumper_events": 0
+  },
+  {
+    "index": 2,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-wall-slot-escape-track-m112602-1795659085964769325",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "7": 136.196
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "box",
+        "closest_m": 10.52
+      },
+      {
+        "id": 32,
+        "kind": "wall",
+        "closest_m": 12.55
+      }
+    ],
+    "marker_position_errors_m": {
+      "7": 0.007
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      184.7,
+      469.7,
+      511.7
+    ],
+    "wall_slot": {
+      "started": 184.692,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 78.0,
+    "bumper_events": 0
+  },
+  {
+    "index": 3,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-wall-slot-escape-track-m112603-1795659710547153842",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 510.648,
+    "registered_and_within_s": {
+      "103": 127.648,
+      "32": 419.56800000000004,
+      "7": 509.648
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.014,
+      "32": 0.002,
+      "7": 0.022
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      188.7,
+      393.7
+    ],
+    "wall_slot": {
+      "started": 188.652,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 81.0,
+    "bumper_events": 0
+  },
+  {
+    "index": 4,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-wall-slot-escape-track-m112604-1795660245290292151",
+    "strict_success": false,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 317.704,
+    "registered_and_within_s": {
+      "32": 44.704,
+      "103": 242.98399999999998,
+      "7": 317.204
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "32": 0.054,
+      "103": 0.186,
+      "7": 0.269
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      141.2
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 53.2,
+    "bumper_events": 0
+  },
+  {
+    "index": 5,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-wall-slot-escape-track-m112605-1795660584174872866",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 142.7,
+      "32": 379.70000000000005
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 7.09
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.034,
+      "32": 0.013
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      191.7
+    ],
+    "wall_slot": {
+      "started": 191.7,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 90.8,
+    "bumper_events": 0
+  },
+  {
+    "index": 6,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-wall-slot-escape-track-m112601-1795661208372765177",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 60.660000000000004,
+      "7": 176.54
+    },
+    "missed": [
+      {
+        "id": 32,
+        "kind": "box",
+        "closest_m": 4.77
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.044,
+      "7": 0.035
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      141.7
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 107.5,
+    "bumper_events": 0
+  },
+  {
+    "index": 7,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-wall-slot-escape-track-m112602-1795661832614614121",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "7": 147.20399999999998
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "box",
+        "closest_m": 11.13
+      },
+      {
+        "id": 32,
+        "kind": "wall",
+        "closest_m": 13.09
+      }
+    ],
+    "marker_position_errors_m": {
+      "7": 0.012
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      192.2
+    ],
+    "wall_slot": {
+      "started": 192.2,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 96.9,
+    "bumper_events": 0
+  },
+  {
+    "index": 8,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-wall-slot-escape-track-m112603-1795662457265008761",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 504.672,
+    "registered_and_within_s": {
+      "103": 83.67200000000001,
+      "7": 382.672,
+      "32": 502.85200000000003
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.02,
+      "7": 0.02,
+      "32": 0.005
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      190.7
+    ],
+    "wall_slot": {
+      "started": 190.668,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 73.0,
+    "bumper_events": 0
+  },
+  {
+    "index": 9,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-wall-slot-escape-track-m112604-1795662985869417859",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 403.14,
+    "registered_and_within_s": {
+      "32": 43.66,
+      "7": 274.66,
+      "103": 401.64
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "32": 0.054,
+      "103": 0.111,
+      "7": 0.206
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      126.1
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 64.8,
+    "bumper_events": 0
+  },
+  {
+    "index": 10,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-wall-slot-escape-track-m112605-1795663412600015813",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 149.744
+    },
+    "missed": [
+      {
+        "id": 32,
+        "kind": "box",
+        "closest_m": 5.63
+      },
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 8.2
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.047
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      187.7
+    ],
+    "wall_slot": {
+      "started": 187.728,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 89.2,
+    "bumper_events": 0
+  },
+  {
+    "index": 11,
+    "mode": "legacy",
+    "seed": 112601,
+    "run": "team-wall-slot-escape-track-m112601-1795664036775803043",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 468.688,
+    "registered_and_within_s": {
+      "103": 67.684,
+      "7": 174.704,
+      "32": 468.184
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.06,
+      "7": 0.012,
+      "32": 0.047
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      139.7
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 79.1,
+    "bumper_events": 0
+  },
+  {
+    "index": 12,
+    "mode": "legacy",
+    "seed": 112602,
+    "run": "team-wall-slot-escape-track-m112602-1795664533318460197",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "7": 147.68
+    },
+    "missed": [
+      {
+        "id": 103,
+        "kind": "box",
+        "closest_m": 11.1
+      },
+      {
+        "id": 32,
+        "kind": "wall",
+        "closest_m": 13.07
+      }
+    ],
+    "marker_position_errors_m": {
+      "7": 0.004
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      183.2,
+      513.7
+    ],
+    "wall_slot": {
+      "started": 183.172,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 83.7,
+    "bumper_events": 0
+  },
+  {
+    "index": 13,
+    "mode": "legacy",
+    "seed": 112603,
+    "run": "team-wall-slot-escape-track-m112603-1795665156750024023",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 357.7,
+    "registered_and_within_s": {
+      "103": 132.2,
+      "32": 190.1,
+      "7": 356.7
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "103": 0.019,
+      "32": 0.013,
+      "7": 0.028
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      133.7
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 54.9,
+    "bumper_events": 0
+  },
+  {
+    "index": 14,
+    "mode": "legacy",
+    "seed": 112604,
+    "run": "team-wall-slot-escape-track-m112604-1795665536138725186",
+    "strict_success": true,
+    "reason": "all_registered_and_within_1.5m",
+    "elapsed_sim_s": 520.6560000000001,
+    "registered_and_within_s": {
+      "32": 77.156,
+      "7": 306.656,
+      "103": 518.836
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "32": 0.033,
+      "7": 0.041,
+      "103": 0.037
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      119.7,
+      468.2
+    ],
+    "wall_slot": {
+      "started": null,
+      "done": true,
+      "ended": "earlier_wall_phase",
+      "views": 0
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 85.1,
+    "bumper_events": 0
+  },
+  {
+    "index": 15,
+    "mode": "legacy",
+    "seed": 112605,
+    "run": "team-wall-slot-escape-track-m112605-1795666080968902143",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "103": 127.16399999999999,
+      "32": 354.16400000000004
+    },
+    "missed": [
+      {
+        "id": 7,
+        "kind": "wall",
+        "closest_m": 7.95
+      }
+    ],
+    "marker_position_errors_m": {
+      "103": 0.027,
+      "32": 0.076
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      182.2
+    ],
+    "wall_slot": {
+      "started": 182.164,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 94.5,
+    "bumper_events": 0
+  },
+  {
+    "index": 16,
+    "mode": "random",
+    "seed": 808361371,
+    "run": "team-wall-slot-escape-track-m808361371-1795666705033788450",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "134": 9.28,
+      "9": 370.68
+    },
+    "missed": [
+      {
+        "id": 357,
+        "kind": "wall",
+        "closest_m": 5.93
+      }
+    ],
+    "marker_position_errors_m": {
+      "134": 0.007,
+      "9": 0.04
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      200.2,
+      580.2
+    ],
+    "wall_slot": {
+      "started": 200.18,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 90.1,
+    "bumper_events": 0
+  },
+  {
+    "index": 17,
+    "mode": "random",
+    "seed": 3880005807,
+    "run": "team-wall-slot-escape-track-m3880005807-1795667329098673889",
+    "strict_success": true,
+    "reason": "all_targets_found",
+    "elapsed_sim_s": 335.124,
+    "registered_and_within_s": {
+      "43": 62.224,
+      "199": 204.804,
+      "663": 332.784
+    },
+    "missed": [],
+    "marker_position_errors_m": {
+      "43": 0.021,
+      "199": 0.039,
+      "663": 0.049
+    },
+    "map_accuracy_pass": true,
+    "wall_phase_starts_s": [
+      190.6
+    ],
+    "wall_slot": {
+      "started": 190.636,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 49.4,
+    "bumper_events": 0
+  },
+  {
+    "index": 18,
+    "mode": "random",
+    "seed": 4231469807,
+    "run": "team-wall-slot-escape-track-m4231469807-1795667685334573663",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "215": 340.66,
+      "532": 486.48
+    },
+    "missed": [
+      {
+        "id": 39,
+        "kind": "wall",
+        "closest_m": 4.09
+      }
+    ],
+    "marker_position_errors_m": {
+      "215": 0.034,
+      "532": 0.025
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      182.7,
+      542.2
+    ],
+    "wall_slot": {
+      "started": 182.66,
+      "done": true,
+      "ended": "time_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 90.8,
+    "bumper_events": 0
+  },
+  {
+    "index": 19,
+    "mode": "random",
+    "seed": 745871323,
+    "run": "team-wall-slot-escape-track-m745871323-1795668309775558111",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "939": 16.352,
+      "661": 344.312
+    },
+    "missed": [
+      {
+        "id": 502,
+        "kind": "wall",
+        "closest_m": 4.75
+      }
+    ],
+    "marker_position_errors_m": {
+      "939": 0.034,
+      "661": 0.053
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      187.2
+    ],
+    "wall_slot": {
+      "started": 187.168,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 82.8,
+    "bumper_events": 0
+  },
+  {
+    "index": 20,
+    "mode": "random",
+    "seed": 2517251125,
+    "run": "team-wall-slot-escape-track-m2517251125-1795668935397162234",
+    "strict_success": false,
+    "reason": "common_time_limit",
+    "elapsed_sim_s": 600.0,
+    "registered_and_within_s": {
+      "438": 287.67600000000004,
+      "825": 342.636
+    },
+    "missed": [
+      {
+        "id": 36,
+        "kind": "wall",
+        "closest_m": 7.09
+      }
+    ],
+    "marker_position_errors_m": {
+      "438": 0.031,
+      "825": 0.082
+    },
+    "map_accuracy_pass": false,
+    "wall_phase_starts_s": [
+      187.7
+    ],
+    "wall_slot": {
+      "started": 187.676,
+      "done": true,
+      "ended": "view_limit",
+      "views": 6
+    },
+    "stuck_escape_triggers": 0,
+    "path_length_m": 77.4,
+    "bumper_events": 0
+  }
+]

@@ -1,0 +1,193 @@
+{
+  "name": "wall-slot-escape-repeat",
+  "workspace": "~/simul-ws/wall-slot-escape",
+  "started": "20261126T110503",
+  "duration_s": 600.0,
+  "conditions": {
+    "TEAM_SIM_RENDER": "system"
+  },
+  "planned": 20,
+  "attempts": [
+    {
+      "index": 1,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112601-1795658703875623766",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 382.1
+    },
+    {
+      "index": 2,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112602-1795659085964769325",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.6
+    },
+    {
+      "index": 3,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112603-1795659710547153842",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 534.7
+    },
+    {
+      "index": 4,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112604-1795660245290292151",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 338.9
+    },
+    {
+      "index": 5,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112605-1795660584174872866",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.2
+    },
+    {
+      "index": 6,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112601-1795661208372765177",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.2
+    },
+    {
+      "index": 7,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112602-1795661832614614121",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.6
+    },
+    {
+      "index": 8,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112603-1795662457265008761",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 528.6
+    },
+    {
+      "index": 9,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112604-1795662985869417859",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 426.7
+    },
+    {
+      "index": 10,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112605-1795663412600015813",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.2
+    },
+    {
+      "index": 11,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112601-1795664036775803043",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 496.6
+    },
+    {
+      "index": 12,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112602-1795664533318460197",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 623.4
+    },
+    {
+      "index": 13,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112603-1795665156750024023",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 379.4
+    },
+    {
+      "index": 14,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112604-1795665536138725186",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 544.8
+    },
+    {
+      "index": 15,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m112605-1795666080968902143",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.1
+    },
+    {
+      "index": 16,
+      "mode": "random",
+      "seed": 808361371,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m808361371-1795666705033788450",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.1
+    },
+    {
+      "index": 17,
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m3880005807-1795667329098673889",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 356.2
+    },
+    {
+      "index": 18,
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m4231469807-1795667685334573663",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.4
+    },
+    {
+      "index": 19,
+      "mode": "random",
+      "seed": 745871323,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m745871323-1795668309775558111",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.6
+    },
+    {
+      "index": 20,
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "~/.local/share/simul-team/results/team-wall-slot-escape-track-m2517251125-1795668935397162234",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.6
+    }
+  ],
+  "finished": "20261126T140559"
+}

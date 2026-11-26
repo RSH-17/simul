@@ -1,4 +1,47 @@
 {
+  "wall_slot_escape_20261126": {
+    "report": "experiments/2026-11-26_wall_slot_escape/README.md",
+    "policy_candidate": "policy_candidates/2026-11-26_v154_wall_slot_escape/README.md",
+    "environment": "Gazebo Harmonic, system (GPU) rendering, same host as baseline_repeat_20261126",
+    "result_type": "new_gazebo",
+    "policy": "1.5.4-wall-slot-escape (marker-events + mid-mission wall slot + stuck escape)",
+    "source": "c682544917e5",
+    "duration_s": 600,
+    "development_maps": {
+      "trials": 15,
+      "strict_success": 7,
+      "all_three_registered": 8,
+      "wall_markers_registered_and_approached": 9,
+      "wall_markers": 15,
+      "box_markers_registered_and_approached": 25,
+      "box_markers": 30
+    },
+    "unseen_random_layouts": {
+      "trials": 5,
+      "seeds_same_as_baseline": true,
+      "strict_success": 1,
+      "wall": [
+        6,
+        10
+      ],
+      "box": [
+        5,
+        5
+      ]
+    },
+    "baseline_for_comparison": {
+      "development_strict": 7,
+      "random_strict": 3
+    },
+    "wall_phase_started_runs": 20,
+    "wall_slot_activated_runs": 13,
+    "stuck_escape_triggers": 0,
+    "total_bumper_events": 0,
+    "finding": "Guaranteeing a wall phase did not reduce wall-marker misses (closest 4.1-13.1 m); the slot reuses nearest-wall selection and stays on one nearby wall stretch. Stuck escape untested (no stuck runs).",
+    "improvement_shown": false,
+    "physical_trial": false,
+    "promoted": false
+  },
   "baseline_repeat_20261126": {
     "report": "experiments/2026-11-26_baseline_repeat/README.md",
     "environment": "Gazebo Harmonic, system (GPU) rendering, new host",

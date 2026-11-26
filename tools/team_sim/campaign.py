@@ -26,12 +26,13 @@ sys.path.insert(0, str(HERE))
 from setup import home  # noqa: E402
 
 
-def plan(seeds, repeats, random_count, interleave=True):
+def plan(seeds, repeats, random_count, interleave=True, random_seeds=()):
     """Order trials so repeats of one seed are spread through the campaign."""
     trials = []
     rounds = [[('legacy', s) for s in seeds] for _ in range(repeats)]
     for batch in rounds if interleave else [[t for r in rounds for t in r]]:
         trials.extend(batch)
+    trials.extend(('random', s) for s in random_seeds)
     trials.extend(('random', None) for _ in range(random_count))
     return trials
 
@@ -42,6 +43,8 @@ def main():
     parser.add_argument('--seeds', type=int, nargs='*', default=[112601, 112602, 112603, 112604, 112605])
     parser.add_argument('--repeats', type=int, default=3)
     parser.add_argument('--random', type=int, default=0, help='Fresh random exam layouts after the repeats')
+    parser.add_argument('--random-seeds', type=int, nargs='*', default=[],
+                        help='Replay earlier random exam seeds (paired comparison) before any fresh ones')
     parser.add_argument('--duration', type=float, default=600.)
     parser.add_argument('--name', default='campaign')
     a = parser.parse_args()
@@ -52,10 +55,10 @@ def main():
     manifest_path = out/f'{a.name}-{workspace.name}-{stamp}.json'
     conditions = {k: v for k, v in os.environ.items() if k.startswith('TEAM_SIM_')}
     manifest = dict(name=a.name, workspace=str(workspace), started=stamp, duration_s=a.duration,
-                    conditions=conditions, planned=len(plan(a.seeds, a.repeats, a.random)), attempts=[])
-    for index, (mode, seed) in enumerate(plan(a.seeds, a.repeats, a.random), 1):
+                    conditions=conditions, planned=len(plan(a.seeds, a.repeats, a.random, random_seeds=a.random_seeds)), attempts=[])
+    for index, (mode, seed) in enumerate(plan(a.seeds, a.repeats, a.random, random_seeds=a.random_seeds), 1):
         command = ['bash', str(REPO/'team-sim.sh'), 'run', str(workspace)]
-        command += [str(seed)] if mode == 'legacy' else []
+        command += [str(seed)] if seed is not None else []
         command += ['--duration', str(a.duration)]
         print(f'[{index}/{manifest["planned"]}] {mode} {seed or "new random layout"}', flush=True)
         began = time.monotonic()
