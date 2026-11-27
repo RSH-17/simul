@@ -2,6 +2,10 @@
 
 [v1.5.6 벽 순회 슬롯](../2026-11-27_v156_wall_tour/README.md)에서 슬롯이 도는 대상과 계획 방식만 바꾼 후보다. **운영 정책이 아니다.** 같은 조건 20회 비교에서 개발 맵 8/15, 무작위 4/5로 승격하지 않았다([기록](../../experiments/2026-11-27_v157_frontier_tour/README.md)).
 
+## 실물 실행 패키지
+
+[`policy-v1.5.7` 릴리스](https://github.com/RSH-17/simul/releases/tag/policy-v1.5.7)의 `osp-policy-v1.5.7.tar.gz`(SHA-256 `4d5e72f03f41…1a44`). 커밋 4f56c71에서 `scripts/package_robot_policy.py`로 만들었고, `runtime/`은 v1.5.2.57 패키지의 것을 그대로 넣었다. 로봇에 유선 연결한 Ubuntu 24.04 + Jazzy 컴퓨터에서 `./run.sh build`, `check`, `start`, `stop`으로 실행한다. 이 PC(x86_64)에서 압축 해제·체크섬·빌드만 확인했다. 실물 주행 결과는 없다([상태](robot_package_status.md)).
+
 ```sh
 bash team-sim.sh setup ~/simul-ws/frontier-tour --policy frontier-tour
 TEAM_SIM_RENDER=system bash team-sim.sh run ~/simul-ws/frontier-tour 112605
