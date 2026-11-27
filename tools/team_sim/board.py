@@ -2,6 +2,7 @@
 import argparse
 import csv
 import json
+import math
 import os
 import threading
 from pathlib import Path
@@ -54,6 +55,44 @@ def detections(folder):
             seen[str(ident)]=min(stamp,seen.get(str(ident),stamp))
     return {k:round(v,1) for k,v in sorted(seen.items(),key=lambda kv:kv[1])},'policy'
 
+def live_verdict(folder,scene,trace):
+    """Provisional evaluator-side verdict while a run is still going.
+
+    Mirrors the judge: an approach counts once the ID is registered and the
+    true pose is within 1.5 m; bumps are the judge's bumper events; the map
+    error places the latest accepted detection in the world with the start
+    pose (map frame = robot pose at the mission start). The policy's own
+    three-frame sensor proof lives only in the judge, so the final strict
+    verdict still comes from metrics.json.
+    """
+    truth={t['id']:(t['x'],t['y']) for t in scene.get('targets',[])}
+    records={i:dict(registered_s=None,near_s=None,closest_m=None,map_error_m=None) for i in truth}
+    registered=set()
+    for row in trace:
+        try:t,x,y=float(row['elapsed_sim_s']),float(row['world_x']),float(row['world_y'])
+        except (KeyError,TypeError,ValueError):continue
+        current={int(i) for i in (row.get('registered_ids') or '').split()}
+        registered|=current
+        for i,(tx,ty) in truth.items():
+            r=records[i];d=math.hypot(x-tx,y-ty)
+            if i in current and r['registered_s'] is None:r['registered_s']=round(t,1)
+            if r['closest_m'] is None or d<r['closest_m']:r['closest_m']=round(d,2)
+            if i in current and d<=1.5 and r['near_s'] is None:r['near_s']=round(t,1)
+    try:
+        with (folder/'headings.csv').open() as f:first=next(csv.DictReader(f))
+        ox,oy,yaw=float(first['x']),float(first['y']),float(first['yaw_rad'])
+        c,s=math.cos(yaw),math.sin(yaw)
+        for row in jsonl(folder/'detections.jsonl'):
+            i,p=row.get('id'),row.get('map_point')
+            if row.get('kind')=='accepted' and i in truth and p:
+                wx,wy=c*p[0]-s*p[1]+ox,s*p[0]+c*p[1]+oy
+                records[i]['map_error_m']=round(math.hypot(wx-truth[i][0],wy-truth[i][1]),3)
+    except (OSError,StopIteration,KeyError,TypeError,ValueError):pass
+    bumps=sum(1 for e in jsonl(folder/'events.jsonl') if e.get('event')=='bumper')
+    wrong=sorted(registered-set(truth))
+    met=bool(truth) and all(r['near_s'] is not None and r['map_error_m'] is not None and r['map_error_m']<=.25 for r in records.values()) and not bumps and not wrong
+    return dict(targets={str(i):r for i,r in records.items()},bumps=bumps,wrong_ids=wrong,conditions_met=met)
+
 def detail(folder):
     scene=read(folder/'scene.json',{})
     scene['partitions']=scene.get('partitions',[])+read(folder/'run/simulation/demo_layout.json',{}).get('tables',[])
@@ -67,7 +106,7 @@ def detail(folder):
         with (folder/'trajectory.csv').open() as f:trace=list(csv.DictReader(f))
         last=next((r for r in reversed(trace) if r.get('registered_ids') is not None and r.get('elapsed_sim_s')), {})
         elapsed=float(last.get('elapsed_sim_s',0));ids=last.get('registered_ids','').split()
-    except (OSError,ValueError):elapsed=0;ids=[]
+    except (OSError,ValueError):trace=[];elapsed=0;ids=[]
     protocol=read(folder/'protocol.json',{})
     randomized=protocol.get('fixture_mode')=='randomized_exam'
     exam=read(folder/'exam-score.json',{}) if randomized else {}
@@ -76,10 +115,12 @@ def detail(folder):
     else:
         approached=sorted(map(int,metric.get('registered_and_within_s',{})))
     detected,detected_source=detections(folder)
+    finished=bool(exam) if randomized else (folder/'audit.json').exists()
+    live=None if finished or randomized else live_verdict(folder,scene,trace)
     return dict(id=folder.name,scene=scene,path=points,ids=metric.get('final_ids',ids),elapsed=metric.get('elapsed_sim_s',elapsed),
         approached=approached,detected=detected,detected_source=detected_source,reason=metric.get('reason','주행 중'),
         strict=exam.get('strict') if randomized else metric.get('strict_success'),bumps=metric.get('bumper_events'),
-        finished=bool(exam) if randomized else (folder/'audit.json').exists(),
+        finished=finished,live=live,
         interrupted=(folder/'interruption.json').exists(),protocol=protocol)
 
 # A finished run (audit.json or interruption.json written) no longer changes.
