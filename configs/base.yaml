@@ -1,0 +1,15 @@
+# Shared by every run. Later layers: backends/<name>.yaml, policies/<name>.yaml, --set.
+mission:
+  marker_count: 3        # announced to the policy
+  duration_s: 600
+
+# Required task outcome (AGENTS.md). Each is a separate evaluator check; a check
+# a backend cannot measure is reported as not measured, never as passed.
+criteria:
+  approach_m: 1.5             # independent distance to every marker
+  position_tolerance_m: 0.25  # map position error per marker (team_sim judge protocol)
+  max_collisions: 0
+
+run:
+  workers: 1
+  group_by: null

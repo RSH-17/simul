@@ -1,0 +1,14 @@
+[project]
+name = "osp"
+version = "0.1.0"
+description = "TurtleBot4 marker-search mission lab: policies, backends, scenarios, evaluation"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "pyyaml"]
+
+[tool.setuptools]
+packages = ["osp", "osp.backends", "osp.policies"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-p no:cacheprovider"

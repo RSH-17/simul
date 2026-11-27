@@ -1,0 +1,7 @@
+policy:
+  name: marker_events
+  status: legacy_candidate
+  summary: v1.5.1 + marker event topic and robot LED/sound, same decisions
+  lineage: legacy/policy_candidates/2026-11-26_v151_marker_events
+  implementations:
+    gazebo: {kind: team_sim, team_policy: marker-events, workspace: ~/simul-ws/events-baseline}

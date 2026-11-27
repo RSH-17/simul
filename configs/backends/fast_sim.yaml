@@ -1,0 +1,15 @@
+# 2-D surrogate (legacy SearchEnv). Not physics, not Gazebo. Defaults match
+# legacy/training_robust/evaluate.py so results are comparable with it.
+backend:
+  name: fast_sim
+  settings:
+    seed_offset: 123456
+    camera_width: 960
+    detection_dropout: 0.08   # a scenario's sensor_stress.detection_dropout wins
+    speed_limit: 0.26         # a scenario's sensor_stress.speed_limit wins
+    camera_hz: null
+    inspection_frames: 3
+    env: {}                   # extra SearchEnv keyword arguments
+run:
+  workers: 4
+  group_by: record.metrics.difficulty

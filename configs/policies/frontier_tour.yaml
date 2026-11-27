@@ -1,0 +1,7 @@
+policy:
+  name: frontier_tour
+  status: legacy_candidate
+  summary: v1.5.7 wall slots + far frontiers, not promoted
+  lineage: legacy/policy_candidates/2026-11-27_v157_frontier_tour
+  implementations:
+    gazebo: {kind: team_sim, team_policy: frontier-tour, workspace: ~/simul-ws/frontier-tour}

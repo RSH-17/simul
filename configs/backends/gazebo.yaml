@@ -1,0 +1,11 @@
+# Native Gazebo through legacy/team-sim.sh (slot locks, independent judge).
+backend:
+  name: gazebo
+  settings:
+    render: system     # TEAM_SIM_RENDER: system | software
+    parallel: 1        # 1 or 2; this host runs at most two Gazebo benchmarks
+    timeout_s: 3600
+run:
+  workers: 1
+  # Compare policies only within the same concurrency.
+  group_by: record.metadata.concurrency

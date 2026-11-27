@@ -1,0 +1,7 @@
+policy:
+  name: wall_tour
+  status: legacy_candidate
+  summary: v1.5.6 wall tour slot, no Gazebo comparison
+  lineage: legacy/policy_candidates/2026-11-27_v156_wall_tour
+  implementations:
+    gazebo: {kind: team_sim, team_policy: wall-tour, workspace: ~/simul-ws/wall-tour}

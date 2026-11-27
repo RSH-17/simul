@@ -1,0 +1,9 @@
+policy:
+  name: mixed_v151
+  status: legacy_release
+  summary: Mixed v1.5.1-balanced, the current comparison baseline
+  lineage: legacy/policy_releases/2026-11-21_mixed_camera_sync_v151
+  implementations:
+    # Same planner and weights as face_intent_v2 in the surrogate; the Gazebo runtimes differ.
+    fast_sim: {kind: legacy_planner, policy_file: legacy/policy_releases/2026-11-21_mixed_camera_sync_v151/policy.json}
+    gazebo: {kind: team_sim, team_policy: balanced, workspace: ~/simul-ws/baseline}

@@ -1,0 +1,7 @@
+policy:
+  name: decision_trace
+  status: legacy_candidate
+  summary: v1.5.7.1 decision trace instrumentation
+  lineage: legacy/policy_candidates/2026-11-27_v1571_decision_trace
+  implementations:
+    gazebo: {kind: team_sim, team_policy: decision-trace, workspace: ~/simul-ws/decision-trace}

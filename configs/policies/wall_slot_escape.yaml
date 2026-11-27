@@ -1,0 +1,7 @@
+policy:
+  name: wall_slot_escape
+  status: legacy_candidate
+  summary: v1.5.4 near wall slot, not promoted
+  lineage: legacy/policy_candidates/2026-11-26_v154_wall_slot_escape
+  implementations:
+    gazebo: {kind: team_sim, team_policy: wall-slot-escape, workspace: ~/simul-ws/wall-slot-escape}

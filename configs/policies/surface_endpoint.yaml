@@ -1,0 +1,7 @@
+policy:
+  name: surface_endpoint
+  status: legacy_candidate
+  summary: selected 2-D validation candidate, Gazebo unverified
+  lineage: legacy/src/osp_mission/config/surface_endpoint_policy.json
+  implementations:
+    fast_sim: {kind: legacy_planner, policy_file: legacy/src/osp_mission/config/surface_endpoint_policy.json}

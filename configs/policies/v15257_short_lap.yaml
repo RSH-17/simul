@@ -1,0 +1,7 @@
+policy:
+  name: v15257_short_lap
+  status: legacy_candidate
+  summary: teammate v1.5.2.57 short wall lap, not promoted
+  lineage: legacy/policy_candidates/2026-11-27_v15257_short_lap_import
+  implementations:
+    gazebo: {kind: team_sim, team_policy: v15257-short-lap, workspace: ~/simul-ws/v15257-short-lap}

@@ -1,0 +1,23 @@
+# Named scenario sets. Paths are relative to the repository root.
+# surrogate_dir: legacy 2-D YAML scenarios (fast_sim). team_sim_seeds: Gazebo exam layouts.
+sets:
+  base/train:              {kind: surrogate_dir, path: legacy/scenarios/train}
+  base/validation:         {kind: surrogate_dir, path: legacy/scenarios/validation}
+  base/test:               {kind: surrogate_dir, path: legacy/scenarios/test}
+  assignment/train:        {kind: surrogate_dir, path: legacy/scenarios_assignment/train}
+  assignment/validation:   {kind: surrogate_dir, path: legacy/scenarios_assignment/validation}
+  assignment/test:         {kind: surrogate_dir, path: legacy/scenarios_assignment/test}
+  assignment/final_test:   {kind: surrogate_dir, path: legacy/scenarios_assignment/final_test, note: held out}
+  hidden/train:            {kind: surrogate_dir, path: legacy/scenarios_hidden/train}
+  hidden/validation:       {kind: surrogate_dir, path: legacy/scenarios_hidden/validation}
+  hidden/test:             {kind: surrogate_dir, path: legacy/scenarios_hidden/test}
+  robust/train:            {kind: surrogate_dir, path: legacy/scenarios_robust/train}
+  robust/train_diverse:    {kind: surrogate_dir, path: legacy/scenarios_robust/train_diverse}
+  robust/validation:       {kind: surrogate_dir, path: legacy/scenarios_robust/validation}
+  robust/test:             {kind: surrogate_dir, path: legacy/scenarios_robust/test}
+  robust/v2/train:         {kind: surrogate_dir, path: legacy/scenarios_robust/v2/train}
+  robust/v2/validation:    {kind: surrogate_dir, path: legacy/scenarios_robust/v2/validation}
+  robust/marker_sizes/train:      {kind: surrogate_dir, path: legacy/scenarios_robust/marker_sizes_v1/train}
+  robust/marker_sizes/validation: {kind: surrogate_dir, path: legacy/scenarios_robust/marker_sizes_v1/validation}
+  challenge/validated:     {kind: surrogate_dir, path: legacy/scenarios_challenge_validated, note: C/U/zigzag}
+  exam/dev:                {kind: team_sim_seeds, seeds: [112601, 112602, 112603, 112604, 112605], note: Gazebo development maps}

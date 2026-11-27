@@ -7,6 +7,14 @@
   candidate files there. New work starts in a new structure at the repository
   root. Only the physical robot entry points (`robot.sh`, `*.command`) stay at
   the root; `robot.sh` resolves either the flat or `legacy/` layout on the VM.
+- New structure: `osp/` (ROS-free core), `configs/` (base -> backend ->
+  policy -> `--set`), `tests/`, `runs/` (git-ignored). Use `python3 -m osp`.
+  Score every run with `osp/evaluator.py`; an unmeasured requirement is
+  "not measured", never a pass. Policies see only `Scenario.mission()`;
+  `world()` is for backends and `targets` for the evaluator. Gazebo runs go
+  through `legacy/team-sim.sh` (slot locks, host limit two) and need
+  `--execute`. Keep `tests/test_fast_sim_equivalence.py` and the team_sim
+  re-scoring test passing; run `python3 -m pytest` at the root before commits.
 
 - Physical robot commands on this Mac use `./robot.sh start` and
   `./robot.sh stop` with the prepared `face_intent_flow_v4_ws` in `osp-jazzy`.

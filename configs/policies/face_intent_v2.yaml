@@ -1,0 +1,7 @@
+policy:
+  name: face_intent_v2
+  status: legacy_release
+  summary: release behind ./robot.sh (edge planner); surrogate only here
+  lineage: legacy/policy_releases/2026-11-13_face_intent_v2
+  implementations:
+    fast_sim: {kind: legacy_planner, policy_file: legacy/policy_releases/2026-11-13_face_intent_v2/policy.json}

@@ -1,0 +1,7 @@
+policy:
+  name: far_wall_slot
+  status: legacy_candidate
+  summary: v1.5.5 far wall slot every 180 s, not promoted
+  lineage: legacy/policy_candidates/2026-11-26_v155_far_wall_slot
+  implementations:
+    gazebo: {kind: team_sim, team_policy: far-wall-slot, workspace: ~/simul-ws/far-wall-slot}
