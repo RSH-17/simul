@@ -25,11 +25,32 @@
       "trials": 15
     },
     "fisher_p": 0.024,
-    "cause": "unexplained: concurrency, judge listen-only detection subscriptions (a07e4c2) and slot code differ from the solo campaign",
-    "next": "solo control 112604/112605 x5 with current code",
+    "cause": "not attributed; solo control 4/10 lies between earlier solo 0/6 and parallel 7/10 on 112604/112605",
     "improvement_shown": false,
     "promoted": false,
-    "physical_trial": false
+    "physical_trial": false,
+    "solo_control": {
+      "maps": [
+        112604,
+        112605
+      ],
+      "repeats": 5,
+      "strict": {
+        "112604": "2/5",
+        "112605": "2/5",
+        "total": "4/10"
+      },
+      "parallel_same_maps": "7/10",
+      "earlier_solo_same_maps": "0/6",
+      "fisher_control_vs_parallel": 0.37,
+      "fisher_earlier_vs_control": 0.234,
+      "high_latency_mode": {
+        "control": "8/10",
+        "parallel": "17/25",
+        "earlier_solo": "8/15"
+      },
+      "finding": "No evidence that concurrency changed success (p~0.37), none that it did not; high-latency mode is not caused by concurrency."
+    }
   },
   "parallel_validation_20261127": {
     "report": "experiments/2026-11-27_parallel_validation/README.md",
