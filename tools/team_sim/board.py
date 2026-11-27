@@ -15,6 +15,34 @@ def read(p,fallback):
     try:return json.loads(p.read_text())
     except (OSError,ValueError):return fallback
 
+def jsonl(path):
+    try:
+        with path.open() as f:lines=f.readlines()
+    except OSError:return []
+    rows=[]
+    for line in lines:
+        try:rows.append(json.loads(line))
+        except ValueError:pass  # the last line may still be half written
+    return rows
+
+def detections(folder):
+    """First policy-clock stamp of every marker ID the policy saw, from its own logs.
+
+    Live: follow-ups and directed looks, written when a marker is seen but needs
+    another look. After the run: every graph observation. A marker registered on
+    its first sighting appears only after the run.
+    """
+    rows=jsonl(folder/'native/marker_followups.jsonl')+jsonl(folder/'native/marker_directed_looks.jsonl')
+    for path in folder.glob('native/*/graph_marker_observations.json'):
+        found=read(path,[])
+        rows+=found if isinstance(found,list) else []
+    seen={}
+    for row in rows:
+        ident,stamp=row.get('id'),row.get('stamp')
+        if isinstance(ident,int) and isinstance(stamp,(int,float)):
+            seen[str(ident)]=min(stamp,seen.get(str(ident),stamp))
+    return {k:round(v,1) for k,v in sorted(seen.items(),key=lambda kv:kv[1])}
+
 def detail(folder):
     scene=read(folder/'scene.json',{})
     scene['partitions']=scene.get('partitions',[])+read(folder/'run/simulation/demo_layout.json',{}).get('tables',[])
@@ -37,7 +65,7 @@ def detail(folder):
     else:
         approached=sorted(map(int,metric.get('registered_and_within_s',{})))
     return dict(id=folder.name,scene=scene,path=points,ids=metric.get('final_ids',ids),elapsed=metric.get('elapsed_sim_s',elapsed),
-        approached=approached,reason=metric.get('reason','주행 중'),
+        approached=approached,detected=detections(folder),reason=metric.get('reason','주행 중'),
         strict=exam.get('strict') if randomized else metric.get('strict_success'),bumps=metric.get('bumper_events'),
         finished=bool(exam) if randomized else (folder/'audit.json').exists(),
         interrupted=(folder/'interruption.json').exists(),protocol=protocol)
