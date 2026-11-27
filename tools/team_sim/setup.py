@@ -55,7 +55,7 @@ def fixtures(archive=None):
     return destination
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events','wall-slot-escape','far-wall-slot','v15257-short-lap','wall-tour','frontier-tour'],default='balanced');p.add_argument('--archive',type=Path)
+    p=argparse.ArgumentParser();p.add_argument('workspace',type=Path);p.add_argument('--policy',choices=['balanced','rescue360','adaptive-survey','object-followthrough','tiny-named-relook','surface-followthrough','balanced-print-relook','visual-survey','visual-survey-focus','marker-events','wall-slot-escape','far-wall-slot','v15257-short-lap','wall-tour','frontier-tour','decision-trace'],default='balanced');p.add_argument('--archive',type=Path)
     a=p.parse_args();workspace=a.workspace.expanduser().resolve()
     if workspace.exists():raise FileExistsError('Keep existing policies. Choose a new workspace.')
     workspace.parent.mkdir(parents=True,exist_ok=True)
@@ -77,7 +77,8 @@ def main():
                      'far-wall-slot':'2026-11-26_v155_far_wall_slot',
                      'v15257-short-lap':'2026-11-27_v15257_short_lap_import',
                      'wall-tour':'2026-11-27_v156_wall_tour',
-                     'frontier-tour':'2026-11-27_v157_frontier_tour'}[a.policy]
+                     'frontier-tour':'2026-11-27_v157_frontier_tour',
+                     'decision-trace':'2026-11-27_v1571_decision_trace'}[a.policy]
         subprocess.run([sys.executable, str(REPO/'policy_candidates'/candidate/'install.py'),
                         str(release), str(workspace)], check=True)
         pkg=workspace/'src/osp_mission'

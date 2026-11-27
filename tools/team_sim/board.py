@@ -103,6 +103,42 @@ REASONS={'unseen_reachable_object':'아직 안 본 닿을 수 있는 물체','mi
     'no_untried_reachable_interior_view':'시도 안 한 실내 관측 지점 없음','safe_frontier_fallback':'안전한 프런티어로 대체',
     'white_leg_candidate':'흰 다리 후보','box_safe_retry':'상자 안전 재시도','local_print_candidate':'근처 인쇄물 후보'}
 NPZ={};NPZ_LOCK=threading.Lock()
+RULE_ORDER={'fresh':'정렬: 끝난 상자 아닌 면 → 같은 상자 이어서 → 형태를 맞춘 면 → 걸어서 가까운 순',
+    'interior':'정렬: 끝난 상자 아닌 면 → 같은 상자 이어서 → 형태를 맞춘 면 → 걸어서 가까운 순',
+    'deferred':'끝난 상자의 면(다른 후보가 없을 때만)',
+    'wall':'벽 점수(낮을수록 우선) = 경로 거리 + 서는 거리·옆 이동 벌점 + 시도 횟수×2 + 벽 이어짐 벌점',
+    'frontiers':'프런티어 점수 = 이득 ÷ (1 + 0.18×이동거리 + 2 m 미만 벌점 + 재방문)'}
+RULE_NAME={'fresh':'새 물체 면','interior':'물체 면','deferred':'끝난 상자 면','wall':'벽 관측 지점','frontiers':'프런티어'}
+REASON_LIST={'unseen_reachable_object':'fresh','inspect_other_surface':'fresh','finish_current_box':'fresh',
+    'explore_open_frontier':'frontiers','completed_box_fallback':'deferred'}
+
+def rule_line(kind,rank,row):
+    """One compared candidate as a short Korean phrase."""
+    if kind in ('fresh','interior','deferred'):
+        flags=[f for f,on in (('끝난 상자',row.get('completed_box')),('같은 상자 이어서',row.get('local_batch')),
+                              ('형태 맞춘 면',row.get('fitted_face')),(f"시도 {row.get('previous_attempts')}회",row.get('previous_attempts'))) if on]
+        return f"{rank}위 걸어서 {row.get('path_m')}m"+(' · '+', '.join(flags) if flags else '')
+    if kind=='wall':return f"{rank}위 점수 {row.get('score')} (직선 {row.get('straight_m')}m"+(f", 시도 {row['previous_attempts']}회" if row.get('previous_attempts') else '')+')'
+    return f"{rank}위 점수 {row.get('score')} (이득 {row.get('gain')}, 이동 {row.get('travel_m')}m)"
+
+def rule_view(row,world):
+    """What the phased hybrid compared for one goal (rule_trace.jsonl, v1.5.7.1+)."""
+    trace=row.get('trace') if isinstance(row.get('trace'),dict) else None
+    chosen=row.get('chosen_from')
+    if trace is None:return dict(available=False,text='이 결정에는 규칙 비교 기록이 없음 (마커 접근 등 규칙 밖 결정)',points=[])
+    if 'error' in trace:return dict(available=False,text='규칙 비교 기록 실패: '+str(trace['error']),points=[])
+    kind=chosen['list'] if chosen else REASON_LIST.get(row.get('reason')) or ('wall' if row.get('phase')=='wall' else 'fresh')
+    rows=trace.get(kind) or []
+    lines=[rule_line(kind,i+1,r) for i,r in enumerate(rows[:4])]
+    head=f"{RULE_NAME.get(kind,kind)} {len(rows)}개 비교" if rows else f"{RULE_NAME.get(kind,kind)} 후보 없음"
+    head+=f" → {chosen['rank']}위 선택" if chosen else ' → 고른 목표가 이 목록에 없음'
+    if row.get('reason')=='midmission_wall_slot':
+        slot=trace.get('slot') or {};tour=(slot.get('tour') or {})
+        head+=f" · 벽 구간 순회(계획 {tour.get('plans',0)}번째 이후, 직선거리로 가장 짧은 순회의 다음 목표)"
+    points=[dict(rank=i+1,world=world(r['x'],r['y'])) for i,r in enumerate(rows[:5]) if r.get('x') is not None and r.get('y') is not None]
+    return dict(available=True,list=kind,rank=chosen['rank'] if chosen else None,order=RULE_ORDER.get(kind,''),
+                text=head+(' | '+' / '.join(lines) if lines else ''),points=points,
+                remaining_s=trace.get('remaining_s'),counts=trace.get('counts'))
 
 def candidate_score(row,w):
     """The planners' candidate score (surface_endpoint_policy / directional_policy)."""
@@ -133,6 +169,7 @@ def decisions(folder):
     The policy logs each choice to native/policy_decisions (all candidates,
     their features, the weights and the chosen one) and the phased hybrid
     logs its reason to center_wall.jsonl at the same mission-elapsed time.
+    From v1.5.7.1 the hybrid also logs what it compared (rule_trace.jsonl).
     Map-frame points are placed in the world with the start pose so they can
     be drawn on the board.
     """
@@ -143,6 +180,7 @@ def decisions(folder):
     c,s=math.cos(yaw),math.sin(yaw)
     world=lambda x,y:[round(c*x-s*y+ox,3),round(s*x+c*y+oy,3)]
     reasons=[r for r in jsonl(folder/'native/center_wall.jsonl') if isinstance(r.get('elapsed'),(int,float))]
+    traced=[r for r in jsonl(folder/'native/rule_trace.jsonl') if isinstance(r.get('elapsed'),(int,float))]
     rows=[]
     for path in sorted((folder/'native/policy_decisions').glob('*.npz')):
         try:snap=decision_snapshot(path)
@@ -160,6 +198,9 @@ def decisions(folder):
         for k in ('selected',):
             if item[k]:item[k]=dict(item[k],world=world(item[k]['x'],item[k]['y']))
         item['top']=[dict(t,world=world(t['x'],t['y'])) for t in snap['top']]
+        trace=min(traced,key=lambda r:abs(r['elapsed']-snap['t']),default=None)
+        if trace is not None and abs(trace['elapsed']-snap['t'])>1.:trace=None
+        item['rule']=rule_view(trace,world) if trace is not None else None
         rows.append(item)
     return rows
 
