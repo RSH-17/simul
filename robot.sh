@@ -42,26 +42,29 @@ robot_vm="${OSP_ROBOT_VM:-osp-jazzy}"
 robot_repo="${OSP_ROBOT_REPO:-/home/ubuntu/simul}"
 robot_workspace="${OSP_ROBOT_WORKSPACE:-${default_side_workspace:-/home/ubuntu/face_intent_flow_v4_ws}}"
 robot_domain="${OSP_ROBOT_DOMAIN:-4}"
-robot_profile="${OSP_ROBOT_DDS_PROFILE:-$robot_repo/robot_profiles/wired_flow_v3/fastdds_vm.xml}"
+# The VM checkout may use the flat layout or the legacy/ layout; resolved on the VM.
+osp_base=__OSP_BASE__
+robot_profile="${OSP_ROBOT_DDS_PROFILE:-$osp_base/robot_profiles/wired_flow_v3/fastdds_vm.xml}"
 robot_ntp="${OSP_ROBOT_NTP_SERVER:-192.168.185.3}"
-robot_args=(python3 -u "$robot_repo/scripts/robot_session.py" "$action"
-  --repo "$robot_repo" --workspace "$robot_workspace" --domain "$robot_domain"
+robot_args=(python3 -u "$osp_base/scripts/robot_session.py" "$action"
+  --repo "$osp_base" --workspace "$robot_workspace" --domain "$robot_domain"
   --ntp-server "$robot_ntp" "$@")
 if [[ "$side_inspection" == true ]]; then
   robot_args+=(--side-inspection)
 fi
 if [[ "$action" == start || "$action" == dry-run ]]; then
   robot_args[3]=start
-  robot_args=(bash "$robot_repo/run_policy.sh" --mode robot --workspace "$robot_workspace"
-    --policy "$robot_repo/policy_releases/2026-11-13_face_intent_v2/policy.json"
+  robot_args=(bash "$osp_base/run_policy.sh" --mode robot --workspace "$robot_workspace"
+    --policy "$osp_base/policy_releases/2026-11-13_face_intent_v2/policy.json"
     -- "${robot_args[@]}")
 fi
-printf -v robot_command 'source /opt/ros/jazzy/setup.bash\nif [[ -f %q ]]; then source %q; fi\n' \
-  "$robot_workspace/install/setup.bash" "$robot_workspace/install/setup.bash"
+printf -v robot_command 'osp_base=%q\nif [[ -d "$osp_base/legacy/scripts" ]]; then osp_base="$osp_base/legacy"; fi\nsource /opt/ros/jazzy/setup.bash\nif [[ -f %q ]]; then source %q; fi\n' \
+  "$robot_repo" "$robot_workspace/install/setup.bash" "$robot_workspace/install/setup.bash"
 printf -v robot_env 'export ROS_DOMAIN_ID=%q RMW_IMPLEMENTATION=rmw_fastrtps_cpp FASTRTPS_DEFAULT_PROFILES_FILE=%q OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1\n' \
   "$robot_domain" "$robot_profile"
 printf -v robot_exec '%q ' "${robot_args[@]}"
 robot_command+="$robot_env"$'exec '"$robot_exec"
+robot_command="${robot_command//__OSP_BASE__/\"\$osp_base\"}"
 if [[ "$action" == dry-run ]]; then
   printf 'VM: %s\n%s\n' "$robot_vm" "$robot_command"
   exit 0

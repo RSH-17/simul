@@ -250,7 +250,8 @@ class StartSafetyTest(unittest.TestCase):
 
     def test_dry_run_uses_prepared_flow_v4_and_never_builds(self):
         root = Path(__file__).resolve().parents[1]
-        result = subprocess.run(["bash", str(root / "robot.sh"), "dry-run"], capture_output=True, text=True, check=True)
+        entry = next(p for p in (root / "robot.sh", root.parent / "robot.sh") if p.is_file())
+        result = subprocess.run(["bash", str(entry), "dry-run"], capture_output=True, text=True, check=True)
         self.assertIn("robot_session.py start", result.stdout)
         self.assertIn("face_intent_flow_v4_ws", result.stdout)
         self.assertNotIn("colcon", result.stdout)
