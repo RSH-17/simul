@@ -14,6 +14,19 @@ TurtleBot4가 처음 보는 공간을 SLAM으로 탐색해서 ArUco 마커 3개�
 | `legacy/` | 2026-11-27까지의 정책, 실험, 로그, 시나리오, 도구 전부입니다. **읽기 전용 보관소**이며, 내부 상대 경로를 그대로 두었으므로 frozen 해시 검증과 재빌드가 그대로 동작합니다. |
 | `robot.sh`, `*.command` | 실물 로봇 시작과 정지 진입점입니다. |
 
+### `osp/` 패키지 구성
+
+| 하위 패키지 | 모듈 | 역할 |
+|---|---|---|
+| `core/` | `paths`, `registry`, `legacy`, `config` | 경로, 이름으로 구현을 찾는 등록부, `legacy/` 연결, 설정 계층 |
+| `scenarios/` | `model`, `catalog` | 정보 경계(`mission` / `world` / `targets`), 시나리오 세트 이름 |
+| `policies/` | `base`, `legacy_planner`, `team_sim` | 정책 인터페이스와 기존 정책 연결 |
+| `backends/` | `fast_sim`, `gazebo` | 2-D 대리 모델, team_sim 기반 Gazebo |
+| `evaluation/` | `records`, `evaluator` | 백엔드 측정값 형식, 독립 채점과 집계 |
+| `app/` | `runner`, `cli` | 실행 조립과 결과 기록, `python3 -m osp` 명령 |
+
+의존 방향은 `app → backends → policies → core`이고, `backends`는 `evaluation`과 `scenarios`도 씁니다. `evaluation`과 `scenarios`는 `core`만 씁니다. `core`는 다른 하위 패키지를 import하지 않습니다. 예외는 `registry.load_builtins()`가 구현을 등록하려고 `backends`와 `policies`를 불러오는 것 하나입니다.
+
 ### 구성 요소
 
 ```
@@ -23,7 +36,7 @@ Scenario ──mission()──▶ Policy          정책이 받는 것: 시작 �
 Backend ──EpisodeRecord──▶ Evaluator ──▶ runs/<id>/{config,plan,summary}.json, episodes.jsonl
 ```
 
-- **평가기**(`osp/evaluator.py`)는 필수 조건을 하나씩 따로 판정합니다. 조건은 ID 정확성, 1.5 m 접근, 지도 위치 0.25 m 이내, 충돌 0회, 시간 내 완료입니다. 백엔드가 측정하지 못한 조건은 통과가 아니라 **미측정**으로 남깁니다. 예를 들어 fast_sim은 지도 위치를 추정하지 않으므로 strict 성공이 나오지 않습니다.
+- **평가기**(`osp/evaluation/evaluator.py`)는 필수 조건을 하나씩 따로 판정합니다. 조건은 ID 정확성, 1.5 m 접근, 지도 위치 0.25 m 이내, 충돌 0회, 시간 내 완료입니다. 백엔드가 측정하지 못한 조건은 통과가 아니라 **미측정**으로 남깁니다. 예를 들어 fast_sim은 지도 위치를 추정하지 않으므로 strict 성공이 나오지 않습니다.
 - **정책**: 새 2-D 결정 규칙은 `osp.policies.SurrogatePolicy`를 상속해서 `options` / `choose`만 바꾸면 됩니다. 이 두 함수는 관측된 지도만 받습니다.
 
 ### 설정 계층

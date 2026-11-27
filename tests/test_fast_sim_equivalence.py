@@ -4,11 +4,12 @@ import sys
 import numpy as np
 import pytest
 
-from osp import catalog, config
-from osp.legacy import mission_package
-from osp.paths import LEGACY
+from osp.core import config
+from osp.scenarios import catalog
+from osp.core.legacy import mission_package
+from osp.core.paths import LEGACY
 from osp.policies.base import SurrogatePolicy, build
-from osp.registry import BACKENDS, load_builtins
+from osp.core.registry import BACKENDS, load_builtins
 
 RESULT_KEYS = ('seed', 'difficulty', 'found', 'success', 'seconds', 'collisions', 'safety_stops',
                'distance', 'decisions', 'reward', 'coverage')

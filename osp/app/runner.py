@@ -12,10 +12,10 @@ from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
-from osp import evaluator
-from osp.paths import REPO, runs_dir
+from osp.evaluation import evaluator
+from osp.core.paths import REPO, runs_dir
 from osp.policies.base import build as build_policy
-from osp.registry import BACKENDS, load_builtins
+from osp.core.registry import BACKENDS, load_builtins
 
 
 def git_state():
@@ -104,7 +104,7 @@ def run(cfg, set_name, scenarios, *, execute, repeats=1, workers=None, out=None,
 def import_team_sim(results_dir, out, match=None, echo=print):
     """Re-score completed team_sim trials with the evaluator into a run directory."""
     from osp.backends.gazebo import import_trial
-    from osp.config import base as base_config
+    from osp.core.config import base as base_config
     base = base_config()
     rows, skipped = [], []
     for run_dir in sorted(Path(results_dir).iterdir()):

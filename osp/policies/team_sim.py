@@ -1,7 +1,7 @@
 """Gazebo policies run by ``legacy/tools/team_sim`` from a prepared workspace."""
-from osp.paths import resolve
+from osp.core.paths import resolve
 from osp.policies.base import Policy
-from osp.registry import POLICY_KINDS
+from osp.core.registry import POLICY_KINDS
 
 
 class TeamSimPolicy(Policy):

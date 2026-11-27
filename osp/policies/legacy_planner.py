@@ -1,9 +1,9 @@
 """Archived surrogate policies: a legacy ``policy.json`` (planner + weights)."""
 import json
 
-from osp.paths import resolve
+from osp.core.paths import resolve
 from osp.policies.base import SurrogatePolicy
-from osp.registry import POLICY_KINDS
+from osp.core.registry import POLICY_KINDS
 
 
 @POLICY_KINDS.register('legacy_planner')

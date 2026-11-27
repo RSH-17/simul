@@ -1,7 +1,7 @@
 import dataclasses
 
-from osp import catalog
-from osp.scenario import Mission
+from osp.scenarios import catalog
+from osp.scenarios.model import Mission
 
 
 def test_every_catalog_set_resolves():

@@ -1,6 +1,6 @@
 import pytest
 
-from osp import config
+from osp.core import config
 
 
 def test_layers_merge_in_order_and_overrides_win():

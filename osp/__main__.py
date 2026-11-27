@@ -1,3 +1,3 @@
-from osp.cli import main
+from osp.app.cli import main
 
 raise SystemExit(main())

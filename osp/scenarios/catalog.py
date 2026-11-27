@@ -3,8 +3,8 @@ from pathlib import Path
 
 import yaml
 
-from osp import scenario as sc
-from osp.paths import CONFIGS, resolve
+from osp.scenarios import model as sc
+from osp.core.paths import CONFIGS, resolve
 
 
 def _definitions(path=None):

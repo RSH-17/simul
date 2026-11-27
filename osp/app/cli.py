@@ -17,9 +17,11 @@ from datetime import datetime, timezone
 
 import yaml
 
-from osp import catalog, config, runner
-from osp.paths import runs_dir, team_sim_home
-from osp.registry import BACKENDS, load_builtins
+from osp.app import runner
+from osp.core import config
+from osp.scenarios import catalog
+from osp.core.paths import runs_dir, team_sim_home
+from osp.core.registry import BACKENDS, load_builtins
 
 
 def _list(args):

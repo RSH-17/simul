@@ -3,11 +3,13 @@ import subprocess
 
 import pytest
 
-from osp import catalog, cli, config
+from osp.app import cli
+from osp.core import config
+from osp.scenarios import catalog
 from osp.backends.gazebo import GazeboBackend, import_trial
-from osp.paths import team_sim_home
+from osp.core.paths import team_sim_home
 from osp.policies.base import build
-from osp.registry import load_builtins
+from osp.core.registry import load_builtins
 
 
 def test_command_goes_through_team_sim():
@@ -58,7 +60,7 @@ TRIALS = sorted(p for p in RESULTS.iterdir() if p.is_dir()) if RESULTS.is_dir() 
 
 @pytest.mark.skipif(not TRIALS, reason='no local team_sim results')
 def test_rescoring_real_trials_matches_the_legacy_strict_judge():
-    from osp import evaluator
+    from osp.evaluation import evaluator
     base = config.base()
     compared = 0
     for run_dir in TRIALS:

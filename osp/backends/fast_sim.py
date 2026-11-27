@@ -4,10 +4,10 @@ Defaults reproduce ``legacy/training_robust/evaluate.py``: seed offset
 123456, 960 px camera model, per-scenario ``sensor_stress`` overrides for
 detection dropout and the speed limit.
 """
-from osp.legacy import mission_package
+from osp.core.legacy import mission_package
 from osp.policies.base import SurrogatePolicy
-from osp.records import EpisodeRecord
-from osp.registry import BACKENDS
+from osp.evaluation.records import EpisodeRecord
+from osp.core.registry import BACKENDS
 
 
 @BACKENDS.register('fast_sim')

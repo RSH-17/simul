@@ -9,7 +9,7 @@ from pathlib import Path
 
 import yaml
 
-from osp.paths import CONFIGS
+from osp.core.paths import CONFIGS
 
 # A config may never call itself production. Promotion is a separate,
 # evidence-backed decision recorded outside this file.

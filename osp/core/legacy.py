@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 
-from osp.paths import LEGACY
+from osp.core.paths import LEGACY
 
 LEGACY_PACKAGE = LEGACY / 'src/osp_mission'
 

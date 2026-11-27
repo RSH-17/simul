@@ -6,7 +6,7 @@ requires-python = ">=3.10"
 dependencies = ["numpy", "scipy", "pyyaml"]
 
 [tool.setuptools]
-packages = ["osp", "osp.backends", "osp.policies"]
+packages = ["osp", "osp.app", "osp.backends", "osp.core", "osp.evaluation", "osp.policies", "osp.scenarios"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

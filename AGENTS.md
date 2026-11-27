@@ -9,7 +9,7 @@
   the root; `robot.sh` resolves either the flat or `legacy/` layout on the VM.
 - New structure: `osp/` (ROS-free core), `configs/` (base -> backend ->
   policy -> `--set`), `tests/`, `runs/` (git-ignored). Use `python3 -m osp`.
-  Score every run with `osp/evaluator.py`; an unmeasured requirement is
+  Score every run with `osp/evaluation/evaluator.py`; an unmeasured requirement is
   "not measured", never a pass. Policies see only `Scenario.mission()`;
   `world()` is for backends and `targets` for the evaluator. Gazebo runs go
   through `legacy/team-sim.sh` (slot locks, host limit two) and need

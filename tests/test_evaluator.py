@@ -1,6 +1,6 @@
-from osp.evaluator import evaluate, summarize
-from osp.records import EpisodeRecord
-from osp.scenario import Scenario, Target
+from osp.evaluation.evaluator import evaluate, summarize
+from osp.evaluation.records import EpisodeRecord
+from osp.scenarios.model import Scenario, Target
 
 CRITERIA = dict(approach_m=1.5, position_tolerance_m=0.25, max_collisions=0)
 SCENE = Scenario('s', 'surrogate_yaml', 'x', (Target(1, 0, 0), Target(2, 5, 0), Target(3, 0, 5)))

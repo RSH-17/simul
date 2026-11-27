@@ -11,11 +11,11 @@ import re
 import subprocess
 from pathlib import Path
 
-from osp.paths import LEGACY
+from osp.core.paths import LEGACY
 from osp.policies.team_sim import TeamSimPolicy
-from osp.records import EpisodeRecord
-from osp.registry import BACKENDS
-from osp.scenario import load_team_scene
+from osp.evaluation.records import EpisodeRecord
+from osp.core.registry import BACKENDS
+from osp.scenarios.model import load_team_scene
 
 HOST_LIMIT = 2   # AGENTS.md: at most two native Gazebo benchmarks on this host
 TEAM_SIM = LEGACY / 'team-sim.sh'

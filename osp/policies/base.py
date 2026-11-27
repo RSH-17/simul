@@ -8,7 +8,7 @@ from typing import Callable, Optional
 
 import numpy as np
 
-from osp.registry import POLICY_KINDS
+from osp.core.registry import POLICY_KINDS
 
 
 class Policy:
