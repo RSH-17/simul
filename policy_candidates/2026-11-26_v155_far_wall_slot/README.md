@@ -4,6 +4,11 @@
 
 같은 조건 20회 결과는 기준판보다 좋았다. 개발 맵은 10/15(기준판 7/15), 무작위 배치는 4/5(기준판 3/5)였다. 그러나 미리 정한 판정 기준인 12/15에는 못 미쳤다. 그래서 맵당 반복을 늘린 확인이 남아 있다. [결과](../../experiments/2026-11-26_far_wall_slot/README.md)
 
+
+## 실물 실행 패키지
+
+[`policy-v1.5.5` 릴리스](https://github.com/RSH-17/simul/releases/tag/policy-v1.5.5)의 `osp-policy-v1.5.5.tar.gz`(SHA-256 `60426c7533e9…159a`). 커밋 0146ff4에서 `scripts/package_robot_policy.py`로 만들었고, `runtime/`은 v1.5.2.57 패키지의 것을 그대로 넣었다. 로봇에 유선 연결한 Ubuntu 24.04 + Jazzy 컴퓨터에서 `./run.sh build`, `check`, `start`, `stop`으로 실행한다. 이 PC(x86_64)에서 압축 해제·체크섬·빌드만 확인했다. 실물 주행 결과는 없다([상태](robot_package_status.md)).
+
 ```sh
 bash team-sim.sh setup ~/simul-ws/far-wall-slot --policy far-wall-slot
 ```
