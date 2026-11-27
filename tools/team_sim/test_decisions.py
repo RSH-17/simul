@@ -71,6 +71,31 @@ class DecisionTimelineTest(unittest.TestCase):
         self.save(0, 2.9, [[1, 1, 0, 0, 0, 5, 1, 0, 0]], 0)
         self.assertIsNone(board.decisions(self.folder)[0]['rule'])
 
+    def test_map_knowledge_counts_known_area_and_viewed_sides(self):
+        data = np.full((4, 6), -1, dtype=np.int8)
+        data[1:3, 0:4] = 0      # 8 free cells
+        data[1:3, 4] = 100      # wall east of the floor: 2 west-facing sides
+        viewed = np.zeros((4,)+data.shape, dtype=bool)
+        viewed[3, 1, 4] = True  # side 3 = (0, -1): the west face of the top wall cell
+        out, image = board.map_knowledge(data, viewed, .5, [0., 0.], (0., 0., 0.), (4., 4.))
+        self.assertEqual((out['known_m2'], out['free_m2'], out['occupied_cells']), (2.5, 2., 2))
+        self.assertEqual((out['surface_sides'], out['viewed_sides'], out['viewed_ratio']), (2, 1, .5))
+        self.assertAlmostEqual(out['room_known_ratio'], 2./16)  # the wall column (x = 2.25 m) is outside the 4x4 m room
+        self.assertTrue(image.startswith(b'\x89PNG'))
+
+    def test_decisions_carry_the_map_and_serve_its_image(self):
+        data = np.zeros((3, 3), dtype=np.int8)
+        np.savez_compressed(self.folder/'native/policy_decisions/0000.npz', elapsed=1., planner='edge',
+                            robot=np.array([0., 0.]), weights=np.array([1., 2., 1., .3, 1.]),
+                            candidate_columns=COLUMNS, candidates=np.zeros((0, 9)), selected_index=-1,
+                            data=data, resolution=.05, origin=np.array([0., 0.]),
+                            viewed=np.zeros((4, 3, 3), dtype=bool))
+        row = board.decisions(self.folder)[0]
+        self.assertEqual(row['grid']['width'], 3)
+        self.assertEqual(row['map_frame'], [10., 0., 0.])
+        self.assertTrue(board.map_png(self.folder, row['file']).startswith(b'\x89PNG'))
+        self.assertIsNone(board.map_png(self.folder, '../x.npz'))
+
     def test_missing_logs_give_an_empty_timeline(self):
         self.assertEqual(board.decisions(self.folder/'nowhere'), [])
 

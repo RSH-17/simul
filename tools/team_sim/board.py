@@ -4,7 +4,9 @@ import csv
 import json
 import math
 import os
+import struct
 import threading
+import zlib
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.parse import parse_qs,urlsplit
@@ -102,7 +104,7 @@ REASONS={'unseen_reachable_object':'아직 안 본 닿을 수 있는 물체','mi
     'accepted_marker_followup':'검출 마커 재확인','region_leave':'구역 떠남','region_resume':'구역 복귀',
     'no_untried_reachable_interior_view':'시도 안 한 실내 관측 지점 없음','safe_frontier_fallback':'안전한 프런티어로 대체',
     'white_leg_candidate':'흰 다리 후보','box_safe_retry':'상자 안전 재시도','local_print_candidate':'근처 인쇄물 후보'}
-NPZ={};NPZ_LOCK=threading.Lock()
+NPZ={};MAP_PNG={};NPZ_LOCK=threading.Lock()
 RULE_ORDER={'fresh':'정렬: 끝난 상자 아닌 면 → 같은 상자 이어서 → 형태를 맞춘 면 → 걸어서 가까운 순',
     'interior':'정렬: 끝난 상자 아닌 면 → 같은 상자 이어서 → 형태를 맞춘 면 → 걸어서 가까운 순',
     'deferred':'끝난 상자의 면(다른 후보가 없을 때만)',
@@ -140,12 +142,56 @@ def rule_view(row,world):
                 text=head+(' | '+' / '.join(lines) if lines else ''),points=points,
                 remaining_s=trace.get('remaining_s'),counts=trace.get('counts'))
 
+def start_pose(folder):
+    """World pose at the mission start; the SLAM map frame starts there with zero yaw."""
+    try:
+        with (folder/'headings.csv').open() as f:first=next(csv.DictReader(f))
+        return float(first['x']),float(first['y']),float(first['yaw_rad'])
+    except (OSError,StopIteration,KeyError,ValueError):return None
+
+def png(rgba):
+    """Minimal RGBA PNG encoder (no Pillow needed)."""
+    h,w,_=rgba.shape
+    raw=b''.join(b'\x00'+rgba[r].tobytes() for r in range(h))
+    chunk=lambda kind,data:struct.pack('>I',len(data))+kind+data+struct.pack('>I',zlib.crc32(kind+data)&0xffffffff)
+    return b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',w,h,8,6,0,0,0))+chunk(b'IDAT',zlib.compress(raw,6))+chunk(b'IEND',b'')
+
+def map_knowledge(data,viewed,resolution,origin,pose,room):
+    """What the robot's own SLAM map knows at one decision.
+
+    data: OccupancyGrid values (-1 unknown, 0..100). viewed: the policy's camera
+    evidence per cell side (EdgeCoverage); it keeps only sides read from a
+    readable distance and is cleared where the map changes.
+    """
+    import numpy as np
+    known=data>=0;free=known&(data<=25);occupied=data>=65
+    surface=np.zeros((4,)+data.shape,dtype=bool)
+    for side,(dy,dx) in enumerate(((-1,0),(0,1),(1,0),(0,-1))):
+        neighbour=np.zeros_like(free)
+        rows=slice(max(0,-dy),data.shape[0]-max(0,dy));cols=slice(max(0,-dx),data.shape[1]-max(0,dx))
+        neighbour[rows,cols]=free[max(0,dy):data.shape[0]-max(0,-dy) or None,max(0,dx):data.shape[1]-max(0,-dx) or None]
+        surface[side]=occupied&neighbour
+    seen=surface&viewed if viewed.shape==surface.shape else np.zeros_like(surface)
+    out=dict(known_m2=round(float(known.sum())*resolution**2,1),free_m2=round(float(free.sum())*resolution**2,1),
+             occupied_cells=int(occupied.sum()),surface_sides=int(surface.sum()),viewed_sides=int(seen.sum()),
+             viewed_ratio=round(float(seen.sum())/max(1,int(surface.sum())),4))
+    if pose and room:
+        ox,oy,yaw=pose;c,s_=math.cos(yaw),math.sin(yaw)
+        rr,cc=np.nonzero(known)
+        mx=origin[0]+(cc+.5)*resolution;my=origin[1]+(rr+.5)*resolution
+        wx=c*mx-s_*my+ox;wy=s_*mx+c*my+oy
+        inside=(abs(wx)<=room[0]/2)&(abs(wy)<=room[1]/2)
+        out['room_known_ratio']=round(float(inside.sum())*resolution**2/(room[0]*room[1]),4)
+    rgba=np.zeros(data.shape+(4,),dtype=np.uint8)
+    rgba[free]=(110,170,205,70);rgba[occupied]=(235,235,235,215);rgba[seen.any(axis=0)]=(70,235,150,255)
+    return out,png(np.ascontiguousarray(rgba[::-1]))
+
 def candidate_score(row,w):
     """The planners' candidate score (surface_endpoint_policy / directional_policy)."""
     surface,frontier,distance,turn,revisit=row[4:9]
     return (w[0]*surface+w[1]*frontier)/(w[2]*distance/.26+w[3]*turn/.5+5.)-w[4]*revisit*.1
 
-def decision_snapshot(path):
+def decision_snapshot(path,pose=None,room=None):
     """One saved planner decision (files are written once, atomically)."""
     key=(str(path),path.stat().st_mtime_ns)
     with NPZ_LOCK:
@@ -157,10 +203,15 @@ def decision_snapshot(path):
         order=sorted(range(len(rows)),key=lambda i:-scores[i])
         pick=lambda i:dict(index=i,x=float(rows[i][0]),y=float(rows[i][1]),score=round(float(scores[i]),3),
                            features=[round(float(v),3) for v in rows[i][4:9]])
-        snap=dict(t=round(float(z['elapsed']),1),planner=str(z['planner']),candidates=len(rows),
+        try:
+            data=z['data'];resolution=float(z['resolution']);origin=[float(v) for v in z['origin']]
+            knowledge,image=map_knowledge(data,z['viewed'],resolution,origin,pose,room)
+            grid=dict(width=int(data.shape[1]),height=int(data.shape[0]),resolution=resolution,origin=origin)
+        except Exception:knowledge=image=grid=None  # older snapshot without the map
+        snap=dict(t=round(float(z['elapsed']),1),planner=str(z['planner']),candidates=len(rows),map=knowledge,grid=grid,
                   robot=[float(v) for v in z['robot']],selected=pick(chosen) if 0<=chosen<len(rows) else None,
                   top=[pick(i) for i in order[:3]],score_best=bool(order) and order[0]==chosen)
-    with NPZ_LOCK:NPZ[key]=snap
+    with NPZ_LOCK:NPZ[key]=snap;MAP_PNG[key]=image
     return snap
 
 def decisions(folder):
@@ -173,17 +224,15 @@ def decisions(folder):
     Map-frame points are placed in the world with the start pose so they can
     be drawn on the board.
     """
-    try:
-        with (folder/'headings.csv').open() as f:first=next(csv.DictReader(f))
-        ox,oy,yaw=float(first['x']),float(first['y']),float(first['yaw_rad'])
-    except (OSError,StopIteration,KeyError,ValueError):ox=oy=yaw=0.
+    pose=start_pose(folder);ox,oy,yaw=pose or (0.,0.,0.)
+    room=read(folder/'scene.json',{}).get('room_size')
     c,s=math.cos(yaw),math.sin(yaw)
     world=lambda x,y:[round(c*x-s*y+ox,3),round(s*x+c*y+oy,3)]
     reasons=[r for r in jsonl(folder/'native/center_wall.jsonl') if isinstance(r.get('elapsed'),(int,float))]
     traced=[r for r in jsonl(folder/'native/rule_trace.jsonl') if isinstance(r.get('elapsed'),(int,float))]
     rows=[]
     for path in sorted((folder/'native/policy_decisions').glob('*.npz')):
-        try:snap=decision_snapshot(path)
+        try:snap=decision_snapshot(path,pose,tuple(room) if room else None)
         except Exception:continue  # unreadable snapshot
         why=min(reasons,key=lambda r:abs(r['elapsed']-snap['t']),default=None)
         if why is not None and abs(why['elapsed']-snap['t'])>.5:why=None
@@ -201,8 +250,17 @@ def decisions(folder):
         trace=min(traced,key=lambda r:abs(r['elapsed']-snap['t']),default=None)
         if trace is not None and abs(trace['elapsed']-snap['t'])>1.:trace=None
         item['rule']=rule_view(trace,world) if trace is not None else None
+        item['file']=path.name;item['map_frame']=[ox,oy,yaw] if pose else None
         rows.append(item)
     return rows
+
+def map_png(folder,name):
+    path=folder/'native/policy_decisions'/name
+    if path.parent.name!='policy_decisions' or not path.is_file():return None
+    pose=start_pose(folder);room=read(folder/'scene.json',{}).get('room_size')
+    snap=decision_snapshot(path,pose,tuple(room) if room else None)
+    key=(str(path),path.stat().st_mtime_ns)
+    with NPZ_LOCK:return MAP_PNG.get(key)
 
 def detail(folder):
     scene=read(folder/'scene.json',{})
@@ -265,6 +323,11 @@ class Handler(BaseHTTPRequestHandler):
         if not name or folder.parent!=ROOT or not folder.is_dir():return self.send_error(404)
         if q.path=='/api/run':return self.send(cached_detail(folder))
         if q.path=='/api/decisions':return self.send(decisions(folder))
+        if q.path=='/api/map.png':
+            name=items.get('file',[''])[0]
+            image=map_png(folder,Path(name).name) if name.endswith('.npz') else None
+            if image:return self.send(image,'image/png')
+            return self.send_error(404)
         if q.path=='/camera.jpg':
             photos=sorted((folder/'camera').glob('*.jpg'))
             if photos:return self.send(photos[-1].read_bytes(),'image/jpeg')
