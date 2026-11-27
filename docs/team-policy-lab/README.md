@@ -230,6 +230,7 @@ python3 tools/team_sim/summarize.py ~/.local/share/simul-team/campaigns/<manifes
 | `protocol.json`, `policy.patch` | 실제 작업공간·소스/설정 해시·장면 지문·카메라·시간 제한과 기준판 대비 수정 내용 |
 | `metrics.json`, `audit.json` | ID 등록, 등록 후 독립 실제1.5m 접근, 근거리 촬영 증거, 지도 오차·엄격 성공 |
 | `headings.csv`, `trajectory.csv` | 독립 실제 이동 궤적·시각·그때 등록된 ID. 시각은 **미션 시작 기준**이며, Gazebo 시각 = 이 값 + `metrics.json`의 `start_sim_gazebo_s` |
+| `detections.jsonl` | 검출기가 낸 마커 판독 전체(2026-11-27 이후 회차). 한 줄이 판독 하나이고, 시각(`t`, 미션 시작 기준 촬영 시각), 종류(`candidate` 확정 전 판독 / `accepted` 검증 통과 판독), ID, 마커 최소 변 길이(px), 지도 좌표를 담는다. 판정기가 토픽을 듣기만 해서 쓰는 기록이고, 주행 중에도 쌓인다. 종료 후 `metrics.json`에 ID별 처음 본 시각(`first_detected_s`), 봤지만 등록하지 못한 ID(`detected_not_registered`), 정답에 없는 ID(`detected_unexpected_ids`)가 들어간다 |
 | `camera/`, `frames.csv`, `mission.mp4` | 실제 RGB와 시각, 완료 후 영상 |
 | `native/` | 정책 결정·관찰 메모리·마커 저장 결과. `native/<시각>/map.pgm`·`map.yaml`·`map.posegraph`에 SLAM 지도 |
 | `launch.log`, `observer.log`, `interruption.json` | 실행 실패·준비 지연·중단 원인 |

@@ -15,6 +15,7 @@ from std_msgs.msg import String
 
 from judge.board_atomic import put
 from judge.camera_noise import CameraNoise
+from judge.detections import TOPICS, DetectionLog
 from judge.strict import StrictTrial, main
 
 GATED_TOPIC = '/exam/detector_rgb'
@@ -45,6 +46,10 @@ class GatedCameraTrial(StrictTrial):
         self.registered_event = {}
         self.event_publish_lag = []
         self.node.create_subscription(String, '/mission/marker_events', self.marker_event, 10)
+        # Every detector reading (provisional and validated), listen-only.
+        self.detections = DetectionLog(self.path/'detections.jsonl')
+        for kind, topic in TOPICS.items():
+            self.node.create_subscription(String, topic, lambda msg, kind=kind: self.detection(kind, msg), 50)
 
     def marker_event(self, msg):
         event = json.loads(msg.data)
@@ -52,6 +57,14 @@ class GatedCameraTrial(StrictTrial):
             return
         self.registered_event.setdefault(int(event['id']), max(0., event['exposure_stamp']-self.start_sim))
         self.event_publish_lag.append(event['published_stamp']-event['exposure_stamp'])
+
+    def detection(self, kind, msg):
+        try:
+            data = json.loads(msg.data)
+        except ValueError:
+            self.detections.rejected += 1
+            return
+        self.detections.record(kind, data, self.start_sim, self.closed_at is not None)
 
     def image(self, msg):
         if self.gate and not self.finished:
@@ -72,6 +85,8 @@ class GatedCameraTrial(StrictTrial):
 
     def run(self):
         report = super().run()
+        self.detections.close()
+        report.update(self.detections.report(self.current, self.targets))
         if self.gate and not self.forwarded_images:
             raise ValueError('No post-start RGB exposures reached the detector topic')
         report.update(registered_event_s=self.registered_event or None,
