@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 import os
+import threading
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.parse import parse_qs,urlsplit
@@ -41,16 +42,36 @@ def detail(folder):
         finished=bool(exam) if randomized else (folder/'audit.json').exists(),
         interrupted=(folder/'interruption.json').exists(),protocol=protocol)
 
+# A finished run (audit.json or interruption.json written) no longer changes.
+CACHE={};LOCK=threading.Lock()
+
+def runs():
+    """Run folder names, newest first. Reading every run's CSVs here made /api/runs
+    take ~17 s for 100 runs while the page polls every 2 s."""
+    folders=[p for p in ROOT.glob('team-*-track-*') if p.is_dir()]
+    return [p.name for p in sorted(folders,key=lambda p:p.stat().st_mtime,reverse=True)]
+
+def cached_detail(folder):
+    with LOCK:
+        if folder.name in CACHE:return CACHE[folder.name]
+    data=detail(folder)
+    if (folder/'audit.json').exists() or (folder/'interruption.json').exists():
+        with LOCK:CACHE[folder.name]=data
+    return data
+
 class Handler(BaseHTTPRequestHandler):
     def send(self,data,kind='application/json'):
         if not isinstance(data,bytes):data=json.dumps(data,ensure_ascii=False).encode()
-        self.send_response(200);self.send_header('Content-Type',kind);self.send_header('Content-Length',str(len(data)));self.send_header('Cache-Control','no-store');self.end_headers();self.wfile.write(data)
+        try:
+            self.send_response(200);self.send_header('Content-Type',kind);self.send_header('Content-Length',str(len(data)));self.send_header('Cache-Control','no-store');self.end_headers();self.wfile.write(data)
+        except (BrokenPipeError,ConnectionResetError):pass  # the browser left before the reply ended
     def do_GET(self):
         q=urlsplit(self.path);items=parse_qs(q.query)
         if q.path=='/':return self.send((HERE/'board.html').read_bytes(),'text/html; charset=utf-8')
-        if q.path=='/api/runs':return self.send([detail(p) for p in sorted(ROOT.glob('team-*-track-*'),reverse=True) if p.is_dir()])
+        if q.path=='/api/runs':return self.send(runs())
         name=items.get('id',[''])[0];folder=(ROOT/name).resolve()
         if not name or folder.parent!=ROOT or not folder.is_dir():return self.send_error(404)
+        if q.path=='/api/run':return self.send(cached_detail(folder))
         if q.path=='/camera.jpg':
             photos=sorted((folder/'camera').glob('*.jpg'))
             if photos:return self.send(photos[-1].read_bytes(),'image/jpeg')
