@@ -1,4 +1,4 @@
-"""Run repeated team trials one after another and keep a manifest of every attempt.
+"""Run repeated team trials (one at a time, or two at once with --parallel 2) and keep a manifest of every attempt.
 
 Example (5 development maps x 3, then 5 unseen random layouts):
   python3 tools/team_sim/campaign.py ~/simul-ws/events-baseline \
@@ -37,6 +37,29 @@ def plan(seeds, repeats, random_count, interleave=True, random_seeds=()):
     return trials
 
 
+def run_trial(index, planned, mode, seed, workspace, duration, domain, env):
+    """One trial through team-sim.sh; returns its manifest entry."""
+    command = ['bash', str(REPO/'team-sim.sh'), 'run', str(workspace)]
+    command += [str(seed)] if seed is not None else []
+    command += ['--duration', str(duration)]
+    command += ['--domain', str(domain)] if domain else []
+    print(f'[{index}/{planned}] {mode} {seed or "new random layout"}' + (f' (domain {domain})' if domain else ''), flush=True)
+    began, started = time.monotonic(), datetime.datetime.now().isoformat(timespec='seconds')
+    done = subprocess.run(command, cwd=REPO, text=True, capture_output=True, env=env)
+    output = done.stdout+done.stderr
+    run = re.search(r'^RUN (\S+)', output, re.M)
+    drawn = re.search(r'Random exam seed (\d+)', output)
+    attempt = dict(index=index, mode=mode, seed=seed if seed else int(drawn.group(1)) if drawn else None,
+                   run=run.group(1) if run else None, exit_code=done.returncode,
+                   completed='COMPLETED' in output, wall_s=round(time.monotonic()-began, 1))
+    if domain:
+        attempt.update(domain=domain, started=started, ended=datetime.datetime.now().isoformat(timespec='seconds'))
+    if done.returncode:
+        attempt['error_tail'] = output.strip().splitlines()[-3:]
+    print(f'    <- [{index}] exit {done.returncode}, {attempt["wall_s"]} s, {attempt["run"]}', flush=True)
+    return attempt
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('workspace', type=Path)
@@ -46,6 +69,9 @@ def main():
     parser.add_argument('--random-seeds', type=int, nargs='*', default=[],
                         help='Replay earlier random exam seeds (paired comparison) before any fresh ones')
     parser.add_argument('--duration', type=float, default=600.)
+    parser.add_argument('--parallel', type=int, choices=(1, 2), default=1,
+                        help='Trials at once. 2 uses ROS domains 174 and 175; runs record concurrency=2 '
+                             'and summarize.py keeps them apart from one-at-a-time runs.')
     parser.add_argument('--name', default='campaign')
     a = parser.parse_args()
     workspace = a.workspace.expanduser().resolve()
@@ -53,27 +79,47 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     stamp = datetime.datetime.now().strftime('%Y%m%dT%H%M%S')
     manifest_path = out/f'{a.name}-{workspace.name}-{stamp}.json'
-    conditions = {k: v for k, v in os.environ.items() if k.startswith('TEAM_SIM_')}
+    env = dict(os.environ, TEAM_SIM_PARALLEL=str(a.parallel)) if a.parallel > 1 else dict(os.environ)
+    conditions = {k: v for k, v in env.items() if k.startswith('TEAM_SIM_')}
+    trials = plan(a.seeds, a.repeats, a.random, random_seeds=a.random_seeds)
     manifest = dict(name=a.name, workspace=str(workspace), started=stamp, duration_s=a.duration,
-                    conditions=conditions, planned=len(plan(a.seeds, a.repeats, a.random, random_seeds=a.random_seeds)), attempts=[])
-    for index, (mode, seed) in enumerate(plan(a.seeds, a.repeats, a.random, random_seeds=a.random_seeds), 1):
-        command = ['bash', str(REPO/'team-sim.sh'), 'run', str(workspace)]
-        command += [str(seed)] if seed is not None else []
-        command += ['--duration', str(a.duration)]
-        print(f'[{index}/{manifest["planned"]}] {mode} {seed or "new random layout"}', flush=True)
-        began = time.monotonic()
-        done = subprocess.run(command, cwd=REPO, text=True, capture_output=True)
-        output = done.stdout+done.stderr
-        run = re.search(r'^RUN (\S+)', output, re.M)
-        drawn = re.search(r'Random exam seed (\d+)', output)
-        attempt = dict(index=index, mode=mode, seed=seed if seed else int(drawn.group(1)) if drawn else None,
-                       run=run.group(1) if run else None, exit_code=done.returncode,
-                       completed='COMPLETED' in output, wall_s=round(time.monotonic()-began, 1))
-        if done.returncode:
-            attempt['error_tail'] = output.strip().splitlines()[-3:]
+                    conditions=conditions, planned=len(trials), parallel=a.parallel, attempts=[])
+    manifest_path.write_text(json.dumps(manifest, indent=2)+'\n')
+
+    def record(attempt):
         manifest['attempts'].append(attempt)
+        manifest['attempts'].sort(key=lambda entry: entry['index'])
         manifest_path.write_text(json.dumps(manifest, indent=2)+'\n')
-        print(f'    -> exit {done.returncode}, {attempt["wall_s"]} s, {attempt["run"]}', flush=True)
+
+    if a.parallel == 1:
+        for index, (mode, seed) in enumerate(trials, 1):
+            record(run_trial(index, len(trials), mode, seed, workspace, a.duration, None, env))
+    else:
+        import queue
+        import threading
+        pending, results = queue.Queue(), queue.Queue()
+        for item in enumerate(trials, 1):
+            pending.put(item)
+
+        def worker(domain):
+            while True:
+                try:
+                    index, (mode, seed) = pending.get_nowait()
+                except queue.Empty:
+                    return
+                try:
+                    results.put(run_trial(index, len(trials), mode, seed, workspace, a.duration, domain, env))
+                except Exception as exc:  # keep the attempt in the manifest
+                    results.put(dict(index=index, mode=mode, seed=seed, run=None, exit_code=None,
+                                     completed=False, domain=domain, error_tail=[repr(exc)]))
+
+        workers = [threading.Thread(target=worker, args=(domain,), daemon=True) for domain in (174, 175)]
+        for thread in workers:
+            thread.start()
+        for _ in trials:
+            record(results.get())
+        for thread in workers:
+            thread.join()
     manifest['finished'] = datetime.datetime.now().strftime('%Y%m%dT%H%M%S')
     manifest_path.write_text(json.dumps(manifest, indent=2)+'\n')
     print('MANIFEST', manifest_path, flush=True)

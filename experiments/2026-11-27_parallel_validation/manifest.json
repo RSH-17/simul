@@ -1,0 +1,75 @@
+{
+  "name": "parallel-validation",
+  "workspace": "~/simul-ws/far-wall-slot",
+  "started": "20261127T184459",
+  "duration_s": 600.0,
+  "conditions": {
+    "TEAM_SIM_RENDER": "system",
+    "TEAM_SIM_PARALLEL": "2"
+  },
+  "planned": 5,
+  "parallel": 2,
+  "attempts": [
+    {
+      "index": 1,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112601-1795772699651223256",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 542.9,
+      "domain": 174,
+      "started": "2026-11-27T18:44:59",
+      "ended": "2026-11-27T18:54:02"
+    },
+    {
+      "index": 2,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112602-1795772699606218397",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 394.0,
+      "domain": 175,
+      "started": "2026-11-27T18:44:59",
+      "ended": "2026-11-27T18:51:33"
+    },
+    {
+      "index": 3,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112603-1795773093630389225",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 451.0,
+      "domain": 175,
+      "started": "2026-11-27T18:51:33",
+      "ended": "2026-11-27T18:59:04"
+    },
+    {
+      "index": 4,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112604-1795773242524321896",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.2,
+      "domain": 174,
+      "started": "2026-11-27T18:54:02",
+      "ended": "2026-11-27T19:04:27"
+    },
+    {
+      "index": 5,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-far-wall-slot-track-m112605-1795773544584507120",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.4,
+      "domain": 175,
+      "started": "2026-11-27T18:59:04",
+      "ended": "2026-11-27T19:09:28"
+    }
+  ],
+  "finished": "20261127T190928"
+}

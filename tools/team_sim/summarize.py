@@ -7,7 +7,7 @@ ID registration and the independent 1.5 m approach after registration are
 reported separately, and wall-mounted and box-mounted markers are split.
 Success rates carry a Wilson 95% interval so small samples are not over-read.
 Runs recorded under different conditions (workspace source, render backend,
-camera noise) are refused together unless --allow-mixed is given.
+camera noise, number of simulations running at once) are refused together unless --allow-mixed is given.
 """
 import argparse
 import hashlib
@@ -36,13 +36,15 @@ def condition(run):
     noise = protocol.get('camera_noise') or {}
     noise = 'off' if not any(noise.get(k, 0) for k in ('sigma', 'blur', 'drop')) else \
         f"sigma={noise['sigma']},blur={noise['blur']},drop={noise['drop']}"
+    # Runs recorded before simulator slots existed ran one at a time.
     return dict(source=source, render=protocol.get('render_backend', 'software'), camera_noise=noise,
-                duration_s=protocol.get('duration_sim_s'))
+                duration_s=protocol.get('duration_sim_s'), concurrency=protocol.get('concurrency', 1))
 
 
 def attempt_row(attempt):
     row = dict(mode=attempt['mode'], seed=attempt['seed'], run=attempt['run'], completed=attempt['completed'])
-    run = Path(attempt['run']) if attempt['run'] else None
+    # Committed manifests store run folders as ~/... (no user name in the repository).
+    run = Path(attempt['run']).expanduser() if attempt['run'] else None
     metrics = run/'metrics.json' if run else None
     if not metrics or not metrics.is_file():
         # A failed attempt still misses its markers; count them when the layout is known.
@@ -103,7 +105,7 @@ def summarize(rows):
 def markdown(summary, conditions, manifests):
     lines = ['# Campaign summary', '', 'Manifests: ' + ', '.join(f'`{Path(m).name}`' for m in manifests), '',
              'Conditions: ' + '; '.join(f'source `{c["source"]}`, render {c["render"]}, camera noise {c["camera_noise"]}, '
-                                        f'{c["duration_s"]:.0f} s' for c in conditions), '',
+                                        f'{c["duration_s"]:.0f} s, {c.get("concurrency", 1)} at once' for c in conditions), '',
              '| Set | Trials | Strict success (95% CI) | All 3 registered | Wall reg / approach | Box reg / approach | Mean finish (successes) | Bumps |',
              '|---|---:|---|---:|---|---|---:|---:|']
 

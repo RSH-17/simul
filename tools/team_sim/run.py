@@ -12,6 +12,7 @@ import time
 import xml.etree.ElementTree as ET
 
 from setup import fixtures,home,digest
+import slots
 from judge.camera_noise import parse as parse_camera_noise
 HERE=Path(__file__).resolve().parent
 REPO=HERE.parents[1]
@@ -57,7 +58,7 @@ def main():
     parser.add_argument('--markers',choices=('three','unknown'),help='The exam announces three markers. Unknown count is a separate stress test.')
     parser.add_argument('--tables',choices=('fixed','shuffle'),help='Keep the original desks and legs in the exam. Shuffle only for a furniture stress test.')
     parser.add_argument('--duration',type=float,default=600.)
-    parser.add_argument('--domain',type=int,choices=(173,174,175),default=174);parser.add_argument('--check',action='store_true')
+    parser.add_argument('--domain',type=int,choices=(173,174,175),help='Default: the first free slot (174, then 175)');parser.add_argument('--check',action='store_true')
     a=parser.parse_args();ws=a.workspace.resolve()
     if not 0<a.duration<=600:parser.error('Duration must be in (0,600]')
     from random_exam import fixture_for,selection
@@ -92,16 +93,9 @@ def main():
         if ok is False:raise SystemExit('Render probe failed: '+detail)
         return
     import psutil
-    for process in psutil.process_iter():
-        try:
-            active=process.environ()
-            if active.get('ROS_DOMAIN_ID') in ('173','174','175') and active.get('BENCH_RUN'):
-                raise SystemExit('Another native benchmark is running on this host; finish it before a team trial.')
-        except psutil.Error:pass
-    lockdir=home();lockdir.mkdir(parents=True,exist_ok=True)
-    with (lockdir/'simulator.lock').open('a') as lock:
-        try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-        except BlockingIOError:raise SystemExit('Another team simulation is using this installation.')
+    with slots.acquire(home(),a.domain) as slot:
+        declared=int(os.environ.get('TEAM_SIM_PARALLEL','1'))
+        config.update(domain=slot.domain,concurrent_at_start=slot.concurrent,concurrency=max(declared,slot.concurrent))
         run=home()/'results'/f'team-{ws.name}-track-m{a.seed}-{time.time_ns()}'
         run.mkdir(parents=True)
         for name in ('scene.json','run'):(run/name).symlink_to(fixture/name,target_is_directory=(fixture/name).is_dir())
@@ -130,7 +124,7 @@ def main():
         (run/'policy.patch').write_text(''.join(patch))
         (run/'protocol.json').write_text(json.dumps(config,indent=2)+'\n')
         (run/'policy_revision.txt').write_text(ws.name+'\n')
-        env=dict(os.environ,ROS_DOMAIN_ID=str(a.domain),ROS_LOCALHOST_ONLY='1',ROS_AUTOMATIC_DISCOVERY_RANGE='LOCALHOST',
+        env=dict(os.environ,ROS_DOMAIN_ID=str(slot.domain),ROS_LOCALHOST_ONLY='1',ROS_AUTOMATIC_DISCOVERY_RANGE='LOCALHOST',
             RMW_IMPLEMENTATION='rmw_cyclonedds_cpp',
             CAMERA_BENCH_CARDS=str(home()/'cards'),CAMERA_POLICY_WORKSPACE=str(ws),
             CAMERA_BENCH_WIDTH='480',CAMERA_BENCH_HEIGHT='480',CAMERA_BENCH_FPS='5',
@@ -146,6 +140,7 @@ def main():
         try:
             with (run/'observer.log').open('w') as log:
                 child=subprocess.Popen([sys.executable,'-u',str(HERE/'observer.py')],env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+                slot.admitted()
                 try:code=child.wait(timeout=2400)
                 except (KeyboardInterrupt,subprocess.TimeoutExpired):
                     os.killpg(child.pid,signal.SIGINT)

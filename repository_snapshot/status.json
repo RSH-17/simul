@@ -1,4 +1,33 @@
 {
+  "parallel_validation_20261127": {
+    "report": "experiments/2026-11-27_parallel_validation/README.md",
+    "result_type": "new_gazebo",
+    "purpose": "infrastructure: campaign.py --parallel 2 (ROS domains 174/175, host limit 2 Gazebo benchmarks)",
+    "policy": "1.5.5-far-wall-slot",
+    "source": "3863093ec823",
+    "trials": 5,
+    "campaign_wall_min": 24.5,
+    "sequential_equivalent_min": 44.0,
+    "timing_same_range_as_solo": {
+      "rtf": true,
+      "processed_fps": true,
+      "max_frame_gap": true,
+      "late_frames": true
+    },
+    "high_latency_mode": {
+      "parallel": "4/5",
+      "solo_development": "6/15",
+      "binomial_p_at_least_4": 0.087
+    },
+    "host": {
+      "cpu_total_max_pct": 43.0,
+      "mem_max_gib": 12.9,
+      "swap_gib": 0,
+      "gpu_util_max_pct": 16
+    },
+    "decision": "use --parallel 2 for campaigns; keep concurrency as a separate summary condition",
+    "summarize_fix": "committed ~/ manifest paths now expand (previously re-summarized as 0/N without error)"
+  },
   "v157_frontier_tour_20261127": {
     "report": "experiments/2026-11-27_v157_frontier_tour/README.md",
     "policy_candidate": "policy_candidates/2026-11-27_v157_frontier_tour/README.md",

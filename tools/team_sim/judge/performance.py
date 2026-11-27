@@ -65,7 +65,8 @@ class PerformanceTrial(CameraTrial):
                 cmd=' '.join(process.info['cmdline'] or [])
                 if not any(k in cmd for k in ('/lib/osp_mission/detector','/lib/nav2_controller/controller_server',
                     '/lib/slam_toolbox/async_slam_toolbox_node','gz sim')):continue
-                if process.environ().get('ROS_DOMAIN_ID')!='174':continue
+                # Only this trial's processes; a second slot may run beside it.
+                if process.environ().get('BENCH_RUN')!=os.environ['BENCH_RUN']:continue
                 kind=('detector' if '/lib/osp_mission/detector' in cmd else 'nav2' if 'controller_server' in cmd else 'slam' if 'slam_toolbox' in cmd else 'gazebo')
                 t=process.cpu_times();total=t.user+t.system;previous=self.previous_cpu.get(process.pid,total)
                 self.previous_cpu[process.pid]=total

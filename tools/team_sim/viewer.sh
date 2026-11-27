@@ -16,7 +16,8 @@ find_sim_env() {
   for _ in $(seq 1 60); do
     for e in /proc/[0-9]*/environ; do
       [[ -r "$e" ]] || continue
-      if { tr '\0' '\n' < "$e"; } 2>/dev/null | grep -q '^GZ_PARTITION=camera_aware_'; then
+      if { tr '\0' '\n' < "$e"; } 2>/dev/null | grep -q '^GZ_PARTITION=camera_aware_' &&
+         { [[ -z "${TEAM_SIM_DOMAIN:-}" ]] || { tr '\0' '\n' < "$e"; } 2>/dev/null | grep -qx "ROS_DOMAIN_ID=$TEAM_SIM_DOMAIN"; }; then
         echo "$e"; return 0
       fi
     done
