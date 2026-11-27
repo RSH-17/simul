@@ -164,7 +164,7 @@ def map_knowledge(data,viewed,resolution,origin,pose,room):
     readable distance and is cleared where the map changes.
     """
     import numpy as np
-    known=data>=0;free=known&(data<=25);occupied=data>=65
+    known=data>=0;free=data==0;occupied=data>50  # the policy's boundary_faces thresholds
     surface=np.zeros((4,)+data.shape,dtype=bool)
     for side,(dy,dx) in enumerate(((-1,0),(0,1),(1,0),(0,-1))):
         neighbour=np.zeros_like(free)
@@ -174,6 +174,7 @@ def map_knowledge(data,viewed,resolution,origin,pose,room):
     seen=surface&viewed if viewed.shape==surface.shape else np.zeros_like(surface)
     out=dict(known_m2=round(float(known.sum())*resolution**2,1),free_m2=round(float(free.sum())*resolution**2,1),
              occupied_cells=int(occupied.sum()),surface_sides=int(surface.sum()),viewed_sides=int(seen.sum()),
+             viewed_m=round(float(seen.sum())*resolution,2),surface_m=round(float(surface.sum())*resolution,1),
              viewed_ratio=round(float(seen.sum())/max(1,int(surface.sum())),4))
     if pose and room:
         ox,oy,yaw=pose;c,s_=math.cos(yaw),math.sin(yaw)
@@ -214,6 +215,27 @@ def decision_snapshot(path,pose=None,room=None):
     with NPZ_LOCK:NPZ[key]=snap;MAP_PNG[key]=image
     return snap
 
+def visited_faces(folder):
+    """Mission times at which the hybrid sent the robot to a surface it had not been sent to before.
+
+    Same face as the policy's attempt history: anchors within 0.5 m and view
+    directions within ~45 deg (cos > 0.7). The direction is from the face to the
+    goal; center_wall.jsonl and hybrid_goals.jsonl have one row per goal, in order.
+    """
+    cw=jsonl(folder/'native/center_wall.jsonl');hg=jsonl(folder/'native/hybrid_goals.jsonl')
+    if len(cw)!=len(hg):return []
+    faces=[];new=[]
+    for row,goal in zip(cw,hg):
+        s=row.get('surface')
+        if not s or not isinstance(row.get('elapsed'),(int,float)):continue
+        try:nx,ny=goal['x']-s[0],goal['y']-s[1]
+        except (KeyError,TypeError,IndexError):continue
+        n=math.hypot(nx,ny) or 1.;nx,ny=nx/n,ny/n
+        if not any(k==row.get('kind') and math.dist(p,s)<.5 and nx*a+ny*b>.7 for p,a,b,k in faces):
+            new.append(row['elapsed'])
+        faces.append((s,nx,ny,row.get('kind')))
+    return new
+
 def decisions(folder):
     """Decision timeline: every planner choice, the layer that made it and why.
 
@@ -230,7 +252,7 @@ def decisions(folder):
     world=lambda x,y:[round(c*x-s*y+ox,3),round(s*x+c*y+oy,3)]
     reasons=[r for r in jsonl(folder/'native/center_wall.jsonl') if isinstance(r.get('elapsed'),(int,float))]
     traced=[r for r in jsonl(folder/'native/rule_trace.jsonl') if isinstance(r.get('elapsed'),(int,float))]
-    rows=[]
+    rows=[];faces=visited_faces(folder)
     for path in sorted((folder/'native/policy_decisions').glob('*.npz')):
         try:snap=decision_snapshot(path,pose,tuple(room) if room else None)
         except Exception:continue  # unreadable snapshot
@@ -250,6 +272,7 @@ def decisions(folder):
         trace=min(traced,key=lambda r:abs(r['elapsed']-snap['t']),default=None)
         if trace is not None and abs(trace['elapsed']-snap['t'])>1.:trace=None
         item['rule']=rule_view(trace,world) if trace is not None else None
+        if item.get('map') is not None:item['map']=dict(item['map'],faces_visited=sum(t<=snap['t']+.5 for t in faces))
         item['file']=path.name;item['map_frame']=[ox,oy,yaw] if pose else None
         rows.append(item)
     return rows
