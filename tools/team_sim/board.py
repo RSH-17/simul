@@ -93,6 +93,76 @@ def live_verdict(folder,scene,trace):
     met=bool(truth) and all(r['near_s'] is not None and r['map_error_m'] is not None and r['map_error_m']<=.25 for r in records.values()) and not bumps and not wrong
     return dict(targets={str(i):r for i,r in records.items()},bumps=bumps,wrong_ids=wrong,conditions_met=met)
 
+REASONS={'unseen_reachable_object':'아직 안 본 닿을 수 있는 물체','midmission_wall_slot':'주행 중 벽 구간 확인',
+    'persistent_small_wall_candidate':'계속 남은 작은 벽 후보','interior_first_exploration':'실내 먼저 탐색',
+    'quick_perimeter_pass':'빠른 외곽 한 바퀴','explore_open_frontier':'열린 프런티어 탐색','finish_current_box':'보던 상자 마저 확인',
+    'regional_camera_gain_per_route':'경로 대비 카메라 이득이 큰 구역','inspect_other_surface':'다른 면 확인',
+    'verified_marker_approach':'확인된 마커 접근','discover_beyond_inspected_boxes':'확인한 상자 너머 탐색',
+    'remaining_time_for_mapped_walls':'남은 시간으로 지도상 벽 확인','wall_marker_evidence':'벽 마커 단서',
+    'accepted_marker_followup':'검출 마커 재확인','region_leave':'구역 떠남','region_resume':'구역 복귀',
+    'no_untried_reachable_interior_view':'시도 안 한 실내 관측 지점 없음','safe_frontier_fallback':'안전한 프런티어로 대체',
+    'white_leg_candidate':'흰 다리 후보','box_safe_retry':'상자 안전 재시도','local_print_candidate':'근처 인쇄물 후보'}
+NPZ={};NPZ_LOCK=threading.Lock()
+
+def candidate_score(row,w):
+    """The planners' candidate score (surface_endpoint_policy / directional_policy)."""
+    surface,frontier,distance,turn,revisit=row[4:9]
+    return (w[0]*surface+w[1]*frontier)/(w[2]*distance/.26+w[3]*turn/.5+5.)-w[4]*revisit*.1
+
+def decision_snapshot(path):
+    """One saved planner decision (files are written once, atomically)."""
+    key=(str(path),path.stat().st_mtime_ns)
+    with NPZ_LOCK:
+        if key in NPZ:return NPZ[key]
+    import numpy as np
+    with np.load(path) as z:
+        rows=z['candidates'];w=z['weights'];chosen=int(z['selected_index'])
+        scores=[candidate_score(r,w) for r in rows]
+        order=sorted(range(len(rows)),key=lambda i:-scores[i])
+        pick=lambda i:dict(index=i,x=float(rows[i][0]),y=float(rows[i][1]),score=round(float(scores[i]),3),
+                           features=[round(float(v),3) for v in rows[i][4:9]])
+        snap=dict(t=round(float(z['elapsed']),1),planner=str(z['planner']),candidates=len(rows),
+                  robot=[float(v) for v in z['robot']],selected=pick(chosen) if 0<=chosen<len(rows) else None,
+                  top=[pick(i) for i in order[:3]],score_best=bool(order) and order[0]==chosen)
+    with NPZ_LOCK:NPZ[key]=snap
+    return snap
+
+def decisions(folder):
+    """Decision timeline: every planner choice, the layer that made it and why.
+
+    The policy logs each choice to native/policy_decisions (all candidates,
+    their features, the weights and the chosen one) and the phased hybrid
+    logs its reason to center_wall.jsonl at the same mission-elapsed time.
+    Map-frame points are placed in the world with the start pose so they can
+    be drawn on the board.
+    """
+    try:
+        with (folder/'headings.csv').open() as f:first=next(csv.DictReader(f))
+        ox,oy,yaw=float(first['x']),float(first['y']),float(first['yaw_rad'])
+    except (OSError,StopIteration,KeyError,ValueError):ox=oy=yaw=0.
+    c,s=math.cos(yaw),math.sin(yaw)
+    world=lambda x,y:[round(c*x-s*y+ox,3),round(s*x+c*y+oy,3)]
+    reasons=[r for r in jsonl(folder/'native/center_wall.jsonl') if isinstance(r.get('elapsed'),(int,float))]
+    rows=[]
+    for path in sorted((folder/'native/policy_decisions').glob('*.npz')):
+        try:snap=decision_snapshot(path)
+        except Exception:continue  # unreadable snapshot
+        why=min(reasons,key=lambda r:abs(r['elapsed']-snap['t']),default=None)
+        if why is not None and abs(why['elapsed']-snap['t'])>.5:why=None
+        kind=why.get('kind') if why else None
+        if kind and kind!='flow_or_marker':layer='상위 규칙'
+        elif snap['score_best']:layer='점수식'
+        else:layer='마커 접근·경로 필터'
+        reason=why.get('reason') if why else None
+        item=dict(snap,layer=layer,reason=reason,reason_text=REASONS.get(reason,reason),kind=kind,
+                  marker_id=why.get('marker_id') if why else None,phase=why.get('phase') if why else None)
+        item['robot']=world(*snap['robot'])
+        for k in ('selected',):
+            if item[k]:item[k]=dict(item[k],world=world(item[k]['x'],item[k]['y']))
+        item['top']=[dict(t,world=world(t['x'],t['y'])) for t in snap['top']]
+        rows.append(item)
+    return rows
+
 def detail(folder):
     scene=read(folder/'scene.json',{})
     scene['partitions']=scene.get('partitions',[])+read(folder/'run/simulation/demo_layout.json',{}).get('tables',[])
@@ -153,6 +223,7 @@ class Handler(BaseHTTPRequestHandler):
         name=items.get('id',[''])[0];folder=(ROOT/name).resolve()
         if not name or folder.parent!=ROOT or not folder.is_dir():return self.send_error(404)
         if q.path=='/api/run':return self.send(cached_detail(folder))
+        if q.path=='/api/decisions':return self.send(decisions(folder))
         if q.path=='/camera.jpg':
             photos=sorted((folder/'camera').glob('*.jpg'))
             if photos:return self.send(photos[-1].read_bytes(),'image/jpeg')
