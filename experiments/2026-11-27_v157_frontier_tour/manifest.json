@@ -1,0 +1,193 @@
+{
+  "name": "frontier-tour-repeat",
+  "workspace": "~/simul-ws/frontier-tour",
+  "started": "20261127T154205",
+  "duration_s": 600.0,
+  "conditions": {
+    "TEAM_SIM_RENDER": "system"
+  },
+  "planned": 20,
+  "attempts": [
+    {
+      "index": 1,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112601-1795761725993776960",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.9
+    },
+    {
+      "index": 2,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112602-1795762350773563852",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 338.2
+    },
+    {
+      "index": 3,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112603-1795762688961236237",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 508.6
+    },
+    {
+      "index": 4,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112604-1795763197582838268",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.0
+    },
+    {
+      "index": 5,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112605-1795763822550159298",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 623.9
+    },
+    {
+      "index": 6,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112601-1795764446472922839",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 606.5
+    },
+    {
+      "index": 7,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112602-1795765052947453739",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 309.1
+    },
+    {
+      "index": 8,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112603-1795765362039969890",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 401.6
+    },
+    {
+      "index": 9,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112604-1795765763663564570",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.8
+    },
+    {
+      "index": 10,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112605-1795766388512684725",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.1
+    },
+    {
+      "index": 11,
+      "mode": "legacy",
+      "seed": 112601,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112601-1795767012651020987",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 418.8
+    },
+    {
+      "index": 12,
+      "mode": "legacy",
+      "seed": 112602,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112602-1795767431488936450",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 409.4
+    },
+    {
+      "index": 13,
+      "mode": "legacy",
+      "seed": 112603,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112603-1795767840864438439",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 395.4
+    },
+    {
+      "index": 14,
+      "mode": "legacy",
+      "seed": 112604,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112604-1795768236227644506",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.0
+    },
+    {
+      "index": 15,
+      "mode": "legacy",
+      "seed": 112605,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m112605-1795768861191814140",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 624.0
+    },
+    {
+      "index": 16,
+      "mode": "random",
+      "seed": 808361371,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m808361371-1795769485187356986",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 125.7
+    },
+    {
+      "index": 17,
+      "mode": "random",
+      "seed": 3880005807,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m3880005807-1795769610916010271",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 495.3
+    },
+    {
+      "index": 18,
+      "mode": "random",
+      "seed": 4231469807,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m4231469807-1795770106255586137",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 574.2
+    },
+    {
+      "index": 19,
+      "mode": "random",
+      "seed": 745871323,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m745871323-1795770680440035826",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 625.1
+    },
+    {
+      "index": 20,
+      "mode": "random",
+      "seed": 2517251125,
+      "run": "~/.local/share/simul-team/results/team-frontier-tour-track-m2517251125-1795771305580783225",
+      "exit_code": 0,
+      "completed": true,
+      "wall_s": 422.2
+    }
+  ],
+  "finished": "20261127T182847"
+}

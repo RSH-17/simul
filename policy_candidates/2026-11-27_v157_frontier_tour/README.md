@@ -1,6 +1,6 @@
 # Mixed v1.5.7 · 새 바닥까지 도는 순회 슬롯 (`1.5.7-frontier-tour`)
 
-[v1.5.6 벽 순회 슬롯](../2026-11-27_v156_wall_tour/README.md)에서 슬롯이 도는 대상과 계획 방식만 바꾼 후보다. **운영 정책이 아니다. 같은 조건의 20회 비교는 아직 하지 않았다.**
+[v1.5.6 벽 순회 슬롯](../2026-11-27_v156_wall_tour/README.md)에서 슬롯이 도는 대상과 계획 방식만 바꾼 후보다. **운영 정책이 아니다.** 같은 조건 20회 비교에서 개발 맵 8/15, 무작위 4/5로 승격하지 않았다([기록](../../experiments/2026-11-27_v157_frontier_tour/README.md)).
 
 ```sh
 bash team-sim.sh setup ~/simul-ws/frontier-tour --policy frontier-tour

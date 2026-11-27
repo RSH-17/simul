@@ -1,4 +1,65 @@
 {
+  "v157_frontier_tour_20261127": {
+    "report": "experiments/2026-11-27_v157_frontier_tour/README.md",
+    "policy_candidate": "policy_candidates/2026-11-27_v157_frontier_tour/README.md",
+    "environment": "Gazebo Harmonic, system (GPU) rendering, same host as far_wall_slot_20261126",
+    "result_type": "new_gazebo",
+    "policy": "1.5.7-frontier-tour",
+    "source": "9230c0e84a47",
+    "duration_s": 600,
+    "development_maps": {
+      "trials": 15,
+      "strict_success": 8,
+      "all_three_registered": 9,
+      "wall_markers_registered_and_approached": 9,
+      "wall_markers": 15,
+      "box_markers_registered_and_approached": 29,
+      "box_markers": 30,
+      "mean_finish_s_of_successes": 398
+    },
+    "unseen_random_layouts": {
+      "trials": 5,
+      "seeds_same_as_far_wall_slot": true,
+      "strict_success": 4,
+      "all_three_registered": 4,
+      "wall": [
+        9,
+        10
+      ],
+      "box": [
+        5,
+        5
+      ]
+    },
+    "comparison": {
+      "far_wall_slot_v155": {
+        "development_strict": 10,
+        "random_strict": 4
+      },
+      "v15257_short_lap": {
+        "development_strict": 6,
+        "random_strict": 2
+      },
+      "baseline": {
+        "development_strict": 7,
+        "random_strict": 3
+      }
+    },
+    "marker_map_error_m": {
+      "median": 0.034,
+      "p90": 0.137,
+      "max": 0.2,
+      "over_0_25": 0,
+      "of": 52
+    },
+    "slot_frontier_goals_total": 14,
+    "slot_started_runs": 12,
+    "slot_disabled_by_earlier_wall_phase": 7,
+    "total_bumper_events": 0,
+    "finding": "Frontier targets rarely existed at slot time (14 frontier goals over 12 slots); wall markers 9/15 vs v1.5.5 10/15. 112604 0/3 because one weak wall-cue look disabled the slot (earlier_wall_phase, 7/20 runs). Box markers 29/30, map error unchanged.",
+    "physical_trial": false,
+    "promoted": false
+  },
   "v15257_short_lap_20261127": {
     "report": "experiments/2026-11-27_v15257_short_lap/README.md",
     "policy_candidate": "policy_candidates/2026-11-27_v15257_short_lap_import/README.md",
