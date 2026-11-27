@@ -1,4 +1,36 @@
 {
+  "v157_repeat5_parallel_20261127": {
+    "report": "experiments/2026-11-27_v157_repeat5_parallel/README.md",
+    "result_type": "new_gazebo",
+    "policy": "1.5.7-frontier-tour",
+    "source": "9230c0e84a47",
+    "trials": 25,
+    "concurrency": 2,
+    "development_strict": 22,
+    "development_strict_ci": [
+      0.7,
+      0.96
+    ],
+    "wall": [
+      22,
+      25
+    ],
+    "box": [
+      50,
+      50
+    ],
+    "bumps": 0,
+    "earlier_solo_same_source": {
+      "strict": 8,
+      "trials": 15
+    },
+    "fisher_p": 0.024,
+    "cause": "unexplained: concurrency, judge listen-only detection subscriptions (a07e4c2) and slot code differ from the solo campaign",
+    "next": "solo control 112604/112605 x5 with current code",
+    "improvement_shown": false,
+    "promoted": false,
+    "physical_trial": false
+  },
   "parallel_validation_20261127": {
     "report": "experiments/2026-11-27_parallel_validation/README.md",
     "result_type": "new_gazebo",
